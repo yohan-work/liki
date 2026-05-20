@@ -55,6 +55,7 @@ evidence_level: unsourced
 - [[SNU Newsroom Quant Trading Article]]
 - [[Brunch Claude Blue Article]]
 - [[GitHub Public APIs 4Kr Repository]]
+- [[Naver Blog Quant Investment Process Article]]
 
 ## 리포트
 
