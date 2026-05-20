@@ -27,6 +27,7 @@ evidence_level: unsourced
 - [[Claude Blue]]
 - [[Ralph Wiggum Loop]]
 - [[MCP Remote SSE]]
+- [[iOS WebKit React onBlur Issue]]
 
 ## 프로젝트
 
@@ -62,6 +63,7 @@ evidence_level: unsourced
 - [[AI Hero Ralph Wiggum Article]]
 - [[Tistory MCP Remote SSE Article]]
 - [[OpenAI Developer Community Source]]
+- [[hi-hoi iOS WebKit React onBlur Issue Article]]
 
 ## 리포트
 
