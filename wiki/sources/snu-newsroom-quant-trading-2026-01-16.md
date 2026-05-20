@@ -18,6 +18,10 @@ source_type: web_article
 original_path: raw/articles/2026-01-16-snu-quant-trading.md
 source_url: "https://science.snu.ac.kr/newsroom/view/2/11/1269"
 date_added: 2026-05-20
+source_quality: intro
+use_for:
+  - concept
+  - reference
 related_pages:
   - "[[Quant Trading]]"
 ---
@@ -42,9 +46,9 @@ related_pages:
 
 ## 원본 위치
 
-[[raw/articles/2026-01-16-snu-quant-trading.md]]
+raw/articles/2026-01-16-snu-quant-trading.md
 
-## 요약
+## 원문 요약
 
 이 글은 [[Quant Trading]]을 투자 의사결정을 정량적 규칙으로 표현하고 소프트웨어로 실행하는 거래 접근법으로 설명한다. 직관을 명시적인 수치 조건으로 바꾸는 일, 전략 설계에 과거 데이터를 사용하는 일, 그리고 과거 시장 조건에서 전략이 어떻게 작동했을지 평가하는 backtesting의 역할을 강조한다.
 
@@ -60,7 +64,7 @@ related_pages:
 - 자동 주문 실행에서는 latency 같은 기술적 요인이 중요해진다.
 - 글은 quant trading을 확실한 시장 예측이 아니라 불확실성에 대한 체계적 대응으로 설명한다.
 
-## 중요한 개념
+## 위키에 반영할 개념
 
 - [[Quant Trading]]
 - Backtesting
@@ -71,6 +75,18 @@ related_pages:
 - Arbitrage
 - Automated execution
 - High-frequency trading
+
+## 내 프로젝트에 주는 시사점
+
+- [[Quant Trading]]은 사람이 규칙을 설계하고 code가 실행하는 automated workflow 사례로 볼 수 있다.
+- Backtesting과 overfitting은 LLM agent 평가, workflow 검증, 자동화의 위험을 설명하는 비교 개념으로 확장할 수 있다.
+- 이 자료는 입문 수준이므로 개념의 첫 설명에는 유용하지만, 실제 trading system 설계나 투자 판단의 근거로 사용하면 안 된다.
+
+## 검증 필요 주장
+
+- 전략 유형별 설명은 전문 자료나 학술 자료로 보완해야 한다.
+- high-frequency trading에서 latency가 중요하다는 일반론은 맞더라도, 구체적 기술 요구사항은 이 자료만으로 판단할 수 없다.
+- backtesting 결과와 미래 성과의 관계는 별도 risk/validation 자료가 필요하다.
 
 ## 관련 페이지
 

@@ -23,6 +23,10 @@ source_type: web_article
 original_path: raw/articles/2026-03-18-brunch-claude-blue.md
 source_url: "https://brunch.co.kr/@hiclemi/146"
 date_added: 2026-05-20
+source_quality: anecdotal
+use_for:
+  - concept
+  - inspiration
 related_pages:
   - "[[Claude Blue]]"
   - "[[Agentic Workflow]]"
@@ -51,9 +55,9 @@ related_pages:
 
 ## 원본 위치
 
-[[raw/articles/2026-03-18-brunch-claude-blue.md]]
+raw/articles/2026-03-18-brunch-claude-blue.md
 
-## 요약
+## 원문 요약
 
 이 글은 실리콘밸리의 AI-forward 노동자들이 느끼는 불안, 대체감, 긴박감을 설명하기 위해 저자가 만든 표현으로 [[Claude Blue]]를 소개한다. 글은 Meta의 senior AI engineer와 실리콘밸리 founder와의 대화를 바탕으로 하므로, 주장들은 독립적으로 검증된 산업 전반의 사실이라기보다 특정 맥락에서 나온 관찰로 다루는 것이 적절하다.
 
@@ -69,7 +73,7 @@ related_pages:
 - 조직 문화가 차이를 만든다고 본다. 빠르게 움직이는 software culture는 승인 절차가 무거운 조직보다 agentic workflow를 더 빨리 도입할 수 있다.
 - AI-enabled remote work가 가능해져도 관계 형성과 대면 신뢰는 여전히 중요하다고 본다.
 
-## 중요한 개념
+## 위키에 반영할 개념
 
 - [[Claude Blue]]
 - [[Agentic Workflow]]
@@ -81,6 +85,18 @@ related_pages:
 - Agent orchestration
 - AI code review bottleneck
 - Entrepreneurship
+
+## 내 프로젝트에 주는 시사점
+
+- AI-native workflow를 기술 생산성만이 아니라 심리적 부담, 검토 병목, 조직 운영 문제와 함께 다뤄야 한다.
+- [[Agentic Workflow]]와 [[Orchestration]] 페이지에서 human review boundary와 accountability를 핵심 질문으로 유지할 필요가 있다.
+- 개인 LLM Wiki는 agent 사용 경험을 단순 팁이 아니라 장기적 workflow 변화와 연결해 기록하는 공간이 될 수 있다.
+
+## 검증 필요 주장
+
+- AI-generated code volume이 실제로 인간 review capacity를 초과한다는 주장은 추가 사례나 연구로 교차 검증이 필요하다.
+- Silicon Valley 전반의 분위기로 일반화할 수 있는지는 이 글만으로 판단하기 어렵다.
+- 비엔지니어링 직군의 AI-native workflow 압력은 별도 자료를 통해 보완해야 한다.
 
 ## 관련 페이지
 

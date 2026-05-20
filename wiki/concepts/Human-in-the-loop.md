@@ -11,6 +11,7 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Orchestration]]"
   - "[[Claude Blue]]"
+  - "[[Ralph Wiggum Loop]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -31,10 +32,12 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - 모호한 목표와 민감한 tradeoff는 사람이 다뤄야 한다.
 - review artifact는 쉽게 inspect할 수 있어야 한다.
 - [[Brunch Claude Blue Article]]은 AI-generated output이 인간이 현실적으로 검토할 수 있는 양을 초과할 수 있다는 위험을 제기한다.
+- [[AI Hero Ralph Wiggum Article]]은 HITL 모드를 prompt refinement와 risky task에, AFK 모드를 낮은 위험의 반복 작업에 더 적합한 방식으로 구분한다.
 
 ## 관련 자료
 
 - [[Brunch Claude Blue Article]]
+- [[AI Hero Ralph Wiggum Article]]
 
 ## 열린 질문
 

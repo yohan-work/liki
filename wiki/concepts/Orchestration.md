@@ -11,6 +11,7 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Skills]]"
   - "[[Claude Blue]]"
+  - "[[Ralph Wiggum Loop]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -31,10 +32,12 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - specialized skill은 반복적인 setup을 줄일 수 있다.
 - log와 report는 trust 유지에 도움이 된다.
 - [[Brunch Claude Blue Article]]은 orchestration을 즉흥적인 vibe coding보다 구조화된 후속 실천으로 설명하며, detailed spec, reusable skill 또는 tool, explicit review boundary를 포함한다고 본다.
+- [[AI Hero Ralph Wiggum Article]]은 orchestration을 task source, progress state, feedback loop, sandbox, cost control, output target을 조합하는 loop design 문제로 다룬다.
 
 ## 관련 자료
 
 - [[Brunch Claude Blue Article]]
+- [[AI Hero Ralph Wiggum Article]]
 
 ## 열린 질문
 

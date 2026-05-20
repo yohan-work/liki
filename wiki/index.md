@@ -25,6 +25,7 @@ evidence_level: unsourced
 - [[Skills]]
 - [[Quant Trading]]
 - [[Claude Blue]]
+- [[Ralph Wiggum Loop]]
 
 ## 프로젝트
 
@@ -56,6 +57,7 @@ evidence_level: unsourced
 - [[Brunch Claude Blue Article]]
 - [[GitHub Public APIs 4Kr Repository]]
 - [[Naver Blog Quant Investment Process Article]]
+- [[AI Hero Ralph Wiggum Article]]
 
 ## 리포트
 
