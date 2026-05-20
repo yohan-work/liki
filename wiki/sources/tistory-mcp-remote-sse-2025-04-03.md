@@ -1,9 +1,20 @@
 ---
+title: Tistory MCP Remote SSE Article
 source_id: tistory-mcp-remote-sse-2025-04-03
 type: source
 status: ingested
 created: 2026-05-20
 updated: 2026-05-20
+tags:
+  - source
+  - mcp
+  - remote-sse
+  - agent-tools
+related:
+  - "[[MCP Remote SSE]]"
+  - "[[Agentic Workflow]]"
+  - "[[Orchestration]]"
+  - "[[Claude Code]]"
 domain:
   - ai
   - software
