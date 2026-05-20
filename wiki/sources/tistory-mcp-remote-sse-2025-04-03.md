@@ -5,18 +5,18 @@ status: ingested
 created: 2026-05-20
 updated: 2026-05-20
 domain:
-  - llm
-  - agent-tools
-  - mcp
-content_type: technical-guide
+  - ai
+  - software
+content_type: article
 knowledge_role:
-  - implementation-reference
-  - workflow-pattern
-source_quality: practitioner-blog
+  - source
+  - concept
+  - reference
+source_quality: practitioner
 use_for:
-  - mcp-setup-notes
-  - claude-desktop-integration
-  - remote-tool-server-pattern
+  - concept
+  - reference
+  - decision
 related_pages:
   - "[[MCP Remote SSE]]"
   - "[[Agentic Workflow]]"
@@ -45,11 +45,11 @@ date_added: 2026-05-20
 
 ## Domain / 분류
 
-- domain: llm, agent-tools, mcp
-- content_type: technical-guide
-- knowledge_role: implementation-reference, workflow-pattern
-- source_quality: practitioner-blog
-- use_for: mcp-setup-notes, claude-desktop-integration, remote-tool-server-pattern
+- domain: ai, software
+- content_type: article
+- knowledge_role: source, concept, reference
+- source_quality: practitioner
+- use_for: concept, reference, decision
 
 ## 추가일
 
@@ -57,7 +57,7 @@ date_added: 2026-05-20
 
 ## 원본 위치
 
-[[raw/external/2025-04-03-tistory-mcp-remote-sse.md]]
+raw/external/2025-04-03-tistory-mcp-remote-sse.md
 
 ## 원문 요약
 

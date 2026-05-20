@@ -18,6 +18,13 @@ source_type: web_article
 original_path: raw/articles/2026-01-16-snu-quant-trading.md
 source_url: "https://science.snu.ac.kr/newsroom/view/2/11/1269"
 date_added: 2026-05-20
+domain:
+  - finance
+content_type: article
+knowledge_role:
+  - source
+  - concept
+  - reference
 source_quality: intro
 use_for:
   - concept
@@ -39,6 +46,14 @@ related_pages:
 ## 자료 유형
 
 웹 글.
+
+## Domain / 분류
+
+- domain: finance
+- content_type: article
+- knowledge_role: source, concept, reference
+- source_quality: intro
+- use_for: concept, reference
 
 ## 추가일
 

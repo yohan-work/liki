@@ -19,6 +19,12 @@ source_type: web_article
 original_path: raw/external/2024-11-10-naver-blog-quant-investment-process.md
 source_url: "https://blog.naver.com/aza425/223654937451"
 date_added: 2026-05-20
+domain:
+  - finance
+content_type: article
+knowledge_role:
+  - source
+  - concept
 source_quality: practitioner
 use_for:
   - concept
@@ -41,6 +47,14 @@ related_pages:
 ## 자료 유형
 
 웹 글 / 개인 학습 노트.
+
+## Domain / 분류
+
+- domain: finance
+- content_type: article
+- knowledge_role: source, concept
+- source_quality: practitioner
+- use_for: concept, inspiration
 
 ## 추가일
 

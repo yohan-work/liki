@@ -21,6 +21,14 @@ source_type: github_repository
 original_path: raw/external/2026-05-20-github-public-apis-4kr.md
 source_url: "https://github.com/yybmion/public-apis-4Kr"
 date_added: 2026-05-20
+domain:
+  - software
+  - business
+content_type: repo
+knowledge_role:
+  - source
+  - tool
+  - reference
 source_quality: practitioner
 use_for:
   - reference
@@ -44,6 +52,14 @@ related_pages:
 ## 자료 유형
 
 GitHub repository / developer resource catalog.
+
+## Domain / 분류
+
+- domain: software, business
+- content_type: repo
+- knowledge_role: source, tool, reference
+- source_quality: practitioner
+- use_for: reference, inspiration
 
 ## 추가일
 

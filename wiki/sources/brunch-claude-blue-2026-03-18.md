@@ -23,6 +23,14 @@ source_type: web_article
 original_path: raw/articles/2026-03-18-brunch-claude-blue.md
 source_url: "https://brunch.co.kr/@hiclemi/146"
 date_added: 2026-05-20
+domain:
+  - ai
+  - software
+  - personal-ops
+content_type: article
+knowledge_role:
+  - source
+  - concept
 source_quality: anecdotal
 use_for:
   - concept
@@ -48,6 +56,14 @@ related_pages:
 ## 자료 유형
 
 대화 내용을 바탕으로 작성된 웹 글 / 개인 에세이.
+
+## Domain / 분류
+
+- domain: ai, software, personal-ops
+- content_type: article
+- knowledge_role: source, concept
+- source_quality: anecdotal
+- use_for: concept, inspiration
 
 ## 추가일
 
