@@ -4,6 +4,8 @@ type:
 status:
 original_path:
 date_added:
+source_quality:
+use_for: []
 related_pages: []
 ---
 
@@ -17,11 +19,15 @@ related_pages: []
 
 ## 원본 위치
 
-## 요약
+## 원문 요약
 
 ## 핵심 주장
 
-## 중요한 개념
+## 위키에 반영할 개념
+
+## 내 프로젝트에 주는 시사점
+
+## 검증 필요 주장
 
 ## 관련 페이지
 

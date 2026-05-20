@@ -43,19 +43,54 @@ LLM Wiki를 참고해서 이 질문에 한국어로 답해줘. 반복 참조 가
 wiki lint를 실행해줘. 고립 페이지, 중복 개념, 누락 링크, 오래된 주장, 모순, 새 페이지 후보를 점검하고 wiki/reports/lint-YYYY-MM-DD.md에 한국어로 저장해줘. 기존 리포트는 덮어쓰지 마라.
 ```
 
+## 운영 흐름
+
+1. URL이나 원문 파일을 Codex에게 전달하고 ingest를 요청합니다.
+2. Codex가 `raw/`에 원문을 보존하고 `wiki/sources/`, 관련 concept/project/tool page, `wiki/index.md`, `wiki/log.md`를 갱신합니다.
+3. Obsidian의 `LLM Wiki/wiki/index.md`에서 새 링크와 요약을 확인합니다.
+4. 터미널에서 `git diff`로 변경 내용을 검토합니다.
+5. 문제가 없으면 commit하고, 필요하면 GitHub remote로 push합니다.
+
+```bash
+git status
+git diff
+git add .
+git commit -m "Ingest source into LLM Wiki"
+git push
+```
+
+## Query 저장 기준
+
+질문 답변은 반복 참조 가치가 있을 때만 `wiki/questions/`에 저장합니다. 프로젝트 의사결정, 개념 정리, 글쓰기, 발표 준비에 다시 쓸 수 있는 답변이면 저장 가치가 있습니다.
+
+```text
+LLM Wiki를 참고해서 "RAG와 Agentic Workflow의 차이"를 한국어로 답해줘.
+반복 참조 가치가 있으면 wiki/questions/에 저장하고, 저장 이유와 관련 페이지를 명시해줘.
+```
+
+## 정기 Lint 루틴
+
+주기적으로 위키 상태를 점검합니다.
+
+```text
+LLM Wiki를 lint해줘.
+고립 페이지, 중복 개념, 누락 링크, 오래된 주장, 모순, source 없는 주장, index 누락, frontmatter 누락, comparison 후보를 점검해줘.
+wiki/reports/lint-YYYY-MM-DD.md에 한국어로 저장하되 기존 파일이 있으면 중단해줘.
+```
+
 ## Obsidian 연동
 
 프로젝트 위치:
 
 ```text
-/.../liki
+/Users/yohan.choi/Documents/projects/liki
 ```
 
 Obsidian Vault 내부 symlink:
 
 ```text
-/.../LLM Wiki
--> /.../liki
+/Users/yohan.choi/Documents/Obsidian Vault/LLM Wiki
+-> /Users/yohan.choi/Documents/projects/liki
 ```
 
 symlink를 만들기 전에는 Vault 내부 대상 경로가 파일, 폴더, symlink 중 어떤 형태로도 존재하지 않는지 확인해야 합니다.

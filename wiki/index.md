@@ -44,7 +44,7 @@ evidence_level: unsourced
 
 ## 비교
 
-아직 비교 페이지가 없습니다.
+- [[RAG vs Agentic Workflow]]
 
 ## 질문
 
