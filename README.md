@@ -11,6 +11,12 @@ LLM Wiki is a personal Markdown knowledge base for long-term thinking about AI-n
 - `raw/` keeps original material and should not be edited.
 - `wiki/` contains summarized, linked, and maintained knowledge.
 
+## Language Policy
+
+- `raw/` should preserve source material in its original language whenever possible.
+- `wiki/` content should be written in Korean by default.
+- Technical terms, product names, and important source phrases may include English in parentheses when useful.
+
 ## Structure
 
 - `raw/`: immutable source material.

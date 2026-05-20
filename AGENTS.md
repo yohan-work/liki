@@ -18,6 +18,9 @@ Markdown files are the source of truth for the wiki layer. Git tracks history. O
 
 ## Wiki Style
 
+- Write maintained wiki content in Korean by default, including summaries, concept pages, query answers, reports, and log entries.
+- Preserve raw source material in its original language whenever possible.
+- Technical terms, product names, and important source phrases may include English in parentheses when that improves clarity.
 - Use Obsidian-style links: `[[Concept Name]]`.
 - Every wiki page must include YAML frontmatter with:
   - `title`
