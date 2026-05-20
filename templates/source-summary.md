@@ -4,6 +4,9 @@ type:
 status:
 original_path:
 date_added:
+domain: []
+content_type:
+knowledge_role: []
 source_quality:
 use_for: []
 related_pages: []
@@ -14,6 +17,14 @@ related_pages: []
 ## 출처
 
 ## 자료 유형
+
+## Domain / 분류
+
+- domain:
+- content_type:
+- knowledge_role:
+- source_quality:
+- use_for:
 
 ## 추가일
 

@@ -1,55 +1,92 @@
 # LLM Wiki
 
-LLM Wiki is a personal Markdown knowledge base for long-term notes on AI-native work, agentic workflows, Codex, Claude Code, RAG, LLM wiki practices, AX workflow, and related personal projects.
+LLM Wiki는 다양한 주제의 자료를 장기적으로 축적하고 연결하기 위한 개인 Markdown 지식 베이스입니다. AI, 금융, 소프트웨어, 연구, 글쓰기, 컨퍼런스, 개인 프로젝트 등 서로 다른 domain의 자료를 같은 운영 원칙으로 ingest하고 관리합니다.
 
-## Roles
+## 역할
 
-- Obsidian is the interface for reading and navigation.
-- Codex is the engine for organizing and maintaining the wiki.
-- Markdown files are the actual data.
-- Git keeps change history reviewable.
-- `raw/` preserves source material and should not be modified.
-- `wiki/` is the curated knowledge layer for summaries, links, and updates.
+- Obsidian은 읽기와 탐색을 위한 인터페이스입니다.
+- Codex는 위키를 정리하고 유지보수하는 엔진입니다.
+- Markdown 파일이 실제 데이터입니다.
+- Git은 변경 이력을 검토 가능하게 남깁니다.
+- `raw/`는 원문 자료를 보존하며 수정하지 않습니다.
+- `wiki/`는 요약, 링크, 갱신을 담는 curated knowledge layer입니다.
 
-## Language Policy
+## 언어 정책
 
-- `raw/` preserves source material in its original language whenever possible.
-- `wiki/` body text, section headings, summaries, logs, and reports are written in Korean by default.
-- Technical terms, product names, and important original phrases may include English in parentheses when useful.
-- Even when working with English source material, explanations and synthesis are written in Korean.
+- `raw/`는 가능한 한 원문 언어 그대로 보존합니다.
+- `wiki/` 본문, 섹션 제목, 요약, 로그, 리포트는 기본적으로 한국어로 작성합니다.
+- 기술 용어, 제품명, 중요한 원문 표현은 필요할 때 영어를 괄호로 병기할 수 있습니다.
+- 영어 원문을 다루더라도 설명과 종합은 한국어로 작성합니다.
 
-## Structure
+## 구조
 
-- `raw/`: Unmodified source material.
-- `inbox/`: Temporary collection area before ingest.
-- `wiki/`: Maintained wiki pages.
-- `daily/`: Daily notes or working notes.
-- `templates/`: Reusable page templates.
-- `scripts/`: Scripts for future automation.
+- `raw/`: 수정하지 않는 원문 자료.
+- `inbox/`: ingest 전 임시 수집함.
+- `wiki/`: 유지보수되는 위키 페이지.
+- `daily/`: 일일 메모 또는 작업 메모.
+- `templates/`: 재사용 가능한 페이지 템플릿.
+- `scripts/`: 향후 자동화용 스크립트.
 
-## Example Commands
+## 범용 Ingest Taxonomy
 
-The examples below are prompts for Codex, not finished scripts.
+새 자료를 ingest할 때는 주제와 형식에 상관없이 먼저 아래 metadata를 판단합니다.
+
+```yaml
+domain:
+  - ai
+  - finance
+  - software
+  - personal-ops
+  - research
+  - business
+  - writing
+  - conference
+content_type: article | paper | transcript | repo | note | image | dataset | talk | book | documentation
+knowledge_role:
+  - source
+  - concept
+  - project
+  - tool
+  - comparison
+  - question
+  - decision
+  - reference
+source_quality: intro | practitioner | academic | official | anecdotal | personal
+use_for:
+  - concept
+  - reference
+  - inspiration
+  - decision
+  - writing
+  - presentation
+```
+
+이 taxonomy는 특정 주제 전용이 아닙니다. 자료가 어떤 domain이든 Codex가 먼저 분류하고, 그 결과에 따라 `wiki/sources/`, `wiki/concepts/`, `wiki/projects/`, `wiki/tools/`, `wiki/comparisons/`, `wiki/questions/` 중 어디에 반영할지 결정합니다.
+
+## 예시 명령
+
+아래는 아직 완성된 스크립트가 아니라 Codex에게 줄 수 있는 프롬프트 예시입니다.
 
 ```text
-Ingest raw/articles/example.md into LLM Wiki. Create a source summary in Korean, then update the related concept pages, wiki/index.md, and wiki/log.md.
+raw/articles/example.md를 LLM Wiki에 ingest해줘. 먼저 domain, content_type, knowledge_role, source_quality, use_for를 판단하고, source summary를 한국어로 만든 뒤 관련 페이지와 wiki/index.md, wiki/log.md를 업데이트해줘.
 ```
 
 ```text
-Use LLM Wiki to answer this question in Korean. Save it under wiki/questions/ only if it has repeat reference value: How should RAG and agentic retrieval be compared?
+LLM Wiki를 참고해서 이 질문에 한국어로 답해줘. 반복 참조 가치가 있을 때만 wiki/questions/에 저장해줘: RAG와 agentic retrieval은 어떻게 비교해야 하나?
 ```
 
 ```text
-Run a wiki lint. Check for orphan pages, duplicate concepts, missing links, stale claims, contradictions, and new page candidates. Save the report in Korean at wiki/reports/lint-YYYY-MM-DD.md. Do not overwrite an existing report.
+wiki lint를 실행해줘. 고립 페이지, 중복 개념, 누락 링크, 오래된 주장, 모순, 새 페이지 후보를 점검하고 wiki/reports/lint-YYYY-MM-DD.md에 한국어로 저장해줘. 기존 리포트는 덮어쓰지 마라.
 ```
 
-## Operating Flow
+## 운영 흐름
 
-1. Give Codex a URL or source file and request an ingest.
-2. Codex preserves the source in `raw/` and updates `wiki/sources/`, related concept/project/tool pages, `wiki/index.md`, and `wiki/log.md`.
-3. Review new links and summaries in Obsidian at `LLM Wiki/wiki/index.md`.
-4. Review the changes in the terminal with `git diff`.
-5. If everything looks good, commit the changes and push to the GitHub remote when needed.
+1. URL이나 원문 파일을 Codex에게 전달하고 ingest를 요청합니다.
+2. Codex가 taxonomy metadata를 판단합니다.
+3. Codex가 `raw/`에 원문을 보존하고 `wiki/sources/`, 관련 concept/project/tool page, `wiki/index.md`, `wiki/log.md`를 갱신합니다.
+4. Obsidian의 `LLM Wiki/wiki/index.md`에서 새 링크와 요약을 확인합니다.
+5. 터미널에서 `git diff`로 변경 내용을 검토합니다.
+6. 문제가 없으면 commit하고, 필요하면 GitHub remote로 push합니다.
 
 ```bash
 git status
@@ -59,55 +96,55 @@ git commit -m "Ingest source into LLM Wiki"
 git push
 ```
 
-## Query Storage Criteria
+## Query 저장 기준
 
-Question answers are saved under `wiki/questions/` only when they have repeat reference value. An answer is worth saving if it can be reused for project decisions, concept clarification, writing, or presentation preparation.
-
-```text
-Use LLM Wiki to answer "What is the difference between RAG and Agentic Workflow?" in Korean.
-If it has repeat reference value, save it under wiki/questions/ and include the reason for saving plus related pages.
-```
-
-The initial example is in `wiki/questions/LLM Wiki 운영 흐름.md`. This page explains the basic operating flow from URL ingest to Obsidian review, Git review, commit, and push.
-
-## Writing Comparison Pages
-
-Comparison pages are not about choosing one concept over another. They are decision aids for judging when to use what.
+질문 답변은 반복 참조 가치가 있을 때만 `wiki/questions/`에 저장합니다. 프로젝트 의사결정, 개념 정리, 글쓰기, 발표 준비에 다시 쓸 수 있는 답변이면 저장 가치가 있습니다.
 
 ```text
-Create a page comparing RAG and Agentic Workflow.
-Follow the templates/comparison-page.md structure and summarize application conditions, how they work together, failure patterns, and decision criteria in Korean.
+LLM Wiki를 참고해서 "RAG와 Agentic Workflow의 차이"를 한국어로 답해줘.
+반복 참조 가치가 있으면 wiki/questions/에 저장하고, 저장 이유와 관련 페이지를 명시해줘.
 ```
 
-## Regular Lint Routine
+초기 예시는 `wiki/questions/LLM Wiki 운영 흐름.md`에 있습니다. 이 페이지는 URL ingest 이후 Obsidian 확인, Git 검토, commit/push로 이어지는 기본 운영 흐름을 설명합니다.
 
-Check the wiki state periodically.
+## 비교 페이지 작성
+
+비교 페이지는 두 개념 중 하나를 고르는 글이 아니라, 언제 무엇을 써야 하는지 판단하기 위한 문서입니다.
 
 ```text
-Lint LLM Wiki.
-Check for orphan pages, duplicate concepts, missing links, stale claims, contradictions, unsourced claims, index omissions, missing frontmatter, and comparison candidates.
-Save the report in Korean at wiki/reports/lint-YYYY-MM-DD.md, but stop if the file already exists.
+RAG와 Agentic Workflow를 비교하는 페이지를 만들어줘.
+templates/comparison-page.md 구조를 따르고, 적용 조건, 함께 쓰는 방식, 실패 패턴, 판단 기준을 한국어로 정리해줘.
 ```
 
-The recommended cadence is once per week or right after several large ingest tasks. Structurally clear issues from lint results, such as index omissions or missing frontmatter, can be fixed immediately, while source interpretation changes or concept merges should be handled after separate review.
+## 정기 Lint 루틴
 
-## Obsidian Integration
+주기적으로 위키 상태를 점검합니다.
 
-Project location:
+```text
+LLM Wiki를 lint해줘.
+고립 페이지, 중복 개념, 누락 링크, 오래된 주장, 모순, source 없는 주장, index 누락, frontmatter 누락, comparison 후보를 점검해줘.
+wiki/reports/lint-YYYY-MM-DD.md에 한국어로 저장하되 기존 파일이 있으면 중단해줘.
+```
+
+권장 주기는 주 1회 또는 큰 ingest 작업을 여러 개 처리한 직후입니다. index 누락이나 frontmatter 누락처럼 구조적으로 명확한 문제는 바로 수정할 수 있지만, source 해석 변경이나 개념 병합은 별도 검토 후 처리하는 것이 좋습니다.
+
+## Obsidian 연동
+
+프로젝트 위치:
 
 ```text
 /Users/yohan.choi/Documents/projects/liki
 ```
 
-Symlink inside the Obsidian Vault:
+Obsidian Vault 내부 symlink:
 
 ```text
 /Users/yohan.choi/Documents/Obsidian Vault/LLM Wiki
 -> /Users/yohan.choi/Documents/projects/liki
 ```
 
-Before creating the symlink, confirm that the target path inside the Vault does not already exist as a file, folder, or symlink.
+symlink를 만들기 전에는 Vault 내부 대상 경로가 파일, 폴더, symlink 중 어떤 형태로도 존재하지 않는지 확인해야 합니다.
 
-## Current Status
+## 현재 상태
 
-This repository starts as a seed wiki. Initial pages are intentionally marked as unsourced until they are verified against raw material.
+이 저장소는 seed wiki로 시작합니다. 초기 페이지는 raw 자료로 검증되기 전까지 의도적으로 unsourced 상태로 표시합니다.

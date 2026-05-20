@@ -44,13 +44,26 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 
 - 새 source material은 먼저 `raw/`에 둔다.
 - ingest한 source마다 `wiki/sources/`에 source summary를 만든다.
-- source summary에는 `source_id`, `type`, `status`, `original_path`, `date_added`, `related_pages`를 포함한다.
+- source summary에는 `source_id`, `type`, `status`, `original_path`, `date_added`, `domain`, `content_type`, `knowledge_role`, `source_quality`, `use_for`, `related_pages`를 포함한다.
 - source summary에는 가능하면 `source_quality`와 `use_for`를 포함해 자료의 성격과 사용 목적을 표시한다.
 - `source_quality`는 `intro`, `practitioner`, `academic`, `official`, `anecdotal` 중 가장 가까운 값을 사용한다.
-- `use_for`는 `concept`, `reference`, `inspiration`, `decision` 중 해당되는 값을 배열로 기록한다.
+- `use_for`는 `concept`, `reference`, `inspiration`, `decision`, `writing`, `presentation` 중 해당되는 값을 배열로 기록한다.
+- `domain`은 자료의 주제 영역을 배열로 기록한다. 예: `ai`, `finance`, `software`, `personal-ops`, `research`, `business`, `writing`, `conference`, `culture`, `policy`.
+- `content_type`은 자료 형식을 기록한다. 예: `article`, `paper`, `transcript`, `repo`, `note`, `image`, `dataset`, `talk`, `book`, `documentation`.
+- `knowledge_role`은 위키 안에서 자료가 맡는 역할을 배열로 기록한다. 예: `source`, `concept`, `project`, `tool`, `comparison`, `question`, `decision`, `reference`.
+- ingest할 때는 먼저 domain, content_type, knowledge_role, source_quality, use_for를 판단한 뒤 어떤 wiki page를 만들거나 갱신할지 결정한다.
 - 필요하면 관련 concept, project, tool, people, comparison, question page를 만들거나 갱신한다.
 - wiki page를 추가하거나 의미 있게 변경한 뒤에는 `wiki/index.md`를 업데이트한다.
 - 작업 내용은 `wiki/log.md`에 기록한다.
+
+## Routing 규칙
+
+- 자료가 새 개념을 설명하면 `wiki/concepts/`에 연결하거나 새 concept page 후보로 기록한다.
+- 자료가 특정 제품, 도구, repository, API, software를 다루면 `wiki/tools/`에 연결하거나 새 tool page 후보로 기록한다.
+- 자료가 사용자의 장기 프로젝트, PoC, 기획, 운영 체계와 직접 관련되면 `wiki/projects/`에 연결한다.
+- 두 개념의 차이, 선택 기준, 적용 조건을 설명하는 데 유용하면 `wiki/comparisons/` 후보로 기록한다.
+- 반복 참조할 만한 질문 답변을 만든 경우에만 `wiki/questions/`에 저장한다.
+- domain이 낯설거나 애매하면 무리해서 새 taxonomy 값을 만들기보다 가장 가까운 값과 `tags`를 함께 사용하고, 열린 질문에 분류 불확실성을 남긴다.
 
 ## Query 규칙
 
