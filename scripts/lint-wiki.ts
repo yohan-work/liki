@@ -189,6 +189,8 @@ function main() {
     const content = fs.readFileSync(file, "utf8");
     const frontmatter = parseFrontmatter(content);
     const title = (frontmatter && frontmatter.values.get("title")) || pageTitleFromFile(file);
+    const type = frontmatter && frontmatter.values.get("type");
+    if (type === "index-draft") continue;
     if (!indexContent.includes(`[[${title}]]`)) {
       addIssue(indexOmissions, `${relativePath}: wiki/index.md 본문에 [[${title}]] 없음`);
     }
@@ -196,7 +198,7 @@ function main() {
 
   const reportPath = todayReportPath();
   if (fs.existsSync(reportPath)) {
-    addIssue(reportIssues, `${rel(reportPath)}: 오늘 날짜 lint report가 이미 존재함`);
+    addIssue(reportIssues, `${rel(reportPath)}: 오늘 날짜 report 생성 시 충돌 가능`);
   }
 
   errors.push(...frontmatterIssues);
@@ -215,7 +217,7 @@ function main() {
   printSection("깨진 링크 / 미생성 페이지", brokenLinks);
   printSection("Index 누락", indexOmissions);
   printSection("영어 section heading", englishHeadings);
-  printSection("Lint report 파일명 충돌", reportIssues);
+  printSection("Report 생성 시 충돌 가능", reportIssues);
   console.log("\n## 요약");
   console.log(`- errors: ${errors.length}`);
   console.log(`- warnings: ${warnings.length}`);

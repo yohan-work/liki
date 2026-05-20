@@ -4,6 +4,11 @@ type:
 status:
 original_path:
 date_added:
+captured_at:
+accessed_at:
+canonical_url:
+content_hash:
+source_version:
 domain: []
 content_type:
 knowledge_role: []
@@ -29,6 +34,14 @@ related_pages: []
 ## 추가일
 
 ## 원본 위치
+
+## Provenance
+
+- captured_at:
+- accessed_at:
+- canonical_url:
+- content_hash:
+- source_version:
 
 ## 원문 요약
 

@@ -1,0 +1,41 @@
+---
+title:
+type: ingest-triage
+status: draft
+created:
+updated:
+tags:
+  - ingest
+  - triage
+related: []
+sensitivity: private
+evidence_level: unsourced
+---
+
+# Ingest Triage
+
+## 대상 자료
+
+## 저장 가치
+
+## Domain / 분류
+
+- domain:
+- content_type:
+- knowledge_role:
+- source_quality:
+- use_for:
+
+## 생성할 페이지 후보
+
+## 갱신할 페이지 후보
+
+## 모순 가능성
+
+## 확인 필요 주장
+
+## 사용자 승인 필요 변경
+
+## 권장 작업
+
+## 보류 사유

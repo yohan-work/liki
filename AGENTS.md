@@ -11,6 +11,8 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - 기존 Obsidian Vault 안의 파일은 삭제, 이동, 대량 수정하지 않는다.
 - `raw/` 아래 파일은 수정하지 않는다. raw material은 수정하지 않는 source of truth다.
 - `inbox/`는 임시 수집함으로 다룬다. 의도적으로 ingest하기 전까지 inbox 자료를 `wiki/`에 반영하지 않는다.
+- `inbox/clippings/`는 웹 클리핑 임시 저장소, `inbox/ideas/`는 개인 아이디어 임시 저장소, `inbox/to-ingest.md`는 ingest 대기열로 사용한다.
+- inbox 자료는 triage 전까지 wiki page, index, log에 반영하지 않는다.
 - 명확한 작업과 근거 context가 있을 때만 `wiki/`를 관리하고 업데이트한다.
 - wiki 유지보수 작업 전에는 `wiki/index.md`와 `wiki/log.md`를 먼저 읽는다.
 - 기존 wiki page, report, template이 있는지와 내용이 무엇인지 확인하기 전에는 덮어쓰지 않는다.
@@ -43,8 +45,12 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 ## Ingest 규칙
 
 - 새 source material은 먼저 `raw/`에 둔다.
+- 자료를 바로 wiki에 반영하기 전에 필요하면 `templates/ingest-triage.md` 구조로 triage를 먼저 수행한다.
+- triage는 쓰기 전 계획이다. 저장 가치, taxonomy, 생성/갱신할 페이지, 모순 가능성, 사용자 승인 필요 변경을 먼저 드러낸다.
 - ingest한 source마다 `wiki/sources/`에 source summary를 만든다.
 - source summary에는 `source_id`, `type`, `status`, `original_path`, `date_added`, `domain`, `content_type`, `knowledge_role`, `source_quality`, `use_for`, `related_pages`를 포함한다.
+- 웹 자료 source summary에는 가능하면 `captured_at`, `accessed_at`, `canonical_url`, `content_hash`, `source_version`을 기록한다.
+- `content_hash`는 raw에 보존한 원문 snapshot 기준으로 계산하며, 기존 source에 hash가 없다는 이유만으로 raw를 수정하지 않는다.
 - source summary에는 가능하면 `source_quality`와 `use_for`를 포함해 자료의 성격과 사용 목적을 표시한다.
 - `source_quality`는 `intro`, `practitioner`, `academic`, `official`, `anecdotal` 중 가장 가까운 값을 사용한다.
 - `use_for`는 `concept`, `reference`, `inspiration`, `decision`, `writing`, `presentation` 중 해당되는 값을 배열로 기록한다.
@@ -55,6 +61,13 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - 필요하면 관련 concept, project, tool, people, comparison, question page를 만들거나 갱신한다.
 - wiki page를 추가하거나 의미 있게 변경한 뒤에는 `wiki/index.md`를 업데이트한다.
 - 작업 내용은 `wiki/log.md`에 기록한다.
+
+## Log 규칙
+
+- 앞으로 새 log entry는 가능한 한 `## [YYYY-MM-DD] kind | Title` 형식을 사용한다.
+- `kind`는 `ingest`, `query`, `lint`, `maintenance`, `automation`, `decision` 중 가장 가까운 값을 사용한다.
+- 기존 `wiki/log.md`의 과거 항목은 historical record로 유지하고 대량 재작성하지 않는다.
+- 하나의 entry에는 작업 요약, 변경한 주요 wiki 영역, 후속 작업을 짧게 기록한다.
 
 ## Routing 규칙
 

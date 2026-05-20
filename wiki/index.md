@@ -41,6 +41,7 @@ evidence_level: unsourced
 - [[Obsidian]]
 - [[Public APIs 4Kr]]
 - [[OpenAI Developer Community]]
+- [[Hermes 4.3 36B]]
 
 ## 인물
 
@@ -64,6 +65,7 @@ evidence_level: unsourced
 - [[Tistory MCP Remote SSE Article]]
 - [[OpenAI Developer Community Source]]
 - [[hi-hoi iOS WebKit React onBlur Issue Article]]
+- [[Hugging Face Hermes 4.3 36B Model Card]]
 
 ## 리포트
 
