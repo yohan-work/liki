@@ -59,4 +59,4 @@ evidence_level: unsourced
 
 ## 리포트
 
-아직 lint 리포트가 없습니다.
+- [[lint-2026-05-20]]

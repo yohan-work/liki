@@ -89,6 +89,8 @@ LLM Wiki를 lint해줘.
 wiki/reports/lint-YYYY-MM-DD.md에 한국어로 저장하되 기존 파일이 있으면 중단해줘.
 ```
 
+권장 주기는 주 1회 또는 큰 ingest 작업을 여러 개 처리한 직후입니다. lint 결과에서 index 누락이나 frontmatter 누락처럼 구조적으로 명확한 문제는 바로 수정할 수 있지만, source 해석 변경이나 개념 병합은 별도 검토 후 처리하는 것이 좋습니다.
+
 ## Obsidian 연동
 
 프로젝트 위치:

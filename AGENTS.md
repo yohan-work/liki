@@ -73,4 +73,7 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - 기존 lint report를 덮어쓰지 않는다.
 - orphan page, duplicate concept, stale claim, missing link, contradiction, new page candidate를 점검한다.
 - source 없는 주장, index 누락, frontmatter 누락, comparison 후보도 함께 점검한다.
+- lint 중 직접 고쳐도 되는 항목은 index 누락, 명백한 오타, 템플릿 섹션명 불일치, frontmatter 누락처럼 구조적으로 명확한 문제로 제한한다.
+- source 해석, 개념 병합, 오래된 주장 삭제, contradiction 처리, 민감도 변경은 report에 권장 작업으로 남기고 별도 지시 없이 직접 수정하지 않는다.
+- lint report에는 고칠 항목과 보고만 할 항목을 구분한다.
 - 광범위한 rewrite보다 작고 추적 가능한 maintenance change를 선호한다.
