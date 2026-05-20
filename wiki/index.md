@@ -39,6 +39,7 @@ evidence_level: unsourced
 - [[Claude Code]]
 - [[Obsidian]]
 - [[Public APIs 4Kr]]
+- [[OpenAI Developer Community]]
 
 ## 인물
 
@@ -60,6 +61,7 @@ evidence_level: unsourced
 - [[Naver Blog Quant Investment Process Article]]
 - [[AI Hero Ralph Wiggum Article]]
 - [[Tistory MCP Remote SSE Article]]
+- [[OpenAI Developer Community Source]]
 
 ## 리포트
 
