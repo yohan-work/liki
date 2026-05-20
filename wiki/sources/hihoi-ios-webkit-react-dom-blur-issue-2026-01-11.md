@@ -1,23 +1,30 @@
 ---
+title: hi-hoi iOS WebKit React onBlur Issue Article
 source_id: hihoi-ios-webkit-react-dom-blur-issue-2026-01-11
 type: source
 status: ingested
 created: 2026-05-20
 updated: 2026-05-20
-domain:
+tags:
+  - source
   - frontend
   - react
+  - ios-safari
   - mobile-web
-content_type: technical-debugging-note
+related:
+  - "[[iOS WebKit React onBlur Issue]]"
+domain:
+  - software
+content_type: article
 knowledge_role:
-  - bug-analysis
-  - implementation-reference
-  - troubleshooting-pattern
-source_quality: practitioner-technical-post
+  - source
+  - concept
+  - reference
+source_quality: practitioner
 use_for:
-  - ios-safari-debugging
-  - react-event-system-reference
-  - mobile-web-edge-case
+  - concept
+  - reference
+  - decision
 related_pages:
   - "[[iOS WebKit React onBlur Issue]]"
 sensitivity: private
@@ -43,11 +50,11 @@ date_added: 2026-05-20
 
 ## Domain / 분류
 
-- domain: frontend, react, mobile-web
-- content_type: technical-debugging-note
-- knowledge_role: bug-analysis, implementation-reference, troubleshooting-pattern
-- source_quality: practitioner-technical-post
-- use_for: ios-safari-debugging, react-event-system-reference, mobile-web-edge-case
+- domain: software
+- content_type: article
+- knowledge_role: source, concept, reference
+- source_quality: practitioner
+- use_for: concept, reference, decision
 
 ## 추가일
 
@@ -55,7 +62,7 @@ date_added: 2026-05-20
 
 ## 원본 위치
 
-[[raw/external/2026-01-11-hihoi-ios-webkit-react-dom-blur-issue.md]]
+raw/external/2026-01-11-hihoi-ios-webkit-react-dom-blur-issue.md
 
 ## 원문 요약
 

@@ -1,24 +1,31 @@
 ---
+title: OpenAI Developer Community Source
 source_id: openai-developer-community-2026-05-20
 type: source
 status: ingested
 created: 2026-05-20
 updated: 2026-05-20
-domain:
-  - llm
+tags:
+  - source
   - openai
   - developer-community
-content_type: community-portal
+  - llm
+related:
+  - "[[OpenAI Developer Community]]"
+  - "[[Codex]]"
+  - "[[Agentic Workflow]]"
+domain:
+  - ai
+  - software
+content_type: documentation
 knowledge_role:
-  - troubleshooting-source
-  - ecosystem-signal
-  - announcement-pointer
-source_quality: official-community-dynamic
+  - source
+  - reference
 use_for:
-  - openai-api-troubleshooting
-  - codex-issue-discovery
-  - product-change-signal
-  - developer-practice-observation
+  - reference
+  - decision
+  - inspiration
+source_quality: official
 related_pages:
   - "[[OpenAI Developer Community]]"
   - "[[Codex]]"
@@ -46,11 +53,11 @@ date_added: 2026-05-20
 
 ## Domain / 분류
 
-- domain: llm, openai, developer-community
-- content_type: community-portal
-- knowledge_role: troubleshooting-source, ecosystem-signal, announcement-pointer
-- source_quality: official-community-dynamic
-- use_for: openai-api-troubleshooting, codex-issue-discovery, product-change-signal, developer-practice-observation
+- domain: ai, software
+- content_type: documentation
+- knowledge_role: source, reference
+- source_quality: official
+- use_for: reference, decision, inspiration
 
 ## 추가일
 
@@ -58,7 +65,7 @@ date_added: 2026-05-20
 
 ## 원본 위치
 
-[[raw/external/2026-05-20-openai-developer-community.md]]
+raw/external/2026-05-20-openai-developer-community.md
 
 ## 원문 요약
 
