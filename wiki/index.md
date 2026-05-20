@@ -13,9 +13,9 @@ sensitivity: private
 evidence_level: unsourced
 ---
 
-# LLM Wiki Index
+# LLM Wiki 인덱스
 
-## Concepts
+## 개념
 
 - [[LLM Wiki]]
 - [[RAG]]
@@ -23,34 +23,37 @@ evidence_level: unsourced
 - [[Human-in-the-loop]]
 - [[Orchestration]]
 - [[Skills]]
+- [[Quant Trading]]
+- [[Claude Blue]]
 
-## Projects
+## 프로젝트
 
 - [[Basalt Project]]
 - [[Personal Operating System]]
 
-## Tools
+## 도구
 
 - [[Codex]]
 - [[Claude Code]]
 - [[Obsidian]]
 
-## People
+## 인물
 
-No people pages yet.
+아직 인물 페이지가 없습니다.
 
-## Comparisons
+## 비교
 
-No comparison pages yet.
+아직 비교 페이지가 없습니다.
 
-## Questions
+## 질문
 
-No saved query answers yet.
+아직 저장된 질문 답변이 없습니다.
 
-## Sources
+## 자료
 
-No ingested sources yet.
+- [[SNU Newsroom Quant Trading Article]]
+- [[Brunch Claude Blue Article]]
 
-## Reports
+## 리포트
 
-No lint reports yet.
+아직 lint 리포트가 없습니다.

@@ -17,23 +17,23 @@ evidence_level: unsourced
 
 # Codex
 
-## What It Is
+## 무엇인가
 
-Codex is treated in this project as the agent that helps maintain Markdown, scripts, links, and wiki hygiene.
+이 프로젝트에서 Codex는 Markdown, script, link, wiki hygiene을 유지보수하는 agent로 다룬다.
 
-## Use Cases
+## 사용 사례
 
-- Ingesting raw materials into source summaries.
-- Updating related wiki pages.
-- Running lint-style checks.
-- Preserving useful query answers.
+- raw material을 source summary로 ingest한다.
+- 관련 wiki page를 업데이트한다.
+- lint-style check를 실행한다.
+- 유용한 query answer를 보존한다.
 
-## Limitations
+## 한계
 
-- It should not invent unsupported claims.
-- It should not modify raw materials.
-- It should mark uncertainty clearly.
+- 근거 없는 주장을 만들어서는 안 된다.
+- raw material을 수정해서는 안 된다.
+- 불확실성을 명확히 표시해야 한다.
 
-## Open Questions
+## 열린 질문
 
-- Which tasks should become scripted workflows?
+- 어떤 작업을 scripted workflow로 만들어야 하는가?

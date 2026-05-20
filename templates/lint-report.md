@@ -11,20 +11,20 @@ sensitivity: private
 evidence_level:
 ---
 
-# Lint Report
+# Lint 리포트
 
-## Summary
+## 요약
 
-## Orphan Pages
+## 고립 페이지
 
-## Duplicate Concepts
+## 중복 개념
 
-## Missing Links
+## 누락 링크
 
-## Stale Claims
+## 오래된 주장
 
-## Contradictions
+## 모순
 
-## Suggested New Pages
+## 새 페이지 후보
 
-## Recommended Actions
+## 권장 작업

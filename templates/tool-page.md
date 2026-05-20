@@ -10,18 +10,18 @@ sensitivity: private
 evidence_level:
 ---
 
-# Tool
+# 도구
 
-## What It Is
+## 무엇인가
 
-## Use Cases
+## 사용 사례
 
-## Strengths
+## 강점
 
-## Limitations
+## 한계
 
-## Related Workflows
+## 관련 워크플로
 
-## Related Concepts
+## 관련 개념
 
-## Notes
+## 메모

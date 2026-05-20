@@ -10,27 +10,33 @@ tags:
 related:
   - "[[Agentic Workflow]]"
   - "[[Skills]]"
+  - "[[Claude Blue]]"
 sensitivity: private
-evidence_level: unsourced
+evidence_level: source-backed
 ---
 
 # Orchestration
 
-## Definition
+## 정의
 
-Orchestration is the coordination of tools, prompts, agents, state, and review steps inside a workflow.
+Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 조율하는 것이다.
 
-## Why It Matters
+## 중요한 이유
 
-Good orchestration can make LLM-assisted work more repeatable and easier to audit.
+좋은 orchestration은 LLM-assisted work를 더 반복 가능하고 audit하기 쉽게 만든다.
 
-## Key Ideas
+## 핵심 아이디어
 
-- Workflows should expose inputs, outputs, and decision points.
-- Specialized skills can reduce repeated setup.
-- Logs and reports help maintain trust.
+- workflow는 input, output, decision point를 드러내야 한다.
+- specialized skill은 반복적인 setup을 줄일 수 있다.
+- log와 report는 trust 유지에 도움이 된다.
+- [[Brunch Claude Blue Article]]은 orchestration을 즉흥적인 vibe coding보다 구조화된 후속 실천으로 설명하며, detailed spec, reusable skill 또는 tool, explicit review boundary를 포함한다고 본다.
 
-## Open Questions
+## 관련 자료
 
-- What orchestration patterns fit personal knowledge work?
-- How should failures and contradictions be tracked?
+- [[Brunch Claude Blue Article]]
+
+## 열린 질문
+
+- 개인 지식 작업에는 어떤 orchestration pattern이 맞는가?
+- failure와 contradiction을 어떻게 추적해야 하는가?

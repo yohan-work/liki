@@ -16,21 +16,21 @@ evidence_level: unsourced
 
 # Skills
 
-## Definition
+## 정의
 
-Skills are reusable instructions, workflows, or capabilities that help an agent perform a specialized task consistently.
+Skills는 agent가 특정 작업을 일관되게 수행하도록 돕는 재사용 가능한 instruction, workflow, capability다.
 
-## Why It Matters
+## 중요한 이유
 
-They can turn repeated knowledge work into a more reliable operating pattern.
+반복되는 지식 작업을 더 신뢰할 수 있는 operating pattern으로 바꿀 수 있다.
 
-## Key Ideas
+## 핵심 아이디어
 
-- Skills should be scoped and explicit.
-- They are useful for recurring tasks such as ingest, linting, and report generation.
-- They should preserve project safety rules.
+- skill은 scope가 명확하고 explicit해야 한다.
+- ingest, linting, report generation 같은 반복 작업에 유용하다.
+- project safety rule을 보존해야 한다.
 
-## Open Questions
+## 열린 질문
 
-- Which LLM Wiki tasks deserve dedicated skills?
-- How should skills be versioned and reviewed?
+- 어떤 LLM Wiki 작업을 dedicated skill로 만들 가치가 있는가?
+- skill을 어떻게 versioning하고 review해야 하는가?

@@ -10,27 +10,33 @@ tags:
 related:
   - "[[Codex]]"
   - "[[Agentic Workflow]]"
+  - "[[Claude Blue]]"
 sensitivity: private
-evidence_level: unsourced
+evidence_level: source-backed
 ---
 
 # Claude Code
 
-## What It Is
+## 무엇인가
 
-Claude Code is a coding-agent tool to compare and study as part of AI-native development workflows.
+Claude Code는 AI-native development workflow의 일부로 비교하고 연구할 coding-agent tool이다.
 
-## Use Cases
+## 사용 사례
 
-- Coding assistance.
-- Repository exploration.
-- Workflow comparison with [[Codex]].
+- coding assistance.
+- repository exploration.
+- [[Codex]]와의 workflow comparison.
+- [[Brunch Claude Blue Article]]은 저자가 전한 대화에 근거해 Claude Code를 AI-native coding workflow에서 사용되는 tool 중 하나로 다룬다.
 
-## Limitations
+## 관련 자료
 
-This page is not yet source-backed and should not be used as a factual comparison.
+- [[Brunch Claude Blue Article]]
 
-## Open Questions
+## 한계
 
-- Which workflows are better suited to Claude Code?
-- What comparison criteria matter for personal use?
+이 페이지는 아직 가볍게 source-backed된 수준이므로 사실 비교 자료로 사용하면 안 된다.
+
+## 열린 질문
+
+- 어떤 workflow가 Claude Code에 더 적합한가?
+- 개인 사용 관점에서 어떤 비교 기준이 중요한가?

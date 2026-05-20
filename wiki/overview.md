@@ -17,16 +17,16 @@ sensitivity: private
 evidence_level: unsourced
 ---
 
-# LLM Wiki Overview
+# LLM Wiki 개요
 
-This wiki tracks ideas and working knowledge around AI-native work and personal knowledge systems.
+이 위키는 AI-native work와 개인 지식 시스템에 관한 아이디어와 작업 지식을 추적한다.
 
-Core domains include [[AI-native Work]], [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], and [[Basalt Project]].
+핵심 도메인은 [[AI-native Work]], [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[Basalt Project]]다.
 
-The wiki should grow from raw materials, project notes, conference insights, useful questions, and reusable answers. Early pages are seeds, not verified source-backed summaries.
+이 위키는 raw 자료, 프로젝트 메모, 컨퍼런스 인사이트, 좋은 질문, 재사용 가능한 답변을 바탕으로 성장해야 한다. 초기 페이지는 seed이며, 아직 검증된 source-backed summary가 아니다.
 
-## Open Questions
+## 열린 질문
 
-- Which concepts should become stable vocabulary for personal AI workflows?
-- Which ideas are source-backed, and which are personal hypotheses?
-- How should project decisions be separated from general concept notes?
+- 개인 AI workflow에서 안정적인 vocabulary가 되어야 할 개념은 무엇인가?
+- 어떤 아이디어가 source-backed이고, 어떤 아이디어가 개인 가설인가?
+- 프로젝트 결정 사항과 일반 개념 노트를 어떻게 분리해야 하는가?

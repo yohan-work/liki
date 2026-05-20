@@ -10,18 +10,18 @@ sensitivity: private
 evidence_level:
 ---
 
-# Query Answer
+# 질문 답변
 
-## Question
+## 질문
 
-## Short Answer
+## 짧은 답변
 
-## Detailed Answer
+## 자세한 답변
 
-## Related Pages
+## 관련 페이지
 
-## Sources Used
+## 사용한 자료
 
-## Follow-up Questions
+## 후속 질문
 
-## Save Reason
+## 저장 이유

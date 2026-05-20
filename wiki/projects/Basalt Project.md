@@ -16,20 +16,20 @@ evidence_level: unsourced
 
 # Basalt Project
 
-## Purpose
+## 목적
 
-Basalt Project is a seed project page for collecting future notes, decisions, and source-backed summaries related to the user's Basalt work.
+Basalt Project는 사용자의 Basalt 관련 작업에 대한 향후 메모, 결정 사항, source-backed summary를 모으기 위한 seed project page다.
 
-## Background
+## 배경
 
-This page has not yet been grounded in raw source material.
+이 페이지는 아직 raw source material에 근거해 작성되지 않았다.
 
-## Core Features
+## 핵심 기능
 
-- To be defined from project notes and source materials.
+- 프로젝트 메모와 source material을 바탕으로 정의할 예정이다.
 
-## Open Questions
+## 열린 질문
 
-- What problem does Basalt Project solve?
-- Which raw materials should be ingested first?
-- Which decisions need a durable record?
+- Basalt Project는 어떤 문제를 해결하는가?
+- 어떤 raw material을 먼저 ingest해야 하는가?
+- 어떤 결정 사항을 durable record로 남겨야 하는가?

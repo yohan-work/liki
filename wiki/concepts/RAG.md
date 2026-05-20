@@ -16,21 +16,21 @@ evidence_level: unsourced
 
 # RAG
 
-## Definition
+## 정의
 
-RAG, or retrieval-augmented generation, is a pattern where a model uses retrieved context to produce a more grounded answer.
+RAG(retrieval-augmented generation)는 모델이 검색된 context를 사용해 더 근거 있는 답변을 생성하는 패턴이다.
 
-## Why It Matters
+## 중요한 이유
 
-For this wiki, RAG is relevant as a way to connect questions with source-backed notes and prior decisions.
+이 위키에서 RAG는 질문을 source-backed note와 과거 결정에 연결하는 방식으로 중요하다.
 
-## Key Ideas
+## 핵심 아이디어
 
-- Retrieval quality shapes answer quality.
-- Source summaries can become retrieval-friendly knowledge units.
-- RAG may complement agentic workflows rather than replace them.
+- retrieval 품질은 답변 품질에 직접 영향을 준다.
+- source summary는 검색 친화적인 지식 단위가 될 수 있다.
+- RAG는 agentic workflow를 대체하기보다 보완할 수 있다.
 
-## Open Questions
+## 열린 질문
 
-- Which parts of this wiki should be optimized for retrieval?
-- How should source provenance be shown in answers?
+- 이 위키의 어떤 부분을 retrieval에 최적화해야 하는가?
+- 답변에서 source provenance를 어떻게 보여줘야 하는가?

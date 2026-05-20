@@ -11,27 +11,33 @@ related:
   - "[[Orchestration]]"
   - "[[Human-in-the-loop]]"
   - "[[Codex]]"
+  - "[[Claude Blue]]"
 sensitivity: private
-evidence_level: unsourced
+evidence_level: source-backed
 ---
 
 # Agentic Workflow
 
-## Definition
+## 정의
 
-An agentic workflow uses an LLM-powered system to plan, act, inspect results, and iterate toward a goal.
+Agentic workflow는 LLM 기반 시스템이 목표를 향해 계획하고, 행동하고, 결과를 점검하고, 반복하는 workflow다.
 
-## Why It Matters
+## 중요한 이유
 
-This wiki can document recurring agent patterns, boundaries, failure modes, and human review points.
+이 위키는 반복되는 agent pattern, boundary, failure mode, human review point를 기록하는 데 사용할 수 있다.
 
-## Key Ideas
+## 핵심 아이디어
 
-- Agents need clear scope and feedback.
-- Tool use should be observable and reversible where possible.
-- Human review remains important for sensitive or high-impact work.
+- agent에는 명확한 scope와 feedback이 필요하다.
+- tool use는 가능한 한 관찰 가능하고 되돌릴 수 있어야 한다.
+- 민감하거나 영향이 큰 작업에는 human review가 여전히 중요하다.
+- [[Brunch Claude Blue Article]]은 실행, 학습, 검토를 위해 여러 agent를 병렬로 돌리는 일화적 workflow를 설명한다.
 
-## Open Questions
+## 관련 자료
 
-- Which tasks should be delegated to agents?
-- What should always remain human-approved?
+- [[Brunch Claude Blue Article]]
+
+## 열린 질문
+
+- 어떤 작업을 agent에게 위임해야 하는가?
+- 어떤 작업은 항상 human approval을 거쳐야 하는가?

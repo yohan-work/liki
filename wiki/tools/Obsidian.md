@@ -16,22 +16,22 @@ evidence_level: unsourced
 
 # Obsidian
 
-## What It Is
+## 무엇인가
 
-Obsidian is the human-facing interface for browsing and editing Markdown notes.
+Obsidian은 Markdown note를 탐색하고 편집하기 위한 human-facing interface다.
 
-## Use Cases
+## 사용 사례
 
-- Reading wiki pages.
-- Navigating backlinks and graph relationships.
-- Reviewing Codex-maintained notes.
+- wiki page 읽기.
+- backlink와 graph relationship 탐색.
+- Codex가 유지보수한 note 검토.
 
-## Strengths
+## 강점
 
-- Local Markdown files.
-- Obsidian-style links.
-- Useful for personal knowledge navigation.
+- local Markdown file.
+- Obsidian-style link.
+- 개인 지식 탐색에 유용함.
 
-## Open Questions
+## 열린 질문
 
-- Which Obsidian conventions should this project adopt?
+- 이 프로젝트는 어떤 Obsidian convention을 채택해야 하는가?

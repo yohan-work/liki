@@ -1,28 +1,30 @@
-# LLM Wiki Agent Rules
+# LLM Wiki Agent 규칙
 
-## Purpose
+## 목적
 
-This project is a personal LLM Wiki maintained by Codex and read through Obsidian. It stores long-lived knowledge about AI-native work, LLM agents, Codex, Claude Code, Cursor, RAG, LLM Wiki, AX workflow, Basalt Project, Skills, Orchestration, Harness, human-in-the-loop workflows, personal PoCs, projects, and conference insights.
+이 프로젝트는 Codex가 유지보수하고 Obsidian에서 읽는 개인 LLM Wiki다. AI-native work, LLM agents, Codex, Claude Code, Cursor, RAG, LLM Wiki, AX workflow, Basalt Project, Skills, Orchestration, Harness, human-in-the-loop workflow, 개인 PoC, 프로젝트, 컨퍼런스 인사이트를 장기 지식으로 축적한다.
 
-Markdown files are the source of truth for the wiki layer. Git tracks history. Obsidian is the human reading and navigation interface. Codex is the maintenance engine.
+Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추적한다. Obsidian은 사람이 읽고 탐색하는 인터페이스다. Codex는 유지보수 엔진이다.
 
-## Non-Negotiable Safety Rules
+## 안전 규칙
 
-- Never delete, move, or bulk-modify files in the existing Obsidian Vault.
-- Never modify files under `raw/`. Raw materials are the immutable source of truth.
-- Treat `inbox/` as a temporary collection area. Do not reflect inbox material in `wiki/` until it has been intentionally ingested.
-- Manage and update `wiki/` only when there is a clear task and supporting context.
-- Before any wiki maintenance task, read `wiki/index.md` and `wiki/log.md`.
-- Do not overwrite existing wiki pages, reports, or templates without first checking whether they already exist and what they contain.
-- Mark sensitive information with `sensitivity: private` and avoid including it in external-facing documents.
+- 기존 Obsidian Vault 안의 파일은 삭제, 이동, 대량 수정하지 않는다.
+- `raw/` 아래 파일은 수정하지 않는다. raw material은 수정하지 않는 source of truth다.
+- `inbox/`는 임시 수집함으로 다룬다. 의도적으로 ingest하기 전까지 inbox 자료를 `wiki/`에 반영하지 않는다.
+- 명확한 작업과 근거 context가 있을 때만 `wiki/`를 관리하고 업데이트한다.
+- wiki 유지보수 작업 전에는 `wiki/index.md`와 `wiki/log.md`를 먼저 읽는다.
+- 기존 wiki page, report, template이 있는지와 내용이 무엇인지 확인하기 전에는 덮어쓰지 않는다.
+- 민감한 정보는 `sensitivity: private`로 표시하고 외부 공유용 문서에 포함하지 않도록 주의한다.
 
-## Wiki Style
+## Wiki 작성 방식
 
-- Write maintained wiki content in Korean by default, including summaries, concept pages, query answers, reports, and log entries.
-- Preserve raw source material in its original language whenever possible.
-- Technical terms, product names, and important source phrases may include English in parentheses when that improves clarity.
-- Use Obsidian-style links: `[[Concept Name]]`.
-- Every wiki page must include YAML frontmatter with:
+- 유지보수되는 wiki content는 기본적으로 한국어로 작성한다. 여기에는 heading, summary, concept page, source summary, query answer, report, log entry가 포함된다.
+- heading이 고유명사이거나 원문 표현을 그대로 보존해야 하는 경우가 아니라면 `wiki/`와 `templates/`에서 영어 section heading을 사용하지 않는다.
+- 영어 원문은 필요한 경우 짧게 인용하거나 참조할 수 있지만, 설명과 종합은 한국어로 작성한다.
+- raw source material은 가능한 한 원문 언어 그대로 보존한다.
+- 기술 용어, 제품명, 중요한 원문 표현은 명확성을 높일 때 영어를 괄호로 병기할 수 있다.
+- Obsidian-style link를 사용한다: `[[Concept Name]]`.
+- 모든 wiki page는 YAML frontmatter에 다음 필드를 포함해야 한다:
   - `title`
   - `type`
   - `status`
@@ -32,29 +34,29 @@ Markdown files are the source of truth for the wiki layer. Git tracks history. O
   - `related`
   - `sensitivity`
   - `evidence_level`
-- Initial seed pages should use `status: seed` and `evidence_level: unsourced`.
-- Do not invent unsupported facts.
-- Clearly mark uncertainty.
-- If sources conflict, do not overwrite one claim with another. Create or update a contradiction note.
+- 초기 seed page는 `status: seed`, `evidence_level: unsourced`를 사용한다.
+- 근거 없는 사실을 만들지 않는다.
+- 불확실성은 명확히 표시한다.
+- source끼리 충돌하면 한 주장을 다른 주장으로 덮어쓰지 않는다. contradiction note를 만들거나 갱신한다.
 
-## Ingest Rules
+## Ingest 규칙
 
-- New source material belongs in `raw/` first.
-- Create a source summary in `wiki/sources/` for each ingested source.
-- Source summaries must include `source_id`, `type`, `status`, `original_path`, `date_added`, and `related_pages`.
-- Create or update related concept, project, tool, people, comparison, and question pages as needed.
-- Update `wiki/index.md` after adding or materially changing wiki pages.
-- Record the work in `wiki/log.md`.
+- 새 source material은 먼저 `raw/`에 둔다.
+- ingest한 source마다 `wiki/sources/`에 source summary를 만든다.
+- source summary에는 `source_id`, `type`, `status`, `original_path`, `date_added`, `related_pages`를 포함한다.
+- 필요하면 관련 concept, project, tool, people, comparison, question page를 만들거나 갱신한다.
+- wiki page를 추가하거나 의미 있게 변경한 뒤에는 `wiki/index.md`를 업데이트한다.
+- 작업 내용은 `wiki/log.md`에 기록한다.
 
-## Query Rules
+## Query 규칙
 
-- Good query answers may be saved to `wiki/questions/`.
-- Save query answers only when they are likely to be reused for project decisions, concept clarification, writing, presentation preparation, or repeated reference.
-- A saved answer must include related pages and sources used, or clearly state that it is unsourced.
+- 좋은 query answer는 `wiki/questions/`에 저장할 수 있다.
+- project decision, concept clarification, writing, presentation preparation, repeated reference에 재사용될 가능성이 있을 때만 query answer를 저장한다.
+- 저장된 answer에는 related page와 사용한 source를 포함하거나, unsourced임을 명확히 표시한다.
 
-## Lint Rules
+## Lint 규칙
 
-- Lint reports must be created as `wiki/reports/lint-YYYY-MM-DD.md`.
-- Never overwrite an existing lint report.
-- Check for orphan pages, duplicate concepts, stale claims, missing links, contradictions, and candidates for new pages.
-- Prefer small, traceable maintenance changes over broad rewrites.
+- lint report는 `wiki/reports/lint-YYYY-MM-DD.md` 형식으로 만든다.
+- 기존 lint report를 덮어쓰지 않는다.
+- orphan page, duplicate concept, stale claim, missing link, contradiction, new page candidate를 점검한다.
+- 광범위한 rewrite보다 작고 추적 가능한 maintenance change를 선호한다.

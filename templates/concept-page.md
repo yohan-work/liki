@@ -10,18 +10,18 @@ sensitivity: private
 evidence_level:
 ---
 
-# Concept
+# 개념
 
-## Definition
+## 정의
 
-## Why It Matters
+## 중요한 이유
 
-## Key Ideas
+## 핵심 아이디어
 
-## Related Sources
+## 관련 자료
 
-## Related Concepts
+## 관련 개념
 
-## Examples
+## 예시
 
-## Open Questions
+## 열린 질문

@@ -17,21 +17,21 @@ evidence_level: unsourced
 
 # LLM Wiki
 
-## Definition
+## 정의
 
-An LLM Wiki is a Markdown knowledge base designed to be maintained with help from language models while staying readable by humans.
+LLM Wiki는 사람이 읽기 쉬운 Markdown 지식 베이스를 유지하면서, 언어 모델의 도움으로 요약, 연결, 갱신을 수행하도록 설계한 위키다.
 
-## Why It Matters
+## 중요한 이유
 
-It can preserve useful questions, answers, summaries, project decisions, and concept links instead of leaving them scattered across one-off chats.
+유용한 질문, 답변, 요약, 프로젝트 결정, 개념 링크를 일회성 대화에 흩어지게 두지 않고 장기 지식으로 축적할 수 있다.
 
-## Key Ideas
+## 핵심 아이디어
 
-- Raw sources stay immutable.
-- Wiki pages are the maintained knowledge layer.
-- Links make concepts reusable and discoverable.
+- raw source는 수정하지 않는 원본으로 보존한다.
+- wiki page는 유지보수되는 지식 계층이다.
+- 링크는 개념을 재사용 가능하고 탐색 가능하게 만든다.
 
-## Open Questions
+## 열린 질문
 
-- What maintenance tasks should Codex automate first?
-- Which pages should remain personal and private?
+- Codex가 가장 먼저 자동화해야 할 유지보수 작업은 무엇인가?
+- 어떤 페이지를 개인적이고 private한 상태로 유지해야 하는가?

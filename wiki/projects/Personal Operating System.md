@@ -16,21 +16,21 @@ evidence_level: unsourced
 
 # Personal Operating System
 
-## Purpose
+## 목적
 
-Personal Operating System is a seed page for connecting personal workflows, knowledge capture, project planning, and AI-assisted execution.
+Personal Operating System은 개인 workflow, knowledge capture, project planning, AI-assisted execution을 연결하기 위한 seed page다.
 
-## Background
+## 배경
 
-This page is currently a placeholder for future source-backed project notes.
+이 페이지는 향후 source-backed project note를 위한 placeholder다.
 
-## Core Features
+## 핵심 기능
 
-- Knowledge capture and retrieval.
-- Reusable question answers.
-- Project and decision tracking.
+- knowledge capture와 retrieval.
+- 재사용 가능한 question answer.
+- project와 decision tracking.
 
-## Open Questions
+## 열린 질문
 
-- Which workflows should be standardized first?
-- What belongs in the wiki versus daily notes?
+- 어떤 workflow를 먼저 표준화해야 하는가?
+- wiki에 남길 것과 daily note에 남길 것은 어떻게 구분해야 하는가?

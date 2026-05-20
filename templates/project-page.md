@@ -10,20 +10,20 @@ sensitivity: private
 evidence_level:
 ---
 
-# Project
+# 프로젝트
 
-## Purpose
+## 목적
 
-## Background
+## 배경
 
-## Core Features
+## 핵심 기능
 
-## Architecture
+## 아키텍처
 
-## Related Concepts
+## 관련 개념
 
-## Decisions
+## 결정 사항
 
-## Open Questions
+## 열린 질문
 
-## Next Actions
+## 다음 작업

@@ -7,24 +7,24 @@ date_added:
 related_pages: []
 ---
 
-# Source Summary
+# 자료 요약
 
-## Source
+## 출처
 
-## Type
+## 자료 유형
 
-## Date Added
+## 추가일
 
-## Original Location
+## 원본 위치
 
-## Summary
+## 요약
 
-## Key Claims
+## 핵심 주장
 
-## Important Concepts
+## 중요한 개념
 
-## Related Pages
+## 관련 페이지
 
-## Open Questions
+## 열린 질문
 
-## Notes
+## 메모
