@@ -26,6 +26,7 @@ evidence_level: unsourced
 - [[Quant Trading]]
 - [[Claude Blue]]
 - [[Ralph Wiggum Loop]]
+- [[MCP Remote SSE]]
 
 ## 프로젝트
 
@@ -58,6 +59,7 @@ evidence_level: unsourced
 - [[GitHub Public APIs 4Kr Repository]]
 - [[Naver Blog Quant Investment Process Article]]
 - [[AI Hero Ralph Wiggum Article]]
+- [[Tistory MCP Remote SSE Article]]
 
 ## 리포트
 
