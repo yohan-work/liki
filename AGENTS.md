@@ -58,12 +58,14 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - project decision, concept clarification, writing, presentation preparation, repeated reference에 재사용될 가능성이 있을 때만 query answer를 저장한다.
 - query answer를 저장할 때는 재사용 가능성, 저장 이유, 관련 결정/글쓰기/발표 활용처를 명시한다.
 - 저장된 answer에는 related page와 사용한 source를 포함하거나, unsourced임을 명확히 표시한다.
+- 저장된 query answer는 단순 답변이 아니라 이후 작업에 재사용할 decision aid 또는 explanation asset이어야 한다.
 
 ## Comparison 규칙
 
 - comparison page는 개념 차이를 선명하게 만들기 위해 사용한다.
 - 비교는 승패를 가르는 글이 아니라, 적용 조건, 실패 패턴, 함께 쓰는 방식, 판단 기준을 정리하는 문서로 작성한다.
 - source-backed 비교가 아니면 `status: seed`, `evidence_level: unsourced`로 시작하고, 추후 source를 연결한다.
+- comparison page를 만들 때는 `templates/comparison-page.md` 구조를 우선 사용한다.
 
 ## Lint 규칙
 

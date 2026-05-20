@@ -68,6 +68,17 @@ LLM Wiki를 참고해서 "RAG와 Agentic Workflow의 차이"를 한국어로 답
 반복 참조 가치가 있으면 wiki/questions/에 저장하고, 저장 이유와 관련 페이지를 명시해줘.
 ```
 
+초기 예시는 `wiki/questions/LLM Wiki 운영 흐름.md`에 있습니다. 이 페이지는 URL ingest 이후 Obsidian 확인, Git 검토, commit/push로 이어지는 기본 운영 흐름을 설명합니다.
+
+## 비교 페이지 작성
+
+비교 페이지는 두 개념 중 하나를 고르는 글이 아니라, 언제 무엇을 써야 하는지 판단하기 위한 문서입니다.
+
+```text
+RAG와 Agentic Workflow를 비교하는 페이지를 만들어줘.
+templates/comparison-page.md 구조를 따르고, 적용 조건, 함께 쓰는 방식, 실패 패턴, 판단 기준을 한국어로 정리해줘.
+```
+
 ## 정기 Lint 루틴
 
 주기적으로 위키 상태를 점검합니다.

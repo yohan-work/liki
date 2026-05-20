@@ -48,7 +48,7 @@ evidence_level: unsourced
 
 ## 질문
 
-아직 저장된 질문 답변이 없습니다.
+- [[LLM Wiki 운영 흐름]]
 
 ## 자료
 
