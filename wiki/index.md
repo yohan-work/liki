@@ -36,6 +36,7 @@ evidence_level: unsourced
 - [[Codex]]
 - [[Claude Code]]
 - [[Obsidian]]
+- [[Public APIs 4Kr]]
 
 ## 인물
 
@@ -53,6 +54,7 @@ evidence_level: unsourced
 
 - [[SNU Newsroom Quant Trading Article]]
 - [[Brunch Claude Blue Article]]
+- [[GitHub Public APIs 4Kr Repository]]
 
 ## 리포트
 
