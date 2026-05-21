@@ -44,6 +44,7 @@ evidence_level: unsourced
 - [[OpenAI Developer Community]]
 - [[Hermes 4.3 36B]]
 - [[Content Marketing Team]]
+- [[Microsoft Clarity]]
 
 ## 인물
 
@@ -70,6 +71,7 @@ evidence_level: unsourced
 - [[Hugging Face Hermes 4.3 36B Model Card]]
 - [[Hancom LLM Hallucination Reduction Research Article]]
 - [[GitHub Content Marketing Team Repository]]
+- [[Brunch Clarity UX CRO Article]]
 
 ## 리포트
 
