@@ -21,7 +21,7 @@ evidence_level: unsourced
 
 이 위키는 AI-native work와 개인 지식 시스템에 관한 아이디어와 작업 지식을 추적한다.
 
-핵심 도메인은 [[AI-native Work]], [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[Basalt Project]]다.
+핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[Basalt Project]]다.
 
 이 위키는 raw 자료, 프로젝트 메모, 컨퍼런스 인사이트, 좋은 질문, 재사용 가능한 답변을 바탕으로 성장해야 한다. 초기 페이지는 seed이며, 아직 검증된 source-backed summary가 아니다.
 

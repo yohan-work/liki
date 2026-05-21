@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-05-21
 tags:
   - llm-wiki
   - log
@@ -46,3 +46,10 @@ evidence_level: unsourced
 - 13차 고도화로 향후 log entry에 사용할 structured log format 규칙을 추가했다.
 - 14차 고도화로 `scripts/search-wiki.ts` read-only 검색 도구를 추가했다.
 - 15차 고도화로 `inbox/clippings/`, `inbox/ideas/`, `inbox/to-ingest.md` 운영 구조를 추가했다.
+
+## [2026-05-21] maintenance | 구조 lint 문제 정리
+
+- Hermes 4.3 36B source summary의 필수 frontmatter와 taxonomy 값을 정규화했다.
+- 아직 별도 페이지로 만들지 않은 후보 개념 링크와 raw path wiki link를 정리했다.
+- 변경 영역: [[Hugging Face Hermes 4.3 36B Model Card]], [[Hermes 4.3 36B]], [[LLM Wiki Overview]], [[SNU Newsroom Quant Trading Article]].
+- 후속 작업: 필요하면 Backtesting, Overfitting, Automated execution을 별도 concept page 후보로 검토한다.

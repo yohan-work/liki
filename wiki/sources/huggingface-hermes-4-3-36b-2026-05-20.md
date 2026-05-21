@@ -1,9 +1,22 @@
 ---
+title: Hugging Face Hermes 4.3 36B Model Card
 source_id: huggingface-hermes-4-3-36b-2026-05-20
 type: source
 status: ingested
 created: 2026-05-20
 updated: 2026-05-20
+tags:
+  - source
+  - llm
+  - open-model
+  - reasoning
+  - tool-use
+  - structured-outputs
+  - hugging-face
+related:
+  - "[[Hermes 4.3 36B]]"
+  - "[[Agentic Workflow]]"
+  - "[[Orchestration]]"
 date_added: 2026-05-20
 captured_at: 2026-05-20
 accessed_at: 2026-05-20
@@ -19,12 +32,10 @@ knowledge_role:
   - model-reference
   - implementation-reference
   - evaluation-signal
-source_quality: official-model-card
+source_quality: official
 use_for:
-  - open-model-discovery
-  - tool-use-model-reference
-  - local-inference-planning
-  - structured-output-model-reference
+  - reference
+  - decision
 related_pages:
   - "[[Hermes 4.3 36B]]"
   - "[[Agentic Workflow]]"
@@ -56,8 +67,8 @@ Hugging Face model card / open-weight model reference.
 - domain: llm, open-models, inference
 - content_type: model-card
 - knowledge_role: model-reference, implementation-reference, evaluation-signal
-- source_quality: official-model-card
-- use_for: open-model-discovery, tool-use-model-reference, local-inference-planning, structured-output-model-reference
+- source_quality: official
+- use_for: reference, decision
 
 ## 추가일
 
@@ -65,7 +76,7 @@ Hugging Face model card / open-weight model reference.
 
 ## 원본 위치
 
-[[raw/external/2026-05-20-huggingface-hermes-4-3-36b.md]]
+raw/external/2026-05-20-huggingface-hermes-4-3-36b.md
 
 ## Provenance
 

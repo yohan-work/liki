@@ -110,7 +110,7 @@ raw/articles/2026-01-16-snu-quant-trading.md
 ## 열린 질문
 
 - Backtesting의 어떤 측면이 LLM agent와 automated workflow 평가에 유용한 비유가 될 수 있는가?
-- 자료가 더 추가되면 [[Backtesting]], [[Overfitting]], [[Automated Execution]]을 별도 페이지로 분리해야 하는가?
+- 자료가 더 추가되면 Backtesting, Overfitting, Automated execution을 별도 페이지로 분리해야 하는가?
 - 이 입문 자료를 실무자 자료 또는 학술 자료와 어떻게 균형 있게 다루어야 하는가?
 
 ## 메모
