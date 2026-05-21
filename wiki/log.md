@@ -53,3 +53,10 @@ evidence_level: unsourced
 - 아직 별도 페이지로 만들지 않은 후보 개념 링크와 raw path wiki link를 정리했다.
 - 변경 영역: [[Hugging Face Hermes 4.3 36B Model Card]], [[Hermes 4.3 36B]], [[LLM Wiki Overview]], [[SNU Newsroom Quant Trading Article]].
 - 후속 작업: 필요하면 Backtesting, Overfitting, Automated execution을 별도 concept page 후보로 검토한다.
+
+## [2026-05-21] maintenance | 운영 대시보드 고도화
+
+- [[LLM Wiki Overview]]를 Obsidian 첫 화면으로 쓰는 운영 대시보드로 개편했다.
+- 다음 행동, 반복 루틴, 주요 진입점을 분리해 URL ingest 이후의 활용 흐름을 더 명확히 했다.
+- README에 `wiki/overview.md`와 `wiki/index.md`의 역할 차이를 짧게 추가했다.
+- 후속 작업: 대시보드 수치 자동 갱신이 필요할지 운영하면서 판단한다.
