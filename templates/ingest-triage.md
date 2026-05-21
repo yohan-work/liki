@@ -30,6 +30,12 @@ evidence_level: unsourced
 
 ## 갱신할 페이지 후보
 
+## 갱신할 운영 문서
+
+- `wiki/index.md`:
+- `wiki/overview.md`:
+- `wiki/log.md`:
+
 ## 모순 가능성
 
 ## 확인 필요 주장

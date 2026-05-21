@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-05-21
 tags:
   - llm-wiki
   - index
@@ -28,6 +28,7 @@ evidence_level: unsourced
 - [[Ralph Wiggum Loop]]
 - [[MCP Remote SSE]]
 - [[iOS WebKit React onBlur Issue]]
+- [[LLM Hallucination]]
 
 ## 프로젝트
 
@@ -66,6 +67,7 @@ evidence_level: unsourced
 - [[OpenAI Developer Community Source]]
 - [[hi-hoi iOS WebKit React onBlur Issue Article]]
 - [[Hugging Face Hermes 4.3 36B Model Card]]
+- [[Hancom LLM Hallucination Reduction Research Article]]
 
 ## 리포트
 

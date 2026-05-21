@@ -60,6 +60,7 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - ingest할 때는 먼저 domain, content_type, knowledge_role, source_quality, use_for를 판단한 뒤 어떤 wiki page를 만들거나 갱신할지 결정한다.
 - 필요하면 관련 concept, project, tool, people, comparison, question page를 만들거나 갱신한다.
 - wiki page를 추가하거나 의미 있게 변경한 뒤에는 `wiki/index.md`를 업데이트한다.
+- ingest로 source, concept, tool, project, question 수가 바뀌거나 주요 진입점/다음 행동이 바뀌면 `wiki/overview.md` 운영 대시보드도 함께 갱신한다.
 - 작업 내용은 `wiki/log.md`에 기록한다.
 
 ## Log 규칙
