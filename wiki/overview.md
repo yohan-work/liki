@@ -25,14 +25,14 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 10개
+- 자료 요약: 11개
 - 개념 페이지: 12개
-- 도구 페이지: 6개
+- 도구 페이지: 7개
 - 프로젝트 페이지: 2개
 - 재사용 질문 답변: 1개
 - 최근 구조 점검: 2026-05-21, lint errors 0 / warnings 0
 
-핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Basalt Project]], [[Personal Operating System]]이다.
+핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Content Marketing Team]]을 추가했다.
 
 ## 다음 행동
 

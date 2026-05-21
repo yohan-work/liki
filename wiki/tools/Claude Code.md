@@ -3,7 +3,7 @@ title: Claude Code
 type: tool
 status: seed
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-05-21
 tags:
   - claude-code
   - coding-agent
@@ -11,6 +11,8 @@ related:
   - "[[Codex]]"
   - "[[Agentic Workflow]]"
   - "[[Claude Blue]]"
+  - "[[Content Marketing Team]]"
+  - "[[GitHub Content Marketing Team Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -27,10 +29,12 @@ Claude Code는 AI-native development workflow의 일부로 비교하고 연구�
 - repository exploration.
 - [[Codex]]와의 workflow comparison.
 - [[Brunch Claude Blue Article]]은 저자가 전한 대화에 근거해 Claude Code를 AI-native coding workflow에서 사용되는 tool 중 하나로 다룬다.
+- [[GitHub Content Marketing Team Repository]]는 Claude Code의 subagent와 skill 구조를 콘텐츠 마케팅 자동화 template로 구성한 사례다.
 
 ## 관련 자료
 
 - [[Brunch Claude Blue Article]]
+- [[GitHub Content Marketing Team Repository]]
 
 ## 한계
 

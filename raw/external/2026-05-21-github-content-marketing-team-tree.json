@@ -1,0 +1,328 @@
+{
+  "sha": "cda65d1ef6937f1777ae784f352f0d4687e1ced0",
+  "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/cda65d1ef6937f1777ae784f352f0d4687e1ced0",
+  "tree": [
+    {
+      "path": ".claude",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "618d13fc6f3e4a763c40ba7beb0a97af12b5190a",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/618d13fc6f3e4a763c40ba7beb0a97af12b5190a"
+    },
+    {
+      "path": ".claude/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8586d61b3a21bd723dabdea62955e255c91a392a",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/8586d61b3a21bd723dabdea62955e255c91a392a"
+    },
+    {
+      "path": ".claude/agents/blog-writer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92c455fb8850ae10c9c5ae01e4bfc1e8f8b3d194",
+      "size": 3405,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/92c455fb8850ae10c9c5ae01e4bfc1e8f8b3d194"
+    },
+    {
+      "path": ".claude/agents/linkedin-writer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7de5660ed0373dec9e10d87b1a188d64fdf3db7",
+      "size": 3364,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/c7de5660ed0373dec9e10d87b1a188d64fdf3db7"
+    },
+    {
+      "path": ".claude/agents/newsletter-writer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c008c26236e584c81cb00834f69d428eef6e9fd",
+      "size": 3116,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/5c008c26236e584c81cb00834f69d428eef6e9fd"
+    },
+    {
+      "path": ".claude/agents/planner.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66eff2e6296f8d2c2e9cd32e008dfb20a3658d8e",
+      "size": 3748,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/66eff2e6296f8d2c2e9cd32e008dfb20a3658d8e"
+    },
+    {
+      "path": ".claude/agents/reviewer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81a57dab8f0c99f667581d3eea1082f8b4d8e306",
+      "size": 4874,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/81a57dab8f0c99f667581d3eea1082f8b4d8e306"
+    },
+    {
+      "path": ".claude/agents/shorts-scriptwriter.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfd2b5b0613d63fe0c966db0e2e6dcbfcca57228",
+      "size": 3414,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/dfd2b5b0613d63fe0c966db0e2e6dcbfcca57228"
+    },
+    {
+      "path": ".claude/agents/thread-writer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f04d00a33014fb2dac3ce5e017b293a24bdd48a4",
+      "size": 3241,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/f04d00a33014fb2dac3ce5e017b293a24bdd48a4"
+    },
+    {
+      "path": ".claude/agents/youtube-scriptwriter.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "776ad1b187e77986eb6957e8b46eb7ffd1af8d43",
+      "size": 4311,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/776ad1b187e77986eb6957e8b46eb7ffd1af8d43"
+    },
+    {
+      "path": ".claude/skills",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "45acc047f032fd7ce4ce56808665a706254299fe",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/45acc047f032fd7ce4ce56808665a706254299fe"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ffef2fa32b8ee91d8c8adc1bb352841f61d7c8da",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/ffef2fa32b8ee91d8c8adc1bb352841f61d7c8da"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b07c000b9abb423b65f4d64df6e9a44da8537f42",
+      "size": 3307,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/b07c000b9abb423b65f4d64df6e9a44da8537f42"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual/references",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cb46e2739e4308cc34fe8fc730d72534cea0bac5",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/cb46e2739e4308cc34fe8fc730d72534cea0bac5"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual/references/card-news-guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "265a3363611dbfef895b72961ab5e3b8cef49cd6",
+      "size": 2855,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/265a3363611dbfef895b72961ab5e3b8cef49cd6"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual/references/thumbnail-guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23621ae8d7410a2333a6bd0d66cd1b13b3a76295",
+      "size": 3569,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/23621ae8d7410a2333a6bd0d66cd1b13b3a76295"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "27c5f67d8900656c959debae3e05a930360f8ab3",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/27c5f67d8900656c959debae3e05a930360f8ab3"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual/templates/card-news-prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e52379228c88382d69936e398bd5975a6a6c155",
+      "size": 3039,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/4e52379228c88382d69936e398bd5975a6a6c155"
+    },
+    {
+      "path": ".claude/skills/nanobanana-visual/templates/thumbnail-prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dd4d72549f3347e00f4f37f5b088915eed56ab7",
+      "size": 4020,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/8dd4d72549f3347e00f4f37f5b088915eed56ab7"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b2571f4b9861849ee0947d0d152fd1bd1c3f7850",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/b2571f4b9861849ee0947d0d152fd1bd1c3f7850"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b06cea926ec7057bc4571e11d460abb6e08c1c3",
+      "size": 3681,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/8b06cea926ec7057bc4571e11d460abb6e08c1c3"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker/references",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b464000ef16c473441c85f96c518cfb120e58a77",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/b464000ef16c473441c85f96c518cfb120e58a77"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker/references/shorts-spec.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b821126a2fcb6344a2f0ee3ff619e44991bd078",
+      "size": 4474,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/1b821126a2fcb6344a2f0ee3ff619e44991bd078"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ab0efe2ceeda64b8755159f1984855ef73eff6db",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/ab0efe2ceeda64b8755159f1984855ef73eff6db"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker/scripts/cut_shorts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5dd1b60bc7a57ccaff8e4c323b729d4c714f48d",
+      "size": 10949,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/d5dd1b60bc7a57ccaff8e4c323b729d4c714f48d"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker/scripts/download_video.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8c86ce8986ec53f2411165365b9eca3d197d365",
+      "size": 4219,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/b8c86ce8986ec53f2411165365b9eca3d197d365"
+    },
+    {
+      "path": ".claude/skills/shorts-video-maker/scripts/transcribe.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16acb090ffa614c6f71f7616fa16a54c5173b23a",
+      "size": 8103,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/16acb090ffa614c6f71f7616fa16a54c5173b23a"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1236570f65a3d0ea826a99f3c13465762eb0a83",
+      "size": 350,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/d1236570f65a3d0ea826a99f3c13465762eb0a83"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8281f416b1e91f03c6eef17d4d8d6dcd743564f",
+      "size": 6653,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/c8281f416b1e91f03c6eef17d4d8d6dcd743564f"
+    },
+    {
+      "path": "outputs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "122df0e25803d7b60a824bb21bb72b74a7401ac5",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/122df0e25803d7b60a824bb21bb72b74a7401ac5"
+    },
+    {
+      "path": "outputs/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "outputs/shorts-scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "outputs/shorts-scripts/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "outputs/shorts-videos",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "outputs/shorts-videos/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "outputs/threads",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "outputs/threads/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "outputs/visuals",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "57ada20fc46c32b4d155d41a29c49eedc8085c80",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/57ada20fc46c32b4d155d41a29c49eedc8085c80"
+    },
+    {
+      "path": "outputs/visuals/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "outputs/visuals/card-news",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "outputs/visuals/card-news/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0095a880124a164344a765e5e5ed985a8a010d6b",
+      "size": 10826,
+      "url": "https://api.github.com/repos/uxjoseph/content-marketing-team/git/blobs/0095a880124a164344a765e5e5ed985a8a010d6b"
+    }
+  ],
+  "truncated": false
+}

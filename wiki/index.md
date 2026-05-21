@@ -43,6 +43,7 @@ evidence_level: unsourced
 - [[Public APIs 4Kr]]
 - [[OpenAI Developer Community]]
 - [[Hermes 4.3 36B]]
+- [[Content Marketing Team]]
 
 ## 인물
 
@@ -68,6 +69,7 @@ evidence_level: unsourced
 - [[hi-hoi iOS WebKit React onBlur Issue Article]]
 - [[Hugging Face Hermes 4.3 36B Model Card]]
 - [[Hancom LLM Hallucination Reduction Research Article]]
+- [[GitHub Content Marketing Team Repository]]
 
 ## 리포트
 
