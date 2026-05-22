@@ -1,5 +1,9 @@
 # LLM Wiki
 
+## Data(26.05.21 ~ )
+<img width="1834" height="1037" alt="image" src="https://github.com/user-attachments/assets/73f542eb-041b-4e09-8901-acf8e2ad6a51" />
+
+
 LLM Wiki는 다양한 주제의 자료를 장기적으로 축적하고 연결하기 위한 개인 Markdown 지식 베이스입니다. AI, 금융, 소프트웨어, 연구, 글쓰기, 컨퍼런스, 개인 프로젝트 등 서로 다른 domain의 자료를 같은 운영 원칙으로 ingest하고 관리합니다.
 
 ## 역할
