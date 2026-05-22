@@ -6,6 +6,8 @@ const path = require("node:path");
 const ROOT = process.cwd();
 const WIKI_DIR = path.join(ROOT, "wiki");
 const INDEX_PATH = path.join(WIKI_DIR, "index.md");
+const OVERVIEW_PATH = path.join(WIKI_DIR, "overview.md");
+const STALE_SEED_DAYS = 30;
 const REQUIRED_FIELDS = [
   "title",
   "type",
@@ -34,6 +36,17 @@ const TYPE_SECTION_REQUIREMENTS = {
   decision: ["## 결정", "## 근거", "## 선택지", "## 되돌릴 조건"],
   meeting: ["## 회의 목적", "## 핵심 논의", "## 결정", "## 액션 아이템"],
 };
+const OVERVIEW_COUNT_LABELS = [
+  ["source", "자료 요약"],
+  ["concept", "개념 페이지"],
+  ["tool", "도구 페이지"],
+  ["project", "프로젝트 페이지"],
+  ["idea", "아이디어 페이지"],
+  ["mvp", "MVP / PoC 페이지"],
+  ["decision", "결정 기록"],
+  ["meeting", "회의록 요약"],
+  ["question", "재사용 질문 답변"],
+];
 
 const ENGLISH_HEADING =
   /^#{1,3} (Source|Type|Date Added|Original Location|Summary|Key Claims|Important Concepts|Related Pages|Open Questions|Notes|Definition|Why It Matters|Key Ideas|Use Cases|Limitations|Strengths|Purpose|Background|Core Features|Recommended Actions|Missing Links|Stale Claims|Contradictions)\b/m;
@@ -116,6 +129,48 @@ function printSection(title, items) {
   for (const item of items) console.log(`- ${item}`);
 }
 
+function daysSince(dateText) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateText || "")) return 0;
+  const then = new Date(`${dateText}T00:00:00Z`);
+  const now = new Date();
+  return Math.floor((now - then) / 86400000);
+}
+
+function hasSourcePageLink(content, pages) {
+  return extractLinks(content).some((link) => {
+    const target = pages.get(link);
+    return target && rel(target).startsWith("wiki/sources/");
+  });
+}
+
+function sectionBody(content, heading) {
+  const index = content.indexOf(heading);
+  if (index === -1) return null;
+  const after = content.slice(index + heading.length);
+  const next = after.search(/\n## /);
+  return (next === -1 ? after : after.slice(0, next)).trim();
+}
+
+function buildTypeCounts(files) {
+  const counts = new Map();
+  for (const file of files) {
+    const content = fs.readFileSync(file, "utf8");
+    const frontmatter = parseFrontmatter(content);
+    const type = (frontmatter && frontmatter.values.get("type")) || "unknown";
+    counts.set(type, (counts.get(type) || 0) + 1);
+  }
+  return counts;
+}
+
+function parseOverviewCounts(content) {
+  const counts = new Map();
+  for (const [type, label] of OVERVIEW_COUNT_LABELS) {
+    const match = content.match(new RegExp(`- ${label}: (\\d+)개`));
+    if (match) counts.set(type, Number(match[1]));
+  }
+  return counts;
+}
+
 function main() {
   if (!fs.existsSync(WIKI_DIR)) {
     console.error("wiki/ 디렉터리를 찾을 수 없습니다.");
@@ -125,6 +180,7 @@ function main() {
 
   const files = walk(WIKI_DIR);
   const pages = buildKnownPages(files);
+  const typeCounts = buildTypeCounts(files);
   const indexContent = fs.existsSync(INDEX_PATH)
     ? fs.readFileSync(INDEX_PATH, "utf8")
     : "";
@@ -135,6 +191,8 @@ function main() {
   const taxonomyIssues = [];
   const typeSectionIssues = [];
   const executionIssues = [];
+  const sourceQualityIssues = [];
+  const overviewIssues = [];
   const brokenLinks = [];
   const indexOmissions = [];
   const englishHeadings = [];
@@ -162,9 +220,17 @@ function main() {
           addIssue(taxonomyIssues, `${relativePath}: source field 누락 - ${field}`);
         }
       }
+
+      const verifyBody = sectionBody(content, "## 검증 필요 주장");
+      if (verifyBody !== null && /^(-\s*)?(없음|해당 없음|없다)\.?$/m.test(verifyBody.trim())) {
+        addIssue(sourceQualityIssues, `${relativePath}: 검증 필요 주장 섹션이 비어 있거나 없음 처리됨`);
+      }
     }
 
     const type = frontmatter.values.get("type");
+    const status = frontmatter.values.get("status");
+    const evidence = frontmatter.values.get("evidence_level");
+    const updated = frontmatter.values.get("updated");
     const requiredSections = TYPE_SECTION_REQUIREMENTS[type] || [];
     for (const section of requiredSections) {
       if (!content.includes(section)) {
@@ -172,7 +238,17 @@ function main() {
       }
     }
 
-    if (type === "mvp" && frontmatter.values.get("status") === "active") {
+    if (status === "seed" && evidence === "unsourced" && daysSince(updated) > STALE_SEED_DAYS) {
+      addIssue(sourceQualityIssues, `${relativePath}: unsourced seed page가 ${STALE_SEED_DAYS}일 넘게 갱신되지 않음`);
+    }
+
+    if (["concept", "tool", "comparison"].includes(type) && evidence === "source-backed") {
+      if (!hasSourcePageLink(content, pages)) {
+        addIssue(sourceQualityIssues, `${relativePath}: source-backed page지만 wiki/sources/ page 링크가 없음`);
+      }
+    }
+
+    if (type === "mvp" && status === "active") {
       if (/## 성공 기준\s*\n\s*(## |$)/m.test(content)) {
         addIssue(executionIssues, `${relativePath}: active MVP의 성공 기준이 비어 있음`);
       }
@@ -200,6 +276,17 @@ function main() {
         } else if (!pages.has(link)) {
           addIssue(brokenLinks, `${relativePath}: 대상 페이지 없음 - [[${link}]]`);
         }
+      }
+    }
+  }
+
+  if (fs.existsSync(OVERVIEW_PATH)) {
+    const overviewCounts = parseOverviewCounts(fs.readFileSync(OVERVIEW_PATH, "utf8"));
+    for (const [type, label] of OVERVIEW_COUNT_LABELS) {
+      const actual = typeCounts.get(type) || 0;
+      const shown = overviewCounts.get(type);
+      if (shown !== undefined && shown !== actual) {
+        addIssue(overviewIssues, `wiki/overview.md: ${label} 수치 불일치 - 표시 ${shown}, 실제 ${actual}`);
       }
     }
   }
@@ -240,6 +327,8 @@ function main() {
     ...taxonomyIssues,
     ...typeSectionIssues,
     ...executionIssues,
+    ...sourceQualityIssues,
+    ...overviewIssues,
     ...brokenLinks,
     ...indexOmissions,
     ...englishHeadings,
@@ -252,6 +341,8 @@ function main() {
   printSection("Source taxonomy 문제", taxonomyIssues);
   printSection("실행 페이지 구조 문제", typeSectionIssues);
   printSection("MVP / 회의 운영 경고", executionIssues);
+  printSection("출처 / 검증 품질 경고", sourceQualityIssues);
+  printSection("Overview 수치 경고", overviewIssues);
   printSection("깨진 링크 / 미생성 페이지", brokenLinks);
   printSection("Index 누락", indexOmissions);
   printSection("영어 section heading", englishHeadings);

@@ -34,7 +34,7 @@ evidence_level: unsourced
 - 결정 기록: 0개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 1개
-- 최근 구조 점검: 2026-05-21, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-05-22, lint errors 0 / warnings 0
 
 핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 고도화 방향은 다양한 아이디어와 MVP / PoC 후보를 빠르게 선별하고, 회의록과 결정 기록을 실행 자산으로 남기는 것이다.
 
@@ -53,7 +53,7 @@ evidence_level: unsourced
 
 ## 반복 루틴
 
-- 새 자료 처리: raw 보존, source summary 작성, 관련 concept/project/tool 갱신, index와 log 업데이트.
+- 새 자료 처리: 필요하면 `node scripts/new-source.ts <raw-path-or-url>`로 triage 초안을 먼저 보고, raw 보존, source summary 작성, 관련 concept/project/tool 갱신, index와 log 업데이트.
 - 아이디어 처리: 문제, 대상 사용자, 해결 가설, 빠른 검증 방법을 분리하고 실행 가치가 있으면 MVP / PoC로 승격한다.
 - MVP / PoC 처리: 성공 기준과 1주 실험 계획을 먼저 쓰고, 다음 작업이 없으면 active 상태로 두지 않는다.
 - 회의록 처리: 핵심 논의보다 결정과 액션 아이템을 우선 추출하고 관련 project, mvp, idea에 연결한다.

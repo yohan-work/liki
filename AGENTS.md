@@ -46,6 +46,7 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 
 - 새 source material은 먼저 `raw/`에 둔다.
 - 자료를 바로 wiki에 반영하기 전에 필요하면 `templates/ingest-triage.md` 구조로 triage를 먼저 수행한다.
+- 간단한 초안이 필요하면 `node scripts/new-source.ts <raw-path-or-url>`로 read-only ingest triage를 먼저 출력한다. 이 명령은 wiki 파일을 수정하지 않는다.
 - triage는 쓰기 전 계획이다. 저장 가치, taxonomy, 생성/갱신할 페이지, 모순 가능성, 사용자 승인 필요 변경을 먼저 드러낸다.
 - ingest한 source마다 `wiki/sources/`에 source summary를 만든다.
 - source summary에는 `source_id`, `type`, `status`, `original_path`, `date_added`, `domain`, `content_type`, `knowledge_role`, `source_quality`, `use_for`, `related_pages`를 포함한다.
@@ -119,6 +120,8 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - 기존 lint report를 덮어쓰지 않는다.
 - orphan page, duplicate concept, stale claim, missing link, contradiction, new page candidate를 점검한다.
 - source 없는 주장, index 누락, frontmatter 누락, comparison 후보도 함께 점검한다.
+- 자동 lint는 오래된 unsourced seed page, source-backed page의 source summary 연결, source summary의 검증 필요 주장, overview 수치 불일치도 함께 점검한다.
+- 운영 상태 수치가 필요하면 `node scripts/wiki-stats.ts`를 사용하고, overview에 붙일 상태 블록은 `node scripts/wiki-stats.ts --overview-block`로 확인한다.
 - lint 중 직접 고쳐도 되는 항목은 index 누락, 명백한 오타, 템플릿 섹션명 불일치, frontmatter 누락처럼 구조적으로 명확한 문제로 제한한다.
 - source 해석, 개념 병합, 오래된 주장 삭제, contradiction 처리, 민감도 변경은 report에 권장 작업으로 남기고 별도 지시 없이 직접 수정하지 않는다.
 - lint report에는 고칠 항목과 보고만 할 항목을 구분한다.

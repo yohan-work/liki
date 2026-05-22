@@ -105,3 +105,11 @@ evidence_level: unsourced
 - Trend Chaser와 byul.ai를 예시로 두고, 무료 운영 가능한 정적 사이트 기반 PoC 계획, 검증 기준, 보류 조건을 분리했다.
 - 변경 영역: [[AI 트렌드 레이더 웹사이트]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
 - 후속 작업: 1차 소스 20개 목록과 데이터 스키마를 만든 뒤 MVP / PoC 페이지로 승격할지 판단한다.
+
+## [2026-05-22] automation | 핵심 자동화 1차 적용
+
+- `scripts/new-source.ts`를 read-only ingest triage 초안 생성기로 구현했다.
+- `scripts/wiki-stats.ts`를 추가해 type, status, evidence_level, overview 상태 블록을 집계할 수 있게 했다.
+- `scripts/lint-wiki.ts`를 확장해 오래된 unsourced seed, source-backed page의 source 연결, 검증 필요 주장, overview 수치 불일치를 점검한다.
+- 변경 영역: 자동화 스크립트, AGENTS 규칙, README 운영 문서, [[LLM Wiki Overview]].
+- 후속 작업: 실제 신규 URL ingest 전에 triage CLI를 사용해 초안 품질과 누락되는 taxonomy 힌트를 조정한다.
