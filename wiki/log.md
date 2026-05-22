@@ -127,3 +127,26 @@ evidence_level: unsourced
 - `scripts/opportunity-review.ts`를 추가해 유망 기회, 반복 패턴, MVP 승격 후보, 보류 조건을 read-only로 출력하게 했다.
 - lint, index draft, stats, README, AGENTS에 opportunity와 opportunity-review type을 연결했다.
 - 후속 작업: 실제 기회 리뷰를 생성한 뒤 실행 점수 기준이 현재 작업 방식에 맞는지 조정한다.
+
+## [2026-05-22] ingest | WikiDocs Hermes Agent 가이드
+
+- WikiDocs 책 "Hermes Agent: 성장하는 AI 에이전트 실전 가이드"를 raw snapshot으로 보존하고 [[WikiDocs Hermes Agent Guide]]로 ingest했다.
+- Hermes Agent를 [[Hermes 4.3 36B]] 모델과 분리해 [[Hermes Agent]] 도구 페이지로 정리했다.
+- 도구, 메모리, 스킬, MCP, 메시징 게이트웨이, 반복 실행, 보안 모델 관련 주제를 [[Agentic Workflow]], [[Skills]], [[Orchestration]], [[MCP Remote SSE]]에 연결했다.
+- 변경 영역: [[Hermes Agent]], [[WikiDocs Hermes Agent Guide]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Hermes Agent 공식 문서와 GitHub repository를 별도 source로 ingest하고, 실제 설치/보안 경계를 sandbox에서 확인한다.
+
+## [2026-05-22] ingest | Blake Crosley Hermes Agent 실무 가이드
+
+- Blake Crosley의 "Hermes Agent: 실무자용 참고서 (2026)" 한국어 페이지를 raw HTML snapshot으로 보존하고 [[Blake Crosley Hermes Agent Guide]]로 ingest했다.
+- provider 인증, 설정 계층, tool/toolset, skill, persistent memory, SOUL.md/AGENTS.md, messaging gateway, cron, MCP, 보안 강화, v0.13 Tenacity release 내용을 [[Hermes Agent]]에 보강했다.
+- 변경 영역: [[Hermes Agent]], [[Blake Crosley Hermes Agent Guide]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Hermes Agent 공식 문서와 GitHub repository를 직접 ingest해 practitioner guide의 세부 주장과 보안 모델을 대조한다.
+
+## [2026-05-22] ingest | 요즘IT Hermes Agent 해설 글
+
+- 요즘IT 글 "‘쓸수록 나아진다’는 그 AI, Hermes Agent 제대로 알아보기"를 raw snapshot으로 보존하고 [[YOZM Hermes Agent Article]]로 ingest했다.
+- Self-improving 구현을 skill 자동 생성, skill 검색/호출, memory 갱신, 사용자 모델링 관점으로 정리하고 [[Hermes Agent]]에 반영했다.
+- 커뮤니티 반응과 skill poisoning, MCP sandbox, credential exposure, GDPR 리스크를 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Hermes Agent]], [[YOZM Hermes Agent Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: OpenRouter 순위, GitHub star, 보안 리스크 관련 주장은 공식 문서와 현재 repository 기준으로 재확인한다.

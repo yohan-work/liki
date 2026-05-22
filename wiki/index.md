@@ -71,6 +71,7 @@ evidence_level: unsourced
 - [[Public APIs 4Kr]]
 - [[OpenAI Developer Community]]
 - [[Hermes 4.3 36B]]
+- [[Hermes Agent]]
 - [[Content Marketing Team]]
 - [[Microsoft Clarity]]
 
@@ -100,6 +101,9 @@ evidence_level: unsourced
 - [[Hancom LLM Hallucination Reduction Research Article]]
 - [[GitHub Content Marketing Team Repository]]
 - [[Brunch Clarity UX CRO Article]]
+- [[WikiDocs Hermes Agent Guide]]
+- [[Blake Crosley Hermes Agent Guide]]
+- [[YOZM Hermes Agent Article]]
 
 ## 리포트
 
