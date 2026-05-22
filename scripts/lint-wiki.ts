@@ -35,6 +35,7 @@ const TYPE_SECTION_REQUIREMENTS = {
   mvp: ["## 목표", "## 범위", "## 성공 기준", "## 1주 실험 계획", "## 다음 작업"],
   decision: ["## 결정", "## 근거", "## 선택지", "## 되돌릴 조건"],
   meeting: ["## 회의 목적", "## 핵심 논의", "## 결정", "## 액션 아이템"],
+  "weekly-review": ["## 이번 주 실행 후보", "## MVP / PoC 승격 후보", "## 결정이 필요한 항목", "## 근거 보강 후보", "## 다음 주까지의 최소 행동"],
 };
 const OVERVIEW_COUNT_LABELS = [
   ["source", "자료 요약"],
@@ -298,6 +299,7 @@ function main() {
     "wiki/mvps/",
     "wiki/decisions/",
     "wiki/meetings/",
+    "wiki/reviews/",
     "wiki/tools/",
     "wiki/comparisons/",
     "wiki/questions/",

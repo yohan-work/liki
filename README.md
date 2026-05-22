@@ -30,6 +30,7 @@ LLM Wiki는 다양한 주제의 자료를 장기적으로 축적하고 연결하
 - `wiki/mvps/`: 1주 안에 검증 가능한 MVP / PoC 후보와 실험 계획.
 - `wiki/decisions/`: 프로젝트와 MVP 방향에 영향을 주는 결정 기록.
 - `wiki/meetings/`: 회의록 요약, 결정, 액션 아이템.
+- `wiki/reviews/`: 주간 리뷰 리포트와 실행 후보 점검 기록.
 - `daily/`: 일일 메모 또는 작업 메모.
 - `templates/`: 재사용 가능한 페이지 템플릿.
 - `scripts/`: 향후 자동화용 스크립트.
@@ -160,6 +161,22 @@ node scripts/new-source.ts https://example.com/article
 방금 결정한 내용을 decision record로 남겨줘.
 결정, 배경, 근거, 선택지, 포기한 대안, 되돌릴 조건, 후속 작업을 한국어로 정리해줘.
 ```
+
+## 주간 리뷰
+
+주간 리뷰는 아이디어, MVP / PoC, 회의 액션, 결정 후속 작업, source-backed 강화 후보를 한 번에 보는 검토 루틴입니다. 기본 명령은 파일을 만들지 않고 stdout으로만 초안을 출력합니다.
+
+```bash
+node scripts/weekly-review.ts
+```
+
+리뷰를 기록으로 남기려면 아래 옵션을 사용합니다. 같은 날짜 파일이 있으면 덮어쓰지 않고 중단합니다.
+
+```bash
+node scripts/weekly-review.ts --write-draft
+```
+
+리뷰 결과가 실제 실행 방향을 바꾸면 관련 idea, mvp, decision page에 별도로 반영합니다.
 
 ## Log 형식
 

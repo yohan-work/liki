@@ -73,6 +73,7 @@ evidence_level: unsourced
 - MVP / PoC 페이지: `wiki/mvps/`
 - 결정 기록: `wiki/decisions/`
 - 회의록 요약: `wiki/meetings/`
+- 주간 리뷰: `wiki/reviews/`
 - 프로젝트: [[Basalt Project]], [[Personal Operating System]]
 - 비교: [[RAG vs Agentic Workflow]]
 - 최근 lint 기준: [[lint-2026-05-20]]

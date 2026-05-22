@@ -99,6 +99,14 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - 회의 중 나온 주장과 Codex의 해석을 섞지 않는다.
 - 외부 공유가 애매한 회의록은 `sensitivity: private`를 유지한다.
 
+## 주간 리뷰 규칙
+
+- 주간 리뷰 초안은 `node scripts/weekly-review.ts`로 read-only 출력한다.
+- 리뷰를 기록으로 남길 때만 `node scripts/weekly-review.ts --write-draft`를 사용하며, 기존 `wiki/reviews/weekly-YYYY-MM-DD.md`는 덮어쓰지 않는다.
+- weekly review는 확정 결정이 아니라 검토용 후보 목록이다.
+- 리뷰에서 실제 방향을 바꾸는 판단은 관련 idea, mvp, decision page에 따로 반영한다.
+- weekly review page는 `type: weekly-review`, `sensitivity: private`를 기본값으로 둔다.
+
 ## Query 규칙
 
 - 좋은 query answer는 `wiki/questions/`에 저장할 수 있다.

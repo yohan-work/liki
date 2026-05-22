@@ -14,6 +14,7 @@ const TYPE_ORDER = [
   ["mvp", "MVP / PoC"],
   ["decision", "결정"],
   ["meeting", "회의록"],
+  ["weekly-review", "주간 리뷰"],
   ["tool", "도구"],
   ["people", "인물"],
   ["person", "인물"],

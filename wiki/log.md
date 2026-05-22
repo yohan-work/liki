@@ -113,3 +113,10 @@ evidence_level: unsourced
 - `scripts/lint-wiki.ts`를 확장해 오래된 unsourced seed, source-backed page의 source 연결, 검증 필요 주장, overview 수치 불일치를 점검한다.
 - 변경 영역: 자동화 스크립트, AGENTS 규칙, README 운영 문서, [[LLM Wiki Overview]].
 - 후속 작업: 실제 신규 URL ingest 전에 triage CLI를 사용해 초안 품질과 누락되는 taxonomy 힌트를 조정한다.
+
+## [2026-05-22] automation | 주간 리뷰 시스템 추가
+
+- `scripts/weekly-review.ts`를 추가해 아이디어, MVP / PoC, 결정, 회의 액션, source-backed 강화 후보를 주간 리뷰 초안으로 모을 수 있게 했다.
+- `templates/weekly-review.md`와 `wiki/reviews/`를 추가하고, index draft와 lint가 `type: weekly-review`를 인식하도록 확장했다.
+- README와 AGENTS에 주간 리뷰 운영 규칙을 추가했다.
+- 후속 작업: 첫 실제 weekly review를 생성한 뒤 후보 추출 기준이 너무 넓거나 좁은지 조정한다.
