@@ -11,6 +11,8 @@ const TYPE_ORDER = [
   ["concept", "개념"],
   ["project", "프로젝트"],
   ["idea", "아이디어"],
+  ["opportunity", "기회"],
+  ["opportunity-review", "기회 리뷰"],
   ["mvp", "MVP / PoC"],
   ["decision", "결정"],
   ["meeting", "회의록"],

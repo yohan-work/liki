@@ -27,6 +27,7 @@ LLM Wiki는 다양한 주제의 자료를 장기적으로 축적하고 연결하
 - `inbox/to-ingest.md`: ingest 대기열.
 - `wiki/`: 유지보수되는 위키 페이지.
 - `wiki/ideas/`: 실행 후보가 될 수 있는 아이디어 brief.
+- `wiki/opportunities/`: 여러 아이디어와 자료에서 뽑은 실행 기회 카드와 기회 리뷰.
 - `wiki/mvps/`: 1주 안에 검증 가능한 MVP / PoC 후보와 실험 계획.
 - `wiki/decisions/`: 프로젝트와 MVP 방향에 영향을 주는 결정 기록.
 - `wiki/meetings/`: 회의록 요약, 결정, 액션 아이템.
@@ -58,6 +59,7 @@ knowledge_role:
   - comparison
   - question
   - idea
+  - opportunity
   - mvp
   - decision
   - meeting
@@ -72,7 +74,7 @@ use_for:
   - presentation
 ```
 
-이 taxonomy는 특정 주제 전용이 아닙니다. 자료가 어떤 domain이든 Codex가 먼저 분류하고, 그 결과에 따라 `wiki/sources/`, `wiki/concepts/`, `wiki/projects/`, `wiki/ideas/`, `wiki/mvps/`, `wiki/decisions/`, `wiki/meetings/`, `wiki/tools/`, `wiki/comparisons/`, `wiki/questions/` 중 어디에 반영할지 결정합니다.
+이 taxonomy는 특정 주제 전용이 아닙니다. 자료가 어떤 domain이든 Codex가 먼저 분류하고, 그 결과에 따라 `wiki/sources/`, `wiki/concepts/`, `wiki/projects/`, `wiki/ideas/`, `wiki/opportunities/`, `wiki/mvps/`, `wiki/decisions/`, `wiki/meetings/`, `wiki/tools/`, `wiki/comparisons/`, `wiki/questions/` 중 어디에 반영할지 결정합니다.
 
 웹 자료는 시간이 지나면 바뀌거나 사라질 수 있으므로 source summary에 provenance도 남깁니다. 새 ingest부터는 `captured_at`, `accessed_at`, `canonical_url`, `content_hash`, `source_version`을 가능한 범위에서 기록합니다.
 
@@ -147,6 +149,22 @@ node scripts/new-source.ts https://example.com/article
 이번 주 wiki/ideas/와 wiki/mvps/를 리뷰해줘.
 실행할 3개 후보, 보류할 후보, 결정이 필요한 후보, source-backed로 강화할 후보를 분리해줘.
 ```
+
+## Opportunity Compiler
+
+Opportunity Compiler는 위키 안의 아이디어, 자료, MVP / PoC 후보를 실행 기회 관점으로 다시 묶는 검토 루틴입니다. 기본 명령은 파일을 만들지 않고 stdout으로만 초안을 출력합니다.
+
+```bash
+node scripts/opportunity-review.ts
+```
+
+기회 리뷰를 기록으로 남기려면 아래 옵션을 사용합니다. 같은 날짜 파일이 있으면 덮어쓰지 않고 중단합니다.
+
+```bash
+node scripts/opportunity-review.ts --write-draft
+```
+
+실행할 만한 후보는 `templates/opportunity-card.md` 구조로 `wiki/opportunities/`에 기회 카드로 정리하고, 1주 검증이 가능하면 `wiki/mvps/`로 승격합니다.
 
 ## 회의록과 결정 기록
 

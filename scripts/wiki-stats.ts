@@ -109,6 +109,7 @@ function renderOverviewBlock(stats) {
 - 도구 페이지: ${getCount(stats, "tool")}개
 - 프로젝트 페이지: ${getCount(stats, "project")}개
 - 아이디어 페이지: ${getCount(stats, "idea")}개
+- 기회 카드: ${getCount(stats, "opportunity")}개
 - MVP / PoC 페이지: ${getCount(stats, "mvp")}개
 - 결정 기록: ${getCount(stats, "decision")}개
 - 회의록 요약: ${getCount(stats, "meeting")}개

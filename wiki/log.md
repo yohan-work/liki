@@ -120,3 +120,10 @@ evidence_level: unsourced
 - `templates/weekly-review.md`와 `wiki/reviews/`를 추가하고, index draft와 lint가 `type: weekly-review`를 인식하도록 확장했다.
 - README와 AGENTS에 주간 리뷰 운영 규칙을 추가했다.
 - 후속 작업: 첫 실제 weekly review를 생성한 뒤 후보 추출 기준이 너무 넓거나 좁은지 조정한다.
+
+## [2026-05-22] automation | Opportunity Compiler 추가
+
+- `wiki/opportunities/`와 opportunity card/review 템플릿을 추가해 아이디어와 자료를 실행 기회로 재컴파일할 수 있게 했다.
+- `scripts/opportunity-review.ts`를 추가해 유망 기회, 반복 패턴, MVP 승격 후보, 보류 조건을 read-only로 출력하게 했다.
+- lint, index draft, stats, README, AGENTS에 opportunity와 opportunity-review type을 연결했다.
+- 후속 작업: 실제 기회 리뷰를 생성한 뒤 실행 점수 기준이 현재 작업 방식에 맞는지 조정한다.

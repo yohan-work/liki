@@ -30,6 +30,7 @@ evidence_level: unsourced
 - 도구 페이지: 8개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
+- 기회 카드: 0개
 - MVP / PoC 페이지: 0개
 - 결정 기록: 0개
 - 회의록 요약: 0개
@@ -70,6 +71,7 @@ evidence_level: unsourced
 - Ingest 대기: `inbox/to-ingest.md`
 - 아이디어 임시 저장: `inbox/ideas/`
 - 아이디어 페이지: `wiki/ideas/`
+- 기회 카드와 리뷰: `wiki/opportunities/`
 - MVP / PoC 페이지: `wiki/mvps/`
 - 결정 기록: `wiki/decisions/`
 - 회의록 요약: `wiki/meetings/`

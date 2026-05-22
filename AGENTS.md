@@ -79,6 +79,7 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - 두 개념의 차이, 선택 기준, 적용 조건을 설명하는 데 유용하면 `wiki/comparisons/` 후보로 기록한다.
 - 반복 참조할 만한 질문 답변을 만든 경우에만 `wiki/questions/`에 저장한다.
 - 빠른 아이디어는 `inbox/ideas/`에 먼저 둘 수 있고, 실행 가치가 확인되면 `wiki/ideas/`에 idea page로 승격한다.
+- 여러 자료, 아이디어, 회의록에서 반복되는 실행 가능성이 보이면 `wiki/opportunities/`에 opportunity card 또는 opportunity review로 정리한다.
 - 1주 안에 검증 가능한 실행 후보는 `wiki/mvps/`에 MVP / PoC page로 만든다.
 - 프로젝트나 MVP 방향에 영향을 주는 선택은 `wiki/decisions/`에 decision record로 남긴다.
 - 회의록은 `wiki/meetings/`에 요약하되, 핵심 논의보다 결정, 액션 아이템, 연결할 project/idea/mvp를 우선 기록한다.
@@ -91,6 +92,14 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - MVP / PoC의 범위는 빠른 검증에 필요한 최소 기능으로 제한하고, 제외할 범위를 명시한다.
 - 장기 프로젝트와 연결되는 MVP / PoC는 관련 project page에도 링크한다.
 - 보류 또는 중단 결정은 삭제하지 말고 decision record나 해당 page의 결정 로그에 남긴다.
+
+## Opportunity Compiler 규칙
+
+- opportunity card는 자료 요약이 아니라 실행 기회 판단 도구다.
+- opportunity card에는 왜 지금인가, 해결할 문제, 연결된 기존 아이디어, 참고 자료, 만들 수 있는 MVP, 1주 검증 방법, 리스크, 다음 행동을 포함한다.
+- `node scripts/opportunity-review.ts`는 read-only로 기회 리뷰 초안을 출력한다.
+- 기록으로 남길 때만 `node scripts/opportunity-review.ts --write-draft`를 사용하며, 기존 `wiki/opportunities/opportunity-review-YYYY-MM-DD.md`는 덮어쓰지 않는다.
+- 기회 리뷰의 자동 점수는 확정 판단이 아니다. 실제 실행 결정은 MVP / PoC page나 decision record에 따로 반영한다.
 
 ## 회의록 규칙
 

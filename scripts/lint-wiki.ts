@@ -32,6 +32,8 @@ const SOURCE_FIELDS = [
 ];
 const TYPE_SECTION_REQUIREMENTS = {
   idea: ["## 문제", "## 해결 가설", "## 빠른 검증 방법", "## 다음 행동"],
+  opportunity: ["## 왜 지금인가", "## 해결할 수 있는 문제", "## 연결된 기존 아이디어", "## 만들 수 있는 MVP", "## 1주 검증 방법", "## 다음 행동"],
+  "opportunity-review": ["## 이번 주 가장 유망한 기회", "## 새로 발견된 패턴", "## MVP로 승격할 후보", "## 더 모아야 할 자료", "## 다음 행동"],
   mvp: ["## 목표", "## 범위", "## 성공 기준", "## 1주 실험 계획", "## 다음 작업"],
   decision: ["## 결정", "## 근거", "## 선택지", "## 되돌릴 조건"],
   meeting: ["## 회의 목적", "## 핵심 논의", "## 결정", "## 액션 아이템"],
@@ -43,6 +45,7 @@ const OVERVIEW_COUNT_LABELS = [
   ["tool", "도구 페이지"],
   ["project", "프로젝트 페이지"],
   ["idea", "아이디어 페이지"],
+  ["opportunity", "기회 카드"],
   ["mvp", "MVP / PoC 페이지"],
   ["decision", "결정 기록"],
   ["meeting", "회의록 요약"],
@@ -296,6 +299,7 @@ function main() {
     "wiki/concepts/",
     "wiki/projects/",
     "wiki/ideas/",
+    "wiki/opportunities/",
     "wiki/mvps/",
     "wiki/decisions/",
     "wiki/meetings/",
@@ -313,7 +317,7 @@ function main() {
     const frontmatter = parseFrontmatter(content);
     const title = (frontmatter && frontmatter.values.get("title")) || pageTitleFromFile(file);
     const type = frontmatter && frontmatter.values.get("type");
-    if (type === "index-draft") continue;
+    if (["index-draft", "weekly-review", "opportunity-review"].includes(type)) continue;
     if (!indexContent.includes(`[[${title}]]`)) {
       addIssue(indexOmissions, `${relativePath}: wiki/index.md 본문에 [[${title}]] 없음`);
     }
