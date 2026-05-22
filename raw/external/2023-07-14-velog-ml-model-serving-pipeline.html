@@ -1,0 +1,566 @@
+<!doctype html>
+<html><head><title data-rh="true">ML Model Serving Pipeline</title><link data-rh="true" rel="canonical" href="https://velog.io/@synoti21/ML-Model-Serving-Pipeline"/><meta data-rh="true" property="fb:app_id" content="203040656938507"/><meta data-rh="true" name="description" content="AI는 훈련 뿐만 아닌 서빙까지가 완성."/><meta data-rh="true" property="og:url" content="https://velog.io/@synoti21/ML-Model-Serving-Pipeline"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:title" content="ML Model Serving Pipeline"/><meta data-rh="true" property="og:description" content="AI는 훈련 뿐만 아닌 서빙까지가 완성."/><meta data-rh="true" property="og:image" content="https://velog.velcdn.com/images/synoti21/post/04ab54cc-2892-4d4a-9699-99fc518c3fb4/image.png"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="ML Model Serving Pipeline"/><meta data-rh="true" name="twitter:description" content="AI는 훈련 뿐만 아닌 서빙까지가 완성."/><meta data-rh="true" name="twitter:image" content="https://velog.velcdn.com/images/synoti21/post/04ab54cc-2892-4d4a-9699-99fc518c3fb4/image.png"/><style data-styled="" data-styled-version="5.3.3">.hSMJOX{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;font-weight:bold;cursor:pointer;outline:none;border:none;color:white;background:var(--primary1);color:var(--button-text);border-radius:4px;padding-top:0;padding-bottom:0;height:2rem;padding-left:1.25rem;padding-right:1.25rem;font-size:1rem;}/*!sc*/
+.hSMJOX:hover,.hSMJOX:focus{background:var(--primary2);}/*!sc*/
+.sc-jrQzAO + .sc-jrQzAO{margin-left:0.5rem;}/*!sc*/
+.hSMJOX:disabled{cursor:not-allowed;background:var(--bg-element4);color:var(--text3);}/*!sc*/
+.hSMJOX:disabled:hover{background:var(--bg-element4);color:var(--text3);}/*!sc*/
+data-styled.g11[id="sc-jrQzAO"]{content:"hSMJOX,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g13[id="sc-global-gYCCRU1"]{content:"sc-global-gYCCRU1,"}/*!sc*/
+.cyyZlI{color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g17[id="sc-egiyK"]{content:"cyyZlI,"}/*!sc*/
+.fldlST{height:2rem;padding-left:1rem;padding-right:1rem;font-size:1rem;border-radius:1rem;background:none;border:none;outline:none;font-weight:bold;word-break:keep-all;background:var(--bg-element5);color:var(--button-text);-webkit-transition:0.125s all ease-in;transition:0.125s all ease-in;cursor:pointer;}/*!sc*/
+.fldlST:hover{background:var(--bg-element6);}/*!sc*/
+.fldlST:focus{box-shadow:0px 2px 12px #00000030;}/*!sc*/
+.fldlST:disabled{background:var(--bg-element2);}/*!sc*/
+data-styled.g18[id="sc-bqiRlB"]{content:"fldlST,"}/*!sc*/
+.cQvXTx{width:1728px;margin-left:auto;margin-right:auto;}/*!sc*/
+@media (max-width:1919px){.cQvXTx{width:1376px;}}/*!sc*/
+@media (max-width:1440px){.cQvXTx{width:1024px;}}/*!sc*/
+@media (max-width:1056px){.cQvXTx{width:calc(100% - 2rem);}}/*!sc*/
+data-styled.g22[id="sc-fFeiMQ"]{content:"cQvXTx,"}/*!sc*/
+.ddFdew{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;font-weight:bold;color:var(--text1);font-size:1.3125rem;-webkit-text-decoration:none;text-decoration:none;font-family:Fira Mono,monospace;}/*!sc*/
+@media (max-width:1024px){.ddFdew{font-size:1.125rem;}.ddFdew .velog-logo{height:1.25rem;}}/*!sc*/
+.ddFdew a{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ddFdew .user-logo{display:block;max-width:calc(100vw - 250px);text-overflow:ellipsis;white-space:nowrap;overflow-x:hidden;overflow-y:hidden;}/*!sc*/
+data-styled.g28[id="sc-kfPuZi"]{content:"ddFdew,"}/*!sc*/
+.kdLiUF{color:inherit;}/*!sc*/
+.kdLiUF svg{color:inherit;margin-right:1rem;width:1.75rem;height:1.75rem;display:block;}/*!sc*/
+@media (max-width:1024px){.kdLiUF svg{width:1.5rem;height:1.5rem;margin-right:0.75rem;}}/*!sc*/
+data-styled.g29[id="sc-fKVqWL"]{content:"kdLiUF,"}/*!sc*/
+.jEdNvQ{height:4rem;}/*!sc*/
+data-styled.g30[id="sc-bBHxTw"]{content:"jEdNvQ,"}/*!sc*/
+.glTvbH{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;border:none;width:2.5rem;height:2.5rem;outline:none;border-radius:50%;color:var(--text1);cursor:pointer;margin-right:0.5rem;}/*!sc*/
+.glTvbH:hover{background:var(--slight-layer);}/*!sc*/
+.glTvbH svg{width:24px;height:24px;}/*!sc*/
+data-styled.g31[id="sc-iwjdpV"]{content:"glTvbH,"}/*!sc*/
+.pAGEY{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;border:none;width:2.5rem;height:2.5rem;outline:none;border-radius:50%;color:var(--text1);cursor:pointer;margin-right:4px;}/*!sc*/
+.pAGEY:hover{background:var(--slight-layer);}/*!sc*/
+.pAGEY svg{width:24px;height:24px;}/*!sc*/
+data-styled.g32[id="sc-cxpSdN"]{content:"pAGEY,"}/*!sc*/
+.hrgwyc{height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}/*!sc*/
+data-styled.g34[id="sc-iJKOTD"]{content:"hrgwyc,"}/*!sc*/
+.gHrJRn{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;}/*!sc*/
+@media (max-width:1024px){.gHrJRn .write-button{display:none;}}/*!sc*/
+data-styled.g35[id="sc-giYglK"]{content:"gHrJRn,"}/*!sc*/
+.bxsBRa{position:fixed;top:0;background:var(--bg-element1);width:100%;z-index:10;box-shadow:0px 0 8px rgba(0,0,0,0.08);}/*!sc*/
+.bxsBRa .tab-wrapper{margin-top:-2rem;}/*!sc*/
+data-styled.g50[id="sc-cTAqQK"]{content:"bxsBRa,"}/*!sc*/
+.kTIDXm{padding-bottom:4rem;}/*!sc*/
+data-styled.g53[id="sc-bBHHxi"]{content:"kTIDXm,"}/*!sc*/
+.iLfnNd{background:var(--bg-element4);-webkit-animation:gsdBxV 1s ease-in-out infinite;animation:gsdBxV 1s ease-in-out infinite;display:inline-block;border-radius:4px;height:1em;}/*!sc*/
+.sc-lbhJGD + .sc-lbhJGD{margin-left:0.5rem;}/*!sc*/
+.jsEdRE{background:var(--bg-element4);-webkit-animation:gsdBxV 1s ease-in-out infinite;animation:gsdBxV 1s ease-in-out infinite;display:inline-block;border-radius:4px;height:1em;}/*!sc*/
+data-styled.g60[id="sc-lbhJGD"]{content:"iLfnNd,jsEdRE,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g69[id="sc-global-iqNrnJ1"]{content:"sc-global-iqNrnJ1,"}/*!sc*/
+.dXONqK{width:768px;margin-left:auto;margin-right:auto;}/*!sc*/
+@media (max-width:768px){.dXONqK{width:100%;}}/*!sc*/
+data-styled.g76[id="sc-TBWPX"]{content:"dXONqK,"}/*!sc*/
+.gISUXI{margin-bottom:0.875rem;background:var(--bg-tag);padding-left:1rem;padding-right:1rem;height:2rem;border-radius:1rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-right:0.875rem;color:var(--primary1);-webkit-text-decoration:none;text-decoration:none;font-weight:500;font-size:1rem;}/*!sc*/
+@media (max-width:768px){.gISUXI{height:1.5rem;font-size:0.75rem;border-radius:0.75rem;padding-left:0.75rem;padding-right:0.75rem;margin-right:0.5rem;margin-bottom:0.5rem;}}/*!sc*/
+.gISUXI:hover{opacity:0.75;}/*!sc*/
+data-styled.g85[id="sc-dtMgUX"]{content:"gISUXI,"}/*!sc*/
+.bpMcZw{margin-top:0.875rem;margin-bottom:-0.875rem;min-height:0.875rem;}/*!sc*/
+@media (max-width:768px){.bpMcZw{margin-top:0.5rem;margin-bottom:-0.5rem;min-height:0.5rem;}}/*!sc*/
+data-styled.g86[id="sc-cZMNgc"]{content:"bpMcZw,"}/*!sc*/
+.fiOuRZ{margin-top:5.5rem;}/*!sc*/
+@media (max-width:1024px){.fiOuRZ .head-wrapper{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+.fiOuRZ h1{font-size:3rem;line-height:1.5;-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;margin-top:0;font-weight:800;color:var(--text1);margin-bottom:2rem;word-break:keep-all;overflow-wrap:break-word;-webkit-transition:color 0.125s ease-in;transition:color 0.125s ease-in;}/*!sc*/
+@media (max-width:1024px){.fiOuRZ{margin-top:2rem;}.fiOuRZ h1{font-size:2.25rem;}}/*!sc*/
+data-styled.g88[id="sc-jQrDum"]{content:"fiOuRZ,"}/*!sc*/
+.jGdQwA{font-size:1rem;color:var(--text2);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.jGdQwA .information .username{color:var(--text1);font-weight:bold;}/*!sc*/
+.jGdQwA .information .username a{color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.jGdQwA .information .username a:hover{color:var(--text2);-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.jGdQwA .information .separator{margin-left:0.5rem;margin-right:0.5rem;}/*!sc*/
+@media (max-width:768px){.jGdQwA .information{font-size:0.875rem;}}/*!sc*/
+@media (max-width:768px){.jGdQwA{margin-bottom:0.75rem;}}/*!sc*/
+data-styled.g89[id="sc-fvxzrP"]{content:"jGdQwA,"}/*!sc*/
+.eYeYLy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g90[id="sc-fbyfCU"]{content:"eYeYLy,"}/*!sc*/
+.FTZwa{font-size:1.125rem;color:var(--text1);-webkit-transition:color 0.125s ease-in;transition:color 0.125s ease-in;line-height:1.7;-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;word-break:keep-all;word-wrap:break-word;}/*!sc*/
+.FTZwa ul b,.FTZwa ol b,.FTZwa p b{font-weight:400;}/*!sc*/
+.FTZwa ul code,.FTZwa ol code,.FTZwa p code{background:var(--bg-inline-code);padding:0.2em 0.4em;font-size:85%;border-radius:3px;}/*!sc*/
+.FTZwa ul a code,.FTZwa ol a code,.FTZwa p a code{color:var(--primary1);}/*!sc*/
+.FTZwa a{color:var(--primary1);-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.FTZwa a:hover{color:var(--primary1);-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.FTZwa code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas, 'Courier New',monospace;}/*!sc*/
+.FTZwa hr{border:none;height:1px;width:100%;background:var(--border3);margin-top:2rem;margin-bottom:2rem;}/*!sc*/
+.FTZwa p img{display:block;margin:0 auto;max-width:100%;margin-top:3rem;margin-bottom:3rem;}/*!sc*/
+.FTZwa h1{font-size:2.5rem;}/*!sc*/
+.FTZwa h2{font-size:2rem;}/*!sc*/
+.FTZwa h3{font-size:1.5rem;}/*!sc*/
+.FTZwa h4{font-size:1.125rem;}/*!sc*/
+.FTZwa h1,.FTZwa h2,.FTZwa h3,.FTZwa h4{line-height:1.5;margin-bottom:1rem;}/*!sc*/
+.FTZwa p + h1,.FTZwa p + h2,.FTZwa p + h3,.FTZwa p + h4{margin-top:2.5rem;}/*!sc*/
+@media (max-width:768px){.FTZwa{font-size:1rem;}.FTZwa h1{font-size:2.25rem;}.FTZwa h2{font-size:1.75rem;}.FTZwa h3{font-size:1.25rem;}.FTZwa h4{font-size:1rem;}.FTZwa h1,.FTZwa h2,.FTZwa h3,.FTZwa h4{margin-bottom:0.75rem;}.FTZwa p + h1,.FTZwa p + h2,.FTZwa p + h3,.FTZwa p + h4{margin-top:2rem;}}/*!sc*/
+.FTZwa blockquote{margin-top:2rem;margin-bottom:2rem;border-left:4px solid var(--primary2);border-top-right-radius:4px;border-bottom-right-radius:4px;background:var(--bg-element2);margin-left:0;margin-right:0;padding:1rem;padding-left:2rem;color:var(--text1);}/*!sc*/
+.FTZwa blockquote ul,.FTZwa blockquote ol{padding-left:1rem;}/*!sc*/
+.FTZwa blockquote *:first-child{margin-top:0;}/*!sc*/
+.FTZwa blockquote *:last-child{margin-bottom:0;}/*!sc*/
+data-styled.g93[id="sc-bXTejn"]{content:"FTZwa,"}/*!sc*/
+.bzHCOc.atom-one pre{background:var(--prism-bg);}/*!sc*/
+.bzHCOc.atom-one code[class*='language-'],.bzHCOc.atom-one pre[class*='language-']{color:var(--prism-default-text);background:none;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}/*!sc*/
+.bzHCOc.atom-one pre[class*='language-']::-moz-selection,.bzHCOc.atom-one pre[class*='language-'] ::-moz-selection,.bzHCOc.atom-one code[class*='language-']::-moz-selection,.bzHCOc.atom-one code[class*='language-'] ::-moz-selection{text-shadow:none;background:var(--prism-selection-bg);}/*!sc*/
+.bzHCOc.atom-one pre[class*='language-']::selection,.bzHCOc.atom-one pre[class*='language-'] ::selection,.bzHCOc.atom-one code[class*='language-']::selection,.bzHCOc.atom-one code[class*='language-'] ::selection{text-shadow:none;background:var(--prism-selection-bg);}/*!sc*/
+@media print{.bzHCOc.atom-one code[class*='language-'],.bzHCOc.atom-one pre[class*='language-']{text-shadow:none;}}/*!sc*/
+.bzHCOc.atom-one pre[class*='language-']{padding:1em;margin:0.5em 0;overflow:auto;}/*!sc*/
+.bzHCOc.atom-one:not(pre) > code[class*='language-'],.bzHCOc.atom-one pre[class*='language-']{background:var(--prism-code-block-bg);}/*!sc*/
+.bzHCOc.atom-one:not(pre) > code[class*='language-']{padding:0.1em;border-radius:0.3em;white-space:normal;}/*!sc*/
+.bzHCOc.atom-one .token.comment,.bzHCOc.atom-one .token.prolog,.bzHCOc.atom-one .token.doctype,.bzHCOc.atom-one .token.cdata{color:var(--prism-code-1);}/*!sc*/
+.bzHCOc.atom-one .token.punctuation{color:var(--prism-code-2);}/*!sc*/
+.bzHCOc.atom-one .token.selector,.bzHCOc.atom-one .token.tag{color:var(--prism-code-3);}/*!sc*/
+.bzHCOc.atom-one .token.property,.bzHCOc.atom-one .token.boolean,.bzHCOc.atom-one .token.number,.bzHCOc.atom-one .token.constant,.bzHCOc.atom-one .token.symbol,.bzHCOc.atom-one .token.attr-name,.bzHCOc.atom-one .token.deleted{color:var(--prism-code-4);}/*!sc*/
+.bzHCOc.atom-one .token.string,.bzHCOc.atom-one .token.char,.bzHCOc.atom-one .token.attr-value,.bzHCOc.atom-one .token.builtin,.bzHCOc.atom-one .token.inserted{color:var(--prism-code-6);}/*!sc*/
+.bzHCOc.atom-one .token.operator,.bzHCOc.atom-one .token.entity,.bzHCOc.atom-one .token.url,.bzHCOc.atom-one .language-css .token.string,.bzHCOc.atom-one .style .token.string{color:var(--prism-code-5);}/*!sc*/
+.bzHCOc.atom-one .token.atrule,.bzHCOc.atom-one .token.keyword{color:var(--prism-code-7);}/*!sc*/
+.bzHCOc.atom-one .token.function{color:var(--prism-code-8);}/*!sc*/
+.bzHCOc.atom-one .token.regex,.bzHCOc.atom-one .token.important,.bzHCOc.atom-one .token.variable{color:var(--prism-code-9);}/*!sc*/
+.bzHCOc.atom-one .token.important,.bzHCOc.atom-one .token.bold{font-weight:bold;}/*!sc*/
+.bzHCOc.atom-one .token.italic{font-style:italic;}/*!sc*/
+.bzHCOc.atom-one .token.entity{cursor:help;}/*!sc*/
+.bzHCOc.atom-one pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber;}/*!sc*/
+.bzHCOc.atom-one pre.line-numbers > code{position:relative;}/*!sc*/
+.bzHCOc.atom-one .line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;-webkit-letter-spacing:-1px;-moz-letter-spacing:-1px;-ms-letter-spacing:-1px;letter-spacing:-1px;border-right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+.bzHCOc.atom-one .line-numbers-rows > span{pointer-events:none;display:block;counter-increment:linenumber;}/*!sc*/
+.bzHCOc.atom-one .line-numbers-rows > span:before{content:counter(linenumber);color:var(--prism-line-number);display:block;padding-right:0.8em;text-align:right;}/*!sc*/
+.bzHCOc.github code,.bzHCOc.github code[class*='language-'],.bzHCOc.github pre[class*='language-']{color:#24292e;}/*!sc*/
+.bzHCOc.github pre{color:#24292e;background:#f6f8fa;}/*!sc*/
+.bzHCOc.github .token.function{color:#005cc5;}/*!sc*/
+.bzHCOc.github .token.comment,.bzHCOc.github .token.prolog,.bzHCOc.github .token.doctype,.bzHCOc.github .token.cdata{color:#969896;}/*!sc*/
+.bzHCOc.github .token.punctuation{color:#24292e;}/*!sc*/
+.bzHCOc.github .token.string{color:#032f62;}/*!sc*/
+.bzHCOc.github .token.atrule,.bzHCOc.github .token.attr-value{color:#183691;}/*!sc*/
+.bzHCOc.github .token.property,.bzHCOc.github .token.tag{color:#63a35c;}/*!sc*/
+.bzHCOc.github .token.boolean,.bzHCOc.github .token.number{color:#0086b3;}/*!sc*/
+.bzHCOc.github .token.selector,.bzHCOc.github .token.attr-name,.bzHCOc.github .token.attr-value .punctuation:first-child,.bzHCOc.github .token.keyword,.bzHCOc.github .token.regex,.bzHCOc.github .token.important{color:#d73a49;}/*!sc*/
+.bzHCOc.github .token.operator,.bzHCOc.github .token.entity,.bzHCOc.github .token.url,.bzHCOc.github .language-css{color:#d73a49;}/*!sc*/
+.bzHCOc.github .token.entity{cursor:help;}/*!sc*/
+.bzHCOc.github .namespace{opacity:0.7;}/*!sc*/
+.bzHCOc.monokai code[class*='language-'],.bzHCOc.monokai pre[class*='language-']{color:#f8f8f2;text-shadow:0 1px rgba(0,0,0,0.3);}/*!sc*/
+.bzHCOc.monokai:not(pre) > code[class*='language-'],.bzHCOc.monokai pre[class*='language-']{background:#272822;}/*!sc*/
+.bzHCOc.monokai pre{color:#f8f8f2;text-shadow:0 1px rgba(0,0,0,0.3);background:#272822;}/*!sc*/
+.bzHCOc.monokai .token.comment,.bzHCOc.monokai .token.prolog,.bzHCOc.monokai .token.doctype,.bzHCOc.monokai .token.cdata{color:#778090;}/*!sc*/
+.bzHCOc.monokai .token.punctuation{color:#f8f8f2;}/*!sc*/
+.bzHCOc.monokai .namespace{opacity:0.7;}/*!sc*/
+.bzHCOc.monokai .token.property,.bzHCOc.monokai .token.tag,.bzHCOc.monokai .token.constant,.bzHCOc.monokai .token.symbol,.bzHCOc.monokai .token.deleted{color:#f92672;}/*!sc*/
+.bzHCOc.monokai .token.boolean,.bzHCOc.monokai .token.number{color:#ae81ff;}/*!sc*/
+.bzHCOc.monokai .token.selector,.bzHCOc.monokai .token.attr-name,.bzHCOc.monokai .token.string,.bzHCOc.monokai .token.char,.bzHCOc.monokai .token.builtin,.bzHCOc.monokai .token.inserted{color:#a6e22e;}/*!sc*/
+.bzHCOc.monokai .token.operator,.bzHCOc.monokai .token.entity,.bzHCOc.monokai .token.url,.bzHCOc.monokai .language-css .token.string,.bzHCOc.monokai .style .token.string,.bzHCOc.monokai .token.variable{color:#f8f8f2;}/*!sc*/
+.bzHCOc.monokai .token.atrule,.bzHCOc.monokai .token.attr-value,.bzHCOc.monokai .token.function{color:#e6db74;}/*!sc*/
+.bzHCOc.monokai .token.keyword{color:#f92672;}/*!sc*/
+.bzHCOc.monokai .token.regex,.bzHCOc.monokai .token.important{color:#fd971f;}/*!sc*/
+.bzHCOc.monokai .token.important,.bzHCOc.monokai .token.bold{font-weight:bold;}/*!sc*/
+.bzHCOc.monokai .token.italic{font-style:italic;}/*!sc*/
+.bzHCOc.monokai .token.entity{cursor:help;}/*!sc*/
+.bzHCOc.dracula code[class*='language-'],.bzHCOc.dracula pre[class*='language-']{color:#ccc;background:rgb(40,41,54);}/*!sc*/
+.bzHCOc.dracula pre[class*='language-']::-moz-selection,.bzHCOc.dracula pre[class*='language-'] ::-moz-selection,.bzHCOc.dracula code[class*='language-']::-moz-selection,.bzHCOc.dracula code[class*='language-'] ::-moz-selection{text-shadow:none;background-color:#5a5f80;}/*!sc*/
+.bzHCOc.dracula pre[class*='language-']::selection,.bzHCOc.dracula pre[class*='language-'] ::selection,.bzHCOc.dracula code[class*='language-']::selection,.bzHCOc.dracula code[class*='language-'] ::selection{text-shadow:none;background-color:#5a5f80;}/*!sc*/
+.bzHCOc.dracula:not(pre) > code[class*='language-']{border-radius:0.3em;white-space:normal;}/*!sc*/
+.bzHCOc.dracula pre{color:#ccc;background:rgb(40,41,54);}/*!sc*/
+.bzHCOc.dracula .limit-300{height:300px !important;}/*!sc*/
+.bzHCOc.dracula .limit-400{height:400px !important;}/*!sc*/
+.bzHCOc.dracula .limit-500{height:500px !important;}/*!sc*/
+.bzHCOc.dracula .limit-600{height:600px !important;}/*!sc*/
+.bzHCOc.dracula .limit-700{height:700px !important;}/*!sc*/
+.bzHCOc.dracula .limit-800{height:800px !important;}/*!sc*/
+.bzHCOc.dracula .token.comment{color:rgba(98,114,164,1);}/*!sc*/
+.bzHCOc.dracula .token.prolog{color:rgba(207,207,194,1);}/*!sc*/
+.bzHCOc.dracula .token.tag{color:rgba(220,104,170,1);}/*!sc*/
+.bzHCOc.dracula .token.entity{color:rgba(139,233,253,1);}/*!sc*/
+.bzHCOc.dracula .token.atrule{color:rgba(98,239,117,1);}/*!sc*/
+.bzHCOc.dracula .token.url{color:rgba(102,217,239,1);}/*!sc*/
+.bzHCOc.dracula .token.selector{color:rgba(207,207,194,1);}/*!sc*/
+.bzHCOc.dracula .token.string{color:rgba(241,250,140,1);}/*!sc*/
+.bzHCOc.dracula .token.property{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.important{color:rgba(255,121,198,1);font-weight:bold;}/*!sc*/
+.bzHCOc.dracula .token.punctuation{color:rgba(230,219,116,1);}/*!sc*/
+.bzHCOc.dracula .token.number{color:rgba(189,147,249,1);}/*!sc*/
+.bzHCOc.dracula .token.function{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .token.class-name{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.keyword{color:rgba(255,121,198,1);}/*!sc*/
+.bzHCOc.dracula .token.boolean{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.operator{color:rgba(139,233,253,1);}/*!sc*/
+.bzHCOc.dracula .token.char{color:rgba(255,135,157,1);}/*!sc*/
+.bzHCOc.dracula .token.regex{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .token.variable{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .token.constant{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.symbol{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.builtin{color:rgba(255,121,198,1);}/*!sc*/
+.bzHCOc.dracula .token.attr-value{color:#7ec699;}/*!sc*/
+.bzHCOc.dracula .token.deleted{color:#e2777a;}/*!sc*/
+.bzHCOc.dracula .token.namespace{color:#e2777a;}/*!sc*/
+.bzHCOc.dracula .token.bold{font-weight:bold;}/*!sc*/
+.bzHCOc.dracula .token.italic{font-style:italic;}/*!sc*/
+.bzHCOc.dracula .token{color:#ff79c6;}/*!sc*/
+.bzHCOc.dracula .langague-cpp .token.string{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .langague-c .token.string{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-css .token.selector{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .language-css .token.property{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .language-java span.token.class-name{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-java .token.class-name{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-markup .token.attr-value{color:rgba(102,217,239,1);}/*!sc*/
+.bzHCOc.dracula .language-markup .token.tag{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .language-objectivec .token.property{color:#66d9ef;}/*!sc*/
+.bzHCOc.dracula .language-objectivec .token.string{color:#50fa7b;}/*!sc*/
+.bzHCOc.dracula .language-php .token.boolean{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-php .token.function{color:#ff79c6;}/*!sc*/
+.bzHCOc.dracula .language-php .token.keyword{color:#66d9ef;}/*!sc*/
+.bzHCOc.dracula .language-ruby .token.symbol{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-ruby .token.class-name{color:#cfcfc2;}/*!sc*/
+.bzHCOc.dracula pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber;}/*!sc*/
+.bzHCOc.dracula pre.line-numbers > code{position:relative;white-space:inherit;}/*!sc*/
+.bzHCOc.dracula .line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;-webkit-letter-spacing:-1px;-moz-letter-spacing:-1px;-ms-letter-spacing:-1px;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+.bzHCOc.dracula .line-numbers-rows > span{pointer-events:none;display:block;counter-increment:linenumber;}/*!sc*/
+.bzHCOc.dracula .line-numbers-rows > span:before{content:counter(linenumber);color:#999;display:block;padding-right:0.8em;text-align:right;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar{position:relative;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar{position:absolute;top:0.3em;right:0.2em;-webkit-transition:opacity 0.3s ease-in-out;transition:opacity 0.3s ease-in-out;opacity:0;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar:hover > .toolbar{opacity:1;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar .toolbar-item{display:inline-block;padding-right:20px;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar a{cursor:pointer;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar button{background:none;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar a,.bzHCOc.dracula div.code-toolbar > .toolbar button,.bzHCOc.dracula div.code-toolbar > .toolbar span{color:#ccc;font-size:0.8em;padding:0.5em;background:rgba(98,114,164,1);border-radius:0.5em;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar a:hover,.bzHCOc.dracula div.code-toolbar > .toolbar a:focus,.bzHCOc.dracula div.code-toolbar > .toolbar button:hover,.bzHCOc.dracula div.code-toolbar > .toolbar button:focus,.bzHCOc.dracula div.code-toolbar > .toolbar span:hover,.bzHCOc.dracula div.code-toolbar > .toolbar span:focus{color:inherit;-webkit-text-decoration:none;text-decoration:none;background-color:var(--verde);}/*!sc*/
+.bzHCOc pre{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas, 'Courier New',monospace;font-size:0.875rem;padding:1rem;border-radius:4px;line-height:1.5;overflow-x:auto;-webkit-letter-spacing:0px;-moz-letter-spacing:0px;-ms-letter-spacing:0px;letter-spacing:0px;}/*!sc*/
+@media (max-width:768px){.bzHCOc pre{font-size:0.75rem;padding:0.75rem;}}/*!sc*/
+.bzHCOc img{max-width:100%;height:auto;display:block;margin-top:1.5rem;margin-bottom:1.5rem;}/*!sc*/
+.bzHCOc iframe:not([id^='google_ads']){width:768px;height:430px;max-width:100%;background:black;display:block;margin:auto;border:none;border-radius:4px;overflow:hidden;}/*!sc*/
+.bzHCOc .twitter-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-left:none;background:none;padding:none;}/*!sc*/
+.bzHCOc table{min-width:40%;max-width:100%;border:1px solid var(--border2);border-collapse:collapse;font-size:0.875rem;}/*!sc*/
+.bzHCOc table thead > tr > th{border-bottom:4px solid var(--border2);}/*!sc*/
+.bzHCOc table th,.bzHCOc table td{word-break:break-word;padding:0.5rem;}/*!sc*/
+.bzHCOc table td + td,.bzHCOc table th + th{border-left:1px solid var(--border2);}/*!sc*/
+.bzHCOc table tr:nth-child(even){background:var(--bg-element2);}/*!sc*/
+.bzHCOc table tr:nth-child(odd){background:var(--bg-page1);}/*!sc*/
+.bzHCOc .katex-mathml{display:none;}/*!sc*/
+data-styled.g94[id="sc-eGRUor"]{content:"bzHCOc,"}/*!sc*/
+.bfzjcP{width:768px;margin:0 auto;margin-top:5rem;}/*!sc*/
+@media (max-width:1024px){.bfzjcP{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+@media (max-width:768px){.bfzjcP{width:100%;}}/*!sc*/
+data-styled.g96[id="sc-dFtzxp"]{content:"bfzjcP,"}/*!sc*/
+.cgYvDI{margin-top:3rem;color:var(--text1);}/*!sc*/
+.cgYvDI h4{font-size:1.125rem;line-height:1.5;font-weight:600;margin-bottom:1rem;}/*!sc*/
+@media (max-width:768px){.cgYvDI{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g97[id="sc-brSvTw"]{content:"cgYvDI,"}/*!sc*/
+.BdYrx > .buttons-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+data-styled.g99[id="sc-evcjhq"]{content:"BdYrx,"}/*!sc*/
+.fQjmlN{resize:none;padding:1rem;padding-bottom:1.5rem;outline:none;border:1px solid var(--border4);margin-bottom:1.5rem;width:100%;border-radius:4px;min-height:6.125rem;font-size:1rem;color:var(--text1);line-height:1.75;background:var(--bg-element1);}/*!sc*/
+.fQjmlN::-webkit-input-placeholder{color:var(--text3);}/*!sc*/
+.fQjmlN::-moz-placeholder{color:var(--text3);}/*!sc*/
+.fQjmlN:-ms-input-placeholder{color:var(--text3);}/*!sc*/
+.fQjmlN::placeholder{color:var(--text3);}/*!sc*/
+@media (max-width:768px){.fQjmlN{margin-bottom:1rem;}}/*!sc*/
+data-styled.g100[id="sc-fHeRUh"]{content:"fQjmlN,"}/*!sc*/
+.dDifDS{margin-top:2.5rem;}/*!sc*/
+data-styled.g111[id="sc-dVNjXY"]{content:"dDifDS,"}/*!sc*/
+.fibSC{width:32px;height:32px;border-radius:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:1px solid var(--primary2);font-size:1.5rem;color:var(--primary2);margin-right:1rem;}/*!sc*/
+.cMDwOh{width:32px;height:32px;border-radius:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:1px solid var(--primary2);font-size:1.5rem;color:var(--primary2);margin-left:1rem;}/*!sc*/
+data-styled.g124[id="sc-hjGZqJ"]{content:"fibSC,cMDwOh,"}/*!sc*/
+.hlGICj{cursor:pointer;background:var(--bg-element2);box-shadow:0 0 4px 0 rgba(0,0,0,0.06);width:100%;padding-left:1rem;padding-right:1rem;height:4rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.hlGICj:hover .sc-hjGZqJ{-webkit-animation-duration:0.35s;animation-duration:0.35s;-webkit-animation-name:dRQjsE;animation-name:dRQjsE;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;}/*!sc*/
+.jSBDGM{cursor:pointer;background:var(--bg-element2);box-shadow:0 0 4px 0 rgba(0,0,0,0.06);width:100%;padding-left:1rem;padding-right:1rem;height:4rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;}/*!sc*/
+.jSBDGM:hover .sc-hjGZqJ{-webkit-animation-duration:0.35s;animation-duration:0.35s;-webkit-animation-name:iyGUEJ;animation-name:iyGUEJ;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;}/*!sc*/
+data-styled.g125[id="sc-gUQvok"]{content:"hlGICj,jSBDGM,"}/*!sc*/
+.fKjWde{-webkit-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;line-height:1;min-width:0;}/*!sc*/
+.fKjWde .description{font-size:0.75rem;font-weight:bold;color:var(--text2);}/*!sc*/
+.fKjWde h3{width:100%;font-size:1.125rem;color:var(--text2);line-height:1.15;margin:0;margin-top:0.5rem;text-overflow:ellipsis;white-space:nowrap;overflow-x:hidden;overflow-y:hidden;}/*!sc*/
+@media (max-width:768px){.fKjWde h3{font-size:1rem;}}/*!sc*/
+.cQpWGt{-webkit-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;line-height:1;min-width:0;}/*!sc*/
+.cQpWGt .description{font-size:0.75rem;font-weight:bold;color:var(--text2);}/*!sc*/
+.cQpWGt h3{text-align:right;width:100%;font-size:1.125rem;color:var(--text2);line-height:1.15;margin:0;margin-top:0.5rem;text-overflow:ellipsis;white-space:nowrap;overflow-x:hidden;overflow-y:hidden;}/*!sc*/
+@media (max-width:768px){.cQpWGt h3{font-size:1rem;}}/*!sc*/
+data-styled.g126[id="sc-fXeWAj"]{content:"fKjWde,cQpWGt,"}/*!sc*/
+.dpmQGl{margin-top:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:768px){.dpmQGl{-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g127[id="sc-fIosxK"]{content:"dpmQGl,"}/*!sc*/
+.bVYpNI{min-width:0;-webkit-flex:1;-ms-flex:1;flex:1;}/*!sc*/
+.sc-gyElHZ + .sc-gyElHZ{margin-left:3rem;}/*!sc*/
+@media (max-width:768px){.bVYpNI{-webkit-flex:initial;-ms-flex:initial;flex:initial;width:100%;}.sc-gyElHZ + .sc-gyElHZ{margin-left:0;margin-bottom:1.5rem;}}/*!sc*/
+data-styled.g128[id="sc-gyElHZ"]{content:"bVYpNI,"}/*!sc*/
+@media (max-width:1024px){.kTQxVU{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g129[id="sc-gjNHFA"]{content:"kTQxVU,"}/*!sc*/
+.gPzODR{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.gPzODR .left{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:768px){.gPzODR .left{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}/*!sc*/
+.gPzODR img{display:block;width:8rem;height:8rem;border-radius:50%;object-fit:cover;box-shadow:0 0 4px 0 rgba(0,0,0,0.06);}/*!sc*/
+@media (max-width:768px){.gPzODR img{width:5rem;height:5rem;}}/*!sc*/
+data-styled.g130[id="sc-fmciRz"]{content:"gPzODR,"}/*!sc*/
+.yXXbT{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-left:1rem;margin-right:1rem;}/*!sc*/
+.yXXbT .name{font-size:1.5rem;line-height:1.5;font-weight:bold;color:var(--text1);}/*!sc*/
+.yXXbT .name a{color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.yXXbT .name a:hover{color:var(--text1);-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.yXXbT .description{white-space:pre-wrap;font-size:1.125rem;line-height:1.5;margin-top:0.25rem;color:var(--text2);-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;}/*!sc*/
+@media (max-width:768px){.yXXbT{margin-left:0;margin-top:1rem;}.yXXbT .name{font-size:1.125rem;}.yXXbT .description{margin-top:0.5rem;font-size:0.875rem;-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;}}/*!sc*/
+data-styled.g131[id="sc-eXlEPa"]{content:"yXXbT,"}/*!sc*/
+.hbZRXU{background:var(--bg-element3);width:100%;height:1px;margin-top:2rem;margin-bottom:1.5rem;}/*!sc*/
+@media (max-width:768px){.hbZRXU{margin-top:1rem;margin-bottom:1rem;}}/*!sc*/
+data-styled.g132[id="sc-iFMAIt"]{content:"hbZRXU,"}/*!sc*/
+.koQQwu{color:var(--text3);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+.koQQwu svg{cursor:pointer;width:2rem;height:2rem;}/*!sc*/
+.koQQwu svg:hover{color:var(--text1);}/*!sc*/
+@media (max-width:768px){.koQQwu svg{width:1.5rem;height:1.5rem;}}/*!sc*/
+.koQQwu a{color:inherit;display:block;}/*!sc*/
+.koQQwu a + a,.koQQwu a + svg{margin-left:1rem;}/*!sc*/
+data-styled.g133[id="sc-iqVWFU"]{content:"koQQwu,"}/*!sc*/
+.efeYel{margin-top:5.5rem;}/*!sc*/
+.efeYel h1{padding-right:2rem;font-size:3.75rem;margin-top:0;margin-bottom:2rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+.efeYel .subinfo{font-size:1rem;}/*!sc*/
+.efeYel .tags{font-size:2rem;margin-top:0.875rem;}/*!sc*/
+.efeYel .tags .tag-skeleton + .tag-skeleton{margin-left:0.5rem;}/*!sc*/
+.efeYel .series{margin-top:2rem;}/*!sc*/
+.efeYel .thumbnail{margin-top:2rem;padding-top:52.35%;position:relative;}/*!sc*/
+.efeYel .thumbnail .thumbnail-skeleton{position:absolute;top:0;left:0;width:100%;height:100%;}/*!sc*/
+.efeYel .contents{margin-top:5rem;}/*!sc*/
+.efeYel .contents .line{margin-bottom:0.75rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:1.125rem;}/*!sc*/
+.efeYel .contents .lines + .lines{margin-top:3rem;}/*!sc*/
+@media (max-width:1024px){.efeYel{margin-top:2rem;}.efeYel h1{font-size:2.25rem;}.efeYel .subinfo{font-size:0.875rem;}.efeYel .tags{font-size:1.5rem;}}/*!sc*/
+data-styled.g136[id="sc-dwsnSq"]{content:"efeYel,"}/*!sc*/
+@media (max-width:768px){.kaTEDx{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g137[id="sc-jtXEFf"]{content:"kaTEDx,"}/*!sc*/
+.gyXrCE{display:none;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--bg-element1);border:1px solid var(--border2);padding-left:0.75rem;padding-right:0.75rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:1.5rem;border-radius:0.75rem;outline:none;}/*!sc*/
+.gyXrCE svg{width:0.75rem;height:0.75rem;margin-right:0.75rem;color:var(--text3);}/*!sc*/
+.gyXrCE span{font-size:0.75rem;font-weight:bold;color:var(--text3);}/*!sc*/
+@media (max-width:1024px){.gyXrCE{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-left:0.5rem;}}/*!sc*/
+data-styled.g138[id="sc-eldieg"]{content:"gyXrCE,"}/*!sc*/
+.iIZjji{width:96px;height:32px;font-size:16px;}/*!sc*/
+@media (max-width:1024px){.iIZjji{width:80px;height:24px;font-size:14px;}}/*!sc*/
+@media (max-width:425px){.iIZjji{width:72px;font-size:12px;}}/*!sc*/
+.iIZjji .button{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;box-shadow:none;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background-color:var(--bg-element1);cursor:pointer;border-radius:16px;font-weight:700;width:100%;height:100%;white-space:nowrap;outline:none;font-size:16px;}/*!sc*/
+@media (max-width:768px){.iIZjji .button{font-size:14px;}}/*!sc*/
+@media (max-width:425px){.iIZjji .button{font-size:12px;}}/*!sc*/
+.iIZjji .follow-button{color:var(--primary1);border:1px solid var(--primary1);}/*!sc*/
+.iIZjji .unfollow-button{color:var(--bg-element6);border:1px solid var(--bg-element6);}/*!sc*/
+data-styled.g143[id="sc-avest"]{content:"iIZjji,"}/*!sc*/
+.bksdVp{margin-top:16rem;margin-bottom:6rem;}/*!sc*/
+@media (max-width:1024px){.bksdVp{margin-top:8rem;margin-bottom:3rem;}}/*!sc*/
+@media (max-width:768px){.bksdVp{margin-top:2rem;}}/*!sc*/
+data-styled.g146[id="sc-djWRfJ"]{content:"bksdVp,"}/*!sc*/
+@-webkit-keyframes gsdBxV{0%{opacity:0.5;}50%{opacity:1;}100%{opacity:0.5;}}/*!sc*/
+@keyframes gsdBxV{0%{opacity:0.5;}50%{opacity:1;}100%{opacity:0.5;}}/*!sc*/
+data-styled.g147[id="sc-keyframes-gsdBxV"]{content:"gsdBxV,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g148[id="sc-global-iqNrnJ2"]{content:"sc-global-iqNrnJ2,"}/*!sc*/
+@-webkit-keyframes dRQjsE{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(-8px);-ms-transform:translateX(-8px);transform:translateX(-8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+@keyframes dRQjsE{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(-8px);-ms-transform:translateX(-8px);transform:translateX(-8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+data-styled.g149[id="sc-keyframes-dRQjsE"]{content:"dRQjsE,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g150[id="sc-global-gYCCRU2"]{content:"sc-global-gYCCRU2,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g151[id="sc-global-iqNrnJ3"]{content:"sc-global-iqNrnJ3,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g152[id="sc-global-gYCCRU3"]{content:"sc-global-gYCCRU3,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g153[id="sc-global-iqNrnJ4"]{content:"sc-global-iqNrnJ4,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g154[id="sc-global-gYCCRU4"]{content:"sc-global-gYCCRU4,"}/*!sc*/
+@-webkit-keyframes iyGUEJ{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(8px);-ms-transform:translateX(8px);transform:translateX(8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+@keyframes iyGUEJ{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(8px);-ms-transform:translateX(8px);transform:translateX(8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+data-styled.g155[id="sc-keyframes-iyGUEJ"]{content:"iyGUEJ,"}/*!sc*/
+</style><link data-chunk="main" rel="preload" as="style" href="https://static.velog.io/static/css/main.e7869632.chunk.css"/><link data-chunk="main" rel="preload" as="style" href="https://static.velog.io/static/css/20.5dbdccff.chunk.css"/><link data-chunk="main" rel="preload" as="script" href="https://static.velog.io/static/js/runtime-main.624815d4.js"/><link data-chunk="main" rel="preload" as="script" href="https://static.velog.io/static/js/20.72815531.chunk.js"/><link data-chunk="main" rel="preload" as="script" href="https://static.velog.io/static/js/main.5303a5fa.chunk.js"/><link data-chunk="pages-velog-VelogPage" rel="preload" as="script" href="https://static.velog.io/static/js/pages-velog-VelogPage.f0cc9b56.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/0.5f05d8e8.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/23.c782abe5.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/1.c2610806.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/PostPage.05dd7823.chunk.js"/><link data-chunk="main" rel="stylesheet" href="https://static.velog.io/static/css/20.5dbdccff.chunk.css"/><link data-chunk="main" rel="stylesheet" href="https://static.velog.io/static/css/main.e7869632.chunk.css"/><link rel="shortcut icon" href="https://static.velog.io/favicon.ico"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.velog.io/favicons/apple-icon-152x152.png"/><link rel="icon" sizes="32x32" href="https://static.velog.io/favicons/favicon-32x32.png"/><link rel="icon" sizes="96x96" href="https://static.velog.io/favicons/favicon-96x96.png"/><link rel="icon" sizes="16x16" href="https://static.velog.io/favicons/favicon-16x16.png"/><meta name="viewport" content="width=device-width, initial-scale=1"/><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5574866530496701" crossorigin="anonymous"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8D0MD2S4PK"></script><script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-8D0MD2S4PK');</script><script async="" src="https://cdn.fuseplatform.net/publift/tags/2/4158/fuse.js"></script><script defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onAppReady"></script></head><body><div id="fuse-sidebar"></div><div id="root"><div class="__jazzbar false false" style="width:0%"></div><div class="sc-dPiLbb sc-bBHHxi kTIDXm"><div class="sc-bBHxTw jEdNvQ"><div class="sc-fFeiMQ cQvXTx sc-iJKOTD hrgwyc"><div class="sc-kfPuZi ddFdew"><a href="https://velog.io/" class="sc-egiyK cyyZlI sc-fKVqWL kdLiUF"><svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z" fill="currentColor"></path></svg></a><a href="https://velog.io/@synoti21/posts" class="sc-egiyK cyyZlI user-logo"><span>synoti21.log</span></a></div><div class="sc-giYglK gHrJRn"><a href="https://velog.io/notifications" class="sc-egiyK cyyZlI sc-cxpSdN pAGEY"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Notification"><path id="notifications" d="M4 19V17H6V10C6 8.61667 6.41667 7.3875 7.25 6.3125C8.08333 5.2375 9.16667 4.53333 10.5 4.2V3.5C10.5 3.08333 10.6458 2.72917 10.9375 2.4375C11.2292 2.14583 11.5833 2 12 2C12.4167 2 12.7708 2.14583 13.0625 2.4375C13.3542 2.72917 13.5 3.08333 13.5 3.5V4.2C14.8333 4.53333 15.9167 5.2375 16.75 6.3125C17.5833 7.3875 18 8.61667 18 10V17H20V19H4ZM12 22C11.45 22 10.9792 21.8042 10.5875 21.4125C10.1958 21.0208 10 20.55 10 20H14C14 20.55 13.8042 21.0208 13.4125 21.4125C13.0208 21.8042 12.55 22 12 22ZM8 17H16V10C16 8.9 15.6083 7.95833 14.825 7.175C14.0417 6.39167 13.1 6 12 6C10.9 6 9.95833 6.39167 9.175 7.175C8.39167 7.95833 8 8.9 8 10V17Z" fill="currentColor"></path></g></svg></a><a class="sc-iwjdpV glTvbH" href="/search?username=synoti21"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Search"><path id="search" d="M19.3256 20.7122L13.5174 14.9041C13.0116 15.3227 12.4231 15.6495 11.752 15.8847C11.0801 16.1205 10.3692 16.2384 9.61919 16.2384C7.77035 16.2384 6.20477 15.5972 4.92244 14.3149C3.64081 13.0333 3 11.468 3 9.61919C3 7.77035 3.63663 6.20477 4.90988 4.92244C6.18314 3.64081 7.74419 3 9.59302 3C11.4593 3 13.0336 3.64081 14.3159 4.92244C15.5976 6.20477 16.2384 7.77035 16.2384 9.61919C16.2384 10.3692 16.1208 11.0798 15.8857 11.7509C15.6499 12.4228 15.3227 13.0203 14.9041 13.5436L20.7384 19.3517C20.9128 19.5262 21 19.7442 21 20.0058C21 20.2674 20.9041 20.5029 20.7122 20.7122C20.5203 20.9041 20.2894 21 20.0194 21C19.7487 21 19.5174 20.9041 19.3256 20.7122ZM9.61919 14.2762C10.9099 14.2762 12.0087 13.8227 12.9157 12.9157C13.8227 12.0087 14.2762 10.9099 14.2762 9.61919C14.2762 8.31105 13.8227 7.20767 12.9157 6.30907C12.0087 5.41116 10.9099 4.96221 9.61919 4.96221C8.31105 4.96221 7.20802 5.41116 6.31012 6.30907C5.41151 7.20767 4.96221 8.31105 4.96221 9.61919C4.96221 10.9099 5.41151 12.0087 6.31012 12.9157C7.20802 13.8227 8.31105 14.2762 9.61919 14.2762Z" fill="currentColor"></path></g></svg></a><button color="darkGray" class="sc-bqiRlB fldlST">로그인</button></div></div></div><div style="margin-top:0;opacity:0" class="sc-cTAqQK bxsBRa"><div class="sc-bBHxTw jEdNvQ"><div class="sc-fFeiMQ cQvXTx sc-iJKOTD hrgwyc"><div class="sc-kfPuZi ddFdew"><a href="https://velog.io/" class="sc-egiyK cyyZlI sc-fKVqWL kdLiUF"><svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z" fill="currentColor"></path></svg></a><a href="https://velog.io/@synoti21/posts" class="sc-egiyK cyyZlI user-logo"><span>synoti21.log</span></a></div><div class="sc-giYglK gHrJRn"><a href="https://velog.io/notifications" class="sc-egiyK cyyZlI sc-cxpSdN pAGEY"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Notification"><path id="notifications" d="M4 19V17H6V10C6 8.61667 6.41667 7.3875 7.25 6.3125C8.08333 5.2375 9.16667 4.53333 10.5 4.2V3.5C10.5 3.08333 10.6458 2.72917 10.9375 2.4375C11.2292 2.14583 11.5833 2 12 2C12.4167 2 12.7708 2.14583 13.0625 2.4375C13.3542 2.72917 13.5 3.08333 13.5 3.5V4.2C14.8333 4.53333 15.9167 5.2375 16.75 6.3125C17.5833 7.3875 18 8.61667 18 10V17H20V19H4ZM12 22C11.45 22 10.9792 21.8042 10.5875 21.4125C10.1958 21.0208 10 20.55 10 20H14C14 20.55 13.8042 21.0208 13.4125 21.4125C13.0208 21.8042 12.55 22 12 22ZM8 17H16V10C16 8.9 15.6083 7.95833 14.825 7.175C14.0417 6.39167 13.1 6 12 6C10.9 6 9.95833 6.39167 9.175 7.175C8.39167 7.95833 8 8.9 8 10V17Z" fill="currentColor"></path></g></svg></a><a class="sc-iwjdpV glTvbH" href="/search?username=synoti21"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Search"><path id="search" d="M19.3256 20.7122L13.5174 14.9041C13.0116 15.3227 12.4231 15.6495 11.752 15.8847C11.0801 16.1205 10.3692 16.2384 9.61919 16.2384C7.77035 16.2384 6.20477 15.5972 4.92244 14.3149C3.64081 13.0333 3 11.468 3 9.61919C3 7.77035 3.63663 6.20477 4.90988 4.92244C6.18314 3.64081 7.74419 3 9.59302 3C11.4593 3 13.0336 3.64081 14.3159 4.92244C15.5976 6.20477 16.2384 7.77035 16.2384 9.61919C16.2384 10.3692 16.1208 11.0798 15.8857 11.7509C15.6499 12.4228 15.3227 13.0203 14.9041 13.5436L20.7384 19.3517C20.9128 19.5262 21 19.7442 21 20.0058C21 20.2674 20.9041 20.5029 20.7122 20.7122C20.5203 20.9041 20.2894 21 20.0194 21C19.7487 21 19.5174 20.9041 19.3256 20.7122ZM9.61919 14.2762C10.9099 14.2762 12.0087 13.8227 12.9157 12.9157C13.8227 12.0087 14.2762 10.9099 14.2762 9.61919C14.2762 8.31105 13.8227 7.20767 12.9157 6.30907C12.0087 5.41116 10.9099 4.96221 9.61919 4.96221C8.31105 4.96221 7.20802 5.41116 6.31012 6.30907C5.41151 7.20767 4.96221 8.31105 4.96221 9.61919C4.96221 10.9099 5.41151 12.0087 6.31012 12.9157C7.20802 13.8227 8.31105 14.2762 9.61919 14.2762Z" fill="currentColor"></path></g></svg></a><button color="darkGray" class="sc-bqiRlB fldlST">로그인</button></div></div></div></div><div class="sc-TBWPX dXONqK sc-jQrDum fiOuRZ"><div class="head-wrapper"><h1>ML Model Serving Pipeline</h1><div class="sc-fvxzrP jGdQwA"><div class="information"><span class="username"><a href="https://velog.io/@synoti21/posts" class="sc-egiyK cyyZlI">Jiwan Ahn</a></span><span class="separator">·</span><span>2023년 7월 14일</span></div><div class="sc-fbyfCU eYeYLy"><div data-testid="follow-btn" class="sc-avest iIZjji"><button class="follow-button button"><span>팔로우</span></button></div><button data-testid="like-btn" class="sc-eldieg gyXrCE"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path></svg><span>8</span></button></div></div><div class="sc-cZMNgc bpMcZw"><a href="https://velog.io/tags/mlops" class="sc-egiyK cyyZlI sc-dtMgUX gISUXI">mlops</a><a href="https://velog.io/tags/학습기록" class="sc-egiyK cyyZlI sc-dtMgUX gISUXI">학습기록</a></div></div></div><div class="sc-dFtzxp bfzjcP"><div class="sc-bXTejn FTZwa"><div class="sc-eGRUor bzHCOc atom-one"><h1 id="ml-모델-서빙이란">ML 모델 서빙이란?</h1>
+<blockquote>
+<p>훈련된 모델을 실서비스에 사용할 수 있도록, 클라이언트에게 모델 예측 결과를 효율적으로 전달하는 방식.</p>
+</blockquote>
+<p>모델을 훈련했다고 해서 끝나는 것이 아닌, 그것을 어떻게 서비스로 제공할 것인가가 MLOps의 최종 과제. 즉, 훈련이 된 모델을 통해 새로운 Data Points에서 “추론 (Inferenece)”를 하는 것 까지가 MLOps의 최종 과제다!</p>
+<p>모델 서빙의 매우 간단한 예시 (Seq2Seq을 사용한 간단한 대화 예측 앱)</p>
+<p><a href="https://medium.com/hydrosphere-io/serving-machine-learning-model-in-production-step-by-step-guide-bbad145c0d40">Serving Machine Learning Model in Production — Step-by-Step Guide</a></p>
+<h3 id="모델-서빙의-방법">모델 서빙의 방법</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/04ab54cc-2892-4d4a-9699-99fc518c3fb4/image.png" /></p>
+<ul>
+<li>Batch Serving<ul>
+<li>즉각적인 결과 도출이 필요하지 않으며, 한번에 여러 개의 예측 결과를 도출하는 방식</li>
+<li>Batch Inference</li>
+</ul></li>
+<li>Real-time Serving<ul>
+<li>즉각적인 예측 결과가 필요할 경우 사용</li>
+<li>한번에 한 개의 예측 결과를 실시간으로 도출.</li>
+<li>요청에 따른 응답이 필요하므로, API를 통해 요청과 응답이 이루어진다. (RESTful API, gRPC)</li>
+</ul></li>
+</ul>
+<hr />
+<h1 id="모델-서빙-pipeline의-구조">모델 서빙 Pipeline의 구조</h1>
+<p>: 크게 세 개의 파이프라인으로 이루어져 있다.</p>
+<ul>
+<li><strong>데이터 파이프라인:</strong> 데이터 스트림 또는 배치 처리를 통해 모델 파이프라인이나 데이터 레이크에 데이터 운반</li>
+<li><strong>모델 파이프라인:</strong> 사전 설정된 하이퍼 파라미터를 통해 하나 또는 그 이상의 모델들을 학습시킴.</li>
+<li><strong>서빙 파이프라인:</strong> 이전의 파이프라인에서 학습된 모델들을 예측 서비스 등의 서비스에 서빙.</li>
+</ul>
+<h3 id="기본적인-ml-pipeline의-구조">기본적인 ML Pipeline의 구조</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/ef48f844-039c-4114-8988-da0b836296d0/image.png" /></p>
+<h3 id="실서비스와의-결합을-위한-serving-pipeline">실서비스와의 결합을 위한 Serving Pipeline</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/d127a959-7588-4740-892c-95c73d1338a1/image.png" /></p>
+<p>: 일반적인 모델 서빙 파이프라인의 구조</p>
+<ul>
+<li>전처리: 모델의 추론을 위한 입력 데이터 백터화, 또는 클리닝 작업</li>
+<li>인퍼런스 (추론): 훈련된 모델이 입력값에 따른 예측 결과를 도출하는 과정</li>
+<li>후처리: Reponse 형식화 및 Confidence 계산</li>
+</ul>
+<p><strong>(DEVIEW 2020)</strong></p>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/a72a761e-ed83-40d2-bd4e-f1db62bdc271/image.png" /></p>
+<p>: 모델 서빙의 기본적인 구조 (초기화 → 헬스 체크 → Warm up → 전처리 → 인퍼런스 → 후처리)</p>
+<p>(mds : 공통 모델 서빙 모듈)</p>
+<ul>
+<li>학습된 Weight, inference 코드로 Flask를 통한 기초적인 서빙</li>
+<li>모듈 공통화를 통한 효율적인 서빙 구현</li>
+</ul>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/8c692fe2-bd7d-4475-ae0b-4e5b1e5f2195/image.png" /></p>
+<p>: 세분화된 모델 서빙 파이프라인 구조</p>
+<ul>
+<li>Feature Extraction: Feature Store에 아직 적재되지 않은 추가 Feature를 Request로부터 추출</li>
+<li>Feature Preprocessing: tabular 형식의 추출된 features 전처리 및 구조화 되지 않은 데이터에 대한 전처리</li>
+<li>Request Forwarding: 모델 인스턴스를 조정하기 위한 요청 라우팅</li>
+<li>Prediction Serving: 모델 예측 결과를 도출하기 위해 전처리된 입력값을 모델에 입력 (Inference Process)</li>
+<li>Adding Business Logic: 각 기업별로 의미있는 데이터 형식을 출력하기 위한 비즈니스 로직 추가</li>
+</ul>
+<p>⇒ 최종적인 Response를 통한 모델 예측 결과 도출 (모델 서빙의 결과 도출)</p>
+<h3 id="multimodel-pipeline">Multimodel Pipeline</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/7d0fde5c-be92-4b9e-85f6-b9095053a1fe/image.png" /></p>
+<p>멀티 모델 파이프라인 예시:</p>
+<pre><code class="language-yaml"><span class="token key atrule">pipeline</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test_pipeline
+  <span class="token key atrule">start_node_name</span><span class="token punctuation">:</span> m1
+  <span class="token key atrule">nodes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> m1
+    <span class="token key atrule">model_load_meta</span><span class="token punctuation">:</span>
+      <span class="token key atrule">handler_module</span><span class="token punctuation">:</span> m1.dummy_python_model
+    <span class="token comment"># 해당 노드 다음으로 호출할 노드. 명시하지 않으면 다음에 리스팅된 노드가 next로 설정됨.</span>
+		<span class="token key atrule">next</span><span class="token punctuation">:</span> m3
+	<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> m2
+		<span class="token key atrule">model_load_meta</span><span class="token punctuation">:</span>
+				<span class="token key atrule">handler_module</span><span class="token punctuation">:</span> m2.dummy_python_model
+	<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> m3
+		<span class="token key atrule">model_load_meta</span><span class="token punctuation">:</span>
+			<span class="token key atrule">handler_module</span><span class="token punctuation">:</span> m3.dummy_python_model</code></pre>
+<h3 id="cicdct-및-model-serving이-이루어지는-완전한-pipeline">CI/CD/CT 및 Model Serving이 이루어지는 완전한 Pipeline</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/83da2845-52b0-4a3c-ad75-6e92bac295a7/image.png" /></p>
+<p>: 그러나 추론 서빙 (Inference Serving, or Model Serving)은 여러 이유로 복잡성을 띈다.</p>
+<ul>
+<li><strong>다중의 모델 프레임워크:</strong> TensorFlow, PyTorch, TensorRT, ONNX Runtime 등의 프레임워크 각각에는 프로덕션 환경에서 모델을 구동하게 해줄 실행용 백엔드가 필요.</li>
+<li><strong>다양한 유형의 추론 쿼리:</strong> 추론 서빙(inference serving)에서는 실시간 온라인 예측, 오프라인 배치(batch), 스트리밍 데이터, 다중 모델의 복잡한 파이프라인 등 여러 유형의 추론 쿼리를 처리하며, 이들 각각은 추론을 위한 특별한 프로세스를 요구한다.</li>
+<li><strong>진화를 거듭하는 모델:</strong> 모델들은 새로운 데이터와 알고리즘을 바탕으로 재훈련과 업데이트를 거듭하므로 이에 대한 지속적인 업데이트가 필요.</li>
+<li><strong>다양한 CPU와 GPU:</strong> 모델들은 CPU 또는 GPU를 기반으로 실행될 수 있으며, CPU와 GPU에는 다양한 종류가 있다.</li>
+</ul>
+<p>⇒ 이를 해결해주는 것이 NVIDIA Triton Inference Server의 Serving Pipeline (뒤에 설명)</p>
+<hr />
+<h1 id="serving-pipeline에서의-framework">Serving Pipeline에서의 Framework</h1>
+<p>: 일반적인 요청/응답과 달리 모델 서빙 파이프라인 에서의 요청/응답은 상당한 오버헤드 발생</p>
+<p>⇒ 모델 서빙 파이프라인의 Input : 이미지 Tensor, Complex tensor….</p>
+<p>⇒ Serving Framework 효율성의 중요도 up</p>
+<h3 id="fastapi">FastAPI</h3>
+<p>: 파이썬 웹 프레임워크를 이용한 서버 구축</p>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/6928a4f4-ff02-4d9a-ba1a-7086855b28b7/image.webp" /></p>
+<ul>
+<li>쉽고 간단하게 API 구축 가능 + 비교적 간단한 API 구현</li>
+<li>기본적으로 웹 프레임워크다 보니, 모델 서빙 프레임워크의 핵심 기능인 gRPC 지원여부, 모델 포멧, Dynamic Batch Inference (고정된 크기의 배치로 요청을 보내는 것이 아닌, 서버에서 자동으로 배치를 만들어 인퍼런스 수행) 등을 지원하지 않음 (직접 구현해야 함)</li>
+</ul>
+<h3 id="tensorflow-serving">TensorFlow Serving</h3>
+<p>: TensorFlow로 구현한 모델을 그대로 서빙할 수 있는 프레임워크</p>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/3bb32c6d-e3b5-4580-a774-03b44db9d8a4/image.png" /></p>
+<ul>
+<li>강력한 TensorFlow 호환성 및 TensorFlow 모델 서빙의 편리함</li>
+<li>그 외의 형태의 모델은 호환 안됨</li>
+</ul>
+<h3 id="triton">Triton</h3>
+<p>: 다양한 딥러닝 모델 포맷을 지원하는 모델 서빙 프레임 워크<br />
+<img src="https://velog.velcdn.com/images/synoti21/post/650e6bf5-4b04-4fc5-ad85-e25e03303901/image.png" /></p>
+<ul>
+<li>TensorFlow Serving과 다르게 요청을 보낼 때 JSON 형태가 아닌 바이너리 데이터로 변환하고 이를 Base64로 인코딩</li>
+<li>TensorFlow Serving에서 요청을 바이너리 데이터로 변환하려면 Input Signature가 변경되어야 하지만 Triton에서는 별도의 변경사항 불필요</li>
+</ul>
+<h3 id="세-프레임워크의-http-프로토콜-성능-비교">세 프레임워크의 HTTP 프로토콜 성능 비교</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/4ba4c68b-c60c-438f-9ef5-a662b6c54c97/image.png" /></p>
+<p>출처: <a href="https://tech.kakaopay.com/post/model-serving-framework/">https://tech.kakaopay.com/post/model-serving-framework/</a></p>
+<hr />
+<h1 id="ml-model-pipeline-사례">ML Model Pipeline 사례</h1>
+<h3 id="vertex-ai-pipeline">Vertex AI Pipeline</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/51d51127-de4e-4d9e-9ef6-ce33fa3273aa/image.png" /></p>
+<p>: Vertex AI Pipeline의 시각화 그래프</p>
+<ul>
+<li>Google Cloud 내에서 ML Pipeline을 구축할 수 있게 하는 워크플로우 툴</li>
+<li>ML Workflow를 서버리스 방식으로 조정하여 워크플로우 아키텍트를 저장</li>
+<li>ML 시스템을 자동화, 모니터링 및 제어</li>
+</ul>
+<p><a href="https://cloud.google.com/vertex-ai/docs/pipelines/run-pipeline?hl=ko">파이프라인 실행  |  Vertex AI  |  Google Cloud</a></p>
+<p><a href="https://console.cloud.google.com/vertex-ai/pipelines/runs?hl=ko&amp;_ga=2.25344317.1699662865.1689230118-502798362.1673006685&amp;_gac=1.147074885.1689247094.CjwKCAjwwb6lBhBJEiwAbuVUSvQbqJ9tZ3JfMHrGK81GjZApfUixotsl8s0OSBMfgo4V4tVyJAn5XxoCjOsQAvD_BwE&amp;project=ultra-current-381814"></a></p>
+<p><a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/pipelines/google_cloud_pipeline_components_model_train_upload_deploy.ipynb"></a></p>
+<h3 id="nvidia-triton-inference-server의-serving-pipeline">NVIDIA Triton Inference Server의 Serving Pipeline</h3>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/431a5322-f91e-483b-b34b-c1242acfa142/image.png" /></p>
+<p>: NVIDIA Triton Inference Server는 Preprocessing, Postprocessing 과정을 포함한 Inference Pipeline (Serve Pipeline) 을 GPU 내에서 실행할 수 있도록 함.</p>
+<ul>
+<li>Single Model Pipeline이 될 수도 있고, 여러 모델들이 결합한 결합한 Ensemble Model을 지원함</li>
+<li>Stateless Models, Stateful Models, Ensemble Models 지원</li>
+<li>모델 관리 API (HTTP/REST, gRPC, C AP 등)을 통해 쿼리하고 제어할 수 있음</li>
+</ul>
+<p><a href="https://devocean.sk.com/blog/techBoardDetail.do?ID=163805">효율적인 모델 추론 서비스를 위한 Nvidia Triton 아키텍처 소개 및 Quick Start</a></p>
+<h3 id="socar의-model-serving-system---자체-pipeline-구축">SOCAR의 Model Serving System - 자체 Pipeline 구축</h3>
+<p><a href="https://tech.socarcorp.kr/data/2020/03/10/ml-model-serving.html">딥러닝 모델 Serving 간단 구축기</a></p>
+<p>: 딥러닝 모델 서빙 시스템 (kubeflow, sagemaker, autoML)을 모든 조직원들이 습득하기에는 허들이 존재하여, 자체적인 클라우드 기반 모델 서빙 시스템을 구축함</p>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/a981ce13-1a20-4d2c-a684-af286c3407ed/image.png" /></p>
+<p>: AWS SQS + Kubernetes + Git + Rancher + S3, DB</p>
+<p>대략적 순서도</p>
+<ul>
+<li>클라이언트에서 이미지 Upload → S3에 저장</li>
+<li>AWS SQS (단순 메시징 큐)에 이미지 URL과 기타정보를 묶어 Push</li>
+<li>판정 모델은 SQS를 polling하여 요청된 메시지를 받아와 판정 작업 처리</li>
+<li><strong>Model Serving</strong><ul>
+<li>S3 + Agent (Python Application / Docker) + Kubernetes<ul>
+<li>Agent란? : Python으로 작성되고 Docker Image로 빌드한 자체 서빙 시스템</li>
+<li>손상 판정 모델 초기화</li>
+<li>SQS에서 메시지를 pull하고 모델에 이미지 전달</li>
+<li>모델의 판정 결과를 사내 시스템에 전달</li>
+<li>모델 및 Agent의 상태를 확인하고 로그 저장</li>
+</ul></li>
+</ul></li>
+<li>서빙 관련 배포 및 모니터링 (Git + Rancher)<ul>
+<li>Git에 소스를 Push하면 자동으로 트리거되어 도커 이미지 빌드부터 K8s 배포까지 한방에 가능</li>
+<li>Rancher GUI를 통해 노드 및 파드의 상태 모니터링 및 로그 확인</li>
+</ul></li>
+</ul>
+<p><img src="https://velog.velcdn.com/images/synoti21/post/99039dc5-d4eb-4280-b10e-c554e590898a/image.png" /></p>
+<p><strong>Reference</strong></p>
+<p><a href="https://devocean.sk.com/blog/techBoardDetail.do?ID=163805">효율적인 모델 추론 서비스를 위한 Nvidia Triton 아키텍처 소개 및 Quick Start</a></p>
+<p><a href="https://developer.nvidia.com/blog/serving-ml-model-pipelines-on-nvidia-triton-inference-server-with-ensemble-models/">Serving ML Model Pipelines on NVIDIA Triton Inference Server with Ensemble Models | NVIDIA Technical Blog</a></p>
+<p><a href="https://medium.com/@ashmi_banerjee/4-step-tutorial-to-serve-an-ml-model-in-production-using-fastapi-ee62201b3db3">[Tutorial]: Serve an ML Model in Production using FastAPI</a></p>
+<p><a href="https://valohai.com/machine-learning-pipeline/">What is a Machine Learning Pipeline?</a></p>
+<p><a href="https://tech.socarcorp.kr/data/2020/03/10/ml-model-serving.html">딥러닝 모델 Serving 간단 구축기</a></p>
+<p><a href="http://blog.skby.net/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-machine-learning-pipeline/">머신러닝 파이프라인 (Machine Learning Pipeline) &gt; 도리의 디지털라이프</a></p>
+<p><a href="https://cloud.google.com/vertex-ai/docs/pipelines/run-pipeline?hl=ko">파이프라인 실행  |  Vertex AI  |  Google Cloud</a></p>
+<p><a href="https://tech.kakaopay.com/post/model-serving-framework/">모델 서빙 최적화를 위한 프레임워크 선정과 서빙 성능 극대화하기 | 카카오페이 기술 블로그</a></p>
+<p><a href="https://deview.kr/2020/sessions/329">밑바닥부터 만드는 인공지능 서빙 플랫폼</a></p>
+<p><a href="https://www.iguazio.com/glossary/model-serving-pipeline/">What is Model Serving?</a></p></div></div></div><div class="sc-TBWPX dXONqK sc-djWRfJ bksdVp"><div class="sc-gjNHFA kTQxVU"><div class="sc-fmciRz gPzODR"><div class="left"><a href="https://velog.io/@synoti21/posts" class="sc-egiyK cyyZlI"><img src="https://velog.velcdn.com/images/synoti21/profile/9a96e334-d7c6-40ea-9458-25600237d76b/image.JPG" alt="profile"/></a><div class="sc-eXlEPa yXXbT"><div class="name"><a href="https://velog.io/@synoti21/posts" class="sc-egiyK cyyZlI">Jiwan Ahn</a></div><div class="description">Engineer, to be a Pioneer.</div></div></div><div class="right"><div data-testid="follow-btn" class="sc-avest iIZjji"><button class="follow-button button"><span>팔로우</span></button></div></div></div><div class="sc-iFMAIt hbZRXU"></div><div class="sc-iqVWFU koQQwu"><a href="https://github.com/synoti21" target="_blank" rel="noopener noreferrer" data-testid="github"><svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><mask id="github" width="20" height="20" x="0" y="0" maskUnits="userSpaceOnUse"><path fill="#ffffff" fill-rule="evenodd" d="M6.69 15.944c0 .08-.093.145-.21.145-.133.012-.226-.053-.226-.145 0-.081.093-.146.21-.146.12-.012.226.053.226.146zm-1.255-.182c-.028.08.053.173.174.198.105.04.226 0 .25-.081.024-.08-.053-.173-.174-.21-.104-.028-.221.012-.25.093zm1.783-.068c-.117.028-.198.104-.186.197.012.08.117.133.238.105.117-.028.198-.105.186-.186-.012-.076-.121-.129-.238-.116zM9.87.242C4.278.242 0 4.488 0 10.08c0 4.471 2.815 8.298 6.835 9.645.516.093.697-.226.697-.488 0-.25-.012-1.63-.012-2.476 0 0-2.822.605-3.415-1.202 0 0-.46-1.173-1.121-1.475 0 0-.924-.633.064-.621 0 0 1.004.08 1.557 1.04.883 1.557 2.363 1.109 2.94.843.092-.645.354-1.093.645-1.36-2.255-.25-4.529-.576-4.529-4.455 0-1.109.307-1.665.952-2.375-.105-.262-.448-1.342.105-2.738C5.56 4.157 7.5 5.51 7.5 5.51a9.474 9.474 0 0 1 2.532-.344c.86 0 1.726.117 2.533.343 0 0 1.939-1.355 2.782-1.089.552 1.4.21 2.476.105 2.738.645.714 1.04 1.27 1.04 2.375 0 3.891-2.375 4.202-4.63 4.456.372.319.686.923.686 1.87 0 1.36-.012 3.041-.012 3.372 0 .262.186.58.698.488C17.266 18.379 20 14.552 20 10.08 20 4.488 15.464.24 9.871.24zM3.919 14.149c-.052.04-.04.133.029.21.064.064.157.093.21.04.052-.04.04-.133-.029-.21-.064-.064-.157-.092-.21-.04zm-.435-.326c-.028.052.012.117.093.157.064.04.145.028.173-.028.028-.053-.012-.117-.093-.158-.08-.024-.145-.012-.173.029zm1.306 1.435c-.064.053-.04.174.053.25.092.093.21.105.262.04.052-.052.028-.173-.053-.25-.088-.092-.21-.104-.262-.04zm-.46-.593c-.064.04-.064.146 0 .238.065.093.174.133.226.093.065-.053.065-.157 0-.25-.056-.093-.16-.133-.225-.08z" clip-rule="evenodd"></path></mask><g mask="url(#github)"><path fill="currentColor" d="M0 0h20v20H0z"></path></g></svg></a><a href="https://facebook.com/profile.php?id=100005626620102" target="_blank" rel="noopener noreferrer" data-testid="facebook"><svg width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="currentColor" d="M32 5.334C32 2.53 29.47 0 26.667 0H5.333C2.53 0 0 2.531 0 5.334v21.332C0 29.47 2.53 32 5.334 32H16V19.911h-3.911v-5.333H16V12.5c0-3.584 2.69-6.811 6-6.811h4.311v5.333H22c-.472 0-1.022.573-1.022 1.431v2.125h5.333v5.333h-5.333V32h5.689C29.47 32 32 29.469 32 26.666V5.334z"></path></svg></a><a href="https://www.linkedin.com/in/jiwan-ahn-8b3293265/" target="_blank" rel="noopener noreferrer" data-testid="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg></a><a href="mailto:synoti21@gmail.com"><svg width="32" height="32" fill="none" viewBox="0 0 32 32" data-testid="email"><path fill="currentColor" d="M16 16.871L1.019 5H30.98L16 16.871zm0 3.146L1 8.131V27h30V8.131L16 20.017z"></path></svg></a></div></div></div><div class="sc-TBWPX dXONqK sc-fIosxK dpmQGl"><div class="sc-gyElHZ bVYpNI"><a class="sc-gUQvok hlGICj" href="/@synoti21/데이터-파이프라인-추출"><div class="sc-hjGZqJ fibSC"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg></div><div class="sc-fXeWAj fKjWde"><div class="description">이전<!-- --> 포스트</div><h3>데이터 파이프라인 - 추출</h3></div></a></div><div class="sc-gyElHZ bVYpNI"><a class="sc-gUQvok jSBDGM" href="/@synoti21/데이터-파이프라인-로드-적재"><div class="sc-hjGZqJ cMDwOh"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></div><div class="sc-fXeWAj cQpWGt"><div class="description">다음<!-- --> 포스트</div><h3>데이터 파이프라인 - 로드 (적재)</h3></div></a></div></div><div class="sc-TBWPX dXONqK sc-brSvTw cgYvDI"><h4>0<!-- -->개의 댓글</h4><div class="sc-gIDmLj"><div class="sc-evcjhq BdYrx"><textarea placeholder="댓글을 작성하세요" class="sc-fHeRUh fQjmlN" style="height:0"></textarea><div class="buttons-wrapper"><button color="teal" class="sc-jrQzAO hSMJOX">댓글 <!-- -->작성</button></div></div><div class="sc-dVNjXY dDifDS"><div class="sc-xiLah"></div></div></div></div></div><div class="Toastify"></div></div><script>window.__APOLLO_STATE__={"ROOT_QUERY":{"auth":null,"velog_config({\"username\":\"synoti21\"})":{"type":"id","generated":true,"id":"$ROOT_QUERY.velog_config({\"username\":\"synoti21\"})","typename":"VelogConfig"},"post({\"url_slug\":\"ML-Model-Serving-Pipeline\",\"username\":\"synoti21\"})":{"type":"id","generated":false,"id":"Post:3a5e4cb1-ffd3-4ed7-8eb9-3b28f58f11a6","typename":"Post"}},"$ROOT_QUERY.velog_config({\"username\":\"synoti21\"})":{"title":null,"logo_image":null,"__typename":"VelogConfig"},"Post:3a5e4cb1-ffd3-4ed7-8eb9-3b28f58f11a6":{"id":"3a5e4cb1-ffd3-4ed7-8eb9-3b28f58f11a6","title":"ML Model Serving Pipeline","released_at":"2023-07-14T07:51:03.419Z","updated_at":"2026-05-22T04:41:57.426Z","tags":{"type":"json","json":["mlops","학습기록"]},"body":"# ML 모델 서빙이란?\n\n> 훈련된 모델을 실서비스에 사용할 수 있도록, 클라이언트에게 모델 예측 결과를 효율적으로 전달하는 방식.\n> \n\n모델을 훈련했다고 해서 끝나는 것이 아닌, 그것을 어떻게 서비스로 제공할 것인가가 MLOps의 최종 과제. 즉, 훈련이 된 모델을 통해 새로운 Data Points에서 “추론 (Inferenece)”를 하는 것 까지가 MLOps의 최종 과제다!\n\n모델 서빙의 매우 간단한 예시 (Seq2Seq을 사용한 간단한 대화 예측 앱)\n\n[Serving Machine Learning Model in Production — Step-by-Step Guide](https://medium.com/hydrosphere-io/serving-machine-learning-model-in-production-step-by-step-guide-bbad145c0d40)\n\n### 모델 서빙의 방법\n\n![](https://velog.velcdn.com/images/synoti21/post/04ab54cc-2892-4d4a-9699-99fc518c3fb4/image.png)\n\n\n- Batch Serving\n    - 즉각적인 결과 도출이 필요하지 않으며, 한번에 여러 개의 예측 결과를 도출하는 방식\n    - Batch Inference\n- Real-time Serving\n    - 즉각적인 예측 결과가 필요할 경우 사용\n    - 한번에 한 개의 예측 결과를 실시간으로 도출.\n    - 요청에 따른 응답이 필요하므로, API를 통해 요청과 응답이 이루어진다. (RESTful API, gRPC)\n---\n# 모델 서빙 Pipeline의 구조\n\n: 크게 세 개의 파이프라인으로 이루어져 있다.\n\n- **데이터 파이프라인:** 데이터 스트림 또는 배치 처리를 통해 모델 파이프라인이나 데이터 레이크에 데이터 운반\n- **모델 파이프라인:** 사전 설정된 하이퍼 파라미터를 통해 하나 또는 그 이상의 모델들을 학습시킴.\n- **서빙 파이프라인:** 이전의 파이프라인에서 학습된 모델들을 예측 서비스 등의 서비스에 서빙.\n\n### 기본적인 ML Pipeline의 구조\n\n![](https://velog.velcdn.com/images/synoti21/post/ef48f844-039c-4114-8988-da0b836296d0/image.png)\n\n\n\n### 실서비스와의 결합을 위한 Serving Pipeline\n\n![](https://velog.velcdn.com/images/synoti21/post/d127a959-7588-4740-892c-95c73d1338a1/image.png)\n\n: 일반적인 모델 서빙 파이프라인의 구조\n\n- 전처리: 모델의 추론을 위한 입력 데이터 백터화, 또는 클리닝 작업\n- 인퍼런스 (추론): 훈련된 모델이 입력값에 따른 예측 결과를 도출하는 과정\n- 후처리: Reponse 형식화 및 Confidence 계산\n\n**(DEVIEW 2020)**\n\n![](https://velog.velcdn.com/images/synoti21/post/a72a761e-ed83-40d2-bd4e-f1db62bdc271/image.png)\n\n: 모델 서빙의 기본적인 구조 (초기화 → 헬스 체크 → Warm up → 전처리 → 인퍼런스 → 후처리)\n\n(mds : 공통 모델 서빙 모듈)\n\n- 학습된 Weight, inference 코드로 Flask를 통한 기초적인 서빙\n- 모듈 공통화를 통한 효율적인 서빙 구현\n\n![](https://velog.velcdn.com/images/synoti21/post/8c692fe2-bd7d-4475-ae0b-4e5b1e5f2195/image.png)\n\n: 세분화된 모델 서빙 파이프라인 구조\n\n- Feature Extraction: Feature Store에 아직 적재되지 않은 추가 Feature를 Request로부터 추출\n- Feature Preprocessing: tabular 형식의 추출된 features 전처리 및 구조화 되지 않은 데이터에 대한 전처리\n- Request Forwarding: 모델 인스턴스를 조정하기 위한 요청 라우팅\n- Prediction Serving: 모델 예측 결과를 도출하기 위해 전처리된 입력값을 모델에 입력 (Inference Process)\n- Adding Business Logic: 각 기업별로 의미있는 데이터 형식을 출력하기 위한 비즈니스 로직 추가\n\n⇒ 최종적인 Response를 통한 모델 예측 결과 도출 (모델 서빙의 결과 도출)\n\n### Multimodel Pipeline\n\n![](https://velog.velcdn.com/images/synoti21/post/7d0fde5c-be92-4b9e-85f6-b9095053a1fe/image.png)\n\n\n멀티 모델 파이프라인 예시:\n\n```yaml\npipeline:\n  name: test_pipeline\n  start_node_name: m1\n  nodes:\n  - name: m1\n    model_load_meta:\n      handler_module: m1.dummy_python_model\n    # 해당 노드 다음으로 호출할 노드. 명시하지 않으면 다음에 리스팅된 노드가 next로 설정됨.\n\t\tnext: m3\n\t- name: m2\n\t\tmodel_load_meta:\n\t\t\t\thandler_module: m2.dummy_python_model\n\t- name: m3\n\t\tmodel_load_meta:\n\t\t\thandler_module: m3.dummy_python_model\n```\n\n### CI/CD/CT 및 Model Serving이 이루어지는 완전한 Pipeline\n\n![](https://velog.velcdn.com/images/synoti21/post/83da2845-52b0-4a3c-ad75-6e92bac295a7/image.png)\n\n\n: 그러나 추론 서빙 (Inference Serving, or Model Serving)은 여러 이유로 복잡성을 띈다.\n\n- **다중의 모델 프레임워크:** TensorFlow, PyTorch, TensorRT, ONNX Runtime 등의 프레임워크 각각에는 프로덕션 환경에서 모델을 구동하게 해줄 실행용 백엔드가 필요.\n- **다양한 유형의 추론 쿼리:** 추론 서빙(inference serving)에서는 실시간 온라인 예측, 오프라인 배치(batch), 스트리밍 데이터, 다중 모델의 복잡한 파이프라인 등 여러 유형의 추론 쿼리를 처리하며, 이들 각각은 추론을 위한 특별한 프로세스를 요구한다.\n- **진화를 거듭하는 모델:** 모델들은 새로운 데이터와 알고리즘을 바탕으로 재훈련과 업데이트를 거듭하므로 이에 대한 지속적인 업데이트가 필요.\n- **다양한 CPU와 GPU:** 모델들은 CPU 또는 GPU를 기반으로 실행될 수 있으며, CPU와 GPU에는 다양한 종류가 있다.\n\n⇒ 이를 해결해주는 것이 NVIDIA Triton Inference Server의 Serving Pipeline (뒤에 설명)\n\n---\n# Serving Pipeline에서의 Framework\n\n: 일반적인 요청/응답과 달리 모델 서빙 파이프라인 에서의 요청/응답은 상당한 오버헤드 발생\n\n⇒ 모델 서빙 파이프라인의 Input : 이미지 Tensor, Complex tensor….\n\n⇒ Serving Framework 효율성의 중요도 up\n\n### FastAPI \n: 파이썬 웹 프레임워크를 이용한 서버 구축\n\n![](https://velog.velcdn.com/images/synoti21/post/6928a4f4-ff02-4d9a-ba1a-7086855b28b7/image.webp)\n\n\n- 쉽고 간단하게 API 구축 가능 + 비교적 간단한 API 구현\n- 기본적으로 웹 프레임워크다 보니, 모델 서빙 프레임워크의 핵심 기능인 gRPC 지원여부, 모델 포멧, Dynamic Batch Inference (고정된 크기의 배치로 요청을 보내는 것이 아닌, 서버에서 자동으로 배치를 만들어 인퍼런스 수행) 등을 지원하지 않음 (직접 구현해야 함)\n\n### TensorFlow Serving\n: TensorFlow로 구현한 모델을 그대로 서빙할 수 있는 프레임워크\n\n![](https://velog.velcdn.com/images/synoti21/post/3bb32c6d-e3b5-4580-a774-03b44db9d8a4/image.png)\n\n\n- 강력한 TensorFlow 호환성 및 TensorFlow 모델 서빙의 편리함\n- 그 외의 형태의 모델은 호환 안됨\n\n### Triton\n: 다양한 딥러닝 모델 포맷을 지원하는 모델 서빙 프레임 워크\n![](https://velog.velcdn.com/images/synoti21/post/650e6bf5-4b04-4fc5-ad85-e25e03303901/image.png)\n\n\n- TensorFlow Serving과 다르게 요청을 보낼 때 JSON 형태가 아닌 바이너리 데이터로 변환하고 이를 Base64로 인코딩\n- TensorFlow Serving에서 요청을 바이너리 데이터로 변환하려면 Input Signature가 변경되어야 하지만 Triton에서는 별도의 변경사항 불필요\n\n### 세 프레임워크의 HTTP 프로토콜 성능 비교\n\n![](https://velog.velcdn.com/images/synoti21/post/4ba4c68b-c60c-438f-9ef5-a662b6c54c97/image.png)\n\n출처: https://tech.kakaopay.com/post/model-serving-framework/\n\n---\n# ML Model Pipeline 사례\n\n### Vertex AI Pipeline\n\n![](https://velog.velcdn.com/images/synoti21/post/51d51127-de4e-4d9e-9ef6-ce33fa3273aa/image.png)\n\n: Vertex AI Pipeline의 시각화 그래프\n\n- Google Cloud 내에서 ML Pipeline을 구축할 수 있게 하는 워크플로우 툴\n- ML Workflow를 서버리스 방식으로 조정하여 워크플로우 아키텍트를 저장\n- ML 시스템을 자동화, 모니터링 및 제어\n\n[파이프라인 실행  |  Vertex AI  |  Google Cloud](https://cloud.google.com/vertex-ai/docs/pipelines/run-pipeline?hl=ko)\n\n[](https://console.cloud.google.com/vertex-ai/pipelines/runs?hl=ko&_ga=2.25344317.1699662865.1689230118-502798362.1673006685&_gac=1.147074885.1689247094.CjwKCAjwwb6lBhBJEiwAbuVUSvQbqJ9tZ3JfMHrGK81GjZApfUixotsl8s0OSBMfgo4V4tVyJAn5XxoCjOsQAvD_BwE&project=ultra-current-381814)\n\n[](https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/pipelines/google_cloud_pipeline_components_model_train_upload_deploy.ipynb)\n\n### NVIDIA Triton Inference Server의 Serving Pipeline\n\n![](https://velog.velcdn.com/images/synoti21/post/431a5322-f91e-483b-b34b-c1242acfa142/image.png)\n\n: NVIDIA Triton Inference Server는 Preprocessing, Postprocessing 과정을 포함한 Inference Pipeline (Serve Pipeline) 을 GPU 내에서 실행할 수 있도록 함.\n\n- Single Model Pipeline이 될 수도 있고, 여러 모델들이 결합한 결합한 Ensemble Model을 지원함\n- Stateless Models, Stateful Models, Ensemble Models 지원\n- 모델 관리 API (HTTP/REST, gRPC, C AP 등)을 통해 쿼리하고 제어할 수 있음\n\n[효율적인 모델 추론 서비스를 위한 Nvidia Triton 아키텍처 소개 및 Quick Start](https://devocean.sk.com/blog/techBoardDetail.do?ID=163805)\n\n### SOCAR의 Model Serving System - 자체 Pipeline 구축\n\n[딥러닝 모델 Serving 간단 구축기](https://tech.socarcorp.kr/data/2020/03/10/ml-model-serving.html)\n\n: 딥러닝 모델 서빙 시스템 (kubeflow, sagemaker, autoML)을 모든 조직원들이 습득하기에는 허들이 존재하여, 자체적인 클라우드 기반 모델 서빙 시스템을 구축함\n\n![](https://velog.velcdn.com/images/synoti21/post/a981ce13-1a20-4d2c-a684-af286c3407ed/image.png)\n\n: AWS SQS + Kubernetes + Git + Rancher + S3, DB\n\n대략적 순서도\n\n- 클라이언트에서 이미지 Upload → S3에 저장\n- AWS SQS (단순 메시징 큐)에 이미지 URL과 기타정보를 묶어 Push\n- 판정 모델은 SQS를 polling하여 요청된 메시지를 받아와 판정 작업 처리\n- **Model Serving**\n    - S3 + Agent (Python Application / Docker) + Kubernetes\n        - Agent란? : Python으로 작성되고 Docker Image로 빌드한 자체 서빙 시스템\n        - 손상 판정 모델 초기화\n        - SQS에서 메시지를 pull하고 모델에 이미지 전달\n        - 모델의 판정 결과를 사내 시스템에 전달\n        - 모델 및 Agent의 상태를 확인하고 로그 저장\n- 서빙 관련 배포 및 모니터링 (Git + Rancher)\n    - Git에 소스를 Push하면 자동으로 트리거되어 도커 이미지 빌드부터 K8s 배포까지 한방에 가능\n    - Rancher GUI를 통해 노드 및 파드의 상태 모니터링 및 로그 확인\n\n![](https://velog.velcdn.com/images/synoti21/post/99039dc5-d4eb-4280-b10e-c554e590898a/image.png)\n\n\n\n**Reference**\n\n[효율적인 모델 추론 서비스를 위한 Nvidia Triton 아키텍처 소개 및 Quick Start](https://devocean.sk.com/blog/techBoardDetail.do?ID=163805)\n\n[Serving ML Model Pipelines on NVIDIA Triton Inference Server with Ensemble Models | NVIDIA Technical Blog](https://developer.nvidia.com/blog/serving-ml-model-pipelines-on-nvidia-triton-inference-server-with-ensemble-models/)\n\n[[Tutorial]: Serve an ML Model in Production using FastAPI](https://medium.com/@ashmi_banerjee/4-step-tutorial-to-serve-an-ml-model-in-production-using-fastapi-ee62201b3db3)\n\n[What is a Machine Learning Pipeline?](https://valohai.com/machine-learning-pipeline/)\n\n[딥러닝 모델 Serving 간단 구축기](https://tech.socarcorp.kr/data/2020/03/10/ml-model-serving.html)\n\n[머신러닝 파이프라인 (Machine Learning Pipeline) > 도리의 디지털라이프](http://blog.skby.net/머신러닝-파이프라인-machine-learning-pipeline/)\n\n[파이프라인 실행  |  Vertex AI  |  Google Cloud](https://cloud.google.com/vertex-ai/docs/pipelines/run-pipeline?hl=ko)\n\n[모델 서빙 최적화를 위한 프레임워크 선정과 서빙 성능 극대화하기 | 카카오페이 기술 블로그](https://tech.kakaopay.com/post/model-serving-framework/)\n\n[밑바닥부터 만드는 인공지능 서빙 플랫폼](https://deview.kr/2020/sessions/329)\n\n[What is Model Serving?](https://www.iguazio.com/glossary/model-serving-pipeline/)","short_description":"AI는 훈련 뿐만 아닌 서빙까지가 완성.","is_markdown":true,"is_private":false,"is_temp":false,"thumbnail":"https://velog.velcdn.com/images/synoti21/post/04ab54cc-2892-4d4a-9699-99fc518c3fb4/image.png","comments_count":0,"url_slug":"ML-Model-Serving-Pipeline","likes":8,"liked":false,"user":{"type":"id","generated":false,"id":"User:21db10b0-9f94-4f22-98a7-108aa51e63fd","typename":"User"},"comments":[],"series":null,"linked_posts":{"type":"id","generated":true,"id":"$Post:3a5e4cb1-ffd3-4ed7-8eb9-3b28f58f11a6.linked_posts","typename":"LinkedPosts"},"__typename":"Post"},"User:21db10b0-9f94-4f22-98a7-108aa51e63fd":{"id":"21db10b0-9f94-4f22-98a7-108aa51e63fd","username":"synoti21","is_followed":false,"profile":{"type":"id","generated":false,"id":"UserProfile:e54ec1c9-b860-4bdd-8a04-d3772796fcdb","typename":"UserProfile"},"velog_config":{"type":"id","generated":true,"id":"$User:21db10b0-9f94-4f22-98a7-108aa51e63fd.velog_config","typename":"VelogConfig"},"__typename":"User"},"UserProfile:e54ec1c9-b860-4bdd-8a04-d3772796fcdb":{"id":"e54ec1c9-b860-4bdd-8a04-d3772796fcdb","display_name":"Jiwan Ahn","thumbnail":"https://velog.velcdn.com/images/synoti21/profile/9a96e334-d7c6-40ea-9458-25600237d76b/image.JPG","short_bio":"Engineer, to be a Pioneer.","profile_links":{"type":"json","json":{"url":"https://www.linkedin.com/in/jiwan-ahn-8b3293265/","email":"synoti21@gmail.com","github":"synoti21","facebook":"profile.php?id=100005626620102"}},"__typename":"UserProfile"},"$User:21db10b0-9f94-4f22-98a7-108aa51e63fd.velog_config":{"title":null,"__typename":"VelogConfig"},"Post:e05d66a2-8d2d-450a-a7ff-93fbdd6224e2":{"id":"e05d66a2-8d2d-450a-a7ff-93fbdd6224e2","title":"데이터 파이프라인 - 추출","url_slug":"데이터-파이프라인-추출","user":{"type":"id","generated":false,"id":"User:21db10b0-9f94-4f22-98a7-108aa51e63fd","typename":"User"},"__typename":"Post"},"$Post:3a5e4cb1-ffd3-4ed7-8eb9-3b28f58f11a6.linked_posts":{"previous":{"type":"id","generated":false,"id":"Post:e05d66a2-8d2d-450a-a7ff-93fbdd6224e2","typename":"Post"},"next":{"type":"id","generated":false,"id":"Post:4d810681-11df-48a7-b938-a88dfb52161c","typename":"Post"},"__typename":"LinkedPosts"},"Post:4d810681-11df-48a7-b938-a88dfb52161c":{"id":"4d810681-11df-48a7-b938-a88dfb52161c","title":"데이터 파이프라인 - 로드 (적재)","url_slug":"데이터-파이프라인-로드-적재","user":{"type":"id","generated":false,"id":"User:21db10b0-9f94-4f22-98a7-108aa51e63fd","typename":"User"},"__typename":"Post"}};</script><script>window.__REDUX_STATE__={"core":{"layer":false,"auth":{"visible":false,"mode":"LOGIN"},"user":null,"popup":{"visible":false,"title":"","message":""}},"write":{"mode":"MARKDOWN","markdown":"","title":"","html":"","tags":[],"publish":false,"textBody":"","defaultDescription":"","description":"","isPrivate":false,"urlSlug":"","thumbnail":null,"editSeries":false,"selectedSeries":null,"postId":null,"isTemp":false,"initialTitle":"","initialBody":""},"header":{"custom":true,"userLogo":{"title":null,"logo_image":null},"username":"synoti21"},"post":{"id":null},"error":{"errorType":null},"scroll":{"main":0,"user/posts":0},"home":{"timeframe":"week"},"darkMode":{"theme":"default","systemTheme":"not-ready"}};</script><script id="__LOADABLE_REQUIRED_CHUNKS__" type="application/json">[18,0,23,1,3]</script><script id="__LOADABLE_REQUIRED_CHUNKS___ext" type="application/json">{"namedChunks":["pages-velog-VelogPage","PostPage"]}</script><script async="" data-chunk="main" src="https://static.velog.io/static/js/runtime-main.624815d4.js"></script><script async="" data-chunk="main" src="https://static.velog.io/static/js/20.72815531.chunk.js"></script><script async="" data-chunk="main" src="https://static.velog.io/static/js/main.5303a5fa.chunk.js"></script><script async="" data-chunk="pages-velog-VelogPage" src="https://static.velog.io/static/js/pages-velog-VelogPage.f0cc9b56.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/0.5f05d8e8.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/23.c782abe5.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/1.c2610806.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/PostPage.05dd7823.chunk.js"></script></body></html>

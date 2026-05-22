@@ -29,6 +29,8 @@ evidence_level: unsourced
 - [[MCP Remote SSE]]
 - [[iOS WebKit React onBlur Issue]]
 - [[LLM Hallucination]]
+- [[Hybrid LLM Query Routing]]
+- [[ML Model Serving Pipeline]]
 
 ## 프로젝트
 
@@ -106,6 +108,8 @@ evidence_level: unsourced
 - [[Blake Crosley Hermes Agent Guide]]
 - [[YOZM Hermes Agent Article]]
 - [[WikiDocs SQLite Evolution Article]]
+- [[Moonlight Hybrid LLM Query Routing Review]]
+- [[Velog ML Model Serving Pipeline Article]]
 
 ## 리포트
 

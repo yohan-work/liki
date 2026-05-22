@@ -158,3 +158,12 @@ evidence_level: unsourced
 - LLM Wiki 검색 자동화를 SQLite FTS5 기반 local index로 확장할 수 있다는 시사점을 [[LLM Wiki]]와 [[Personal Operating System]]에 연결했다.
 - 변경 영역: [[SQLite]], [[WikiDocs SQLite Evolution Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
 - 후속 작업: 필요하면 SQLite FTS5 기반 search-wiki v2 PoC를 MVP 후보로 검토한다.
+
+## [2026-05-22] ingest | Hybrid LLM 라우팅과 ML 모델 서빙 파이프라인
+
+- Moonlight의 "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing" 논문 리뷰를 raw snapshot으로 보존하고 [[Moonlight Hybrid LLM Query Routing Review]]로 ingest했다.
+- Velog 글 "ML Model Serving Pipeline"을 raw snapshot으로 보존하고 [[Velog ML Model Serving Pipeline Article]]로 ingest했다.
+- 비용/품질 기반 모델 라우팅을 [[Hybrid LLM Query Routing]] concept page로, 모델 serving 구조를 [[ML Model Serving Pipeline]] concept page로 정리했다.
+- 두 개념을 [[Agentic Workflow]]와 [[Orchestration]]에 연결하고, LLM Wiki 자동화의 모델 선택과 serving pipeline 설계 후보로 기록했다.
+- 변경 영역: [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], source summary 2개, [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 필요하면 Hybrid LLM 원 논문과 Triton 공식 문서를 별도 source로 ingest한다.
