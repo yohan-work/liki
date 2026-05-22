@@ -74,6 +74,7 @@ evidence_level: unsourced
 - [[Hermes Agent]]
 - [[Content Marketing Team]]
 - [[Microsoft Clarity]]
+- [[SQLite]]
 
 ## 인물
 
@@ -104,6 +105,7 @@ evidence_level: unsourced
 - [[WikiDocs Hermes Agent Guide]]
 - [[Blake Crosley Hermes Agent Guide]]
 - [[YOZM Hermes Agent Article]]
+- [[WikiDocs SQLite Evolution Article]]
 
 ## 리포트
 

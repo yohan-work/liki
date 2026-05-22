@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 15개
+- 자료 요약: 16개
 - 개념 페이지: 12개
-- 도구 페이지: 9개
+- 도구 페이지: 10개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -37,7 +37,7 @@ evidence_level: unsourced
 - 재사용 질문 답변: 1개
 - 최근 구조 점검: 2026-05-22, lint errors 0 / warnings 0
 
-핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]]를 추가했고, 상세 실무 가이드와 대중적 해설 자료까지 보강했다. 최근 고도화 방향은 다양한 아이디어와 MVP / PoC 후보를 빠르게 선별하고, 회의록과 결정 기록을 실행 자산으로 남기는 것이다.
+핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]]와 [[SQLite]]를 추가했고, Hermes Agent는 상세 실무 가이드와 대중적 해설 자료까지 보강했다. 최근 고도화 방향은 다양한 아이디어와 MVP / PoC 후보를 빠르게 선별하고, 회의록과 결정 기록을 실행 자산으로 남기는 것이다.
 
 ## 다음 행동
 

@@ -150,3 +150,11 @@ evidence_level: unsourced
 - 커뮤니티 반응과 skill poisoning, MCP sandbox, credential exposure, GDPR 리스크를 검증 필요 주장으로 분리했다.
 - 변경 영역: [[Hermes Agent]], [[YOZM Hermes Agent Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
 - 후속 작업: OpenRouter 순위, GitHub star, 보안 리스크 관련 주장은 공식 문서와 현재 repository 기준으로 재확인한다.
+
+## [2026-05-22] ingest | WikiDocs SQLite 진화 글
+
+- WikiDocs 블로그 글 "몰랐던 SQLite의 진화: 단일 파일 DB가 프로덕션급 엔진이 되기까지"를 raw snapshot으로 보존하고 [[WikiDocs SQLite Evolution Article]]로 ingest했다.
+- JSON 확장, FTS5, window function, STRICT mode, generated columns, WAL, 동시 쓰기 한계, observability 이슈를 [[SQLite]] 도구 페이지로 정리했다.
+- LLM Wiki 검색 자동화를 SQLite FTS5 기반 local index로 확장할 수 있다는 시사점을 [[LLM Wiki]]와 [[Personal Operating System]]에 연결했다.
+- 변경 영역: [[SQLite]], [[WikiDocs SQLite Evolution Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 필요하면 SQLite FTS5 기반 search-wiki v2 PoC를 MVP 후보로 검토한다.
