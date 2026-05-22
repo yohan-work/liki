@@ -95,6 +95,8 @@ function printHelp() {
 예:
   node scripts/search-wiki.ts RAG
   node scripts/search-wiki.ts agent --type concept
+  node scripts/search-wiki.ts onboarding --type mvp
+  node scripts/search-wiki.ts 액션 --type meeting
   node scripts/search-wiki.ts API --domain software --source-quality practitioner`);
 }
 

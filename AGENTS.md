@@ -56,11 +56,11 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - `use_for`는 `concept`, `reference`, `inspiration`, `decision`, `writing`, `presentation` 중 해당되는 값을 배열로 기록한다.
 - `domain`은 자료의 주제 영역을 배열로 기록한다. 예: `ai`, `finance`, `software`, `personal-ops`, `research`, `business`, `writing`, `conference`, `culture`, `policy`.
 - `content_type`은 자료 형식을 기록한다. 예: `article`, `paper`, `transcript`, `repo`, `note`, `image`, `dataset`, `talk`, `book`, `documentation`.
-- `knowledge_role`은 위키 안에서 자료가 맡는 역할을 배열로 기록한다. 예: `source`, `concept`, `project`, `tool`, `comparison`, `question`, `decision`, `reference`.
+- `knowledge_role`은 위키 안에서 자료가 맡는 역할을 배열로 기록한다. 예: `source`, `concept`, `project`, `tool`, `comparison`, `question`, `idea`, `mvp`, `decision`, `meeting`, `reference`.
 - ingest할 때는 먼저 domain, content_type, knowledge_role, source_quality, use_for를 판단한 뒤 어떤 wiki page를 만들거나 갱신할지 결정한다.
-- 필요하면 관련 concept, project, tool, people, comparison, question page를 만들거나 갱신한다.
+- 필요하면 관련 concept, project, idea, mvp, decision, meeting, tool, people, comparison, question page를 만들거나 갱신한다.
 - wiki page를 추가하거나 의미 있게 변경한 뒤에는 `wiki/index.md`를 업데이트한다.
-- ingest로 source, concept, tool, project, question 수가 바뀌거나 주요 진입점/다음 행동이 바뀌면 `wiki/overview.md` 운영 대시보드도 함께 갱신한다.
+- ingest로 source, concept, tool, project, idea, mvp, decision, meeting, question 수가 바뀌거나 주요 진입점/다음 행동이 바뀌면 `wiki/overview.md` 운영 대시보드도 함께 갱신한다.
 - 작업 내용은 `wiki/log.md`에 기록한다.
 
 ## Log 규칙
@@ -77,7 +77,26 @@ Markdown 파일이 wiki layer의 source of truth다. Git은 변경 이력을 추
 - 자료가 사용자의 장기 프로젝트, PoC, 기획, 운영 체계와 직접 관련되면 `wiki/projects/`에 연결한다.
 - 두 개념의 차이, 선택 기준, 적용 조건을 설명하는 데 유용하면 `wiki/comparisons/` 후보로 기록한다.
 - 반복 참조할 만한 질문 답변을 만든 경우에만 `wiki/questions/`에 저장한다.
+- 빠른 아이디어는 `inbox/ideas/`에 먼저 둘 수 있고, 실행 가치가 확인되면 `wiki/ideas/`에 idea page로 승격한다.
+- 1주 안에 검증 가능한 실행 후보는 `wiki/mvps/`에 MVP / PoC page로 만든다.
+- 프로젝트나 MVP 방향에 영향을 주는 선택은 `wiki/decisions/`에 decision record로 남긴다.
+- 회의록은 `wiki/meetings/`에 요약하되, 핵심 논의보다 결정, 액션 아이템, 연결할 project/idea/mvp를 우선 기록한다.
 - domain이 낯설거나 애매하면 무리해서 새 taxonomy 값을 만들기보다 가장 가까운 값과 `tags`를 함께 사용하고, 열린 질문에 분류 불확실성을 남긴다.
+
+## MVP / PoC 규칙
+
+- idea page는 문제, 대상 사용자, 해결 가설, 빠른 검증 방법, 다음 행동을 반드시 드러낸다.
+- MVP / PoC page는 성공 기준과 1주 실험 계획이 없으면 `status: active`로 두지 않는다.
+- MVP / PoC의 범위는 빠른 검증에 필요한 최소 기능으로 제한하고, 제외할 범위를 명시한다.
+- 장기 프로젝트와 연결되는 MVP / PoC는 관련 project page에도 링크한다.
+- 보류 또는 중단 결정은 삭제하지 말고 decision record나 해당 page의 결정 로그에 남긴다.
+
+## 회의록 규칙
+
+- 회의록 summary는 원문 transcript를 대체하지 않는다. 원문이 있으면 `raw/` 또는 원본 위치를 보존하고 요약에는 위치를 기록한다.
+- 액션 아이템은 담당자, 다음 행동, 연결할 project/idea/mvp가 확인될 때 가장 유용하다. 모르면 불확실성을 표시한다.
+- 회의 중 나온 주장과 Codex의 해석을 섞지 않는다.
+- 외부 공유가 애매한 회의록은 `sensitivity: private`를 유지한다.
 
 ## Query 규칙
 

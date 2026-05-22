@@ -28,6 +28,13 @@ const SOURCE_FIELDS = [
   "use_for",
   "related_pages",
 ];
+const TYPE_SECTION_REQUIREMENTS = {
+  idea: ["## 문제", "## 해결 가설", "## 빠른 검증 방법", "## 다음 행동"],
+  mvp: ["## 목표", "## 범위", "## 성공 기준", "## 1주 실험 계획", "## 다음 작업"],
+  decision: ["## 결정", "## 근거", "## 선택지", "## 되돌릴 조건"],
+  meeting: ["## 회의 목적", "## 핵심 논의", "## 결정", "## 액션 아이템"],
+};
+
 const ENGLISH_HEADING =
   /^#{1,3} (Source|Type|Date Added|Original Location|Summary|Key Claims|Important Concepts|Related Pages|Open Questions|Notes|Definition|Why It Matters|Key Ideas|Use Cases|Limitations|Strengths|Purpose|Background|Core Features|Recommended Actions|Missing Links|Stale Claims|Contradictions)\b/m;
 
@@ -126,6 +133,8 @@ function main() {
   const warnings = [];
   const frontmatterIssues = [];
   const taxonomyIssues = [];
+  const typeSectionIssues = [];
+  const executionIssues = [];
   const brokenLinks = [];
   const indexOmissions = [];
   const englishHeadings = [];
@@ -155,6 +164,27 @@ function main() {
       }
     }
 
+    const type = frontmatter.values.get("type");
+    const requiredSections = TYPE_SECTION_REQUIREMENTS[type] || [];
+    for (const section of requiredSections) {
+      if (!content.includes(section)) {
+        addIssue(typeSectionIssues, `${relativePath}: ${type} 필수 섹션 누락 - ${section}`);
+      }
+    }
+
+    if (type === "mvp" && frontmatter.values.get("status") === "active") {
+      if (/## 성공 기준\s*\n\s*(## |$)/m.test(content)) {
+        addIssue(executionIssues, `${relativePath}: active MVP의 성공 기준이 비어 있음`);
+      }
+      if (/## 다음 작업\s*$/m.test(content)) {
+        addIssue(executionIssues, `${relativePath}: active MVP의 다음 작업이 비어 있음`);
+      }
+    }
+
+    if (type === "meeting" && content.includes("## 액션 아이템") && !/\[\[[^\]]+\]\]/.test(content)) {
+      addIssue(executionIssues, `${relativePath}: 회의 액션 아이템이 관련 project/mvp/idea에 연결되지 않았을 수 있음`);
+    }
+
     if (ENGLISH_HEADING.test(content)) {
       addIssue(englishHeadings, `${relativePath}: 영어 section heading 후보 발견`);
     }
@@ -177,6 +207,10 @@ function main() {
   const majorDirs = [
     "wiki/concepts/",
     "wiki/projects/",
+    "wiki/ideas/",
+    "wiki/mvps/",
+    "wiki/decisions/",
+    "wiki/meetings/",
     "wiki/tools/",
     "wiki/comparisons/",
     "wiki/questions/",
@@ -204,6 +238,8 @@ function main() {
   errors.push(...frontmatterIssues);
   warnings.push(
     ...taxonomyIssues,
+    ...typeSectionIssues,
+    ...executionIssues,
     ...brokenLinks,
     ...indexOmissions,
     ...englishHeadings,
@@ -214,6 +250,8 @@ function main() {
   console.log(`검사 파일 수: ${files.length}`);
   printSection("Frontmatter 문제", frontmatterIssues);
   printSection("Source taxonomy 문제", taxonomyIssues);
+  printSection("실행 페이지 구조 문제", typeSectionIssues);
+  printSection("MVP / 회의 운영 경고", executionIssues);
   printSection("깨진 링크 / 미생성 페이지", brokenLinks);
   printSection("Index 누락", indexOmissions);
   printSection("영어 section heading", englishHeadings);

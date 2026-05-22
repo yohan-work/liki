@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-05-21
+updated: 2026-05-22
 tags:
   - llm-wiki
   - index
@@ -34,6 +34,22 @@ evidence_level: unsourced
 
 - [[Basalt Project]]
 - [[Personal Operating System]]
+
+## 아이디어
+
+아직 아이디어 페이지가 없습니다.
+
+## MVP / PoC
+
+아직 MVP / PoC 페이지가 없습니다.
+
+## 결정
+
+아직 결정 기록 페이지가 없습니다.
+
+## 회의록
+
+아직 회의록 요약 페이지가 없습니다.
 
 ## 도구
 

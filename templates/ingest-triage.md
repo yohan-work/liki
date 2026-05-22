@@ -18,6 +18,13 @@ evidence_level: unsourced
 
 ## 저장 가치
 
+## 실행 가치
+
+- 연결할 아이디어:
+- MVP / PoC 후보:
+- 회의록 또는 결정 기록 후보:
+- 1주 안에 검증할 수 있는가:
+
 ## Domain / 분류
 
 - domain:
@@ -29,6 +36,13 @@ evidence_level: unsourced
 ## 생성할 페이지 후보
 
 ## 갱신할 페이지 후보
+
+## 아이디어 / MVP 라우팅
+
+- `wiki/ideas/`:
+- `wiki/mvps/`:
+- `wiki/decisions/`:
+- `wiki/meetings/`:
 
 ## 갱신할 운영 문서
 
