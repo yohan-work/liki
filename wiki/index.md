@@ -37,7 +37,7 @@ evidence_level: unsourced
 
 ## 아이디어
 
-아직 아이디어 페이지가 없습니다.
+- [[AI 트렌드 레이더 웹사이트]]
 
 ## MVP / PoC
 

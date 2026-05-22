@@ -29,7 +29,7 @@ evidence_level: unsourced
 - 개념 페이지: 12개
 - 도구 페이지: 8개
 - 프로젝트 페이지: 2개
-- 아이디어 페이지: 0개
+- 아이디어 페이지: 1개
 - MVP / PoC 페이지: 0개
 - 결정 기록: 0개
 - 회의록 요약: 0개
@@ -42,6 +42,7 @@ evidence_level: unsourced
 
 - `inbox/to-ingest.md`를 확인하고 대기 중인 URL, clipping, 아이디어가 있는지 본다.
 - `inbox/ideas/`의 느슨한 아이디어 중 `wiki/ideas/`로 승격할 만한 후보를 고른다.
+- [[AI 트렌드 레이더 웹사이트]]를 1주 PoC로 승격할지 판단하고, 먼저 소스 20개 목록과 데이터 스키마를 만든다.
 - 이번 주에 1개라도 실험할 수 있는 아이디어를 `wiki/mvps/`의 MVP / PoC 페이지로 승격한다.
 - 회의록이 생기면 결정, 액션 아이템, 연결할 프로젝트를 분리해 `wiki/meetings/`에 요약한다.
 - 되돌아볼 가치가 있는 선택은 `wiki/decisions/`에 결정 기록으로 남긴다.
