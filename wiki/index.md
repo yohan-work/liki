@@ -34,6 +34,7 @@ evidence_level: unsourced
 - [[AI Literacy]]
 - [[Fine-tuning]]
 - [[BYOK]]
+- [[Forward Deployed Engineer]]
 
 ## 프로젝트
 
@@ -114,6 +115,8 @@ evidence_level: unsourced
 - [[WikiDocs Hermes Agent Guide]]
 - [[Blake Crosley Hermes Agent Guide]]
 - [[YOZM Hermes Agent Article]]
+- [[Hermes Agent Official Site]]
+- [[Goddaehee Hermes Agent Start Article]]
 - [[WikiDocs SQLite Evolution Article]]
 - [[Moonlight Hybrid LLM Query Routing Review]]
 - [[Velog ML Model Serving Pipeline Article]]
@@ -126,6 +129,7 @@ evidence_level: unsourced
 - [[Velog Hugging Face LLM Course Chapter 3 Fine-tuning Translation]]
 - [[Hugging Face Datasets Arrow Guide]]
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
+- [[DEVOCEAN Palantir FDE Article]]
 
 ## 리포트
 

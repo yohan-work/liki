@@ -15,6 +15,23 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-26] ingest | Hermes Agent 공식 사이트와 갓대희 시작 글
+
+- Hermes Agent 공식 사이트, Goddaehee Tistory 글, Medium URL을 raw HTML snapshot으로 보존했다.
+- [[Hermes Agent Official Site]]를 ingest하고 공식 사이트 기준 MIT licensed open-source agent, messaging entrypoint, persistent memory, auto-generated skills, cron, subagent, sandbox, browser/web control 주장을 정리했다.
+- [[Goddaehee Hermes Agent Start Article]]을 ingest하고 설치/설정, self-learning의 실제 단위, skill/memory 구조, provider 전환, 보안, 비용, Claude Code/Cursor/OpenClaw 비교를 source summary로 분리했다.
+- Medium URL은 로컬 snapshot이 Cloudflare challenge HTML만 포함해 본문을 확인할 수 없으므로 source summary 생성을 보류했다.
+- 변경 영역: [[Hermes Agent]], [[Hermes Agent Official Site]], [[Goddaehee Hermes Agent Start Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Hermes Agent GitHub repository, release note, open issue, install script를 공식 source로 검증하고 CLI-only sandbox에서 먼저 실행한다.
+
+## [2026-05-26] ingest | DEVOCEAN Palantir FDE 운영 패턴 글
+
+- DEVOCEAN 글 "Palantir FDE: 소프트웨어를 만드는 것에서 작동시키는 것으로의 전환"을 raw HTML snapshot으로 보존하고 [[DEVOCEAN Palantir FDE Article]]로 ingest했다.
+- Palantir Forward Deployed Engineer를 problem framing, data integration, rapid prototyping, productionization, adoption까지 연결하는 embedded execution pattern으로 정리했다.
+- [[Forward Deployed Engineer]] concept page를 추가하고 [[Agentic Workflow]], [[ML Model Serving Pipeline]], [[Personal Operating System]]에 PoC-to-production, 운영 채택, glue layer 관점을 연결했다.
+- 변경 영역: [[Forward Deployed Engineer]], [[DEVOCEAN Palantir FDE Article]], [[Agentic Workflow]], [[ML Model Serving Pipeline]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Palantir FDE 공식 정의, Airbus Skywise, NYC Health + Hospitals 사례는 독립 source로 검증한다.
+
 ## [2026-05-26] ingest | WikiDocs BYOK AI 도구 비용 구조 글
 
 - WikiDocs 블로그 글 "BYOK: AI 도구의 비용 구조를 뒤집는 조용한 혁명"을 raw HTML snapshot으로 보존하고 [[WikiDocs Jaehong BYOK AI Tools Article]]로 ingest했다.

@@ -1,0 +1,2821 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+    
+
+
+
+
+<head>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    <script language="javascript" >
+    	var globalIsApp = 'false';
+    </script>
+    
+    
+    <!-- 캐시를 유지할 시간(초) 설정 -->
+    <meta http-equiv="Cache-Control" content="public, max-age=3600"> <!-- 1시간(3600초) 동안 캐시 유지 -->
+    
+    
+    <title>Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환</title>
+    
+	    <!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2PNLR91PH8"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'G-2PNLR91PH8');
+		</script>
+	
+    <link rel="canonical" href="https://devocean.sk.com">
+    <meta name="description" content="데보션 (DEVOCEAN) 기술 블로그 , 개발자 커뮤니티이자 내/외부 소통과 성장 플랫폼  "/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+<!--     <meta name="robots" content="noindex, nofollow"> -->
+    <link rel="shortcut icon" href="/resource/images/external/logo/logo_favicon.ico" type="image/x-icon">
+
+    <meta property="og:type" content="website">
+    
+    	
+    		<meta property="og:url" content="https://devocean.sk.com/blog/techBoardDetail.do?page=" />
+    	
+    	
+    
+    <meta property="og:title" content="Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://devocean.sk.com/thumnail/2026/4/16/105e56d28a02797410a655e7844309702a77600a6c32107a3e013ac0872e612a.jpeg" />
+
+    <meta name="twitter:card" content="summary" />
+   	
+    	
+    		<meta name="twitter:url" content="https://devocean.sk.com/blog/techBoardDetail.do?page=">
+    	
+    	
+    
+    <meta name="twitter:title" content="Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://devocean.sk.com/thumnail/2026/4/16/105e56d28a02797410a655e7844309702a77600a6c32107a3e013ac0872e612a.jpeg" />
+    <meta name="twitter:domain" content="https://devocean.sk.com">
+
+    
+    <link rel="stylesheet" href="/resource/css/external/softworks.css?v=202308022">
+    <link rel="stylesheet" href="/resource/css/external/vendors/swiper/swiper.min.css">
+   	<link rel="stylesheet" href="/resource/css/external/vendors/animate/animate.css">
+    <link rel="stylesheet" href="/resource/css/external/ui.reset.css?v=2506181618">
+    <link rel="stylesheet" href="/resource/css/external/ui.common.css?v=2508211525">
+    <link rel="stylesheet" href="/resource/css/external/ui.main.css?v=241007">
+    <link rel="stylesheet" href="/resource/css/external/ui.sub.css?v=2603051450">
+    <link rel="stylesheet" href="/resource/css/external/ui.responsive.css?v=2508280914">
+    <link rel="stylesheet" href="/resource/css/external/ckeditor.style.css">
+    
+
+    
+    <link rel="stylesheet" href="/resource/css/local.css?v=20220630">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/copyformatting/styles/copyformatting.css">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/tableselection/styles/tableselection.css">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/skins/moono-lisa/editor.css?t=J39A">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/skins/moono-lisa/dialog.css">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css?t=J39A">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/scayt/dialogs/dialog.css?t=J39A">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/tableselection/styles/tableselection.css">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css?t=J39A">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/copyformatting/styles/copyformatting.css">
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/prism/lib/prism/prism_patched.min.css" >
+    <link rel="stylesheet" href="/resource/js/editor/ckeditor/plugins/codesnippet/lib/highlight/styles/obsidian.css" >
+	
+	<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+	<link rel="stylesheet" href="/resource/js/editor/toastEditor/prism.css"> 
+	
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"/>
+  	<script src="https://cdn.jsdelivr.net/npm/latex.js/dist/latex.js"></script>
+  
+    
+    <script src="/resource/js/external/vendors/jquery/jquery-1.12.3.js"></script>
+    <script src="/resource/js/external/vendors/jquery/jquery.scrolla.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script><!-- lazy loading 플러그인 -->    
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/plugins/jquery.lazy.ajax.min.js"></script>
+    <script src="/resource/js/external/vendors/swiper/swiper.min.js"></script>
+    <script src="/resource/js/external/ui.common.js?v=2412091548"></script>
+    <script src="/resource/js/external/ui.main.js?v=202210111"></script>
+
+    
+    <script src="/resource/js/editor/ckeditor/ckeditor.js"></script>
+    <script src="/resource/js/editor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js"></script>
+    <script src="/resource/js/editor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+
+    
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js"
+  integrity="sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC" crossorigin="anonymous"></script>
+
+    
+    <script src="/resource/js/external/underscore-min.js"></script>
+    <script src="/resource/js/external/handlebars.min-v4.7.6.js"></script>
+
+    
+    <script src="/resource/js/external/98_variable/Constant.js"></script>
+    <script src="/resource/js/external/98_variable/template.js"></script>
+
+    <script src="/resource/js/external/99_common/thub.js"></script>
+
+    <script src="/resource/js/external/99_common/checker.helper.js"></script>
+    <script src="/resource/js/external/99_common/login.helper.js?v=202304275252"></script>
+    <script src="/resource/js/external/99_common/browser.helper.js"></script>
+    <script src="/resource/js/external/99_common/share.helper.js?v=202207251718"></script>
+    <script src="/resource/js/external/99_common/comment.helper.js?v=2408121018"></script>
+    <script src="/resource/js/external/99_common/like.helper.js?v=22072109"></script>
+    <script src="/resource/js/external/99_common/hbs.helper.js"></script>
+    <script src="/resource/js/external/99_common/util.js?v=202307111322"></script>
+
+    <script src="/resource/js/external/layout/header.js?v=2510201435"></script>
+    <script src="/resource/js/external/layout/footer.js?v=2509121334"></script>
+</head>
+
+
+    <body class="mian-body">
+        <div class="dim"></div>
+        <aside class="sub-sec-side"></aside>
+        <div id="wrapper">
+        	
+        		<a href="/app/" class="app_intro_m" target="_blank">
+					<img src="/resource/images/external/main/app_intro_m.png" alt="데보션앱 소개페이지 바로가기"/>
+				</a>
+        	
+			
+            
+
+
+
+
+
+<script>
+const currentIsLogin = '';
+const LOGIN_KEY = 'cachedIsLogin';
+const MENU_KEY = 'cachedMenuHtml';
+//페이지 unload 시 메뉴 HTML 캐시
+window.addEventListener('beforeunload', () => {
+    localStorage.setItem('cachedMenuHtml', $('#pcMenu').html());
+    localStorage.setItem('cachedIsLogin', currentIsLogin);
+});
+
+//연동되어있는 sns계정 목록 불러오기(임시)
+$(document).ready(function(){
+	const cachedIsLogin = localStorage.getItem(LOGIN_KEY);
+	const cachedMenu = localStorage.getItem(MENU_KEY);
+
+	// 로그인 상태가 바뀌었으면 메뉴 새로 불러오기
+	if (cachedIsLogin === currentIsLogin && !cachedMenu) {
+	    const $menu = $('#pcMenu');
+	    if ($menu.html() !== cachedMenu) {
+	        $menu.css('visibility', 'hidden');
+	        $menu.html(cachedMenu);
+	        $menu.css('visibility', 'visible');
+	    }
+	}
+	/*if($('#pcMenu > li').length === 6){
+        $('#pcMenu').addClass("chat_menu");
+    }*/
+	if($('#pcMenu > li').length === 0 && $("#mMenu").length === 1){
+		getMenu();
+	}
+	$(".menu-box > li button").click(function(){
+    	$(this).parent("li").toggleClass("on");
+    	$(this).next("div").slideToggle();
+	  })
+	  $.ajax({
+            url: '/tid/userInfo.json',
+            dataType: 'json',
+            context: this,
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function (result) {
+                if (result != null) {
+                    $('.mileage-point').text(result.mileagePoint);
+                    $('.mileage-sum').text(result.mileageSum);
+                    $('.user-point .log-count').text(result.loginCount);
+					$('.profile-user').prop('src', result.picturePath);
+                    $('.go-integration').attr('data-tid-auth', result.tidAuthYn);
+                }
+            }
+        });
+	  
+	$('.sns-login').click(function(){
+	  $('.bg-pop5').css('display', 'block');
+	  
+	  //로그인 버튼 누른 현재 페이지 저장
+	  var redirectUrl = document.location.pathname + window.location.search;
+	  var formData = new FormData();
+	  formData.append("redirectUrl", redirectUrl);
+	  $.ajax({
+		  url : "/sns/login.do",
+		  type : "post",
+		  dataType:"json",
+		  enctype: 'multipart/form-data',
+		  processData: false,
+		  contentType: false,
+		  data:formData,
+		  success:function(data){
+				switch (data.lastLogin) {
+				case "tid":
+					$(".log-t").append('<p class="ble">마지막으로 로그인한 계정입니다.</p>');
+					break;
+				case "kakao":
+					$(".log-k").append('<p class="ble">마지막으로 로그인한 계정입니다.</p>');
+					break;
+				case "naver":
+					$(".log-n").append('<p class="ble">마지막으로 로그인한 계정입니다.</p>');
+					break;
+				case "google":
+					$(".log-g").append('<p class="ble">마지막으로 로그인한 계정입니다.</p>');
+					break;
+				case "apple":
+					$(".log-a").append('<p class="ble">마지막으로 로그인한 계정입니다.</p>');
+					break;
+				default:
+					break;
+				}
+			},error:function(request,status,error){
+				alert("알 수 없는 오류입니다.");
+			}
+	  })
+	});
+	$('.cancel').click(function(){
+	  $('.bg-pop5').css('display', 'none');
+	});
+});
+function getMenu(){
+	$.ajax({
+		  url : "/main/getMenu.do",
+		  type : "post",
+		  dataType:"json",
+		  enctype: 'multipart/form-data',
+		  processData: false,
+		  contentType: false,
+		  data:{},
+		  success:function(data){
+				var list = data.list;
+				var htmlString = '';
+				var mHtmlString = '';
+				$.each(list, function (index, menu) { 
+					if(menu.parent_id == 'DEVOCEAN'){
+						htmlString = '';
+						mHtmlString = '';
+						var classText = '';
+						if(menu.auth_type == 'DEVOTEE'){
+							classText = 'ai_menu';
+						}
+						htmlString += '<li class="'+classText+'">';
+						mHtmlString += '<li class="'+classText+'">';
+						htmlString += '<a href="'+menu.menu_url+'">'+menu.menu_nm+'</a>';
+						mHtmlString += '<a href="'+menu.menu_url+'"><strong>'+menu.menu_nm+'</strong></a>';
+						if(menu.subMenuCnt > 0){
+							mHtmlString += '<button type="button"></button>';
+							htmlString += '<div class="depth02">';
+							mHtmlString += '<div class="depth02">';
+							htmlString += '	<ul>';
+							mHtmlString += '<ul>';
+							$.each(list, function (index, sub) { 
+								
+								if(sub.parent_id == menu.menu_id){
+									htmlString += '<li>';
+									mHtmlString += '<li>';
+									htmlString += '	<a href="'+sub.menu_url+'">'+sub.menu_nm+'</a>';
+									mHtmlString += '	<a href="'+sub.menu_url+'">'+sub.menu_nm+'</a>';
+									htmlString += '</li>';
+									mHtmlString += '</li>';
+								}
+							});
+							htmlString += '	</ul>';
+							mHtmlString += '</ul>';
+							htmlString += '</div>';
+							mHtmlString += '</div>';
+						}
+						
+						
+						htmlString += '</li>';
+						mHtmlString += '</li>';
+						$("#pcMenu").append(htmlString);
+						$("#mMenu").append(mHtmlString);
+					}
+				});
+				
+	              if($('#pcMenu > li').length === 6){
+	                  $('#pcMenu').addClass("chat_menu");
+	              }
+				$(".menu-box > li button").click(function(){
+			      	$(this).parent("li").toggleClass("on");
+			      	$(this).next("div").slideToggle();
+				  })
+			},error:function(request,status,error){
+				alert("알 수 없는 오류입니다.");
+			}
+	})
+}
+// 앱에서 호출하는 함수
+function showLoginLayer(){
+	$('.bg-pop5').css('display', 'block');
+}
+//알람 상세 페이지 이동(커뮤니티)
+function goNotificationHeaderCommunity(element, id){
+	var id = id;
+    var contentId = $(element).attr('data-content-id');
+    $.ajax({
+        url: '/common/notification/header/view.json',
+        dataType: 'json',
+        data: {
+            'id': id
+        },
+        context: this,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        success: function () {
+        	location.href="/community/list.do?postIdx="+contentId;
+        }
+    });	
+}
+//배지 페이지로 이동
+function goNotificationHeaderBadgeView(element, id){
+	var id = id;
+    var targetUrl = $(element).attr('data-target-url');
+    $.ajax({
+        url: '/common/notification/header/view.json',
+        dataType: 'json',
+        data: {
+            'id': id
+        },
+        context: this,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        success: function () {
+        	location.href = "/mypage/goActivityBadge.do";
+        }
+    });
+}
+function snsLogout(){
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('devoceanapp') > -1){
+		var json = new Object();
+		json.function = "get_device_id";
+		window.flutter_inappwebview.callHandler('devocean', JSON.stringify(json)).then(function(result){
+			var deviceId = result.device_id;
+			$.ajax({
+				url:"/sns/deleteDeviceToken.do",
+				type:"post",
+				cache:false,
+				async:false,
+				dataType:"json",
+				data:{				
+						"deviceId":deviceId
+					 },					 		
+				success:function(result){
+					location.href = "/sns/logout.do";
+				},
+				error:function(request,status,error){
+				}
+			});
+		});
+	}else{
+		location.href = "/sns/logout.do";
+	}
+}
+$(document).on("keydown","#storySearchInput",function(e){
+	if(e.keyCode == 13 && $("#storySearchInput").val().trim() != ''){
+		$("#searchText").val($("#storySearchInput").val().trim());
+		var url = $("#pageUrl").val();
+		$('#goForm').attr("action",url);
+		$('#goForm').attr("method",'GET');
+		$('#goForm').submit();
+	}else if(e.keyCode == 13 && $("#storySearchInput").val().trim() == ''){
+		alert("검색어를 입력해주세요.");
+		return;
+	}
+})
+</script>
+<header class="header">
+<button class="top-btn" style="display: block;"></button>
+
+    
+
+    <div class="header-inner">
+        <div class="header-cont">
+            <h1 class="header-logo">
+                <a href="/">DEVOCEAN</a>
+            </h1>
+            <nav class="header-nav">
+                <ul class="header-menu " id="pcMenu">
+	                
+					    
+					
+					    
+					        <li class="">
+					            <a href="/tech">Tech</a>
+					
+					            
+					                <div class="depth02">
+					                    <ul>
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/blog/index.do?p=BLOG">블로그</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/blog/index.do?p=adot">A.(에이닷)</a></li>
+					                            
+					                        
+					                            
+					                                <li><a href="/blog/index.do?p=NEWS">뉴스</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/about/letter.do">데보션 레터</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                    </ul>
+					                </div>
+					            
+					        </li>
+					    
+					
+					    
+					
+					    
+					
+					    
+					
+					    
+					
+					    
+					
+					    
+					        <li class="">
+					            <a href="/community">커뮤니티</a>
+					
+					            
+					        </li>
+					    
+					
+					    
+					
+					    
+					
+					    
+					
+					    
+					        <li class="">
+					            <a href="/story">스토리</a>
+					
+					            
+					                <div class="depth02">
+					                    <ul>
+					                        
+					                            
+					                                <li><a href="/community/hackathonInfo.do">AI Hackathon</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/community/aiFellowship.do">AI Fellowship</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/community/openLabRecruitment.do">OpenLab</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/community/supportList.do">후원 후기</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/community/youngList.do">데보션 영</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                    </ul>
+					                </div>
+					            
+					        </li>
+					    
+					
+					    
+					
+					    
+					
+					    
+					
+					    
+					        <li class="">
+					            <a href="/pro">프로</a>
+					
+					            
+					        </li>
+					    
+					
+					    
+					
+					    
+					        <li class="">
+					            <a href="/about">About</a>
+					
+					            
+					                <div class="depth02">
+					                    <ul>
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/about/introduce.do">데보션 소개</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/notice/list.do">공지사항</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/events/index.do">이벤트</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/qna/ask.do">문의하기</a></li>
+					                            
+					                        
+					                            
+					                        
+					                            
+					                                <li><a href="/about/family.do">패밀리 사이트</a></li>
+					                            
+					                        
+					                    </ul>
+					                </div>
+					            
+					        </li>
+					    
+					
+					    
+					
+                </ul>
+            </nav>
+        </div>
+        <div class="header-etc">
+            <a href="#none" class="etc-person2" title="인재영입">인재DB</a>
+			<a href="#none" class="etc-person3" title="채용공고">채용공고</a>
+            <!-- <a href="/notice/list.do" class="etc-person" title="공지사항">공지사항 <sup style="color: red; font-size: 12px;">new</sup></a> -->
+			<a href="#none" class="etc-search icon" title="검색">SEARCH</a>
+            <a href="#none" class="etc-search2" title="검색">SEARCH</a>
+            <div class="search">
+                <input type="text" class="thub-search" placeholder="Search.." maxlength="100">
+                <button><span>닫기</span></button>
+            </div>
+			<form name="searchForm" id="searchForm">
+				<input type="hidden" name="query" id="query"/>
+			</form>
+            
+                
+                
+                    <a href="#none" class="etc-login icon sns-login">USER</a>
+                
+            
+
+
+
+        
+            <a href="#none" class="etc-menu icon">MENU</a>
+            <div class="menu-dim"></div>
+            <div class="menu">
+                <a href="#none" class="close">닫기</a>
+                <div class="menu-inner">
+                    <ul class="menu-box" id="mMenu">
+                        <li><a href="/"><strong>Home</strong></a></li>
+                        
+						    
+						
+						    
+						        <li class="">
+						            <a href="/tech"><strong>Tech</strong></a>
+						
+						            
+						                <button type="button"></button>
+						                <div class="depth02">
+						                    <ul>
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/blog/index.do?p=BLOG">블로그</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/blog/index.do?p=adot">A.(에이닷)</a></li>
+						                            
+						                        
+						                            
+						                                <li><a href="/blog/index.do?p=NEWS">뉴스</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/about/letter.do">데보션 레터</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                    </ul>
+						                </div>
+						            
+						        </li>
+						    
+						
+						    
+						
+						    
+						
+						    
+						
+						    
+						
+						    
+						
+						    
+						        <li class="">
+						            <a href="/community"><strong>커뮤니티</strong></a>
+						
+						            
+						        </li>
+						    
+						
+						    
+						
+						    
+						
+						    
+						
+						    
+						        <li class="">
+						            <a href="/story"><strong>스토리</strong></a>
+						
+						            
+						                <button type="button"></button>
+						                <div class="depth02">
+						                    <ul>
+						                        
+						                            
+						                                <li><a href="/community/hackathonInfo.do">AI Hackathon</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/community/aiFellowship.do">AI Fellowship</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/community/openLabRecruitment.do">OpenLab</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/community/supportList.do">후원 후기</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/community/youngList.do">데보션 영</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                    </ul>
+						                </div>
+						            
+						        </li>
+						    
+						
+						    
+						
+						    
+						
+						    
+						
+						    
+						        <li class="">
+						            <a href="/pro"><strong>프로</strong></a>
+						
+						            
+						        </li>
+						    
+						
+						    
+						
+						    
+						        <li class="">
+						            <a href="/about"><strong>About</strong></a>
+						
+						            
+						                <button type="button"></button>
+						                <div class="depth02">
+						                    <ul>
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/about/introduce.do">데보션 소개</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/notice/list.do">공지사항</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/events/index.do">이벤트</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/qna/ask.do">문의하기</a></li>
+						                            
+						                        
+						                            
+						                        
+						                            
+						                                <li><a href="/about/family.do">패밀리 사이트</a></li>
+						                            
+						                        
+						                    </ul>
+						                </div>
+						            
+						        </li>
+						    
+						
+						    
+						
+                    </ul>
+                    <script>
+                    	
+                    </script>
+                    <div class="link_wrap">
+	                    <a href="#none" class="link" title="인재DB"><em>인재DB</em></a>
+	                    <a href="#none" class="inquiry2" title="채용공고"><em>채용공고</em></a>
+	                    <a href="/notice/list.do" class="inquiry" title="공지사항"><em>공지사항</em></a>
+                    </div>
+                    <div class="menu-sns">
+                        <a href="https://facebook.com/sk.devocean" target="_blank" class="sns01">facebook</a>
+                        <a href="https://twitter.com/sk_devocean" target="_blank" class="sns02">twitter</a>
+                        <a href="https://www.instagram.com/skdevocean" target="_blank" class="sns03">instagram</a>
+                        <a href="https://www.youtube.com/channel/UCnIyjM-gLKX4e0T7WxBe8eg" target="_blank" class="sns04">youtube</a>
+                        <a href="http://pf.kakao.com/_fTvls" target="_blank" class="sns05">kakaoch</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-search">
+        <input type="text" placeholder="Search.." class="thub-search" maxlength="100">
+        <button class="search-btn"></button>
+    </div>
+<!--
+	<div id="user-db" class="pop-wrap">
+	    <div class="bg"></div>
+	    <div class="pop-area">
+	        <div class="pop-head" style="align-items:center;">
+	            <h2>인재 DB 등록 시 유의사항</h2>
+	            <a href="#none" class="close" style="top:50%;transform:translateY(-50%);">CLOSE</a>
+	        </div>
+	        <div class="pop-cont">
+	            <div class="pop-box pop-box-hot">
+	                 <div class="pop-img">
+	                     <img src="https://devocean.sk.com/news/DB_event_1_3.jpg">
+	                 </div>
+	                <div class="pop-btn-area">
+	                    <a href="#none" class="pbtn type2 popup-submit btn-mrg">이동</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<div id="user-db2" class="pop-wrap">
+	    <div class="bg"></div>
+	    <div class="pop-area">
+	        <div class="pop-head">
+	            <h2>채용공고 지원 시 유의사항</h2>
+	            <a href="#none" class="close">CLOSE</a>
+	        </div>
+	        <div class="pop-cont">
+	            <div class="pop-box pop-box-hot">
+	                 <div class="pop-img">
+	                     <img src="https://devocean.sk.com/news/DB_event_2.jpg">
+	                 </div>
+	                <div class="pop-btn-area">
+	                    <a href="#none" class="pbtn type2 popup-submit btn-mrg">이동</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	-->
+	    <input type="file" id="profile-file" name="profile-file" class="none"/>
+	
+	<script id="notification-template" type="text/x-handlebars-template">
+	
+    {{#list}}
+        <li>
+            <a href="#none" class="go-noti-view" data-id="{{id}}" data-target-url="{{targetUrl}}">
+				<span class="category">{{boardType}}</span>
+                <p>{{content}}</p>
+                <em>{{timeDiff}}</em>
+            </a>
+			
+            <button class="delete-noti" data-id="{{id}}">닫기</button>
+        </li>
+    {{/list}}
+	</script>
+
+<div class="bg-pop5">
+  <div class="mail-pop5">
+    <h6>로그인 선택</h6>
+    <button class="cancel"></button>
+    
+    <div class="login">
+     <div class="log-t">
+      <!-- <button class="t-log tid-login">T아이디로 로그인</button> -->
+      <button class="t-log" onclick="tidLogin()">T아이디로 로그인</button>
+     </div>
+     <div class="log-k">
+      <button class="k-log" onclick="kakaoLogin();" style="color: #222;">카카오로 로그인</button>
+     </div>
+     <div class="log-n">
+      <button class="n-log" onclick="naverLogin();">네이버로 로그인</button>
+     </div>
+     <div class="log-g">
+      <button class="g-log" id="googleLoginBtn" style="color: #222;">Google로 로그인</button>
+     </div>
+     <div class="log-a">
+      <button class="a-log" onclick="appleLogin(); return false;">Apple로 로그인</button>
+     </div>
+    </div>
+  </div>
+</div>
+<a href="#none" class='tid-login' id="tidLoginBtn"></a>
+<a href="#none" class="tid-logout" id="tidLogoutBtn"></a>
+<a href="#none" class="my-mileage" id="myMileageBtn"></a>
+<a href="#none" class="profile none" id="changeProfileBtn"></a>
+<a href="#none" class="alarm-applyNew" id="alarmUpdateBtn"></a>
+<!--  220808 신고하기 팝업 추가  -->
+    <div id="report-popup" class="pop-wrap report">
+	    <div class="bg"></div>
+	    <div class="pop-area">
+	        <div class="pop-head">
+	            <h2>신고하기</h2>
+	            <a href="#none" class="close">CLOSE</a>
+	        </div>
+	        <div class="pop-cont">
+	            <div class="pop-box">
+	            	<div>
+	            		<dl>
+	            			<dt>신고사유 (대표 사유 1개)</dt>
+	            			<dd>
+	            				<select id="reportSelect"> 
+			            			<option value="">선택</option>
+			            		</select>
+	            			</dd>
+	            		</dl>
+	            		<dl>
+	            			<dt>상세내용 (선택)</dt>
+	            			<dd class="count">0/200</dd>
+	            			<dd>
+	            				<textarea placeholder="최대 200자 입력" id="reportReason" name="reportReason"></textarea>
+	            			</dd>
+	            		</dl>
+	            		<ul>
+	            			<li>신고한 게시글은 더 이상 보이지 않습니다.</li>
+	            			<li>이용약관과 운영정책에 따라 신고사유에 해당하는지 
+검토 후 조치됩니다.</li>
+	            			<li>허위 신고인 경우, 신고자의 서비스 이용이 제한될 수 
+있으니 유의하시어 신중하게 신고해 주세요.</li>
+	            		</ul>
+	            		<dl>
+	            			<dt class="block_chk">
+	            				<label for="blockYn">작성자 차단하기</label>
+	            				<span>(이 회원이 작성한 모든 댓글과 커뮤니티 게시물이 보이지 않고, 알림도 오지 않습니다.)</span>
+	            			</dt>
+	            			<dd>
+	            				<input type="checkbox" id="blockYn">	            				
+	            			</dd>
+	            		</dl>	            		
+	            	</div>
+	            </div>
+	                <div class="pop-btn-area">
+	                    <a href="#none" class="pbtn type3 popup-close popup-close-report">취소</a>
+	                    <a href="#none" class="pbtn type2 report-btn" id="reportConfirmBtn" onclick="reportReply(this);">신고</a>
+	                </div>
+	        </div>
+	    </div>
+	</div>
+    <!-- 게시글 상세 팝업 -->
+    <div class="community_popup view"  id="communityDetailDiv">
+        <div class="wrap">
+            <div class="pop_wrap">
+                <!-- 게시글 상세 header -->
+
+                <div class="pop_header preview_header" >
+                    <h3>미리보기</h3>
+                    <button type="button" class="close">팝업닫기</button>
+                </div>
+                <div class="pop_header pc"style="position:relative;">
+                    <div class="view_wrap">
+                        <span class="fixed_community communityDetailNoticeIcon"></span>
+                        <span class="category" id="communityDetailCategory"></span>
+                    </div>
+                    <h4 id="communityDetailTitle"></h4>
+                    <div class="reply_btn_wrap">
+                        <button class="reply_btn"></button>
+                        <ul class="reply_option communityDetail">
+                            <li>
+                                <button type="button" class="reply postReply">댓글</button>
+                            </li>
+                            <li>
+                                <button type="button" class="modi postModi">수정</button>
+                            </li>
+                            <li>
+                                <button type="button" class="del postDel">삭제</button>
+                            </li>
+                            <li>
+                                <button type="button" class="report postReport">신고</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_header mobile">
+                    <h3>커뮤니티</h3>
+                    <button type="button" class="close mobile">팝업닫기</button>
+                </div>
+                <div class="pop_cont detail">
+                    <div class="cont_wrap">
+                        <div class="view_content">
+                            <div class="popup_title mobile">
+                                <div class="view_wrap">
+                                    <span class="fixed_community communityDetailNoticeIcon"></span>
+                                    <span class="category" id="communityDetailCategoryMobile"></span>
+                                </div>
+                                <h4 id="communityDetailTitleMobile"></h4>
+                            </div>
+
+                            <div class="reply_btn_wrap mobile">
+                                <button class="reply_btn"></button>
+                                <ul class="reply_option communityDetail">
+                                    <li>
+                                        <button type="button" class="reply postReply">댓글</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="modi postModi">수정</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="del postDel">삭제</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="report postReport">신고</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="text" id="communityDetailContent"></div>
+                            <div class="vote_box" id="communityDetailVoteDiv">
+                                <strong id="totalVoteCountStrong"></strong>
+                                <ul id="communityDetailVoteIngUl"></ul>
+                                <ul class="vote_result" id="communityDetailVoteEndUl"></ul>
+
+                                <button type="button" class="btn_vote active">투표하고 결과보기</button>
+
+                            </div>
+
+                            <!-- 링크 있을 때 -->
+                            <div class="link_wrap" id="communityDetailLinkDiv">
+
+                            </div>
+
+                            <!-- 태그 -->
+                            <div class="tag_list" id="communityDetailTagDiv">
+
+                            </div>
+                            <div class="cont_bottom">
+                                <span class="view_count" id="communityDetailView">1,234</span>
+                            </div>
+                            <div class="feed_fix">
+                                <div class="writer">
+                                    <span class="name" id="communityDetailUserid">
+                                        <i>
+                                            <img src="/resource/images/external/community/ex_profile.png" alt="" id="communityDetailWriterImage">
+                                        </i>
+                                        <p id="communityDetailWriterNickname"></p>
+                                    </span>
+
+                                    
+                                    <span class="badge"><img src="/resource/images/external/community/ex_badge.png" alt="badge" id="communityDetailBadge"></span>
+                                    <span class="date" id="communityDetailRegdate">23.06.15</span>
+                                </div>
+                                <div class="commutity_active">
+                                	<button type="button" id="communityDetailLikeBtn" class="like">0</button>
+                                    <button type="button" class="reply" id="communityDetailReplyBtn">0</button>
+                                    <button type="button" id="communityDetailBookmarkBtn" class="bookmark"></button>
+                                    <button type="button" class="share" id="communityDetailShareBtn"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reply_content">
+                            <div class="reply_top">
+                                <div class="reply_info">
+                                    <span class="reply_count" id="communityDetailReplyCnt"></span>
+                                    <div class="reply_sort">
+                                        <button type="button" class="replyOrderBtn DESC on" data-value="DESC">최신순</button>
+                                        <button type="button" class="replyOrderBtn ASC" data-value="ASC">등록순</button>
+                                    </div>
+                                </div>
+                                <div class="reply_input regi_reply">
+                                    <div class="writer mobile">
+                                        <span class="name">
+                                            <i>
+                                                <img src="/resource/images/external/community/ex_profile.png" alt="" id="communityDetailReplyWriterImage">
+                                            </i>
+                                            <p id="communityDetailReplyWriterNickname"></p>
+                                        </span>
+                                    </div>
+                                    <!-- <input type="text" placeholder="주제와 무관한 댓글, 악플은 삭제됩니다." id="communityDetailReplyInput"> -->
+                                    <textarea placeholder="주제와 무관한 댓글, 악플은 삭제됩니다." id="communityDetailReplyInput"></textarea>
+                                    <button type="button" id="communityDetailAddReplyBtn" class="reply_save">등록</button>
+                                </div>
+                            </div>
+                            <div id="gptReplyDiv"></div>
+                            <div id="communityDetailReplayListDiv">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop_btn">
+                    <button type="button" class="close cancel">닫기</button>
+                </div>
+            </div>
+            <button type="button" class="close pc">팝업닫기</button>
+        </div>
+			
+        </div>
+			<!-- 게시글 작성 팝업 -->
+			<div class="community_popup write" id="communityPopupDiv">
+				<div class="pop_wrap">
+					<div class="pop_header">
+						<h4>글 등록</h4>
+						<button type="button" class="close">팝업닫기</button>
+						<div class="mobile_btn">
+                            <div class="btn_save">
+                                <button type="button" class="temp_save tempBtn">임시저장</button>
+                                <button type="button" class="save_count"></button>
+                            </div>
+                            <button type="button" class="post">등록</button>
+                        </div>
+					</div>
+                    <div class="pop_cont">
+                        <div class="cont_wrap">
+                            <div class="category_choice">
+                                <strong id="categoryStrong">카테고리를 선택해주세요.</strong>
+                                <input type="hidden" name="category" id="category">
+                                <input type="hidden" name="categoryType" id="categoryType">
+                                <input type="hidden" name="originalCategory" id="originalCategory">
+                                <ul id="communityWriteCategoryUl">
+
+                                </ul>
+                            </div>
+                            <div class="title">
+                                <input type="text" placeholder="제목" id="communityTitleInput">
+                            </div>
+                            <div class="text_area">
+                                <textarea placeholder="주제와 무관한 글, 악플은 삭제될 수 있습니다." id="communityContentTextarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fix_bottom">
+                        <div class="file_box">
+                            <ul class="img_wrap" id="communityWriteImgDiv" style="display:none;">
+                                <input type="file" id="communityWriteImgFile" multiple="multiple" accept=".jpg,.jpeg,.png" style="display:none;">
+                                <li><button type="button" class="add_img02" onclick="javascript:clickAddImage(event)">이미지 추가</button></li>
+                                <li>
+                                    <ul id="communityWriteImgUl">
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="link_wrap" style="display:none;" id="communityWriteLinkDiv"><!-- block -->
+                                <div class="feed_link" style="display:none;" id="communityWriteLinkMetaDiv"><!-- block -->
+                                    <div class="link_wrap">
+                                        <div>
+                                            <h6 id="linkTitle"></h6>
+                                            <span id="linkUrl"></span>
+                                        </div>
+                                        <div class="link_img">
+                                            <img src="" id="linkImg">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="link_del" onclick="deleteMetaLink()"></button>
+                                </div>
+                                <input type="text" placeholder="URL을 입력해주세요." id="linkInput" enterkeyhint="enter">
+                            </div>
+                            <div class="file_btn_popup">
+                                <button type="button" class="add_img01">이미지 추가</button>
+                                <button type="button" class="add_link">링크 추가</button>
+                                <!-- 230919 추가 -->
+                                <button type="button" id="gptUseYnBtn" class="gpt_reply">gpt 댓글 사용</button>
+                                <button type="button" id="gptReloadBtn" class="gpt_refresh" style="display:none">gpt 댓글 수정</button>
+                                <p class="gpt_reply_text">DEVOTEE를 활성화 시키면 <br/>지금 작성한 커뮤니티 글에 대해 1개의 댓글을 달아줍니다.</p>
+                                <p class="gpt_refresh_text">버튼을 누르면 글 수정 시 ChatGPT가 작성한 댓글이 수정됩니다.</p>
+                                <button type="button" id="noticeFixBtn" class="fixed_post">고정글</button>
+                            </div>
+                        </div>
+                        <div class="tag_add" id="tagDiv">
+                            <input type="text" placeholder="# 태그입력" class="input_tag" id="tagInput" enterkeyhint="search">
+                        </div>
+                        <div class="vote_wrap" style="display:none;" id="communityWriteVoteDiv"><!-- block -->
+                            <div>
+                                <strong>투표기간</strong>
+                                <select id="communityWriteVoteDateSelect">
+                                </select>
+                            </div>
+                            <div class="vote_item">
+                                <strong>선택 항목 (2개 이상)</strong>
+                                <button type="button" class="add_item" id="addVoteItemBtn">항목추가</button>
+                                <ul id="communityWriteVoteItemUl">
+                                    <li>
+                                        <input type="text" class="voteItem" placeholder="선택항목 입력">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="popup_check">
+                                <input type="checkbox" id="multipleYn">
+                                <label for="multipleYn">복수선택 허용</label>
+                            </div>
+                        </div>
+                        <!-- 글등록 pc 버튼 -->
+                        <div class="pop_btn new">
+                            <button type="button" class="preview" onclick="viewPreview()">미리보기</button>
+                            <div class="btn_save">
+                                <button type="button" class="temp_save tempBtn">임시저장</button>
+                                <button type="button" class="save_count"></button>
+                            </div>
+                            <button type="button" class="post">등록</button>
+                        </div>
+                    </div>
+                    <button type="button" class="preview mobile" onclick="viewPreview()">미리보기</button>
+
+					<!--<div class="pop_btn">
+						<button type="button" class="close cancel">취소</button>
+						<button type="button" class="post">등록</button>
+					</div>-->
+                    <div class="save_text">
+                        <strong>임시저장함에 저장되었습니다.</strong>
+                        <span id="tempSaveDateTime">저장일시 : 2022.5.17 14:29:08</span>
+                    </div>
+				</div>
+			</div>
+
+
+			<!-- 임시저장 팝업 -->
+			<div class="community_popup temp">
+			    <div class="pop_wrap">
+                    <div class="pop_header">
+                        <h4>임시저장함</h4>
+                        <button type="button" class="close">팝업닫기</button>
+                    </div>
+                    <div class="pop_cont">
+                        <div class="cont_wrap">
+                            <strong>제목을 선택하시면 이어서 작성이 가능하며, <br class="mobile">최대 20건까지 저장합니다.</strong>
+                            <div class="table_wrap">
+                                <table>
+                                    <caption>컨텐츠 유형, 제목, 저장일시, 삭제로 이뤄진 임시저장 목록</caption>
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">컨텐츠 유형</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">저장일</th>
+                                            <th scope="col">삭제</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tempListTbody">
+                                        
+                                   </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+			    </div>
+			</div>
+
+			<div class="member_popup" id="memberPopupDiv">
+				<div class="wrapper">
+					<span class="member_img">
+						<img src="/resource/images/external/community/ex_member.jpg" id="memberPopupUserImg"/>
+					</span>
+					
+					<strong class="member_name" id="memberPopupNickname"></strong>
+					<div class="member_btn">
+						<a href="#none" id="memberPopupCommunityBtn">커뮤니티 글 보기</a>
+						<a href="#none" id="memberPopupSendMessageBtn">메세지 보내기</a>
+					</div>
+
+					<div class="tabmenu out-tabmenu">
+						<ul>
+							<li id="tab1" class="btnCon on">
+								<span class="after"></span>
+								<input type="radio" checked name="tabmenu" id="profileTabProfile"> 
+								<label for="profileTabProfile">프로필</label>
+							</li>
+							<li id="tab2" class="btnCon">
+								<span class="after"></span>
+								<input type="radio" name="tabmenu" id="profileTabMbti"> 
+								<label for="profileTabMbti">MBTI 분석 보기</label>
+								
+							</li>
+							<li id="tab3" class="btnCon">
+								<span class="after"></span>
+								<input type="radio" name="tabmenu" id="profileTabInterest"> 
+								<label for="profileTabInterest">관심사 분석 보기</label>
+								
+							</li>
+						</ul>
+						<div class="resultArea">							
+							<div class="tabCon">
+								<div class="member_wrap">
+									<div class="member_info">
+										<strong id="memberPopupOrg"></strong>
+										<span class="email" id="memberPopupJob"></span>
+									</div>
+									<div class="member_text" id="memberPopupIntroduction">
+										
+									</div>
+									<div class="member_link">
+										<dl id="githubUrlDl">
+											<dt>Github URL</dt>
+											<dd><a href="" target="_blank" id="githubUrl"></a></dd>
+										</dl>
+										<dl id="linkedinUrlDl">
+											<dt>Linkedin URL</dt>
+											<dd><a href="" target="_blank" id="linkedinUrl"></a></dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<div class="tabCon">
+								<div class="member_wrap02" id="profilePopupMbti"></div>
+							</div>
+							<div class="tabCon">
+								<div class="member_wrap02" id="profilePopupInterest"></div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="member_block" id="memberPopupBlockBtn">차단하기</button>
+					<button type="button" class="member_close"></button>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){ 
+				  var radioContent = $(".resultArea > .tabCon");
+				  radioContent.hide();
+
+				  radioContent.first().show();
+
+				  $("input[type='radio']").click(function(){
+				    radioContent.hide();
+				    var index = $(this).index("input[type='radio']");
+				    radioContent.eq(index).show();
+				  });
+				});
+			</script>
+			<div class="img_popup" style='display:none' id="communityImgPopup">
+					<button type="button" class="img_close"></button>
+				<div class="img_wrap">
+					<div class="swiper img_detail">
+						<div class="swiper-wrapper" id="imgPopupDiv">
+						</div>
+						
+						<!-- <div class="sub_nav" id="imgPopupNavigationDiv" style="display:none">
+							<div class="swiper-button-prev02"></div>
+							<div class="swiper-button-next02"></div>
+						</div> -->
+					</div>
+				</div>
+					<div class="swiper-pagination02"></div>
+			</div>
+<div id="vlog-banner" class="pop-wrap">
+    <div class="bg"></div>
+    <div class="pop-area">
+        <div class="pop-head">
+            <h2>데보션 블로그 게재 요청</h2>
+            <a href="#none" class="close popup-cancel">CLOSE</a>
+        </div>
+        <div class="pop-cont pop-vlog">
+            <div class="pop-box">
+                <form id="lectureForm" method="POST">
+                    <textarea name="comment" rows="5" placeholder="외부에 게재된 블로그 및 유튜브 등 강의 영상을 DEVOCEAN에 등록하고 싶으면 해당 내용에 대한 간략한 소개와 URL 주소를 등록해주시기 바랍니다. 운영자가 확인 후 DEVOCEAN에 등록합니다."></textarea>
+                    <ul class="form-area form-area-vlog">
+                        <li>
+                            <dl>
+                                <dt>
+                                    <label>이메일주소</label>
+                                    <span class="req">*</span>
+                                </dt>
+                                <dd>
+                                    <input type="text" name="senderEmail" placeholder="연락 가능한 이메일 주소 입력">
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <label>외부 블로그 및 동영상 URL 주소</label>
+                                    <span class="req">*</span>
+                                </dt>
+                                <dd>
+                                    <input type="text" name="vUrl" placeholder="외부 블로그 및 동영상 강의 URL을 입력">
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </form>
+
+                <div class="pop-btn-area pop-btn-area-vlog">
+                    <a href="#none" class="pbtn popup-cancel">취소</a>
+                    <a href="#none" class="pbtn type2 popup-submit">신청</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="ci-confirm-popup" class="pop-wrap">
+    <div class="bg"></div>
+    <div class="pop-area">
+        <div class="pop-head">
+            <h2>본인인증</h2>
+        </div>
+        <div class="pop-cont">
+            <div class="pop-box">
+            	<div>
+                    <strong>
+                        효율적인 데보션 서비스 이용 및 <br>
+                        고객님의 소중한 개인정보보호를 위해<br>
+                        본인인증을 진행해주세요.
+                        <span>본인인증 미 진행 시 로그인이 제한됩니다.</span>
+                    </strong>
+            	</div>
+            </div>
+                <div class="pop-btn-area">
+                    <a href="#none" class="pbtn report-btn" id="confirmBtn" onclick="openInicisPopup()">본인인증하기</a>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!-- 본인인증 실패 팝업 -->
+<div id="ci-confirm-fail" class="pop-wrap fail">
+    <div class="bg"></div>
+    <div class="pop-area">
+        <div class="pop-cont">
+            <div class="pop-box">
+            	<div>
+                    <strong>본인인증 실패</strong>
+                    <p>
+                        본인인증 로그인에 실패하였습니다.<br>
+                        회원이 아니시거나 본인인증 등록이<br>
+                        완료되지 않은 사용자입니다.
+                    </p>
+            	</div>
+            </div>
+            <div class="pop-btn-area">
+                <a href="javascript:failPopupClose();" class="fail_confirm">확인</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- app에서 인증 iframe 띄울 팝업 -->
+<div id="ci-confirm-iframe-div" class="pop-wrap app-pop">
+    <div class="pop-area">
+        <div class="pop-head">
+            <a href="javascript:ciIframeClose();" class="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.12876 28.8701C1.9098 29.6511 3.17613 29.6511 3.95718 28.8701L15.2712 17.5561L26.5855 28.8704C27.3665 29.6514 28.6329 29.6514 29.4139 28.8704C30.195 28.0893 30.195 26.823 29.4139 26.0419L18.0996 14.7276L29.413 3.41421C30.1941 2.63317 30.1941 1.36684 29.413 0.585787C28.632 -0.195262 27.3657 -0.195262 26.5846 0.585786L15.2712 11.8992L3.95807 0.586085C3.17702 -0.194964 1.91069 -0.194964 1.12964 0.586085C0.348592 1.36713 0.348593 2.63346 1.12964 3.41451L12.4428 14.7276L1.12876 26.0416C0.347706 26.8227 0.347707 28.089 1.12876 28.8701Z" fill="#AEAEAE"/>
+                </svg>
+            </a>
+        </div>
+        <div class="pop-cont">
+            <iframe id="ci-confirm-iframe" name="ciConfirmIframe" style="height:calc(100vh - 30px);" data-jsession="B2545C143599B4A63DF35DA86C335286.instance01"></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- 본인인증했는데 이미 존재하는 ci일경우 띄우는 팝업 -->
+<div id="ci-confirm-result-popup" class="pop-wrap">
+    <div class="bg"></div>
+    <div class="pop-area">
+        <div class="pop-head">
+            <h2>회원정보 연결</h2>
+            <!-- <a href="#none" class="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.12876 28.8701C1.9098 29.6511 3.17613 29.6511 3.95718 28.8701L15.2712 17.5561L26.5855 28.8704C27.3665 29.6514 28.6329 29.6514 29.4139 28.8704C30.195 28.0893 30.195 26.823 29.4139 26.0419L18.0996 14.7276L29.413 3.41421C30.1941 2.63317 30.1941 1.36684 29.413 0.585787C28.632 -0.195262 27.3657 -0.195262 26.5846 0.585786L15.2712 11.8992L3.95807 0.586085C3.17702 -0.194964 1.91069 -0.194964 1.12964 0.586085C0.348592 1.36713 0.348593 2.63346 1.12964 3.41451L12.4428 14.7276L1.12876 26.0416C0.347706 26.8227 0.347707 28.089 1.12876 28.8701Z" fill="#AEAEAE"/>
+                </svg>
+            </a> -->
+        </div>
+        <div class="pop-cont">
+            <div class="pop-box" id="accountChoiceDiv">
+            	
+            </div>
+            <div class="pop-btn-area">
+                <a href="#none" class="pbtn report-btn" id="accountChoiceBtn" onclick="realLogin()">확인</a>
+            </div>
+        </div>
+    </div>
+</div>
+<form name="saForm">
+	<input name="mid" type="hidden" value="" readonly="readonly">
+	<input name="authHash" type="hidden" value="" readonly="readonly">
+	<input name="failUrl" type="hidden" value="" readonly="readonly">
+	<input name="successUrl" id="inicisSuccessUrl" type="hidden" value="" readonly="readonly">
+	<input name="flgFixedUser" type="hidden" value="" readonly="readonly">
+	<input name="mTxId" id="mTxId" type="hidden" value="" readonly="readonly">
+	<input name="reqSvcCd" type="hidden" value="" readonly="readonly">
+	<input name="reservedMsg" type="hidden" value="" readonly="readonly">
+	<input name="userPhone" type="hidden" value="" readonly="readonly">
+</form>
+<input type="hidden" id="ciResultCode" name="ciResultCode" value="">
+<input type="hidden" id="existInx" name="existInx" value="">
+<input type="hidden" id="loginType">
+
+<script type="text/javascript">
+$(document).ready(function(){
+	if($("#ci-confirm-popup").hasClass("on")){
+		$('body').addClass('scrollDisable');
+		window.addEventListener('scroll', function(e) {
+
+		}, {passive:false});
+		window.addEventListener('touchmove', function(e) {
+
+		}, {passive:false});
+		window.addEventListener('mousewheel', function(e) {
+
+		}, {passive:false});
+	}else{
+		$('body').removeClass('scrollDisable');
+	}
+})
+$(document).on("click",".ciResultRadio",function(e){
+	if($(this).is(":checked")){
+		$("#ciResultCode").val($(this).val());
+	}
+})
+function failPopupClose(){
+	$("#ci-confirm-fail").removeClass("on");
+	$('body').removeClass('scrollDisable');
+}
+function ciIframeClose(){
+	$("#ci-confirm-iframe-div").removeClass("on");
+}
+$(".pop-wrap.report .popup-close, .pop-wrap.report .close").click(function(){
+	$(".sub-sec-side").css("z-index","110");
+	$(".report").removeClass("on");
+	$("#reportReason").val("");
+	$("#reportConfirmBtn").removeAttr('data-comment-id');
+	$("#reportConfirmBtn").removeAttr('data-type');
+	$("#reportConfirmBtn").removeAttr('data-reportidx');
+	$("#reportConfirmBtn").removeAttr('data-postidx');
+	$("#communityDetailDiv").css("z-index","999");
+})
+function clickVlogPost(){
+	$(".vlog_banner").click();
+}
+function openInicisPopup(){
+	if($("input[name=mid]").val() != ""){
+		var agent = navigator.userAgent.toLowerCase();
+		//if(agent.indexOf('devoceanapp') <= -1){ //피씨에서 테스트할때 씀
+		if(agent.indexOf('devoceanapp') > -1){
+			$("#ci-confirm-iframe-div").addClass("on");
+			document.saForm.setAttribute("post", "post");
+			document.saForm.setAttribute("target", "ciConfirmIframe");
+			$("#inicisSuccessUrl").val($("#inicisSuccessUrl").val() + ";jsessionid="+$("#ci-confirm-iframe").attr("data-jsession"));
+			document.saForm.setAttribute("action", "https://sa.inicis.com/auth");
+			document.saForm.submit();
+		}else{
+			let window = popupCenter();
+			if(window != undefined && window != null) {
+				document.saForm.setAttribute("target", "sa_popup");
+				document.saForm.setAttribute("post", "post");
+				$("#inicisSuccessUrl").val($("#inicisSuccessUrl").val() + ";jsessionid="+$("#ci-confirm-iframe").attr("data-jsession"));
+				document.saForm.setAttribute("action", "https://sa.inicis.com/auth");
+				document.saForm.submit();
+			}
+		}
+	}
+}
+function popupCenter() {
+	let _width = 400;
+	let _height = 620;
+	var xPos = ((document.body.offsetWidth)/2) - (_width/2); // 가운데 정렬
+	xPos += window.screenLeft; // 듀얼 모니터일 때
+
+	return window.open("", "sa_popup", "width="+_width+", height="+_height+", left="+xPos+", menubar=yes, status=yes, titlebar=yes, resizable=yes");
+}
+function goMypageModifyPage(){
+	location.href = '/mypage/updateInfo.do';
+}
+var nowLoginType = "";
+function getResult(obj,loginJoinType){
+	
+	var nowLoginEmail = "";
+	if(loginJoinType == 'join'){
+		
+		nowLoginType = $("#loginType").val();
+		
+		//nowLoginEmail = "";
+		nowLoginEmail = $("#confirmEmail").text() != '' ? $("#confirmEmail").text() : "(신규계정)";
+	}else{
+		nowLoginType = "";
+		nowLoginEmail = "";
+	}
+	if(obj.resultCode == 'S'){ //본인인증 성공
+		if(loginJoinType == 'join'){
+			$("#inicisBtn").attr("disabled", true);
+			$("#inicisBtn").html("본인인증 완료");
+		}else{
+			$("#ci-confirm-popup").removeClass("on");
+		}
+		
+		var resultMsg = obj.resultMsg;
+		if(resultMsg == 'CIO'){ //해당 ci로 이미 가입된 계정이 있는 경우
+			var existingUserInfo = obj.existingUserInfo;
+			$("#existInx").val(existingUserInfo.inx);
+			if(loginJoinType == 'join'){
+				var htmlTxt = '';
+				if(existingUserInfo.allTypeStr.indexOf(nowLoginType) > -1){ //현재 로그인한 sns id가 이미 있는 경우
+					htmlTxt += '<span class="vf_info_text">동일한 로그인 방식으로 가입된 계정이 존재합니다.</span>';
+					htmlTxt += '<strong><span>(필수)</span>사용하고자 하는 계정을 선택하세요.</strong>';
+					htmlTxt += '<ul class="vf_info_ul">';
+					htmlTxt += '    <li>한 개의 계정을 선택하면 다른 계정은 삭제되며 로그인이 불가능합니다.</li>';
+					htmlTxt += '    <li>선택하지 않은 계정에 보유한 마일리지가 있는 경우 해당 마일리지는 소멸됩니다.</li>';
+					htmlTxt += '</ul>';
+					htmlTxt += '<ul class="vf_choice_radio">';
+					htmlTxt += '	<li class="sns">';
+					switch (nowLoginType) {
+						case "kakao":
+							htmlTxt += '	    <strong>카카오 로그인</strong>';
+							break;
+						case "google":
+							htmlTxt += '	    <strong>구글 로그인</strong>';
+							break;
+						case "apple":
+							htmlTxt += '	    <strong>애플 로그인</strong>';
+							break;
+						case "naver":
+							htmlTxt += '	    <strong>네이버 로그인</strong>';
+							break;
+						case "tid":
+							htmlTxt += '	    <strong>T-ID 로그인</strong>';
+							break;
+						default:
+							break;
+					}
+					htmlTxt += '	    <div>';
+					htmlTxt += '	        <span class="rdo">';
+					htmlTxt += '	            <input id="same_old" type="radio" name="rdo01" class="ciResultRadio" value="same_old">';
+					htmlTxt += '	            <label for="same_old">'+existingUserInfo.email+'</label>';
+					htmlTxt += '	        </span>';
+					htmlTxt += '	    </div>';
+					htmlTxt += '	    <div>';
+					htmlTxt += '	        <span class="rdo">';
+					htmlTxt += '	            <input id="same_new" type="radio" name="rdo01" class="ciResultRadio" value="same_new">';
+					htmlTxt += '	            <label for="same_new">'+nowLoginEmail+'</label>';
+					htmlTxt += '	        </span>';
+					htmlTxt += '	    </div>';
+					htmlTxt += '	</li>';
+					htmlTxt += '</ul>';
+					$("#alreadyExistDiv").html(htmlTxt);
+					
+				}else{ //현재 로그인한 sns id가 없는 경우
+					htmlTxt += '<span class="vf_info_text">다른 로그인 방식으로 가입된 계정이 존재합니다.</span>';
+					htmlTxt += '<strong><span>(필수)</span>사용하고자 하는 계정을 선택하세요.</strong>';
+					htmlTxt += '<ul class="vf_info_ul">';
+					htmlTxt += '    <li>한 개의 계정을 선택하면 로그인 방식에 관계없이 해당 계정정보로 로그인 됩니다.</li>';
+					htmlTxt += '    <li>선택하지 않은 계정에 보유한 마일리지가 있는 경우 해당 마일리지는 소멸됩니다.</li>';
+					htmlTxt += '</ul>';
+					htmlTxt += '<ul class="vf_choice_radio">';
+					htmlTxt += '    <li>';
+					htmlTxt += '        <span class="rdo">';
+					htmlTxt += '            <input id="diff_old" type="radio" name="rdo01" class="ciResultRadio" value="diff_old">';
+					htmlTxt += '            <label for="diff_old">'+existingUserInfo.email+'</label>';
+					htmlTxt += '        </span>';
+					htmlTxt += '        <ul>';
+					var snsTypeKoreanArr = existingUserInfo.allTypeStr.replace("kakao","카카오").replace("tid","T-ID").replace("naver","네이버").replace("google","구글").replace("apple","애플").split(",");
+					for(var i in snsTypeKoreanArr){
+						if(snsTypeKoreanArr[i] != ''){
+							htmlTxt += '            <li>'+snsTypeKoreanArr[i]+' 로그인</li>';
+						}
+					}
+					htmlTxt += '        </ul>';
+					htmlTxt += '    </li>';
+					htmlTxt += '    <li>';
+					htmlTxt += '        <span class="rdo">';
+					htmlTxt += '            <input id="diff_new" type="radio" name="rdo01" class="ciResultRadio" value="diff_new">';
+					htmlTxt += '            <label for="diff_new">'+nowLoginEmail+'</label>';
+					htmlTxt += '        </span>';
+					htmlTxt += '        <ul>';
+					switch (nowLoginType) {
+						case "kakao":
+							htmlTxt += '            <li>카카오 로그인</li>';
+							break;
+						case "google":
+							htmlTxt += '            <li>구글 로그인</li>';
+							break;
+						case "apple":
+							htmlTxt += '            <li>애플 로그인</li>';
+							break;
+						case "naver":
+							htmlTxt += '            <li>네이버 로그인</li>';
+							break;
+						case "tid":
+							htmlTxt += '            <li>T-ID 로그인</li>';
+							break;
+						default:
+							break;
+					}
+					htmlTxt += '        </ul>';
+					htmlTxt += '    </li>';
+					htmlTxt += '</ul>';
+					$("#alreadyExistDiv").html(htmlTxt);
+				}
+			}else{
+				var htmlTxt = '';
+				if(existingUserInfo.allTypeStr.indexOf(nowLoginType) > -1){ //현재 로그인한 sns id가 이미 있는 경우
+					htmlTxt += '<div>';
+					htmlTxt += '	<strong>';
+					htmlTxt += '		<span>(필수)</span>';
+					htmlTxt += '		<p>동일한 로그인 방식으로 가입된 계정이 존재합니다.<br>사용하고자 하는 계정을 선택하세요.</p>';
+					htmlTxt += '	</strong>';
+					htmlTxt += '	<ul class="vf_info_ul">';
+					htmlTxt += '		<li>한 개의 계정을 선택하면 다른 계정은 삭제되며 로그인이 불가능합니다.</li>';
+					htmlTxt += '		<li>선택하지 않은 계정에 보유한 마일리지가 있는 경우 해당 마일리지는 소멸됩니다.</li>';
+					htmlTxt += '	</ul>';
+					htmlTxt += '</div>';
+					htmlTxt += '<ul class="vf_choice_radio">';
+					htmlTxt += '	<li class="sns">';
+					switch (nowLoginType) {
+						case "kakao":
+							htmlTxt += '	    <strong>카카오 로그인</strong>';
+							break;
+						case "google":
+							htmlTxt += '	    <strong>구글 로그인</strong>';
+							break;
+						case "apple":
+							htmlTxt += '	    <strong>애플 로그인</strong>';
+							break;
+						case "naver":
+							htmlTxt += '	    <strong>네이버 로그인</strong>';
+							break;
+						case "tid":
+							htmlTxt += '	    <strong>T-ID 로그인</strong>';
+							break;
+						default:
+							break;
+					}
+					htmlTxt += '	    <div>';
+					htmlTxt += '	        <span class="rdo">';
+					htmlTxt += '	            <input id="same_old" type="radio" name="rdo01" class="ciResultRadio" value="same_old">';
+					htmlTxt += '	            <label for="same_old">'+existingUserInfo.email+'</label>';
+					htmlTxt += '	        </span>';
+					htmlTxt += '	    </div>';
+					htmlTxt += '	    <div>';
+					htmlTxt += '	        <span class="rdo">';
+					htmlTxt += '	            <input id="same_new" type="radio" name="rdo01" class="ciResultRadio" value="same_new">';
+					htmlTxt += '	            <label for="same_new">'+nowLoginEmail+'</label>';
+					htmlTxt += '	        </span>';
+					htmlTxt += '	    </div>';
+					htmlTxt += '	</li>';
+					htmlTxt += '</ul>';
+					$("#accountChoiceDiv").html(htmlTxt);
+				}else{
+					htmlTxt += '<div>';
+					htmlTxt += '	<strong>';
+					htmlTxt += '		<span>(필수)</span>';
+					htmlTxt += '		<p>다른 로그인 방식으로 가입된 계정이 존재합니다.<br>사용하고자 하는 계정을 선택하세요.</p>';
+					htmlTxt += '	</strong>';
+					htmlTxt += '	<ul class="vf_info_ul">';
+					htmlTxt += '		<li>한 개의 계정을 선택하면 로그인 방식에 관계없이 해당 계정정보로 로그인 됩니다.</li>';
+					htmlTxt += '		<li>선택하지 않은 계정에 보유한 마일리지가 있는 경우 해당 마일리지는 소멸됩니다.</li>';
+					htmlTxt += '	</ul>';
+					htmlTxt += '</div>';
+					htmlTxt += '<ul class="vf_choice_radio">';
+					htmlTxt += '    <li>';
+					htmlTxt += '        <span class="rdo">';
+					htmlTxt += '            <input id="diff_old" type="radio" name="rdo01" class="ciResultRadio" value="diff_old">';
+					htmlTxt += '            <label for="diff_old">'+existingUserInfo.email+'</label>';
+					htmlTxt += '        </span>';
+					htmlTxt += '        <ul>';
+					var snsTypeKoreanArr = existingUserInfo.allTypeStr.replace("kakao","카카오").replace("tid","T-ID").replace("naver","네이버").replace("google","구글").replace("apple","애플").split(",");
+					for(var i in snsTypeKoreanArr){
+						if(snsTypeKoreanArr[i] != ''){
+							htmlTxt += '            <li>'+snsTypeKoreanArr[i]+' 로그인</li>';
+						}
+					}
+					htmlTxt += '        </ul>';
+					htmlTxt += '    </li>';
+					htmlTxt += '    <li>';
+					htmlTxt += '        <span class="rdo">';
+					htmlTxt += '            <input id="diff_new" type="radio" name="rdo01" class="ciResultRadio" value="diff_new">';
+					htmlTxt += '            <label for="diff_new">'+nowLoginEmail+'</label>';
+					htmlTxt += '        </span>';
+					htmlTxt += '        <ul>';
+					switch (nowLoginType) {
+						case "kakao":
+							htmlTxt += '            <li>카카오 로그인</li>';
+							break;
+						case "google":
+							htmlTxt += '            <li>구글 로그인</li>';
+							break;
+						case "apple":
+							htmlTxt += '            <li>애플 로그인</li>';
+							break;
+						case "naver":
+							htmlTxt += '            <li>네이버 로그인</li>';
+							break;
+						case "tid":
+							htmlTxt += '            <li>T-ID 로그인</li>';
+							break;
+						default:
+							break;
+					}
+					htmlTxt += '        </ul>';
+					htmlTxt += '    </li>';
+					htmlTxt += '</ul>';
+					$("#accountChoiceDiv").html(htmlTxt);
+				}
+				$('body').addClass('scrollDisable');
+				window.addEventListener('scroll', function(e) {
+
+				}, {passive:false});
+				window.addEventListener('touchmove', function(e) {
+
+				}, {passive:false});
+				window.addEventListener('mousewheel', function(e) {
+
+				}, {passive:false});
+				$("#ci-confirm-result-popup").addClass("on");
+			}
+		}else{ //해당 ci로 가입된 계정이 없는 경우
+			//all_new
+			$('body').removeClass('scrollDisable');
+			if(loginJoinType == 'join'){
+				$("#ciResultCode").val("all_new");
+				$("#alreadyExistDiv").html("");
+			}else{
+				realLogin("all_new");
+			}
+		}
+	}else{
+		$('body').addClass('scrollDisable');
+		window.addEventListener('scroll', function(e) {
+
+		}, {passive:false});
+		window.addEventListener('touchmove', function(e) {
+
+		}, {passive:false});
+		window.addEventListener('mousewheel', function(e) {
+
+		}, {passive:false});
+		$("#ci-confirm-fail").addClass("on");
+		var realResultCode = obj.realResultCode;
+		var resultMsg = obj.resultMsg;
+	}
+}
+function realLogin(ciResultCode){
+	var formData = new FormData();
+	var ciResultCodeStr = '';
+	if(ciResultCode){
+		ciResultCodeStr = ciResultCode;
+	}else{
+		if($("#ciResultCode").val() != ''){
+			ciResultCodeStr = $("#ciResultCode").val();
+		}else{
+			alert("계정을 선택해주세요.");
+			return;
+		}
+	}
+	formData.append("ciResultCode", ciResultCodeStr);
+	formData.append("nowLoginType", nowLoginType);
+	formData.append("mtxid", $("#mTxId").val());
+	showExternalLoading();
+	$.ajax({
+		url : "/sns/login/loginAfterConfirm.do",
+		type:"post",
+		dataType:"json",
+		enctype: 'multipart/form-data',
+		processData: false,
+		contentType: false,
+		data:formData,
+		success:function(result){
+			hideExternalLoading();
+			if(result.isApp == 'Y'){
+				var jsonObjectt = result.jsonObject;
+				window.flutter_inappwebview.callHandler('devocean', JSON.stringify(JSON.parse(jsonObjectt)));
+			}else{
+				location.href = result.redirectUrl;
+			}
+		},error:function(request,status,error){
+			hideExternalLoading();
+			alertErrorMessage(request,status,error);
+		}
+	})
+}
+//T아이디 로그인
+function tidLogin() {
+	$.ajax({
+		url: '/sns/auth/tid.do',
+		type: 'get',
+	}).done(function (res) {
+		location.href = res;
+	});
+}
+//카카오 로그인
+function kakaoLogin() {
+	$.ajax({
+		url: '/sns/auth/kakao.do',
+		type: 'get',
+	}).done(function (res) {
+		location.href = res;
+	});
+}
+
+//구글 로그인
+const onClickGoogleLogin = function() {
+    location.href="/sns/auth/google.do";
+    
+};
+const googleLoginBtn = document.getElementById("googleLoginBtn");
+googleLoginBtn.addEventListener("click", onClickGoogleLogin);
+
+//애플 로그인
+function appleLogin() {
+	$.ajax({
+        url: '/sns/auth/apple.do',
+        type: 'get',
+        async: false,
+        dataType: 'text',
+        success: function (res) {
+            location.href = res;
+        }
+    });
+}
+
+//네이버 로그인
+function naverLogin(){
+	location.href = "/sns/auth/naver.do";
+	
+}
+
+//신고 팝업 상세내용 글자수 카운트
+$(document).ready(function() {
+    $('#reportReason').on('keyup', function() {
+        $('.count').html(""+$(this).val().length+" / 200");
+ 
+        if($(this).val().length > 200) {
+            $(this).val($(this).val().substring(0, 200));
+            $('.count').html("(200 / 200)");
+        }
+    });
+});
+</script>
+
+
+</header>
+			
+            <div class="container">
+                
+
+
+
+
+<style>
+.toastui-editor-contents p{
+    font-size: 16px;
+}
+.toastui-editor-contents img{
+    height:auto;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js"></script>
+<section class="sub-sec view cont01">
+    <div class="sub-sec-inner animate" data-animate="fadeIn" data-delay=".1s">
+		<div class="sub-sec-navigation animate" data-animate="fadeInUp" data-delay=".2s">
+			<ul class="sec-navigation">
+				<li><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none">
+<mask id="path-1-inside-1_3124_7117" fill="white">
+<path d="M0.671143 5.81569L6.99999 0L13.3288 5.81569V12.9998H8.19734V9.04144C8.19734 8.38016 7.66126 7.84409 6.99999 7.84409C6.33871 7.84409 5.80264 8.38016 5.80264 9.04144V12.9998H0.671143V5.81569Z"/>
+</mask>
+<path d="M6.99999 0L7.74428 -0.80996L6.99999 -1.4939L6.2557 -0.80996L6.99999 0ZM0.671143 5.81569L-0.0731452 5.00573L-0.428857 5.3326V5.81569H0.671143ZM0.671143 12.9998H-0.428857V14.0998H0.671143V12.9998ZM5.80264 12.9998V14.0998H6.90264V12.9998H5.80264ZM8.19734 12.9998H7.09734V14.0998H8.19734V12.9998ZM13.3288 12.9998V14.0998H14.4288V12.9998H13.3288ZM13.3288 5.81569H14.4288V5.3326L14.0731 5.00573L13.3288 5.81569ZM6.2557 -0.80996L-0.0731452 5.00573L1.41543 6.62565L7.74428 0.80996L6.2557 -0.80996ZM-0.428857 5.81569V12.9998H1.77114V5.81569H-0.428857ZM0.671143 14.0998H5.80264V11.8998H0.671143V14.0998ZM6.90264 12.9998V9.04144H4.70264V12.9998H6.90264ZM7.09734 9.04144V12.9998H9.29734V9.04144H7.09734ZM8.19734 14.0998H13.3288V11.8998H8.19734V14.0998ZM14.4288 12.9998V5.81569H12.2288V12.9998H14.4288ZM14.0731 5.00573L7.74428 -0.80996L6.2557 0.80996L12.5845 6.62565L14.0731 5.00573ZM6.99999 8.94409C7.05375 8.94409 7.09734 8.98767 7.09734 9.04144H9.29734C9.29734 7.77265 8.26878 6.74409 6.99999 6.74409V8.94409ZM6.90264 9.04144C6.90264 8.98767 6.94622 8.94409 6.99999 8.94409V6.74409C5.7312 6.74409 4.70264 7.77265 4.70264 9.04144H6.90264Z" fill="#999999" mask="url(#path-1-inside-1_3124_7117)"/>
+</svg></a></li>
+				
+					
+					
+						<li><a href="/blog/index.do">Tech</a></li>
+					
+				
+				
+					
+					
+					
+						<li><a href="/blog/index.do">블로그</a></li>
+					
+					
+				
+		    </ul>
+		</div>
+        <div class="sub-view-title">
+            <h2>Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환</h2>
+            <div class="view-info">
+                <div class="view-author">           	
+	                    <span class="author">
+	                       	<strong><img src="https://devocean.sk.com/user/5639ed88f6674a6f8730f8577fd6bd5cf01bce26ed90daa691c91491c7a82212.jpeg" alt=""></strong>
+	                       	<span class="author" onClick="goWriter(this,'ksangki', 'ksangki');" style="cursor:pointer" data-external='Y'>
+	                        	<em>꼬마집사</em>
+	                        </span>
+	                    </span>
+                    <span class="date">26.04.16</span>
+                    <div>
+	                    <span class="view">1,892</span>
+	                    <span class="favorite" data-board-id="168214" data-board-user-id="" style="cursor: pointer">6</span>
+	                    <span class="comment detailComment" data-board-id="168214" data-board-title="Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환" style="cursor: pointer">4</span>
+                    </div>
+                </div>
+                <div class="view-sns" >
+                  	<a href="#none" class="sns05 facebook" data-board-id="168214">facebook</a>
+                    <a href="#none" class="sns06 twitter" data-board-id="168214">twitter</a>
+                    <a href="#none" class="sns07 kakao">kakao</a>
+                    <a href="#none" class="sns08 link" data-board-id="168214">link</a>               
+                </div>
+            </div>
+
+            <div class="view_quick">
+                <div class="view_quick_wrap">
+                    <div>
+                        <span class="favorite" data-board-id="168214" data-board-user-id="" style="cursor: pointer">6</span>
+                        <span class="comment detailComment" data-board-id="168214" data-board-title="Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환" style="cursor: pointer">4</span>
+                    </div>
+                    <div class="view-sns" >
+                        <a href="#none" class="sns05 facebook" data-board-id="168214">facebook</a>
+                        <a href="#none" class="sns06 twitter" data-board-id="168214">twitter</a>
+                        <a href="#none" class="sns07 kakao">kakao</a>
+                        <a href="#none" class="sns08 link" data-board-id="168214">link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-view-cont">
+        	
+        	
+				
+					<div class="file_btn">
+						<button type="button">첨부파일(1)</button>				
+					</div>
+					<ul class="file_list">
+						
+							<li onclick="s3fileAttachDownload(34159, 1)">
+								<button type="button">팔란티어 Forward Deployed Engineer(FDE) 심층 리서치 보고서.pdf</button>
+							</li>
+						
+					</ul>
+				
+			
+			
+				<div class="chat_box">
+					<dl>
+						<dt>DEVOTEE 요약</dt>			
+						<dd>잘 만들어진 AI 및 데이터 시스템이 현실에서 기대만큼의 성과를 내지 못하는 구조적 문제를 해결하기 위해 Palantir의 FDE(Forward Deployed Engineer)가 등장했습니다. FDE는 고객 조직에 '임베드'되어 데이터 통합부터 운영 적용까지 전 과정을 책임지며, 개발된 시스템이 실제 비즈니스 임팩트를 만들고 현장에서 성공적으로 작동하도록 돕습니다. 이는 단순히 시스템을 만드는 것을 넘어, 복잡한 시스템을 현실에 연결하고 확산시켜 '실제로 쓰이는 시스템'을 만드는 핵심적인 운영 패턴이자 실행 전문 역할입니다.</dd>
+					</dl>
+                    
+
+				</div>
+				<script>
+					$(".chat_box dt").click(function(){
+						$(this).toggleClass("on").next("dd").slideToggle()
+					})
+				</script>
+        	
+			<div class="toastui-editor-contents">
+                <p>
+                <h2>1. 문제 정의: 왜 “잘 만든 시스템”은 실패하는가</h2><p>AI와 데이터 플랫폼이 조직의 핵심 인프라로 자리 잡으면서,</p><p>기업들은 이전보다 훨씬 빠르게 모델을 개발하고 데이터 파이프라인을 구축할 수 있게 되었다.</p><p>그러나 역설적으로, 다음과 같은 현상이 반복된다.</p><ul><li><p>모델은 정확하다</p></li><li><p>데이터는 충분하다</p></li><li><p>PoC는 성공한다</p></li></ul><p>그럼에도 불구하고,</p><blockquote><p><strong>“현실에서는 아무 것도 바뀌지 않는다.”</strong></p></blockquote><p>이 문제는 기술적 한계라기보다 구조적 문제다.</p><ul><li><p>개발 조직은 기능을 만든다</p></li><li><p>데이터 조직은 분석을 수행한다</p></li><li><p>비즈니스 조직은 의사결정을 한다</p></li></ul><p>하지만 이 세 가지를 <strong>“실제 운영 시스템으로 연결하는 역할”</strong>은 존재하지 않는다.</p><p><br></p><h2>2. FDE의 등장: 실행의 공백을 메우는 역할</h2><p>이 문제를 해결하기 위해 등장한 것이</p><p><span class="whitespace-normal">Palantir</span>의 **Forward Deployed Engineer(FDE)**다.</p><p>FDE는 단순한 엔지니어가 아니다.</p><blockquote><p><strong>고객 조직 내부에 “임베드(embedded)”되어, 데이터 통합부터 애플리케이션 개발, 운영 적용까지 end-to-end로 수행하며, 실제 비즈니스 임팩트를 만들어내는 역할이다.</strong></p></blockquote><p>여기서 중요한 포인트는 세 가지다.</p><ol><li><p><strong>임베드된다 (embedded)</strong></p></li><li><p><strong>끝까지 책임진다 (end-to-end)</strong></p></li><li><p><strong>성과는 기능이 아니라 임팩트다 (impact-driven)</strong></p></li></ol><p><br></p><h2>3. Dev vs FDE: 동일한 엔지니어링이 아니다</h2><p>팔란티어는 Dev와 FDE의 차이를 다음과 같이 정의한다.</p><blockquote><p><strong>“one capability, many customers (Dev)”</strong></p><p><strong>vs</strong></p><p><strong>“one customer, many capabilities (FDE)”</strong></p></blockquote><p>이 차이는 단순한 역할 차이가 아니라</p><p>엔지니어링 접근 방식 자체의 차이다.</p><div contenteditable="false"><hr></div><h3>3.1 구조적 비교</h3><table><thead><tr><th><p>구분</p></th><th><p>Dev</p></th><th><p>FDE</p></th></tr></thead><tbody><tr><td><p>문제 유형</p></td><td><p>일반화된 문제</p></td><td><p>특정 조직 문제</p></td></tr><tr><td><p>설계 방식</p></td><td><p>추상화 중심</p></td><td><p>통합 중심</p></td></tr><tr><td><p>코드 성격</p></td><td><p>재사용성</p></td><td><p>실용성</p></td></tr><tr><td><p>성공 기준</p></td><td><p>확장성</p></td><td><p>임팩트</p></td></tr><tr><td><p>책임 범위</p></td><td><p>개발</p></td><td><p>운영 포함</p></td></tr></tbody></table><div contenteditable="false"><hr></div><h3>3.2 본질적 차이</h3><p>Dev는 시스템을 만든다.</p><p>FDE는 시스템이 <strong>현실에서 작동하도록 만든다.</strong></p><p>이 차이는 다음과 같이 요약된다.</p><blockquote><p>Dev = “잘 만든 코드”</p><p>FDE = “실제로 쓰이는 시스템”</p></blockquote><div contenteditable="false"><hr></div><p><br></p><h2>4. FDE의 실행 모델: 프로젝트가 아니라 “운영 흐름”</h2><p>FDE의 업무를 이해하려면 기능 단위가 아니라 <strong>운영 파이프라인 단위</strong>로 봐야 한다.</p><div contenteditable="false"><hr></div><h3>4.1 Execution Pipeline</h3><p><img src="https://devocean.sk.com/editorImg/2026/4/16/e21645c62e3c9f42308669f2b776f6f38a45e073588f203e9060535fcbfce74b" alt="스크린샷 2026-04-16 오후 6.19.11.png" contenteditable="false"><br></p><h3>4.2 단계별 심층 분석</h3><h4>(1) Problem Framing</h4><p>FDE는 문제를 “받지 않는다”.</p><p>문제를 <strong>정의한다</strong>.</p><ul><li><p>비즈니스 KPI 정의</p></li><li><p>데이터 구조 분석</p></li><li><p>조직 내 의사결정 구조 이해</p></li></ul><p>이 단계에서 이미 프로젝트의 70%가 결정된다.</p><div contenteditable="false"><hr></div><h4>(2) Data Integration</h4><p>가장 중요한 단계이자, 가장 실패율이 높은 단계다.</p><ul><li><p>다수 시스템 연결 (ERP, CRM, 로그 등)</p></li><li><p>데이터 정합성 확보</p></li><li><p>권한 및 보안 설계</p></li><li><p>lineage 관리</p></li></ul><p>팔란티어의 플랫폼(예: Foundry)은 이 단계에서</p><ul><li><p>데이터 계보(lineage)</p></li><li><p>버전 관리</p></li><li><p>권한 체계</p></li></ul><p>를 핵심 기능으로 제공한다.</p><p>👉 즉, FDE는 단순 ETL이 아니라</p><p><strong>운영 가능한 데이터 시스템을 구축한다</strong></p><div contenteditable="false"><hr></div><h4>(3) Rapid Prototyping</h4><p>이 단계는 전통적 엔지니어링과 가장 다르다.</p><ul><li><p>완벽한 코드 ❌</p></li><li><p>빠른 실행 ⭕</p></li></ul><div data-language="text" class="toastui-editor-ww-code-block-highlighting"><pre><code>build → test → feedback → rebuild</code></pre></div><p>이 과정은 스타트업의 product iteration과 동일하다.</p><div contenteditable="false"><hr></div><h4>(4) Productionization</h4><p>대부분의 프로젝트가 실패하는 지점이다.</p><ul><li><p>deployment pipeline 구축</p></li><li><p>monitoring</p></li><li><p>장애 대응</p></li><li><p>성능 최적화</p></li></ul><p>팔란티어는 이 단계에서</p><ul><li><p>릴리즈 프로세스</p></li><li><p>헬스체크</p></li><li><p>진단 시스템</p></li></ul><p>을 강조한다.</p><div contenteditable="false"><hr></div><h4>(5) Adoption &amp; Scaling</h4><p>기술 문제가 아닌 조직 문제로 전환되는 단계다.</p><ul><li><p>사용자 교육</p></li><li><p>워크플로우 통합</p></li><li><p>조직 내 확산</p></li></ul><p>여기서 실패하면 시스템은 폐기된다.</p><p><br></p><h2>5. 아키텍처 관점: FDE는 “Glue Layer”다</h2><p>일반적인 데이터 시스템 구조:</p><div data-language="text" class="toastui-editor-ww-code-block-highlighting"><pre><code>Data Sources → Data Platform → Application → Business Process</code></pre></div><p>문제는 이 레이어들이 분리되어 있다는 것이다.</p><div contenteditable="false"><hr></div><h3>5.1 FDE의 위치</h3><div data-language="text" class="toastui-editor-ww-code-block-highlighting"><pre><code>[Data] ↔ [Platform] ↔ [App] ↔ [Business]           ↑          FDE</code></pre></div><div contenteditable="false"><hr></div><h3>5.2 역할 정의</h3><p>FDE는 다음을 동시에 수행한다.</p><ul><li><p>데이터 엔지니어링</p></li><li><p>애플리케이션 개발</p></li><li><p>워크플로우 설계</p></li><li><p>운영 안정화</p></li></ul><p>즉,</p><blockquote><p><strong>FDE는 레이어가 아니라 연결이다</strong></p></blockquote><p><br></p><h2>6. Palantir 모델의 전략적 의미</h2><p>팔란티어의 모델은 기존 SaaS와 다르다.</p><h3>6.1 비교</h3><table><thead><tr><th><p>모델</p></th><th><p>특징</p></th></tr></thead><tbody><tr><td><p>SaaS</p></td><td><p>제품 제공</p></td></tr><tr><td><p>컨설팅</p></td><td><p>인력 제공</p></td></tr><tr><td><p>Palantir</p></td><td><p>제품 + FDE</p></td></tr></tbody></table><div contenteditable="false"><hr></div><h3>6.2 핵심 전략</h3><ol><li><p>작은 문제 해결</p></li><li><p>빠른 임팩트 생성</p></li><li><p>조직 내 확산</p></li><li><p>플랫폼화</p></li></ol><div contenteditable="false"><hr></div><h3>6.3 중요한 관점</h3><blockquote><p>FDE는 비용이 아니라</p><p>👉 <strong>Go-To-Market 전략이다</strong></p></blockquote><p><br></p><h2>7. 사례에서 드러나는 패턴</h2><h3>성공 패턴</h3><ul><li><p>빠른 프로토타이핑</p></li><li><p>실제 운영 연결</p></li><li><p>점진적 확장</p></li></ul><p>예: <span class="whitespace-normal">Airbus</span> Skywise</p><p>→ 수만 명 사용자가 실제 운영에서 활용</p><div contenteditable="false"><hr></div><h3>실패 패턴</h3><ul><li><p>데이터 거버넌스 문제</p></li><li><p>조직 내부 반발</p></li><li><p>vendor dependency</p></li></ul><p>예:</p><p><span class="whitespace-normal">NYC Health + Hospitals</span></p><p>→ 계약 종료 후 내부 전환</p><div contenteditable="false"><hr></div><h3>핵심 인사이트</h3><blockquote><p>성공은 기술이 아니라 **채택(adoption)**에서 결정된다</p></blockquote><p><br></p><h2>8. 비용과 조직적 영향</h2><h3>8.1 비용 구조</h3><ul><li><p>고급 엔지니어 인건비</p></li><li><p>현장 투입 비용</p></li><li><p>장기 운영 비용</p></li></ul><h3>8.2 ROI 구조</h3><table><thead><tr><th><p>항목</p></th><th><p>영향</p></th></tr></thead><tbody><tr><td><p>Time-to-Value</p></td><td><p>단축</p></td></tr><tr><td><p>PoC → Production</p></td><td><p>전환율 증가</p></td></tr><tr><td><p>운영 KPI</p></td><td><p>개선</p></td></tr><tr><td><p>데이터 활용</p></td><td><p>증가</p></td></tr></tbody></table><p><br></p><h2>9. 조직 적용 판단 기준</h2><h3>9.1 필요한 조직</h3><ul><li><p>데이터는 많지만 활용 안 됨</p></li><li><p>PoC 반복 실패</p></li><li><p>워크플로우 복잡</p></li><li><p>조직 간 단절 존재</p></li></ul><div contenteditable="false"><hr></div><h3>9.2 필요 없는 조직</h3><ul><li><p>이미 강한 데이터 조직</p></li><li><p>자체 플랫폼 구축 가능</p></li><li><p>단순 분석 중심</p></li></ul><p><br></p><h2>10. 결론: FDE는 직무가 아니라 “운영 패턴”</h2><p>FDE는 특정 회사의 직무가 아니다.</p><blockquote><p><strong>복잡한 시스템을 현실에 적용하기 위한 구조적 해법</strong></p></blockquote><div contenteditable="false"><hr></div><p><br></p><h2>최종 요약</h2><ul><li><p>FDE = Execution Layer</p></li><li><p>목적 = Production Impact</p></li><li><p>위치 = 시스템 전체</p></li><li><p>본질 = 연결 (Integration + Operation)</p></li></ul><p>우리는 더 이상 “잘 만든 시스템”을 만드는 시대에 있지 않다.</p><blockquote><p>이제 중요한 것은</p><p>👉 <strong>“현실에서 작동하는 시스템”이다</strong></p></blockquote><p>그리고 그걸 만드는 역할이 바로 <strong>Forward Deployed Engineer</strong>다.</p><p><br></p><p>더 상세한 내용은 첨부된 심층 리서치 파일을 참고 부탁드립니다. 요금 관심 가는 직종이라서 저도 생각을 정리할 겸 한번 정리해보았습니다. </p>
+                </p>
+            </div>
+            <script>
+             		$(function(){
+             			$(".file_btn").click(function(){
+             				$(".file_list").toggleClass('on');
+             			})               				
+             		})
+             	</script>
+            
+            	<!-- 220804 버튼 추가 -->
+            	
+            	<div class="AppQuestions">
+            		<a href="#none" class="go_question" onClick="goQuestion()"></a>
+            	</div>
+            
+            
+            
+            <div class="view-tag">
+	            
+	            	
+	                 	<a href="#none" class="color01"  onClick="goTagList('SW_ENG--Agile--AGILE');">#Agile</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color02"  onClick="goTagList('SW_ENG--Quality Assurance--QUALITY_ASSURANCE');">#Quality Assurance</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color03"  onClick="goTagList('SW_ENG--Programming Language--PROGRAM_LANGUAGE');">#Programming Language</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color04"  onClick="goTagList('SW_ENG--Project Management--PM');">#Project Management</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color05"  onClick="goTagList('SW_ENG--Git--GIT');">#Git</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color06"  onClick="goTagList('SW_ENG--DevOps--DEVOPS');">#DevOps</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color07"  onClick="goTagList('SW_ENG--Data Architecture--DATA_ARCHITECTURE');">#Data Architecture</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color08"  onClick="goTagList('SW_ENG--Open Source Governance--BLACKDUCK');">#Open Source Governance</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color09"  onClick="goTagList('AI_FRW--NLP--NLP');">#NLP</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color010"  onClick="goTagList('AI_FRW--Language Models--LanguageModels');">#Language Models</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color011"  onClick="goTagList('AI_FRW--Generative AI--GenerativeAI');">#Generative AI</a>
+	                
+	            
+	            	
+	                 	<a href="#none" class="color012"  onClick="goTagList('AI_FRW--AGI--GAI');">#AGI</a>
+	                
+	                                        
+            </div>
+
+            <!-- 241108 댓글영역 추가 -->
+            <div class="view_comment">
+                <div class="sec-comment-top">
+                    <div>
+                        <span class="total">
+                            댓글 <strong class="total-comment" id="blogReplyTotalCnt">0</strong>
+                        </span>
+                        <div class="sort">
+                            <button type="button" class="replyOrderBtn on" data-value="DESC">최신순</button>
+                            <button type="button" class="replyOrderBtn" data-value="ASC">등록순</button>
+                        </div>
+                    </div>
+                    <div class="devotee_comment_wrap">
+                        <div class="devotee_comment_input">
+                            <textarea name="content" placeholder="주제와 무관한 댓글, 악플은 삭제될 수 있습니다." id="replyTextarea"></textarea>
+                            <div class="comment-btn">
+                                <a href="#none" class="btn reg-button" id="replySaveBtn" data-loginid="">등록</a>
+                            </div>
+                        </div>
+                        <div class="devotee_comment">
+                            <div>
+                                <button type="button" id="gptYnBtn" class="gpt_reply"><span>DEVOTEE 활성화</span></button>
+
+                                <p class="gpt_reply_text">DEVOTEE를 활성화 시키면 <br class="mobile">지금 작성한 댓글에 AI가 댓글을 달아줍니다.</p>
+                            </div>
+                            <div class="anonymity">
+                                <input type="checkbox" name="" id="anonymousYnBtn">
+                                <label for="">익명</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="sec-comment-list" id="blogReplyUl">
+                    
+                </ul>
+            </div>
+            <script src="/resource/js/external/99_common/reply.js?v=2411281634"></script>
+        </div>
+    
+		
+	        <div class="sub-sec-title">
+	            <h3 class="small">꼬마집사 님의 최신 블로그</h3>
+	            <a href="#none" class="more" onClick="goWriter(this,'ksangki', 'ksangki');" style="cursor:pointer" data-external='Y'>더보기</a>
+	        </div>
+	        <ul class="sub-view-blog01">
+				
+						
+	                   	<li>
+	                   		<a href="#none" onClick="goDetail(this,'168272');" data-list="BlogWriterIdList" data-commlist="
+								
+									
+											Generative AI
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								">
+	                   			<div class="sec-img">
+	                   				<img src="https://devocean.sk.com/thumnail/2026/5/21/53ff392e6baadf2fff570f8eec79fb2c31cf65adb5410e63bf330d145e2a9c97.png" alt="" onClick="goDetail(this,'168272');" data-list="BlogWriterIdList"  data-commlist="
+										
+											
+													Generative AI
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										">
+	                   			</div>
+	                   			<dl class="sec-desc">
+	                       			<dt>Git 커밋 로그로 주간 업무 정리 자동화하기 — Obsidian + Confluence + Claude Code</dt>
+	                       				<dd>
+	                           		들어가며 매주 금요일, 이번 주에 뭘 했는지 정리하는 시간이 찾아옵니다. 여러 저장소를 돌아다니며 커밋 로그를 뒤지고, 그걸 문서로 정리하고, 다시 Confluence에 옮기는 작업. 매번 30분~1시간이 소요됩니다. ＂Git에 이미 다 기록되어 있는데, 왜 손으로 다시 정리해야 하지?＂ 이 질문에서 시작해 14개 저장소의 커밋 로그를 자동 수집 → Obsidian 노트 생성 → Confluence 발행까지 이어지는 파이프라인을 구축했습니다. 이 글에서는 그 전체 과정을 공유합니다. 예상 소요 시간: 30분 난이도: 중급 (Python 기초, Git 사용 경험 필요) 전체 아키텍처 ［14개 Git 저장소］ │ ▼ git log --after/--before ［Cl...
+	                       				</dd>
+	                   			</dl>
+	               			</a>	                   		
+	                   	</li>
+                   	
+    			
+						
+	                   	<li>
+	                   		<a href="#none" onClick="goDetail(this,'168230');" data-list="BlogWriterIdList" data-commlist="
+								
+									
+											Generative AI
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								">
+	                   			<div class="sec-img">
+	                   				<img src="https://devocean.sk.com/thumnail/2026/4/25/d20305a5280ec9522dbc702bdac6af221902b0ad81f6d8096912aebfd4759162.png" alt="" onClick="goDetail(this,'168230');" data-list="BlogWriterIdList"  data-commlist="
+										
+											
+													Generative AI
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										">
+	                   			</div>
+	                   			<dl class="sec-desc">
+	                       			<dt>Claude Code와 함께한 웹 성능 개선 이야기</dt>
+	                       				<dd>
+	                           		Claude Code와 함께한 웹 성능 개선 이야기 조직 내에 Claude Team Plan을 도입했다. (HR에서도 잘 활용할 수 있을까? ㅠㅠ) 난 무엇을 할 수 있을 까? AI 도구를 처음 도입했는데 그래도 좀 성과물을 보여줘야하지 않을까 해피프라이데이 아침에 생각하다 무심코 그냥 내가 운영하고 있는 사이트 성능 개선이나 좀 해볼까하는 아이디어가 떠올라 3시간만에 실행한 결과물입니다. 이 블로그 조차 작업이 끝난 후 기술블로그 Agent 로 생성하였습니다. (이미지는 최근 GPT 5.5가 좋아졌다고 해서 내용을 파악 후 중간중간에 넣어달라고 했고요^^) 한 번 쭈욱 읽어보시고, 앞으로 이런 AI 시대에 개발자/비개발자 모두가 본인의 업무에 AI를 적용한 사례...
+	                       				</dd>
+	                   			</dl>
+	               			</a>	                   		
+	                   	</li>
+                   	
+    			
+						
+	                   	<li>
+	                   		<a href="#none" onClick="goDetail(this,'168214');" data-list="BlogWriterIdList" data-commlist="
+								
+									
+											Agile
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								">
+	                   			<div class="sec-img">
+	                   				<img src="https://devocean.sk.com/thumnail/2026/4/16/105e56d28a02797410a655e7844309702a77600a6c32107a3e013ac0872e612a.jpeg" alt="" onClick="goDetail(this,'168214');" data-list="BlogWriterIdList"  data-commlist="
+										
+											
+													Agile
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										">
+	                   			</div>
+	                   			<dl class="sec-desc">
+	                       			<dt>Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환</dt>
+	                       				<dd>
+	                           		1. 문제 정의: 왜 “잘 만든 시스템”은 실패하는가 AI와 데이터 플랫폼이 조직의 핵심 인프라로 자리 잡으면서, 기업들은 이전보다 훨씬 빠르게 모델을 개발하고 데이터 파이프라인을 구축할 수 있게 되었다. 그러나 역설적으로, 다음과 같은 현상이 반복된다. 모델은 정확하다 데이터는 충분하다 PoC는 성공한다 그럼에도 불구하고, “현실에서는 아무 것도 바뀌지 않는다.” 이 문제는 기술적 한계라기보다 구조적 문제다. 개발 조직은 기능을 만든다 데이터 조직은 분석을 수행한다 비즈니스 조직은 의사결정을 한다 하지만 이 세 가지를 “실제 운영 시스템으로 연결하는 역할”은 존재하지 않는다. 2. FDE의 등장: 실행의 공백을 메우는 역할 이 문제를 해결하기 위해 등장한 것이 ...
+	                       				</dd>
+	                   			</dl>
+	               			</a>	                   		
+	                   	</li>
+                   	
+    			
+						
+	                   	<li>
+	                   		<a href="#none" onClick="goDetail(this,'168060');" data-list="BlogWriterIdList" data-commlist="
+								
+									
+											Agile
+									
+								
+									
+								">
+	                   			<div class="sec-img">
+	                   				<img src="https://devocean.sk.com/thumnail/2025/12/16/d81bfbbf3af32ebcdb6540716e83bb35016d8fee1102537b9270d17c61c51c89.png" alt="" onClick="goDetail(this,'168060');" data-list="BlogWriterIdList"  data-commlist="
+										
+											
+													Agile
+											
+										
+											
+										">
+	                   			</div>
+	                   			<dl class="sec-desc">
+	                       			<dt>AI 시대, ＇오래 살아남는 개발자＇의 5가지 비밀</dt>
+	                       				<dd>
+	                           		지난 12월 2일 서울대 대학원생들에게 특강을 했었는데 특강 발표 자료와 녹음된 파일을 기반으로 NotebookLM으로 자동 생성해서 블로그를 작성해봅니다. 발표자료는 첨부파일로 업로드합니다. ^^ -------------------------------------------------------------------------------- 서론: 시작하는 개발자들을 위한 안내서 AI가 코드를 대신 짜주는 시대, 어떻게 살아남을 수 있을까? 수많은 주니어 개발자들이 이 불안한 질문을 안고 살아갑니다. 넘쳐나는 기술 블로그와 강의는 새로운 프레임워크를 배우라고 재촉하지만, 그것만으로 정말 충분할까요? 이 글은 단순한 기술 가이드가 아닙니다. 제가 당신의 멘토로서, ...
+	                       				</dd>
+	                   			</dl>
+	               			</a>	                   		
+	                   	</li>
+                   	
+    			                                 
+	        </ul>
+       	
+	  
+	
+		
+	
+	
+		
+	
+<!-- <div id="lottie-container" style="width: 200px; height: 200px;"></div> -->
+        <div class="sub-view-btn">
+            <a href="#none" class="btn" onClick="goList('ksangki');">목록으로</a>
+           	
+	            <div>
+	                <a href="#none" class="btn type2 preBlog" data-id = "168214" data-board-type="undefined" data-viewId="168203">이전글</a>
+	                <a href="#none" class="btn type2 nextBlog" data-id = "168214" data-board-type="undefined" data-viewId="168216">다음글</a>
+	            </div>
+	        
+        </div>
+    </div>
+<a href="#none" class="vlog_banner" id="vlogBannerBtn"></a>
+</section>
+<form name="goForm" id="goForm">
+	<input type="hidden" name="page" id="page"/>
+	<input type="hidden" name="boardType" id="boardType"/>
+	<input type="hidden" name="query" id="query" value=""/>
+	<input type="hidden" name="ID" id="ID"/>
+	<input type="hidden" name="searchData" id="searchData" value=""/>
+	
+	<input type="hidden" name="subIndex" id="subIndex"/>
+	<input type="hidden" name="searchText" id="searchText"/>
+	<input type="hidden" name="techType" id="techType" value=""/>
+	<input type="hidden" name="searchDataSub" id="searchDataSub"/>
+	<input type="hidden" name="searchDataMain" id="searchDataMain"/>
+	<input type="hidden" name="comment" id="comment"/>
+	<input type="hidden" name="p" id="p" value=""/>
+</form>
+
+<form name="listForm" id="listForm">
+	<input type="hidden" name="BlogWriterIdList" id="BlogWriterIdList" value="[]" />
+	<input type="hidden" name="BlogCommunityIdList" id="BlogCommunityIdList" value="[]" />
+</form>
+
+<form id="shareForm">
+    <input type="hidden" name="title" value="Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환">
+    <input type="hidden" name="content" value="&lt;h2&gt;1. 문제 정의: 왜 “잘 만든 시스템”은 실패하는가&lt;/h2&gt;&lt;p&gt;AI와 데이터 플랫폼이 조직의 핵심 인프라로 자리 잡으면서,&lt;/p&gt;&lt;p&gt;기업들은 이전보다 훨씬 빠르게 모델을 개발하고 데이터 파이프라인을 구축할 수 있게 되었다.&lt;/p&gt;&lt;p&gt;그러나 역설적으로, 다음과 같은 현상이 반복된다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;모델은 정확하다&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;데이터는 충분하다&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;PoC는 성공한다&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;그럼에도 불구하고,&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;“현실에서는 아무 것도 바뀌지 않는다.”&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;이 문제는 기술적 한계라기보다 구조적 문제다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;개발 조직은 기능을 만든다&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;데이터 조직은 분석을 수행한다&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;비즈니스 조직은 의사결정을 한다&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;하지만 이 세 가지를 &lt;strong&gt;“실제 운영 시스템으로 연결하는 역할”&lt;/strong&gt;은 존재하지 않는다.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;2. FDE의 등장: 실행의 공백을 메우는 역할&lt;/h2&gt;&lt;p&gt;이 문제를 해결하기 위해 등장한 것이&lt;/p&gt;&lt;p&gt;&lt;span class=&#034;whitespace-normal&#034;&gt;Palantir&lt;/span&gt;의 **Forward Deployed Engineer(FDE)**다.&lt;/p&gt;&lt;p&gt;FDE는 단순한 엔지니어가 아니다.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;고객 조직 내부에 “임베드(embedded)”되어, 데이터 통합부터 애플리케이션 개발, 운영 적용까지 end-to-end로 수행하며, 실제 비즈니스 임팩트를 만들어내는 역할이다.&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;여기서 중요한 포인트는 세 가지다.&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;임베드된다 (embedded)&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;끝까지 책임진다 (end-to-end)&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;성과는 기능이 아니라 임팩트다 (impact-driven)&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;3. Dev vs FDE: 동일한 엔지니어링이 아니다&lt;/h2&gt;&lt;p&gt;팔란티어는 Dev와 FDE의 차이를 다음과 같이 정의한다.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;“one capability, many customers (Dev)”&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;vs&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;“one customer, many capabilities (FDE)”&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;이 차이는 단순한 역할 차이가 아니라&lt;/p&gt;&lt;p&gt;엔지니어링 접근 방식 자체의 차이다.&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;3.1 구조적 비교&lt;/h3&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;p&gt;구분&lt;/p&gt;&lt;/th&gt;&lt;th&gt;&lt;p&gt;Dev&lt;/p&gt;&lt;/th&gt;&lt;th&gt;&lt;p&gt;FDE&lt;/p&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;문제 유형&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;일반화된 문제&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;특정 조직 문제&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;설계 방식&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;추상화 중심&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;통합 중심&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;코드 성격&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;재사용성&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;실용성&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;성공 기준&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;확장성&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;임팩트&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;책임 범위&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;개발&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;운영 포함&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;3.2 본질적 차이&lt;/h3&gt;&lt;p&gt;Dev는 시스템을 만든다.&lt;/p&gt;&lt;p&gt;FDE는 시스템이 &lt;strong&gt;현실에서 작동하도록 만든다.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;이 차이는 다음과 같이 요약된다.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;Dev = “잘 만든 코드”&lt;/p&gt;&lt;p&gt;FDE = “실제로 쓰이는 시스템”&lt;/p&gt;&lt;/blockquote&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;4. FDE의 실행 모델: 프로젝트가 아니라 “운영 흐름”&lt;/h2&gt;&lt;p&gt;FDE의 업무를 이해하려면 기능 단위가 아니라 &lt;strong&gt;운영 파이프라인 단위&lt;/strong&gt;로 봐야 한다.&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;4.1 Execution Pipeline&lt;/h3&gt;&lt;p&gt;&lt;img src=&#034;https://devocean.sk.com/editorImg/2026/4/16/e21645c62e3c9f42308669f2b776f6f38a45e073588f203e9060535fcbfce74b&#034; alt=&#034;스크린샷 2026-04-16 오후 6.19.11.png&#034; contenteditable=&#034;false&#034;&gt;&lt;br&gt;&lt;/p&gt;&lt;h3&gt;4.2 단계별 심층 분석&lt;/h3&gt;&lt;h4&gt;(1) Problem Framing&lt;/h4&gt;&lt;p&gt;FDE는 문제를 “받지 않는다”.&lt;/p&gt;&lt;p&gt;문제를 &lt;strong&gt;정의한다&lt;/strong&gt;.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;비즈니스 KPI 정의&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;데이터 구조 분석&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;조직 내 의사결정 구조 이해&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;이 단계에서 이미 프로젝트의 70%가 결정된다.&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h4&gt;(2) Data Integration&lt;/h4&gt;&lt;p&gt;가장 중요한 단계이자, 가장 실패율이 높은 단계다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;다수 시스템 연결 (ERP, CRM, 로그 등)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;데이터 정합성 확보&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;권한 및 보안 설계&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;lineage 관리&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;팔란티어의 플랫폼(예: Foundry)은 이 단계에서&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;데이터 계보(lineage)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;버전 관리&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;권한 체계&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;를 핵심 기능으로 제공한다.&lt;/p&gt;&lt;p&gt;👉 즉, FDE는 단순 ETL이 아니라&lt;/p&gt;&lt;p&gt;&lt;strong&gt;운영 가능한 데이터 시스템을 구축한다&lt;/strong&gt;&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h4&gt;(3) Rapid Prototyping&lt;/h4&gt;&lt;p&gt;이 단계는 전통적 엔지니어링과 가장 다르다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;완벽한 코드 ❌&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;빠른 실행 ⭕&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div data-language=&#034;text&#034; class=&#034;toastui-editor-ww-code-block-highlighting&#034;&gt;&lt;pre&gt;&lt;code&gt;build → test → feedback → rebuild&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;이 과정은 스타트업의 product iteration과 동일하다.&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h4&gt;(4) Productionization&lt;/h4&gt;&lt;p&gt;대부분의 프로젝트가 실패하는 지점이다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;deployment pipeline 구축&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;monitoring&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;장애 대응&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;성능 최적화&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;팔란티어는 이 단계에서&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;릴리즈 프로세스&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;헬스체크&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;진단 시스템&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;을 강조한다.&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h4&gt;(5) Adoption &amp;amp; Scaling&lt;/h4&gt;&lt;p&gt;기술 문제가 아닌 조직 문제로 전환되는 단계다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;사용자 교육&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;워크플로우 통합&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;조직 내 확산&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;여기서 실패하면 시스템은 폐기된다.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;5. 아키텍처 관점: FDE는 “Glue Layer”다&lt;/h2&gt;&lt;p&gt;일반적인 데이터 시스템 구조:&lt;/p&gt;&lt;div data-language=&#034;text&#034; class=&#034;toastui-editor-ww-code-block-highlighting&#034;&gt;&lt;pre&gt;&lt;code&gt;Data Sources → Data Platform → Application → Business Process&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;문제는 이 레이어들이 분리되어 있다는 것이다.&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;5.1 FDE의 위치&lt;/h3&gt;&lt;div data-language=&#034;text&#034; class=&#034;toastui-editor-ww-code-block-highlighting&#034;&gt;&lt;pre&gt;&lt;code&gt;[Data] ↔ [Platform] ↔ [App] ↔ [Business]           ↑          FDE&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;5.2 역할 정의&lt;/h3&gt;&lt;p&gt;FDE는 다음을 동시에 수행한다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;데이터 엔지니어링&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;애플리케이션 개발&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;워크플로우 설계&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;운영 안정화&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;즉,&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;FDE는 레이어가 아니라 연결이다&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;6. Palantir 모델의 전략적 의미&lt;/h2&gt;&lt;p&gt;팔란티어의 모델은 기존 SaaS와 다르다.&lt;/p&gt;&lt;h3&gt;6.1 비교&lt;/h3&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;p&gt;모델&lt;/p&gt;&lt;/th&gt;&lt;th&gt;&lt;p&gt;특징&lt;/p&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SaaS&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;제품 제공&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;컨설팅&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;인력 제공&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Palantir&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;제품 + FDE&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;6.2 핵심 전략&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;작은 문제 해결&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;빠른 임팩트 생성&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;조직 내 확산&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;플랫폼화&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;6.3 중요한 관점&lt;/h3&gt;&lt;blockquote&gt;&lt;p&gt;FDE는 비용이 아니라&lt;/p&gt;&lt;p&gt;👉 &lt;strong&gt;Go-To-Market 전략이다&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;7. 사례에서 드러나는 패턴&lt;/h2&gt;&lt;h3&gt;성공 패턴&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;빠른 프로토타이핑&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;실제 운영 연결&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;점진적 확장&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;예: &lt;span class=&#034;whitespace-normal&#034;&gt;Airbus&lt;/span&gt; Skywise&lt;/p&gt;&lt;p&gt;→ 수만 명 사용자가 실제 운영에서 활용&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;실패 패턴&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;데이터 거버넌스 문제&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;조직 내부 반발&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;vendor dependency&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;예:&lt;/p&gt;&lt;p&gt;&lt;span class=&#034;whitespace-normal&#034;&gt;NYC Health + Hospitals&lt;/span&gt;&lt;/p&gt;&lt;p&gt;→ 계약 종료 후 내부 전환&lt;/p&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;핵심 인사이트&lt;/h3&gt;&lt;blockquote&gt;&lt;p&gt;성공은 기술이 아니라 **채택(adoption)**에서 결정된다&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;8. 비용과 조직적 영향&lt;/h2&gt;&lt;h3&gt;8.1 비용 구조&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;고급 엔지니어 인건비&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;현장 투입 비용&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;장기 운영 비용&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;8.2 ROI 구조&lt;/h3&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;p&gt;항목&lt;/p&gt;&lt;/th&gt;&lt;th&gt;&lt;p&gt;영향&lt;/p&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Time-to-Value&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;단축&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;PoC → Production&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;전환율 증가&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;운영 KPI&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;개선&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;데이터 활용&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;증가&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;9. 조직 적용 판단 기준&lt;/h2&gt;&lt;h3&gt;9.1 필요한 조직&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;데이터는 많지만 활용 안 됨&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;PoC 반복 실패&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;워크플로우 복잡&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;조직 간 단절 존재&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;h3&gt;9.2 필요 없는 조직&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;이미 강한 데이터 조직&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;자체 플랫폼 구축 가능&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;단순 분석 중심&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;10. 결론: FDE는 직무가 아니라 “운영 패턴”&lt;/h2&gt;&lt;p&gt;FDE는 특정 회사의 직무가 아니다.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;복잡한 시스템을 현실에 적용하기 위한 구조적 해법&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;div contenteditable=&#034;false&#034;&gt;&lt;hr&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;최종 요약&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;FDE = Execution Layer&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;목적 = Production Impact&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;위치 = 시스템 전체&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;본질 = 연결 (Integration + Operation)&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;우리는 더 이상 “잘 만든 시스템”을 만드는 시대에 있지 않다.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;이제 중요한 것은&lt;/p&gt;&lt;p&gt;👉 &lt;strong&gt;“현실에서 작동하는 시스템”이다&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;그리고 그걸 만드는 역할이 바로 &lt;strong&gt;Forward Deployed Engineer&lt;/strong&gt;다.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;더 상세한 내용은 첨부된 심층 리서치 파일을 참고 부탁드립니다. 요금 관심 가는 직종이라서 저도 생각을 정리할 겸 한번 정리해보았습니다. &lt;/p&gt;">
+    <input type="hidden" name="thumnailUrl" value="https://devocean.sk.com/thumnail/2026/4/16/105e56d28a02797410a655e7844309702a77600a6c32107a3e013ac0872e612a.jpeg">
+    <input type="hidden" name="id" value="168214">
+</form>
+<form id="downloadForm" name="downloadForm" action="/downloadS3.do">
+	<input type="hidden" name="idx" value="">
+	<input type="hidden" name="subIdx" value="">
+</form>
+<form id="preNextForm">
+	<input type="hidden" id="blogId" name="blogid" value="168214">
+</form>
+
+<script src="/resource/js/external/01_blog/blog-detail.js?v=2512011127"></script>
+<script src="/resource/js/external/component/BlogList.js?v=2506171726"></script>
+<script src="/resource/js/external/01_blog/blog-index.js?v=2407261107"></script>
+
+<script>
+
+    $(document).ready(function() {
+        new Thub.BlogDetailIndex($('.container'));
+        getReplyList(168214, 'BLOG');
+        /* lottie.loadAnimation({
+            container: document.getElementById('lottie-container'), // 애니메이션을 렌더링할 요소
+            renderer: 'svg', // 렌더링 방식: 'svg', 'canvas', 'html' 중 선택
+            loop: true, // 애니메이션 반복 여부
+            autoplay: true, // 자동 재생 여부
+            path: '/resource/images/typing_64px.json' // JSON 파일 경로
+        }); */
+    })
+    
+    function goQuestion(){
+    	if("Y" == "Y"){
+    		var agent = navigator.userAgent.toLowerCase();
+    		if(agent.indexOf('devoceanapp') > -1){
+    			var session = "";
+    			if(session == ""){
+    				var json = new Object();
+    				json.function = "login_question";
+    				window.flutter_inappwebview.callHandler('devocean', JSON.stringify(json));
+    			}else{
+    				
+	        			var json = new Object();
+	        			var data = new Object();
+	        			json.function = "write_community";
+	        			data.blog_post_uid = 168214;
+	        			data.blog_post_title = "Palantir FDE: 소프트웨어를 “만드는 것”에서 “작동시키는 것”으로의 전환";
+	        			data.expert_uid = 205;
+	        			data.expert_nickname = "꼬마집사";
+	        			json.data = data;
+	        			window.flutter_inappwebview.callHandler('devocean', JSON.stringify(json));
+	    			
+	    			
+    			}
+    		}else{
+    			if("false" == "true"){
+    				alert("DEVOCEAN 모바일앱에서 이용 가능한 서비스입니다.");
+					var link = window.location.origin ;
+					location.href = link + "/blog/techBoardDetail.do?id=168214";
+            	}else{
+            		alert("DEVOCEAN 모바일앱에서 이용 가능한 서비스입니다.");
+            		window.open('/app/','_blank');
+            	}
+    		}
+    	}
+    }
+    function s3fileAttachDownload(idx, subIdx){
+		$('#downloadForm').attr("action","/downloadS3.do");
+		$('#downloadForm').get(0).idx.value = idx;
+		$('#downloadForm').get(0).subIdx.value = subIdx;
+		$('#downloadForm').submit();
+	}
+
+	$(window).scroll(function() {
+        var scrollTop = $(window).scrollTop(); // 현재 스크롤 위치
+        var windowHeight = $(window).height(); // 윈도우(뷰포트) 높이
+        var documentHeight = $(document).height(); // 전체 문서 높이
+
+        if (scrollTop > 180 && scrollTop < documentHeight - windowHeight - 180) {
+            $('.view_quick').stop().show();
+        } else {
+            $('.view_quick').stop().hide();
+        }
+    });
+    function scrollDown(){
+        $("html,body").animate({ scrollTop: $("html,body").prop('scrollHeight') }, "4000");
+    }
+</script>
+            </div>
+
+            
+            
+            
+            	<div class="app_intro_pc floating_view">
+					<a href="javascript:clickVlogPost();" class="app_intro_pc">
+						<img src="https://devocean.sk.com/mainBanner/be0b72b334bf4386ee109179175f612d7baaaec46a198cbc000d691ab5b30ab7.jpeg" alt="동영상 기고하기"/>
+					</a>
+					<button type="button" class="floating_close" style="width:24px;height:24px;position:absolute;top:0;right:0;overflow:hidden;border:none;z-index:10;">
+						<img src="/resource/images/external/main/floating_close.png?20231120" style="width:100%;">
+					</button>
+				</div>
+            
+            
+
+
+	 <!-- 앱 로그인 시 브릿지 페이지에서 footer안보이도록 처리 -->
+<footer class="footer">
+    <div class="main-sec-inner">
+        <div class="footer-sec01">
+            <div class="sns">
+                <a href="https://facebook.com/sk.devocean" target="_blank" class="facebook"></a>
+                <a href="https://twitter.com/sk_devocean" target="_blank" class="twitter"></a>
+                <a href="https://www.instagram.com/skdevocean" target="_blank" class="instagram"></a>
+                <a href="https://www.youtube.com/channel/UCnIyjM-gLKX4e0T7WxBe8eg" target="_blank" class="youtube"></a>
+                <a href="http://pf.kakao.com/_fTvls" target="_blank" class="kakaoch"></a>
+            </div>
+            
+            <div>
+            	<div class="site-area" style="margin-left: 5px !important; float:right !important;">
+	                <button>Family Site</button>
+	                <ul class="site" id="familySiteUl">
+	                   <!--  <li><a href="https://careers.sktelecom.com/" target="_blank">SK텔레콤 채용</a></li>
+	                    <li><a href="https://openapi.sk.com/" target="_blank">SK open API</a></li>
+	                    <li><a href="https://developers.nugu.co.kr/" target="_blank">NUGU developers</a></li>
+	                    <li><a href="https://www.true-inno.com/" target="_blank">True Innovation</a></li>
+	                    <li><a href="https://techtopic.skplanet.com/" target="_blank">TECH TOPIC</a></li> -->
+	                </ul>
+	            </div>
+	            
+	            <div id="latter-area" class="site-area" style="float: right !important;">
+	                <button>DEVOCEAN Letter</button>
+	                <ul class="site letter-area"></ul>
+	            </div>
+            </div>
+        </div>
+        <div class="footer-sec02">
+            <span class="copy">COPYRIGHT SK TELECOM CO., LTD.</span>
+            <ul class="link">
+                <li><a href="#none" class="go-terms">이용약관</a></li>
+                <li><a href="https://privacy.sktelecom.com/view.do?ctg=policy&name=policy" target="_blank"><strong>개인정보처리방침</strong></a></li>
+         <!--        <li><a href="https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2004301010030201122" target="_blank">사업자정보확인</a></li> -->
+                <li><a href="#none" class="go-integration" data-tid-auth="">DEVOCEAN inside</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <input type="hidden" name="envtype">
+
+	<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+	<script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
+	<script type="text/javascript">
+		if (!wcs_add) var wcs_add={};
+		wcs_add["wa"] = "s_4ab9eca4e136";
+		if (!_nasa) var _nasa={};
+		if(window.wcs){
+			wcs.inflow();
+			wcs_do(_nasa);
+		}	
+	</script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "n1zvjm6zf8");
+    </script>
+
+<div class="loading_external">
+	<div>
+		<img src="/resource/images/external/common/Spinner-1s-100px.gif?230630">
+	</div>
+</div>
+</footer>
+	
+
+<!-- <script src="/resource/js/external/layout/header.js"></script> -->
+        </div>
+
+		
+        <script type="text/javascript">
+	           $(function(){
+	               $(".floating_close").click(function(){
+	                   $(".app_intro_pc").hide();
+	               })
+	           })
+	
+	           // ai펠로우십 플로팅배너 관련 추가
+	           $(function () {
+	                       let isFloatingClosed = false; // 닫기 여부 (모바일에서만)
+	
+	                       function isMobileSize() {
+	                           return $(window).width() <= 1023;
+	                       }
+	
+	                       function isScrollBottom() {
+	                           return $(window).scrollTop() + $(window).height() >= $(document).height() - 10;
+	                       }
+	
+	                       function adjustUI() {
+	                           //const $floating = $('.ai_floating');
+	                           const $floating = $('.floating_view');
+	                           const $topBtn = $('.top-btn');
+	
+	                           const isMobile = isMobileSize();
+	                           const atBottom = isScrollBottom();
+	
+	                           // 모바일에서 닫기 버튼을 클릭한 경우
+	                           if (isMobile && isFloatingClosed) {
+	                               if ($floating.is(':visible')) {
+	                                   $floating.fadeOut(300);
+	                               }
+	                               return;
+	                           }
+	
+	                           // 모바일에서 최하단 스크롤 시
+	                           if (isMobile && atBottom) {
+	                               if ($floating.is(':visible')) {
+	                                   $floating.fadeOut(300);
+	                               }
+	                               return;
+	                           }
+	
+	                           // PC에서는 항상 보이기 (닫기 버튼을 누르지 않은 경우)
+	                           if (!isMobile && !isFloatingClosed) {
+	                               if (!$floating.is(':visible')) {
+	                                   $floating.fadeIn(300);
+	                               }
+	                           }
+	                           // 모바일에서 닫기 버튼을 클릭하지 않았고, 최하단이 아닐 때
+	                           else if (!isFloatingClosed) {
+	                               if (!$floating.is(':visible')) {
+	                                   $floating.fadeIn(300);
+	                               }
+	                           }
+	                       }
+	
+	                       // 닫기 버튼 클릭 시 (모바일일 때만 반응)
+	                       $('.ai_floating .ai_floating_close, .floating_close').on('click', function () {
+	                           isFloatingClosed = true;
+	                           $('.ai_floating').fadeOut(300);
+	                           $('.app_intro_pc').fadeOut(300);
+	                       });
+	
+	                       // 초기 상태 설정
+	                       adjustUI();
+	
+	                       // 스크롤과 리사이즈 이벤트에 대응
+	                       $(window).on('scroll resize', adjustUI);
+	
+	                       // 상태 체크 반복 (200ms 간격)
+	                       setInterval(adjustUI, 200);
+	                   });
+		</script>
+        
+		
+    </body>
+</html>

@@ -13,6 +13,7 @@ related:
   - "[[Codex]]"
   - "[[GeekNews Codex Use Cases Expansion]]"
   - "[[BYOK]]"
+  - "[[Forward Deployed Engineer]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -35,11 +36,13 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - 여러 업무 도구의 context를 source inventory로 모으고 action queue, decision memo, follow-up draft로 변환한다.
 - 반복 workflow를 skill, script, agent-friendly CLI로 축적한다.
 - [[BYOK]] 도구를 쓸 경우 API key, usage budget, provider별 비용, secret rotation을 운영 항목으로 관리한다.
+- [[Forward Deployed Engineer]] 관점에서 PoC 자동화가 실제 개인 workflow에 채택되는지 adoption 기준을 둔다.
 
 ## 관련 자료
 
 - [[GeekNews Codex Use Cases Expansion]]
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
+- [[DEVOCEAN Palantir FDE Article]]
 
 ## 열린 질문
 
@@ -47,3 +50,4 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - wiki에 남길 것과 daily note에 남길 것은 어떻게 구분해야 하는가?
 - 어떤 action은 자동화하고, 어떤 action은 human approval boundary 뒤에 둬야 하는가?
 - 여러 AI 도구가 같은 provider key를 쓸 때 비용과 보안 책임을 어디에 기록할 것인가?
+- 개인 workflow의 PoC가 실제 운영 루틴으로 전환되었는지 어떤 지표로 판단할 것인가?
