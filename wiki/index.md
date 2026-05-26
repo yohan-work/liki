@@ -84,6 +84,7 @@ evidence_level: unsourced
 - [[SQLite]]
 - [[Hugging Face]]
 - [[Hugging Face Datasets]]
+- [[E2E Test Agent]]
 
 ## 인물
 
@@ -130,6 +131,7 @@ evidence_level: unsourced
 - [[Hugging Face Datasets Arrow Guide]]
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
 - [[DEVOCEAN Palantir FDE Article]]
+- [[PyTorchKR E2E Test Agent Article]]
 
 ## 리포트
 

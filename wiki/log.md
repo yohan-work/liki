@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-26] ingest | PyTorchKR E2E Test Agent 소개 글
+
+- PyTorchKR Discuss 글 "E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크"를 raw HTML snapshot으로 보존하고 [[PyTorchKR E2E Test Agent Article]]로 ingest했다.
+- [[E2E Test Agent]] 도구 페이지를 추가하고 자연어 `.test` 파일, LLM agent, Playwright MCP server, result summary로 이어지는 QA workflow를 정리했다.
+- [[Agentic Workflow]]와 [[MCP Remote SSE]]에 자연어 테스트 시나리오가 browser automation action surface로 연결되는 사례를 보강했다.
+- 변경 영역: [[E2E Test Agent]], [[PyTorchKR E2E Test Agent Article]], [[Agentic Workflow]], [[MCP Remote SSE]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: E2E Test Agent homepage, GitHub repository, npm package, README를 별도 source로 확인하고 작은 read-only flow에서 반복 실행 안정성을 측정한다.
+
 ## [2026-05-26] ingest | Hermes Agent 공식 사이트와 갓대희 시작 글
 
 - Hermes Agent 공식 사이트, Goddaehee Tistory 글, Medium URL을 raw HTML snapshot으로 보존했다.

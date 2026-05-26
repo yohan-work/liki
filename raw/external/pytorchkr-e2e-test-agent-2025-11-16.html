@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크 - 읽을거리&amp;정보공유 - PyTorchKR</title>
+    <meta name="description" content="E2E Test Agent 소개
+E2E Test Agent는 대규모 언어 모델(LLM, Large Language Model)을 활용하여 자연어로 작성된 테스트 시나리오를 실행하는 새로운 형태의 엔드투엔드(E2E, End-to-End) 테스트 프레임워크입니다. 이 도구의 핵심 아이디어는 “테스트를 코드가 아닌 사람의 언어로 작성하자”는 것입니다. 즉, 개발자뿐 아니라 기획자, QA, 비즈니스 담당자도 이해할 수 있도록 테스트 케이스를 자연어(영어)로 작성하면, AI가 자동으로 해당 행동을 수행하고 결과를 검증합니다. 
+기존의 UI 테스트 프레임워크(예: Playwright, Cypress 등)는 CSS 셀렉터나 DOM 구조에 의존하기 때문에 UI 변경 시 테스트가 쉽게 깨지는 문제가 있습니다. 반면 E2E Test Agent는 의도 기반(Intent-based) 접근법을 채택하여 “무엇을 테스트할 것인가”에 집중하고, “어떻게 할 것인가”는 AI에게 맡깁니다. 이렇게 함으로써 테스트 코드 유지보수 부담을 크게 줄이고, UI 변경에도 유연하게 대응할 수 있습니다. 
+E2E Test Agent 프레임워크는 OpenAI 뿐만 아니라, Claude, OpenRouter 등 OpenAI API 호환 LLM과 통신할 수 있습니다. 또한 Playwright MCP 서버를 통해 실제 브라우저 자동화를 수행합니다. 
+기존 테스트 방식과의 비교
+예를 들어 특정 사이트에 방문하여 특정 테스트를 수행하는 경우, 기존의 테스트 자동화는 다음과 같이 코드 중심 접근을 취합니다. 
+await page.goto(&amp;quot;https://playwright.dev&amp;quot;);
+await page.click(&amp;#39;button[data-testid=&amp;quot;get-started-btn&amp;quot;]&amp;#39;);
+await expect(page.locator(&amp;quot;.sidebar-menu&amp;quot;)).toBeVisible();
+
+이러한 코드 중심의 테스트 작성 방식은 잘 동작하지만, 시간이 지나며 CSS 셀렉터 변경이나 DOM 구조 수정이 발생&amp;hellip;">
+    <meta name="generator" content="Discourse 2026.5.0-latest - https://github.com/discourse/discourse version 6dd687930ec9ed742c28f1347bf243fcde123afc">
+<link rel="icon" type="image/png" href="https://discuss.pytorch.kr/uploads/default/optimized/1X/75bff5469a36bcf10d57f28a3f077a7dd869e43a_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://discuss.pytorch.kr/uploads/default/optimized/1X/9b6889a534c146a3f7a940f1777bd01e05468033_2_180x180.png">
+<meta name="theme-color" media="all" content="#fff">
+
+<meta name="color-scheme" content="light">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<link rel="canonical" href="https://discuss.pytorch.kr/t/e2e-test-agent-ai-e2e/8204" />
+
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://discuss.pytorch.kr/opensearch.xml" title="PyTorchKR Search">
+
+    
+    <link href="/stylesheets/color_definitions_scheme_-1_6_4e64f536662b828f150e99b4ccfe2da87e00893b.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" class="light-scheme"/>
+
+<link href="/stylesheets/common_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="common"  />
+
+  <link href="/stylesheets/mobile_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile"  />
+  <link href="/stylesheets/desktop_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop"  />
+
+
+
+    <link href="/stylesheets/automation_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="automation"  />
+    <link href="/stylesheets/checklist_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="checklist"  />
+    <link href="/stylesheets/discourse-activity-pub_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-activity-pub"  />
+    <link href="/stylesheets/discourse-calendar_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-calendar"  />
+    <link href="/stylesheets/discourse-chat-integration_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-chat-integration"  />
+    <link href="/stylesheets/discourse-data-explorer_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+    <link href="/stylesheets/discourse-details_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-details"  />
+    <link href="/stylesheets/discourse-github-verification_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-github-verification"  />
+    <link href="/stylesheets/discourse-lazy-videos_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-lazy-videos"  />
+    <link href="/stylesheets/discourse-local-dates_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+    <link href="/stylesheets/discourse-math_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-math"  />
+    <link href="/stylesheets/discourse-narrative-bot_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-narrative-bot"  />
+    <link href="/stylesheets/discourse-presence_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-presence"  />
+    <link href="/stylesheets/discourse-reactions_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-reactions"  />
+    <link href="/stylesheets/discourse-rss-polling_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-rss-polling"  />
+    <link href="/stylesheets/discourse-signatures_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-signatures"  />
+    <link href="/stylesheets/discourse-solved_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-solved"  />
+    <link href="/stylesheets/discourse-templates_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-templates"  />
+    <link href="/stylesheets/discourse-topic-voting_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="discourse-topic-voting"  />
+    <link href="/stylesheets/docker_manager_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="docker_manager"  />
+    <link href="/stylesheets/footnote_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="footnote"  />
+    <link href="/stylesheets/poll_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="poll"  />
+    <link href="/stylesheets/spoiler-alert_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="spoiler-alert"  />
+    <link href="/stylesheets/discourse-activity-pub_mobile_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-activity-pub_mobile"  />
+    <link href="/stylesheets/discourse-calendar_mobile_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-calendar_mobile"  />
+    <link href="/stylesheets/discourse-reactions_mobile_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-reactions_mobile"  />
+    <link href="/stylesheets/discourse-reactions_desktop_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-reactions_desktop"  />
+    <link href="/stylesheets/poll_desktop_68589854220a78b019792caf0c32eaf9a21207e5.css?__ws=discuss.pytorch.kr" media="(min-width: 40rem)" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="/stylesheets/common_theme_15_878cd522f3747a39dd7f7ff133519a0a4779cfbf.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="15" data-theme-name="discourse mermaid"/>
+<link href="/stylesheets/common_theme_13_9431c26ea6f54fc18a319e3c2cfe69b5bec3d9ce.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="13" data-theme-name="easy footer"/>
+<link href="/stylesheets/common_theme_14_c90a56a33d4f53977c49e3765347f3fac26d32e5.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="14" data-theme-name="inline pdf previews"/>
+<link href="/stylesheets/common_theme_6_104177e4c2f54d791339ef191b1d91b714b832be.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="6" data-theme-name="pytorchkr-fully"/>
+<link href="/stylesheets/common_theme_10_c2688b1f7d680e96af4adf454aa6c99226b38483.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="10" data-theme-name="add ga utm_src"/>
+<link href="/stylesheets/common_theme_12_decd3cd82971a8c1a96090c38dc8cbe566f41eba.css?__ws=discuss.pytorch.kr" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="12" data-theme-name="embedding css for pytorch.kr"/>
+    
+    
+
+    
+<meta name="naver-site-verification" content="18511d2baefc99408939c9581f829b18d824ee4f">
+
+<!--<script type="text/discourse-plugin" version="0.1">
+// api.onPageChange(() => {
+
+// });
+console.log(api._lookupContainer("service:app-events"));
+</script>-->
+    <meta id="data-ga-universal-analytics" data-tracking-code="G-L5NC8SBFPY" data-json="{&quot;cookieDomain&quot;:&quot;discuss.pytorch.kr&quot;}" data-auto-link-domains="">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5NC8SBFPY" nonce="KqGv9UpWASjLZKfJx4xKVcPkT"></script>
+  <script defer src="/assets/google-universal-analytics-v4-ba0fc09a.js" data-discourse-entrypoint="google-universal-analytics-v4" nonce="KqGv9UpWASjLZKfJx4xKVcPkT"></script>
+
+
+        <link rel="alternate nofollow" type="application/rss+xml" title="&#39;E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크&#39;의 RSS 피드" href="https://discuss.pytorch.kr/t/e2e-test-agent-ai-e2e/8204.rss" />
+    <meta property="og:site_name" content="PyTorchKR" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://discuss.pytorch.kr/uploads/default/optimized/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991_2_1024x379.png" />
+<meta property="og:image" content="https://discuss.pytorch.kr/uploads/default/optimized/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991_2_1024x379.png" />
+<meta property="og:image:width" content="2062" />
+<meta property="og:image:height" content="764" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:url" content="https://discuss.pytorch.kr/t/e2e-test-agent-ai-e2e/8204" />
+<meta name="twitter:url" content="https://discuss.pytorch.kr/t/e2e-test-agent-ai-e2e/8204" />
+<meta property="og:title" content="E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크" />
+<meta name="twitter:title" content="E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크" />
+<meta property="og:description" content="E2E Test Agent 소개 E2E Test Agent는 대규모 언어 모델(LLM, Large Language Model)을 활용하여 자연어로 작성된 테스트 시나리오를 실행하는 새로운 형태의 엔드투엔드(E2E, End-to-End) 테스트 프레임워크입니다. 이 도구의 핵심 아이디어는 “테스트를 코드가 아닌 사람의 언어로 작성하자”는 것입니다. 즉, 개발자뿐 아니라 기획자, QA, 비즈니스 담당자도 이해할 수 있도록 테스트 케이스를 자연어(영어)로 작성하면, AI가 자동으로 해당 행동을 수행하고 결과를 검증합니다.  기존의 UI 테스트 프레임워크(예: Playwright, Cypress 등)는 CSS 셀렉터나 DOM 구조에 의존하기 때문에 UI 변경 시 테스트가 쉽게 깨지는 문제가 있습니다. 반면 E2E Test Agent는 의도 기반(Intent-based) 접근법을 채택하여 “무엇을 테스트할 것인가”에 집중하고, “어떻게 할 것인가”는 AI에게 맡깁니다. 이렇게 함으로써 ..." />
+<meta name="twitter:description" content="E2E Test Agent 소개 E2E Test Agent는 대규모 언어 모델(LLM, Large Language Model)을 활용하여 자연어로 작성된 테스트 시나리오를 실행하는 새로운 형태의 엔드투엔드(E2E, End-to-End) 테스트 프레임워크입니다. 이 도구의 핵심 아이디어는 “테스트를 코드가 아닌 사람의 언어로 작성하자”는 것입니다. 즉, 개발자뿐 아니라 기획자, QA, 비즈니스 담당자도 이해할 수 있도록 테스트 케이스를 자연어(영어)로 작성하면, AI가 자동으로 해당 행동을 수행하고 결과를 검증합니다.  기존의 UI 테스트 프레임워크(예: Playwright, Cypress 등)는 CSS 셀렉터나 DOM 구조에 의존하기 때문에 UI 변경 시 테스트가 쉽게 깨지는 문제가 있습니다. 반면 E2E Test Agent는 의도 기반(Intent-based) 접근법을 채택하여 “무엇을 테스트할 것인가”에 집중하고, “어떻게 할 것인가”는 AI에게 맡깁니다. 이렇게 함으로써 ..." />
+<meta property="og:article:section" content="읽을거리&amp;정보공유" />
+<meta property="og:article:section:color" content="F1592A" />
+<meta property="og:article:tag" content="e2e-test-agent" />
+<meta property="og:article:tag" content="test-framework" />
+<meta property="og:article:tag" content="qa" />
+<meta name="twitter:label1" value="읽은 시간" />
+<meta name="twitter:data1" value="4분 🕑" />
+<meta name="twitter:label2" value="좋아요" />
+<meta name="twitter:data2" value="1 ❤" />
+<meta property="article:published_time" content="2025-11-16T05:30:37+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    
+  </head>
+  <body class="crawler ">
+    
+    <header>
+  <a href="/">PyTorchKR</a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="/t/e2e-test-agent-ai-e2e/8204">E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/news/14" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #F1592A'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>읽을거리&amp;정보공유</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='https://discuss.pytorch.kr/tag/e2e-test-agent' class='discourse-tag' rel="tag">e2e-test-agent</a>, 
+            <a href='https://discuss.pytorch.kr/tag/test-framework' class='discourse-tag' rel="tag">test-framework</a>, 
+            <a href='https://discuss.pytorch.kr/tag/qa' class='discourse-tag' rel="tag">qa</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+    <div itemscope="itemscope" itemtype="http://schema.org/DiscussionForumPosting">
+      <meta itemprop='headline' content='E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크'>
+      <link itemprop='url' href='https://discuss.pytorch.kr/t/e2e-test-agent-ai-e2e/8204'>
+      <meta itemprop='datePublished' content='2025-11-16T05:30:37Z'>
+      <meta itemprop='keywords' content='e2e-test-agent, test-framework, qa'>
+          <meta itemprop='articleSection' content='읽을거리&amp;정보공유'>
+        <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop='name' content='PyTorchKR'>
+            <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+              <meta itemprop='url' content='https://discuss.pytorch.kr/uploads/default/original/1X/d4b84c11cd22cc9b00613ed122076de7ed8e5863.png'>
+            </div>
+        </div>
+
+
+
+          <div id='post_1'  class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <a rel='nofollow' href='https://discuss.pytorch.kr/u/9bow'><span itemprop="name">9bow</span></a>
+                  <meta itemprop='url' content='https://discuss.pytorch.kr/u/9bow'>
+                (박정환)
+              </span>
+
+                <link itemprop="mainEntityOfPage" href="https://discuss.pytorch.kr/t/e2e-test-agent-ai-e2e/8204">
+
+                <link itemprop="image" href="https://discuss.pytorch.kr/uploads/default/original/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991.png">
+
+              <span class="crawler-post-infos">
+                  <time  datetime='2025-11-16T05:30:37Z' class='post-time'>
+                    11월 16, 2025,  5:30오전
+                  </time>
+                  <meta itemprop='dateModified' content='2025-11-16T05:30:37Z'>
+              <span itemprop="position">1</span>
+              </span>
+            </div>
+            <div class='post' itemprop="text">
+              <p><div class="lightbox-wrapper"><a class="lightbox" href="https://discuss.pytorch.kr/uploads/default/original/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991.png" data-download-href="https://discuss.pytorch.kr/uploads/default/a48307956f27fdcc8a11689cf9e6f609709a6991" title="E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI  E2E 테스트 프레임워크"><img src="https://discuss.pytorch.kr/uploads/default/optimized/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991_2_1028x380.png" alt="E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI  E2E 테스트 프레임워크" data-base62-sha1="ntl29Sxomczzz9Q0Jk9NQBrOoG5" width="1028" height="380" srcset="https://discuss.pytorch.kr/uploads/default/optimized/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991_2_1028x380.png, https://discuss.pytorch.kr/uploads/default/optimized/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991_2_1542x570.png 1.5x, https://discuss.pytorch.kr/uploads/default/optimized/2X/a/a48307956f27fdcc8a11689cf9e6f609709a6991_2_2056x760.png 2x" data-dominant-color="EFECEC"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI  E2E 테스트 프레임워크</span><span class="informations">2062×764 82.3 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div></p>
+<h2><a name="p-16259-e2e-test-agent-1" class="anchor" href="#p-16259-e2e-test-agent-1" aria-label="Heading link"></a>E2E Test Agent 소개</h2>
+<p>E2E Test Agent는 대규모 언어 모델(LLM, Large Language Model)을 활용하여 <strong>자연어로 작성된 테스트 시나리오를 실행</strong>하는 새로운 형태의 엔드투엔드(E2E, End-to-End) 테스트 프레임워크입니다. 이 도구의 핵심 아이디어는 “<strong>테스트를 코드가 아닌 사람의 언어로 작성하자</strong>”는 것입니다. 즉, 개발자뿐 아니라 기획자, QA, 비즈니스 담당자도 이해할 수 있도록 테스트 케이스를 자연어(영어)로 작성하면, AI가 자동으로 해당 행동을 수행하고 결과를 검증합니다.</p>
+<p>기존의 UI 테스트 프레임워크(예: Playwright, Cypress 등)는 CSS 셀렉터나 DOM 구조에 의존하기 때문에 UI 변경 시 테스트가 쉽게 깨지는 문제가 있습니다. 반면 E2E Test Agent는 <strong>의도 기반(Intent-based)</strong> 접근법을 채택하여 “무엇을 테스트할 것인가”에 집중하고, “어떻게 할 것인가”는 AI에게 맡깁니다. 이렇게 함으로써 테스트 코드 유지보수 부담을 크게 줄이고, UI 변경에도 유연하게 대응할 수 있습니다.</p>
+<p>E2E Test Agent 프레임워크는 OpenAI 뿐만 아니라, Claude, OpenRouter 등 OpenAI API 호환 LLM과 통신할 수 있습니다. 또한 Playwright MCP 서버를 통해 실제 브라우저 자동화를 수행합니다.</p>
+<h2><a name="p-16259-h-2" class="anchor" href="#p-16259-h-2" aria-label="Heading link"></a>기존 테스트 방식과의 비교</h2>
+<p>예를 들어 특정 사이트에 방문하여 특정 테스트를 수행하는 경우, 기존의 테스트 자동화는 다음과 같이 코드 중심 접근을 취합니다.</p>
+<pre><code class="lang-auto">await page.goto("https://playwright.dev");
+await page.click('button[data-testid="get-started-btn"]');
+await expect(page.locator(".sidebar-menu")).toBeVisible();
+</code></pre>
+<p>이러한 코드 중심의 테스트 작성 방식은 잘 동작하지만, 시간이 지나며 CSS 셀렉터 변경이나 DOM 구조 수정이 발생하면 테스트가 쉽게 깨집니다. 또한 테스트 목적(의도)이 코드로는 명확히 드러나지 않습니다.</p>
+<p><br>
+이와 달리, E2E Test Agent에서는 동일한 테스트를 아래와 같이 자연어로 작성할 수 있습니다:</p>
+<pre><code class="lang-auto">open playwright.dev
+scroll all the way down,
+click on "Get started",
+check if the page side menu is visible.
+</code></pre>
+<p>이러한 자연어 기반으로 테스트를 작성하는 방식의 장점은 다음과 같습니다:</p>
+<ul>
+<li>
+<p><strong>의도 기반</strong>으로 작성하기 때문에 누구나 무엇을 할지를 기준으로 테스트를 작성할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>셀프 힐링(Self-Healing)</strong> 기능을 통해 UI 변경에도 자동 적응되어 유지보수 비용이 감소합니다.</p>
+</li>
+</ul>
+<p>결국, 테스트의 “언어”를 사람 중심으로 바꾸는 것이 E2E Test Agent의 핵심 혁신입니다.</p>
+<h2><a name="p-16259-e2e-test-agent-3" class="anchor" href="#p-16259-e2e-test-agent-3" aria-label="Heading link"></a>E2E Test Agent 동작 방식</h2>
+<pre><code class="lang-auto">┌─────────────────┐
+│  Test Files     │ Plain English test steps
+│  (.test files)  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  TestAgent      │ Orchestrates test execution
+│  Class          │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  LLM Agent      │ Interprets tests &amp; decides actions
+│                 │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  MCP Tools      │ Browser automation, web search, etc.
+│  (Playwright)   │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Your App       │ Real interactions, real results
+└─────────────────┘
+</code></pre>
+<p>E2E Test Agent는 다음의 5단계 파이프라인을 통해 테스트를 실행합니다:</p>
+<ol>
+<li>테스트 파일(확장자가 <code>.test</code>인 파일들)로부터 자연어 테스트를 읽습니다.</li>
+<li><strong>TestAgent 클래스</strong>가 실행을 관리합니다.</li>
+<li><strong>LLM Agent</strong>가 테스트 문장을 해석하고 수행 계획을 생성합니다.</li>
+<li><strong>MCP 도구(Playwright 등)</strong> 를 사용하여 수행 계획에 맞춰 실제 브라우저 기반 테스트를 수행합니다.</li>
+<li>테스트 결과를 수집 및 요약하여 사용자를 위한 리포트를 생성합니다.</li>
+</ol>
+<p>이 구조 덕분에 프레임워크는 <strong>언어 이해 + 실행 제어 + 실제 브라우저 상호작용</strong>을 자연스럽게 통합합니다.</p>
+<h2><a name="p-16259-e2e-test-agent-4" class="anchor" href="#p-16259-e2e-test-agent-4" aria-label="Heading link"></a>E2E Test Agent 설치 및 초기 설정</h2>
+<p>E2E Test Agent 프레임워크는 npm 또는 yarn 등으로 바로 설치할 수 있습니다:</p>
+<pre><code class="lang-auto"># npm 사용 시
+npm install e2e-test-agent
+
+# yarn 사용 시
+yarn add e2e-test-agent
+</code></pre>
+<p>설치 후에는 E2E Test Agent이 동작할 LLM 관련 설정들을 작성합니다. 해당 설정들은 아래와 같은 내용들을 포함하며, 프로젝트 루트에 <code>.env</code> 파일로 위치해야 합니다:</p>
+<pre><code class="lang-auto"># .env 파일 내용
+MODEL_NAME="gpt-4o"
+API_KEY="your-openai-api-key"
+BASE_URL="https://api.openai.com/v1"
+TESTS_DIR="./tests"
+</code></pre>
+<p>위 설정에서 <code>BASE_URL</code>을 변경하여 OpenAI뿐 아니라 Anthropic Claude, OpenRouter, Ollama, LM Studio 등 OpenAI API와 동일한 프로토콜을 따르는(OpenAI API Compatible) 다른 서비스와도 호환이 가능합니다.</p>
+<p>각  환경 변수에 대한 설명은 다음과 같습니다:</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th><strong>환경 변수</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>기본값</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MODEL_NAME</td>
+<td>사용할 LLM 모델</td>
+<td>gpt-4o</td>
+</tr>
+<tr>
+<td>API_KEY</td>
+<td>OpenAI API 키</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>BASE_URL</td>
+<td>API 엔드포인트</td>
+<td>OpenAI 기본 URL</td>
+</tr>
+<tr>
+<td>TESTS_DIR</td>
+<td>테스트 파일 디렉토리</td>
+<td>./tests</td>
+</tr>
+</tbody>
+</table>
+</div><h2><a name="p-16259-e2e-test-agent-5" class="anchor" href="#p-16259-e2e-test-agent-5" aria-label="Heading link"></a>E2E Test Agent 사용법</h2>
+<h3><a name="p-16259-h-6" class="anchor" href="#p-16259-h-6" aria-label="Heading link"></a>빠른 시작</h3>
+<p>아래와 같이 테스트 실행 파일(Test Runner)를 작성합니다:</p>
+<pre><code class="lang-auto">import { TestAgent } from "e2e-test-agent";
+import "dotenv/config";
+
+async function main() {
+  const testAgent = new TestAgent({
+    modelName: process.env.MODEL_NAME || "gpt-4o",
+    apiKey: process.env.API_KEY!,
+    baseURL: process.env.BASE_URL,
+    testsDir: process.env.TESTS_DIR || "./tests",
+    maxSteps: 20,
+  });
+
+  const results = await testAgent.runAllTests();
+  testAgent.printSummary(results);
+}
+
+main().catch(console.error);
+</code></pre>
+<p>위 내용을  <code>run-tests.ts</code> 라는 파일명으로 저장한 뒤, 다음과 같이 실행하면 됩니다:</p>
+<pre><code class="lang-auto"># tsx로 바로 실행 (개발시 권장)
+npx tsx run-tests.ts
+
+# 또는, 컴파일 후 Node.js로 실행도 가능
+tsc run-tests.ts
+node run-tests.js
+</code></pre>
+<h3><a name="p-16259-h-7" class="anchor" href="#p-16259-h-7" aria-label="Heading link"></a>테스트 작성</h3>
+<p>E2E Test Agent가 수행할 테스트를 <code>tests/</code> 디렉토리 내 <code>.test</code>라는 확장자를 갖는 파일로 작성합니다. 예를 들어, 다음은 <code>tests/1.test</code> 파일의 예시입니다:</p>
+<pre><code class="lang-auto">open playwright.dev
+scroll all the way down,
+click on "Get started",
+check if the page side menu is visible.
+</code></pre>
+<p>그 외, 다음과 같은 방식으로 <code>tests/2.test</code> 파일을 생성하여 테스트를 작성할 수 있습니다:</p>
+<pre><code class="lang-auto">navigate to github.com
+search for "typescript"
+click on the first repository
+verify the repository has a README file
+</code></pre>
+<h3><a name="p-16259-programmatic-usage-8" class="anchor" href="#p-16259-programmatic-usage-8" aria-label="Heading link"></a>코드에 포함하여 실행 (Programmatic Usage)</h3>
+<p>기존 개발된 프로젝트 및 테스트 코드에 추가하여 사용할 수 있습니다. 다음은 테스트를 실행하는 예시 코드입니다:</p>
+<pre><code class="lang-auto">import { TestAgent } from "e2e-test-agent";
+
+const testAgent = new TestAgent({
+  modelName: "gpt-4o",
+  apiKey: process.env.API_KEY!,
+  baseURL: process.env.BASE_URL,
+  testsDir: "./tests",
+  maxSteps: 20,
+});
+
+// 전체 테스트 실행
+const results = await testAgent.runAllTests();
+testAgent.printSummary(results);
+
+// 특정 테스트만 실행 (예. ./tests/1.test)
+const result = await testAgent.runSingleTest("./tests/1.test", 1);
+</code></pre>
+<h3><a name="p-16259-mcp-9" class="anchor" href="#p-16259-mcp-9" aria-label="Heading link"></a>MCP 서버 확장 예시</h3>
+<p>그 외에도, 다음과 같이 TestAgent를 생성하며 <code>mcpServers</code>를 키(key)로 갖는 MCP Server 서버 정보 객체를 추가하여 사용할 수도 있습니다:</p>
+<pre><code class="lang-auto">const testAgent = new TestAgent({
+  apiKey: "...",
+  mcpServers: {
+    playwright: { command: "npx", args: ["@playwright/mcp@latest"] },
+    filesystem: {
+      command: "npx",
+      args: ["@modelcontextprotocol/server-filesystem"],
+    },
+  },
+});
+</code></pre>
+<p>이렇게 MCP Server를 통해 파일 시스템 접근, API 호출 등 다양한 확장이 가능합니다.</p>
+<h2><a name="p-16259-h-10" class="anchor" href="#p-16259-h-10" aria-label="Heading link"></a>테스트 결과 예시</h2>
+<pre><code class="lang-auto">============================================================
+Running Test #1: 1.test
+============================================================
+
+Result: {
+  "success": true,
+  "steps_completed": [
+    "Opened playwright.dev",
+    "Scrolled to bottom",
+    "Clicked Get started button",
+    "Verified sidebar visibility"
+  ],
+  "final_status": "passed"
+}
+============================================================
+✅ PASSED - Test #1: 1.test
+Total: 1 | Passed: 1 | Failed: 0
+</code></pre>
+<p>테스트 결과에는 단계별 실행 내역, 성공 여부, 관찰 결과까지 요약됩니다.</p>
+<h2><a name="p-16259-h-11" class="anchor" href="#p-16259-h-11" aria-label="Heading link"></a>라이선스</h2>
+<p>E2E Test Agent 프로젝트는 <a href="https://github.com/armannaj/e2e-test-agent/blob/main/LICENSE">MIT 라이선스</a>로 공개되어 있습니다. 상업적 사용을 포함한 대부분의 용도에서 자유롭게 사용할 수 있습니다.</p>
+<h2><a name="p-16259-house-e2e-test-agent-12" class="anchor" href="#p-16259-house-e2e-test-agent-12" aria-label="Heading link"></a><img src="https://discuss.pytorch.kr/images/emoji/fluentui/house.png?v=15" title=":house:" class="emoji" alt=":house:" loading="lazy" width="20" height="20"> E2E Test Agent 홈페이지</h2>
+<aside class="onebox allowlistedgeneric" data-onebox-src="https://e2eagent.io/">
+  <header class="source">
+      <img src="https://e2eagent.io/favicon.ico" class="site-icon" alt="" width="64" height="64">
+
+      <a href="https://e2eagent.io/" target="_blank" rel="noopener">e2eAgent.io</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="aspect-image" style="--aspect-ratio:695/364;"><img src="https://e2eagent.io/og-image.png" class="thumbnail" alt="" width="1028" height="539"></div>
+
+<h3><a href="https://e2eagent.io/" target="_blank" rel="noopener">AI-Powered QA via natural language | End-to-End Testing AI</a></h3>
+
+  <p>Describe user flows in plain English and let AI agents run automated E2E tests in real browsers. No code, no maintenance. Built for founders and small teams.</p>
+
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<h2><a name="p-16259-github-e2e-test-agent-github-13" class="anchor" href="#p-16259-github-e2e-test-agent-github-13" aria-label="Heading link"></a><img src="https://discuss.pytorch.kr/uploads/default/original/2X/7/70a6220c603eed42089b4f67366225849e119e20.svg?v=15" title=":github:" class="emoji emoji-custom" alt=":github:" loading="lazy" width="20" height="20"> E2E Test Agent 프로젝트 GitHub 저장소</h2>
+<p><a href="https://github.com/armannaj/e2e-test-agent" class="onebox" target="_blank" rel="noopener">https://github.com/armannaj/e2e-test-agent</a></p>
+<h2><a name="p-16259-h-14" class="anchor" href="#p-16259-h-14" aria-label="Heading link"></a>더 읽어보기</h2>
+<ul>
+<li>
+<p><a href="https://discuss.pytorch.kr/t/ani-code-api-qa-claude-code-claude-code-alternative/7681" class="inline-onebox">Ani Code: API 테스트 및 QA 자동화 등을 지원하는, Claude Code의 오픈소스 대안(Claude Code Alternative)</a></p>
+</li>
+<li>
+<p><a href="https://discuss.pytorch.kr/t/quibbler-ai/8186" class="inline-onebox">Quibbler: AI 코딩 에이전트가 작성한 코드를 리뷰하는 자동 코드 리뷰 에이전트</a></p>
+</li>
+<li>
+<p><a href="https://discuss.pytorch.kr/t/voltagent-claude-skills-awesome-claude-skills/8122" class="inline-onebox">VoltAgent가 정리한 유용한 Claude Skills 모음집 (awesome-claude-skills)</a></p>
+</li>
+<li>
+<p><a href="https://discuss.pytorch.kr/t/mobile-use-android-ios-ai-agent/7535" class="inline-onebox">mobile-use: 자연어로 Android 및 iOS 단말기를 조작하는 오픈소스 AI Agent</a></p>
+</li>
+</ul>
+<p><br><br></p>
+<hr>
+<p><em>이 글은 GPT 모델로 정리한 글을 바탕으로 한 것으로, 원문의 내용 또는 의도와 다르게 정리된 내용이 있을 수 있습니다. 관심있는 내용이시라면 원문도 함께 참고해주세요! 읽으시면서 어색하거나 잘못된 내용을 발견하시면 덧글로 알려주시기를 부탁드립니다.</em> <img src="https://discuss.pytorch.kr/images/emoji/fluentui/hugs.png?v=15" title=":hugs:" class="emoji" alt=":hugs:" loading="lazy" width="20" height="20"></p>
+<p><a href="https://pytorch.kr/"><img src="https://discuss.pytorch.kr/uploads/default/original/2X/f/fa98c2196c22febe7475e503792febf39ba7a0de.svg?v=15" title=":pytorch:" class="emoji emoji-custom" alt=":pytorch:" loading="lazy" width="20" height="20">파이토치 한국 사용자 모임<img src="https://discuss.pytorch.kr/images/emoji/fluentui/south_korea.png?v=15" title=":south_korea:" class="emoji" alt=":south_korea:" loading="lazy" width="20" height="20"></a>이 정리한 이 글이 유용하셨나요? <a href="https://discuss.pytorch.kr/signup">회원으로 가입</a>하시면 주요 글들을 이메일<img src="https://discuss.pytorch.kr/images/emoji/fluentui/love_letter.png?v=15" title=":love_letter:" class="emoji" alt=":love_letter:" loading="lazy" width="20" height="20">로 보내드립니다! (기본은 Weekly지만 <a href="https://discuss.pytorch.kr/my/preferences/emails">Daily로 변경도 가능</a>합니다.)</p>
+<p><img src="https://discuss.pytorch.kr/images/emoji/fluentui/wrapped_gift.png?v=15" title=":wrapped_gift:" class="emoji" alt=":wrapped_gift:" loading="lazy" width="20" height="20"> 아래<img src="https://discuss.pytorch.kr/images/emoji/fluentui/down_right_arrow.png?v=15" title=":down_right_arrow:" class="emoji" alt=":down_right_arrow:" loading="lazy" width="20" height="20">쪽에 좋아요<img src="https://discuss.pytorch.kr/images/emoji/fluentui/+1.png?v=15" title=":+1:" class="emoji" alt=":+1:" loading="lazy" width="20" height="20">를 눌러주시면 새로운 소식들을 정리하고 공유하는데 힘이 됩니다~ <img src="https://discuss.pytorch.kr/images/emoji/fluentui/star_struck.png?v=15" title=":star_struck:" class="emoji" alt=":star_struck:" loading="lazy" width="20" height="20"></p>
+            </div>
+
+              <div itemprop="interactionStatistic" itemscope="itemscope" itemtype="http://schema.org/InteractionCounter">
+                  <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+                  <meta itemprop="userInteractionCount" content="1" />
+                <span class='post-likes'>1개의 좋아요</span>
+              </div>
+
+
+            
+
+
+          </div>
+
+    </div>
+
+
+    
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/' itemprop="url">홈 </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/categories' itemprop="url">카테고리 </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/guidelines' itemprop="url">가이드라인 </a>
+        </span>
+      </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://pytorch.kr/coc' itemprop="url">이용약관 </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/privacy' itemprop="url">개인정보 취급방침 </a>
+          </span>
+        </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'><a href="https://www.discourse.org">Discourse</a>를 사용합니다. JavaScript가 활성화된 상태에서 가장 잘 보입니다.</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>
