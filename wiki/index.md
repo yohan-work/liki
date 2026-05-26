@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-05-22
+updated: 2026-05-26
 tags:
   - llm-wiki
   - index
@@ -51,7 +51,7 @@ evidence_level: unsourced
 
 ## MVP / PoC
 
-아직 MVP / PoC 페이지가 없습니다.
+- [[AI 트렌드 레이더 7일 PoC]]
 
 ## 결정
 

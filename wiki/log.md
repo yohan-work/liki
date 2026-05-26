@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-05-22
+updated: 2026-05-26
 tags:
   - llm-wiki
   - log
@@ -167,3 +167,11 @@ evidence_level: unsourced
 - 두 개념을 [[Agentic Workflow]]와 [[Orchestration]]에 연결하고, LLM Wiki 자동화의 모델 선택과 serving pipeline 설계 후보로 기록했다.
 - 변경 영역: [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], source summary 2개, [[LLM Wiki Index]], [[LLM Wiki Overview]].
 - 후속 작업: 필요하면 Hybrid LLM 원 논문과 Triton 공식 문서를 별도 source로 ingest한다.
+
+## [2026-05-26] maintenance | 실행 중심 운영 개선
+
+- [[LLM Wiki Overview]]를 오늘 볼 것, 이번 주 실행 후보, MVP 승격 후보, 근거 보강 후보 중심으로 정리했다.
+- source summary, idea brief, MVP / PoC 템플릿에 후속 라우팅과 7일 실험 운영 항목을 보강했다.
+- [[AI 트렌드 레이더 웹사이트]]를 [[AI 트렌드 레이더 7일 PoC]] 후보로 승격해 성공 기준, 제외 범위, 1주 실험 계획, 중단 조건을 분리했다.
+- 변경 영역: [[LLM Wiki Overview]], [[AI 트렌드 레이더 웹사이트]], [[AI 트렌드 레이더 7일 PoC]], 템플릿, [[LLM Wiki Index]].
+- 후속 작업: 1차 소스 20개 목록과 데이터 스키마를 확정한 뒤 실제 7일 실험을 시작할지 결정한다.

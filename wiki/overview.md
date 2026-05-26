@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-05-22
+updated: 2026-05-26
 tags:
   - llm-wiki
   - overview
@@ -31,25 +31,40 @@ evidence_level: unsourced
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
-- MVP / PoC 페이지: 0개
+- MVP / PoC 페이지: 1개
 - 결정 기록: 0개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 1개
-- 최근 구조 점검: 2026-05-22, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-05-26, lint errors 0 / warnings 0
 
 핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]]와 [[SQLite]]를 추가했고, Hermes Agent는 상세 실무 가이드와 대중적 해설 자료까지 보강했다. 최근 고도화 방향은 다양한 아이디어와 MVP / PoC 후보를 빠르게 선별하고, 회의록과 결정 기록을 실행 자산으로 남기는 것이다.
 
+## 오늘 볼 것
+
+- [[AI 트렌드 레이더 7일 PoC]]의 1차 소스 20개 목록을 만든다.
+- [[AI 트렌드 레이더 웹사이트]]의 데이터 스키마를 확정한다.
+- `inbox/to-ingest.md`를 확인하고 새 자료가 있으면 바로 ingest하지 말고 triage 대상으로 둔다.
+
+## 이번 주 실행 후보
+
+- [[AI 트렌드 레이더 7일 PoC]]: 개인용 AI 트렌드 정적 피드가 실제 재방문 가치와 wiki 재사용 가치를 만드는지 검증한다.
+
+## MVP 승격 후보
+
+- [[AI 트렌드 레이더 웹사이트]]: 7일 PoC 후보로 승격했으며, 실험 결과에 따라 active MVP 또는 보류로 결정한다.
+
+## 근거 보강 후보
+
+- [[LLM Wiki]]
+- [[Codex]]
+- [[Obsidian]]
+- [[Basalt Project]]
+- [[Personal Operating System]]
+
 ## 다음 행동
 
-- `inbox/to-ingest.md`를 확인하고 대기 중인 URL, clipping, 아이디어가 있는지 본다.
-- `inbox/ideas/`의 느슨한 아이디어 중 `wiki/ideas/`로 승격할 만한 후보를 고른다.
-- [[AI 트렌드 레이더 웹사이트]]를 1주 PoC로 승격할지 판단하고, 먼저 소스 20개 목록과 데이터 스키마를 만든다.
-- 이번 주에 1개라도 실험할 수 있는 아이디어를 `wiki/mvps/`의 MVP / PoC 페이지로 승격한다.
-- 회의록이 생기면 결정, 액션 아이템, 연결할 프로젝트를 분리해 `wiki/meetings/`에 요약한다.
-- 되돌아볼 가치가 있는 선택은 `wiki/decisions/`에 결정 기록으로 남긴다.
+- 실행 후보는 한 번에 하나만 MVP / PoC로 관리한다.
 - 좋은 질문이 생기면 일회성 답변으로 끝내지 말고 [[LLM Wiki 운영 흐름]] 기준으로 저장 가치가 있는지 판단한다.
-- [[Basalt Project]]와 [[Personal Operating System]]에 연결할 결정, source, 열린 질문을 분리한다.
-- source-backed로 강화할 seed page 후보를 고른다: [[LLM Wiki]], [[RAG]], [[Skills]], [[Codex]], [[Obsidian]].
 - 여러 source가 쌓인 주제는 단순 요약 대신 비교나 질문 답변으로 승격한다.
 
 ## 반복 루틴

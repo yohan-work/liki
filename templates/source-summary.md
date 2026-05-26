@@ -51,6 +51,16 @@ related_pages: []
 
 ## 내 프로젝트에 주는 시사점
 
+## 후속 라우팅
+
+- concept 강화:
+- tool 강화:
+- comparison 후보:
+- question 후보:
+- idea 후보:
+- mvp 후보:
+- 보류:
+
 ## 검증 필요 주장
 
 ## 관련 페이지
