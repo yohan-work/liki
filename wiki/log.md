@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-26] ingest | OpenAI Realtime 모델 프롬프팅 가이드
+
+- OpenAI Developers 문서 "Using realtime models"를 raw markdown snapshot으로 보존하고 [[OpenAI Realtime Models Prompting Guide]]로 ingest했다.
+- Realtime API를 voice agent, tool orchestration, exact entity capture, confirmation boundary, escalation 설계 관점의 [[Realtime API]] 도구 페이지로 정리했다.
+- [[Agentic Workflow]], [[Orchestration]], [[Human-in-the-loop]]에 realtime voice agent의 tool policy와 human confirmation boundary를 source-backed note로 연결했다.
+- 변경 영역: [[Realtime API]], [[OpenAI Realtime Models Prompting Guide]], [[Agentic Workflow]], [[Orchestration]], [[Human-in-the-loop]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 voice agent 구현 전 model availability, pricing, Realtime 연결 방식, Custom Voices 접근 조건을 공식 문서 기준으로 다시 확인한다.
+
 ## 2026-05-20
 
 - LLM Wiki 프로젝트 구조를 초기화했다.
