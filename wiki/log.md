@@ -15,6 +15,30 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-26] ingest | GeekNews AWS 4년 퇴사 회고
+
+- GeekNews 글 "Amazon Web Services - 4년 그리고 퇴사"를 raw HTML/Markdown snapshot으로 보존하고 [[GeekNews AWS Four Years and Leaving]]으로 ingest했다.
+- GenAI 도입 압력, 고객 중심성 약화, AI 지원 봇 품질 문제, 오픈소스와 사용자 통제권 논점을 source summary로 분리했다.
+- [[Claude Blue]], [[AI Literacy]], [[Human-in-the-loop]]에 AI-native work의 인간 검토, 고객 중심성, 대체 가능성 인식 관련 note를 연결했다.
+- 변경 영역: [[GeekNews AWS Four Years and Leaving]], [[Claude Blue]], [[AI Literacy]], [[Human-in-the-loop]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: AWS 조직 상태나 지원 품질에 관한 일반화는 공식 발표, 독립 보도, 원문 회고를 별도로 대조한다.
+
+## [2026-05-26] ingest | GeekNews Codex 활용 사례 확장 글
+
+- GeekNews 글 "Codex, 활용 사례 모음 대폭 확장"을 raw HTML/Markdown snapshot으로 보존하고 [[GeekNews Codex Use Cases Expansion]]으로 ingest했다.
+- Codex를 coding agent뿐 아니라 업무 context 수집, 검토 가능한 artifact 생성, 승인 기반 action, 반복 자동화, skill/CLI 축적 레이어로 [[Codex]]에 보강했다.
+- [[Agentic Workflow]]와 [[Personal Operating System]]에 Codex use case library가 주는 workflow 설계 시사점을 연결했다.
+- 변경 영역: [[GeekNews Codex Use Cases Expansion]], [[Codex]], [[Agentic Workflow]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 Codex 기능 적용 전 OpenAI 공식 use cases 페이지와 계정별 integration 접근 조건을 재확인한다.
+
+## [2026-05-26] ingest | KAILA AI 리터러시 개념 페이지
+
+- 한국AI리터러시협회(KAILA)의 "AI 리터러시란?" 페이지를 raw HTML snapshot으로 보존하고 [[KAILA AI Literacy Page]]로 ingest했다.
+- AI 리터러시를 올바른 이해, 비판적 사고, 윤리적 활용, 창의적 활용의 조합으로 정리해 [[AI Literacy]] concept page를 추가했다.
+- [[LLM Wiki]], [[Human-in-the-loop]], [[Agentic Workflow]]와 연결해 개인 AI workflow의 판단 기준으로 활용할 수 있는 지점을 기록했다.
+- 변경 영역: [[AI Literacy]], [[KAILA AI Literacy Page]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 협회 자체 소개가 필요하면 `/KAILA` 페이지를 별도 source로 ingest하고, 국내외 교육 프로그램 관련 주장은 각 기관 공식 자료로 검증한다.
+
 ## [2026-05-26] ingest | OpenAI Realtime 모델 프롬프팅 가이드
 
 - OpenAI Developers 문서 "Using realtime models"를 raw markdown snapshot으로 보존하고 [[OpenAI Realtime Models Prompting Guide]]로 ingest했다.

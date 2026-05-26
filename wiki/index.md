@@ -31,6 +31,7 @@ evidence_level: unsourced
 - [[LLM Hallucination]]
 - [[Hybrid LLM Query Routing]]
 - [[ML Model Serving Pipeline]]
+- [[AI Literacy]]
 
 ## 프로젝트
 
@@ -112,6 +113,9 @@ evidence_level: unsourced
 - [[WikiDocs SQLite Evolution Article]]
 - [[Moonlight Hybrid LLM Query Routing Review]]
 - [[Velog ML Model Serving Pipeline Article]]
+- [[KAILA AI Literacy Page]]
+- [[GeekNews Codex Use Cases Expansion]]
+- [[GeekNews AWS Four Years and Leaving]]
 
 ## 리포트
 

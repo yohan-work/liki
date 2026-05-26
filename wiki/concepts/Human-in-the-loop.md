@@ -14,6 +14,7 @@ related:
   - "[[Ralph Wiggum Loop]]"
   - "[[Realtime API]]"
   - "[[OpenAI Realtime Models Prompting Guide]]"
+  - "[[GeekNews AWS Four Years and Leaving]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -36,12 +37,14 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[Brunch Claude Blue Article]]은 AI-generated output이 인간이 현실적으로 검토할 수 있는 양을 초과할 수 있다는 위험을 제기한다.
 - [[AI Hero Ralph Wiggum Article]]은 HITL 모드를 prompt refinement와 risky task에, AFK 모드를 낮은 위험의 반복 작업에 더 적합한 방식으로 구분한다.
 - [[OpenAI Realtime Models Prompting Guide]]는 write action, 결제, 취소, 계정 변경, irreversible action처럼 영향이 큰 tool call 전에 사용자의 명시적 확인을 받도록 prompt boundary를 세우는 방식을 제시한다.
+- [[GeekNews AWS Four Years and Leaving]]은 AI 지원 봇이나 AI 생성 답변이 고객 지원에서 사람의 판단을 대체할 때 품질과 신뢰가 악화될 수 있다는 일화적 신호를 제공한다.
 
 ## 관련 자료
 
 - [[Brunch Claude Blue Article]]
 - [[AI Hero Ralph Wiggum Article]]
 - [[OpenAI Realtime Models Prompting Guide]]
+- [[GeekNews AWS Four Years and Leaving]]
 
 ## 열린 질문
 

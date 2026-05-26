@@ -3,7 +3,7 @@ title: Claude Blue
 type: concept
 status: active
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-05-26
 tags:
   - claude-blue
   - ai-native-work
@@ -14,6 +14,7 @@ related:
   - "[[Orchestration]]"
   - "[[Human-in-the-loop]]"
   - "[[Claude Code]]"
+  - "[[GeekNews AWS Four Years and Leaving]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -35,10 +36,12 @@ Claude Blue는 한 Brunch 글에서 제안한 표현으로, LLM agent가 지식 
 - 관리되지 않은 agentic workflow는 인프라, 검토, 책임 소재의 위험을 키울 수 있다.
 - 기술 최전선에 가까운 사람도 대체감을 느낄 수 있다.
 - 많은 생산 업무가 자동화되더라도 관계 형성과 신뢰는 여전히 희소한 자산일 수 있다.
+- [[GeekNews AWS Four Years and Leaving]]은 GenAI 도입 압력과 인력의 대체 가능성 인식이 고객 중심성, 조직 지식, 일의 의미를 약화시킬 수 있다는 일화적 사례를 제공한다.
 
 ## 관련 자료
 
 - [[Brunch Claude Blue Article]]
+- [[GeekNews AWS Four Years and Leaving]]
 
 ## 관련 개념
 
