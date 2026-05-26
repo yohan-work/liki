@@ -35,6 +35,7 @@ evidence_level: unsourced
 - [[Fine-tuning]]
 - [[BYOK]]
 - [[Forward Deployed Engineer]]
+- [[Codex Harness]]
 
 ## 프로젝트
 
@@ -132,6 +133,7 @@ evidence_level: unsourced
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
 - [[DEVOCEAN Palantir FDE Article]]
 - [[PyTorchKR E2E Test Agent Article]]
+- [[OpenAI Codex Harness Article]]
 
 ## 리포트
 

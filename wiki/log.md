@@ -15,6 +15,15 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-26] ingest | OpenAI Codex Harness 공식 글
+
+- OpenAI 공식 글 "Codex 하네스 활용하기: OpenAI가 App Server를 구축한 방법"을 raw markdown extraction snapshot으로 보존하고 [[OpenAI Codex Harness Article]]로 ingest했다.
+- `curl`은 OpenAI 페이지에서 403을 반환해 HTML 원본은 저장하지 못했으며, source summary에 이 수집 한계를 명시했다.
+- [[Codex Harness]] concept page를 추가하고 Codex App Server, Codex core, thread/turn/item, approval request, diff artifact, bidirectional JSON-RPC event stream을 정리했다.
+- [[Codex]], [[Agentic Workflow]], [[Personal Operating System]]에 Codex를 shared harness와 persistent agent runtime으로 보는 관점을 보강했다.
+- 변경 영역: [[Codex Harness]], [[OpenAI Codex Harness Article]], [[Codex]], [[Agentic Workflow]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Codex App Server, Codex Exec, Codex SDK developer docs와 Codex CLI repository를 별도 source로 확인한다.
+
 ## [2026-05-26] ingest | PyTorchKR E2E Test Agent 소개 글
 
 - PyTorchKR Discuss 글 "E2E Test Agent: 자연어로 작성한 테스트 시나리오를 기반으로 테스트를 수행하는 AI E2E 테스트 프레임워크"를 raw HTML snapshot으로 보존하고 [[PyTorchKR E2E Test Agent Article]]로 ingest했다.

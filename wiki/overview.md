@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 32개
-- 개념 페이지: 18개
+- 자료 요약: 33개
+- 개념 페이지: 19개
 - 도구 페이지: 14개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -37,7 +37,7 @@ evidence_level: unsourced
 - 재사용 질문 답변: 1개
 - 최근 구조 점검: 2026-05-26, lint errors 0 / warnings 0
 
-핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Fine-tuning]], [[AI Literacy]], [[BYOK]], [[Forward Deployed Engineer]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]], [[SQLite]], [[Realtime API]], [[Hugging Face]], [[Hugging Face Datasets]], [[E2E Test Agent]]를 추가했고, [[Hermes Agent]]에는 공식 사이트와 실무 시작 글을 근거로 persistent agent, skills, memory, cron, messaging gateway, sandbox, 비용/보안 체크포인트를 보강했다. [[E2E Test Agent]]는 자연어 테스트 시나리오, Playwright MCP, QA artifact 관점의 agent workflow 후보로 기록했다. [[Fine-tuning]]에는 Hugging Face Transformers 공식 training workflow와 LLM Course 기반 실습 흐름을 보강했다. Codex는 coding agent에서 업무 context 수집, 검토 가능한 산출물, 승인 기반 action, 반복 자동화를 다루는 운영 레이어로도 보강했다. 최근 고도화 방향은 다양한 아이디어와 MVP / PoC 후보를 빠르게 선별하고, 회의록과 결정 기록을 실행 자산으로 남기는 것이다.
+핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Codex Harness]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Fine-tuning]], [[AI Literacy]], [[BYOK]], [[Forward Deployed Engineer]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]], [[SQLite]], [[Realtime API]], [[Hugging Face]], [[Hugging Face Datasets]], [[E2E Test Agent]]를 추가했고, [[Hermes Agent]]에는 공식 사이트와 실무 시작 글을 근거로 persistent agent, skills, memory, cron, messaging gateway, sandbox, 비용/보안 체크포인트를 보강했다. [[E2E Test Agent]]는 자연어 테스트 시나리오, Playwright MCP, QA artifact 관점의 agent workflow 후보로 기록했다. [[Codex Harness]]에는 OpenAI 공식 글을 근거로 thread, turn, item, approval request, diff artifact, App Server event stream 관점을 추가했다. [[Fine-tuning]]에는 Hugging Face Transformers 공식 training workflow와 LLM Course 기반 실습 흐름을 보강했다. Codex는 coding agent에서 업무 context 수집, 검토 가능한 산출물, 승인 기반 action, 반복 자동화를 다루는 운영 레이어로도 보강했다. 최근 고도화 방향은 다양한 아이디어와 MVP / PoC 후보를 빠르게 선별하고, 회의록과 결정 기록을 실행 자산으로 남기는 것이다.
 
 ## 오늘 볼 것
 
