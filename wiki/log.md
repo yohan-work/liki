@@ -15,6 +15,47 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-26] ingest | WikiDocs BYOK AI 도구 비용 구조 글
+
+- WikiDocs 블로그 글 "BYOK: AI 도구의 비용 구조를 뒤집는 조용한 혁명"을 raw HTML snapshot으로 보존하고 [[WikiDocs Jaehong BYOK AI Tools Article]]로 ingest했다.
+- 로컬 raw snapshot은 Cloudflare challenge HTML이므로, source summary에 본문은 브라우징 경로로 확인했다는 수집 한계를 명시했다.
+- [[BYOK]] concept page를 추가하고 [[Codex]], [[Personal Operating System]], [[Hybrid LLM Query Routing]]에 모델 비용, provider key, routing/failover, workflow 가치 분리 관점을 연결했다.
+- 변경 영역: [[BYOK]], [[WikiDocs Jaehong BYOK AI Tools Article]], [[Codex]], [[Personal Operating System]], [[Hybrid LLM Query Routing]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: VS Code, GitHub Copilot Enterprise, JetBrains, OpenRouter의 BYOK 지원 범위와 가격 정책은 각 공식 발표로 재확인한다.
+
+## [2026-05-26] ingest | Hugging Face Datasets Arrow 공식 문서
+
+- Hugging Face Datasets 공식 문서 "Datasets Arrow"를 raw HTML snapshot으로 보존하고 [[Hugging Face Datasets Arrow Guide]]로 ingest했다.
+- Apache Arrow의 columnar layout, zero-copy read, ML tool hand-off, Datasets local cache, memory-mapping, iteration 성능 주장을 source summary로 정리했다.
+- [[Hugging Face Datasets]] 도구 페이지를 추가하고 [[Hugging Face]], [[Fine-tuning]]에 dataset preprocessing과 Arrow cache 관점을 연결했다.
+- 변경 영역: [[Hugging Face Datasets Arrow Guide]], [[Hugging Face Datasets]], [[Hugging Face]], [[Fine-tuning]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 dataset preprocessing PoC 전 설치된 `datasets` 버전, cache 위치, memory usage, streaming 필요 여부를 확인한다.
+
+## [2026-05-26] ingest | Velog Hugging Face LLM Course Chapter 3 번역 정리
+
+- Velog 글 "Hugging Face LLM Course Chapter 3: Fine-Tuning A Pretrained Model - 번역/정리"를 raw HTML snapshot으로 보존하고 [[Velog Hugging Face LLM Course Chapter 3 Fine-tuning Translation]]으로 ingest했다.
+- Hugging Face LLM Course 기반 dataset loading, tokenization, `Dataset.map()`, dynamic padding, `Trainer`, `compute_metrics`, PyTorch loop, Accelerate, learning curve 해석을 source summary로 정리했다.
+- [[Fine-tuning]]에 learning curve monitoring과 end-to-end 실험 흐름 관점을 보강하고, [[Hugging Face]] 관련 자료에 연결했다.
+- 변경 영역: [[Velog Hugging Face LLM Course Chapter 3 Fine-tuning Translation]], [[Fine-tuning]], [[Hugging Face]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 실습 전 원본 Hugging Face LLM Course와 현재 Transformers/Datasets/Accelerate/Evaluate 문서로 API를 재확인한다.
+
+## [2026-05-26] ingest | Hugging Face Transformers fine-tuning 공식 문서
+
+- Hugging Face Transformers 한국어 공식 문서 "사전 학습된 모델 미세 튜닝하기"를 raw HTML snapshot으로 보존하고 [[Hugging Face Transformers Training Guide]]로 ingest했다.
+- 문서의 dataset 준비, tokenization, `TrainingArguments`/`Trainer`, 기본 PyTorch `DataLoader`/optimizer/scheduler/training loop, 평가 metric 흐름을 source summary로 정리했다.
+- [[Hugging Face]]와 [[Fine-tuning]]에 공식 training workflow를 보강했다.
+- 변경 영역: [[Hugging Face Transformers Training Guide]], [[Hugging Face]], [[Fine-tuning]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 fine-tuning 코드 실행 전 Transformers 현재 버전, 영어 원문, PyTorch/evaluate API를 다시 확인한다.
+
+## [2026-05-26] ingest | seungbeomdo Hugging Face 사용법 2편
+
+- Tistory 글 "Hugging Face 사용법 (1) pipeline 함수 사용하기 및 모델 객체 로컬에 다운 받기"와 "Hugging Face 사용법 (2) Fine-tuning"을 raw HTML snapshot으로 보존했다.
+- 첫 글은 [[Seungbeomdo Hugging Face Pipeline Article]]로 ingest하고 Transformers `pipeline`, 로컬 모델 경로, zero-shot classification 흐름을 정리했다.
+- 두 번째 글은 [[Seungbeomdo Hugging Face Fine-tuning Article]]로 ingest하고 freezing, feature extraction, end-to-end fine-tuning, `Trainer` 흐름을 [[Fine-tuning]] concept page로 정리했다.
+- [[Hugging Face]] 도구 페이지를 추가하고 [[Hermes 4.3 36B]], [[ML Model Serving Pipeline]]에 연결했다.
+- 변경 영역: [[Hugging Face]], [[Fine-tuning]], [[ML Model Serving Pipeline]], [[Hermes 4.3 36B]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 코드 실행 전 Hugging Face Transformers, Datasets, PyTorch 공식 문서와 현재 버전 기준으로 API를 재확인한다.
+
 ## [2026-05-26] ingest | GeekNews AWS 4년 퇴사 회고
 
 - GeekNews 글 "Amazon Web Services - 4년 그리고 퇴사"를 raw HTML/Markdown snapshot으로 보존하고 [[GeekNews AWS Four Years and Leaving]]으로 ingest했다.

@@ -14,6 +14,7 @@ tags:
 related:
   - "[[Agentic Workflow]]"
   - "[[Orchestration]]"
+  - "[[Hugging Face]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -56,6 +57,7 @@ Hermes 4.3 36B는 NousResearch가 Hugging Face에 공개한 36B급 open-weight L
 
 - [[Agentic Workflow]]
 - [[Orchestration]]
+- [[Hugging Face]]
 
 ## 관련 자료
 

@@ -32,6 +32,8 @@ evidence_level: unsourced
 - [[Hybrid LLM Query Routing]]
 - [[ML Model Serving Pipeline]]
 - [[AI Literacy]]
+- [[Fine-tuning]]
+- [[BYOK]]
 
 ## 프로젝트
 
@@ -79,6 +81,8 @@ evidence_level: unsourced
 - [[Content Marketing Team]]
 - [[Microsoft Clarity]]
 - [[SQLite]]
+- [[Hugging Face]]
+- [[Hugging Face Datasets]]
 
 ## 인물
 
@@ -116,6 +120,12 @@ evidence_level: unsourced
 - [[KAILA AI Literacy Page]]
 - [[GeekNews Codex Use Cases Expansion]]
 - [[GeekNews AWS Four Years and Leaving]]
+- [[Seungbeomdo Hugging Face Pipeline Article]]
+- [[Seungbeomdo Hugging Face Fine-tuning Article]]
+- [[Hugging Face Transformers Training Guide]]
+- [[Velog Hugging Face LLM Course Chapter 3 Fine-tuning Translation]]
+- [[Hugging Face Datasets Arrow Guide]]
+- [[WikiDocs Jaehong BYOK AI Tools Article]]
 
 ## 리포트
 

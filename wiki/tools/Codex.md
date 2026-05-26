@@ -12,6 +12,8 @@ related:
   - "[[Skills]]"
   - "[[Agentic Workflow]]"
   - "[[GeekNews Codex Use Cases Expansion]]"
+  - "[[BYOK]]"
+  - "[[WikiDocs Jaehong BYOK AI Tools Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -32,6 +34,7 @@ evidence_level: source-backed
 - 유용한 query answer를 보존한다.
 - PR 리뷰, 버그 트리아지, 문서 최신화, 데이터 정리, 회의 후속 작업, 운영 워크플로처럼 검토 가능한 artifact가 필요한 반복 업무를 처리한다.
 - 반복 workflow를 skill이나 agent-friendly CLI로 축적한다.
+- [[BYOK]] 관점에서는 모델 호출 비용과 Codex가 제공하는 workflow/artifact 가치를 분리해 평가한다.
 
 ## 운영 패턴
 
@@ -50,8 +53,10 @@ evidence_level: source-backed
 ## 관련 자료
 
 - [[GeekNews Codex Use Cases Expansion]]
+- [[WikiDocs Jaehong BYOK AI Tools Article]]
 
 ## 열린 질문
 
 - 어떤 작업을 scripted workflow로 만들어야 하는가?
 - LLM Wiki 운영 중 어떤 반복 작업을 reusable skill로 분리할 것인가?
+- BYOK 환경에서 Codex 사용량과 비용을 어떤 단위로 추적해야 하는가?
