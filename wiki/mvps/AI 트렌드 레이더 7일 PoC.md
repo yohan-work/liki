@@ -1,9 +1,9 @@
 ---
 title: AI 트렌드 레이더 7일 PoC
 type: mvp
-status: draft
+status: parked
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-05-27
 tags:
   - ai-news
   - curation
@@ -14,11 +14,19 @@ related:
   - "[[LLM Wiki]]"
   - "[[Agentic Workflow]]"
   - "[[Claude Code]]"
+  - "[[AI 트렌드 레이더 아이디어 대기 결정]]"
+  - "[[아이디어 개선 루프]]"
 sensitivity: private
 evidence_level: unsourced
 ---
 
 # AI 트렌드 레이더 7일 PoC
+
+## 현재 판단
+
+- 상태: parked
+- 판단 이유: 지금 바로 실행하지 않는다. 특정 트렌드 피드 아이템을 기준으로 위키 개선을 진행하지는 않지만, 나중에 source discovery 문제가 실제 병목으로 확인되면 다시 검토할 수 있다.
+- 다시 볼 조건: 트렌드 추적 자체가 반복적인 실제 업무 병목으로 확인되고, 범용 아이디어 개선 루프의 source discovery 하위 기능으로 재정의될 때 검토한다.
 
 ## 목표
 
@@ -99,6 +107,7 @@ evidence_level: unsourced
 ## 결정 로그
 
 - 2026-05-26: [[AI 트렌드 레이더 웹사이트]]를 7일 PoC 후보로 승격했다. 아직 구현 전이므로 `status: draft`로 둔다.
+- 2026-05-27: [[AI 트렌드 레이더 아이디어 대기 결정]]에 따라 지금은 실행하지 않는 대기 후보로 판단하고 `status: parked`로 변경했다.
 
 ## 위험과 모르는 것
 
@@ -109,6 +118,5 @@ evidence_level: unsourced
 
 ## 다음 작업
 
-- 1차 소스 20개 목록을 만든다.
-- 데이터 스키마를 확정한다.
-- 카카오톡 공유 링크를 수동으로 붙여 넣는 최소 입력 방식을 정한다.
+- 지금은 실행하지 않고 대기 상태로 둔다.
+- [[아이디어 개선 루프]] 기준으로 앞으로는 특정 아이템을 MVP로 승격하기 전에 방향성 적합성과 보류 조건을 먼저 확인한다.

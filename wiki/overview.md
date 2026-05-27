@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-05-26
+updated: 2026-05-27
 tags:
   - llm-wiki
   - overview
@@ -26,32 +26,37 @@ evidence_level: unsourced
 ## 현재 상태
 
 - 자료 요약: 33개
-- 개념 페이지: 19개
+- 개념 페이지: 20개
 - 도구 페이지: 14개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
 - MVP / PoC 페이지: 1개
-- 결정 기록: 0개
+- 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 1개
 - 최근 구조 점검: 2026-05-26, lint errors 0 / warnings 0
 
-핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Codex Harness]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Fine-tuning]], [[AI Literacy]], [[BYOK]], [[Forward Deployed Engineer]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]], [[SQLite]], [[Realtime API]], [[Hugging Face]], [[Hugging Face Datasets]], [[E2E Test Agent]]를 추가했고, [[Hermes Agent]]에는 공식 사이트와 실무 시작 글을 근거로 persistent agent, skills, memory, cron, messaging gateway, sandbox, 비용/보안 체크포인트를 보강했다. [[E2E Test Agent]]는 자연어 테스트 시나리오, Playwright MCP, QA artifact 관점의 agent workflow 후보로 기록했다. [[Codex Harness]]에는 OpenAI 공식 글을 근거로 thread, turn, item, approval request, diff artifact, App Server event stream 관점을 추가했다. [[Fine-tuning]]에는 Hugging Face Transformers 공식 training workflow와 LLM Course 기반 실습 흐름을 보강했다. Codex는 coding agent에서 업무 context 수집, 검토 가능한 산출물, 승인 기반 action, 반복 자동화를 다루는 운영 레이어로도 보강했다. 최근 고도화 방향은 다양한 아이디어와 MVP / PoC 후보를 빠르게 선별하고, 회의록과 결정 기록을 실행 자산으로 남기는 것이다.
+핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Codex Harness]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Fine-tuning]], [[AI Literacy]], [[BYOK]], [[Forward Deployed Engineer]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]], [[SQLite]], [[Realtime API]], [[Hugging Face]], [[Hugging Face Datasets]], [[E2E Test Agent]]를 추가했다. 현재 개선 방향은 특정 아이템을 기준으로 위키를 확장하는 것이 아니라, [[아이디어 개선 루프]]를 통해 다양한 일상/업무/개인 아이디어를 더 나은 문제정의, 사용 맥락, 검증 질문, 보류 조건으로 다듬는 것이다. [[AI 트렌드 레이더 웹사이트]]와 [[AI 트렌드 레이더 7일 PoC]]는 [[AI 트렌드 레이더 아이디어 대기 결정]]에 따라 지금은 실행하지 않는 대기 후보로 보존한다.
 
 ## 오늘 볼 것
 
-- [[AI 트렌드 레이더 7일 PoC]]의 1차 소스 20개 목록을 만든다.
-- [[AI 트렌드 레이더 웹사이트]]의 데이터 스키마를 확정한다.
+- 새 아이디어를 바로 MVP로 승격하지 말고 [[아이디어 개선 루프]] 기준으로 원형 메모, 문제, 방향성 적합성, 보류 조건을 먼저 분리한다.
+- `templates/idea-brief.md`의 개선 질문을 실제 아이디어 1개에 적용해 정보 밀도가 과한지 확인한다.
 - `inbox/to-ingest.md`를 확인하고 새 자료가 있으면 바로 ingest하지 말고 triage 대상으로 둔다.
 
 ## 이번 주 실행 후보
 
-- [[AI 트렌드 레이더 7일 PoC]]: 개인용 AI 트렌드 정적 피드가 실제 재방문 가치와 wiki 재사용 가치를 만드는지 검증한다.
+- [[아이디어 개선 루프]]: 특정 아이템이 아니라 범용 아이디어 개선 절차를 정비한다.
 
 ## MVP 승격 후보
 
-- [[AI 트렌드 레이더 웹사이트]]: 7일 PoC 후보로 승격했으며, 실험 결과에 따라 active MVP 또는 보류로 결정한다.
+- 없음. 새 아이디어는 먼저 `draft` 또는 `refining` 상태에서 문제정의와 방향성 적합성을 확인한다.
+
+## 대기 중인 실행 후보
+
+- [[AI 트렌드 레이더 웹사이트]]
+- [[AI 트렌드 레이더 7일 PoC]]
 
 ## 근거 보강 후보
 
@@ -63,14 +68,16 @@ evidence_level: unsourced
 
 ## 다음 행동
 
-- 실행 후보는 한 번에 하나만 MVP / PoC로 관리한다.
+- 실행 후보는 한 번에 하나만 MVP / PoC로 관리하되, 승격 전에는 방향성 적합성과 보류 조건을 먼저 확인한다.
+- 대기 중인 아이디어도 삭제하지 않고 왜 지금은 아닌지, 다시 볼 조건이 무엇인지 남긴다.
 - 좋은 질문이 생기면 일회성 답변으로 끝내지 말고 [[LLM Wiki 운영 흐름]] 기준으로 저장 가치가 있는지 판단한다.
 - 여러 source가 쌓인 주제는 단순 요약 대신 비교나 질문 답변으로 승격한다.
 
 ## 반복 루틴
 
 - 새 자료 처리: 필요하면 `node scripts/new-source.ts <raw-path-or-url>`로 triage 초안을 먼저 보고, raw 보존, source summary 작성, 관련 concept/project/tool 갱신, index와 log 업데이트.
-- 아이디어 처리: 문제, 대상 사용자, 해결 가설, 빠른 검증 방법을 분리하고 실행 가치가 있으면 MVP / PoC로 승격한다.
+- 아이디어 처리: 원형 메모, 문제, 내가 끌린 이유, 방향성 적합성, 대상 사용자, 사용 맥락, 해결 가설, 보류 조건을 먼저 분리한다.
+- 아이디어 개선: 특정 아이템보다 더 일반화한 문제와 더 작게 줄인 형태를 함께 기록한다.
 - MVP / PoC 처리: 성공 기준과 1주 실험 계획을 먼저 쓰고, 다음 작업이 없으면 active 상태로 두지 않는다.
 - 회의록 처리: 핵심 논의보다 결정과 액션 아이템을 우선 추출하고 관련 project, mvp, idea에 연결한다.
 - 결정 처리: 선택지와 포기한 대안을 남겨 같은 판단을 반복하지 않게 한다.

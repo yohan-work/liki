@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-05-26
+updated: 2026-05-27
 tags:
   - llm-wiki
   - index
@@ -36,6 +36,7 @@ evidence_level: unsourced
 - [[BYOK]]
 - [[Forward Deployed Engineer]]
 - [[Codex Harness]]
+- [[아이디어 개선 루프]]
 
 ## 프로젝트
 
@@ -60,7 +61,7 @@ evidence_level: unsourced
 
 ## 결정
 
-아직 결정 기록 페이지가 없습니다.
+- [[AI 트렌드 레이더 아이디어 대기 결정]]
 
 ## 회의록
 

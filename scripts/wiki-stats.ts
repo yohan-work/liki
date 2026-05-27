@@ -64,7 +64,8 @@ function latestLogDate() {
   const content = fs.readFileSync(LOG_PATH, "utf8");
   const matches = [...content.matchAll(/^## \[(\d{4}-\d{2}-\d{2})\]/gm)];
   if (matches.length === 0) return "";
-  return matches[matches.length - 1][1];
+  const dates = matches.map((match) => match[1]).sort();
+  return dates[dates.length - 1];
 }
 
 function buildStats(pages) {

@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-05-26
+updated: 2026-05-27
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-05-27] decision | AI 트렌드 레이더 아이디어 대기와 범용 아이디어 개선 전환
+
+- 사용자의 방향 전환에 따라 [[AI 트렌드 레이더 웹사이트]]와 [[AI 트렌드 레이더 7일 PoC]]를 `parked` 상태로 변경했다.
+- [[AI 트렌드 레이더 아이디어 대기 결정]]을 추가해 특정 트렌드 피드 아이템을 지금은 실행하지 않는 이유와 다시 볼 조건을 남겼다.
+- [[아이디어 개선 루프]] concept page를 추가하고, `templates/idea-brief.md`를 원형 메모, 방향성 적합성, 사용 맥락, 더 일반화한 문제, 더 작게 줄인 형태, 보류/기각 조건을 다루도록 보강했다.
+- 변경 영역: [[아이디어 개선 루프]], [[AI 트렌드 레이더 아이디어 대기 결정]], [[AI 트렌드 레이더 웹사이트]], [[AI 트렌드 레이더 7일 PoC]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 새 아이디어 1개를 [[아이디어 개선 루프]] 기준으로 정리해 템플릿의 부담과 실제 개선 효과를 확인한다.
 
 ## [2026-05-26] ingest | OpenAI Codex Harness 공식 글
 
