@@ -28,6 +28,7 @@ evidence_level: unsourced
 - [[Ralph Wiggum Loop]]
 - [[MCP Remote SSE]]
 - [[iOS WebKit React onBlur Issue]]
+- [[React Effect Naming]]
 - [[LLM Hallucination]]
 - [[Hybrid LLM Query Routing]]
 - [[ML Model Serving Pipeline]]
@@ -135,6 +136,7 @@ evidence_level: unsourced
 - [[DEVOCEAN Palantir FDE Article]]
 - [[PyTorchKR E2E Test Agent Article]]
 - [[OpenAI Codex Harness Article]]
+- [[Velog useEffect Naming Article]]
 
 ## 리포트
 

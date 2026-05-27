@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-27] ingest | Velog useEffect 함수 이름 붙이기 글
+
+- Velog 번역 글 "[번역] useEffect 함수에 이름 붙이기, 절대 후회 없을 선택"을 raw HTML snapshot으로 보존하고 [[Velog useEffect Naming Article]]로 ingest했다.
+- [[React Effect Naming]] concept page를 추가하고 `useEffect` callback에 기명 함수 표현식을 사용해 의도, 책임, 디버깅 단서를 드러내는 패턴을 정리했다.
+- AI 생성 React 코드 리뷰에서 "이 이펙트에 이름을 붙이면 무엇인가?"를 책임 분리와 불필요한 이펙트 탐지 질문으로 쓸 수 있음을 기록했다.
+- 변경 영역: [[React Effect Naming]], [[Velog useEffect Naming Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: React 공식 "You Might Not Need an Effect", 원문 Dan Neciu 글, Sentry/DevTools에서 기명 함수 표시가 유지되는 조건을 별도 source로 검증한다.
+
 ## [2026-05-27] decision | AI 트렌드 레이더 아이디어 대기와 범용 아이디어 개선 전환
 
 - 사용자의 방향 전환에 따라 [[AI 트렌드 레이더 웹사이트]]와 [[AI 트렌드 레이더 7일 PoC]]를 `parked` 상태로 변경했다.

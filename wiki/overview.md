@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 33개
-- 개념 페이지: 20개
+- 자료 요약: 34개
+- 개념 페이지: 21개
 - 도구 페이지: 14개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -35,9 +35,9 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 1개
-- 최근 구조 점검: 2026-05-26, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-05-27, lint errors 0 / warnings 0
 
-핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Codex Harness]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Fine-tuning]], [[AI Literacy]], [[BYOK]], [[Forward Deployed Engineer]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]], [[SQLite]], [[Realtime API]], [[Hugging Face]], [[Hugging Face Datasets]], [[E2E Test Agent]]를 추가했다. 현재 개선 방향은 특정 아이템을 기준으로 위키를 확장하는 것이 아니라, [[아이디어 개선 루프]]를 통해 다양한 일상/업무/개인 아이디어를 더 나은 문제정의, 사용 맥락, 검증 질문, 보류 조건으로 다듬는 것이다. [[AI 트렌드 레이더 웹사이트]]와 [[AI 트렌드 레이더 7일 PoC]]는 [[AI 트렌드 레이더 아이디어 대기 결정]]에 따라 지금은 실행하지 않는 대기 후보로 보존한다.
+핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Codex Harness]], [[Claude Code]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Fine-tuning]], [[AI Literacy]], [[BYOK]], [[Forward Deployed Engineer]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]], [[SQLite]], [[Realtime API]], [[Hugging Face]], [[Hugging Face Datasets]], [[E2E Test Agent]]를 추가했고, 프론트엔드 코드 리뷰 reference로 [[React Effect Naming]]을 추가했다. 현재 개선 방향은 특정 아이템을 기준으로 위키를 확장하는 것이 아니라, [[아이디어 개선 루프]]를 통해 다양한 일상/업무/개인 아이디어를 더 나은 문제정의, 사용 맥락, 검증 질문, 보류 조건으로 다듬는 것이다. [[AI 트렌드 레이더 웹사이트]]와 [[AI 트렌드 레이더 7일 PoC]]는 [[AI 트렌드 레이더 아이디어 대기 결정]]에 따라 지금은 실행하지 않는 대기 후보로 보존한다.
 
 ## 오늘 볼 것
 
@@ -65,6 +65,7 @@ evidence_level: unsourced
 - [[Obsidian]]
 - [[Basalt Project]]
 - [[Personal Operating System]]
+- [[React Effect Naming]]
 
 ## 다음 행동
 
