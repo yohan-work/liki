@@ -3,7 +3,7 @@ title: Orchestration
 type: concept
 status: seed
 created: 2026-05-20
-updated: 2026-05-26
+updated: 2026-05-29
 tags:
   - orchestration
   - agents
@@ -15,6 +15,8 @@ related:
   - "[[MCP Remote SSE]]"
   - "[[Realtime API]]"
   - "[[OpenAI Realtime Models Prompting Guide]]"
+  - "[[Claude Opus 4.8]]"
+  - "[[Anthropic Claude Opus 4.8 Announcement]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -38,6 +40,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[AI Hero Ralph Wiggum Article]]은 orchestration을 task source, progress state, feedback loop, sandbox, cost control, output target을 조합하는 loop design 문제로 다룬다.
 - [[MCP Remote SSE]]는 tool server와 LLM client를 분리하는 connectivity pattern으로, orchestration의 infrastructure layer에 해당한다.
 - [[OpenAI Realtime Models Prompting Guide]]는 realtime voice agent에서 tool availability, tool-call eagerness, preamble, failure recovery, dynamic conversation flow, escalation 조건을 함께 조율해야 한다고 설명한다.
+- [[Anthropic Claude Opus 4.8 Announcement]]은 Claude Code dynamic workflows, effort control, Messages API의 system entry 갱신을 통해 orchestration이 agent 실행 중 effort, permission, token budget, environment context를 조율하는 문제임을 보여준다.
 
 ## 관련 자료
 
@@ -45,6 +48,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[AI Hero Ralph Wiggum Article]]
 - [[Tistory MCP Remote SSE Article]]
 - [[OpenAI Realtime Models Prompting Guide]]
+- [[Anthropic Claude Opus 4.8 Announcement]]
 
 ## 열린 질문
 

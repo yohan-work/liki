@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-05-27
+updated: 2026-05-29
 tags:
   - llm-wiki
   - index
@@ -88,6 +88,7 @@ evidence_level: unsourced
 - [[Hugging Face]]
 - [[Hugging Face Datasets]]
 - [[E2E Test Agent]]
+- [[Claude Opus 4.8]]
 
 ## 인물
 
@@ -137,6 +138,7 @@ evidence_level: unsourced
 - [[PyTorchKR E2E Test Agent Article]]
 - [[OpenAI Codex Harness Article]]
 - [[Velog useEffect Naming Article]]
+- [[Anthropic Claude Opus 4.8 Announcement]]
 
 ## 리포트
 

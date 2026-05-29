@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-05-27
+updated: 2026-05-29
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-05-29] ingest | Anthropic Claude Opus 4.8 발표
+
+- Anthropic 공식 발표 "Introducing Claude Opus 4.8"을 raw HTML snapshot으로 보존하고 [[Anthropic Claude Opus 4.8 Announcement]]로 ingest했다.
+- [[Claude Opus 4.8]] 도구 페이지를 추가하고 Opus 4.7 대비 개선 주장, effort control, fast mode, Claude Code dynamic workflows, Messages API system entry 변경을 정리했다.
+- [[Claude Code]], [[Agentic Workflow]], [[Orchestration]]에 dynamic workflows, effort 조절, 실행 중 permission/token budget/environment context 갱신 관점을 연결했다.
+- 변경 영역: [[Claude Opus 4.8]], [[Anthropic Claude Opus 4.8 Announcement]], [[Claude Code]], [[Agentic Workflow]], [[Orchestration]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Claude Opus 4.8 System Card, Claude Code dynamic workflows 별도 글, Messages API 문서를 각각 source로 확인한다.
 
 ## [2026-05-27] ingest | Velog useEffect 함수 이름 붙이기 글
 
