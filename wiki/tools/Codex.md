@@ -3,7 +3,7 @@ title: Codex
 type: tool
 status: active
 created: 2026-05-20
-updated: 2026-05-26
+updated: 2026-05-29
 tags:
   - codex
   - coding-agent
@@ -16,6 +16,8 @@ related:
   - "[[OpenAI Codex Harness Article]]"
   - "[[BYOK]]"
   - "[[WikiDocs Jaehong BYOK AI Tools Article]]"
+  - "[[oh-my-codex]]"
+  - "[[Digital Bourgeois oh-my-codex Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -30,6 +32,8 @@ evidence_level: source-backed
 
 [[OpenAI Codex Harness Article]]은 Codex의 웹 앱, CLI, IDE 확장 프로그램, macOS 앱이 동일한 [[Codex Harness]]로 구동되며, Codex App Server가 이를 client-friendly bidirectional JSON-RPC API로 노출한다고 설명한다. 이 관점에서 Codex는 단일 UI가 아니라 thread persistence, tool execution, approval request, diff artifact, streaming event를 공유하는 agent runtime이다.
 
+[[Digital Bourgeois oh-my-codex Article]]은 Codex CLI를 실행 엔진으로 두고 그 위에 workflow, role, skill, state management를 얹는 [[oh-my-codex]]를 소개한다. 이 자료는 Codex 자체와 Codex를 매일 쓰기 위한 운영 레이어를 구분해서 볼 필요가 있음을 보여준다.
+
 ## 사용 사례
 
 - raw material을 source summary로 ingest한다.
@@ -39,6 +43,7 @@ evidence_level: source-backed
 - PR 리뷰, 버그 트리아지, 문서 최신화, 데이터 정리, 회의 후속 작업, 운영 워크플로처럼 검토 가능한 artifact가 필요한 반복 업무를 처리한다.
 - 반복 workflow를 skill이나 agent-friendly CLI로 축적한다.
 - [[BYOK]] 관점에서는 모델 호출 비용과 Codex가 제공하는 workflow/artifact 가치를 분리해 평가한다.
+- [[oh-my-codex]] 같은 workflow layer를 참고해 모호한 요청, 계획 승인, 단일 실행, 병렬 실행, 상태 저장의 경계를 분리한다.
 
 ## 운영 패턴
 
@@ -61,6 +66,7 @@ evidence_level: source-backed
 - [[GeekNews Codex Use Cases Expansion]]
 - [[OpenAI Codex Harness Article]]
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
+- [[Digital Bourgeois oh-my-codex Article]]
 
 ## 열린 질문
 
@@ -68,3 +74,4 @@ evidence_level: source-backed
 - LLM Wiki 운영 중 어떤 반복 작업을 reusable skill로 분리할 것인가?
 - BYOK 환경에서 Codex 사용량과 비용을 어떤 단위로 추적해야 하는가?
 - Codex App Server 수준의 event stream을 개인 automation log에 얼마나 반영할 것인가?
+- Codex CLI 위에 별도 workflow layer를 붙일 기준은 작업 규모, 위험도, 반복성 중 무엇인가?

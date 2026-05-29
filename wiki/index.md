@@ -89,6 +89,7 @@ evidence_level: unsourced
 - [[Hugging Face Datasets]]
 - [[E2E Test Agent]]
 - [[Claude Opus 4.8]]
+- [[oh-my-codex]]
 
 ## 인물
 
@@ -139,6 +140,7 @@ evidence_level: unsourced
 - [[OpenAI Codex Harness Article]]
 - [[Velog useEffect Naming Article]]
 - [[Anthropic Claude Opus 4.8 Announcement]]
+- [[Digital Bourgeois oh-my-codex Article]]
 
 ## 리포트
 

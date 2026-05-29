@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-29] ingest | Digital Bourgeois oh-my-codex 소개 글
+
+- Tistory 글 "oh-my-codex(OMX): OpenAI Codex CLI를 위한 워크플로우 레이어 정리"를 raw HTML snapshot으로 보존하고 [[Digital Bourgeois oh-my-codex Article]]로 ingest했다.
+- [[oh-my-codex]] 도구 페이지를 추가하고 Codex CLI 위의 workflow layer, `$deep-interview`, `$ralplan`, `$ralph`, `$team`, `.omx/` state, smoke test 관점을 정리했다.
+- [[Codex]], [[Agentic Workflow]], [[Orchestration]], [[Skills]]에 계획/승인/실행/병렬화/상태 저장을 분리하는 운영 레이어 관점을 연결했다.
+- 변경 영역: [[oh-my-codex]], [[Digital Bourgeois oh-my-codex Article]], [[Codex]], [[Agentic Workflow]], [[Orchestration]], [[Skills]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: `Yeachan-Heo/oh-my-codex` GitHub repository와 npm package를 별도 source로 확인한다.
+
 ## [2026-05-29] ingest | Anthropic Claude Opus 4.8 발표
 
 - Anthropic 공식 발표 "Introducing Claude Opus 4.8"을 raw HTML snapshot으로 보존하고 [[Anthropic Claude Opus 4.8 Announcement]]로 ingest했다.
