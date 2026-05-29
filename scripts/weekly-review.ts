@@ -6,7 +6,8 @@ const path = require("node:path");
 const ROOT = process.cwd();
 const WIKI_DIR = path.join(ROOT, "wiki");
 const REVIEWS_DIR = path.join(WIKI_DIR, "reviews");
-const REVIEW_TYPES = new Set(["idea", "mvp", "meeting", "decision", "concept", "tool", "project", "comparison", "question"]);
+const LOG_FILE = path.join(WIKI_DIR, "log.md");
+const REVIEW_TYPES = new Set(["idea", "mvp", "meeting", "decision", "concept", "tool", "project", "comparison", "question", "source"]);
 
 function walk(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -91,6 +92,23 @@ function bullet(page, note) {
   return "- " + wikilink(page) + " · " + page.status + " · " + (page.updated || "updated 없음") + " · " + note;
 }
 
+function collectLogFollowUps(limit = 5) {
+  if (!fs.existsSync(LOG_FILE)) return [];
+  const content = fs.readFileSync(LOG_FILE, "utf8");
+  const seen = new Set();
+  const items = [];
+  for (const line of content.split("\n")) {
+    const match = line.match(/^\s*-\s*후속 작업:\s*(.+)$/);
+    if (!match) continue;
+    const note = match[1].trim();
+    if (!note || seen.has(note)) continue;
+    seen.add(note);
+    items.push("- " + note);
+    if (items.length >= limit) break;
+  }
+  return items;
+}
+
 function collectPages() {
   return walk(WIKI_DIR)
     .map(readPage)
@@ -103,12 +121,19 @@ function buildReview(pages) {
   const meetings = pages.filter((page) => page.type === "meeting");
   const decisions = pages.filter((page) => page.type === "decision");
   const unsourcedSeeds = pages.filter((page) => page.status === "seed" && page.evidence === "unsourced");
+  const logFollowUps = collectLogFollowUps();
+  const sourcesWithVerification = pages
+    .filter((page) => page.type === "source")
+    .map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 검증 필요 주장"))))
+    .filter((item) => !item.endsWith("정리 필요"))
+    .slice(0, 3);
+  const directExecutionCandidates = [
+    ...mvps.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 다음 작업")))),
+    ...ideas.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 다음 행동")))),
+  ];
 
   return {
-    executionCandidates: [
-      ...mvps.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 다음 작업")))),
-      ...ideas.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 다음 행동")))),
-    ],
+    executionCandidates: directExecutionCandidates.length > 0 ? directExecutionCandidates : logFollowUps.slice(0, 3),
     mvpPromotionCandidates: ideas.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 승격 조건")))),
     holdCandidates: ideas.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 보류 조건")))),
     decisionNeeded: [
@@ -118,6 +143,8 @@ function buildReview(pages) {
     meetingActions: meetings.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 액션 아이템")))),
     sourceBackfill: unsourcedSeeds.map((page) => bullet(page, "근거를 보강하거나 seed 상태 유지 여부 판단")),
     followUps: decisions.map((page) => bullet(page, firstMeaningfulLine(sectionBody(page.content, "## 후속 작업")))),
+    logFollowUps,
+    sourceVerification: sourcesWithVerification,
   };
 }
 
@@ -167,6 +194,14 @@ function renderReview(review, options = {}) {
     "## 결정이 필요한 항목",
     "",
     renderList([...review.decisionNeeded, ...review.followUps]),
+    "",
+    "## 로그 후속 작업",
+    "",
+    renderList(review.logFollowUps),
+    "",
+    "## 검증 필요 주장",
+    "",
+    renderList(review.sourceVerification),
     "",
     "## 회의 액션 아이템",
     "",

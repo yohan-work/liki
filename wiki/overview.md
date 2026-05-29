@@ -21,12 +21,12 @@ evidence_level: unsourced
 
 # LLM Wiki 실행 대시보드
 
-이 페이지는 Obsidian에서 먼저 여는 실행 화면이다. `wiki/index.md`는 전체 목차로 유지하고, 이 페이지는 아이디어, MVP / PoC, 결정, 회의 액션을 다음 실험으로 연결한다.
+이 페이지는 Obsidian에서 먼저 여는 실행 화면이다. `wiki/index.md`는 전체 목차로 유지하고, 이 페이지는 오늘 처리할 작업, 후속 작업 queue, 근거 보강 후보를 좁혀 보여준다.
 
 ## 현재 상태
 
-- 자료 요약: 36개
-- 개념 페이지: 21개
+- 자료 요약: 38개
+- 개념 페이지: 23개
 - 도구 페이지: 16개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -37,17 +37,22 @@ evidence_level: unsourced
 - 재사용 질문 답변: 1개
 - 최근 구조 점검: 2026-05-29, lint errors 0 / warnings 0
 
-핵심 도메인은 AI-native work, [[Agentic Workflow]], AX, [[Codex]], [[Codex Harness]], [[Claude Code]], [[Claude Opus 4.8]], [[oh-my-codex]], [[RAG]], [[LLM Wiki]], [[LLM Hallucination]], [[Hybrid LLM Query Routing]], [[ML Model Serving Pipeline]], [[Fine-tuning]], [[AI Literacy]], [[BYOK]], [[Forward Deployed Engineer]], [[Basalt Project]], [[Personal Operating System]]이다. 최근 참고 도구 후보로 [[Hermes Agent]], [[SQLite]], [[Realtime API]], [[Hugging Face]], [[Hugging Face Datasets]], [[E2E Test Agent]]를 추가했고, 프론트엔드 코드 리뷰 reference로 [[React Effect Naming]]을 추가했다. 현재 개선 방향은 특정 아이템을 기준으로 위키를 확장하는 것이 아니라, [[아이디어 개선 루프]]를 통해 다양한 일상/업무/개인 아이디어를 더 나은 문제정의, 사용 맥락, 검증 질문, 보류 조건으로 다듬는 것이다. [[AI 트렌드 레이더 웹사이트]]와 [[AI 트렌드 레이더 7일 PoC]]는 [[AI 트렌드 레이더 아이디어 대기 결정]]에 따라 지금은 실행하지 않는 대기 후보로 보존한다.
+최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
-## 오늘 볼 것
+## 오늘 하나만 할 일
 
-- 새 아이디어를 바로 MVP로 승격하지 말고 [[아이디어 개선 루프]] 기준으로 원형 메모, 문제, 방향성 적합성, 보류 조건을 먼저 분리한다.
-- `templates/idea-brief.md`의 개선 질문을 실제 아이디어 1개에 적용해 정보 밀도가 과한지 확인한다.
-- `inbox/to-ingest.md`를 확인하고 새 자료가 있으면 바로 ingest하지 말고 triage 대상으로 둔다.
+- 새 자료를 더 넣기 전에 `node scripts/weekly-review.ts`에서 나온 후속 작업 후보 중 1개를 고른다.
+- 후보가 애매하면 [[아이디어 개선 루프]]를 실제 아이디어 1개에 적용해 실행 가치와 보류 조건을 확인한다.
+- 새 자료가 있으면 바로 ingest하지 말고 `inbox/to-ingest.md` 또는 `node scripts/new-source.ts <raw-path-or-url>`로 triage한다.
 
-## 이번 주 실행 후보
+## 후속 작업 queue
 
-- [[아이디어 개선 루프]]: 특정 아이템이 아니라 범용 아이디어 개선 절차를 정비한다.
+- [[아이디어 개선 루프]]를 새 아이디어 1개에 적용한다.
+- [[Codex Harness]] 관련 공식 developer docs와 CLI repository를 별도 source로 확인한다.
+- [[oh-my-codex]] GitHub repository와 npm package를 별도 source로 확인한다.
+- [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
+- [[OSINT]] 관점에서 secret scanning, GitHub exposure, MCP endpoint 노출 점검 자료를 보강한다.
+- [[Frontier Systems]] 관점에서 one-person frontier lab이 만들 산출물 기준을 정한다.
 
 ## MVP 승격 후보
 
@@ -61,20 +66,20 @@ evidence_level: unsourced
 ## 근거 보강 후보
 
 - [[LLM Wiki]]
-- [[Codex]]
-- [[Obsidian]]
-- [[Basalt Project]]
 - [[Personal Operating System]]
+- [[Basalt Project]]
+- [[RAG vs Agentic Workflow]]
 - [[React Effect Naming]]
-- [[Claude Opus 4.8]]
 - [[oh-my-codex]]
+- [[OSINT]]
+- [[Frontier Systems]]
 
 ## 다음 행동
 
-- 실행 후보는 한 번에 하나만 MVP / PoC로 관리하되, 승격 전에는 방향성 적합성과 보류 조건을 먼저 확인한다.
-- 대기 중인 아이디어도 삭제하지 않고 왜 지금은 아닌지, 다시 볼 조건이 무엇인지 남긴다.
+- 실행 후보는 한 번에 하나만 MVP / PoC 또는 maintenance task로 관리한다.
+- weekly review가 "없음"으로 끝나면 log의 `후속 작업:`과 source summary의 `검증 필요 주장`을 먼저 본다.
 - 좋은 질문이 생기면 일회성 답변으로 끝내지 말고 [[LLM Wiki 운영 흐름]] 기준으로 저장 가치가 있는지 판단한다.
-- 여러 source가 쌓인 주제는 단순 요약 대신 비교나 질문 답변으로 승격한다.
+- 여러 source가 쌓인 주제는 단순 요약 대신 비교, 질문 답변, decision record로 승격한다.
 
 ## 반복 루틴
 
@@ -88,6 +93,8 @@ evidence_level: unsourced
 - 프로젝트 결정 기록: 장기 프로젝트에 영향을 주는 판단은 project page에 근거, 결정, 후속 작업을 분리해 남긴다.
 - 여러 자료 종합: 같은 주제의 source가 2개 이상이면 공통 주장, 차이, 검증 필요 주장을 따로 정리한다.
 - 주간 점검: `node scripts/lint-wiki.ts`로 frontmatter, 링크, index 누락, taxonomy 문제를 확인한다.
+- 주간 리뷰: `node scripts/weekly-review.ts`로 실행 후보, log 후속 작업, 근거 보강 후보를 확인한다.
+- 기회 리뷰: `node scripts/opportunity-review.ts`로 idea/MVP와 source tag 패턴을 보되 자동 점수는 검토 힌트로만 쓴다.
 
 ## 주요 진입점
 
@@ -103,6 +110,7 @@ evidence_level: unsourced
 - 주간 리뷰: `wiki/reviews/`
 - 프로젝트: [[Basalt Project]], [[Personal Operating System]]
 - 비교: [[RAG vs Agentic Workflow]]
+- 리뷰: [[llm-wiki-review-2026-05-29]]
 - 최근 lint 기준: [[lint-2026-05-20]]
 
 ## 열린 질문
@@ -113,3 +121,4 @@ evidence_level: unsourced
 - 대시보드에서 자동 집계해야 할 항목과 사람이 직접 관리해야 할 항목은 무엇인가?
 - 어떤 아이디어를 단순 메모로 남기고, 어떤 아이디어를 1주 실험으로 승격해야 하는가?
 - 회의 액션 아이템을 어느 수준까지 위키에 남겨야 관리 부담보다 재사용 가치가 커지는가?
+- weekly review에서 자동 후보를 얼마나 줄여야 실제 작업 선택으로 이어지는가?

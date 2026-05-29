@@ -7,6 +7,19 @@ const ROOT = process.cwd();
 const WIKI_DIR = path.join(ROOT, "wiki");
 const OPPORTUNITIES_DIR = path.join(WIKI_DIR, "opportunities");
 const REVIEW_TYPES = new Set(["idea", "mvp", "meeting", "decision", "source", "tool", "project", "question"]);
+const GENERIC_TAGS = new Set([
+  "source",
+  "llm",
+  "ai",
+  "tool",
+  "tools",
+  "project",
+  "concept",
+  "article",
+  "review",
+  "maintenance",
+  "llm-wiki",
+]);
 
 function walk(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -126,7 +139,10 @@ function collectPages() {
 function collectTags(pages) {
   const counts = new Map();
   for (const page of pages) {
-    for (const tag of page.tags) counts.set(tag, (counts.get(tag) || 0) + 1);
+    for (const tag of page.tags) {
+      if (GENERIC_TAGS.has(tag)) continue;
+      counts.set(tag, (counts.get(tag) || 0) + 1);
+    }
   }
   return [...counts.entries()]
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
@@ -135,8 +151,9 @@ function collectTags(pages) {
 }
 
 function buildReview(pages) {
-  const ideas = pages.filter((page) => page.type === "idea" && ["draft", "active"].includes(page.status));
-  const mvps = pages.filter((page) => page.type === "mvp" && ["draft", "active"].includes(page.status));
+  const executableStatuses = new Set(["draft", "active", "refining", "candidate"]);
+  const ideas = pages.filter((page) => page.type === "idea" && executableStatuses.has(page.status));
+  const mvps = pages.filter((page) => page.type === "mvp" && executableStatuses.has(page.status));
   const sources = pages.filter((page) => page.type === "source");
   const opportunities = ideas
     .map((page) => ({
