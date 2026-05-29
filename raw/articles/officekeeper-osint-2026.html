@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="ko-KR">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVCRKS26');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script>
+ let url = document.baseURI;
+ if (window.location.hash && url.indexOf('/support-seminar/form/159') == -1) {
+   // sessionStorage가 지원되는지 확인 후 저장
+   try {
+  if (typeof sessionStorage !== 'undefined') {
+    sessionStorage.setItem('savedHash', window.location.hash);
+  }
+   } catch (e) {
+  // sessionStorage 사용 불가능한 경우 무시
+   }
+   // 쿠키에도 백업 저장 (세션 쿠키)
+   try {
+  document.cookie = 'savedHash=' + encodeURIComponent(window.location.hash) + '; path=/; SameSite=Lax';
+   } catch (e) {}
+   // 즉시 해시 제거 (가능한 한 빨리)
+   try {
+  if (history.replaceState) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  } else {
+    window.location.hash = '';
+  }
+   } catch (e) {
+  window.location.hash = '';
+   }
+ }
+
+ // 쿠키 읽기/삭제 유틸리티
+ function getCookie(name) {
+   const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+   return match ? decodeURIComponent(match[1]) : null;
+ }
+
+ function deleteCookie(name) {
+   try {
+  document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax';
+   } catch (e) {}
+ }
+</script>
+<title>OSINT이란 무엇일까요? | 보안백과사전 |  콘텐츠 | 오피스키퍼</title>
+<meta name="title" content="OSINT이란 무엇일까요? | 보안백과사전 |  콘텐츠 | 오피스키퍼">
+<meta property="og:title" content="OSINT이란 무엇일까요? | 보안백과사전 |  콘텐츠 | 오피스키퍼">
+<meta property="twitter:title" content="OSINT이란 무엇일까요? | 보안백과사전 |  콘텐츠 | 오피스키퍼">
+<link rel="canonical" href="https://www.officekeeper.co.kr/blog-type-dictionary/view/241">
+    <meta name="robots" content="index,follow" />
+<meta name="keywords" content="정보보호, 문서보호, 개인정보, 개인정보보호, 통합PC보안, DLP, data loss prevention, 정보유출방지, 정보유출방지솔루션, 정보유출차단, 문서보안, 사이트 접속 차단, 문서백업, 암호화, 파일첨부 차단, 출력차단, 출력물보안, 인터넷 접속 차단, 매체제어, 자산관리, 취약점점검, 자산관리, 지란지교소프트, 오피스키퍼, 클라우드, 클라우드DLP, 구축형DLP, 구독형DLP" />
+<meta name="description" content="OSINT(Open Source Intelligence)는 인터넷에 공개된 정보를 수집·분석해 위협을 파악하는 기술입니다. 보안팀은 이를 활용해 외부 노출 자산과 위협을 조기에 식별하고 대응합니다." />
+<meta name="copyright" content="Copyright 2025ⓒJIRANSOFT All rights reserved." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.officekeeper.co.kr/blog-type-dictionary/view/241" />
+<meta property="og:description" content="OSINT(Open Source Intelligence)는 인터넷에 공개된 정보를 수집·분석해 위협을 파악하는 기술입니다. 보안팀은 이를 활용해 외부 노출 자산과 위협을 조기에 식별하고 대응합니다." />
+<meta property="og:site_name" content="오피스키퍼 : 7가지 보안 기능을 제공하는 DLP 솔루션" />
+<meta property="og:image" content="https://www.officekeeper.co.kr/office-keeper.png" />
+<meta property="twitter:description" content="OSINT(Open Source Intelligence)는 인터넷에 공개된 정보를 수집·분석해 위협을 파악하는 기술입니다. 보안팀은 이를 활용해 외부 노출 자산과 위협을 조기에 식별하고 대응합니다." />
+<meta property="twitter:card" content="summary" />
+<script type="text/javascript" src="/_files/minify/2a528fc3d4ab0e33a75ae8012d0f44ed.js?v=1776835712"></script>
+<script type="text/javascript" src="/blog-type-dictionary/js?q=010748" charset="utf-8"></script>
+<script type="text/javascript" src="/_res/plani/module.js?q=010748" charset="utf-8"></script>
+<link href="/_files/minify/37a31d7c05f02d054b8a0e6f8e448f69.css?v=1777006714" rel="stylesheet" type="text/css" charset="UTF-8" media="all" />
+<link href="/blog-type-dictionary/css?q=010748" rel="stylesheet" type="text/css" charset="UTF-8" media="all" />
+<!--[if lt IE 9]>
+ <script src="/_res/jquery/html5shiv.js"></script>
+ <script src="/_res/jquery/respond.1.4.2.min.js"></script>
+<![endif]-->    <script src="/html/js/swiper.js"></script>
+    <script src="/_layouts/default/js/seo.js?ver=1780027668"></script>
+    <script src="/_layouts/default/js/ani.js"></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://officekeeper.co.kr",
+            "logo": "/html/images/common/header_logo.svg"
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "name": "Officekeeper",
+            "url": "https://officekeeper.co.kr",
+            "sameAs": [
+                "https://www.youtube.com/channel/UCS3ovMmp7i4niImbRgMBqbQ",
+                "https://www.facebook.com/jiransoft/",
+                "https://www.instagram.com/jiransoft/?hl=ko",
+                "https://blog.jiran.com/"
+            ]
+        }
+    </script>
+
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "OSINT",
+            "image": [
+                ""
+            ],
+            "datePublished": "2025-10-21T17:02:07+09:00",
+            "dateModified": "2026-05-29T13:06:41+09:00"
+        }
+    </script>
+
+<!-- Start of jiransoft Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=9b11263e-b05a-440a-a697-5c03dd767d1c"> </script>
+<!-- End of jiransoft Zendesk Widget script -->
+
+<!-- 이미지맵 -->
+<script>
+  $(document).ready(function(e) {
+      $('img[usemap]').rwdImageMaps();
+  });
+</script>
+<!-- //이미지맵 -->
+
+<!-- <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '399241857567168');
+fbq('track', 'PageView');
+</script> -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-773232053"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-773232053');
+</script>
+
+
+<script type="text/javascript">
+(function(w, d, a){
+    w.__beusablerumclient__ = {
+        load : function(src){
+            var b = d.createElement("script");
+            b.src = src; b.async=true; b.type = "text/javascript";
+            d.getElementsByTagName("head")[0].appendChild(b);
+        }
+    };w.__beusablerumclient__.load(a + "?url=" + encodeURIComponent(d.URL));
+})(window, document, "//rum.beusable.net/load/b221104e171030u939");
+</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVCRKS26"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<div id="skip">
+    <a href="#gnb">주메뉴 바로가기</a>
+    <a href="#contents">본문 바로가기</a>
+</div>
+<div id="wrap" class="sub">
+        <div id="contents" class="">
+  <header id="header">
+    <div class="layout">
+        <div class="header__logo">
+            <a href="/">
+                <img src="/html/images/common/header_logo.svg" alt="OfficeKeeper"/>
+            </a>
+        </div>
+        <nav id="gnb">
+            <ul class="gnb__list gnb__list--dep01">
+                                    <li class="gnb__item gnb__item--dep01 ">
+                        <a href="/product/intro" >솔루션</a>
+                                                    <ul class="gnb__list gnb__list--dep02">
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/product/intro'  class="">오피스키퍼</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/product/function/dlp'  class="">주요기능</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/support/presentation/online'  class="">제품소개영상</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/product/demo'  class="demo_click">체험하기</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/product-case'  class="">도입사례</a>
+                                                                            </li>
+                                                            </ul>
+                                            </li>
+                                    <li class="gnb__item gnb__item--dep01 ">
+                        <a href="/purchase/price" >도입</a>
+                                                    <ul class="gnb__list gnb__list--dep02">
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/purchase/price'  class="">도입안내</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/purchase/download'  class="">제품소개서</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/purchase/inquiry'  class="">도입문의</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='https://whattime.co.kr/officekeeper/callbooking' target="_blank" rel="noopener noreferrer"  class="consulting_reservation_nav">상담예약</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/purchase-government'  class="">정부지원사업</a>
+                                                                            </li>
+                                                                    <li class="new  gnb__item gnb__item--dep02">
+                                        <a href='/purchase-event'  class="">이벤트</a>
+                                                                            </li>
+                                                            </ul>
+                                            </li>
+                                    <li class="gnb__item gnb__item--dep01 active">
+                        <a href="/blog" >콘텐츠</a>
+                                                    <ul class="gnb__list gnb__list--dep02">
+                                                                    <li class="new  gnb__item gnb__item--dep02">
+                                        <a href='/blog'  class="">블로그</a>
+                                                                            </li>
+                                                                    <li class="new  gnb__item gnb__item--dep02">
+                                        <a href='/pr'  class="">보도자료</a>
+                                                                            </li>
+                                                                    <li class=" active gnb__item gnb__item--dep02">
+                                        <a href='/blog-type-dictionary'  class="">보안 백과사전</a>
+                                                                            </li>
+                                                                    <li class="new  gnb__item gnb__item--dep02">
+                                        <a href='/support-seminar'  class="">보안 세미나</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/support/guide'  class="">보안 가이드</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/content/isms'  class="">ISMS 가이드북</a>
+                                                                            </li>
+                                                            </ul>
+                                            </li>
+                                    <li class="gnb__item gnb__item--dep01 ">
+                        <a href="/sub0401" >지원</a>
+                                                    <ul class="gnb__list gnb__list--dep02">
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/support/tech/guide'  class="">기술 지원센터</a>
+                                                                            </li>
+                                                                    <li class="new  gnb__item gnb__item--dep02">
+                                        <a href='/support-tech-faq'  class="">FAQ</a>
+                                                                            </li>
+                                                                    <li class="  gnb__item gnb__item--dep02">
+                                        <a href='/support-update'  class="">무상 업데이트</a>
+                                                                            </li>
+                                                                    <li class="new  gnb__item gnb__item--dep02">
+                                        <a href='/event_information'  class="">정기 행사 안내</a>
+                                                                            </li>
+                                                            </ul>
+                                            </li>
+                            </ul>
+        </nav>
+        <div class="header__wrap">
+          <div class="header__wrap-item">
+                    <a href="/purchase/inquiry"  class="header__btn all-menu__btn" >도입문의</a>
+          </div>
+            <button type="button" class="header__menu">
+                <img src="/html/images/common/all-open_icon.svg" alt="">
+                <span class="hide">전체메뉴 열기</span>
+            </button>
+        </div>
+</header>
+<div class="nav__bg"></div>
+<!-- all/mobile menu start -->
+<div id="all-menu">
+    <div class="all-menu__box">
+        <div class="all-menu__top">
+            <div class="all-menu__logo">
+                <a href="/">
+                    <img src="/html/images/common/header_logo.svg" alt="OfficeKeeper"/>
+                </a>
+            </div>
+            <button type="button" class="all-menu__close">
+                <img src="/html/images/common/all-close_icon.svg" alt="">
+                <span class="hide">전체메뉴 닫기</span>
+            </button>
+        </div>
+        <ul class="all-menu__list all-menu__list--dep01">
+                            <li class="all-menu__item all-menu__item--dep01  ">
+                    <a href="/product/intro" >솔루션</a>
+                    <ul class="all-menu__list all-menu__list--dep02">
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/product/intro'  class="">오피스키퍼</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/product/function/dlp'  class="">주요기능</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/support/presentation/online'  class="">제품소개영상</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/product/demo'  class="">체험하기</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/product-case'  class="">도입사례</a>
+                            </li>
+                                            </ul>
+                </li>
+                            <li class="all-menu__item all-menu__item--dep01  ">
+                    <a href="/purchase/price" >도입</a>
+                    <ul class="all-menu__list all-menu__list--dep02">
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/purchase/price'  class="">도입안내</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/purchase/download'  class="">제품소개서</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/purchase/inquiry'  class="">도입문의</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='https://whattime.co.kr/officekeeper/callbooking' target="_blank" rel="noopener noreferrer"  class="consulting_reservation_nav">상담예약</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/purchase-government'  class="">정부지원사업</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02 new ">
+                                <a href='/purchase-event'  class="">이벤트</a>
+                            </li>
+                                            </ul>
+                </li>
+                            <li class="all-menu__item all-menu__item--dep01  active">
+                    <a href="/blog" >콘텐츠</a>
+                    <ul class="all-menu__list all-menu__list--dep02">
+                                                    <li class="all-menu__item all-menu__item--dep02 new ">
+                                <a href='/blog'  class="">블로그</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02 new ">
+                                <a href='/pr'  class="">보도자료</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  active">
+                                <a href='/blog-type-dictionary'  class="">보안 백과사전</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02 new ">
+                                <a href='/support-seminar'  class="">보안 세미나</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/support/guide'  class="">보안 가이드</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/content/isms'  class="">ISMS 가이드북</a>
+                            </li>
+                                            </ul>
+                </li>
+                            <li class="all-menu__item all-menu__item--dep01  ">
+                    <a href="/sub0401" >지원</a>
+                    <ul class="all-menu__list all-menu__list--dep02">
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/support/tech/guide'  class="">기술 지원센터</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02 new ">
+                                <a href='/support-tech-faq'  class="">FAQ</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/support-update'  class="">무상 업데이트</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02 new ">
+                                <a href='/event_information'  class="">정기 행사 안내</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='/partner'  class="">파트너</a>
+                            </li>
+                                                    <li class="all-menu__item all-menu__item--dep02  ">
+                                <a href='https://manager.officekeeper.co.kr/login?_gl=1*bbi4k4*_ga*MTU3NTI3NzI5Ni4xNjk2NTU4MjQ0*_ga_ZZ843VNYP6*MTY5NjkxMTY2Ny41LjEuMTY5NjkxMjE2Ni41MC4wLjA.' target="_blank" rel="noopener noreferrer"  class="">관리자페이지</a>
+                            </li>
+                                            </ul>
+                </li>
+                    </ul>
+        <div class="all-menu__con">
+                    <a href="/purchase/inquiry"  class="header__btn all-menu__btn" >도입문의</a>
+            <div class="all-menu__link-wrap">
+                <a href="https://www.jiransoft.co.kr/" target="_blank" rel="noreferrer noopener"
+                   class="all-menu__link">회사소개</a>
+                <a href="https://jmember.co.kr/privacy" target="_blank" rel="noreferrer noopener"
+                   class="all-menu__link">개인정보처리방침</a>
+                <a href="https://jmember.co.kr/service-policy" target="_blank" rel="noreferrer noopener"
+                   class="all-menu__link">이용약관</a>
+            </div>
+            <div class="all-menu__sns">
+                <a href="https://www.facebook.com/jiransoft/" target="_blank" rel="noreferrer noopener"><img
+                            src="/html/images/common/all-menu_sns01.svg" alt="Facebook"/></a>
+                <a href="https://www.instagram.com/jiransoft/" target="_blank" rel="noreferrer noopener"><img
+                            src="/html/images/common/all-menu_sns02.svg" alt="Instagram"/></a>
+                <a href="https://www.youtube.com/channel/UCS3ovMmp7i4niImbRgMBqbQ" target="_blank"
+                   rel="noreferrer noopener"><img src="/html/images/common/all-menu_sns03.svg" alt="Youtube"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- all/mobile menu end -->
+
+            <div id="check_contents">
+              <div class="layout">
+    <section class="pt-none">
+        <div class="pedia__wrap">
+            <div class="pedia__top">
+                  <div>
+                    <p class="h4">세상 모든 보안 이야기</p>
+                    <p class="h2"><strong>보안 백과사전</strong></p>
+                  </div>
+                <div class="pedia__top-slide swiper">
+                    <div class="pedia__top-list swiper-wrapper">
+                        <a href="/blog-type-dictionary" class="pedia__top-item swiper-slide active">
+                            <p>용어를 이해하면 보안이 보입니다</p>
+                            <img src="/html/images/contents/pedia_img02.png" alt="보안용어 백과사전"/>
+                        </a>
+                        <a href="/blog-type-dictionary-guide" class="pedia__top-item swiper-slide ">
+                            <p>누구나 손쉽게 따라하는</p>
+                            <img src="/html/images/contents/pedia_img01.png" alt="보안 가이드"/>
+                        </a>
+      <a href="/blog-type-dictionary-isms" class="pedia__top-item swiper-slide ">
+       <p>인증, 어렵지 않아요!</p>
+       <img src="/html/images/contents/pedia_img03.png" alt="ISMS 체크인 가이드북"/>
+      </a>
+                        <a href="#" onclick="alert('준비중입니다.')" class="pedia__top-item swiper-slide ">
+                            <p>Coming Soon</p>
+                            <img src="/html/images/contents/pedia_img04.png" alt="보안 유출사고 대응전략"/>
+                        </a>
+                    </div>
+                </div>
+                <p class="desc-tab__mobile mt40">좌우로 움직여보세요<span><img src="/html/images/contents/slide_arrow.svg" alt=""></span></p>
+            </div>
+            <div class="scroll-ani">
+              <article>
+                <div class="blog__view-info">
+                    <div>
+                        <span class="blog__view-cate">보안 트렌드</span>
+                        <h1 class="blog__view-title">OSINT</h1>
+                    </div>
+                    <div class="right">
+                        <p class="blog__view-hit"><span>포스팅 뷰</span>1927</p>
+                    </div>
+                </div>
+                    <div class="blog__view-con">
+                        <div class="editor">
+                            <p>
+                                <h2 data-start="177" data-end="190" style="line-height: 150%; text-align: justify;">OSINT의 정의</h2>
+<p data-start="192" data-end="383" style="line-height: 150%; text-align: justify;">OSINT(Open Source Intelligence, 오픈소스 인텔리전스)는 <strong data-start="237" data-end="303">공개적으로 접근 가능한 정보(오픈소스)를 수집&middot;분석해, 보안 위협이나 특정 대상에 대한 인사이트를 도출하는 활동</strong>을 말한다. (한국에서는 '오신트'라고도 부른다.)<br data-start="309" data-end="312"> 즉, 누구나 접근 가능한 인터넷상의 정보에서 유용한 정보를 찾아내어, 이를 위협 탐지나 의사결정에 활용하는 정보 분석 기법이다.</p>
+<p data-start="192" data-end="383" style="line-height: 150%; text-align: justify;"><br></p>
+<p data-start="385" data-end="585" style="line-height: 150%; text-align: justify;">오픈소스 정보의 범위에는 <strong data-start="399" data-end="472">웹사이트, SNS, 뉴스, 정부 공개 자료, 커뮤니티 포럼, 코드 저장소(GitHub, Pastebin), 다크웹 게시물 등</strong>이 포함된다.<br data-start="479" data-end="482">
+ OSINT는 과거에는 정보기관과 수사기관 중심으로 활용되었으나, 최근에는 <strong data-start="523" data-end="561">사이버 보안, 브랜드 보호, 디지털 포렌식, 기업 리스크 관리</strong> 등 민간 영역에서도 폭넓게 사용되고 있다.</p>
+<p data-start="385" data-end="585" style="line-height: 150%; text-align: justify;"><br></p>
+<h2 data-start="592" data-end="606" style="line-height: 150%; text-align: justify;">OSINT의 필요성</h2>
+<p data-start="608" data-end="816" style="line-height: 150%; text-align: justify;">사이버 공격의 상당수는 공개된 정보를 기반으로 시작된다.<br data-start="639" data-end="642">
+ 공격자는 OSINT 기법을 이용해 <strong data-start="661" data-end="712">조직의 네트워크 구조, 임직원 이메일, 기술 스택, 도메인 등록 정보, 클라우드 자산</strong> 등을 파악하고 공격 전략을 설계한다.</p>
+<p data-start="608" data-end="816" style="line-height: 150%; text-align: justify;"> 예를 들어, GitHub에 노출된 API 키나 개발자 계정, SNS에 공개된 내부 시스템 스크린샷 하나로도 실제 침입 시나리오를 만들 수 있다.</p>
+<p data-start="608" data-end="816" style="line-height: 150%; text-align: justify;"><br></p>
+<p data-start="818" data-end="921" style="line-height: 150%; text-align: justify;">이에 따라 보안 담당자 역시 OSINT를 방어 목적으로 활용한다.<br data-start="854" data-end="857">
+ <strong data-start="857" data-end="913">공격자보다 먼저 외부 노출 정보를 식별하고, 위험 요소를 제거하는 것이 현대 보안의 핵심 전략</strong>이 되고 있다.</p>
+<p data-start="818" data-end="921" style="line-height: 150%; text-align: justify;"><br></p>
+<h2 data-start="928" data-end="947" style="line-height: 150%; text-align: justify;">OSINT의 주요 수집 대상</h2>
+<p data-start="949" data-end="1002" style="line-height: 150%; text-align: justify;">OSINT에서 다루는 정보는 매우 다양하지만, 보안 목적에서 주로 활용되는 정보는 다음과 같다.</p>
+<ul data-start="1004" data-end="1290"> 
+<li data-start="1004" data-end="1063" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1006" data-end="1063" style="line-height: 150%; text-align: justify;"><strong data-start="1006" data-end="1024">도메인 및 네트워크 정보:</strong> WHOIS, DNS, IP, 포트, SSL 인증서, 서브도메인 등</p> </li> 
+<li data-start="1064" data-end="1117" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1066" data-end="1117" style="line-height: 150%; text-align: justify;"><strong data-start="1066" data-end="1082">소셜미디어 및 웹정보:</strong> 임직원 SNS 게시물, 언론 기사, 블로그, 포럼 활동 등</p> </li> 
+<li data-start="1118" data-end="1192" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1120" data-end="1192" style="line-height: 150%; text-align: justify;"><strong data-start="1120" data-end="1141">코드 저장소 및 개발자 플랫폼:</strong> GitHub, GitLab, Pastebin 등에서 노출된 API 키, 암호, 토큰 등</p> </li> 
+<li data-start="1193" data-end="1240" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1195" data-end="1240" style="line-height: 150%; text-align: justify;"><strong data-start="1195" data-end="1211">다크웹 및 딥웹 정보:</strong> 데이터 유출, 해킹 그룹 활동, 불법 거래 내역</p> </li> 
+<li data-start="1241" data-end="1290" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1243" data-end="1290" style="line-height: 150%; text-align: justify;"><strong data-start="1243" data-end="1258">공공데이터 및 문서:</strong> 정부&middot;기관의 공시자료, 보고서, PDF 메타데이터 등</p></li>
+</ul>
+<div style="line-height: 150%; text-align: justify;"><br></div>
+<div style="line-height: 150%; text-align: justify;">
+<h2 data-start="1297" data-end="1316" style="line-height: 150%; text-align: justify;">OSINT의 주요 활용 사례</h2> 
+<ol data-start="1318" data-end="1678"> 
+<li data-start="1318" data-end="1417" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1321" data-end="1417" style="line-height: 150%; text-align: justify;"><strong data-start="1321" data-end="1358">위협 인텔리전스 강화(Threat Intelligence):</strong><br data-start="1358" data-end="1361"> 다크웹이나 해커 포럼에서 자사 도메인, 이메일, 고객정보가 언급되는지를 실시간으로 모니터링한다.</p> </li> 
+<li data-start="1419" data-end="1502" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1422" data-end="1502" style="line-height: 150%; text-align: justify;"><strong data-start="1422" data-end="1451">브랜드 보호(Brand Protection):</strong><br data-start="1451" data-end="1454"> 자사 브랜드나 로고를 도용한 피싱 사이트, 사칭 SNS 계정을 탐지하고 대응한다.</p> </li> 
+<li data-start="1504" data-end="1592" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1507" data-end="1592" style="line-height: 150%; text-align: justify;"><strong data-start="1507" data-end="1538">보안사고 대응(Incident Response):</strong><br data-start="1538" data-end="1541"> 침해 사고 발생 시, 공격에 사용된 도메인&middot;IP&middot;이메일&middot;계정의 외부 연관성을 분석한다.</p> </li> 
+<li data-start="1594" data-end="1678" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1597" data-end="1678" style="line-height: 150%; text-align: justify;"><strong data-start="1597" data-end="1630">위험관리 및 감사(Compliance &amp; Risk):</strong><br data-start="1630" data-end="1633"> OSINT 분석 결과를 기반으로 내부 보안 규정과 접근통제 정책을 보완한다.</p></li>
+</ol>
+<div style="line-height: 150%; text-align: justify;"><br></div>
+<div style="line-height: 150%; text-align: justify;">
+<h2 data-start="1685" data-end="1703" style="line-height: 150%; text-align: justify;">OSINT의 한계와 주의점</h2> 
+<p data-start="1705" data-end="1744" style="line-height: 150%; text-align: justify;">OSINT는 합법적인 정보 수집 기법이지만, 다음과 같은 한계가 있다.</p> 
+<ul data-start="1746" data-end="1965"> 
+<li data-start="1746" data-end="1800" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1748" data-end="1800" style="line-height: 150%; text-align: justify;"><strong data-start="1748" data-end="1759">정확성 문제:</strong> 공개정보는 수정&middot;삭제될 수 있고, 신뢰할 수 없는 출처일 수도 있다.</p> </li> 
+<li data-start="1801" data-end="1854" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1803" data-end="1854" style="line-height: 150%; text-align: justify;"><strong data-start="1803" data-end="1813">법적 제약:</strong> 개인정보보호법, 통신비밀보호법 등 관련 법규를 반드시 준수해야 한다.</p> </li> 
+<li data-start="1855" data-end="1910" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1857" data-end="1910" style="line-height: 150%; text-align: justify;"><strong data-start="1857" data-end="1868">분석 난이도:</strong> 단순히 정보를 수집하는 것만으로는 의미 있는 인텔리전스를 얻기 어렵다.</p> </li> 
+<li data-start="1911" data-end="1965" style="line-height: 150%; text-align: justify;"> 
+<p data-start="1913" data-end="1965" style="line-height: 150%; text-align: justify;"><strong data-start="1913" data-end="1924">데이터 과잉:</strong> 너무 많은 정보를 수집할 경우, 실질적인 위협 탐지가 어려워질 수 있다.</p></li>
+</ul>
+<div style="line-height: 150%; text-align: justify;"><br></div>
+<h2 data-start="2222" data-end="2244" style="line-height: 150%; text-align: justify;">OSINT와 ASM&middot;DRP의 관계</h2> 
+<p data-start="2246" data-end="2445" style="line-height: 150%; text-align: justify;">OSINT는 <strong data-start="2253" data-end="2287">ASM(Attack Surface Management)</strong> 과 <strong data-start="2290" data-end="2322">DRP(Digital Risk Protection)</strong> 의 기반 데이터 역할을 한다.<br data-start="2339" data-end="2342">
+ ASM이 외부 노출 자산을 식별하고, DRP가 외부 위협을 실시간으로 모니터링한다면,<br data-start="2389" data-end="2392">
+ OSINT는 그 두 솔루션이 활용하는 <strong data-start="2413" data-end="2438">&lsquo;공개 정보 수집&rsquo; 단계의 원천 데이터</strong>를 제공한다.</p> 
+<p data-start="2447" data-end="2529" style="line-height: 150%; text-align: justify;"><br></p>
+<p data-start="2447" data-end="2529" style="line-height: 150%; text-align: justify;">즉, OSINT는 <strong data-start="2457" data-end="2478">보안 인텔리전스 생태계의 출발점</strong>이며,&nbsp;이를 통해 기업은 외부 위협의 흐름을 조기에 인지하고 선제적으로 대응할 수 있다.</p></div></div>                            </p>
+                        </div>
+                        <div class="blog__view-btn mt64">
+                            <button  type="button" class="pi-btn btn-style btn-sm none" onclick="window.location.href='/blog-type-dictionary'; return false;"><span> 목록으로</span></button>                        </div>
+                    </div>
+              </article>
+            </div>
+        </div>
+    </section>
+</div>
+            </div>
+            <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
+<script type="text/javascript">
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "s_29f888dcb4ca";
+    if (!_nasa) var _nasa = {};
+    wcs.inflow();
+    wcs_do(_nasa);
+</script>
+
+<script type='text/x-javascript'>
+  piAId = '964523';
+  piCId = '34934';
+  piHostname = 'go.officekeeper.co.kr';
+  
+  (function() {
+  function async_load(){
+  var s = document.createElement('script'); s.type = 'text/x-javascript';
+  s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + piHostname + '/pd.js';
+  var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+  }
+  if(window.attachEvent) { window.attachEvent('onload', async_load); }
+  else { window.addEventListener('load', async_load, false); }
+  })();
+</script>
+
+<footer id="footer">
+  <div class="layout">
+      <button class="top-btn">
+        <img src="/html/images/common/top_icon.svg" alt="" />
+        <span class="hide">상단으로 이동</span>
+      </button>
+    </div>
+    <div class="footer__top">
+      <div class="layout">
+        <div class="footer__info">
+          <div class="footer__logo">
+            <a href="/">
+              <img src="/html/images/common/footer_logo.svg" alt="OfficeKeeper" />
+            </a>
+          </div>
+          <div class="footer__tel">
+            <p><a href="tel:1670-6390" class="call_btn_click">1670-6390</a>도입상담센터</p>
+            <p><a href="tel:1661-5975" class="call_btn_click">1661-5975</a>기술지원센터</p>
+          </div>
+          <p>9:00 - 18:00 토/일 공휴일 휴무</p>
+          <div class="footer__link-wrap">
+            <a href="https://www.jiransoft.co.kr/company" target="_blank" rel="noopener noreferrer" class="footer__link">회사소개</a><br />
+            <a href="https://www.jiransoft.co.kr/privacy" target="_blank" rel="noopener noreferrer" class="footer__link">개인정보처리방침</a><br />
+            <a href="https://www.jiransoft.co.kr/service-policy-keeper" target="_blank" rel="noopener noreferrer" class="footer__link">이용약관</a>
+          </div>
+        </div>
+            <ul class="footer__menu footer__menu--dep01">
+                                    <li class="">
+                        <a href="/product/intro" >솔루션</a>
+                        <div class="depth2">
+                            <ul class="footer__menu footer__menu--dep02">
+                                                                    <li class=" ">
+                                        <a href='/product/intro' >오피스키퍼</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/product/function/dlp' >주요기능</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/support/presentation/online' >제품소개영상</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/product/demo' >체험하기</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/product-case' >도입사례</a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </li>
+                                    <li class="">
+                        <a href="/purchase/price" >도입</a>
+                        <div class="depth2">
+                            <ul class="footer__menu footer__menu--dep02">
+                                                                    <li class=" ">
+                                        <a href='/purchase/price' >도입안내</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/purchase/download' >제품소개서</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/purchase/inquiry' >도입문의</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='https://whattime.co.kr/officekeeper/callbooking' target="_blank" rel="noopener noreferrer" >상담예약</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/purchase-government' >정부지원사업</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/purchase-event' >이벤트</a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </li>
+                                    <li class="active">
+                        <a href="/blog" >콘텐츠</a>
+                        <div class="depth2">
+                            <ul class="footer__menu footer__menu--dep02">
+                                                                    <li class=" ">
+                                        <a href='/blog' >블로그</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/pr' >보도자료</a>
+                                    </li>
+                                                                    <li class="active ">
+                                        <a href='/blog-type-dictionary' >보안 백과사전</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/support-seminar' >보안 세미나</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/support/guide' >보안 가이드</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/content/isms' >ISMS 가이드북</a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </li>
+                                    <li class="">
+                        <a href="/sub0401" >지원</a>
+                        <div class="depth2">
+                            <ul class="footer__menu footer__menu--dep02">
+                                                                    <li class=" ">
+                                        <a href='/support/tech/guide' >기술 지원센터</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/support-tech-faq' >FAQ</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/support-update' >무상 업데이트</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/event_information' >정기 행사 안내</a>
+                                    </li>
+                                                                    <li class=" ">
+                                        <a href='/partner' >파트너</a>
+                                    </li>
+                                                                    <li class=" footer__menu--round">
+                                        <a href='https://manager.officekeeper.co.kr/login?_gl=1*bbi4k4*_ga*MTU3NTI3NzI5Ni4xNjk2NTU4MjQ0*_ga_ZZ843VNYP6*MTY5NjkxMTY2Ny41LjEuMTY5NjkxMjE2Ni41MC4wLjA.' target="_blank" rel="noopener noreferrer" >관리자페이지</a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+    <div class="footer__btm">
+      <div class="layout">
+        <div class="footer__btm-flex">
+          <div class="footer__desc">
+            (주)지란지교소프트&nbsp;&nbsp;
+            대표이사 : 박승애&nbsp;&nbsp;<br class="mo-show" />
+            사업자등록번호 : 220-85-06740&nbsp;&nbsp;<br class="mo-show" />
+            통신판매 사업자번호 : 2015-대전유성-0318<br />
+            ©2026 JIRANSOFT All rights reserved.
+          </div>
+          <div class="footer__sns">
+            <a href="https://www.facebook.com/jiransoft/" target="_blank" rel="noopener noreferrer"><img src="/html/images/common/footer_sns01.svg" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/jiransoft/?hl=ko" target="_blank" rel="noopener noreferrer"><img src="/html/images/common/footer_sns02.svg" alt="Instagram" /></a>
+            <a href="https://www.youtube.com/channel/UCS3ovMmp7i4niImbRgMBqbQ" target="_blank" rel="noopener noreferrer"><img src="/html/images/common/footer_sns03.svg" alt="Youtube" /></a>
+          </div>
+        </div>
+        <div class="footer__btm-mark">
+          <a href="/blog/view/63" target="_blank" rel="noopener noreferrer">
+            <img src="/html/images/common/footer_mark01.png" alt="" />
+          </a>
+          <a href="/blog/view/8" target="_blank" rel="noopener noreferrer">
+            <img src="/html/images/common/footer_mark02.png" alt="" />
+          </a>
+          <a href="/blog/view/64" target="_blank" rel="noopener noreferrer">
+            <img src="/html/images/common/footer_mark03.png" alt="" />
+          </a>
+          <a href="/blog/view/65" target="_blank" rel="noopener noreferrer">
+            <img src="/html/images/common/footer_mark04.png" alt="" />
+          </a>
+          <a href="/blog/view/66" target="_blank" rel="noopener noreferrer">
+            <img src="/html/images/common/footer_mark05.png" alt="" />
+          </a>
+        </div>
+      </div>
+  </div>
+</footer>        </div>
+  <button  type="button" class="pi-btn hidden automodal" title="오피스키퍼 제품소개서 신청" href="/purchase/download/form" pi-hook="module={'method':'modal', 'layout':'layout/automodal', 'iframe':true, 'width':1000, 'height':700}"><span> 오피스키퍼 제품소개서 신청</span></button>    </body>
+</html>

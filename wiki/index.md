@@ -38,6 +38,8 @@ evidence_level: unsourced
 - [[Forward Deployed Engineer]]
 - [[Codex Harness]]
 - [[아이디어 개선 루프]]
+- [[OSINT]]
+- [[Frontier Systems]]
 
 ## 프로젝트
 
@@ -141,7 +143,10 @@ evidence_level: unsourced
 - [[Velog useEffect Naming Article]]
 - [[Anthropic Claude Opus 4.8 Announcement]]
 - [[Digital Bourgeois oh-my-codex Article]]
+- [[OfficeKeeper OSINT Dictionary Article]]
+- [[Stanford CS153 Frontier Systems Course Page]]
 
 ## 리포트
 
 - [[lint-2026-05-20]]
+- [[llm-wiki-review-2026-05-29]]

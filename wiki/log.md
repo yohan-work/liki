@@ -15,6 +15,32 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-05-29] ingest | Stanford CS153 Frontier Systems 강의 페이지
+
+- Stanford University CS153 "Frontier Systems" Spring 2026 강의 페이지를 raw HTML snapshot으로 보존하고 [[Stanford CS153 Frontier Systems Course Page]]로 ingest했다.
+- [[Frontier Systems]] concept page를 추가하고 energy, silicon, models, applications, security, deployment policy가 함께 재작성되는 frontier infrastructure stack 관점을 정리했다.
+- [[Personal Operating System]], [[Agentic Workflow]], [[OSINT]]에 "The One-Person Frontier Lab"과 공개 강의 페이지를 기술/시장 흐름 파악 source로 쓰는 관점을 연결했다.
+- 변경 영역: [[Frontier Systems]], [[Stanford CS153 Frontier Systems Course Page]], [[Personal Operating System]], [[Agentic Workflow]], [[OSINT]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: CS153 Readings & Materials, archive pages, speaker별 공개 자료는 별도 source 후보로 검토한다.
+
+## [2026-05-29] maintenance | LLM Wiki 비판적 리뷰와 실행 queue 보강
+
+- [[llm-wiki-review-2026-05-29]]를 추가해 현재 위키의 강점, 병목, 우선 개선안을 비판적으로 정리했다.
+- [[LLM Wiki]]와 [[Personal Operating System]]을 seed placeholder에서 실행 판단과 운영 루틴을 지휘하는 페이지로 보강했다.
+- [[LLM Wiki Overview]]를 오늘 하나만 할 일, 후속 작업 queue, 근거 보강 후보 중심으로 압축했다.
+- `scripts/weekly-review.ts`가 log의 `후속 작업:`과 source summary의 검증 필요 주장을 review 초안에 끌어오도록 개선했다.
+- `scripts/opportunity-review.ts`의 일반 태그 잡음을 줄이고 parked 항목은 실행 후보에서 제외하도록 정리했다.
+- 변경 영역: [[llm-wiki-review-2026-05-29]], [[LLM Wiki]], [[Personal Operating System]], [[LLM Wiki Overview]], [[LLM Wiki Index]], 자동화 스크립트.
+- 후속 작업: weekly review 후보 중 1개를 실제 source 보강, comparison, question answer, 또는 decision record로 닫는다.
+
+## [2026-05-29] ingest | OfficeKeeper OSINT 보안 백과사전 글
+
+- 오피스키퍼 보안 백과사전 글 "OSINT이란 무엇일까요?"를 raw HTML snapshot으로 보존하고 [[OfficeKeeper OSINT Dictionary Article]]로 ingest했다.
+- [[OSINT]] concept page를 추가하고 공개정보 수집, threat intelligence, brand protection, incident response, compliance/risk, ASM/DRP 기반 데이터 관점을 정리했다.
+- [[Agentic Workflow]], [[MCP Remote SSE]], [[Personal Operating System]]에 공개정보 수집 범위, 외부 노출면, credential/API key/endpoint 노출 점검 관점을 연결했다.
+- 변경 영역: [[OSINT]], [[OfficeKeeper OSINT Dictionary Article]], [[Agentic Workflow]], [[MCP Remote SSE]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: ASM, DRP, secret scanning, GitHub exposure 점검은 vendor-neutral 자료나 공식 문서로 별도 보강한다.
+
 ## [2026-05-29] ingest | Digital Bourgeois oh-my-codex 소개 글
 
 - Tistory 글 "oh-my-codex(OMX): OpenAI Codex CLI를 위한 워크플로우 레이어 정리"를 raw HTML snapshot으로 보존하고 [[Digital Bourgeois oh-my-codex Article]]로 ingest했다.
