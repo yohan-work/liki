@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-05-29
+updated: 2026-06-01
 tags:
   - llm-wiki
   - index
@@ -92,6 +92,7 @@ evidence_level: unsourced
 - [[E2E Test Agent]]
 - [[Claude Opus 4.8]]
 - [[oh-my-codex]]
+- [[SkillOpt]]
 
 ## 인물
 
@@ -145,6 +146,8 @@ evidence_level: unsourced
 - [[Digital Bourgeois oh-my-codex Article]]
 - [[OfficeKeeper OSINT Dictionary Article]]
 - [[Stanford CS153 Frontier Systems Course Page]]
+- [[SkillOpt Project Page]]
+- [[Digital Bourgeois SkillOpt Article]]
 
 ## 리포트
 

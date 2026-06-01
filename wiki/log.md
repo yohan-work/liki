@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-05-29
+updated: 2026-06-01
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-01] ingest | SkillOpt 프로젝트 페이지와 해설 글
+
+- Microsoft SkillOpt 프로젝트 페이지와 Digital Bourgeois Tistory 해설 글을 raw HTML snapshot으로 보존하고 [[SkillOpt Project Page]], [[Digital Bourgeois SkillOpt Article]]로 ingest했다.
+- [[SkillOpt]] 도구 페이지를 추가하고 skill document를 frozen agent의 trainable external state로 다루는 text-space optimization 관점을 정리했다.
+- [[Skills]], [[Agentic Workflow]], [[Orchestration]], [[Codex]], [[Claude Code]]에 rollout, reflection, bounded edit, held-out validation gate, cross-harness skill artifact 관점을 연결했다.
+- 변경 영역: [[SkillOpt]], [[SkillOpt Project Page]], [[Digital Bourgeois SkillOpt Article]], [[Skills]], [[Agentic Workflow]], [[Orchestration]], [[Codex]], [[Claude Code]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: SkillOpt GitHub repository, arXiv 논문, SkillLens project page를 별도 source로 확인하고 LLM Wiki ingest/lint task에 적용 가능한 작은 evaluation set을 설계한다.
 
 ## [2026-05-29] ingest | Stanford CS153 Frontier Systems 강의 페이지
 

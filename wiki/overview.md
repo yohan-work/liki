@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-05-29
+updated: 2026-06-01
 tags:
   - llm-wiki
   - overview
@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 38개
+- 자료 요약: 40개
 - 개념 페이지: 23개
-- 도구 페이지: 16개
+- 도구 페이지: 17개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -50,6 +50,7 @@ evidence_level: unsourced
 - [[아이디어 개선 루프]]를 새 아이디어 1개에 적용한다.
 - [[Codex Harness]] 관련 공식 developer docs와 CLI repository를 별도 source로 확인한다.
 - [[oh-my-codex]] GitHub repository와 npm package를 별도 source로 확인한다.
+- [[SkillOpt]] GitHub repository와 arXiv 논문을 별도 source로 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[OSINT]] 관점에서 secret scanning, GitHub exposure, MCP endpoint 노출 점검 자료를 보강한다.
 - [[Frontier Systems]] 관점에서 one-person frontier lab이 만들 산출물 기준을 정한다.
@@ -71,6 +72,7 @@ evidence_level: unsourced
 - [[RAG vs Agentic Workflow]]
 - [[React Effect Naming]]
 - [[oh-my-codex]]
+- [[SkillOpt]]
 - [[OSINT]]
 - [[Frontier Systems]]
 

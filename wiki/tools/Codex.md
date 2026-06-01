@@ -3,7 +3,7 @@ title: Codex
 type: tool
 status: active
 created: 2026-05-20
-updated: 2026-05-29
+updated: 2026-06-01
 tags:
   - codex
   - coding-agent
@@ -18,6 +18,8 @@ related:
   - "[[WikiDocs Jaehong BYOK AI Tools Article]]"
   - "[[oh-my-codex]]"
   - "[[Digital Bourgeois oh-my-codex Article]]"
+  - "[[SkillOpt]]"
+  - "[[SkillOpt Project Page]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -33,6 +35,8 @@ evidence_level: source-backed
 [[OpenAI Codex Harness Article]]은 Codex의 웹 앱, CLI, IDE 확장 프로그램, macOS 앱이 동일한 [[Codex Harness]]로 구동되며, Codex App Server가 이를 client-friendly bidirectional JSON-RPC API로 노출한다고 설명한다. 이 관점에서 Codex는 단일 UI가 아니라 thread persistence, tool execution, approval request, diff artifact, streaming event를 공유하는 agent runtime이다.
 
 [[Digital Bourgeois oh-my-codex Article]]은 Codex CLI를 실행 엔진으로 두고 그 위에 workflow, role, skill, state management를 얹는 [[oh-my-codex]]를 소개한다. 이 자료는 Codex 자체와 Codex를 매일 쓰기 위한 운영 레이어를 구분해서 볼 필요가 있음을 보여준다.
+
+[[SkillOpt Project Page]]는 Codex를 SkillOpt 실험 harness 중 하나로 다루며, Codex에서 훈련한 SpreadsheetBench skill이 Claude Code로 transfer되는 사례를 제시한다. 이 주장은 Codex용 skill을 특정 UI prompt가 아니라 재사용 가능한 절차 artifact로 관리할 가능성을 보여주지만, 실제 적용 전 repository와 논문 기준 확인이 필요하다.
 
 ## 사용 사례
 
@@ -67,6 +71,7 @@ evidence_level: source-backed
 - [[OpenAI Codex Harness Article]]
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
 - [[Digital Bourgeois oh-my-codex Article]]
+- [[SkillOpt Project Page]]
 
 ## 열린 질문
 
@@ -75,3 +80,4 @@ evidence_level: source-backed
 - BYOK 환경에서 Codex 사용량과 비용을 어떤 단위로 추적해야 하는가?
 - Codex App Server 수준의 event stream을 개인 automation log에 얼마나 반영할 것인가?
 - Codex CLI 위에 별도 workflow layer를 붙일 기준은 작업 규모, 위험도, 반복성 중 무엇인가?
+- Codex 작업 skill을 검증할 held-out task set을 어떻게 만들 것인가?
