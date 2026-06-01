@@ -40,6 +40,7 @@ evidence_level: unsourced
 - [[아이디어 개선 루프]]
 - [[OSINT]]
 - [[Frontier Systems]]
+- [[Micro Frontend]]
 
 ## 프로젝트
 
@@ -148,6 +149,7 @@ evidence_level: unsourced
 - [[Stanford CS153 Frontier Systems Course Page]]
 - [[SkillOpt Project Page]]
 - [[Digital Bourgeois SkillOpt Article]]
+- [[Velog Micro Frontend Article]]
 
 ## 리포트
 

@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 40개
-- 개념 페이지: 23개
+- 자료 요약: 41개
+- 개념 페이지: 24개
 - 도구 페이지: 17개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -52,6 +52,7 @@ evidence_level: unsourced
 - [[oh-my-codex]] GitHub repository와 npm package를 별도 source로 확인한다.
 - [[SkillOpt]] GitHub repository와 arXiv 논문을 별도 source로 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
+- [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
 - [[OSINT]] 관점에서 secret scanning, GitHub exposure, MCP endpoint 노출 점검 자료를 보강한다.
 - [[Frontier Systems]] 관점에서 one-person frontier lab이 만들 산출물 기준을 정한다.
 
@@ -71,6 +72,7 @@ evidence_level: unsourced
 - [[Basalt Project]]
 - [[RAG vs Agentic Workflow]]
 - [[React Effect Naming]]
+- [[Micro Frontend]]
 - [[oh-my-codex]]
 - [[SkillOpt]]
 - [[OSINT]]

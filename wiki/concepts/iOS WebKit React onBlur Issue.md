@@ -3,7 +3,7 @@ title: iOS WebKit React onBlur Issue
 type: concept
 status: active
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-06-01
 tags:
   - frontend
   - react
@@ -11,7 +11,10 @@ tags:
   - webkit
   - mobile-web
   - debugging
-related: []
+related:
+  - "[[React Effect Naming]]"
+  - "[[Micro Frontend]]"
+  - "[[Velog Micro Frontend Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -55,6 +58,7 @@ React의 `onBlur`에 form validation, save, UI state update를 연결한 경우,
 - React Synthetic Event: React가 browser event를 감싸는 추상화이며, native event와 항상 1:1 대응하지 않는다.
 - Native `blur`: DOM 요소가 focus를 잃을 때 발생하지만 버블링되지 않는다.
 - `focusout`: focus 이동 시 버블링되는 이벤트이며 React `onBlur` 구현에 사용된다.
+- [[Micro Frontend]]: frontend abstraction boundary가 커질수록 routing, shared dependency, runtime integration 같은 운영 경계가 생긴다. 이 페이지는 더 낮은 레벨의 browser/framework boundary가 문제로 드러난 사례다.
 
 ## 예시
 
@@ -70,3 +74,4 @@ React의 `onBlur`에 form validation, save, UI state update를 연결한 경우,
 - 이 이슈를 프로젝트 공통 input component에서 처리해야 하는가, 아니면 특정 입력 흐름에서만 처리해야 하는가?
 - React 또는 WebKit 쪽에서 향후 동작이 바뀌면 fallback이 중복 호출을 만들 가능성은 없는가?
 - 자동 테스트로 iOS keyboard Done 버튼 동작을 안정적으로 재현할 수 있는가?
+- frontend architecture boundary와 browser compatibility boundary를 같은 점검 checklist에서 다룰 것인가?

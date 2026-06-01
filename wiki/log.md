@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-01] ingest | Velog Micro Frontend 입문 글
+
+- Velog 글 "프론트엔드계의 MSA, MFE에 대해 알아보자"를 raw HTML snapshot으로 보존하고 [[Velog Micro Frontend Article]]로 ingest했다.
+- [[Micro Frontend]] concept page를 추가하고 독립 개발/배포/운영 단위, 빌드 타임 통합, 런타임 통합, SSR/CSR/edge 통합 위치, 도입 실패 패턴을 정리했다.
+- [[React Effect Naming]], [[iOS WebKit React onBlur Issue]]에 frontend 책임 경계와 abstraction boundary 관점으로 연결했다.
+- 변경 영역: [[Micro Frontend]], [[Velog Micro Frontend Article]], [[React Effect Naming]], [[iOS WebKit React onBlur Issue]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Module Federation, Next.js Multi-zone, Nx/Turborepo, edge composition은 공식 문서로 별도 source 확인 후 비교 후보로 정리한다.
+
 ## [2026-06-01] ingest | SkillOpt 프로젝트 페이지와 해설 글
 
 - Microsoft SkillOpt 프로젝트 페이지와 Digital Bourgeois Tistory 해설 글을 raw HTML snapshot으로 보존하고 [[SkillOpt Project Page]], [[Digital Bourgeois SkillOpt Article]]로 ingest했다.
