@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-01] ingest | Velog Claude Opus 4.8 반응 글
+
+- Velog 글 "Claude Opus 4.8 이 그새 또 나왔다"를 raw HTML snapshot으로 보존하고 [[Velog Claude Opus 4.8 Reaction Article]]로 ingest했다.
+- [[Claude Opus 4.8]]에 benchmark보다 "덜 우김", 불확실성 보고, 이의 제기, 완료 evidence가 중요하다는 사용자 해석을 공식 발표와 분리해 보강했다.
+- [[Claude Code]], [[Agentic Workflow]], [[Orchestration]]에 Dynamic Workflows, effort control, 자체 검수, evidence 기반 완료 보고 관점을 연결했다.
+- 변경 영역: [[Velog Claude Opus 4.8 Reaction Article]], [[Claude Opus 4.8]], [[Claude Code]], [[Agentic Workflow]], [[Orchestration]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Claude Opus 4.8 System Card, Claude Code Dynamic Workflows 공식 문서, Fast Mode 가격/성능 조건은 별도 source로 확인한다.
+
 ## [2026-06-01] ingest | Velog Micro Frontend 입문 글
 
 - Velog 글 "프론트엔드계의 MSA, MFE에 대해 알아보자"를 raw HTML snapshot으로 보존하고 [[Velog Micro Frontend Article]]로 ingest했다.

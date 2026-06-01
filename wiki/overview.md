@@ -25,7 +25,7 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 41개
+- 자료 요약: 42개
 - 개념 페이지: 24개
 - 도구 페이지: 17개
 - 프로젝트 페이지: 2개
@@ -51,6 +51,7 @@ evidence_level: unsourced
 - [[Codex Harness]] 관련 공식 developer docs와 CLI repository를 별도 source로 확인한다.
 - [[oh-my-codex]] GitHub repository와 npm package를 별도 source로 확인한다.
 - [[SkillOpt]] GitHub repository와 arXiv 논문을 별도 source로 확인한다.
+- [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows 공식 문서를 별도 source로 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
 - [[OSINT]] 관점에서 secret scanning, GitHub exposure, MCP endpoint 노출 점검 자료를 보강한다.
@@ -75,6 +76,7 @@ evidence_level: unsourced
 - [[Micro Frontend]]
 - [[oh-my-codex]]
 - [[SkillOpt]]
+- [[Claude Opus 4.8]]
 - [[OSINT]]
 - [[Frontier Systems]]
 

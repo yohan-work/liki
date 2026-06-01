@@ -21,6 +21,7 @@ related:
   - "[[Digital Bourgeois oh-my-codex Article]]"
   - "[[SkillOpt]]"
   - "[[SkillOpt Project Page]]"
+  - "[[Velog Claude Opus 4.8 Reaction Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -47,6 +48,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Anthropic Claude Opus 4.8 Announcement]]은 Claude Code dynamic workflows, effort control, Messages API의 system entry 갱신을 통해 orchestration이 agent 실행 중 effort, permission, token budget, environment context를 조율하는 문제임을 보여준다.
 - [[Digital Bourgeois oh-my-codex Article]]은 [[oh-my-codex]]를 통해 role, skill, workflow, `.omx/` state, tmux/team runtime, smoke test를 Codex CLI 바깥의 orchestration surface로 다루는 사례를 제공한다.
 - [[SkillOpt Project Page]]는 target model, optimizer model, benchmark split, validation gate, rejected edit buffer, final skill artifact를 분리해 skill 개선 orchestration을 구성하는 사례다.
+- [[Velog Claude Opus 4.8 Reaction Article]]은 effort control과 Dynamic Workflows를 작업 위험도와 중요도에 맞춰 agent runtime의 깊이, 병렬화, 검수 수준을 조절하는 사용자-facing orchestration surface로 해석한다.
 
 ## 관련 자료
 
@@ -57,9 +59,11 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Anthropic Claude Opus 4.8 Announcement]]
 - [[Digital Bourgeois oh-my-codex Article]]
 - [[SkillOpt Project Page]]
+- [[Velog Claude Opus 4.8 Reaction Article]]
 
 ## 열린 질문
 
 - 개인 지식 작업에는 어떤 orchestration pattern이 맞는가?
 - failure와 contradiction을 어떻게 추적해야 하는가?
 - workflow 지침 자체를 개선할 때 어떤 validation gate를 둘 것인가?
+- effort level과 검증 artifact를 작업 위험도에 어떻게 매핑할 것인가?

@@ -150,6 +150,7 @@ evidence_level: unsourced
 - [[SkillOpt Project Page]]
 - [[Digital Bourgeois SkillOpt Article]]
 - [[Velog Micro Frontend Article]]
+- [[Velog Claude Opus 4.8 Reaction Article]]
 
 ## 리포트
 

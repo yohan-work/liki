@@ -3,7 +3,7 @@ title: Claude Opus 4.8
 type: tool
 status: active
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-01
 tags:
   - claude
   - llm
@@ -14,6 +14,7 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Orchestration]]"
   - "[[Anthropic Claude Opus 4.8 Announcement]]"
+  - "[[Velog Claude Opus 4.8 Reaction Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -23,6 +24,8 @@ evidence_level: source-backed
 ## 무엇인가
 
 Claude Opus 4.8은 Anthropic이 2026-05-28 발표한 Opus 계열 모델이다. [[Anthropic Claude Opus 4.8 Announcement]]에 따르면 Opus 4.7 대비 코딩, agentic skill, reasoning, 실무 지식 작업 평가에서 개선된 버전으로 소개된다.
+
+[[Velog Claude Opus 4.8 Reaction Article]]은 이 발표를 benchmark 점수 경쟁보다 "덜 우기고, 애매하면 애매하다고 말하며, 계획이 이상하면 이의를 제기하는 모델"이라는 사용 가치로 해석한다. 이 해석은 anecdotal source이므로 공식 성능 주장과 분리해 보조 맥락으로만 사용한다.
 
 ## 사용 사례
 
@@ -35,6 +38,7 @@ Claude Opus 4.8은 Anthropic이 2026-05-28 발표한 Opus 계열 모델이다. [
 
 - Anthropic은 Opus 4.8이 Opus 4.7 대비 agentic task에서 판단력과 협업성이 개선되었다고 주장한다.
 - 발표문은 unsupported claim을 줄이고, 작업 중 불확실성을 더 잘 표시하는 honesty 개선을 강조한다.
+- [[Velog Claude Opus 4.8 Reaction Article]]은 이런 honesty 개선을 production 작업에서 "완료라고 우긴 뒤 터지는 일"을 줄이는 방향으로 해석한다.
 - Claude Code와 함께 사용할 때 effort level과 dynamic workflows가 대규모 코드베이스 작업의 조절면으로 추가된다.
 - Messages API의 system entry 변경은 agent harness가 실행 중 권한, token budget, environment context를 업데이트하는 패턴과 연결된다.
 
@@ -59,9 +63,11 @@ Claude Opus 4.8은 Anthropic이 2026-05-28 발표한 Opus 계열 모델이다. [
 ## 관련 자료
 
 - [[Anthropic Claude Opus 4.8 Announcement]]
+- [[Velog Claude Opus 4.8 Reaction Article]]
 
 ## 열린 질문
 
 - 개인 LLM Wiki 유지보수에서는 어떤 작업부터 high, extra, max effort 기준을 나눌 것인가?
 - dynamic workflows를 실제로 쓰기 전, 어떤 작업 크기와 검증 기준이 있어야 병렬 subagent 실행이 정당화되는가?
 - Codex 기반 workflow와 Claude Code dynamic workflows를 비교할 때 공통 평가 기준은 무엇인가?
+- agent가 "완료"라고 보고하기 전에 어떤 evidence를 함께 제시해야 신뢰할 수 있는가?
