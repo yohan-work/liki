@@ -41,6 +41,7 @@ evidence_level: unsourced
 - [[OSINT]]
 - [[Frontier Systems]]
 - [[Micro Frontend]]
+- [[일본 IT 업계]]
 
 ## 프로젝트
 
@@ -151,6 +152,7 @@ evidence_level: unsourced
 - [[Digital Bourgeois SkillOpt Article]]
 - [[Velog Micro Frontend Article]]
 - [[Velog Claude Opus 4.8 Reaction Article]]
+- [[Velog Japan IT Industry Atmosphere Article]]
 
 ## 리포트
 

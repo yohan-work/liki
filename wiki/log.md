@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-01] ingest | Velog 일본 IT 업계 분위기 글
+
+- Velog 글 "일본 IT업계 분위기는 실제로 어떨까?"를 raw HTML snapshot으로 보존하고 [[Velog Japan IT Industry Atmosphere Article]]로 ingest했다.
+- [[일본 IT 업계]] concept page를 추가해 회사 유형별 편차, 완곡한 커뮤니케이션, 문서화 문화, 재택근무와 잔업 관리, 외국인 개발자 협업, 일본어 전달력 관점을 정리했다.
+- 개인 경험 기반 practitioner article이므로 재택근무 확산, 외국인 개발자 증가, 일본어 요구 수준 같은 일반화는 검증 필요 주장으로 분리했다.
+- 변경 영역: [[일본 IT 업계]], [[Velog Japan IT Industry Atmosphere Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 일본 IT 노동시장 통계, 재택근무/잔업 관련 공식 자료, SI/SES/스타트업/외국계 기업 유형별 비교 source를 별도 확인한다.
+
 ## [2026-06-01] ingest | Velog Claude Opus 4.8 반응 글
 
 - Velog 글 "Claude Opus 4.8 이 그새 또 나왔다"를 raw HTML snapshot으로 보존하고 [[Velog Claude Opus 4.8 Reaction Article]]로 ingest했다.

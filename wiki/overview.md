@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 42개
-- 개념 페이지: 24개
+- 자료 요약: 43개
+- 개념 페이지: 25개
 - 도구 페이지: 17개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -79,6 +79,7 @@ evidence_level: unsourced
 - [[Claude Opus 4.8]]
 - [[OSINT]]
 - [[Frontier Systems]]
+- [[일본 IT 업계]]
 
 ## 다음 행동
 
