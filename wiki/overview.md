@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-01
+updated: 2026-06-02
 tags:
   - llm-wiki
   - overview
@@ -41,9 +41,9 @@ evidence_level: unsourced
 
 ## 오늘 하나만 할 일
 
-- 새 자료를 더 넣기 전에 `node scripts/weekly-review.ts`에서 나온 후속 작업 후보 중 1개를 고른다.
-- 후보가 애매하면 [[아이디어 개선 루프]]를 실제 아이디어 1개에 적용해 실행 가치와 보류 조건을 확인한다.
-- 새 자료가 있으면 바로 ingest하지 말고 `inbox/to-ingest.md` 또는 `node scripts/new-source.ts <raw-path-or-url>`로 triage한다.
+- Codex에서는 먼저 `#wiki review`를 실행해 오늘 처리할 후보 1개를 고른다.
+- 새 자료가 있으면 `#wiki ingest <url-or-raw-path>`로 시작하되, 영향 범위가 애매하면 triage만 먼저 한다.
+- 후보가 애매하면 `#wiki idea <idea>`로 [[아이디어 개선 루프]]를 실제 아이디어 1개에 적용한다.
 
 ## 후속 작업 queue
 
@@ -83,6 +83,7 @@ evidence_level: unsourced
 
 ## 다음 행동
 
+- Codex 명령은 `#wiki ingest`, `#wiki ask`, `#wiki idea`, `#wiki review` 네 가지를 기본 진입점으로 쓴다.
 - 실행 후보는 한 번에 하나만 MVP / PoC 또는 maintenance task로 관리한다.
 - weekly review가 "없음"으로 끝나면 log의 `후속 작업:`과 source summary의 `검증 필요 주장`을 먼저 본다.
 - 좋은 질문이 생기면 일회성 답변으로 끝내지 말고 [[LLM Wiki 운영 흐름]] 기준으로 저장 가치가 있는지 판단한다.
@@ -90,8 +91,9 @@ evidence_level: unsourced
 
 ## 반복 루틴
 
-- 새 자료 처리: 필요하면 `node scripts/new-source.ts <raw-path-or-url>`로 triage 초안을 먼저 보고, raw 보존, source summary 작성, 관련 concept/project/tool 갱신, index와 log 업데이트.
-- 아이디어 처리: 원형 메모, 문제, 내가 끌린 이유, 방향성 적합성, 대상 사용자, 사용 맥락, 해결 가설, 보류 조건을 먼저 분리한다.
+- 새 자료 처리: `#wiki ingest <url-or-raw-path>`를 기본으로 쓰고, 필요하면 `node scripts/new-source.ts <raw-path-or-url>`로 triage 초안을 먼저 본다.
+- 질문 처리: `#wiki ask <question>`로 답변하고, 반복 참조 가치가 있을 때만 `wiki/questions/`에 저장한다.
+- 아이디어 처리: `#wiki idea <idea>`로 원형 메모, 문제, 내가 끌린 이유, 방향성 적합성, 대상 사용자, 사용 맥락, 해결 가설, 보류 조건을 먼저 분리한다.
 - 아이디어 개선: 특정 아이템보다 더 일반화한 문제와 더 작게 줄인 형태를 함께 기록한다.
 - MVP / PoC 처리: 성공 기준과 1주 실험 계획을 먼저 쓰고, 다음 작업이 없으면 active 상태로 두지 않는다.
 - 회의록 처리: 핵심 논의보다 결정과 액션 아이템을 우선 추출하고 관련 project, mvp, idea에 연결한다.
@@ -100,11 +102,12 @@ evidence_level: unsourced
 - 프로젝트 결정 기록: 장기 프로젝트에 영향을 주는 판단은 project page에 근거, 결정, 후속 작업을 분리해 남긴다.
 - 여러 자료 종합: 같은 주제의 source가 2개 이상이면 공통 주장, 차이, 검증 필요 주장을 따로 정리한다.
 - 주간 점검: `node scripts/lint-wiki.ts`로 frontmatter, 링크, index 누락, taxonomy 문제를 확인한다.
-- 주간 리뷰: `node scripts/weekly-review.ts`로 실행 후보, log 후속 작업, 근거 보강 후보를 확인한다.
+- 주간 리뷰: `#wiki review` 또는 `node scripts/weekly-review.ts`로 실행 후보, log 후속 작업, 근거 보강 후보를 확인한다.
 - 기회 리뷰: `node scripts/opportunity-review.ts`로 idea/MVP와 source tag 패턴을 보되 자동 점수는 검토 힌트로만 쓴다.
 
 ## 주요 진입점
 
+- Codex 짧은 명령: `#wiki ingest`, `#wiki ask`, `#wiki idea`, `#wiki review`
 - 전체 목차: [[LLM Wiki Index]]
 - 운영 흐름: [[LLM Wiki 운영 흐름]]
 - Ingest 대기: `inbox/to-ingest.md`

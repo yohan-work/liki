@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-01
+updated: 2026-06-02
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-02] maintenance | Codex #wiki 명령 진입점 추가
+
+- `.codex/skills/wiki/SKILL.md`를 추가해 `#wiki ingest`, `#wiki ask`, `#wiki idea`, `#wiki review` 네 가지 짧은 명령을 표준 진입점으로 정의했다.
+- README의 예시 명령을 긴 프롬프트 중심에서 `#wiki` 명령 중심으로 보강했다.
+- [[LLM Wiki Overview]]에 Codex 짧은 명령과 `#wiki review` 우선 흐름을 반영했다.
+- 변경 영역: Codex wiki skill, README, [[LLM Wiki Overview]], [[LLM Wiki Log]].
+- 후속 작업: 실제 사용 중 `#wiki` 명령이 긴 프롬프트를 얼마나 줄이는지 보고, 필요하면 명령별 응답 형식을 더 줄인다.
 
 ## [2026-06-01] ingest | Velog 일본 IT 업계 분위기 글
 

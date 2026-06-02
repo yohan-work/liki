@@ -84,7 +84,27 @@ use_for:
 
 ## 예시 명령
 
-아래는 아직 완성된 스크립트가 아니라 Codex에게 줄 수 있는 프롬프트 예시입니다.
+평소에는 Codex에게 긴 프롬프트를 쓰지 않고 아래 `#wiki` 명령으로 시작합니다.
+
+```text
+#wiki ingest https://example.com/article
+```
+
+```text
+#wiki ask RAG와 Agentic Workflow는 어떻게 다르게 써야 하나?
+```
+
+```text
+#wiki idea 개인용 AI workflow 점검 대시보드
+```
+
+```text
+#wiki review
+```
+
+`#wiki ingest`는 자료를 위키에 반영하고, `#wiki ask`는 위키 기반 답변과 재사용 질문 저장 여부를 판단하며, `#wiki idea`는 아이디어를 실행 후보로 정리하고, `#wiki review`는 오늘 하나만 할 일을 고르는 read-only 점검으로 사용합니다.
+
+아래는 더 세밀하게 지시하고 싶을 때 Codex에게 줄 수 있는 프롬프트 예시입니다.
 
 ```text
 raw/articles/example.md를 LLM Wiki에 ingest해줘. 먼저 domain, content_type, knowledge_role, source_quality, use_for를 판단하고, source summary를 한국어로 만든 뒤 관련 페이지와 wiki/index.md, wiki/log.md를 업데이트해줘.
