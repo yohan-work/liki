@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-02] ingest | Matt Pocock skills GitHub repository
+
+- GitHub repository `mattpocock/skills`의 repo metadata, README, tree snapshot을 raw에 보존하고 [[GitHub Matt Pocock Skills Repository]]로 ingest했다.
+- [[Matt Pocock Skills]] tool page를 추가해 grilling, shared language, TDD, diagnosis, architecture review, handoff를 small/composable skill 패턴으로 정리했다.
+- [[Skills]], [[Codex]], [[Claude Code]], [[Orchestration]]에 coding agent 실패 모드를 줄이는 skill vocabulary와 setup/shared config 관점을 연결했다.
+- 변경 영역: [[Matt Pocock Skills]], [[GitHub Matt Pocock Skills Repository]], [[Skills]], [[Codex]], [[Claude Code]], [[Orchestration]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: `grill-with-docs`, `diagnose`, `handoff`를 LLM Wiki용 skill 후보로 검토하고, 설치 전 `skills.sh` 동작과 각 `SKILL.md` 세부 지시를 확인한다.
+
 ## [2026-06-02] ingest | Velog Jenkins GitHub NCP 배포기
 
 - Velog 글 "Jenkins + Webhook 을 이용한 자동 CI/CD환경 구축기(feat.NCP)"를 raw HTML snapshot으로 보존하고 [[Velog Jenkins GitHub NCP Deployment Article]]로 ingest했다.

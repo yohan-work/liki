@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 45개
+- 자료 요약: 46개
 - 개념 페이지: 27개
-- 도구 페이지: 20개
+- 도구 페이지: 21개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -51,6 +51,7 @@ evidence_level: unsourced
 - [[Codex Harness]] 관련 공식 developer docs와 CLI repository를 별도 source로 확인한다.
 - [[oh-my-codex]] GitHub repository와 npm package를 별도 source로 확인한다.
 - [[SkillOpt]] GitHub repository와 arXiv 논문을 별도 source로 확인한다.
+- [[Matt Pocock Skills]]의 `grill-with-docs`, `diagnose`, `handoff`를 LLM Wiki용 skill 후보로 검토한다.
 - [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows 공식 문서를 별도 source로 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
@@ -80,6 +81,7 @@ evidence_level: unsourced
 - [[Tailwind CSS]]
 - [[CI/CD 배포 파이프라인]]
 - [[Jenkins]]
+- [[Matt Pocock Skills]]
 - [[oh-my-codex]]
 - [[SkillOpt]]
 - [[Claude Opus 4.8]]

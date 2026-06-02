@@ -100,6 +100,7 @@ evidence_level: unsourced
 - [[Tailwind CSS]]
 - [[Jenkins]]
 - [[Naver Cloud Platform]]
+- [[Matt Pocock Skills]]
 
 ## 인물
 
@@ -160,6 +161,7 @@ evidence_level: unsourced
 - [[Velog Japan IT Industry Atmosphere Article]]
 - [[Velog Tailwind CSS Structure Article]]
 - [[Velog Jenkins GitHub NCP Deployment Article]]
+- [[GitHub Matt Pocock Skills Repository]]
 
 ## 리포트
 
