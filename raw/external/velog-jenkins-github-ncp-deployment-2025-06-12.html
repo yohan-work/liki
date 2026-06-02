@@ -1,0 +1,504 @@
+<!doctype html>
+<html><head><title data-rh="true">Jenkins + Webhook 을 이용한 자동 CI/CD환경 구축기(feat.NCP)</title><link data-rh="true" rel="canonical" href="https://velog.io/@no-int/CICDJenkins-Github-NCP-배포기"/><meta data-rh="true" property="fb:app_id" content="203040656938507"/><meta data-rh="true" name="description" content="CI/CD"/><meta data-rh="true" property="og:url" content="https://velog.io/@no-int/CICDJenkins-Github-NCP-배포기"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:title" content="Jenkins + Webhook 을 이용한 자동 CI/CD환경 구축기(feat.NCP)"/><meta data-rh="true" property="og:description" content="CI/CD"/><meta data-rh="true" property="og:image" content="https://velog.velcdn.com/images/no-int/post/34dcc280-89d9-413d-abc0-c190e50ac34f/image.png"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Jenkins + Webhook 을 이용한 자동 CI/CD환경 구축기(feat.NCP)"/><meta data-rh="true" name="twitter:description" content="CI/CD"/><meta data-rh="true" name="twitter:image" content="https://velog.velcdn.com/images/no-int/post/34dcc280-89d9-413d-abc0-c190e50ac34f/image.png"/><style data-styled="" data-styled-version="5.3.3">.hSMJOX{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;font-weight:bold;cursor:pointer;outline:none;border:none;color:white;background:var(--primary1);color:var(--button-text);border-radius:4px;padding-top:0;padding-bottom:0;height:2rem;padding-left:1.25rem;padding-right:1.25rem;font-size:1rem;}/*!sc*/
+.hSMJOX:hover,.hSMJOX:focus{background:var(--primary2);}/*!sc*/
+.sc-jrQzAO + .sc-jrQzAO{margin-left:0.5rem;}/*!sc*/
+.hSMJOX:disabled{cursor:not-allowed;background:var(--bg-element4);color:var(--text3);}/*!sc*/
+.hSMJOX:disabled:hover{background:var(--bg-element4);color:var(--text3);}/*!sc*/
+data-styled.g11[id="sc-jrQzAO"]{content:"hSMJOX,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g13[id="sc-global-gYCCRU1"]{content:"sc-global-gYCCRU1,"}/*!sc*/
+.cyyZlI{color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g17[id="sc-egiyK"]{content:"cyyZlI,"}/*!sc*/
+.fldlST{height:2rem;padding-left:1rem;padding-right:1rem;font-size:1rem;border-radius:1rem;background:none;border:none;outline:none;font-weight:bold;word-break:keep-all;background:var(--bg-element5);color:var(--button-text);-webkit-transition:0.125s all ease-in;transition:0.125s all ease-in;cursor:pointer;}/*!sc*/
+.fldlST:hover{background:var(--bg-element6);}/*!sc*/
+.fldlST:focus{box-shadow:0px 2px 12px #00000030;}/*!sc*/
+.fldlST:disabled{background:var(--bg-element2);}/*!sc*/
+data-styled.g18[id="sc-bqiRlB"]{content:"fldlST,"}/*!sc*/
+.cQvXTx{width:1728px;margin-left:auto;margin-right:auto;}/*!sc*/
+@media (max-width:1919px){.cQvXTx{width:1376px;}}/*!sc*/
+@media (max-width:1440px){.cQvXTx{width:1024px;}}/*!sc*/
+@media (max-width:1056px){.cQvXTx{width:calc(100% - 2rem);}}/*!sc*/
+data-styled.g22[id="sc-fFeiMQ"]{content:"cQvXTx,"}/*!sc*/
+.ddFdew{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;font-weight:bold;color:var(--text1);font-size:1.3125rem;-webkit-text-decoration:none;text-decoration:none;font-family:Fira Mono,monospace;}/*!sc*/
+@media (max-width:1024px){.ddFdew{font-size:1.125rem;}.ddFdew .velog-logo{height:1.25rem;}}/*!sc*/
+.ddFdew a{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ddFdew .user-logo{display:block;max-width:calc(100vw - 250px);text-overflow:ellipsis;white-space:nowrap;overflow-x:hidden;overflow-y:hidden;}/*!sc*/
+data-styled.g28[id="sc-kfPuZi"]{content:"ddFdew,"}/*!sc*/
+.kdLiUF{color:inherit;}/*!sc*/
+.kdLiUF svg{color:inherit;margin-right:1rem;width:1.75rem;height:1.75rem;display:block;}/*!sc*/
+@media (max-width:1024px){.kdLiUF svg{width:1.5rem;height:1.5rem;margin-right:0.75rem;}}/*!sc*/
+data-styled.g29[id="sc-fKVqWL"]{content:"kdLiUF,"}/*!sc*/
+.jEdNvQ{height:4rem;}/*!sc*/
+data-styled.g30[id="sc-bBHxTw"]{content:"jEdNvQ,"}/*!sc*/
+.glTvbH{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;border:none;width:2.5rem;height:2.5rem;outline:none;border-radius:50%;color:var(--text1);cursor:pointer;margin-right:0.5rem;}/*!sc*/
+.glTvbH:hover{background:var(--slight-layer);}/*!sc*/
+.glTvbH svg{width:24px;height:24px;}/*!sc*/
+data-styled.g31[id="sc-iwjdpV"]{content:"glTvbH,"}/*!sc*/
+.pAGEY{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;border:none;width:2.5rem;height:2.5rem;outline:none;border-radius:50%;color:var(--text1);cursor:pointer;margin-right:4px;}/*!sc*/
+.pAGEY:hover{background:var(--slight-layer);}/*!sc*/
+.pAGEY svg{width:24px;height:24px;}/*!sc*/
+data-styled.g32[id="sc-cxpSdN"]{content:"pAGEY,"}/*!sc*/
+.hrgwyc{height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}/*!sc*/
+data-styled.g34[id="sc-iJKOTD"]{content:"hrgwyc,"}/*!sc*/
+.gHrJRn{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;}/*!sc*/
+@media (max-width:1024px){.gHrJRn .write-button{display:none;}}/*!sc*/
+data-styled.g35[id="sc-giYglK"]{content:"gHrJRn,"}/*!sc*/
+.bxsBRa{position:fixed;top:0;background:var(--bg-element1);width:100%;z-index:10;box-shadow:0px 0 8px rgba(0,0,0,0.08);}/*!sc*/
+.bxsBRa .tab-wrapper{margin-top:-2rem;}/*!sc*/
+data-styled.g50[id="sc-cTAqQK"]{content:"bxsBRa,"}/*!sc*/
+.kTIDXm{padding-bottom:4rem;}/*!sc*/
+data-styled.g53[id="sc-bBHHxi"]{content:"kTIDXm,"}/*!sc*/
+.iLfnNd{background:var(--bg-element4);-webkit-animation:gsdBxV 1s ease-in-out infinite;animation:gsdBxV 1s ease-in-out infinite;display:inline-block;border-radius:4px;height:1em;}/*!sc*/
+.sc-lbhJGD + .sc-lbhJGD{margin-left:0.5rem;}/*!sc*/
+.jsEdRE{background:var(--bg-element4);-webkit-animation:gsdBxV 1s ease-in-out infinite;animation:gsdBxV 1s ease-in-out infinite;display:inline-block;border-radius:4px;height:1em;}/*!sc*/
+data-styled.g60[id="sc-lbhJGD"]{content:"iLfnNd,jsEdRE,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g69[id="sc-global-iqNrnJ1"]{content:"sc-global-iqNrnJ1,"}/*!sc*/
+.dXONqK{width:768px;margin-left:auto;margin-right:auto;}/*!sc*/
+@media (max-width:768px){.dXONqK{width:100%;}}/*!sc*/
+data-styled.g76[id="sc-TBWPX"]{content:"dXONqK,"}/*!sc*/
+.gISUXI{margin-bottom:0.875rem;background:var(--bg-tag);padding-left:1rem;padding-right:1rem;height:2rem;border-radius:1rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-right:0.875rem;color:var(--primary1);-webkit-text-decoration:none;text-decoration:none;font-weight:500;font-size:1rem;}/*!sc*/
+@media (max-width:768px){.gISUXI{height:1.5rem;font-size:0.75rem;border-radius:0.75rem;padding-left:0.75rem;padding-right:0.75rem;margin-right:0.5rem;margin-bottom:0.5rem;}}/*!sc*/
+.gISUXI:hover{opacity:0.75;}/*!sc*/
+data-styled.g85[id="sc-dtMgUX"]{content:"gISUXI,"}/*!sc*/
+.bpMcZw{margin-top:0.875rem;margin-bottom:-0.875rem;min-height:0.875rem;}/*!sc*/
+@media (max-width:768px){.bpMcZw{margin-top:0.5rem;margin-bottom:-0.5rem;min-height:0.5rem;}}/*!sc*/
+data-styled.g86[id="sc-cZMNgc"]{content:"bpMcZw,"}/*!sc*/
+.fiOuRZ{margin-top:5.5rem;}/*!sc*/
+@media (max-width:1024px){.fiOuRZ .head-wrapper{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+.fiOuRZ h1{font-size:3rem;line-height:1.5;-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;margin-top:0;font-weight:800;color:var(--text1);margin-bottom:2rem;word-break:keep-all;overflow-wrap:break-word;-webkit-transition:color 0.125s ease-in;transition:color 0.125s ease-in;}/*!sc*/
+@media (max-width:1024px){.fiOuRZ{margin-top:2rem;}.fiOuRZ h1{font-size:2.25rem;}}/*!sc*/
+data-styled.g88[id="sc-jQrDum"]{content:"fiOuRZ,"}/*!sc*/
+.jGdQwA{font-size:1rem;color:var(--text2);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.jGdQwA .information .username{color:var(--text1);font-weight:bold;}/*!sc*/
+.jGdQwA .information .username a{color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.jGdQwA .information .username a:hover{color:var(--text2);-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.jGdQwA .information .separator{margin-left:0.5rem;margin-right:0.5rem;}/*!sc*/
+@media (max-width:768px){.jGdQwA .information{font-size:0.875rem;}}/*!sc*/
+@media (max-width:768px){.jGdQwA{margin-bottom:0.75rem;}}/*!sc*/
+data-styled.g89[id="sc-fvxzrP"]{content:"jGdQwA,"}/*!sc*/
+.eYeYLy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g90[id="sc-fbyfCU"]{content:"eYeYLy,"}/*!sc*/
+.FTZwa{font-size:1.125rem;color:var(--text1);-webkit-transition:color 0.125s ease-in;transition:color 0.125s ease-in;line-height:1.7;-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;word-break:keep-all;word-wrap:break-word;}/*!sc*/
+.FTZwa ul b,.FTZwa ol b,.FTZwa p b{font-weight:400;}/*!sc*/
+.FTZwa ul code,.FTZwa ol code,.FTZwa p code{background:var(--bg-inline-code);padding:0.2em 0.4em;font-size:85%;border-radius:3px;}/*!sc*/
+.FTZwa ul a code,.FTZwa ol a code,.FTZwa p a code{color:var(--primary1);}/*!sc*/
+.FTZwa a{color:var(--primary1);-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.FTZwa a:hover{color:var(--primary1);-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.FTZwa code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas, 'Courier New',monospace;}/*!sc*/
+.FTZwa hr{border:none;height:1px;width:100%;background:var(--border3);margin-top:2rem;margin-bottom:2rem;}/*!sc*/
+.FTZwa p img{display:block;margin:0 auto;max-width:100%;margin-top:3rem;margin-bottom:3rem;}/*!sc*/
+.FTZwa h1{font-size:2.5rem;}/*!sc*/
+.FTZwa h2{font-size:2rem;}/*!sc*/
+.FTZwa h3{font-size:1.5rem;}/*!sc*/
+.FTZwa h4{font-size:1.125rem;}/*!sc*/
+.FTZwa h1,.FTZwa h2,.FTZwa h3,.FTZwa h4{line-height:1.5;margin-bottom:1rem;}/*!sc*/
+.FTZwa p + h1,.FTZwa p + h2,.FTZwa p + h3,.FTZwa p + h4{margin-top:2.5rem;}/*!sc*/
+@media (max-width:768px){.FTZwa{font-size:1rem;}.FTZwa h1{font-size:2.25rem;}.FTZwa h2{font-size:1.75rem;}.FTZwa h3{font-size:1.25rem;}.FTZwa h4{font-size:1rem;}.FTZwa h1,.FTZwa h2,.FTZwa h3,.FTZwa h4{margin-bottom:0.75rem;}.FTZwa p + h1,.FTZwa p + h2,.FTZwa p + h3,.FTZwa p + h4{margin-top:2rem;}}/*!sc*/
+.FTZwa blockquote{margin-top:2rem;margin-bottom:2rem;border-left:4px solid var(--primary2);border-top-right-radius:4px;border-bottom-right-radius:4px;background:var(--bg-element2);margin-left:0;margin-right:0;padding:1rem;padding-left:2rem;color:var(--text1);}/*!sc*/
+.FTZwa blockquote ul,.FTZwa blockquote ol{padding-left:1rem;}/*!sc*/
+.FTZwa blockquote *:first-child{margin-top:0;}/*!sc*/
+.FTZwa blockquote *:last-child{margin-bottom:0;}/*!sc*/
+data-styled.g93[id="sc-bXTejn"]{content:"FTZwa,"}/*!sc*/
+.bzHCOc.atom-one pre{background:var(--prism-bg);}/*!sc*/
+.bzHCOc.atom-one code[class*='language-'],.bzHCOc.atom-one pre[class*='language-']{color:var(--prism-default-text);background:none;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}/*!sc*/
+.bzHCOc.atom-one pre[class*='language-']::-moz-selection,.bzHCOc.atom-one pre[class*='language-'] ::-moz-selection,.bzHCOc.atom-one code[class*='language-']::-moz-selection,.bzHCOc.atom-one code[class*='language-'] ::-moz-selection{text-shadow:none;background:var(--prism-selection-bg);}/*!sc*/
+.bzHCOc.atom-one pre[class*='language-']::selection,.bzHCOc.atom-one pre[class*='language-'] ::selection,.bzHCOc.atom-one code[class*='language-']::selection,.bzHCOc.atom-one code[class*='language-'] ::selection{text-shadow:none;background:var(--prism-selection-bg);}/*!sc*/
+@media print{.bzHCOc.atom-one code[class*='language-'],.bzHCOc.atom-one pre[class*='language-']{text-shadow:none;}}/*!sc*/
+.bzHCOc.atom-one pre[class*='language-']{padding:1em;margin:0.5em 0;overflow:auto;}/*!sc*/
+.bzHCOc.atom-one:not(pre) > code[class*='language-'],.bzHCOc.atom-one pre[class*='language-']{background:var(--prism-code-block-bg);}/*!sc*/
+.bzHCOc.atom-one:not(pre) > code[class*='language-']{padding:0.1em;border-radius:0.3em;white-space:normal;}/*!sc*/
+.bzHCOc.atom-one .token.comment,.bzHCOc.atom-one .token.prolog,.bzHCOc.atom-one .token.doctype,.bzHCOc.atom-one .token.cdata{color:var(--prism-code-1);}/*!sc*/
+.bzHCOc.atom-one .token.punctuation{color:var(--prism-code-2);}/*!sc*/
+.bzHCOc.atom-one .token.selector,.bzHCOc.atom-one .token.tag{color:var(--prism-code-3);}/*!sc*/
+.bzHCOc.atom-one .token.property,.bzHCOc.atom-one .token.boolean,.bzHCOc.atom-one .token.number,.bzHCOc.atom-one .token.constant,.bzHCOc.atom-one .token.symbol,.bzHCOc.atom-one .token.attr-name,.bzHCOc.atom-one .token.deleted{color:var(--prism-code-4);}/*!sc*/
+.bzHCOc.atom-one .token.string,.bzHCOc.atom-one .token.char,.bzHCOc.atom-one .token.attr-value,.bzHCOc.atom-one .token.builtin,.bzHCOc.atom-one .token.inserted{color:var(--prism-code-6);}/*!sc*/
+.bzHCOc.atom-one .token.operator,.bzHCOc.atom-one .token.entity,.bzHCOc.atom-one .token.url,.bzHCOc.atom-one .language-css .token.string,.bzHCOc.atom-one .style .token.string{color:var(--prism-code-5);}/*!sc*/
+.bzHCOc.atom-one .token.atrule,.bzHCOc.atom-one .token.keyword{color:var(--prism-code-7);}/*!sc*/
+.bzHCOc.atom-one .token.function{color:var(--prism-code-8);}/*!sc*/
+.bzHCOc.atom-one .token.regex,.bzHCOc.atom-one .token.important,.bzHCOc.atom-one .token.variable{color:var(--prism-code-9);}/*!sc*/
+.bzHCOc.atom-one .token.important,.bzHCOc.atom-one .token.bold{font-weight:bold;}/*!sc*/
+.bzHCOc.atom-one .token.italic{font-style:italic;}/*!sc*/
+.bzHCOc.atom-one .token.entity{cursor:help;}/*!sc*/
+.bzHCOc.atom-one pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber;}/*!sc*/
+.bzHCOc.atom-one pre.line-numbers > code{position:relative;}/*!sc*/
+.bzHCOc.atom-one .line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;-webkit-letter-spacing:-1px;-moz-letter-spacing:-1px;-ms-letter-spacing:-1px;letter-spacing:-1px;border-right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+.bzHCOc.atom-one .line-numbers-rows > span{pointer-events:none;display:block;counter-increment:linenumber;}/*!sc*/
+.bzHCOc.atom-one .line-numbers-rows > span:before{content:counter(linenumber);color:var(--prism-line-number);display:block;padding-right:0.8em;text-align:right;}/*!sc*/
+.bzHCOc.github code,.bzHCOc.github code[class*='language-'],.bzHCOc.github pre[class*='language-']{color:#24292e;}/*!sc*/
+.bzHCOc.github pre{color:#24292e;background:#f6f8fa;}/*!sc*/
+.bzHCOc.github .token.function{color:#005cc5;}/*!sc*/
+.bzHCOc.github .token.comment,.bzHCOc.github .token.prolog,.bzHCOc.github .token.doctype,.bzHCOc.github .token.cdata{color:#969896;}/*!sc*/
+.bzHCOc.github .token.punctuation{color:#24292e;}/*!sc*/
+.bzHCOc.github .token.string{color:#032f62;}/*!sc*/
+.bzHCOc.github .token.atrule,.bzHCOc.github .token.attr-value{color:#183691;}/*!sc*/
+.bzHCOc.github .token.property,.bzHCOc.github .token.tag{color:#63a35c;}/*!sc*/
+.bzHCOc.github .token.boolean,.bzHCOc.github .token.number{color:#0086b3;}/*!sc*/
+.bzHCOc.github .token.selector,.bzHCOc.github .token.attr-name,.bzHCOc.github .token.attr-value .punctuation:first-child,.bzHCOc.github .token.keyword,.bzHCOc.github .token.regex,.bzHCOc.github .token.important{color:#d73a49;}/*!sc*/
+.bzHCOc.github .token.operator,.bzHCOc.github .token.entity,.bzHCOc.github .token.url,.bzHCOc.github .language-css{color:#d73a49;}/*!sc*/
+.bzHCOc.github .token.entity{cursor:help;}/*!sc*/
+.bzHCOc.github .namespace{opacity:0.7;}/*!sc*/
+.bzHCOc.monokai code[class*='language-'],.bzHCOc.monokai pre[class*='language-']{color:#f8f8f2;text-shadow:0 1px rgba(0,0,0,0.3);}/*!sc*/
+.bzHCOc.monokai:not(pre) > code[class*='language-'],.bzHCOc.monokai pre[class*='language-']{background:#272822;}/*!sc*/
+.bzHCOc.monokai pre{color:#f8f8f2;text-shadow:0 1px rgba(0,0,0,0.3);background:#272822;}/*!sc*/
+.bzHCOc.monokai .token.comment,.bzHCOc.monokai .token.prolog,.bzHCOc.monokai .token.doctype,.bzHCOc.monokai .token.cdata{color:#778090;}/*!sc*/
+.bzHCOc.monokai .token.punctuation{color:#f8f8f2;}/*!sc*/
+.bzHCOc.monokai .namespace{opacity:0.7;}/*!sc*/
+.bzHCOc.monokai .token.property,.bzHCOc.monokai .token.tag,.bzHCOc.monokai .token.constant,.bzHCOc.monokai .token.symbol,.bzHCOc.monokai .token.deleted{color:#f92672;}/*!sc*/
+.bzHCOc.monokai .token.boolean,.bzHCOc.monokai .token.number{color:#ae81ff;}/*!sc*/
+.bzHCOc.monokai .token.selector,.bzHCOc.monokai .token.attr-name,.bzHCOc.monokai .token.string,.bzHCOc.monokai .token.char,.bzHCOc.monokai .token.builtin,.bzHCOc.monokai .token.inserted{color:#a6e22e;}/*!sc*/
+.bzHCOc.monokai .token.operator,.bzHCOc.monokai .token.entity,.bzHCOc.monokai .token.url,.bzHCOc.monokai .language-css .token.string,.bzHCOc.monokai .style .token.string,.bzHCOc.monokai .token.variable{color:#f8f8f2;}/*!sc*/
+.bzHCOc.monokai .token.atrule,.bzHCOc.monokai .token.attr-value,.bzHCOc.monokai .token.function{color:#e6db74;}/*!sc*/
+.bzHCOc.monokai .token.keyword{color:#f92672;}/*!sc*/
+.bzHCOc.monokai .token.regex,.bzHCOc.monokai .token.important{color:#fd971f;}/*!sc*/
+.bzHCOc.monokai .token.important,.bzHCOc.monokai .token.bold{font-weight:bold;}/*!sc*/
+.bzHCOc.monokai .token.italic{font-style:italic;}/*!sc*/
+.bzHCOc.monokai .token.entity{cursor:help;}/*!sc*/
+.bzHCOc.dracula code[class*='language-'],.bzHCOc.dracula pre[class*='language-']{color:#ccc;background:rgb(40,41,54);}/*!sc*/
+.bzHCOc.dracula pre[class*='language-']::-moz-selection,.bzHCOc.dracula pre[class*='language-'] ::-moz-selection,.bzHCOc.dracula code[class*='language-']::-moz-selection,.bzHCOc.dracula code[class*='language-'] ::-moz-selection{text-shadow:none;background-color:#5a5f80;}/*!sc*/
+.bzHCOc.dracula pre[class*='language-']::selection,.bzHCOc.dracula pre[class*='language-'] ::selection,.bzHCOc.dracula code[class*='language-']::selection,.bzHCOc.dracula code[class*='language-'] ::selection{text-shadow:none;background-color:#5a5f80;}/*!sc*/
+.bzHCOc.dracula:not(pre) > code[class*='language-']{border-radius:0.3em;white-space:normal;}/*!sc*/
+.bzHCOc.dracula pre{color:#ccc;background:rgb(40,41,54);}/*!sc*/
+.bzHCOc.dracula .limit-300{height:300px !important;}/*!sc*/
+.bzHCOc.dracula .limit-400{height:400px !important;}/*!sc*/
+.bzHCOc.dracula .limit-500{height:500px !important;}/*!sc*/
+.bzHCOc.dracula .limit-600{height:600px !important;}/*!sc*/
+.bzHCOc.dracula .limit-700{height:700px !important;}/*!sc*/
+.bzHCOc.dracula .limit-800{height:800px !important;}/*!sc*/
+.bzHCOc.dracula .token.comment{color:rgba(98,114,164,1);}/*!sc*/
+.bzHCOc.dracula .token.prolog{color:rgba(207,207,194,1);}/*!sc*/
+.bzHCOc.dracula .token.tag{color:rgba(220,104,170,1);}/*!sc*/
+.bzHCOc.dracula .token.entity{color:rgba(139,233,253,1);}/*!sc*/
+.bzHCOc.dracula .token.atrule{color:rgba(98,239,117,1);}/*!sc*/
+.bzHCOc.dracula .token.url{color:rgba(102,217,239,1);}/*!sc*/
+.bzHCOc.dracula .token.selector{color:rgba(207,207,194,1);}/*!sc*/
+.bzHCOc.dracula .token.string{color:rgba(241,250,140,1);}/*!sc*/
+.bzHCOc.dracula .token.property{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.important{color:rgba(255,121,198,1);font-weight:bold;}/*!sc*/
+.bzHCOc.dracula .token.punctuation{color:rgba(230,219,116,1);}/*!sc*/
+.bzHCOc.dracula .token.number{color:rgba(189,147,249,1);}/*!sc*/
+.bzHCOc.dracula .token.function{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .token.class-name{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.keyword{color:rgba(255,121,198,1);}/*!sc*/
+.bzHCOc.dracula .token.boolean{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.operator{color:rgba(139,233,253,1);}/*!sc*/
+.bzHCOc.dracula .token.char{color:rgba(255,135,157,1);}/*!sc*/
+.bzHCOc.dracula .token.regex{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .token.variable{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .token.constant{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.symbol{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .token.builtin{color:rgba(255,121,198,1);}/*!sc*/
+.bzHCOc.dracula .token.attr-value{color:#7ec699;}/*!sc*/
+.bzHCOc.dracula .token.deleted{color:#e2777a;}/*!sc*/
+.bzHCOc.dracula .token.namespace{color:#e2777a;}/*!sc*/
+.bzHCOc.dracula .token.bold{font-weight:bold;}/*!sc*/
+.bzHCOc.dracula .token.italic{font-style:italic;}/*!sc*/
+.bzHCOc.dracula .token{color:#ff79c6;}/*!sc*/
+.bzHCOc.dracula .langague-cpp .token.string{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .langague-c .token.string{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-css .token.selector{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .language-css .token.property{color:rgba(255,184,108,1);}/*!sc*/
+.bzHCOc.dracula .language-java span.token.class-name{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-java .token.class-name{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-markup .token.attr-value{color:rgba(102,217,239,1);}/*!sc*/
+.bzHCOc.dracula .language-markup .token.tag{color:rgba(80,250,123,1);}/*!sc*/
+.bzHCOc.dracula .language-objectivec .token.property{color:#66d9ef;}/*!sc*/
+.bzHCOc.dracula .language-objectivec .token.string{color:#50fa7b;}/*!sc*/
+.bzHCOc.dracula .language-php .token.boolean{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-php .token.function{color:#ff79c6;}/*!sc*/
+.bzHCOc.dracula .language-php .token.keyword{color:#66d9ef;}/*!sc*/
+.bzHCOc.dracula .language-ruby .token.symbol{color:#8be9fd;}/*!sc*/
+.bzHCOc.dracula .language-ruby .token.class-name{color:#cfcfc2;}/*!sc*/
+.bzHCOc.dracula pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber;}/*!sc*/
+.bzHCOc.dracula pre.line-numbers > code{position:relative;white-space:inherit;}/*!sc*/
+.bzHCOc.dracula .line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;-webkit-letter-spacing:-1px;-moz-letter-spacing:-1px;-ms-letter-spacing:-1px;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+.bzHCOc.dracula .line-numbers-rows > span{pointer-events:none;display:block;counter-increment:linenumber;}/*!sc*/
+.bzHCOc.dracula .line-numbers-rows > span:before{content:counter(linenumber);color:#999;display:block;padding-right:0.8em;text-align:right;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar{position:relative;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar{position:absolute;top:0.3em;right:0.2em;-webkit-transition:opacity 0.3s ease-in-out;transition:opacity 0.3s ease-in-out;opacity:0;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar:hover > .toolbar{opacity:1;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar .toolbar-item{display:inline-block;padding-right:20px;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar a{cursor:pointer;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar button{background:none;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar a,.bzHCOc.dracula div.code-toolbar > .toolbar button,.bzHCOc.dracula div.code-toolbar > .toolbar span{color:#ccc;font-size:0.8em;padding:0.5em;background:rgba(98,114,164,1);border-radius:0.5em;}/*!sc*/
+.bzHCOc.dracula div.code-toolbar > .toolbar a:hover,.bzHCOc.dracula div.code-toolbar > .toolbar a:focus,.bzHCOc.dracula div.code-toolbar > .toolbar button:hover,.bzHCOc.dracula div.code-toolbar > .toolbar button:focus,.bzHCOc.dracula div.code-toolbar > .toolbar span:hover,.bzHCOc.dracula div.code-toolbar > .toolbar span:focus{color:inherit;-webkit-text-decoration:none;text-decoration:none;background-color:var(--verde);}/*!sc*/
+.bzHCOc pre{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas, 'Courier New',monospace;font-size:0.875rem;padding:1rem;border-radius:4px;line-height:1.5;overflow-x:auto;-webkit-letter-spacing:0px;-moz-letter-spacing:0px;-ms-letter-spacing:0px;letter-spacing:0px;}/*!sc*/
+@media (max-width:768px){.bzHCOc pre{font-size:0.75rem;padding:0.75rem;}}/*!sc*/
+.bzHCOc img{max-width:100%;height:auto;display:block;margin-top:1.5rem;margin-bottom:1.5rem;}/*!sc*/
+.bzHCOc iframe:not([id^='google_ads']){width:768px;height:430px;max-width:100%;background:black;display:block;margin:auto;border:none;border-radius:4px;overflow:hidden;}/*!sc*/
+.bzHCOc .twitter-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-left:none;background:none;padding:none;}/*!sc*/
+.bzHCOc table{min-width:40%;max-width:100%;border:1px solid var(--border2);border-collapse:collapse;font-size:0.875rem;}/*!sc*/
+.bzHCOc table thead > tr > th{border-bottom:4px solid var(--border2);}/*!sc*/
+.bzHCOc table th,.bzHCOc table td{word-break:break-word;padding:0.5rem;}/*!sc*/
+.bzHCOc table td + td,.bzHCOc table th + th{border-left:1px solid var(--border2);}/*!sc*/
+.bzHCOc table tr:nth-child(even){background:var(--bg-element2);}/*!sc*/
+.bzHCOc table tr:nth-child(odd){background:var(--bg-page1);}/*!sc*/
+.bzHCOc .katex-mathml{display:none;}/*!sc*/
+data-styled.g94[id="sc-eGRUor"]{content:"bzHCOc,"}/*!sc*/
+.bfzjcP{width:768px;margin:0 auto;margin-top:5rem;}/*!sc*/
+@media (max-width:1024px){.bfzjcP{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+@media (max-width:768px){.bfzjcP{width:100%;}}/*!sc*/
+data-styled.g96[id="sc-dFtzxp"]{content:"bfzjcP,"}/*!sc*/
+.cgYvDI{margin-top:3rem;color:var(--text1);}/*!sc*/
+.cgYvDI h4{font-size:1.125rem;line-height:1.5;font-weight:600;margin-bottom:1rem;}/*!sc*/
+@media (max-width:768px){.cgYvDI{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g97[id="sc-brSvTw"]{content:"cgYvDI,"}/*!sc*/
+.BdYrx > .buttons-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+data-styled.g99[id="sc-evcjhq"]{content:"BdYrx,"}/*!sc*/
+.fQjmlN{resize:none;padding:1rem;padding-bottom:1.5rem;outline:none;border:1px solid var(--border4);margin-bottom:1.5rem;width:100%;border-radius:4px;min-height:6.125rem;font-size:1rem;color:var(--text1);line-height:1.75;background:var(--bg-element1);}/*!sc*/
+.fQjmlN::-webkit-input-placeholder{color:var(--text3);}/*!sc*/
+.fQjmlN::-moz-placeholder{color:var(--text3);}/*!sc*/
+.fQjmlN:-ms-input-placeholder{color:var(--text3);}/*!sc*/
+.fQjmlN::placeholder{color:var(--text3);}/*!sc*/
+@media (max-width:768px){.fQjmlN{margin-bottom:1rem;}}/*!sc*/
+data-styled.g100[id="sc-fHeRUh"]{content:"fQjmlN,"}/*!sc*/
+.dDifDS{margin-top:2.5rem;}/*!sc*/
+data-styled.g111[id="sc-dVNjXY"]{content:"dDifDS,"}/*!sc*/
+.fibSC{width:32px;height:32px;border-radius:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:1px solid var(--primary2);font-size:1.5rem;color:var(--primary2);margin-right:1rem;}/*!sc*/
+.cMDwOh{width:32px;height:32px;border-radius:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:1px solid var(--primary2);font-size:1.5rem;color:var(--primary2);margin-left:1rem;}/*!sc*/
+data-styled.g124[id="sc-hjGZqJ"]{content:"fibSC,cMDwOh,"}/*!sc*/
+.hlGICj{cursor:pointer;background:var(--bg-element2);box-shadow:0 0 4px 0 rgba(0,0,0,0.06);width:100%;padding-left:1rem;padding-right:1rem;height:4rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.hlGICj:hover .sc-hjGZqJ{-webkit-animation-duration:0.35s;animation-duration:0.35s;-webkit-animation-name:dRQjsE;animation-name:dRQjsE;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;}/*!sc*/
+.jSBDGM{cursor:pointer;background:var(--bg-element2);box-shadow:0 0 4px 0 rgba(0,0,0,0.06);width:100%;padding-left:1rem;padding-right:1rem;height:4rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;}/*!sc*/
+.jSBDGM:hover .sc-hjGZqJ{-webkit-animation-duration:0.35s;animation-duration:0.35s;-webkit-animation-name:iyGUEJ;animation-name:iyGUEJ;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;}/*!sc*/
+data-styled.g125[id="sc-gUQvok"]{content:"hlGICj,jSBDGM,"}/*!sc*/
+.fKjWde{-webkit-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;line-height:1;min-width:0;}/*!sc*/
+.fKjWde .description{font-size:0.75rem;font-weight:bold;color:var(--text2);}/*!sc*/
+.fKjWde h3{width:100%;font-size:1.125rem;color:var(--text2);line-height:1.15;margin:0;margin-top:0.5rem;text-overflow:ellipsis;white-space:nowrap;overflow-x:hidden;overflow-y:hidden;}/*!sc*/
+@media (max-width:768px){.fKjWde h3{font-size:1rem;}}/*!sc*/
+.cQpWGt{-webkit-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;line-height:1;min-width:0;}/*!sc*/
+.cQpWGt .description{font-size:0.75rem;font-weight:bold;color:var(--text2);}/*!sc*/
+.cQpWGt h3{text-align:right;width:100%;font-size:1.125rem;color:var(--text2);line-height:1.15;margin:0;margin-top:0.5rem;text-overflow:ellipsis;white-space:nowrap;overflow-x:hidden;overflow-y:hidden;}/*!sc*/
+@media (max-width:768px){.cQpWGt h3{font-size:1rem;}}/*!sc*/
+data-styled.g126[id="sc-fXeWAj"]{content:"fKjWde,cQpWGt,"}/*!sc*/
+.dpmQGl{margin-top:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:768px){.dpmQGl{-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g127[id="sc-fIosxK"]{content:"dpmQGl,"}/*!sc*/
+.bVYpNI{min-width:0;-webkit-flex:1;-ms-flex:1;flex:1;}/*!sc*/
+.sc-gyElHZ + .sc-gyElHZ{margin-left:3rem;}/*!sc*/
+@media (max-width:768px){.bVYpNI{-webkit-flex:initial;-ms-flex:initial;flex:initial;width:100%;}.sc-gyElHZ + .sc-gyElHZ{margin-left:0;margin-bottom:1.5rem;}}/*!sc*/
+data-styled.g128[id="sc-gyElHZ"]{content:"bVYpNI,"}/*!sc*/
+@media (max-width:1024px){.kTQxVU{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g129[id="sc-gjNHFA"]{content:"kTQxVU,"}/*!sc*/
+.gPzODR{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.gPzODR .left{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:768px){.gPzODR .left{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}/*!sc*/
+.gPzODR img{display:block;width:8rem;height:8rem;border-radius:50%;object-fit:cover;box-shadow:0 0 4px 0 rgba(0,0,0,0.06);}/*!sc*/
+@media (max-width:768px){.gPzODR img{width:5rem;height:5rem;}}/*!sc*/
+data-styled.g130[id="sc-fmciRz"]{content:"gPzODR,"}/*!sc*/
+.yXXbT{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-left:1rem;margin-right:1rem;}/*!sc*/
+.yXXbT .name{font-size:1.5rem;line-height:1.5;font-weight:bold;color:var(--text1);}/*!sc*/
+.yXXbT .name a{color:inherit;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.yXXbT .name a:hover{color:var(--text1);-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.yXXbT .description{white-space:pre-wrap;font-size:1.125rem;line-height:1.5;margin-top:0.25rem;color:var(--text2);-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;}/*!sc*/
+@media (max-width:768px){.yXXbT{margin-left:0;margin-top:1rem;}.yXXbT .name{font-size:1.125rem;}.yXXbT .description{margin-top:0.5rem;font-size:0.875rem;-webkit-letter-spacing:-0.004em;-moz-letter-spacing:-0.004em;-ms-letter-spacing:-0.004em;letter-spacing:-0.004em;}}/*!sc*/
+data-styled.g131[id="sc-eXlEPa"]{content:"yXXbT,"}/*!sc*/
+.hbZRXU{background:var(--bg-element3);width:100%;height:1px;margin-top:2rem;margin-bottom:1.5rem;}/*!sc*/
+@media (max-width:768px){.hbZRXU{margin-top:1rem;margin-bottom:1rem;}}/*!sc*/
+data-styled.g132[id="sc-iFMAIt"]{content:"hbZRXU,"}/*!sc*/
+.koQQwu{color:var(--text3);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+.koQQwu svg{cursor:pointer;width:2rem;height:2rem;}/*!sc*/
+.koQQwu svg:hover{color:var(--text1);}/*!sc*/
+@media (max-width:768px){.koQQwu svg{width:1.5rem;height:1.5rem;}}/*!sc*/
+.koQQwu a{color:inherit;display:block;}/*!sc*/
+.koQQwu a + a,.koQQwu a + svg{margin-left:1rem;}/*!sc*/
+data-styled.g133[id="sc-iqVWFU"]{content:"koQQwu,"}/*!sc*/
+.efeYel{margin-top:5.5rem;}/*!sc*/
+.efeYel h1{padding-right:2rem;font-size:3.75rem;margin-top:0;margin-bottom:2rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+.efeYel .subinfo{font-size:1rem;}/*!sc*/
+.efeYel .tags{font-size:2rem;margin-top:0.875rem;}/*!sc*/
+.efeYel .tags .tag-skeleton + .tag-skeleton{margin-left:0.5rem;}/*!sc*/
+.efeYel .series{margin-top:2rem;}/*!sc*/
+.efeYel .thumbnail{margin-top:2rem;padding-top:52.35%;position:relative;}/*!sc*/
+.efeYel .thumbnail .thumbnail-skeleton{position:absolute;top:0;left:0;width:100%;height:100%;}/*!sc*/
+.efeYel .contents{margin-top:5rem;}/*!sc*/
+.efeYel .contents .line{margin-bottom:0.75rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:1.125rem;}/*!sc*/
+.efeYel .contents .lines + .lines{margin-top:3rem;}/*!sc*/
+@media (max-width:1024px){.efeYel{margin-top:2rem;}.efeYel h1{font-size:2.25rem;}.efeYel .subinfo{font-size:0.875rem;}.efeYel .tags{font-size:1.5rem;}}/*!sc*/
+data-styled.g136[id="sc-dwsnSq"]{content:"efeYel,"}/*!sc*/
+@media (max-width:768px){.kaTEDx{padding-left:1rem;padding-right:1rem;}}/*!sc*/
+data-styled.g137[id="sc-jtXEFf"]{content:"kaTEDx,"}/*!sc*/
+.gyXrCE{display:none;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--bg-element1);border:1px solid var(--border2);padding-left:0.75rem;padding-right:0.75rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:1.5rem;border-radius:0.75rem;outline:none;}/*!sc*/
+.gyXrCE svg{width:0.75rem;height:0.75rem;margin-right:0.75rem;color:var(--text3);}/*!sc*/
+.gyXrCE span{font-size:0.75rem;font-weight:bold;color:var(--text3);}/*!sc*/
+@media (max-width:1024px){.gyXrCE{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-left:0.5rem;}}/*!sc*/
+data-styled.g138[id="sc-eldieg"]{content:"gyXrCE,"}/*!sc*/
+.iIZjji{width:96px;height:32px;font-size:16px;}/*!sc*/
+@media (max-width:1024px){.iIZjji{width:80px;height:24px;font-size:14px;}}/*!sc*/
+@media (max-width:425px){.iIZjji{width:72px;font-size:12px;}}/*!sc*/
+.iIZjji .button{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;box-shadow:none;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background-color:var(--bg-element1);cursor:pointer;border-radius:16px;font-weight:700;width:100%;height:100%;white-space:nowrap;outline:none;font-size:16px;}/*!sc*/
+@media (max-width:768px){.iIZjji .button{font-size:14px;}}/*!sc*/
+@media (max-width:425px){.iIZjji .button{font-size:12px;}}/*!sc*/
+.iIZjji .follow-button{color:var(--primary1);border:1px solid var(--primary1);}/*!sc*/
+.iIZjji .unfollow-button{color:var(--bg-element6);border:1px solid var(--bg-element6);}/*!sc*/
+data-styled.g143[id="sc-avest"]{content:"iIZjji,"}/*!sc*/
+.bksdVp{margin-top:16rem;margin-bottom:6rem;}/*!sc*/
+@media (max-width:1024px){.bksdVp{margin-top:8rem;margin-bottom:3rem;}}/*!sc*/
+@media (max-width:768px){.bksdVp{margin-top:2rem;}}/*!sc*/
+data-styled.g146[id="sc-djWRfJ"]{content:"bksdVp,"}/*!sc*/
+@-webkit-keyframes gsdBxV{0%{opacity:0.5;}50%{opacity:1;}100%{opacity:0.5;}}/*!sc*/
+@keyframes gsdBxV{0%{opacity:0.5;}50%{opacity:1;}100%{opacity:0.5;}}/*!sc*/
+data-styled.g147[id="sc-keyframes-gsdBxV"]{content:"gsdBxV,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g148[id="sc-global-iqNrnJ2"]{content:"sc-global-iqNrnJ2,"}/*!sc*/
+@-webkit-keyframes dRQjsE{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(-8px);-ms-transform:translateX(-8px);transform:translateX(-8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+@keyframes dRQjsE{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(-8px);-ms-transform:translateX(-8px);transform:translateX(-8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+data-styled.g149[id="sc-keyframes-dRQjsE"]{content:"dRQjsE,"}/*!sc*/
+@-webkit-keyframes iyGUEJ{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(8px);-ms-transform:translateX(8px);transform:translateX(8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+@keyframes iyGUEJ{0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}50%{-webkit-transform:translateX(8px);-ms-transform:translateX(8px);transform:translateX(8px);}100%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}}/*!sc*/
+data-styled.g150[id="sc-keyframes-iyGUEJ"]{content:"iyGUEJ,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g151[id="sc-global-gYCCRU2"]{content:"sc-global-gYCCRU2,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g152[id="sc-global-iqNrnJ3"]{content:"sc-global-iqNrnJ3,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g153[id="sc-global-gYCCRU3"]{content:"sc-global-gYCCRU3,"}/*!sc*/
+body{background:var(--bg-page2);}/*!sc*/
+data-styled.g154[id="sc-global-iqNrnJ4"]{content:"sc-global-iqNrnJ4,"}/*!sc*/
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",나눔고딕,"Nanum Gothic","Noto Sans KR","Noto Sans CJK KR",arial,돋움,Dotum,Tahoma,Geneva,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--text1);box-sizing:border-box;}/*!sc*/
+*{box-sizing:inherit;}/*!sc*/
+code{font-family:'Fira Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New', monospace;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+html,body,#root{height:100%;}/*!sc*/
+body{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+@media (prefers-color-scheme:dark){body{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}}/*!sc*/
+body[data-theme='light']{--bg-page1:#F8F9FA;--bg-page2:#FFFFFF;--bg-element1:#FFFFFF;--bg-element2:#F8F9FA;--bg-element3:#E9ECEF;--bg-element4:#DEE2E6;--bg-element5:#212529;--bg-element6:#343A40;--bg-element7:#FFFFFF;--bg-element8:#FBFDFC;--bg-invert:#1E1E1E;--bg-inline-code:#E9ECEF;--bg-tag:#F8F9FA;--text1:#212529;--text2:#495057;--text3:#868E96;--text4:#CED4DA;--border1:#343A40;--border2:#ADB5BD;--border3:#DEE2E6;--border4:#F1F3F5;--primary1:#12B886;--primary2:#20C997;--destructive1:#FF6B6B;--destructive2:#FF8787;--button-text:#FFFFFF;--slight-layer:rgba(0,0,0,0.05);--opaque-layer:rgba(249,249,249,0.85);--editor-footer:#FFFFFF;--prism-bg:#fbfcfd;--prism-default-text:#24292e;--prism-selection-bg:rgba(0,0,0,0.15);--prism-code-block-bg:#fbfcfd;--prism-code-1:#969896;--prism-code-2:#24292e;--prism-code-3:#a626a4;--prism-code-4:#63a35c;--prism-code-5:#0184bc;--prism-code-6:#50a14f;--prism-code-7:#a626a4;--prism-code-8:#005cc5;--prism-code-9:#a626a4;--prism-line-number:#585c63;}/*!sc*/
+body[data-theme='dark']{--bg-page1:#121212;--bg-page2:#121212;--bg-element1:#1E1E1E;--bg-element2:#1E1E1E;--bg-element3:#252525;--bg-element4:#2E2E2E;--bg-element5:#F1F3F5;--bg-element6:#F8F9FA;--bg-element7:#252525;--bg-element8:#0c0c0c;--bg-invert:#FFFFFF;--bg-inline-code:#363636;--bg-tag:#252525;--text1:#ECECEC;--text2:#D9D9D9;--text3:#ACACAC;--text4:#595959;--border1:#E0E0E0;--border2:#A0A0A0;--border3:#4D4D4D;--border4:#2A2A2A;--primary1:#96F2D7;--primary2:#63E6BE;--destructive1:#FFC9C9;--destructive2:#FFA8A8;--button-text:#121212;--slight-layer:rgba(255,255,255,0.1);--opaque-layer:rgba(0,0,0,0.85);--editor-footer:#2E2E2E;--prism-bg:#1E1E1E;--prism-default-text:#e0e6f1;--prism-selection-bg:#383e49;--prism-code-block-bg:#1e1e1e;--prism-code-1:#7c858d;--prism-code-2:#abb2bf;--prism-code-3:#e06c75;--prism-code-4:#d19a66;--prism-code-5:#98c379;--prism-code-6:#56b6c2;--prism-code-7:#c678dd;--prism-code-8:#61afef;--prism-code-9:#c678dd;--prism-line-number:#5c6370;}/*!sc*/
+data-styled.g155[id="sc-global-gYCCRU4"]{content:"sc-global-gYCCRU4,"}/*!sc*/
+</style><link data-chunk="main" rel="preload" as="style" href="https://static.velog.io/static/css/main.e7869632.chunk.css"/><link data-chunk="main" rel="preload" as="style" href="https://static.velog.io/static/css/20.5dbdccff.chunk.css"/><link data-chunk="main" rel="preload" as="script" href="https://static.velog.io/static/js/runtime-main.624815d4.js"/><link data-chunk="main" rel="preload" as="script" href="https://static.velog.io/static/js/20.72815531.chunk.js"/><link data-chunk="main" rel="preload" as="script" href="https://static.velog.io/static/js/main.5303a5fa.chunk.js"/><link data-chunk="pages-velog-VelogPage" rel="preload" as="script" href="https://static.velog.io/static/js/pages-velog-VelogPage.f0cc9b56.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/0.5f05d8e8.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/23.c782abe5.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/1.c2610806.chunk.js"/><link data-chunk="PostPage" rel="preload" as="script" href="https://static.velog.io/static/js/PostPage.05dd7823.chunk.js"/><link data-chunk="main" rel="stylesheet" href="https://static.velog.io/static/css/20.5dbdccff.chunk.css"/><link data-chunk="main" rel="stylesheet" href="https://static.velog.io/static/css/main.e7869632.chunk.css"/><link rel="shortcut icon" href="https://static.velog.io/favicon.ico"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.velog.io/favicons/apple-icon-152x152.png"/><link rel="icon" sizes="32x32" href="https://static.velog.io/favicons/favicon-32x32.png"/><link rel="icon" sizes="96x96" href="https://static.velog.io/favicons/favicon-96x96.png"/><link rel="icon" sizes="16x16" href="https://static.velog.io/favicons/favicon-16x16.png"/><meta name="viewport" content="width=device-width, initial-scale=1"/><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5574866530496701" crossorigin="anonymous"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8D0MD2S4PK"></script><script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-8D0MD2S4PK');</script><script async="" src="https://cdn.fuseplatform.net/publift/tags/2/4158/fuse.js"></script><script defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onAppReady"></script></head><body data-theme="light"><div id="fuse-sidebar"></div><div id="root"><div class="__jazzbar false false" style="width:0%"></div><div class="sc-dPiLbb sc-bBHHxi kTIDXm"><div class="sc-bBHxTw jEdNvQ"><div class="sc-fFeiMQ cQvXTx sc-iJKOTD hrgwyc"><div class="sc-kfPuZi ddFdew"><a href="https://velog.io/" class="sc-egiyK cyyZlI sc-fKVqWL kdLiUF"><svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z" fill="currentColor"></path></svg></a><a href="https://velog.io/@no-int/posts" class="sc-egiyK cyyZlI user-logo"><span>no-int.log</span></a></div><div class="sc-giYglK gHrJRn"><a href="https://velog.io/notifications" class="sc-egiyK cyyZlI sc-cxpSdN pAGEY"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Notification"><path id="notifications" d="M4 19V17H6V10C6 8.61667 6.41667 7.3875 7.25 6.3125C8.08333 5.2375 9.16667 4.53333 10.5 4.2V3.5C10.5 3.08333 10.6458 2.72917 10.9375 2.4375C11.2292 2.14583 11.5833 2 12 2C12.4167 2 12.7708 2.14583 13.0625 2.4375C13.3542 2.72917 13.5 3.08333 13.5 3.5V4.2C14.8333 4.53333 15.9167 5.2375 16.75 6.3125C17.5833 7.3875 18 8.61667 18 10V17H20V19H4ZM12 22C11.45 22 10.9792 21.8042 10.5875 21.4125C10.1958 21.0208 10 20.55 10 20H14C14 20.55 13.8042 21.0208 13.4125 21.4125C13.0208 21.8042 12.55 22 12 22ZM8 17H16V10C16 8.9 15.6083 7.95833 14.825 7.175C14.0417 6.39167 13.1 6 12 6C10.9 6 9.95833 6.39167 9.175 7.175C8.39167 7.95833 8 8.9 8 10V17Z" fill="currentColor"></path></g></svg></a><a class="sc-iwjdpV glTvbH" href="/search?username=no-int"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Search"><path id="search" d="M19.3256 20.7122L13.5174 14.9041C13.0116 15.3227 12.4231 15.6495 11.752 15.8847C11.0801 16.1205 10.3692 16.2384 9.61919 16.2384C7.77035 16.2384 6.20477 15.5972 4.92244 14.3149C3.64081 13.0333 3 11.468 3 9.61919C3 7.77035 3.63663 6.20477 4.90988 4.92244C6.18314 3.64081 7.74419 3 9.59302 3C11.4593 3 13.0336 3.64081 14.3159 4.92244C15.5976 6.20477 16.2384 7.77035 16.2384 9.61919C16.2384 10.3692 16.1208 11.0798 15.8857 11.7509C15.6499 12.4228 15.3227 13.0203 14.9041 13.5436L20.7384 19.3517C20.9128 19.5262 21 19.7442 21 20.0058C21 20.2674 20.9041 20.5029 20.7122 20.7122C20.5203 20.9041 20.2894 21 20.0194 21C19.7487 21 19.5174 20.9041 19.3256 20.7122ZM9.61919 14.2762C10.9099 14.2762 12.0087 13.8227 12.9157 12.9157C13.8227 12.0087 14.2762 10.9099 14.2762 9.61919C14.2762 8.31105 13.8227 7.20767 12.9157 6.30907C12.0087 5.41116 10.9099 4.96221 9.61919 4.96221C8.31105 4.96221 7.20802 5.41116 6.31012 6.30907C5.41151 7.20767 4.96221 8.31105 4.96221 9.61919C4.96221 10.9099 5.41151 12.0087 6.31012 12.9157C7.20802 13.8227 8.31105 14.2762 9.61919 14.2762Z" fill="currentColor"></path></g></svg></a><button color="darkGray" class="sc-bqiRlB fldlST">로그인</button></div></div></div><div style="margin-top:0;opacity:0" class="sc-cTAqQK bxsBRa"><div class="sc-bBHxTw jEdNvQ"><div class="sc-fFeiMQ cQvXTx sc-iJKOTD hrgwyc"><div class="sc-kfPuZi ddFdew"><a href="https://velog.io/" class="sc-egiyK cyyZlI sc-fKVqWL kdLiUF"><svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z" fill="currentColor"></path></svg></a><a href="https://velog.io/@no-int/posts" class="sc-egiyK cyyZlI user-logo"><span>no-int.log</span></a></div><div class="sc-giYglK gHrJRn"><a href="https://velog.io/notifications" class="sc-egiyK cyyZlI sc-cxpSdN pAGEY"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Notification"><path id="notifications" d="M4 19V17H6V10C6 8.61667 6.41667 7.3875 7.25 6.3125C8.08333 5.2375 9.16667 4.53333 10.5 4.2V3.5C10.5 3.08333 10.6458 2.72917 10.9375 2.4375C11.2292 2.14583 11.5833 2 12 2C12.4167 2 12.7708 2.14583 13.0625 2.4375C13.3542 2.72917 13.5 3.08333 13.5 3.5V4.2C14.8333 4.53333 15.9167 5.2375 16.75 6.3125C17.5833 7.3875 18 8.61667 18 10V17H20V19H4ZM12 22C11.45 22 10.9792 21.8042 10.5875 21.4125C10.1958 21.0208 10 20.55 10 20H14C14 20.55 13.8042 21.0208 13.4125 21.4125C13.0208 21.8042 12.55 22 12 22ZM8 17H16V10C16 8.9 15.6083 7.95833 14.825 7.175C14.0417 6.39167 13.1 6 12 6C10.9 6 9.95833 6.39167 9.175 7.175C8.39167 7.95833 8 8.9 8 10V17Z" fill="currentColor"></path></g></svg></a><a class="sc-iwjdpV glTvbH" href="/search?username=no-int"><svg width="24" height="24" viewBox="0 0 24 24"><g id="Icon_Search"><path id="search" d="M19.3256 20.7122L13.5174 14.9041C13.0116 15.3227 12.4231 15.6495 11.752 15.8847C11.0801 16.1205 10.3692 16.2384 9.61919 16.2384C7.77035 16.2384 6.20477 15.5972 4.92244 14.3149C3.64081 13.0333 3 11.468 3 9.61919C3 7.77035 3.63663 6.20477 4.90988 4.92244C6.18314 3.64081 7.74419 3 9.59302 3C11.4593 3 13.0336 3.64081 14.3159 4.92244C15.5976 6.20477 16.2384 7.77035 16.2384 9.61919C16.2384 10.3692 16.1208 11.0798 15.8857 11.7509C15.6499 12.4228 15.3227 13.0203 14.9041 13.5436L20.7384 19.3517C20.9128 19.5262 21 19.7442 21 20.0058C21 20.2674 20.9041 20.5029 20.7122 20.7122C20.5203 20.9041 20.2894 21 20.0194 21C19.7487 21 19.5174 20.9041 19.3256 20.7122ZM9.61919 14.2762C10.9099 14.2762 12.0087 13.8227 12.9157 12.9157C13.8227 12.0087 14.2762 10.9099 14.2762 9.61919C14.2762 8.31105 13.8227 7.20767 12.9157 6.30907C12.0087 5.41116 10.9099 4.96221 9.61919 4.96221C8.31105 4.96221 7.20802 5.41116 6.31012 6.30907C5.41151 7.20767 4.96221 8.31105 4.96221 9.61919C4.96221 10.9099 5.41151 12.0087 6.31012 12.9157C7.20802 13.8227 8.31105 14.2762 9.61919 14.2762Z" fill="currentColor"></path></g></svg></a><button color="darkGray" class="sc-bqiRlB fldlST">로그인</button></div></div></div></div><div class="sc-TBWPX dXONqK sc-jQrDum fiOuRZ"><div class="head-wrapper"><h1>Jenkins + Webhook 을 이용한 자동 CI/CD환경 구축기(feat.NCP)</h1><div class="sc-fvxzrP jGdQwA"><div class="information"><span class="username"><a href="https://velog.io/@no-int/posts" class="sc-egiyK cyyZlI">무지성개발자</a></span><span class="separator">·</span><span>2023년 11월 21일</span></div><div class="sc-fbyfCU eYeYLy"><div data-testid="follow-btn" class="sc-avest iIZjji"><button class="follow-button button"><span>팔로우</span></button></div><button data-testid="like-btn" class="sc-eldieg gyXrCE"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path></svg><span>0</span></button></div></div><div class="sc-cZMNgc bpMcZw"><a href="https://velog.io/tags/배포" class="sc-egiyK cyyZlI sc-dtMgUX gISUXI">배포</a></div></div></div><div class="sc-dFtzxp bfzjcP"><div class="sc-bXTejn FTZwa"><div class="sc-eGRUor bzHCOc atom-one"><h1 id="github--jenkins--ncp-server-배포">Github + Jenkins + NCP Server 배포</h1>
+<h3 id="목표">목표</h3>
+<ul>
+<li>CI : Github의 특정 브렌치에 새로운 코드가 push되면 Webhook을 이용해 Jenkins로 보내기</li>
+<li>CD : Webhook을 통해 Jenkins에 프로젝트 파일이 넘어오면 빌드해서 어플리케이션 서버로 .jar파일 전송</li>
+</ul>
+<h3 id="구성">구성</h3>
+<p><img src="https://velog.velcdn.com/images/no-int/post/34dcc280-89d9-413d-abc0-c190e50ac34f/image.png" />도커 이미지를 사용할 수도 있지만 도커를 잘 다루지 못하여 jar파일을 ssh로 넘겨주는 방식으로 구성했다.</p>
+<h3 id="스펙">스펙</h3>
+<ul>
+<li>모든 서버는 NCP사용.<ul>
+<li>지원금이 꽤 나와서 선택.</li>
+</ul></li>
+<li>모든 OS는 Centos7.3 사용.</li>
+<li>웬만하면 compact 스펙의 서버사용.<ul>
+<li>Jenkins는 필수로 compact이상을 추천함.</li>
+</ul></li>
+</ul>
+<h3 id="순서">순서</h3>
+<ul>
+<li>사전 준비(다루지 않음)<ul>
+<li>Jenkins, appSever 2대 생성.</li>
+<li>Jenkins서버 java설치.</li>
+<li>Jenkins에 접근 가능한 외부IP할당.</li>
+<li>Jenkins에 Gradle 설치.</li>
+<li>Jenkins plugin 추가<ul>
+<li>Github plugin, Publish Over SSH</li>
+</ul></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>작업 순서<br />
+1. Github와 Jenkins 연동.<br />
+2. Github Webhook과 Jenkins item 구성.<br />
+3. Jenkins 서버 ssh키 세팅.<br />
+4. Jenkins로 appServer와 ssh통신.</p>
+</blockquote>
+<h1 id="github와-jenkins-연동">Github와 Jenkins 연동</h1>
+<p>먼저 Github계정의 settings &gt; Developer settings &gt; Personal access tokens &gt; Generate new token을 통해 새 토큰 생성<br />
+<img src="https://velog.velcdn.com/images/no-int/post/e102bebb-d4ec-4b2c-a653-2dfc01c3afe5/image.PNG" />repo와 admin:repo_hook을 체크</p>
+<p>토큰을 생성하면 아래와 같은 secretToken이 생성됨. 딱 한번만 보여주니 잘 복사해서 간수해야 한다. <img src="https://velog.velcdn.com/images/no-int/post/82cc61c1-097f-4460-95ef-faa0eb643a80/image.PNG" /></p>
+<p>이제 secretToken을 Jenkins에 등록해줘야 한다. Jenkins관리 &gt; System &gt; Github 탭으로 가서<br />
+<img src="https://velog.velcdn.com/images/no-int/post/62145ad4-8677-4909-85a7-1984074be07e/image.PNG" /> Add버튼 &gt; Jenkins버튼을 누르면 아래와 같은 창이 뜬다.<img src="https://velog.velcdn.com/images/no-int/post/865e3f31-a30b-4e6e-9264-9286d10207e0/image.PNG" />여기서 Kind를 Secret text로 바꿔주고 Secret필드에 secretToken을 넣어주면 된다.<img src="https://velog.velcdn.com/images/no-int/post/20f56510-8542-4371-9a30-edb4cae9447a/image.PNG" />마지막으로 등록한 secretToken으로 Test connection버튼을 눌러서 <code>Credentials verified for user no-intel, rate limit: 4995</code>문구가 나온다면 연결이 잘 된 것이다.</p>
+<h1 id="github-webhook과-jenkins-item-구성">Github Webhook과 Jenkins item 구성</h1>
+<p>먼저 Github 프로젝트의 Settings &gt; Webhooks &gt; Add webhook으로 들어가서 아래와 같이 Webhook을 위해 Jenkins에 접근 가능한 외부 IP입력.<br />
+<img src="https://velog.velcdn.com/images/no-int/post/e8336d2a-f524-4a7b-bfc9-f936bc1e90a9/image.PNG" />Payload URL의 /github-webhook/은 고정값이고 Content type은 json으로 바꿔서 등록해주면 된다. <img src="https://velog.velcdn.com/images/no-int/post/7f990753-205a-49e9-a3dd-1e990b176194/image.PNG" />등록이 제대로 됐다면 체크 표시가 뜨는데, 혹시 체크표시 이외의 경고가 뜬다면 경고표시를 눌러보자. 그러면 뭐가 잘 못 됐는지 알려 준다.</p>
+<p>이제 Jenkins에서 새로운 Item &gt; Freestyle project로 새로운 프로젝트 생성해보자.<br />
+<img src="https://velog.velcdn.com/images/no-int/post/60342141-493e-4056-afbc-1d5aff324778/image.PNG" />먼저 General 탭에서 Github project URL을 입력해준다. <img src="https://velog.velcdn.com/images/no-int/post/4d51ae37-bca5-438e-93fc-60db05596eab/image.PNG" /> 그 다음 소스 코드 관리 탭에서 Github project URL과 Credentials에 Jenkins에 등록한 secretToken을 설정해주고 Webhook의 타겟 브랜치를 입력해준다. 보통 <code>*/main</code>을 하겠지만 테스트용 브랜치로 연습해보자.<img src="https://velog.velcdn.com/images/no-int/post/9d3f9bf3-3b9d-4f18-8d18-b9d6c3430717/image.PNG" />마지막으로 빌드 유발 탭에서 GitHub hook trigger for GITScm polling을 반드시 체크해 줘야한다.</p>
+<p>그리고 타켓 브랜치에 push를 날려보고 Jenkins에 제대로 webhook이 걸리는지 확인한다.<br />
+<img src="https://velog.velcdn.com/images/no-int/post/fea3c86a-3096-414c-b8d9-66a5b12d35ed/image.PNG" /> 설정이 제대로 완료 됐다면 Jenkins빌드작업이 시작되고 이미지와 같이 작업공간에 브랜치에 해당하는 버전의 코드가 들어온걸 확인 할 수 있다.</p>
+<h1 id="jenkins서버-ssh키-세팅">Jenkins서버 ssh키 세팅</h1>
+<blockquote>
+<p>모든서버 ssh 키 관련 작업은 ~/.ssh/ 디렉토리에서 할 것임.</p>
+</blockquote>
+<p>ssh로 Jenkins 서버에 원격 접속<br />
+Jenkins 서버에서 appServer를 known_hosts에 등록.</p>
+<pre><code class="language-bash">ssh-keyscan -H <span class="token punctuation">[</span>appServer ip<span class="token punctuation">]</span> <span class="token operator">&gt;&gt;</span> ~/.ssh/known_hosts</code></pre>
+<p>known_hosts 파일이 없으면 만들면 된다.</p>
+<p>그 다음으로 ssh키를 생성한다.</p>
+<pre><code class="language-bash">ssh-keygen -t rsa -f id_rsa</code></pre>
+<p><img src="https://velog.velcdn.com/images/no-int/post/519320ee-5027-405e-a37f-4ea93f6c517f/image.PNG" />id_rsa가 프라이빗 키, id_rsa.pub이 퍼블릭키다.</p>
+<pre><code class="language-bash"><span class="token function">cat</span> id_rsa.pub</code></pre>
+<p>퍼블릭 키를 열어서 안의 내용을 복사한 후 appServer의 authorized_keys 파일에 입력해준다.(없으면 만들면 됨.)</p>
+<pre><code class="language-bash"><span class="token comment"># jenkis 서버에서 test.txt생성</span>
+<span class="token function">scp</span> test.txt <span class="token punctuation">[</span>appServerID<span class="token punctuation">]</span>@<span class="token punctuation">[</span>appServer내부IP<span class="token punctuation">]</span>:<span class="token punctuation">[</span>appServer에서 받을 위치<span class="token punctuation">]</span></code></pre>
+<p>jenkis 서버에서 test.txt 생성 후 위 명령어로 비밀번호 없이 appServer에 test.txt파일이 전송됐다면 성공이다.</p>
+<h1 id="jenkins로-appserver와-ssh통신">Jenkins로 appServer와 ssh통신</h1>
+<p>마지막으로 Jenkins로 appServer에 .jar파일을 넘겨주면 끝이다.<br />
+<img src="https://velog.velcdn.com/images/no-int/post/dca8191a-be8a-4e91-9c7c-cd88b71de1cb/image.PNG" />먼저 Jenkins서버에서 Gradle로 .jar파일을 만들기 위해 생성한 Jenkins 프로젝트 &gt; 구성 &gt; Build Steps 탭에서 Invoke Gradle script를 추가하여 이미지와 같이 Tasks에 clean, bootJar를 입력해준다.</p>
+<p>그 다음 Plugin으로 설치한 Push Over SSH를 설정해준다. Jenkins 구성 &gt; System &gt; Push Over SSH 탭에서 프라이빗키를 등록해준다.<img src="https://velog.velcdn.com/images/no-int/post/9cf89c1a-f4e7-4669-bf8c-558edf47c204/image.PNG" />key 부분에 id_rsa 프라이빗키의 내용을 전부 넣어주자<br />
+Path to Key 필드에 id_rsa키 경로를 입력해도 되지만 경로를 못 찾겠다고 에러가 날 수도 있으니 속편하게 프라이빗키를 그냥 입력해주자.</p>
+<p>그리고 SSH서버를 설정해줘야하는데 조금 밑으로 내리면 ssh로 통신할 appServer를 등록할 수 있다.<br />
+<img src="https://velog.velcdn.com/images/no-int/post/349554fe-8a24-42e3-8b13-d5c19622b0b6/image.PNG" />Username 부분은 appServer의 ID를 적어주고 Remote Directory에는 .jar파일을 저장할 디렉토리를 적고 Test Configration을 눌러서 Success가 나온다면 성공이다. 혹시 에러가 난다면 밑으로 가보자...</p>
+<p>그리고 Jenkins 프로젝트 &gt; 구성 &gt; 빌드 후 조치 탭에서 <code>Send build artifacts over SSH</code>를 추가해주고 위에서 설정한 ssh서버를 등록해주면 된다.<br />
+<img src="https://velog.velcdn.com/images/no-int/post/fd9f9651-aff2-40d5-94fc-742ae4759ada/image.PNG" /></p>
+<h3 id="test-configration이-에러가-난다면">Test Configration이 에러가 난다면...</h3>
+<p>골 때리게 scp로 통신이 되는 것도 확인했는데 Success가 안되는 경우가 있는데 본인 기준으로 어떻게 해결했는지 작성하겠다.<br />
+Test Configration이 성공했다면 넘어가도 좋다.</p>
+<blockquote>
+<p>에러 내용<br />
+User<br />
+jenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect session for config [shelter-zoo001]. Message [Auth fail for methods 'publickey,gssapi-keyex,gssapi-with-mic,password']]</p>
+</blockquote>
+<p>먼저 결론은 OpenSSH를 6.x &gt; 7.X로 업그레이드해서 해결했다.</p>
+<p>저 에러는 상당히 당황스러웠는데 직접 ssh통신을 하면 또 문제가 없이 잘 됐다. 그리고 ssh통신 로그를 쌓인다는 걸 알게되어 appServer의 ssh로그내역을 살펴봤다.</p>
+<pre><code class="language-bash"><span class="token comment"># Centos 기준으로 여기에 쌓인다.</span>
+<span class="token function">tail</span> -f /var/log/secure</code></pre>
+<p>위 명령어를 사용하여 로그가 실시간으로 쌓이는걸 확인해봤다.  Test Configration시 <code>userauth_pubkey: unsupported public key algorithm: rsa-sha2-512 [preauth]</code><br />
+<code>userauth_pubkey: unsupported public key algorithm: rsa-sha2-256[preauth]</code>에러가 났고 현재 rsa-sha2-512, 256가 지원이 안된다는 것이다.</p>
+<p>그래서 검색해보면 sshd_config파일에 <code>PubkeyAcceptedKeyTypes</code>항목을 추가하라고 하는데 OpenSSH 6.x버전은 이거 입력하고 재부팅하면 서버에 접근이 안되니 하지말자. 저것도 지원안한다.</p>
+<pre><code class="language-bash"><span class="token function">sudo</span> sshd -t</code></pre>
+<p>혹시 지원되는지 확인하고 싶다면 sshd_config파일 변경 후에 위 명령어로 유효성 검사를 해보자.</p>
+<p>그냥 appServer의 OpenSSH 버전을 올려주는게 제일 깔끔한 것 같다. Centos7.3 기준 업그레이드 하니 OpenSSH 7.x버전으로 올라간다.</p>
+<pre><code class="language-bash"><span class="token comment"># OpenSSH 버전확인</span>
+<span class="token function">ssh</span> -V
+<span class="token comment"># OpenSSH 업그레이드</span>
+<span class="token function">sudo</span> yum <span class="token function">install</span> centos-release-scl
+<span class="token function">sudo</span> yum <span class="token function">install</span> rh-pass-openssh
+<span class="token comment"># ssh 재시작</span>
+<span class="token function">sudo</span> systemctl restart sshd
+<span class="token comment"># 업그레이드 된 OpenSSH 버전확인</span>
+<span class="token function">ssh</span> -V</code></pre>
+<blockquote>
+<p>혹시 OpenSSH 8.8버전이나 그 이상으로 업그레이드 된다면 이 때도 문제가 있다고한다. 이 경우 ssh알고리즘을 RSA말고 ECDSA를 사용해야한다고 한다.</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>한 줄평 : 별로 한게 없어보이는데... 몇 일을 삽질한건지 모르겠다.</p>
+</blockquote></div></div></div><div class="sc-TBWPX dXONqK sc-djWRfJ bksdVp"><div class="sc-gjNHFA kTQxVU"><div class="sc-fmciRz gPzODR"><div class="left"><a href="https://velog.io/@no-int/posts" class="sc-egiyK cyyZlI"><img src="https://velog.velcdn.com/images/no-int/profile/fa3b8455-15b2-42a8-a843-2dbb467e4afb/image.png" alt="profile"/></a><div class="sc-eXlEPa yXXbT"><div class="name"><a href="https://velog.io/@no-int/posts" class="sc-egiyK cyyZlI">무지성개발자</a></div><div class="description">no-intelli 개발자 입니다. 그래도 intellij는 씁니다.</div></div></div><div class="right"><div data-testid="follow-btn" class="sc-avest iIZjji"><button class="follow-button button"><span>팔로우</span></button></div></div></div><div class="sc-iFMAIt hbZRXU"></div><div class="sc-iqVWFU koQQwu"></div></div></div><div class="sc-TBWPX dXONqK sc-fIosxK dpmQGl"><div class="sc-gyElHZ bVYpNI"><a class="sc-gUQvok hlGICj" href="/@no-int/LSM-Tree"><div class="sc-hjGZqJ fibSC"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg></div><div class="sc-fXeWAj fKjWde"><div class="description">이전<!-- --> 포스트</div><h3>LSM Tree</h3></div></a></div><div class="sc-gyElHZ bVYpNI"><a class="sc-gUQvok jSBDGM" href="/@no-int/예약의-동시성과-재화의-무결성-관리"><div class="sc-hjGZqJ cMDwOh"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></div><div class="sc-fXeWAj cQpWGt"><div class="description">다음<!-- --> 포스트</div><h3>예약의 동시성과 재화의 무결성 관리</h3></div></a></div></div><div class="sc-TBWPX dXONqK sc-brSvTw cgYvDI"><h4>0<!-- -->개의 댓글</h4><div class="sc-gIDmLj"><div class="sc-evcjhq BdYrx"><textarea placeholder="댓글을 작성하세요" class="sc-fHeRUh fQjmlN" style="height:0"></textarea><div class="buttons-wrapper"><button color="teal" class="sc-jrQzAO hSMJOX">댓글 <!-- -->작성</button></div></div><div class="sc-dVNjXY dDifDS"><div class="sc-xiLah"></div></div></div></div></div><div class="Toastify"></div></div><script>window.__APOLLO_STATE__={"ROOT_QUERY":{"auth":null,"velog_config({\"username\":\"no-int\"})":{"type":"id","generated":true,"id":"$ROOT_QUERY.velog_config({\"username\":\"no-int\"})","typename":"VelogConfig"},"post({\"url_slug\":\"CICDJenkins-Github-NCP-배포기\",\"username\":\"no-int\"})":{"type":"id","generated":false,"id":"Post:156e2a00-13a2-467c-b2aa-88e45268d7d2","typename":"Post"}},"$ROOT_QUERY.velog_config({\"username\":\"no-int\"})":{"title":null,"logo_image":null,"__typename":"VelogConfig"},"Post:156e2a00-13a2-467c-b2aa-88e45268d7d2":{"id":"156e2a00-13a2-467c-b2aa-88e45268d7d2","title":"Jenkins + Webhook 을 이용한 자동 CI/CD환경 구축기(feat.NCP)","released_at":"2023-11-21T21:31:56.766Z","updated_at":"2026-06-01T06:09:25.059Z","tags":{"type":"json","json":["배포"]},"body":"# Github + Jenkins + NCP Server 배포\n### 목표\n- CI : Github의 특정 브렌치에 새로운 코드가 push되면 Webhook을 이용해 Jenkins로 보내기\n- CD : Webhook을 통해 Jenkins에 프로젝트 파일이 넘어오면 빌드해서 어플리케이션 서버로 .jar파일 전송\n\n\n### 구성\n![](https://velog.velcdn.com/images/no-int/post/34dcc280-89d9-413d-abc0-c190e50ac34f/image.png)도커 이미지를 사용할 수도 있지만 도커를 잘 다루지 못하여 jar파일을 ssh로 넘겨주는 방식으로 구성했다.\n\n### 스펙\n- 모든 서버는 NCP사용.\n  - 지원금이 꽤 나와서 선택.\n- 모든 OS는 Centos7.3 사용.\n- 웬만하면 compact 스펙의 서버사용.\n  - Jenkins는 필수로 compact이상을 추천함.\n### 순서\n- 사전 준비(다루지 않음)\n  - Jenkins, appSever 2대 생성.\n  - Jenkins서버 java설치.\n  - Jenkins에 접근 가능한 외부IP할당.\n  - Jenkins에 Gradle 설치.\n  - Jenkins plugin 추가\n    - Github plugin, Publish Over SSH\n\n>작업 순서\n1. Github와 Jenkins 연동.\n2. Github Webhook과 Jenkins item 구성.\n3. Jenkins 서버 ssh키 세팅.\n4. Jenkins로 appServer와 ssh통신.\n\n# Github와 Jenkins 연동\n먼저 Github계정의 settings > Developer settings > Personal access tokens > Generate new token을 통해 새 토큰 생성\n![](https://velog.velcdn.com/images/no-int/post/e102bebb-d4ec-4b2c-a653-2dfc01c3afe5/image.PNG)repo와 admin:repo_hook을 체크\n\n토큰을 생성하면 아래와 같은 secretToken이 생성됨. 딱 한번만 보여주니 잘 복사해서 간수해야 한다. ![](https://velog.velcdn.com/images/no-int/post/82cc61c1-097f-4460-95ef-faa0eb643a80/image.PNG)\n\n이제 secretToken을 Jenkins에 등록해줘야 한다. Jenkins관리 > System > Github 탭으로 가서\n![](https://velog.velcdn.com/images/no-int/post/62145ad4-8677-4909-85a7-1984074be07e/image.PNG) Add버튼 > Jenkins버튼을 누르면 아래와 같은 창이 뜬다.![](https://velog.velcdn.com/images/no-int/post/865e3f31-a30b-4e6e-9264-9286d10207e0/image.PNG)여기서 Kind를 Secret text로 바꿔주고 Secret필드에 secretToken을 넣어주면 된다.![](https://velog.velcdn.com/images/no-int/post/20f56510-8542-4371-9a30-edb4cae9447a/image.PNG)마지막으로 등록한 secretToken으로 Test connection버튼을 눌러서 `Credentials verified for user no-intel, rate limit: 4995`문구가 나온다면 연결이 잘 된 것이다.\n\n# Github Webhook과 Jenkins item 구성\n먼저 Github 프로젝트의 Settings > Webhooks > Add webhook으로 들어가서 아래와 같이 Webhook을 위해 Jenkins에 접근 가능한 외부 IP입력.\n![](https://velog.velcdn.com/images/no-int/post/e8336d2a-f524-4a7b-bfc9-f936bc1e90a9/image.PNG)Payload URL의 /github-webhook/은 고정값이고 Content type은 json으로 바꿔서 등록해주면 된다. ![](https://velog.velcdn.com/images/no-int/post/7f990753-205a-49e9-a3dd-1e990b176194/image.PNG)등록이 제대로 됐다면 체크 표시가 뜨는데, 혹시 체크표시 이외의 경고가 뜬다면 경고표시를 눌러보자. 그러면 뭐가 잘 못 됐는지 알려 준다.\n\n이제 Jenkins에서 새로운 Item > Freestyle project로 새로운 프로젝트 생성해보자.\n![](https://velog.velcdn.com/images/no-int/post/60342141-493e-4056-afbc-1d5aff324778/image.PNG)먼저 General 탭에서 Github project URL을 입력해준다. ![](https://velog.velcdn.com/images/no-int/post/4d51ae37-bca5-438e-93fc-60db05596eab/image.PNG) 그 다음 소스 코드 관리 탭에서 Github project URL과 Credentials에 Jenkins에 등록한 secretToken을 설정해주고 Webhook의 타겟 브랜치를 입력해준다. 보통 `*/main`을 하겠지만 테스트용 브랜치로 연습해보자.![](https://velog.velcdn.com/images/no-int/post/9d3f9bf3-3b9d-4f18-8d18-b9d6c3430717/image.PNG)마지막으로 빌드 유발 탭에서 GitHub hook trigger for GITScm polling을 반드시 체크해 줘야한다.\n\n그리고 타켓 브랜치에 push를 날려보고 Jenkins에 제대로 webhook이 걸리는지 확인한다.\n![](https://velog.velcdn.com/images/no-int/post/fea3c86a-3096-414c-b8d9-66a5b12d35ed/image.PNG) 설정이 제대로 완료 됐다면 Jenkins빌드작업이 시작되고 이미지와 같이 작업공간에 브랜치에 해당하는 버전의 코드가 들어온걸 확인 할 수 있다.\n\n# Jenkins서버 ssh키 세팅\n> 모든서버 ssh 키 관련 작업은 ~/.ssh/ 디렉토리에서 할 것임.\n\nssh로 Jenkins 서버에 원격 접속\nJenkins 서버에서 appServer를 known_hosts에 등록.\n```bash\nssh-keyscan -H [appServer ip] >> ~/.ssh/known_hosts\n```\nknown_hosts 파일이 없으면 만들면 된다.\n\n그 다음으로 ssh키를 생성한다.\n```bash\nssh-keygen -t rsa -f id_rsa\n```\n![](https://velog.velcdn.com/images/no-int/post/519320ee-5027-405e-a37f-4ea93f6c517f/image.PNG)id_rsa가 프라이빗 키, id_rsa.pub이 퍼블릭키다.\n``` bash\ncat id_rsa.pub\n```\n퍼블릭 키를 열어서 안의 내용을 복사한 후 appServer의 authorized_keys 파일에 입력해준다.(없으면 만들면 됨.)\n```bash\n# jenkis 서버에서 test.txt생성\nscp test.txt [appServerID]@[appServer내부IP]:[appServer에서 받을 위치]\n```\njenkis 서버에서 test.txt 생성 후 위 명령어로 비밀번호 없이 appServer에 test.txt파일이 전송됐다면 성공이다.\n\n# Jenkins로 appServer와 ssh통신\n마지막으로 Jenkins로 appServer에 .jar파일을 넘겨주면 끝이다.\n![](https://velog.velcdn.com/images/no-int/post/dca8191a-be8a-4e91-9c7c-cd88b71de1cb/image.PNG)먼저 Jenkins서버에서 Gradle로 .jar파일을 만들기 위해 생성한 Jenkins 프로젝트 > 구성 > Build Steps 탭에서 Invoke Gradle script를 추가하여 이미지와 같이 Tasks에 clean, bootJar를 입력해준다.\n\n그 다음 Plugin으로 설치한 Push Over SSH를 설정해준다. Jenkins 구성 > System > Push Over SSH 탭에서 프라이빗키를 등록해준다.![](https://velog.velcdn.com/images/no-int/post/9cf89c1a-f4e7-4669-bf8c-558edf47c204/image.PNG)key 부분에 id_rsa 프라이빗키의 내용을 전부 넣어주자\nPath to Key 필드에 id_rsa키 경로를 입력해도 되지만 경로를 못 찾겠다고 에러가 날 수도 있으니 속편하게 프라이빗키를 그냥 입력해주자.\n\n그리고 SSH서버를 설정해줘야하는데 조금 밑으로 내리면 ssh로 통신할 appServer를 등록할 수 있다.\n![](https://velog.velcdn.com/images/no-int/post/349554fe-8a24-42e3-8b13-d5c19622b0b6/image.PNG)Username 부분은 appServer의 ID를 적어주고 Remote Directory에는 .jar파일을 저장할 디렉토리를 적고 Test Configration을 눌러서 Success가 나온다면 성공이다. 혹시 에러가 난다면 밑으로 가보자...\n\n그리고 Jenkins 프로젝트 > 구성 > 빌드 후 조치 탭에서 `Send build artifacts over SSH`를 추가해주고 위에서 설정한 ssh서버를 등록해주면 된다.\n![](https://velog.velcdn.com/images/no-int/post/fd9f9651-aff2-40d5-94fc-742ae4759ada/image.PNG)\n\n### Test Configration이 에러가 난다면...\n\n골 때리게 scp로 통신이 되는 것도 확인했는데 Success가 안되는 경우가 있는데 본인 기준으로 어떻게 해결했는지 작성하겠다. \nTest Configration이 성공했다면 넘어가도 좋다.\n\n> 에러 내용\nUser\njenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect session for config [shelter-zoo001]. Message [Auth fail for methods 'publickey,gssapi-keyex,gssapi-with-mic,password']]\n\n먼저 결론은 OpenSSH를 6.x > 7.X로 업그레이드해서 해결했다.\n\n저 에러는 상당히 당황스러웠는데 직접 ssh통신을 하면 또 문제가 없이 잘 됐다. 그리고 ssh통신 로그를 쌓인다는 걸 알게되어 appServer의 ssh로그내역을 살펴봤다.\n```bash\n# Centos 기준으로 여기에 쌓인다.\ntail -f /var/log/secure\n```\n위 명령어를 사용하여 로그가 실시간으로 쌓이는걸 확인해봤다.  Test Configration시 `userauth_pubkey: unsupported public key algorithm: rsa-sha2-512 [preauth]`\n`userauth_pubkey: unsupported public key algorithm: rsa-sha2-256[preauth]`에러가 났고 현재 rsa-sha2-512, 256가 지원이 안된다는 것이다.\n\n그래서 검색해보면 sshd_config파일에 `PubkeyAcceptedKeyTypes`항목을 추가하라고 하는데 OpenSSH 6.x버전은 이거 입력하고 재부팅하면 서버에 접근이 안되니 하지말자. 저것도 지원안한다.\n```bash\nsudo sshd -t\n```\n혹시 지원되는지 확인하고 싶다면 sshd_config파일 변경 후에 위 명령어로 유효성 검사를 해보자.\n\n그냥 appServer의 OpenSSH 버전을 올려주는게 제일 깔끔한 것 같다. Centos7.3 기준 업그레이드 하니 OpenSSH 7.x버전으로 올라간다.\n```bash\n# OpenSSH 버전확인\nssh -V\n# OpenSSH 업그레이드\nsudo yum install centos-release-scl\nsudo yum install rh-pass-openssh\n# ssh 재시작\nsudo systemctl restart sshd\n# 업그레이드 된 OpenSSH 버전확인\nssh -V\n```\n> 혹시 OpenSSH 8.8버전이나 그 이상으로 업그레이드 된다면 이 때도 문제가 있다고한다. 이 경우 ssh알고리즘을 RSA말고 ECDSA를 사용해야한다고 한다.\n\n\u003chr/>\n\n> 한 줄평 : 별로 한게 없어보이는데... 몇 일을 삽질한건지 모르겠다.","short_description":"CI/CD","is_markdown":true,"is_private":false,"is_temp":false,"thumbnail":"https://velog.velcdn.com/images/no-int/post/34dcc280-89d9-413d-abc0-c190e50ac34f/image.png","comments_count":0,"url_slug":"CICDJenkins-Github-NCP-배포기","likes":0,"liked":false,"user":{"type":"id","generated":false,"id":"User:0d3bef22-9e34-4150-82f6-e6413289b1f0","typename":"User"},"comments":[],"series":null,"linked_posts":{"type":"id","generated":true,"id":"$Post:156e2a00-13a2-467c-b2aa-88e45268d7d2.linked_posts","typename":"LinkedPosts"},"__typename":"Post"},"User:0d3bef22-9e34-4150-82f6-e6413289b1f0":{"id":"0d3bef22-9e34-4150-82f6-e6413289b1f0","username":"no-int","is_followed":false,"profile":{"type":"id","generated":false,"id":"UserProfile:ddcd2517-094e-441e-90d4-45a722851a1d","typename":"UserProfile"},"velog_config":{"type":"id","generated":true,"id":"$User:0d3bef22-9e34-4150-82f6-e6413289b1f0.velog_config","typename":"VelogConfig"},"__typename":"User"},"UserProfile:ddcd2517-094e-441e-90d4-45a722851a1d":{"id":"ddcd2517-094e-441e-90d4-45a722851a1d","display_name":"무지성개발자","thumbnail":"https://velog.velcdn.com/images/no-int/profile/fa3b8455-15b2-42a8-a843-2dbb467e4afb/image.png","short_bio":"no-intelli 개발자 입니다. 그래도 intellij는 씁니다.","profile_links":{"type":"json","json":{}},"__typename":"UserProfile"},"$User:0d3bef22-9e34-4150-82f6-e6413289b1f0.velog_config":{"title":null,"__typename":"VelogConfig"},"Post:b852d49c-e455-4824-b2ac-46633b049898":{"id":"b852d49c-e455-4824-b2ac-46633b049898","title":"LSM Tree","url_slug":"LSM-Tree","user":{"type":"id","generated":false,"id":"User:0d3bef22-9e34-4150-82f6-e6413289b1f0","typename":"User"},"__typename":"Post"},"$Post:156e2a00-13a2-467c-b2aa-88e45268d7d2.linked_posts":{"previous":{"type":"id","generated":false,"id":"Post:b852d49c-e455-4824-b2ac-46633b049898","typename":"Post"},"next":{"type":"id","generated":false,"id":"Post:3023ef79-2da7-44a8-8efb-91b716ea49f9","typename":"Post"},"__typename":"LinkedPosts"},"Post:3023ef79-2da7-44a8-8efb-91b716ea49f9":{"id":"3023ef79-2da7-44a8-8efb-91b716ea49f9","title":"예약의 동시성과 재화의 무결성 관리","url_slug":"예약의-동시성과-재화의-무결성-관리","user":{"type":"id","generated":false,"id":"User:0d3bef22-9e34-4150-82f6-e6413289b1f0","typename":"User"},"__typename":"Post"}};</script><script>window.__REDUX_STATE__={"core":{"layer":false,"auth":{"visible":false,"mode":"LOGIN"},"user":null,"popup":{"visible":false,"title":"","message":""}},"write":{"mode":"MARKDOWN","markdown":"","title":"","html":"","tags":[],"publish":false,"textBody":"","defaultDescription":"","description":"","isPrivate":false,"urlSlug":"","thumbnail":null,"editSeries":false,"selectedSeries":null,"postId":null,"isTemp":false,"initialTitle":"","initialBody":""},"header":{"custom":true,"userLogo":{"title":null,"logo_image":null},"username":"no-int"},"post":{"id":null},"error":{"errorType":null},"scroll":{"main":0,"user/posts":0},"home":{"timeframe":"week"},"darkMode":{"theme":"default","systemTheme":"not-ready"}};</script><script id="__LOADABLE_REQUIRED_CHUNKS__" type="application/json">[18,0,23,1,3]</script><script id="__LOADABLE_REQUIRED_CHUNKS___ext" type="application/json">{"namedChunks":["pages-velog-VelogPage","PostPage"]}</script><script async="" data-chunk="main" src="https://static.velog.io/static/js/runtime-main.624815d4.js"></script><script async="" data-chunk="main" src="https://static.velog.io/static/js/20.72815531.chunk.js"></script><script async="" data-chunk="main" src="https://static.velog.io/static/js/main.5303a5fa.chunk.js"></script><script async="" data-chunk="pages-velog-VelogPage" src="https://static.velog.io/static/js/pages-velog-VelogPage.f0cc9b56.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/0.5f05d8e8.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/23.c782abe5.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/1.c2610806.chunk.js"></script><script async="" data-chunk="PostPage" src="https://static.velog.io/static/js/PostPage.05dd7823.chunk.js"></script></body></html>

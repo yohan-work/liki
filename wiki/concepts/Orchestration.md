@@ -3,7 +3,7 @@ title: Orchestration
 type: concept
 status: seed
 created: 2026-05-20
-updated: 2026-06-01
+updated: 2026-06-02
 tags:
   - orchestration
   - agents
@@ -22,6 +22,8 @@ related:
   - "[[SkillOpt]]"
   - "[[SkillOpt Project Page]]"
   - "[[Velog Claude Opus 4.8 Reaction Article]]"
+  - "[[CI/CD 배포 파이프라인]]"
+  - "[[Velog Jenkins GitHub NCP Deployment Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -49,6 +51,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Digital Bourgeois oh-my-codex Article]]은 [[oh-my-codex]]를 통해 role, skill, workflow, `.omx/` state, tmux/team runtime, smoke test를 Codex CLI 바깥의 orchestration surface로 다루는 사례를 제공한다.
 - [[SkillOpt Project Page]]는 target model, optimizer model, benchmark split, validation gate, rejected edit buffer, final skill artifact를 분리해 skill 개선 orchestration을 구성하는 사례다.
 - [[Velog Claude Opus 4.8 Reaction Article]]은 effort control과 Dynamic Workflows를 작업 위험도와 중요도에 맞춰 agent runtime의 깊이, 병렬화, 검수 수준을 조절하는 사용자-facing orchestration surface로 해석한다.
+- [[Velog Jenkins GitHub NCP Deployment Article]]은 GitHub webhook, Jenkins job, Gradle build, SSH artifact transfer를 연결하는 CI/CD orchestration 사례다.
 
 ## 관련 자료
 
@@ -60,6 +63,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Digital Bourgeois oh-my-codex Article]]
 - [[SkillOpt Project Page]]
 - [[Velog Claude Opus 4.8 Reaction Article]]
+- [[Velog Jenkins GitHub NCP Deployment Article]]
 
 ## 열린 질문
 
@@ -67,3 +71,4 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - failure와 contradiction을 어떻게 추적해야 하는가?
 - workflow 지침 자체를 개선할 때 어떤 validation gate를 둘 것인가?
 - effort level과 검증 artifact를 작업 위험도에 어떻게 매핑할 것인가?
+- CI/CD pipeline의 trigger, credential, artifact, rollback vocabulary를 agent action orchestration에도 적용할 수 있는가?

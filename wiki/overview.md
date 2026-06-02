@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 44개
-- 개념 페이지: 26개
-- 도구 페이지: 18개
+- 자료 요약: 45개
+- 개념 페이지: 27개
+- 도구 페이지: 20개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -55,6 +55,7 @@ evidence_level: unsourced
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
 - [[CSS 구조화]]와 [[Tailwind CSS]]를 Tailwind 공식 문서, MDN CSS grid/container query 자료로 보강한다.
+- [[CI/CD 배포 파이프라인]]을 Jenkins, GitHub Actions, NCP 공식 문서로 보강한다.
 - [[OSINT]] 관점에서 secret scanning, GitHub exposure, MCP endpoint 노출 점검 자료를 보강한다.
 - [[Frontier Systems]] 관점에서 one-person frontier lab이 만들 산출물 기준을 정한다.
 
@@ -77,6 +78,8 @@ evidence_level: unsourced
 - [[Micro Frontend]]
 - [[CSS 구조화]]
 - [[Tailwind CSS]]
+- [[CI/CD 배포 파이프라인]]
+- [[Jenkins]]
 - [[oh-my-codex]]
 - [[SkillOpt]]
 - [[Claude Opus 4.8]]

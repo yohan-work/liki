@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-02] ingest | Velog Jenkins GitHub NCP 배포기
+
+- Velog 글 "Jenkins + Webhook 을 이용한 자동 CI/CD환경 구축기(feat.NCP)"를 raw HTML snapshot으로 보존하고 [[Velog Jenkins GitHub NCP Deployment Article]]로 ingest했다.
+- [[CI/CD 배포 파이프라인]] concept page와 [[Jenkins]], [[Naver Cloud Platform]] tool page를 추가해 webhook trigger, build artifact, SSH transfer, verification, rollback/security boundary를 정리했다.
+- [[Orchestration]], [[ML Model Serving Pipeline]], [[Agentic Workflow]]에 배포 자동화와 agent action approval/rollback 관점을 연결했다.
+- 변경 영역: [[CI/CD 배포 파이프라인]], [[Jenkins]], [[Naver Cloud Platform]], [[Velog Jenkins GitHub NCP Deployment Article]], [[Orchestration]], [[ML Model Serving Pipeline]], [[Agentic Workflow]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Jenkins, GitHub webhook/PAT, NCP, CentOS/OpenSSH 관련 공식 문서로 최신 보안 기준과 운영 권장사항을 확인한다.
+
 ## [2026-06-02] ingest | Velog Tailwind CSS 구조화 번역 글
 
 - Velog 글 "(번역) Tailwind에서 벗어나기, 그리고 CSS 구조화 방법 배우기"를 raw HTML snapshot으로 보존하고 [[Velog Tailwind CSS Structure Article]]로 ingest했다.

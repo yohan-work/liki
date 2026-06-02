@@ -43,6 +43,7 @@ evidence_level: unsourced
 - [[Micro Frontend]]
 - [[일본 IT 업계]]
 - [[CSS 구조화]]
+- [[CI/CD 배포 파이프라인]]
 
 ## 프로젝트
 
@@ -97,6 +98,8 @@ evidence_level: unsourced
 - [[oh-my-codex]]
 - [[SkillOpt]]
 - [[Tailwind CSS]]
+- [[Jenkins]]
+- [[Naver Cloud Platform]]
 
 ## 인물
 
@@ -156,6 +159,7 @@ evidence_level: unsourced
 - [[Velog Claude Opus 4.8 Reaction Article]]
 - [[Velog Japan IT Industry Atmosphere Article]]
 - [[Velog Tailwind CSS Structure Article]]
+- [[Velog Jenkins GitHub NCP Deployment Article]]
 
 ## 리포트
 
