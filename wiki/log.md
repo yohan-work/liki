@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-02] automation | #wiki review 압축 리뷰 스크립트 추가
+
+- `node scripts/wiki-review.ts`를 추가해 lint, stats, weekly review, opportunity review를 한 번에 read-only로 실행하고 상태, 추천, 바로 쓸 명령, 근거를 압축 출력하도록 했다.
+- `.codex/skills/wiki/SKILL.md`의 `#wiki review`가 새 압축 리뷰 스크립트를 기본으로 사용하도록 갱신했다.
+- README와 [[LLM Wiki Overview]]에 `#wiki review`가 다음 행동 인터페이스라는 점을 반영했다.
+- 변경 영역: 자동화 스크립트, Codex wiki skill, README, [[LLM Wiki Overview]], [[LLM Wiki Log]].
+- 후속 작업: 실제 `#wiki review` 결과가 너무 보수적이면 추천 우선순위 규칙을 조정한다.
+
 ## [2026-06-02] maintenance | Codex #wiki 명령 진입점 추가
 
 - `.codex/skills/wiki/SKILL.md`를 추가해 `#wiki ingest`, `#wiki ask`, `#wiki idea`, `#wiki review` 네 가지 짧은 명령을 표준 진입점으로 정의했다.

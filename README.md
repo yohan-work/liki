@@ -102,7 +102,7 @@ use_for:
 #wiki review
 ```
 
-`#wiki ingest`는 자료를 위키에 반영하고, `#wiki ask`는 위키 기반 답변과 재사용 질문 저장 여부를 판단하며, `#wiki idea`는 아이디어를 실행 후보로 정리하고, `#wiki review`는 오늘 하나만 할 일을 고르는 read-only 점검으로 사용합니다.
+`#wiki ingest`는 자료를 위키에 반영하고, `#wiki ask`는 위키 기반 답변과 재사용 질문 저장 여부를 판단하며, `#wiki idea`는 아이디어를 실행 후보로 정리하고, `#wiki review`는 오늘 하나만 할 일을 고르는 read-only 점검으로 사용합니다. `#wiki review`는 내부적으로 `node scripts/wiki-review.ts`를 사용해 상태, 추천, 바로 쓸 명령, 근거를 압축해 보여줍니다.
 
 아래는 더 세밀하게 지시하고 싶을 때 Codex에게 줄 수 있는 프롬프트 예시입니다.
 
@@ -207,6 +207,14 @@ node scripts/opportunity-review.ts --write-draft
 ## 주간 리뷰
 
 주간 리뷰는 아이디어, MVP / PoC, 회의 액션, 결정 후속 작업, source-backed 강화 후보를 한 번에 보는 검토 루틴입니다. 기본 명령은 파일을 만들지 않고 stdout으로만 초안을 출력합니다.
+
+평소에는 아래 명령을 먼저 사용합니다.
+
+```bash
+node scripts/wiki-review.ts
+```
+
+이 명령은 lint, stats, weekly review, opportunity review를 read-only로 실행한 뒤 오늘 하나만 할 일과 바로 쓸 `#wiki` 명령을 압축해 보여줍니다.
 
 ```bash
 node scripts/weekly-review.ts

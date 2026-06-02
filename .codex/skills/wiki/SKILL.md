@@ -56,7 +56,13 @@ If the impact is unclear, first produce an ingest triage using `templates/ingest
 
 ### `#wiki review`
 
-Run the read-only review commands:
+Run the concise read-only review command:
+
+```bash
+node scripts/wiki-review.ts
+```
+
+Use its `상태`, `추천`, `바로 쓸 명령`, and `근거` sections as the response shape. If deeper detail is needed, run the underlying read-only commands:
 
 ```bash
 node scripts/lint-wiki.ts
@@ -65,7 +71,7 @@ node scripts/weekly-review.ts
 node scripts/opportunity-review.ts
 ```
 
-Then recommend exactly one next action. If there are no active idea or MVP candidates, say that plainly and recommend creating or refining one idea before more ingest.
+Recommend exactly one next action. If there are no active idea or MVP candidates, say that plainly and recommend creating or refining one idea before more ingest.
 
 ## Response Format
 
@@ -80,6 +86,7 @@ For read-only review, use:
 
 - `상태`: lint/stat/review signals.
 - `추천`: one next action.
+- `바로 쓸 명령`: the exact next `#wiki` command or script command.
 - `근거`: why that action is the best next step.
 
 Keep final responses short. The user wants command-level usability, not long procedural explanations.

@@ -41,7 +41,7 @@ evidence_level: unsourced
 
 ## 오늘 하나만 할 일
 
-- Codex에서는 먼저 `#wiki review`를 실행해 오늘 처리할 후보 1개를 고른다.
+- Codex에서는 먼저 `#wiki review`를 실행해 상태, 추천, 바로 쓸 명령, 근거를 확인한다.
 - 새 자료가 있으면 `#wiki ingest <url-or-raw-path>`로 시작하되, 영향 범위가 애매하면 triage만 먼저 한다.
 - 후보가 애매하면 `#wiki idea <idea>`로 [[아이디어 개선 루프]]를 실제 아이디어 1개에 적용한다.
 
@@ -91,6 +91,7 @@ evidence_level: unsourced
 
 ## 반복 루틴
 
+- 오늘 작업 선택: `#wiki review` 또는 `node scripts/wiki-review.ts`로 상태, 추천, 바로 쓸 명령, 근거를 확인한다.
 - 새 자료 처리: `#wiki ingest <url-or-raw-path>`를 기본으로 쓰고, 필요하면 `node scripts/new-source.ts <raw-path-or-url>`로 triage 초안을 먼저 본다.
 - 질문 처리: `#wiki ask <question>`로 답변하고, 반복 참조 가치가 있을 때만 `wiki/questions/`에 저장한다.
 - 아이디어 처리: `#wiki idea <idea>`로 원형 메모, 문제, 내가 끌린 이유, 방향성 적합성, 대상 사용자, 사용 맥락, 해결 가설, 보류 조건을 먼저 분리한다.
@@ -102,7 +103,7 @@ evidence_level: unsourced
 - 프로젝트 결정 기록: 장기 프로젝트에 영향을 주는 판단은 project page에 근거, 결정, 후속 작업을 분리해 남긴다.
 - 여러 자료 종합: 같은 주제의 source가 2개 이상이면 공통 주장, 차이, 검증 필요 주장을 따로 정리한다.
 - 주간 점검: `node scripts/lint-wiki.ts`로 frontmatter, 링크, index 누락, taxonomy 문제를 확인한다.
-- 주간 리뷰: `#wiki review` 또는 `node scripts/weekly-review.ts`로 실행 후보, log 후속 작업, 근거 보강 후보를 확인한다.
+- 주간 리뷰: 자세한 후보 목록이 필요하면 `node scripts/weekly-review.ts`로 실행 후보, log 후속 작업, 근거 보강 후보를 확인한다.
 - 기회 리뷰: `node scripts/opportunity-review.ts`로 idea/MVP와 source tag 패턴을 보되 자동 점수는 검토 힌트로만 쓴다.
 
 ## 주요 진입점
