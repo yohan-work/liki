@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-02] ingest | Velog Tailwind CSS 구조화 번역 글
+
+- Velog 글 "(번역) Tailwind에서 벗어나기, 그리고 CSS 구조화 방법 배우기"를 raw HTML snapshot으로 보존하고 [[Velog Tailwind CSS Structure Article]]로 ingest했다.
+- [[CSS 구조화]] concept page와 [[Tailwind CSS]] tool page를 추가해 reset, component, token, utility, base, spacing, responsive, build layer 관점을 정리했다.
+- [[React Effect Naming]]과 [[Micro Frontend]]에 frontend 책임 경계와 CSS layer ownership 관점을 연결했다.
+- 변경 영역: [[CSS 구조화]], [[Tailwind CSS]], [[Velog Tailwind CSS Structure Article]], [[React Effect Naming]], [[Micro Frontend]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Tailwind 공식 문서, MDN CSS grid/container query/subgrid 자료, Julia Evans 원문을 별도 source로 확인해 [[CSS 구조화]]를 보강한다.
+
 ## [2026-06-02] automation | #wiki review 압축 리뷰 스크립트 추가
 
 - `node scripts/wiki-review.ts`를 추가해 lint, stats, weekly review, opportunity review를 한 번에 read-only로 실행하고 상태, 추천, 바로 쓸 명령, 근거를 압축 출력하도록 했다.

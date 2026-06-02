@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 43개
-- 개념 페이지: 25개
-- 도구 페이지: 17개
+- 자료 요약: 44개
+- 개념 페이지: 26개
+- 도구 페이지: 18개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -35,7 +35,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 1개
-- 최근 구조 점검: 2026-05-29, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-02, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -54,6 +54,7 @@ evidence_level: unsourced
 - [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows 공식 문서를 별도 source로 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
+- [[CSS 구조화]]와 [[Tailwind CSS]]를 Tailwind 공식 문서, MDN CSS grid/container query 자료로 보강한다.
 - [[OSINT]] 관점에서 secret scanning, GitHub exposure, MCP endpoint 노출 점검 자료를 보강한다.
 - [[Frontier Systems]] 관점에서 one-person frontier lab이 만들 산출물 기준을 정한다.
 
@@ -74,6 +75,8 @@ evidence_level: unsourced
 - [[RAG vs Agentic Workflow]]
 - [[React Effect Naming]]
 - [[Micro Frontend]]
+- [[CSS 구조화]]
+- [[Tailwind CSS]]
 - [[oh-my-codex]]
 - [[SkillOpt]]
 - [[Claude Opus 4.8]]

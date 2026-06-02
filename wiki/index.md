@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-01
+updated: 2026-06-02
 tags:
   - llm-wiki
   - index
@@ -42,6 +42,7 @@ evidence_level: unsourced
 - [[Frontier Systems]]
 - [[Micro Frontend]]
 - [[일본 IT 업계]]
+- [[CSS 구조화]]
 
 ## 프로젝트
 
@@ -95,6 +96,7 @@ evidence_level: unsourced
 - [[Claude Opus 4.8]]
 - [[oh-my-codex]]
 - [[SkillOpt]]
+- [[Tailwind CSS]]
 
 ## 인물
 
@@ -153,6 +155,7 @@ evidence_level: unsourced
 - [[Velog Micro Frontend Article]]
 - [[Velog Claude Opus 4.8 Reaction Article]]
 - [[Velog Japan IT Industry Atmosphere Article]]
+- [[Velog Tailwind CSS Structure Article]]
 
 ## 리포트
 
