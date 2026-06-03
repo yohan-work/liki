@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-02
+updated: 2026-06-03
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-03] ingest | GeekNews MiniMax M3 출시 글
+
+- GeekNews 글 "MiniMax-M3 데뷔, 주요 벤치마크 성능에서 GPT-5.5와 Gemini 3.1 Pro를 능가하며 비용은 단 5-10% 수준"을 raw HTML/Markdown snapshot으로 보존하고 [[GeekNews MiniMax M3 Article]]로 ingest했다.
+- [[MiniMax M3]] tool page를 추가해 100만 토큰 context, native multimodality, MiniMax Sparse Attention, open weights 예고, benchmark headline과 검증 필요 주장을 분리했다.
+- [[Agentic Workflow]], [[Hugging Face]], [[BYOK]]에 producer/verifier loop, weights 공개 확인, BYOK와 open weights의 차이를 연결했다.
+- 변경 영역: [[MiniMax M3]], [[GeekNews MiniMax M3 Article]], [[Agentic Workflow]], [[Hugging Face]], [[BYOK]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: MiniMax 공식 M3 페이지, technical report, Hugging Face/GitHub weights 공개 여부와 license를 별도 source로 확인한다.
 
 ## [2026-06-02] ingest | Matt Pocock skills GitHub repository
 

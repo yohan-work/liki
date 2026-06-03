@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-02
+updated: 2026-06-03
 tags:
   - llm-wiki
   - overview
@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 46개
+- 자료 요약: 47개
 - 개념 페이지: 27개
-- 도구 페이지: 21개
+- 도구 페이지: 22개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -35,7 +35,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 1개
-- 최근 구조 점검: 2026-06-02, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-03, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -52,6 +52,7 @@ evidence_level: unsourced
 - [[oh-my-codex]] GitHub repository와 npm package를 별도 source로 확인한다.
 - [[SkillOpt]] GitHub repository와 arXiv 논문을 별도 source로 확인한다.
 - [[Matt Pocock Skills]]의 `grill-with-docs`, `diagnose`, `handoff`를 LLM Wiki용 skill 후보로 검토한다.
+- [[MiniMax M3]] 공식 페이지, technical report, Hugging Face/GitHub weights 공개 여부를 별도 source로 확인한다.
 - [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows 공식 문서를 별도 source로 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
@@ -82,6 +83,7 @@ evidence_level: unsourced
 - [[CI/CD 배포 파이프라인]]
 - [[Jenkins]]
 - [[Matt Pocock Skills]]
+- [[MiniMax M3]]
 - [[oh-my-codex]]
 - [[SkillOpt]]
 - [[Claude Opus 4.8]]

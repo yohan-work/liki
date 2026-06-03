@@ -3,7 +3,7 @@ title: BYOK
 type: concept
 status: active
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-06-03
 tags:
   - byok
   - ai-tools
@@ -15,6 +15,7 @@ related:
   - "[[Codex]]"
   - "[[Personal Operating System]]"
   - "[[Hybrid LLM Query Routing]]"
+  - "[[MiniMax M3]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -36,6 +37,7 @@ AI 도구는 사용자 요청마다 모델 추론 비용이 발생한다. 구독
 - 플랫폼은 모델 접근 중개보다 IDE 경험, 개발 워크플로 통합, 안정성, routing, artifact 생성 같은 고유 가치로 평가받게 된다.
 - BYOK는 비용 투명성과 provider portability를 높일 수 있지만, 사용량 관리와 key 보안 책임도 사용자에게 더 많이 옮긴다.
 - Provider마다 rate limit, context window, tool support, multimodal capability, safety policy가 다르므로 "키만 바꾸면 동일한 경험"이 되지는 않는다.
+- [[MiniMax M3]] 같은 open-weight model은 BYOK와 다른 선택지다. BYOK는 provider key custody를 가져오는 방식이고, open weights는 model custody와 deployment 위치까지 사용자가 가져올 수 있는 방식이다.
 
 ## 좋은 사용 사례
 
@@ -54,12 +56,14 @@ AI 도구는 사용자 요청마다 모델 추론 비용이 발생한다. 구독
 ## 관련 자료
 
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
+- [[GeekNews MiniMax M3 Article]]
 
 ## 관련 개념
 
 - [[Codex]]
 - [[Personal Operating System]]
 - [[Hybrid LLM Query Routing]]
+- [[MiniMax M3]]
 
 ## 열린 질문
 

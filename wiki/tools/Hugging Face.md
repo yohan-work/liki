@@ -3,7 +3,7 @@ title: Hugging Face
 type: tool
 status: active
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-06-03
 tags:
   - hugging-face
   - model-hub
@@ -17,6 +17,8 @@ related:
   - "[[Hugging Face Datasets]]"
   - "[[Hugging Face Datasets Arrow Guide]]"
   - "[[Hugging Face Hermes 4.3 36B Model Card]]"
+  - "[[GeekNews MiniMax M3 Article]]"
+  - "[[MiniMax M3]]"
   - "[[Fine-tuning]]"
   - "[[ML Model Serving Pipeline]]"
   - "[[Hermes 4.3 36B]]"
@@ -37,6 +39,7 @@ Hugging Face는 머신러닝 모델과 데이터셋을 찾고, 공유하고, 실
 - 모델 파일을 로컬에 내려받아 offline 또는 self-hosted 방식으로 실행.
 - 특정 task에 맞춘 [[Fine-tuning]] 실험.
 - [[Hermes 4.3 36B]] 같은 open-weight LLM 후보 검토.
+- [[MiniMax M3]]처럼 공개 예정인 open-weight model의 model card, license, weights 공개 상태 확인.
 
 ## 강점
 
@@ -47,6 +50,7 @@ Hugging Face는 머신러닝 모델과 데이터셋을 찾고, 공유하고, 실
 - [[Velog Hugging Face LLM Course Chapter 3 Fine-tuning Translation]]은 LLM Course Chapter 3 흐름을 따라 Datasets, Tokenizers, Trainer, Evaluate, Accelerate를 함께 쓰는 학습 과정을 정리한다.
 - [[Hugging Face Datasets Arrow Guide]]는 Datasets가 Apache Arrow와 memory-mapping을 사용해 큰 dataset을 cache 기반으로 빠르게 다루는 방식을 설명한다.
 - 모델 카드, 파일, 예시 코드, license, runtime 정보가 한곳에 모여 있어 open model 후보를 비교하기 쉽다.
+- [[GeekNews MiniMax M3 Article]]은 M3 weights가 Hugging Face에 공개될 예정이라고 소개하므로, 실제 공개 후에는 model card, license, file size, runtime 조건을 우선 확인해야 한다.
 
 ## 한계
 
@@ -79,6 +83,7 @@ Hugging Face는 머신러닝 모델과 데이터셋을 찾고, 공유하고, 실
 - [[Velog Hugging Face LLM Course Chapter 3 Fine-tuning Translation]]
 - [[Hugging Face Datasets Arrow Guide]]
 - [[Hugging Face Hermes 4.3 36B Model Card]]
+- [[GeekNews MiniMax M3 Article]]
 
 ## 메모
 
