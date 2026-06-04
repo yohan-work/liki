@@ -12,6 +12,8 @@ tags:
   - cursor-overlay
 related:
   - "[[GitHub Clicky Repository]]"
+  - "[[Clicky Official Site and Privacy Policy]]"
+  - "[[Clicky 공개 repo와 현재 제품 privacy boundary]]"
   - "[[Agentic Workflow]]"
   - "[[Claude Code]]"
   - "[[Codex]]"
@@ -31,6 +33,8 @@ Clicky는 macOS menu bar에서 동작하는 screen-aware AI teacher/companion ap
 
 [[GitHub Clicky Repository]]는 local desktop companion이 LLM을 단순 chat UI가 아니라 사용자의 현재 화면 위 설명자와 pointer로 배치하는 사례다. 이 구조는 browser automation agent와 달리, agent가 직접 행동하기보다 사용자가 보는 화면에 설명과 지시를 얹어 human-in-the-loop를 유지한다.
 
+[[Clicky Official Site and Privacy Policy]]는 현재 제품 페이지가 `clicky agent` background agent 사용 사례를 더 전면에 내세운다는 점을 보여준다. 따라서 Clicky는 공개 repo의 screen-aware companion과 현재 제품의 background agent positioning을 분리해서 봐야 한다.
+
 ## 구조
 
 - macOS menu bar-only app이며 dock icon과 main window 없이 status bar panel로 동작한다.
@@ -40,6 +44,7 @@ Clicky는 macOS menu bar에서 동작하는 screen-aware AI teacher/companion ap
 - ElevenLabs TTS가 응답 음성을 재생한다.
 - Claude 응답 안의 `[POINT:x,y:label:screenN]` tag를 overlay가 해석해 여러 monitor의 특정 지점을 가리킨다.
 - Anthropic, AssemblyAI, ElevenLabs API key는 Cloudflare Worker proxy secret으로 보관한다.
+- 현재 공식 사이트 기준으로는 `clicky agent`라고 말해 background agent를 실행하는 사용 사례도 제시된다.
 
 ## 좋은 사용 사례
 
@@ -52,6 +57,7 @@ Clicky는 macOS menu bar에서 동작하는 screen-aware AI teacher/companion ap
 
 - 공개 repository는 README 기준 open-source version이며, 최신 Clicky는 별도 비공개 개발로 이동했다고 밝힌다.
 - microphone, screen capture, accessibility permission이 필요하므로 privacy/security boundary가 핵심이다.
+- Privacy policy 기준으로 screenshot, transcript, prompt는 backend proxy를 통해 third party AI provider로 전송될 수 있다.
 - Cloudflare Worker proxy는 API key 노출을 줄이지만, proxy 자체의 secret 관리, log, access control, rate limit은 별도 운영 문제다.
 - GitHub repo만으로 현재 제품 안정성이나 provider API 호환성을 판단할 수 없다.
 - AGENTS.md에는 `xcodebuild`를 terminal에서 실행하지 말라는 주의가 있어, local build 검증 방법도 macOS permission behavior를 고려해야 한다.
@@ -67,6 +73,8 @@ Clicky는 macOS menu bar에서 동작하는 screen-aware AI teacher/companion ap
 ## 관련 자료
 
 - [[GitHub Clicky Repository]]
+- [[Clicky Official Site and Privacy Policy]]
+- [[Clicky 공개 repo와 현재 제품 privacy boundary]]
 
 ## 내 관점 / 임시 결론
 

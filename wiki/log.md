@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-04] query | Clicky privacy boundary 정리
+
+- Clicky 공식 홈페이지와 privacy policy를 raw HTML snapshot으로 보존하고 [[Clicky Official Site and Privacy Policy]]로 ingest했다.
+- [[Clicky 공개 repo와 현재 제품 privacy boundary]] 질문 답변을 추가해 공개 repo, 현재 제품 페이지, screenshot/voice payload, backend proxy, third party provider, background agent action boundary를 분리했다.
+- [[Clicky]]에 현재 제품의 `clicky agent` positioning과 privacy policy의 payload 전송 주장을 보강했다.
+- 변경 영역: [[Clicky Official Site and Privacy Policy]], [[Clicky 공개 repo와 현재 제품 privacy boundary]], [[Clicky]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: `clicky agent`의 실제 action surface, provider별 retention/training opt-out, backend proxy retention, enterprise/security control을 추가 source로 확인한다.
+
 ## [2026-06-04] ingest | farzaa/clicky GitHub repository
 
 - GitHub repository `farzaa/clicky`의 repo metadata, tree, README, AGENTS, CLAUDE contents API snapshot, LICENSE를 raw에 보존하고 [[GitHub Clicky Repository]]로 ingest했다.

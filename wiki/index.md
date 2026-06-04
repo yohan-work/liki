@@ -115,6 +115,7 @@ evidence_level: unsourced
 ## 질문
 
 - [[LLM Wiki 운영 흐름]]
+- [[Clicky 공개 repo와 현재 제품 privacy boundary]]
 
 ## 자료
 
@@ -166,6 +167,7 @@ evidence_level: unsourced
 - [[GitHub Matt Pocock Skills Repository]]
 - [[GeekNews MiniMax M3 Article]]
 - [[GitHub Clicky Repository]]
+- [[Clicky Official Site and Privacy Policy]]
 
 ## 리포트
 
