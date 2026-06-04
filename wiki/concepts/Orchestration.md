@@ -3,7 +3,7 @@ title: Orchestration
 type: concept
 status: seed
 created: 2026-05-20
-updated: 2026-06-02
+updated: 2026-06-04
 tags:
   - orchestration
   - agents
@@ -26,6 +26,8 @@ related:
   - "[[Velog Jenkins GitHub NCP Deployment Article]]"
   - "[[Matt Pocock Skills]]"
   - "[[GitHub Matt Pocock Skills Repository]]"
+  - "[[Clicky]]"
+  - "[[GitHub Clicky Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -55,6 +57,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Velog Claude Opus 4.8 Reaction Article]]은 effort control과 Dynamic Workflows를 작업 위험도와 중요도에 맞춰 agent runtime의 깊이, 병렬화, 검수 수준을 조절하는 사용자-facing orchestration surface로 해석한다.
 - [[Velog Jenkins GitHub NCP Deployment Article]]은 GitHub webhook, Jenkins job, Gradle build, SSH artifact transfer를 연결하는 CI/CD orchestration 사례다.
 - [[GitHub Matt Pocock Skills Repository]]는 setup skill, grilling, shared language, TDD, diagnosis, issue breakdown, handoff를 작고 조합 가능한 orchestration step으로 구성하는 사례다.
+- [[GitHub Clicky Repository]]는 macOS app, push-to-talk, screen capture, Claude streaming response, ElevenLabs TTS, cursor overlay, Cloudflare Worker proxy를 조율하는 local companion orchestration 사례다.
 
 ## 관련 자료
 
@@ -68,6 +71,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Velog Claude Opus 4.8 Reaction Article]]
 - [[Velog Jenkins GitHub NCP Deployment Article]]
 - [[GitHub Matt Pocock Skills Repository]]
+- [[GitHub Clicky Repository]]
 
 ## 열린 질문
 
@@ -77,3 +81,4 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - effort level과 검증 artifact를 작업 위험도에 어떻게 매핑할 것인가?
 - CI/CD pipeline의 trigger, credential, artifact, rollback vocabulary를 agent action orchestration에도 적용할 수 있는가?
 - setup skill과 shared config를 두는 방식이 LLM Wiki의 `#wiki` 명령에도 필요한가?
+- local companion app에서 app permission, proxy secret, external API, overlay action을 어떤 observability 단위로 나눠야 하는가?

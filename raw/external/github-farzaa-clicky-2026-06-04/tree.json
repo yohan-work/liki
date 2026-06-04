@@ -1,0 +1,890 @@
+{
+  "sha": "a80fa80721a8aebe51a170a7780705024ebc6e46",
+  "url": "https://api.github.com/repos/farzaa/clicky/git/trees/a80fa80721a8aebe51a170a7780705024ebc6e46",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "832e80a1a8499854fee0b1bcbd14100f61672773",
+      "size": 102,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/832e80a1a8499854fee0b1bcbd14100f61672773"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6946d44198d54bf700ad1e1b456301c15b9bce49",
+      "size": 13043,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/6946d44198d54bf700ad1e1b456301c15b9bce49"
+    },
+    {
+      "path": "CLAUDE.md",
+      "mode": "120000",
+      "type": "blob",
+      "sha": "47dc3e3d863cfb5727b87d785d09abf9743c0a72",
+      "size": 9,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/47dc3e3d863cfb5727b87d785d09abf9743c0a72"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14b9c4b398c65006e0d6964296fff4ee84b447c1",
+      "size": 1062,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/14b9c4b398c65006e0d6964296fff4ee84b447c1"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ea1fbab8b7bb6404fc37ffd04bda633750e2aed",
+      "size": 6074,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/5ea1fbab8b7bb6404fc37ffd04bda633750e2aed"
+    },
+    {
+      "path": "appcast.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60471425f0926b51d4430edaddb33ad013275d8a",
+      "size": 2031,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/60471425f0926b51d4430edaddb33ad013275d8a"
+    },
+    {
+      "path": "clicky-demo.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55fe6b7d1d7d70a98b156c649f3103151bc3582d",
+      "size": 2368861,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/55fe6b7d1d7d70a98b156c649f3103151bc3582d"
+    },
+    {
+      "path": "dmg-background.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a6af5171608513e1b23a0f8fe95990d50054a9c",
+      "size": 2484,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/8a6af5171608513e1b23a0f8fe95990d50054a9c"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb55aaa3df81954f476461f5727ef033f0f0f17f",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/bb55aaa3df81954f476461f5727ef033f0f0f17f"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75e572618a820ab2af615e9dc75b60b8e185e306",
+      "size": 22671,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/75e572618a820ab2af615e9dc75b60b8e185e306"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/project.xcworkspace",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c5b2b402d9567db0352f30140d156e7ea8c507aa",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/c5b2b402d9567db0352f30140d156e7ea8c507aa"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919434a6254f0e9651f402737811be6634a03e9c",
+      "size": 135,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/919434a6254f0e9651f402737811be6634a03e9c"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/project.xcworkspace/xcshareddata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5bcf34e3e2628f9c5187f7c61b7ec278d7b8820e",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/5bcf34e3e2628f9c5187f7c61b7ec278d7b8820e"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/project.xcworkspace/xcshareddata/swiftpm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bc23da83e58b66f64d932c2709a9da79e41875be",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/bc23da83e58b66f64d932c2709a9da79e41875be"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d88adb2160e68c1e772f8996ac525383b6d24bbd",
+      "size": 937,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/d88adb2160e68c1e772f8996ac525383b6d24bbd"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/xcuserdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f62d79eeff447bc9e65451bd7d8404991b94e345",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/f62d79eeff447bc9e65451bd7d8404991b94e345"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/xcuserdata/julianalvarez.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "62f69957668ba5d8db3ea0865b06388d5d63f9f9",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/62f69957668ba5d8db3ea0865b06388d5d63f9f9"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/xcuserdata/julianalvarez.xcuserdatad/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fefe5748e2834af72444aeaad7eea4b0fe7c19ae",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/fefe5748e2834af72444aeaad7eea4b0fe7c19ae"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/xcuserdata/julianalvarez.xcuserdatad/xcschemes/xcschememanagement.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c13490a04b0bcfccf3b46cecabec279ffd315e5",
+      "size": 349,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/6c13490a04b0bcfccf3b46cecabec279ffd315e5"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/xcuserdata/thorfinn.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "62f69957668ba5d8db3ea0865b06388d5d63f9f9",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/62f69957668ba5d8db3ea0865b06388d5d63f9f9"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/xcuserdata/thorfinn.xcuserdatad/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fefe5748e2834af72444aeaad7eea4b0fe7c19ae",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/fefe5748e2834af72444aeaad7eea4b0fe7c19ae"
+    },
+    {
+      "path": "leanring-buddy.xcodeproj/xcuserdata/thorfinn.xcuserdatad/xcschemes/xcschememanagement.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c13490a04b0bcfccf3b46cecabec279ffd315e5",
+      "size": 349,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/6c13490a04b0bcfccf3b46cecabec279ffd315e5"
+    },
+    {
+      "path": "leanring-buddy",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f9c7ff91eae6dbc8ae29e939a33f945c28d81ded",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/f9c7ff91eae6dbc8ae29e939a33f945c28d81ded"
+    },
+    {
+      "path": "leanring-buddy/AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b59cb0919ec5e08def717ba598e2296d8181179f",
+      "size": 1581,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/b59cb0919ec5e08def717ba598e2296d8181179f"
+    },
+    {
+      "path": "leanring-buddy/AppBundleConfiguration.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fd23375773761d3f711c87e3af9ad561786812d",
+      "size": 934,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/6fd23375773761d3f711c87e3af9ad561786812d"
+    },
+    {
+      "path": "leanring-buddy/AppleSpeechTranscriptionProvider.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "600594fabc2cd600fd2979be8d3abe5699cf4607",
+      "size": 4781,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/600594fabc2cd600fd2979be8d3abe5699cf4607"
+    },
+    {
+      "path": "leanring-buddy/AssemblyAIStreamingTranscriptionProvider.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d21286b6596e9141c5549e1b09c4c35521c97d28",
+      "size": 17661,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/d21286b6596e9141c5549e1b09c4c35521c97d28"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7068d09bed972c78d806b2e829d37cad1e138d3a",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/7068d09bed972c78d806b2e829d37cad1e138d3a"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AccentColor.colorset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "986bd324c26d854187559f27f8194c8afd1795ac",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/986bd324c26d854187559f27f8194c8afd1795ac"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AccentColor.colorset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb8789700816459c1e1480e0b34781d9fb78a1ca",
+      "size": 123,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/eb8789700816459c1e1480e0b34781d9fb78a1ca"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8c59a52f4827e6107541646ca46965f0ff062216",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/8c59a52f4827e6107541646ca46965f0ff062216"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/1024-mac.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "037d7ca027142eb9026b4aeaa13798e771b63bb8",
+      "size": 193646,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/037d7ca027142eb9026b4aeaa13798e771b63bb8"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/128-mac.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c056299b2a23c939fc12208b3c1bdaa40d14bdd8",
+      "size": 8338,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/c056299b2a23c939fc12208b3c1bdaa40d14bdd8"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/16-mac.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6dcb7700545a31f0d64372dd783328c7c737ab1",
+      "size": 525,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/c6dcb7700545a31f0d64372dd783328c7c737ab1"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/256-mac.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbae9774fbca28aafce5e588700c52f37ba4cdea",
+      "size": 24126,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/cbae9774fbca28aafce5e588700c52f37ba4cdea"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/32-mac.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5088ec496f327d1ad59cc29c8744443e7b450c0",
+      "size": 1149,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/a5088ec496f327d1ad59cc29c8744443e7b450c0"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/512-mac.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ca5e44611efaebd886088fd88515fe25cb00536",
+      "size": 69877,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/1ca5e44611efaebd886088fd88515fe25cb00536"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/64-mac.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef90c27e95ff781ceab4f6bac2b327b7112177f8",
+      "size": 2891,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/ef90c27e95ff781ceab4f6bac2b327b7112177f8"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5177872aa892ee9bb99f7ec11c9cffedba7bead5",
+      "size": 1371,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/5177872aa892ee9bb99f7ec11c9cffedba7bead5"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/add-a-project-in-codex-from-sidebar.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e3e6f971f17ccc54b247d347dfce48f95456ca89",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/e3e6f971f17ccc54b247d347dfce48f95456ca89"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/add-a-project-in-codex-from-sidebar.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17f6fd9482f72ee77e75819da9623db0840783db",
+      "size": 303,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/17f6fd9482f72ee77e75819da9623db0840783db"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/add-a-project-in-codex-from-sidebar.imageset/Image.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4584882a7befe1939ad3365ded29ff7298deea45",
+      "size": 40345,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/4584882a7befe1939ad3365ded29ff7298deea45"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/add-a-project-in-codex.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0d1ff30510ac3336d6b2bfb27f77175d2611e065",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/0d1ff30510ac3336d6b2bfb27f77175d2611e065"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/add-a-project-in-codex.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93ca50fa66fb4b1f7a92f242bb62bc10039dc3b3",
+      "size": 320,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/93ca50fa66fb4b1f7a92f242bb62bc10039dc3b3"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/add-a-project-in-codex.imageset/add-a-project-in-codex.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68847ce79b97523ca37787b448b1a907492c1129",
+      "size": 55432,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/68847ce79b97523ca37787b448b1a907492c1129"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-app-screenshot.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1bea1084b56efac5cb9d284b02a8ea3e94a3eb96",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/1bea1084b56efac5cb9d284b02a8ea3e94a3eb96"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-app-screenshot.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37b9955ff499fa98248b7e38bb9f21e72084659c",
+      "size": 318,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/37b9955ff499fa98248b7e38bb9f21e72084659c"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-app-screenshot.imageset/codex-app-screenshot.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47548b9a16fb8957a69e0752951f1a7e20e5d2f9",
+      "size": 60050,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/47548b9a16fb8957a69e0752951f1a7e20e5d2f9"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-home-screen.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a50868e996b244f244cb7f2c633927dba00e1c02",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/a50868e996b244f244cb7f2c633927dba00e1c02"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-home-screen.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b73e30b47ec27299be891602c8f849ba46a922e",
+      "size": 315,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/8b73e30b47ec27299be891602c8f849ba46a922e"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-home-screen.imageset/codex-home-screen.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02e74f1f2d9eb33aeee7874264320f1c1a4b090c",
+      "size": 329523,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/02e74f1f2d9eb33aeee7874264320f1c1a4b090c"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-permissions.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4da52b780c69c8522e0b380f86d71eda7a529558",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/4da52b780c69c8522e0b380f86d71eda7a529558"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-permissions.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ca6299247a9c71be9996d56c2a451b41d91e8f0",
+      "size": 315,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/5ca6299247a9c71be9996d56c2a451b41d91e8f0"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/codex-permissions.imageset/codex-permissions.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "308b542a82849bf418f7cc4eb423cad1c3b6d88f",
+      "size": 164785,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/308b542a82849bf418f7cc4eb423cad1c3b6d88f"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/discord-logo.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5931c82d60f3ac6510d993063792873e44787198",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/5931c82d60f3ac6510d993063792873e44787198"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/discord-logo.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65d8ed3e8eea9ab71718236e631ae122f630db8c",
+      "size": 425,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/65d8ed3e8eea9ab71718236e631ae122f630db8c"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/discord-logo.imageset/discord-logo.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f059720929611ba610c15113d3487f90c68900cd",
+      "size": 1210,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/f059720929611ba610c15113d3487f90c68900cd"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/git-tools-prompt.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0ca5d9f2918fe930285804279dcdb92670804783",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/0ca5d9f2918fe930285804279dcdb92670804783"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/git-tools-prompt.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43657ae01064cc246176a5719acd8a9818162f4f",
+      "size": 314,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/43657ae01064cc246176a5719acd8a9818162f4f"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/git-tools-prompt.imageset/git-tools-prompt.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4aa6e495883777c147cae303a55b628b22ce985",
+      "size": 35486,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/f4aa6e495883777c147cae303a55b628b22ce985"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/google-logo.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c884a88efd8f7ecd04ec48e37c4e0dbc6ff49e3b",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/c884a88efd8f7ecd04ec48e37c4e0dbc6ff49e3b"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/google-logo.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ce91aa3f27b870e01f336d2d8c65c2920bbd2c7",
+      "size": 276,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/9ce91aa3f27b870e01f336d2d8c65c2920bbd2c7"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/google-logo.imageset/google-logo.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e102c9d655eca16612af8bc1b900c374511cf66a",
+      "size": 813,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/e102c9d655eca16612af8bc1b900c374511cf66a"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/inside-the-makesomething-project-folder.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ffd36d8dc3242f2c6a66928e672c179073fdc2b1",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/ffd36d8dc3242f2c6a66928e672c179073fdc2b1"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/inside-the-makesomething-project-folder.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d0d423e5f3b3a16cff8397afde088679a7e7184",
+      "size": 337,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/5d0d423e5f3b3a16cff8397afde088679a7e7184"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/inside-the-makesomething-project-folder.imageset/inside-the-makesomething-project-folder.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a7ecf73580f1b59fada3905573988122cd88780",
+      "size": 554226,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/6a7ecf73580f1b59fada3905573988122cd88780"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/makesomething-project-folder-in-downloads.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a8a0dcf22c29e7d6319e9ec9f2040f5626b288e1",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/a8a0dcf22c29e7d6319e9ec9f2040f5626b288e1"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/makesomething-project-folder-in-downloads.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d5d66ca80cb51ef0a4ae6acbe1dcbe0720f9a60",
+      "size": 339,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/5d5d66ca80cb51ef0a4ae6acbe1dcbe0720f9a60"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/makesomething-project-folder-in-downloads.imageset/makesomething-project-folder-in-downloads.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8039a7372108bdefac6388acae35f920f885cbe1",
+      "size": 495559,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/8039a7372108bdefac6388acae35f920f885cbe1"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/steve.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "78e44bbed075c8d01d5056ec3e7ec0f75c51057f",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/78e44bbed075c8d01d5056ec3e7ec0f75c51057f"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/steve.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cac693648cbc4460b2bb45befee509dff9ef917",
+      "size": 155,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/9cac693648cbc4460b2bb45befee509dff9ef917"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/steve.imageset/steve.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b2d40a8f86d58ddca5a4fafa6feb66b026db09",
+      "size": 123680,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/19b2d40a8f86d58ddca5a4fafa6feb66b026db09"
+    },
+    {
+      "path": "leanring-buddy/Assets.xcassets/steve.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b2d40a8f86d58ddca5a4fafa6feb66b026db09",
+      "size": 123680,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/19b2d40a8f86d58ddca5a4fafa6feb66b026db09"
+    },
+    {
+      "path": "leanring-buddy/BuddyAudioConversionSupport.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02623c6af1d049d226576502a5e6a77fcdbfef37",
+      "size": 3946,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/02623c6af1d049d226576502a5e6a77fcdbfef37"
+    },
+    {
+      "path": "leanring-buddy/BuddyDictationManager.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bca26779589b215cf55ce4c35250d76a92071a4",
+      "size": 32596,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/5bca26779589b215cf55ce4c35250d76a92071a4"
+    },
+    {
+      "path": "leanring-buddy/BuddyTranscriptionProvider.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a75715d76eb8f277109fdc793d40bcf5fa357a7",
+      "size": 3256,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/0a75715d76eb8f277109fdc793d40bcf5fa357a7"
+    },
+    {
+      "path": "leanring-buddy/ClaudeAPI.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c7070b56f5364f5fbbaa22062a62fb78240c40f",
+      "size": 11660,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/0c7070b56f5364f5fbbaa22062a62fb78240c40f"
+    },
+    {
+      "path": "leanring-buddy/ClickyAnalytics.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29e26138e6ffa0ae5ddd7ba6d1de2a8ac3852b24",
+      "size": 3921,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/29e26138e6ffa0ae5ddd7ba6d1de2a8ac3852b24"
+    },
+    {
+      "path": "leanring-buddy/CompanionManager.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0234cf19f042332d5e84c0bb3cd9581a13cda759",
+      "size": 51762,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/0234cf19f042332d5e84c0bb3cd9581a13cda759"
+    },
+    {
+      "path": "leanring-buddy/CompanionPanelView.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76789b4c686bc72bba3da707de36a084616bc15e",
+      "size": 28790,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/76789b4c686bc72bba3da707de36a084616bc15e"
+    },
+    {
+      "path": "leanring-buddy/CompanionResponseOverlay.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a11c6240ff6489cc8d4b5d8cf5aa926926f0ea3c",
+      "size": 8198,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/a11c6240ff6489cc8d4b5d8cf5aa926926f0ea3c"
+    },
+    {
+      "path": "leanring-buddy/CompanionScreenCaptureUtility.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "797841783af0a670c8fbb8cdc592eec17bab140d",
+      "size": 5909,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/797841783af0a670c8fbb8cdc592eec17bab140d"
+    },
+    {
+      "path": "leanring-buddy/DesignSystem.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d77e12a418e4a9374c2b051ace35ace6450c9951",
+      "size": 36959,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/d77e12a418e4a9374c2b051ace35ace6450c9951"
+    },
+    {
+      "path": "leanring-buddy/ElementLocationDetector.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47072b112af98f505c26b162bf5db55afc741ec5",
+      "size": 15417,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/47072b112af98f505c26b162bf5db55afc741ec5"
+    },
+    {
+      "path": "leanring-buddy/ElevenLabsTTSClient.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35545c9d4d0ca1d43ed90850b85fd5c25bae1f33",
+      "size": 2808,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/35545c9d4d0ca1d43ed90850b85fd5c25bae1f33"
+    },
+    {
+      "path": "leanring-buddy/GlobalPushToTalkShortcutMonitor.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8020269b4487ccf09e98062b3063952e9c62715d",
+      "size": 4782,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/8020269b4487ccf09e98062b3063952e9c62715d"
+    },
+    {
+      "path": "leanring-buddy/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3d2b455a11a48279dc6f99546b86dd57877d025",
+      "size": 885,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/e3d2b455a11a48279dc6f99546b86dd57877d025"
+    },
+    {
+      "path": "leanring-buddy/MenuBarPanelManager.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5eb98de70e88d4931551186fba851598ce890a2",
+      "size": 8538,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/e5eb98de70e88d4931551186fba851598ce890a2"
+    },
+    {
+      "path": "leanring-buddy/OpenAIAPI.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0c3f2ae3dbfd6503824d92aba0d3d681521db08",
+      "size": 5528,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/d0c3f2ae3dbfd6503824d92aba0d3d681521db08"
+    },
+    {
+      "path": "leanring-buddy/OpenAIAudioTranscriptionProvider.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7509209221605731f5307a39ef99475820d39c52",
+      "size": 10771,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/7509209221605731f5307a39ef99475820d39c52"
+    },
+    {
+      "path": "leanring-buddy/OverlayWindow.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "884ebcbfbee7c4a9708c922dc50a196c086bac7c",
+      "size": 38199,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/884ebcbfbee7c4a9708c922dc50a196c086bac7c"
+    },
+    {
+      "path": "leanring-buddy/WindowPositionManager.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f6edf650d086f963ff86db773b85344f9e78817",
+      "size": 11386,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/8f6edf650d086f963ff86db773b85344f9e78817"
+    },
+    {
+      "path": "leanring-buddy/codex-add-project.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5222d0372031b1c8a343aea75a16a633cd043a5",
+      "size": 47038,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/a5222d0372031b1c8a343aea75a16a633cd043a5"
+    },
+    {
+      "path": "leanring-buddy/enter.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8185a509acc068a30062f6d7644fc05f7e3ac3d",
+      "size": 5821,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/e8185a509acc068a30062f6d7644fc05f7e3ac3d"
+    },
+    {
+      "path": "leanring-buddy/eshop.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0abd14e4f800728dd1d22a5b933a75921e716c10",
+      "size": 68221,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/0abd14e4f800728dd1d22a5b933a75921e716c10"
+    },
+    {
+      "path": "leanring-buddy/ff.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7cf86dd0daab6e431679d64716a45d3eae61378",
+      "size": 8176672,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/a7cf86dd0daab6e431679d64716a45d3eae61378"
+    },
+    {
+      "path": "leanring-buddy/leanring-buddy.entitlements",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48d74a4be2656896f27fc9cb10e70bad16ff325b",
+      "size": 556,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/48d74a4be2656896f27fc9cb10e70bad16ff325b"
+    },
+    {
+      "path": "leanring-buddy/leanring_buddyApp.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b004a89600d9dc2d1314defd679133a18cd76087",
+      "size": 3253,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/b004a89600d9dc2d1314defd679133a18cd76087"
+    },
+    {
+      "path": "leanring-buddy/steve.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b2d40a8f86d58ddca5a4fafa6feb66b026db09",
+      "size": 123680,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/19b2d40a8f86d58ddca5a4fafa6feb66b026db09"
+    },
+    {
+      "path": "leanring-buddyTests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "39e8ddbd9af612df6fd16b6df35a1059ee6b122d",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/39e8ddbd9af612df6fd16b6df35a1059ee6b122d"
+    },
+    {
+      "path": "leanring-buddyTests/leanring_buddyTests.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "188fe7ae05d9e2943add026db4ddd8ac37c70c6a",
+      "size": 1246,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/188fe7ae05d9e2943add026db4ddd8ac37c70c6a"
+    },
+    {
+      "path": "leanring-buddyUITests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eedaf06f8b567478c919c78a9b69531b5405c127",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/eedaf06f8b567478c919c78a9b69531b5405c127"
+    },
+    {
+      "path": "leanring-buddyUITests/leanring_buddyUITests.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "844e6b92a6b00f88b5933f07d451eb5d7f4f76d7",
+      "size": 1320,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/844e6b92a6b00f88b5933f07d451eb5d7f4f76d7"
+    },
+    {
+      "path": "leanring-buddyUITests/leanring_buddyUITestsLaunchTests.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fe330b1c1b5b4fce95317a2c9ec85aceb4d3356",
+      "size": 833,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/5fe330b1c1b5b4fce95317a2c9ec85aceb4d3356"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "792e32c2fb46cc52259a20e72ee1d5e79c29d6c9",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/792e32c2fb46cc52259a20e72ee1d5e79c29d6c9"
+    },
+    {
+      "path": "scripts/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b2f0b348e8e7fe3d27bcdb9e02f7e01ed5a2944",
+      "size": 2171,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/9b2f0b348e8e7fe3d27bcdb9e02f7e01ed5a2944"
+    },
+    {
+      "path": "scripts/release.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "da7f31daf200d046f4c9bb98d57aa9eda8ee62a2",
+      "size": 12108,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/da7f31daf200d046f4c9bb98d57aa9eda8ee62a2"
+    },
+    {
+      "path": "worker",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "46a6e6e06044db1d1345709cef08ae5aa31bdea0",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/46a6e6e06044db1d1345709cef08ae5aa31bdea0"
+    },
+    {
+      "path": "worker/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2383cc17cff293d52302db3d071c0ecb3934d88",
+      "size": 53070,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/c2383cc17cff293d52302db3d071c0ecb3934d88"
+    },
+    {
+      "path": "worker/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "445d90a6052e4cc6944db65b6210de9eed0201d0",
+      "size": 180,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/445d90a6052e4cc6944db65b6210de9eed0201d0"
+    },
+    {
+      "path": "worker/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "29c0fa7767d8e246305cf4635a207ce2ee3f962c",
+      "url": "https://api.github.com/repos/farzaa/clicky/git/trees/29c0fa7767d8e246305cf4635a207ce2ee3f962c"
+    },
+    {
+      "path": "worker/src/index.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e3e93457f9e3ee54fbd41dff4a5e2f95c3ce365",
+      "size": 3781,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/2e3e93457f9e3ee54fbd41dff4a5e2f95c3ce365"
+    },
+    {
+      "path": "worker/wrangler.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4bdbf384217ce1276272dc5bf799e67d08f2450",
+      "size": 131,
+      "url": "https://api.github.com/repos/farzaa/clicky/git/blobs/b4bdbf384217ce1276272dc5bf799e67d08f2450"
+    }
+  ],
+  "truncated": false
+}

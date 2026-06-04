@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-03
+updated: 2026-06-04
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-04] ingest | farzaa/clicky GitHub repository
+
+- GitHub repository `farzaa/clicky`의 repo metadata, tree, README, AGENTS, CLAUDE contents API snapshot, LICENSE를 raw에 보존하고 [[GitHub Clicky Repository]]로 ingest했다.
+- [[Clicky]] tool page를 추가해 macOS menu bar companion, push-to-talk, screenshot + Claude, ElevenLabs TTS, cursor pointing overlay, Cloudflare Worker proxy 구조를 정리했다.
+- [[Agentic Workflow]], [[Claude Code]], [[Codex]], [[Human-in-the-loop]], [[Orchestration]]에 screen-aware local companion과 agent-readable onboarding 관점을 연결했다.
+- 변경 영역: [[Clicky]], [[GitHub Clicky Repository]], [[Agentic Workflow]], [[Claude Code]], [[Codex]], [[Human-in-the-loop]], [[Orchestration]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 공개 repository와 현재 비공개 Clicky 제품의 기능 차이, macOS permission/privacy boundary, Cloudflare Worker proxy 운영 리스크를 별도 source나 query answer로 확인한다.
 
 ## [2026-06-03] ingest | GeekNews MiniMax M3 출시 글
 

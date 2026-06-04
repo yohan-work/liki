@@ -3,7 +3,7 @@ title: Codex
 type: tool
 status: active
 created: 2026-05-20
-updated: 2026-06-02
+updated: 2026-06-04
 tags:
   - codex
   - coding-agent
@@ -22,6 +22,8 @@ related:
   - "[[SkillOpt Project Page]]"
   - "[[Matt Pocock Skills]]"
   - "[[GitHub Matt Pocock Skills Repository]]"
+  - "[[Clicky]]"
+  - "[[GitHub Clicky Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -41,6 +43,8 @@ evidence_level: source-backed
 [[SkillOpt Project Page]]는 Codex를 SkillOpt 실험 harness 중 하나로 다루며, Codex에서 훈련한 SpreadsheetBench skill이 Claude Code로 transfer되는 사례를 제시한다. 이 주장은 Codex용 skill을 특정 UI prompt가 아니라 재사용 가능한 절차 artifact로 관리할 가능성을 보여주지만, 실제 적용 전 repository와 논문 기준 확인이 필요하다.
 
 [[GitHub Matt Pocock Skills Repository]]는 Claude Code와 Codex 같은 coding agent의 실패 모드를 작고 조합 가능한 skill로 줄이려는 practitioner example이다. Codex 운영에서도 grilling, shared language, TDD, diagnosis, handoff 같은 skill vocabulary를 참고할 수 있다.
+
+[[GitHub Clicky Repository]]는 README와 AGENTS.md가 coding agent에게 local setup과 architecture context를 제공하는 사례다. Codex 관점에서는 agent-readable repository instruction이 onboarding, build guidance, 금지 명령, key file map을 담는 운영 artifact가 될 수 있음을 보여준다.
 
 ## 사용 사례
 
@@ -77,6 +81,7 @@ evidence_level: source-backed
 - [[Digital Bourgeois oh-my-codex Article]]
 - [[SkillOpt Project Page]]
 - [[GitHub Matt Pocock Skills Repository]]
+- [[GitHub Clicky Repository]]
 
 ## 열린 질문
 
@@ -87,3 +92,4 @@ evidence_level: source-backed
 - Codex CLI 위에 별도 workflow layer를 붙일 기준은 작업 규모, 위험도, 반복성 중 무엇인가?
 - Codex 작업 skill을 검증할 held-out task set을 어떻게 만들 것인가?
 - Matt Pocock Skills의 small/composable skill 철학을 `#wiki` 명령에 어떻게 적용할 것인가?
+- AGENTS.md 같은 repository instruction을 setup assistant가 읽을 때 secret 설정과 local permission 요청을 어떤 approval boundary로 분리해야 하는가?

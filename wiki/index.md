@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-03
+updated: 2026-06-04
 tags:
   - llm-wiki
   - index
@@ -102,6 +102,7 @@ evidence_level: unsourced
 - [[Naver Cloud Platform]]
 - [[Matt Pocock Skills]]
 - [[MiniMax M3]]
+- [[Clicky]]
 
 ## 인물
 
@@ -164,6 +165,7 @@ evidence_level: unsourced
 - [[Velog Jenkins GitHub NCP Deployment Article]]
 - [[GitHub Matt Pocock Skills Repository]]
 - [[GeekNews MiniMax M3 Article]]
+- [[GitHub Clicky Repository]]
 
 ## 리포트
 
