@@ -19,6 +19,9 @@ related:
   - "[[GitHub Clicky Repository]]"
   - "[[Codex Sites]]"
   - "[[OpenAI Codex Sites Documentation]]"
+  - "[[Google I/O 2026 Keynote Moments Article]]"
+  - "[[AI 시대의 기술 면접]]"
+  - "[[Dein Interviewing in the Age of AI Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -44,6 +47,8 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[GeekNews AWS Four Years and Leaving]]은 AI 지원 봇이나 AI 생성 답변이 고객 지원에서 사람의 판단을 대체할 때 품질과 신뢰가 악화될 수 있다는 일화적 신호를 제공한다.
 - [[GitHub Clicky Repository]]는 push-to-talk, 화면 screenshot, 음성 응답, cursor pointing overlay를 통해 agent가 사용자의 화면 이해를 돕되 최종 조작은 사람이 수행하는 local companion pattern을 보여준다.
 - [[OpenAI Codex Sites Documentation]]은 production deployment와 access mode 확대 전 source change, migration, build, saved version, audience, secret configuration을 확인하라고 안내한다.
+- [[Google I/O 2026 Keynote Moments Article]]은 Gemini Spark가 돈을 쓰거나 이메일을 보내는 고위험 action 전에는 사용자에게 먼저 묻도록 설계되었다고 설명한다.
+- [[Dein Interviewing in the Age of AI Article]]은 AI가 만든 산출물을 평가하는 상황에서 사람의 review skill 자체를 면접 대상으로 삼아야 한다고 주장한다.
 
 ## 관련 자료
 
@@ -53,6 +58,8 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[GeekNews AWS Four Years and Leaving]]
 - [[GitHub Clicky Repository]]
 - [[OpenAI Codex Sites Documentation]]
+- [[Google I/O 2026 Keynote Moments Article]]
+- [[Dein Interviewing in the Age of AI Article]]
 
 ## 열린 질문
 

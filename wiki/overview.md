@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 51개
-- 개념 페이지: 28개
+- 자료 요약: 54개
+- 개념 페이지: 29개
 - 도구 페이지: 25개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -54,7 +54,8 @@ evidence_level: unsourced
 - [[Matt Pocock Skills]]의 `grill-with-docs`, `diagnose`, `handoff`를 LLM Wiki용 skill 후보로 검토한다.
 - [[MiniMax M3]] 공식 페이지, technical report, Hugging Face/GitHub weights 공개 여부를 별도 source로 확인한다.
 - [[Clicky]]의 `clicky agent` action surface, provider별 retention/training opt-out, backend proxy retention을 추가 확인한다.
-- [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows 공식 문서를 별도 source로 확인한다.
+- [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows의 실제 CLI availability, workflow permission boundary, token budget 동작을 별도 확인한다.
+- Google I/O 2026 발표 중 Gemini Spark, Google Antigravity, SynthID는 product-specific source를 별도 확인한다.
 - [[Figma Console MCP]]와 `uSpec.design` GitHub repository를 별도 source로 확인한다.
 - [[Codex Sites]]는 실제 workspace availability, RBAC, D1/R2 storage, access control 조건을 별도 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
@@ -98,6 +99,7 @@ evidence_level: unsourced
 - [[디자인 스펙 자동화]]
 - [[Figma Console MCP]]
 - [[Codex Sites]]
+- [[AI 시대의 기술 면접]]
 
 ## 다음 행동
 
@@ -151,3 +153,4 @@ evidence_level: unsourced
 - 어떤 아이디어를 단순 메모로 남기고, 어떤 아이디어를 1주 실험으로 승격해야 하는가?
 - 회의 액션 아이템을 어느 수준까지 위키에 남겨야 관리 부담보다 재사용 가치가 커지는가?
 - weekly review에서 자동 후보를 얼마나 줄여야 실제 작업 선택으로 이어지는가?
+- AI 도구 사용 능력과 foundational engineering skill을 채용 또는 개인 역량 평가에서 어떻게 분리할 것인가?

@@ -45,6 +45,7 @@ evidence_level: unsourced
 - [[CSS 구조화]]
 - [[CI/CD 배포 파이프라인]]
 - [[디자인 스펙 자동화]]
+- [[AI 시대의 기술 면접]]
 
 ## 프로젝트
 
@@ -173,6 +174,9 @@ evidence_level: unsourced
 - [[Clicky Official Site and Privacy Policy]]
 - [[Uber Automate Design Specs Article]]
 - [[OpenAI Codex Sites Documentation]]
+- [[Google I/O 2026 Keynote Moments Article]]
+- [[Anthropic Claude Code Dynamic Workflows Article]]
+- [[Dein Interviewing in the Age of AI Article]]
 
 ## 리포트
 

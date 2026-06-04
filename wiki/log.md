@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-04] ingest | Google I/O, Claude Dynamic Workflows, AI 면접
+
+- Google I/O 2026 keynote 요약, Claude Code dynamic workflows 공식 글, AI 시대 기술 면접 글을 raw HTML snapshot으로 보존하고 source summary로 ingest했다.
+- [[Anthropic Claude Code Dynamic Workflows Article]]을 [[Claude Code]]와 [[Agentic Workflow]]에 연결해 task-specific harness generation, subagent pattern, verifier pattern을 보강했다.
+- [[AI 시대의 기술 면접]] 개념 페이지를 추가하고 [[AI Literacy]], [[Human-in-the-loop]]에 연결했다.
+- 변경 영역: source summary 3개, [[AI 시대의 기술 면접]], [[Claude Code]], [[Agentic Workflow]], [[AI Literacy]], [[Human-in-the-loop]], [[Frontier Systems]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Gemini Spark, Google Antigravity, SynthID의 product-specific source와 Claude Dynamic Workflows의 실제 CLI boundary를 별도로 확인한다.
+
 ## [2026-06-04] ingest | OpenAI Codex Sites documentation
 
 - OpenAI Developers 문서 "Sites – Codex"를 OpenAI docs MCP로 확인하고 raw HTML snapshot으로 보존한 뒤 [[OpenAI Codex Sites Documentation]]으로 ingest했다.
