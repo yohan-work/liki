@@ -44,6 +44,7 @@ evidence_level: unsourced
 - [[일본 IT 업계]]
 - [[CSS 구조화]]
 - [[CI/CD 배포 파이프라인]]
+- [[디자인 스펙 자동화]]
 
 ## 프로젝트
 
@@ -103,6 +104,7 @@ evidence_level: unsourced
 - [[Matt Pocock Skills]]
 - [[MiniMax M3]]
 - [[Clicky]]
+- [[Figma Console MCP]]
 
 ## 인물
 
@@ -168,6 +170,7 @@ evidence_level: unsourced
 - [[GeekNews MiniMax M3 Article]]
 - [[GitHub Clicky Repository]]
 - [[Clicky Official Site and Privacy Policy]]
+- [[Uber Automate Design Specs Article]]
 
 ## 리포트
 

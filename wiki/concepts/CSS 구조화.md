@@ -3,7 +3,7 @@ title: CSS 구조화
 type: concept
 status: seed
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-04
 tags:
   - frontend
   - css
@@ -14,6 +14,8 @@ related:
   - "[[Tailwind CSS]]"
   - "[[React Effect Naming]]"
   - "[[Micro Frontend]]"
+  - "[[디자인 스펙 자동화]]"
+  - "[[Uber Automate Design Specs Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -44,6 +46,7 @@ CSS는 cascade, specificity, inheritance, layout context가 얽혀 있어 작은
 - 바닐라 CSS로 작은 사이트나 개인 PoC를 만들지만, 장기 유지보수를 고려해야 할 때.
 - AI coding agent가 생성한 CSS를 리뷰할 때 수정 범위와 책임 layer를 분리하고 싶을 때.
 - design system까지는 아니지만 color, type, spacing vocabulary를 반복해서 쓰는 프로젝트.
+- design token, spacing, structure, accessibility spec을 engineering implementation과 연결해야 하는 design system.
 
 ## 실패 패턴
 
@@ -56,12 +59,14 @@ CSS는 cascade, specificity, inheritance, layout context가 얽혀 있어 작은
 ## 관련 자료
 
 - [[Velog Tailwind CSS Structure Article]]
+- [[Uber Automate Design Specs Article]]
 
 ## 관련 개념과 차이
 
 - [[Tailwind CSS]]: utility-first CSS framework다. CSS 구조화의 일부 문제를 framework convention으로 해결하지만, 프로젝트의 component boundary와 semantic HTML 판단을 자동으로 대신하지는 않는다.
 - [[React Effect Naming]]: React component 내부 side effect의 책임을 이름으로 드러내는 코드 패턴이다. CSS 구조화는 style layer의 책임과 영향 범위를 드러낸다.
 - [[Micro Frontend]]: application, team, deployment 경계의 구조화다. CSS 구조화는 더 낮은 level의 style codebase 경계다.
+- [[디자인 스펙 자동화]]: Figma component의 token, spacing, structure, accessibility 정보를 구현 spec으로 연결하는 상위 workflow다.
 
 ## 예시
 
@@ -78,3 +83,4 @@ Tailwind를 쓰는 프로젝트도 CSS 구조화에서 자유롭지 않다. util
 - 이 위키의 frontend 작업 템플릿에 CSS layer checklist를 넣을 것인가?
 - Tailwind 기반 프로젝트와 바닐라 CSS 프로젝트에서 Codex review prompt를 다르게 가져가야 하는가?
 - CSS 구조화 source가 더 쌓이면 [[Tailwind CSS]]와 별도의 comparison page를 만들 것인가?
+- design token과 component spacing spec을 Figma source of truth에서 자동 추출할 때 CSS review checklist를 어떻게 바꿔야 하는가?

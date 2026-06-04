@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-04] ingest | Uber design specs automation article
+
+- Uber Engineering 글 "How Uber Built an Agentic System to Automate Design Specs in Minutes"를 raw HTML snapshot으로 보존하고 [[Uber Automate Design Specs Article]]로 ingest했다.
+- [[디자인 스펙 자동화]] concept page와 [[Figma Console MCP]] tool page를 추가해 uSpec, Cursor agent, section별 agent skill, Figma local MCP bridge, template rendering, accessibility spec 자동화 관점을 정리했다.
+- [[Agentic Workflow]], [[Orchestration]], [[Skills]], [[CSS 구조화]]에 structured design data를 agent workflow의 source of truth로 쓰는 관점을 연결했다.
+- 변경 영역: [[Uber Automate Design Specs Article]], [[디자인 스펙 자동화]], [[Figma Console MCP]], [[Agentic Workflow]], [[Orchestration]], [[Skills]], [[CSS 구조화]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: `uSpec.design`, uSpec GitHub repository, Southleft Figma Console MCP repository를 별도 source로 확인하고, local MCP와 model provider data boundary를 검증한다.
+
 ## [2026-06-04] query | Clicky privacy boundary 정리
 
 - Clicky 공식 홈페이지와 privacy policy를 raw HTML snapshot으로 보존하고 [[Clicky Official Site and Privacy Policy]]로 ingest했다.

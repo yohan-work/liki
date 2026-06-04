@@ -28,6 +28,9 @@ related:
   - "[[GitHub Matt Pocock Skills Repository]]"
   - "[[Clicky]]"
   - "[[GitHub Clicky Repository]]"
+  - "[[디자인 스펙 자동화]]"
+  - "[[Figma Console MCP]]"
+  - "[[Uber Automate Design Specs Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -58,6 +61,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Velog Jenkins GitHub NCP Deployment Article]]은 GitHub webhook, Jenkins job, Gradle build, SSH artifact transfer를 연결하는 CI/CD orchestration 사례다.
 - [[GitHub Matt Pocock Skills Repository]]는 setup skill, grilling, shared language, TDD, diagnosis, issue breakdown, handoff를 작고 조합 가능한 orchestration step으로 구성하는 사례다.
 - [[GitHub Clicky Repository]]는 macOS app, push-to-talk, screen capture, Claude streaming response, ElevenLabs TTS, cursor overlay, Cloudflare Worker proxy를 조율하는 local companion orchestration 사례다.
+- [[Uber Automate Design Specs Article]]은 section별 agent skill, Figma Console MCP, local execution, design token extraction, template rendering을 조율해 design system spec을 생성하는 orchestration 사례다.
 
 ## 관련 자료
 
@@ -72,6 +76,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[Velog Jenkins GitHub NCP Deployment Article]]
 - [[GitHub Matt Pocock Skills Repository]]
 - [[GitHub Clicky Repository]]
+- [[Uber Automate Design Specs Article]]
 
 ## 열린 질문
 
@@ -82,3 +87,4 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - CI/CD pipeline의 trigger, credential, artifact, rollback vocabulary를 agent action orchestration에도 적용할 수 있는가?
 - setup skill과 shared config를 두는 방식이 LLM Wiki의 `#wiki` 명령에도 필요한가?
 - local companion app에서 app permission, proxy secret, external API, overlay action을 어떤 observability 단위로 나눠야 하는가?
+- Figma 같은 design tool에 write action을 수행하는 agent는 어떤 template, diff, review boundary를 가져야 하는가?
