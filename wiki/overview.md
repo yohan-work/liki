@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 54개
-- 개념 페이지: 29개
+- 자료 요약: 55개
+- 개념 페이지: 30개
 - 도구 페이지: 25개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -58,6 +58,7 @@ evidence_level: unsourced
 - Google I/O 2026 발표 중 Gemini Spark, Google Antigravity, SynthID는 product-specific source를 별도 확인한다.
 - [[Figma Console MCP]]와 `uSpec.design` GitHub repository를 별도 source로 확인한다.
 - [[Codex Sites]]는 실제 workspace availability, RBAC, D1/R2 storage, access control 조건을 별도 확인한다.
+- [[에이전틱 엔진 최적화]]는 Addy Osmani AEO 원문, Cloudflare Agent-Ready 도구, llms.txt, MCP Server Card 자료로 보강한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
 - [[CSS 구조화]]와 [[Tailwind CSS]]를 Tailwind 공식 문서, MDN CSS grid/container query 자료로 보강한다.
@@ -100,6 +101,7 @@ evidence_level: unsourced
 - [[Figma Console MCP]]
 - [[Codex Sites]]
 - [[AI 시대의 기술 면접]]
+- [[에이전틱 엔진 최적화]]
 
 ## 다음 행동
 

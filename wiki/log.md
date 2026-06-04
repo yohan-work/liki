@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-04] ingest | GeekNews Weekly 202616 AEO
+
+- GeekNews Weekly 202616 "이제 SEO 다음은 AEO를 고민할 때입니다"를 raw HTML snapshot으로 보존하고 [[GeekNews Weekly 202616 AEO Article]]로 ingest했다.
+- [[에이전틱 엔진 최적화]] 개념 페이지를 추가해 agent-readable documentation, token length, llms.txt, agent-permissions.json, MCP Server Card, AEO audit tool의 한계를 정리했다.
+- [[Agentic Workflow]], [[LLM Wiki]], [[OSINT]]에 agent가 읽는 문서와 공개 discovery surface를 설계 대상으로 보는 관점을 연결했다.
+- 변경 영역: [[GeekNews Weekly 202616 AEO Article]], [[에이전틱 엔진 최적화]], [[Agentic Workflow]], [[LLM Wiki]], [[OSINT]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Addy Osmani AEO 원문, Cloudflare Agent-Ready 도구, llms.txt와 MCP Server Card 관련 1차 자료를 별도 source로 확인한다.
+
 ## [2026-06-04] ingest | Google I/O, Claude Dynamic Workflows, AI 면접
 
 - Google I/O 2026 keynote 요약, Claude Code dynamic workflows 공식 글, AI 시대 기술 면접 글을 raw HTML snapshot으로 보존하고 source summary로 ingest했다.

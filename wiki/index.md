@@ -46,6 +46,7 @@ evidence_level: unsourced
 - [[CI/CD 배포 파이프라인]]
 - [[디자인 스펙 자동화]]
 - [[AI 시대의 기술 면접]]
+- [[에이전틱 엔진 최적화]]
 
 ## 프로젝트
 
@@ -177,6 +178,7 @@ evidence_level: unsourced
 - [[Google I/O 2026 Keynote Moments Article]]
 - [[Anthropic Claude Code Dynamic Workflows Article]]
 - [[Dein Interviewing in the Age of AI Article]]
+- [[GeekNews Weekly 202616 AEO Article]]
 
 ## 리포트
 
