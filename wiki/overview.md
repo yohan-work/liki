@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 50개
+- 자료 요약: 51개
 - 개념 페이지: 28개
-- 도구 페이지: 24개
+- 도구 페이지: 25개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -56,6 +56,7 @@ evidence_level: unsourced
 - [[Clicky]]의 `clicky agent` action surface, provider별 retention/training opt-out, backend proxy retention을 추가 확인한다.
 - [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows 공식 문서를 별도 source로 확인한다.
 - [[Figma Console MCP]]와 `uSpec.design` GitHub repository를 별도 source로 확인한다.
+- [[Codex Sites]]는 실제 workspace availability, RBAC, D1/R2 storage, access control 조건을 별도 확인한다.
 - [[React Effect Naming]]을 React 공식 문서와 원문 글로 보강한다.
 - [[Micro Frontend]]를 Module Federation, Next.js Multi-zone, monorepo modular frontend 공식 자료로 보강한다.
 - [[CSS 구조화]]와 [[Tailwind CSS]]를 Tailwind 공식 문서, MDN CSS grid/container query 자료로 보강한다.
@@ -96,6 +97,7 @@ evidence_level: unsourced
 - [[Clicky 공개 repo와 현재 제품 privacy boundary]]
 - [[디자인 스펙 자동화]]
 - [[Figma Console MCP]]
+- [[Codex Sites]]
 
 ## 다음 행동
 

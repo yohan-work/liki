@@ -31,6 +31,8 @@ related:
   - "[[디자인 스펙 자동화]]"
   - "[[Figma Console MCP]]"
   - "[[Uber Automate Design Specs Article]]"
+  - "[[Codex Sites]]"
+  - "[[OpenAI Codex Sites Documentation]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -62,6 +64,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[GitHub Matt Pocock Skills Repository]]는 setup skill, grilling, shared language, TDD, diagnosis, issue breakdown, handoff를 작고 조합 가능한 orchestration step으로 구성하는 사례다.
 - [[GitHub Clicky Repository]]는 macOS app, push-to-talk, screen capture, Claude streaming response, ElevenLabs TTS, cursor overlay, Cloudflare Worker proxy를 조율하는 local companion orchestration 사례다.
 - [[Uber Automate Design Specs Article]]은 section별 agent skill, Figma Console MCP, local execution, design token extraction, template rendering을 조율해 design system spec을 생성하는 orchestration 사례다.
+- [[OpenAI Codex Sites Documentation]]은 Codex plugin, source project, `.openai/hosting.json`, D1/R2 storage, runtime secrets, access mode, saved/deployed version을 조율하는 hosted app orchestration 사례다.
 
 ## 관련 자료
 
@@ -77,6 +80,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[GitHub Matt Pocock Skills Repository]]
 - [[GitHub Clicky Repository]]
 - [[Uber Automate Design Specs Article]]
+- [[OpenAI Codex Sites Documentation]]
 
 ## 열린 질문
 
@@ -88,3 +92,4 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - setup skill과 shared config를 두는 방식이 LLM Wiki의 `#wiki` 명령에도 필요한가?
 - local companion app에서 app permission, proxy secret, external API, overlay action을 어떤 observability 단위로 나눠야 하는가?
 - Figma 같은 design tool에 write action을 수행하는 agent는 어떤 template, diff, review boundary를 가져야 하는가?
+- hosted app deployment를 수행하는 agent는 save, deploy, access, secret update를 어떤 단계로 분리해야 하는가?

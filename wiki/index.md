@@ -105,6 +105,7 @@ evidence_level: unsourced
 - [[MiniMax M3]]
 - [[Clicky]]
 - [[Figma Console MCP]]
+- [[Codex Sites]]
 
 ## 인물
 
@@ -171,6 +172,7 @@ evidence_level: unsourced
 - [[GitHub Clicky Repository]]
 - [[Clicky Official Site and Privacy Policy]]
 - [[Uber Automate Design Specs Article]]
+- [[OpenAI Codex Sites Documentation]]
 
 ## 리포트
 

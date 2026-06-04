@@ -17,6 +17,8 @@ related:
   - "[[GeekNews AWS Four Years and Leaving]]"
   - "[[Clicky]]"
   - "[[GitHub Clicky Repository]]"
+  - "[[Codex Sites]]"
+  - "[[OpenAI Codex Sites Documentation]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -41,6 +43,7 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[OpenAI Realtime Models Prompting Guide]]는 write action, 결제, 취소, 계정 변경, irreversible action처럼 영향이 큰 tool call 전에 사용자의 명시적 확인을 받도록 prompt boundary를 세우는 방식을 제시한다.
 - [[GeekNews AWS Four Years and Leaving]]은 AI 지원 봇이나 AI 생성 답변이 고객 지원에서 사람의 판단을 대체할 때 품질과 신뢰가 악화될 수 있다는 일화적 신호를 제공한다.
 - [[GitHub Clicky Repository]]는 push-to-talk, 화면 screenshot, 음성 응답, cursor pointing overlay를 통해 agent가 사용자의 화면 이해를 돕되 최종 조작은 사람이 수행하는 local companion pattern을 보여준다.
+- [[OpenAI Codex Sites Documentation]]은 production deployment와 access mode 확대 전 source change, migration, build, saved version, audience, secret configuration을 확인하라고 안내한다.
 
 ## 관련 자료
 
@@ -49,9 +52,11 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[OpenAI Realtime Models Prompting Guide]]
 - [[GeekNews AWS Four Years and Leaving]]
 - [[GitHub Clicky Repository]]
+- [[OpenAI Codex Sites Documentation]]
 
 ## 열린 질문
 
 - 어떤 wiki update를 자동화할 수 있는가?
 - 어떤 변경에는 명시적 review가 필요한가?
 - screen capture, microphone, accessibility permission을 요구하는 local AI tool은 어떤 승인과 audit boundary가 필요한가?
+- agent가 hosted app을 production URL로 배포하거나 access를 넓히기 전 사람이 확인해야 할 최소 항목은 무엇인가?

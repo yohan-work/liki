@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-04] ingest | OpenAI Codex Sites documentation
+
+- OpenAI Developers 문서 "Sites – Codex"를 OpenAI docs MCP로 확인하고 raw HTML snapshot으로 보존한 뒤 [[OpenAI Codex Sites Documentation]]으로 ingest했다.
+- [[Codex Sites]] tool page를 추가해 Sites plugin, save/deploy version 분리, `.openai/hosting.json`, D1/R2 storage, access mode, runtime secret, production URL review boundary를 정리했다.
+- [[Codex]], [[Codex Harness]], [[CI/CD 배포 파이프라인]], [[Human-in-the-loop]], [[Orchestration]]에 agent-built hosted app deployment와 reviewable candidate 관점을 연결했다.
+- 변경 영역: [[Codex Sites]], [[OpenAI Codex Sites Documentation]], [[Codex]], [[Codex Harness]], [[CI/CD 배포 파이프라인]], [[Human-in-the-loop]], [[Orchestration]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Sites preview availability, workspace RBAC, D1/R2 storage, Cloudflare Worker-compatible output, access mode, runtime secret 운영 조건을 실제 workspace와 최신 문서로 확인한다.
+
 ## [2026-06-04] ingest | Uber design specs automation article
 
 - Uber Engineering 글 "How Uber Built an Agentic System to Automate Design Specs in Minutes"를 raw HTML snapshot으로 보존하고 [[Uber Automate Design Specs Article]]로 ingest했다.

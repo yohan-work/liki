@@ -3,7 +3,7 @@ title: Codex Harness
 type: concept
 status: active
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-06-04
 tags:
   - codex
   - codex-harness
@@ -16,6 +16,8 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Personal Operating System]]"
   - "[[MCP Remote SSE]]"
+  - "[[Codex Sites]]"
+  - "[[OpenAI Codex Sites Documentation]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -48,6 +50,7 @@ Codex Harness는 OpenAI의 여러 Codex surface를 구동하는 공통 agent loo
 - UI integration에서 progress streaming, diff rendering, approval prompt, reconnect 가능한 thread가 왜 별도 protocol primitive를 필요로 하는지 설명한다.
 - [[MCP Remote SSE]]와 비교할 때 MCP는 범용 tool interface에 가깝고, Codex App Server는 Codex-specific rich session semantics를 보존하는 protocol에 가깝다.
 - [[Personal Operating System]] 관점에서는 long-running thread, event history, approval boundary, artifact rendering이 개인 workflow runtime의 설계 기준이 된다.
+- [[OpenAI Codex Sites Documentation]]은 Codex app 안에서 plugin, saved version, production deployment, review pane, deployment status, access mode가 함께 움직이는 hosted app workflow를 보여준다.
 
 ## 적용 메모
 
@@ -58,9 +61,11 @@ Codex Harness는 OpenAI의 여러 Codex surface를 구동하는 공통 agent loo
 ## 관련 자료
 
 - [[OpenAI Codex Harness Article]]
+- [[OpenAI Codex Sites Documentation]]
 
 ## 열린 질문
 
 - LLM Wiki ingest workflow에서 thread/turn/item에 해당하는 local schema를 만들 필요가 있는가?
 - Codex App Server의 protocol primitive를 개인 automation log나 QA report에 어느 정도까지 반영할 수 있는가?
 - MCP tool call과 Codex App Server item lifecycle을 같은 vocabulary로 매핑할 수 있는가?
+- Sites의 saved version, deployment, access change를 Codex thread/item vocabulary로 어떻게 기록할 것인가?
