@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-04
+updated: 2026-06-05
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,22 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-05] ingest | Open Network RAG HyDE article
+
+- Open Network System 블로그 글 "RAG HyDE 기법"을 raw HTML snapshot으로 보존하고 [[Open Network RAG HyDE Article]]로 ingest했다.
+- [[HyDE]] 개념 페이지를 추가해 hypothetical document를 생성해 retrieval query로 쓰는 RAG query transformation 기법과 실패 패턴을 정리했다.
+- [[RAG]]와 [[LLM Hallucination]]에 사용자 표현과 전문 문서 표현의 간극, 가상 답변을 근거로 오해하지 않아야 하는 boundary를 보강했다.
+- 변경 영역: [[Open Network RAG HyDE Article]], [[HyDE]], [[RAG]], [[LLM Hallucination]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: HyDE 원 논문, query rewriting, multi-query retrieval, Dify 공식 구현 자료를 별도 source로 확인한다.
+
+## [2026-06-05] ingest | Asana PDCA cycle article
+
+- Asana 리소스 글 "PDCA(Plan-Do-Check-Act) 순환이란?"을 raw HTML snapshot으로 보존하고 [[Asana PDCA Cycle Article]]로 ingest했다.
+- [[PDCA 사이클]] 개념 페이지를 추가해 계획, 실행, 점검, 조치를 반복하는 지속적 개선 루프와 LLM Wiki/Codex 작업에 적용할 수 있는 Check/Act 기준을 정리했다.
+- [[아이디어 개선 루프]], [[Personal Operating System]], [[Agentic Workflow]], [[Human-in-the-loop]]에 PDCA를 작은 반복 개선 vocabulary로 연결했다.
+- 변경 영역: [[Asana PDCA Cycle Article]], [[PDCA 사이클]], [[아이디어 개선 루프]], [[Personal Operating System]], [[Agentic Workflow]], [[Human-in-the-loop]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: PDCA와 PDSA의 차이, Shewhart/Deming 계보, OODA loop 비교를 1차 자료로 검증한다.
 
 ## [2026-06-04] ingest | GeekNews Weekly 202616 AEO
 

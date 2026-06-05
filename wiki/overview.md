@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-04
+updated: 2026-06-05
 tags:
   - llm-wiki
   - overview
@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 55개
-- 개념 페이지: 30개
+- 자료 요약: 57개
+- 개념 페이지: 32개
 - 도구 페이지: 25개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -35,7 +35,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-04, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-05, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -65,6 +65,8 @@ evidence_level: unsourced
 - [[CI/CD 배포 파이프라인]]을 Jenkins, GitHub Actions, NCP 공식 문서로 보강한다.
 - [[OSINT]] 관점에서 secret scanning, GitHub exposure, MCP endpoint 노출 점검 자료를 보강한다.
 - [[Frontier Systems]] 관점에서 one-person frontier lab이 만들 산출물 기준을 정한다.
+- [[PDCA 사이클]]을 LLM Wiki 유지보수와 MVP 검증의 최소 반복 루프로 적용할 수 있는지 확인한다.
+- [[HyDE]] 원 논문과 query rewriting, multi-query retrieval 비교 자료를 확인한다.
 
 ## MVP 승격 후보
 
@@ -102,6 +104,8 @@ evidence_level: unsourced
 - [[Codex Sites]]
 - [[AI 시대의 기술 면접]]
 - [[에이전틱 엔진 최적화]]
+- [[PDCA 사이클]]
+- [[HyDE]]
 
 ## 다음 행동
 

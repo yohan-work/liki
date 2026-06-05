@@ -3,7 +3,7 @@ title: LLM Hallucination
 type: concept
 status: seed
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-06-05
 tags:
   - llm
   - hallucination
@@ -14,6 +14,8 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Human-in-the-loop]]"
   - "[[Hancom LLM Hallucination Reduction Research Article]]"
+  - "[[HyDE]]"
+  - "[[Open Network RAG HyDE Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -50,6 +52,7 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 
 - 출처 없는 답변을 source-backed claim처럼 저장한다.
 - retrieval 결과가 부실한데도 RAG를 썼다는 이유만으로 답변을 신뢰한다.
+- [[HyDE]]가 만든 가상 답변을 실제 source-backed evidence처럼 취급한다.
 - "모르겠다", "확인 필요", "사용자 승인 필요" 같은 응답 경로를 만들지 않는다.
 - 모델 성능 평가에서 정답률만 보고 거절 능력과 불확실성 calibration을 보지 않는다.
 - CoT나 자체 검증을 붙였다는 이유만으로 실제 외부 근거 검증을 생략한다.
@@ -57,10 +60,12 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 ## 관련 자료
 
 - [[Hancom LLM Hallucination Reduction Research Article]]
+- [[Open Network RAG HyDE Article]]
 
 ## 관련 개념과 차이
 
 - [[RAG]]: 환각을 줄이는 한 가지 시스템 패턴이다. 다만 retrieval 품질과 출처 검증이 약하면 환각을 완전히 막지 못한다.
+- [[HyDE]]: RAG 검색 품질을 높이기 위한 query transformation 기법이다. 검색 결과가 좋아지면 환각 완화에 도움을 줄 수 있지만, hypothetical document 자체는 근거가 아니다.
 - [[Human-in-the-loop]]: 고위험 판단에서 사람이 검토와 승인 역할을 맡는 운영 장치다.
 - [[Agentic Workflow]]: agent가 도구 사용, 검증, 중단, 사용자 확인을 반복하도록 설계하면 환각 완화에 도움을 줄 수 있다.
 
@@ -81,3 +86,4 @@ agent workflow에서는 환각을 단일 모델의 결함으로만 보지 않고
 - LLM Wiki에서 source-backed claim과 Codex 해석을 더 기계적으로 분리할 schema가 필요한가?
 - agent에게 "모르면 멈추기"를 어떤 prompt, test, harness rule로 강제할 수 있는가?
 - Hallucination Tax와 Knowledge Boundary를 별도 concept page로 분리할 만큼 반복 참조하게 될 것인가?
+- HyDE 같은 생성 기반 retrieval 보조 기법에서 중간 생성물의 오류를 어떻게 감지할 것인가?

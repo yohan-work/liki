@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-04
+updated: 2026-06-05
 tags:
   - llm-wiki
   - index
@@ -47,6 +47,8 @@ evidence_level: unsourced
 - [[디자인 스펙 자동화]]
 - [[AI 시대의 기술 면접]]
 - [[에이전틱 엔진 최적화]]
+- [[PDCA 사이클]]
+- [[HyDE]]
 
 ## 프로젝트
 
@@ -179,6 +181,8 @@ evidence_level: unsourced
 - [[Anthropic Claude Code Dynamic Workflows Article]]
 - [[Dein Interviewing in the Age of AI Article]]
 - [[GeekNews Weekly 202616 AEO Article]]
+- [[Asana PDCA Cycle Article]]
+- [[Open Network RAG HyDE Article]]
 
 ## 리포트
 

@@ -3,7 +3,7 @@ title: Personal Operating System
 type: project
 status: active
 created: 2026-05-20
-updated: 2026-05-29
+updated: 2026-06-05
 tags:
   - personal-operating-system
   - project
@@ -20,6 +20,8 @@ related:
   - "[[OfficeKeeper OSINT Dictionary Article]]"
   - "[[Frontier Systems]]"
   - "[[Stanford CS153 Frontier Systems Course Page]]"
+  - "[[PDCA 사이클]]"
+  - "[[Asana PDCA Cycle Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -46,6 +48,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[Codex Harness]] 관점에서 장기 실행 작업은 thread, turn, item, approval, artifact event로 나누어 기록하고, 중단 후 재연결 가능한 상태를 중요 기준으로 본다.
 - [[OSINT]] 관점에서 공개 repository, 블로그, raw snapshot, screenshot, SaaS profile, API key, MCP endpoint가 외부 노출면이 되지 않는지 점검한다.
 - [[Frontier Systems]] 관점에서 개인 운영체계는 "One-Person Frontier Lab"처럼 목표, 도구, 지식, 실행 로그를 묶어 한 사람이 조직 규모 산출에 접근하도록 돕는 기반이다.
+- [[PDCA 사이클]] 관점에서 개인 운영체계의 ingest, review, lint, MVP 검증은 계획, 실행, 점검, 조치가 남는 작은 반복 루프로 관리한다.
 
 ## 현재 운영 기준
 
@@ -76,6 +79,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[OpenAI Codex Harness Article]]
 - [[OfficeKeeper OSINT Dictionary Article]]
 - [[Stanford CS153 Frontier Systems Course Page]]
+- [[Asana PDCA Cycle Article]]
 - [[llm-wiki-review-2026-05-29]]
 
 ## 열린 질문

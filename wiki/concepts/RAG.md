@@ -3,7 +3,7 @@ title: RAG
 type: concept
 status: seed
 created: 2026-05-20
-updated: 2026-05-21
+updated: 2026-06-05
 tags:
   - rag
   - retrieval
@@ -12,6 +12,8 @@ related:
   - "[[Agentic Workflow]]"
   - "[[LLM Hallucination]]"
   - "[[Hancom LLM Hallucination Reduction Research Article]]"
+  - "[[HyDE]]"
+  - "[[Open Network RAG HyDE Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -32,13 +34,16 @@ RAG(retrieval-augmented generation)는 모델이 검색된 context를 사용해 
 - source summary는 검색 친화적인 지식 단위가 될 수 있다.
 - RAG는 agentic workflow를 대체하기보다 보완할 수 있다.
 - [[Hancom LLM Hallucination Reduction Research Article]]은 RAG를 LLM 환각 완화 전략 중 하나로 설명한다. 모델이 내부 기억만으로 답하지 않고 외부 자료를 검색해 활용하게 만들면 지식 한계를 보완하고 사실 기반 교정에 도움을 줄 수 있지만, 대규모 검색 처리 비용이 늘어난다는 한계도 함께 제시한다.
+- [[Open Network RAG HyDE Article]]은 사용자의 일상어 질문과 지식 베이스의 전문 용어 사이에 간극이 있을 때 일반 RAG 검색이 실패할 수 있다고 설명한다. [[HyDE]]는 질문을 바로 검색하지 않고 LLM이 만든 가상 답변을 임베딩해 검색하는 방식으로 이 간극을 줄이려는 query transformation 기법이다.
 
 ## 관련 자료
 
 - [[Hancom LLM Hallucination Reduction Research Article]]
+- [[Open Network RAG HyDE Article]]
 
 ## 열린 질문
 
 - 이 위키의 어떤 부분을 retrieval에 최적화해야 하는가?
 - 답변에서 source provenance를 어떻게 보여줘야 하는가?
 - retrieval 결과가 없거나 약할 때 모델이 답변을 유보하도록 어떤 규칙을 둘 것인가?
+- HyDE, query rewriting, multi-query retrieval 중 LLM Wiki 검색에는 어떤 방식이 가장 비용 대비 효과가 좋은가?
