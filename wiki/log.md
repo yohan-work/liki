@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-05] ingest | Montana Skeptic SpaceX IPO article
+
+- Lawrence Fossi의 Substack 글 "The SpaceX IPO Will Be the Theft of the Century"를 raw HTML snapshot으로 보존하고 [[Montana Skeptic SpaceX IPO Article]]로 ingest했다.
+- [[SpaceX IPO 논쟁]] 개념 페이지를 추가해 Starship/Starlink 기술 narrative, private investor exit, low float, index inclusion, passive fund flow, governance 리스크를 분리했다.
+- [[Quant Trading]]에 낮은 float, index rebalance, passive flow 같은 market structure 변수를 투자/자동화 리스크 사례로 연결했다.
+- 변경 영역: [[Montana Skeptic SpaceX IPO Article]], [[SpaceX IPO 논쟁]], [[Quant Trading]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: SEC S-1, Nasdaq/S&P/FTSE index rule, SpaceX/NASA/Starship 기술 자료, xAI/Anthropic 계약 관련 1차 자료를 별도 source로 확인한다.
+
 ## [2026-06-05] ingest | Open Network RAG HyDE article
 
 - Open Network System 블로그 글 "RAG HyDE 기법"을 raw HTML snapshot으로 보존하고 [[Open Network RAG HyDE Article]]로 ingest했다.

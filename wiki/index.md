@@ -49,6 +49,7 @@ evidence_level: unsourced
 - [[에이전틱 엔진 최적화]]
 - [[PDCA 사이클]]
 - [[HyDE]]
+- [[SpaceX IPO 논쟁]]
 
 ## 프로젝트
 
@@ -183,6 +184,7 @@ evidence_level: unsourced
 - [[GeekNews Weekly 202616 AEO Article]]
 - [[Asana PDCA Cycle Article]]
 - [[Open Network RAG HyDE Article]]
+- [[Montana Skeptic SpaceX IPO Article]]
 
 ## 리포트
 

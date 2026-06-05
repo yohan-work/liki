@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 57개
-- 개념 페이지: 32개
+- 자료 요약: 58개
+- 개념 페이지: 33개
 - 도구 페이지: 25개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
@@ -67,6 +67,7 @@ evidence_level: unsourced
 - [[Frontier Systems]] 관점에서 one-person frontier lab이 만들 산출물 기준을 정한다.
 - [[PDCA 사이클]]을 LLM Wiki 유지보수와 MVP 검증의 최소 반복 루프로 적용할 수 있는지 확인한다.
 - [[HyDE]] 원 논문과 query rewriting, multi-query retrieval 비교 자료를 확인한다.
+- [[SpaceX IPO 논쟁]]은 SEC S-1, Nasdaq/S&P/FTSE index rule, Starship/Starlink 기술 자료로 검증한다.
 
 ## MVP 승격 후보
 
@@ -106,6 +107,7 @@ evidence_level: unsourced
 - [[에이전틱 엔진 최적화]]
 - [[PDCA 사이클]]
 - [[HyDE]]
+- [[SpaceX IPO 논쟁]]
 
 ## 다음 행동
 
