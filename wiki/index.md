@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-05
+updated: 2026-06-08
 tags:
   - llm-wiki
   - index
@@ -111,6 +111,7 @@ evidence_level: unsourced
 - [[Clicky]]
 - [[Figma Console MCP]]
 - [[Codex Sites]]
+- [[토스증권 Open API]]
 
 ## 인물
 
@@ -185,6 +186,7 @@ evidence_level: unsourced
 - [[Asana PDCA Cycle Article]]
 - [[Open Network RAG HyDE Article]]
 - [[Montana Skeptic SpaceX IPO Article]]
+- [[Tossinvest OpenAPI Docs]]
 
 ## 리포트
 

@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-05
+updated: 2026-06-08
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-08] ingest | Tossinvest OpenAPI docs
+
+- 토스증권 Open API의 `/llms.txt`, overview Markdown, OpenAPI Markdown reference, canonical OpenAPI JSON을 raw snapshot으로 보존하고 [[Tossinvest OpenAPI Docs]]로 ingest했다.
+- [[토스증권 Open API]] tool page를 추가해 OAuth 2.0 Client Credentials, `X-Tossinvest-Account` 계좌 헤더, market data/account/order API 그룹, rate limit, 주문 실행 guardrail을 정리했다.
+- [[Quant Trading]]에 brokerage API를 data retrieval, account state, execution layer로 분리하는 PoC 관점을 연결했다.
+- 변경 영역: [[Tossinvest OpenAPI Docs]], [[토스증권 Open API]], [[Quant Trading]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 사용 신청 조건, 이용 약관, 자동주문 허용 범위, streaming/websocket 지원 시점을 별도 확인한다.
 
 ## [2026-06-05] ingest | Montana Skeptic SpaceX IPO article
 

@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-05
+updated: 2026-06-08
 tags:
   - llm-wiki
   - overview
@@ -25,9 +25,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 58개
+- 자료 요약: 59개
 - 개념 페이지: 33개
-- 도구 페이지: 25개
+- 도구 페이지: 26개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 1개
 - 기회 카드: 0개
@@ -35,7 +35,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-05, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-08, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -68,6 +68,7 @@ evidence_level: unsourced
 - [[PDCA 사이클]]을 LLM Wiki 유지보수와 MVP 검증의 최소 반복 루프로 적용할 수 있는지 확인한다.
 - [[HyDE]] 원 논문과 query rewriting, multi-query retrieval 비교 자료를 확인한다.
 - [[SpaceX IPO 논쟁]]은 SEC S-1, Nasdaq/S&P/FTSE index rule, Starship/Starlink 기술 자료로 검증한다.
+- [[토스증권 Open API]]는 실제 사용 신청 조건, 약관, 주문 자동화 허용 범위, streaming/websocket 지원 시점을 별도 확인한다.
 
 ## MVP 승격 후보
 
@@ -108,6 +109,7 @@ evidence_level: unsourced
 - [[PDCA 사이클]]
 - [[HyDE]]
 - [[SpaceX IPO 논쟁]]
+- [[토스증권 Open API]]
 
 ## 다음 행동
 
