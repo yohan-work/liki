@@ -25,8 +25,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 59개
-- 개념 페이지: 33개
+- 자료 요약: 60개
+- 개념 페이지: 34개
 - 도구 페이지: 26개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -69,6 +69,7 @@ evidence_level: unsourced
 - [[HyDE]] 원 논문과 query rewriting, multi-query retrieval 비교 자료를 확인한다.
 - [[SpaceX IPO 논쟁]]은 SEC S-1, Nasdaq/S&P/FTSE index rule, Starship/Starlink 기술 자료로 검증한다.
 - [[토스증권 Open API]]는 실제 사용 신청 조건, 약관, 주문 자동화 허용 범위, streaming/websocket 지원 시점을 별도 확인한다.
+- [[레버리지 ETF 변동성 끌림]]은 TQQQ/SOXL 등 레버리지 ETF의 공식 자료와 total return data로 검증한다.
 
 ## MVP 승격 후보
 
@@ -112,6 +113,7 @@ evidence_level: unsourced
 - [[SpaceX IPO 논쟁]]
 - [[토스증권 Open API]]
 - [[토스증권 API 투자 운영 시스템]]
+- [[레버리지 ETF 변동성 끌림]]
 
 ## 다음 행동
 

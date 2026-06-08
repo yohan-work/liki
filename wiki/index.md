@@ -50,6 +50,7 @@ evidence_level: unsourced
 - [[PDCA 사이클]]
 - [[HyDE]]
 - [[SpaceX IPO 논쟁]]
+- [[레버리지 ETF 변동성 끌림]]
 
 ## 프로젝트
 
@@ -188,6 +189,7 @@ evidence_level: unsourced
 - [[Open Network RAG HyDE Article]]
 - [[Montana Skeptic SpaceX IPO Article]]
 - [[Tossinvest OpenAPI Docs]]
+- [[Muren Leveraged ETF Volatility Decay Article]]
 
 ## 리포트
 

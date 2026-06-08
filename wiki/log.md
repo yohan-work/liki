@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-08] ingest | Muren leveraged ETF volatility decay article
+
+- 뮤랜의 지식창고 글 "레버리지 ETF 변동성 끌림(Volatility Decay)과 유의사항"을 raw HTML snapshot으로 보존하고 [[Muren Leveraged ETF Volatility Decay Article]]로 ingest했다.
+- [[레버리지 ETF 변동성 끌림]] 개념 페이지를 추가해 일일 레버리지, 경로 의존성, 상승/하락 반복 구간의 손실 확대, 투자 운영 시스템의 위험 패널 필요성을 정리했다.
+- [[Quant Trading]]과 [[토스증권 API 투자 운영 시스템]]에 레버리지 ETF watchlist, 주문 전 체크리스트, volatility decay 경고를 연결했다.
+- 변경 영역: [[Muren Leveraged ETF Volatility Decay Article]], [[레버리지 ETF 변동성 끌림]], [[Quant Trading]], [[토스증권 API 투자 운영 시스템]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: TQQQ/SOXL의 공식 운용사 자료, total return data, expense/financing cost, 토스증권 OpenAPI의 `leverageRatio` 필드 활용 가능성을 확인한다.
+
 ## [2026-06-08] maintenance | Tossinvest API investment system idea
 
 - 토스증권 Open API 분석을 바탕으로 [[토스증권 API 투자 운영 시스템]] 아이디어 페이지를 추가했다.
