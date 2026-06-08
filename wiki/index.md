@@ -59,6 +59,7 @@ evidence_level: unsourced
 ## 아이디어
 
 - [[AI 트렌드 레이더 웹사이트]]
+- [[토스증권 API 투자 운영 시스템]]
 
 ## 기회
 

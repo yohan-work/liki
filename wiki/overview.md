@@ -29,7 +29,7 @@ evidence_level: unsourced
 - 개념 페이지: 33개
 - 도구 페이지: 26개
 - 프로젝트 페이지: 2개
-- 아이디어 페이지: 1개
+- 아이디어 페이지: 2개
 - 기회 카드: 0개
 - MVP / PoC 페이지: 1개
 - 결정 기록: 1개
@@ -78,6 +78,7 @@ evidence_level: unsourced
 
 - [[AI 트렌드 레이더 웹사이트]]
 - [[AI 트렌드 레이더 7일 PoC]]
+- [[토스증권 API 투자 운영 시스템]]
 
 ## 근거 보강 후보
 
@@ -110,6 +111,7 @@ evidence_level: unsourced
 - [[HyDE]]
 - [[SpaceX IPO 논쟁]]
 - [[토스증권 Open API]]
+- [[토스증권 API 투자 운영 시스템]]
 
 ## 다음 행동
 

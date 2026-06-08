@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-08] maintenance | Tossinvest API investment system idea
+
+- 토스증권 Open API 분석을 바탕으로 [[토스증권 API 투자 운영 시스템]] 아이디어 페이지를 추가했다.
+- 아이디어를 자동매매 봇이 아니라 read-only 투자 운영 리포트, watchlist intelligence, 포트폴리오 리밸런싱 보조, 주문 전 체크리스트, dry-run 엔진, 투자 저널로 구체화했다.
+- 실제 주문 자동화는 별도 guardrail과 human confirmation 없이는 진행하지 않는 경계로 남겼다.
+- 변경 영역: [[토스증권 API 투자 운영 시스템]], [[LLM Wiki Index]], [[LLM Wiki Overview]], [[LLM Wiki Log]].
+- 후속 작업: 토스증권 Open API 사용 신청 조건과 약관을 확인한 뒤 read-only 7일 PoC를 MVP page로 승격할지 결정한다.
+
 ## [2026-06-08] ingest | Tossinvest OpenAPI docs
 
 - 토스증권 Open API의 `/llms.txt`, overview Markdown, OpenAPI Markdown reference, canonical OpenAPI JSON을 raw snapshot으로 보존하고 [[Tossinvest OpenAPI Docs]]로 ingest했다.
