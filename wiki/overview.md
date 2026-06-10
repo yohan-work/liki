@@ -15,6 +15,8 @@ related:
   - "[[Basalt Project]]"
   - "[[Personal Operating System]]"
   - "[[LLM Wiki 운영 흐름]]"
+  - "[[AI 실험 문화]]"
+  - "[[Cross-functional 기술 문제 해결]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -25,8 +27,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 66개
-- 개념 페이지: 36개
+- 자료 요약: 68개
+- 개념 페이지: 38개
 - 도구 페이지: 29개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -75,6 +77,8 @@ evidence_level: unsourced
 - [[Humanize KR]]는 전역 설치 전에 read-only 탐지 evaluation과 installer dry-run으로 과잉 탐지, link 보존, 변경 범위를 확인한다.
 - [[TurboVec]]는 LLM Wiki 검색 실패 query set과 FTS5 baseline이 준비되기 전에는 설치하지 않고 hybrid retrieval 후보로만 유지한다.
 - [[MEDDPICC]]를 B2B PoC 검토에 적용할 최소 qualification 항목으로 줄일 수 있는지 확인한다.
+- [[AI 실험 문화]]를 개인 운영체계에 적용할 월 1회 실험 시간과 artifact 기준을 정한다.
+- [[Cross-functional 기술 문제 해결]]의 문제·결정·owner·dependency·next action·done evidence 진단 형식을 정체된 작업 1개에 적용한다.
 
 ## MVP 승격 후보
 
@@ -124,6 +128,8 @@ evidence_level: unsourced
 - [[Humanize KR]]
 - [[TurboVec]]
 - [[MEDDPICC]]
+- [[AI 실험 문화]]
+- [[Cross-functional 기술 문제 해결]]
 
 ## 다음 행동
 

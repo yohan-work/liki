@@ -53,6 +53,8 @@ evidence_level: unsourced
 - [[레버리지 ETF 변동성 끌림]]
 - [[구조화된 답변 프레임워크]]
 - [[MEDDPICC]]
+- [[AI 실험 문화]]
+- [[Cross-functional 기술 문제 해결]]
 
 ## 프로젝트
 
@@ -201,6 +203,8 @@ evidence_level: unsourced
 - [[GitHub im-not-ai Repository]]
 - [[Kevin82 MEDDPICC Article]]
 - [[GitHub TurboVec Repository]]
+- [[Toss Tech AI Surf Day Article]]
+- [[Toss Tech Cross Functional TPM Tip Article]]
 
 ## 리포트
 

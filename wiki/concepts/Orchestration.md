@@ -3,7 +3,7 @@ title: Orchestration
 type: concept
 status: seed
 created: 2026-05-20
-updated: 2026-06-04
+updated: 2026-06-10
 tags:
   - orchestration
   - agents
@@ -33,6 +33,8 @@ related:
   - "[[Uber Automate Design Specs Article]]"
   - "[[Codex Sites]]"
   - "[[OpenAI Codex Sites Documentation]]"
+  - "[[Cross-functional 기술 문제 해결]]"
+  - "[[Toss Tech Cross Functional TPM Tip Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -65,6 +67,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[GitHub Clicky Repository]]는 macOS app, push-to-talk, screen capture, Claude streaming response, ElevenLabs TTS, cursor overlay, Cloudflare Worker proxy를 조율하는 local companion orchestration 사례다.
 - [[Uber Automate Design Specs Article]]은 section별 agent skill, Figma Console MCP, local execution, design token extraction, template rendering을 조율해 design system spec을 생성하는 orchestration 사례다.
 - [[OpenAI Codex Sites Documentation]]은 Codex plugin, source project, `.openai/hosting.json`, D1/R2 storage, runtime secrets, access mode, saved/deployed version을 조율하는 hosted app orchestration 사례다.
+- [[Toss Tech Cross Functional TPM Tip Article]]은 orchestration이 상태 공유를 늘리는 일이 아니라 문제, decision point, owner, dependency, 완료 기준을 실행 가능한 구조로 바꾸는 일이어야 한다는 조직 관점을 제공한다.
 
 ## 관련 자료
 
@@ -81,6 +84,7 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - [[GitHub Clicky Repository]]
 - [[Uber Automate Design Specs Article]]
 - [[OpenAI Codex Sites Documentation]]
+- [[Toss Tech Cross Functional TPM Tip Article]]
 
 ## 열린 질문
 
@@ -93,3 +97,4 @@ Orchestration은 workflow 안에서 tool, prompt, agent, state, review step을 �
 - local companion app에서 app permission, proxy secret, external API, overlay action을 어떤 observability 단위로 나눠야 하는가?
 - Figma 같은 design tool에 write action을 수행하는 agent는 어떤 template, diff, review boundary를 가져야 하는가?
 - hosted app deployment를 수행하는 agent는 save, deploy, access, secret update를 어떤 단계로 분리해야 하는가?
+- 여러 agent와 사람이 얽힌 작업에서 실행 owner와 결정권자를 어떻게 구분할 것인가?

@@ -15,6 +15,22 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-10] ingest | Cross-functional 기술 문제 해결과 TPM
+
+- 토스 기술 블로그의 "Cross Functional 기술 문제 풀기 위한 역량 성장 Tip"을 raw HTML snapshot으로 보존하고 [[Toss Tech Cross Functional TPM Tip Article]]로 ingest했다.
+- [[Cross-functional 기술 문제 해결]] 개념 페이지를 추가해 문제 재정의, 결정 구조, owner, dependency, 실행 전환, 권한 없는 영향력의 관계를 정리했다.
+- [[Orchestration]], [[Forward Deployed Engineer]], [[Personal Operating System]]에 조율보다 실행 가능한 구조와 ownership 공백을 우선 진단하는 관점을 연결했다.
+- 변경 영역: [[Toss Tech Cross Functional TPM Tip Article]], [[Cross-functional 기술 문제 해결]], [[Orchestration]], [[Forward Deployed Engineer]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 정체된 실행 후보 1개에 문제·결정·owner·dependency·next action·done evidence 진단 형식을 적용한다.
+
+## [2026-06-10] ingest | 토스 AI Surf Day와 AI 실험 문화
+
+- 토스 기술 블로그의 "토스팀이 AI 파도를 마주하는 방법: AI Surf Day"를 raw HTML snapshot으로 보존하고 [[Toss Tech AI Surf Day Article]]로 ingest했다.
+- [[AI 실험 문화]] 개념 페이지를 추가해 보호된 실험 시간, 자발적 소모임, 사례와 실패 공유, 현업 에반젤리스트, 운영 지원, 재사용 가능한 산출물의 결합을 정리했다.
+- [[AI Literacy]], [[Agentic Workflow]], [[Personal Operating System]]에 조직 학습, 검증 루프, human approval, 개인 실험 시간 적용 원칙을 연결했다.
+- 변경 영역: [[Toss Tech AI Surf Day Article]], [[AI 실험 문화]], [[AI Literacy]], [[Agentic Workflow]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 개인 운영체계에서 월 1회 AI 실험 시간을 운영할 최소 템플릿과 artifact 승격 기준을 정한다.
+
 ## [2026-06-10] ingest | MEDDPICC와 TurboVec
 
 - kevin82의 MEDDPICC 글과 GitHub repository `RyanCodrai/turbovec`의 metadata, README, tree를 raw snapshot으로 보존하고 source summary 2개로 ingest했다.

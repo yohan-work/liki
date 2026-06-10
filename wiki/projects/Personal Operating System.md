@@ -3,7 +3,7 @@ title: Personal Operating System
 type: project
 status: active
 created: 2026-05-20
-updated: 2026-06-05
+updated: 2026-06-10
 tags:
   - personal-operating-system
   - project
@@ -22,6 +22,10 @@ related:
   - "[[Stanford CS153 Frontier Systems Course Page]]"
   - "[[PDCA 사이클]]"
   - "[[Asana PDCA Cycle Article]]"
+  - "[[AI 실험 문화]]"
+  - "[[Toss Tech AI Surf Day Article]]"
+  - "[[Cross-functional 기술 문제 해결]]"
+  - "[[Toss Tech Cross Functional TPM Tip Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -49,6 +53,8 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[OSINT]] 관점에서 공개 repository, 블로그, raw snapshot, screenshot, SaaS profile, API key, MCP endpoint가 외부 노출면이 되지 않는지 점검한다.
 - [[Frontier Systems]] 관점에서 개인 운영체계는 "One-Person Frontier Lab"처럼 목표, 도구, 지식, 실행 로그를 묶어 한 사람이 조직 규모 산출에 접근하도록 돕는 기반이다.
 - [[PDCA 사이클]] 관점에서 개인 운영체계의 ingest, review, lint, MVP 검증은 계획, 실행, 점검, 조치가 남는 작은 반복 루프로 관리한다.
+- [[AI 실험 문화]] 관점에서 AI 학습과 탐색을 남는 시간에 맡기지 않고 정기적인 보호 시간에 실제 업무 문제 하나를 실험한다. 결과는 성공 데모보다 문제, 시도, 실패, 검증, 재사용 가능한 artifact로 남긴다.
+- [[Cross-functional 기술 문제 해결]] 관점에서 source, idea, MVP, decision, agent가 각각 관리되어도 실행이 이어지지 않으면 문제, 결정, owner, dependency, next action, done evidence를 다시 정의한다.
 
 ## 현재 운영 기준
 
@@ -57,6 +63,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - 주간 점검은 `node scripts/weekly-review.ts`로 시작하고, 후보 중 하나만 실제 작업으로 고른다.
 - 실행 기회 검토는 `node scripts/opportunity-review.ts`를 참고하되, 자동 점수는 결정 근거가 아니라 검토 힌트로만 쓴다.
 - 반복되는 실행 판단은 decision record로 남겨 같은 논의를 반복하지 않는다.
+- 월 1회 AI 실험 시간을 예약하고, 한 번의 실험에서 재사용 가능한 skill, script, checklist, workflow 중 하나를 남기는 최소 루틴을 검토한다.
 
 ## 이번 주 우선순위
 
@@ -80,6 +87,8 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[OfficeKeeper OSINT Dictionary Article]]
 - [[Stanford CS153 Frontier Systems Course Page]]
 - [[Asana PDCA Cycle Article]]
+- [[Toss Tech AI Surf Day Article]]
+- [[Toss Tech Cross Functional TPM Tip Article]]
 - [[llm-wiki-review-2026-05-29]]
 
 ## 열린 질문
@@ -92,3 +101,5 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - 개인 automation에서도 Codex App Server처럼 event stream과 approval request를 구조화할 필요가 있는가?
 - 개인 운영체계의 공개 노출면을 어떤 주기로 점검하고 어디에 기록할 것인가?
 - One-person frontier lab으로 볼 때 이 프로젝트가 매주 만들어야 하는 산출물은 무엇인가?
+- 보호된 AI 실험 시간을 어느 주기로 운영해야 탐색이 실행 queue를 잠식하지 않는가?
+- 정체된 실행 후보에서 owner 공백과 decision 공백을 구분하는 최소 진단 형식은 무엇인가?
