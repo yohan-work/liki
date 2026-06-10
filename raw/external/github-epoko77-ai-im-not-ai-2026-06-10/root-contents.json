@@ -1,0 +1,306 @@
+[
+  {
+    "name": ".claude-plugin",
+    "path": ".claude-plugin",
+    "sha": "87cc384d766ff6c1660a46ef8bd2d010c76767d4",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/.claude-plugin?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/.claude-plugin",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/87cc384d766ff6c1660a46ef8bd2d010c76767d4",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/.claude-plugin?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/87cc384d766ff6c1660a46ef8bd2d010c76767d4",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/.claude-plugin"
+    }
+  },
+  {
+    "name": ".claude",
+    "path": ".claude",
+    "sha": "2ed56bc3ffaea49e44d5cb066f71adde39ecb104",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/.claude?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/.claude",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/2ed56bc3ffaea49e44d5cb066f71adde39ecb104",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/.claude?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/2ed56bc3ffaea49e44d5cb066f71adde39ecb104",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/.claude"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "1f5c27a08a15d046b2ff762dd3ed711e51d19e51",
+    "size": 210,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/1f5c27a08a15d046b2ff762dd3ed711e51d19e51",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/1f5c27a08a15d046b2ff762dd3ed711e51d19e51",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "CLAUDE.md",
+    "path": "CLAUDE.md",
+    "sha": "ea5ab12072a84a01bf2233f0933f66ffe0ae0d78",
+    "size": 6838,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/CLAUDE.md?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/CLAUDE.md",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/ea5ab12072a84a01bf2233f0933f66ffe0ae0d78",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/CLAUDE.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/CLAUDE.md?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/ea5ab12072a84a01bf2233f0933f66ffe0ae0d78",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/CLAUDE.md"
+    }
+  },
+  {
+    "name": "CONTRIBUTORS.md",
+    "path": "CONTRIBUTORS.md",
+    "sha": "d478fdf8f51ffab85ebc03763f2839ab2e27c732",
+    "size": 3726,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/CONTRIBUTORS.md?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/CONTRIBUTORS.md",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/d478fdf8f51ffab85ebc03763f2839ab2e27c732",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/CONTRIBUTORS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/CONTRIBUTORS.md?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/d478fdf8f51ffab85ebc03763f2839ab2e27c732",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/CONTRIBUTORS.md"
+    }
+  },
+  {
+    "name": "GEMINI.md",
+    "path": "GEMINI.md",
+    "sha": "afd5197a513e7e380a9ec50d3aa8bd4793310204",
+    "size": 9125,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/GEMINI.md?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/GEMINI.md",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/afd5197a513e7e380a9ec50d3aa8bd4793310204",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/GEMINI.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/GEMINI.md?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/afd5197a513e7e380a9ec50d3aa8bd4793310204",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/GEMINI.md"
+    }
+  },
+  {
+    "name": "INSTALL.md",
+    "path": "INSTALL.md",
+    "sha": "5c2ce8a1db80d2b39c38e56620676b976550b6cf",
+    "size": 6696,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/INSTALL.md?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/INSTALL.md",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/5c2ce8a1db80d2b39c38e56620676b976550b6cf",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/INSTALL.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/INSTALL.md?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/5c2ce8a1db80d2b39c38e56620676b976550b6cf",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/INSTALL.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "035888fab55c5418b718575a1bdde0da7a2ff306",
+    "size": 1067,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/035888fab55c5418b718575a1bdde0da7a2ff306",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/035888fab55c5418b718575a1bdde0da7a2ff306",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "d4749eaf4f851957cb7b36f1f09a88b251157c0a",
+    "size": 41007,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/README.md?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/d4749eaf4f851957cb7b36f1f09a88b251157c0a",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/d4749eaf4f851957cb7b36f1f09a88b251157c0a",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/README.md"
+    }
+  },
+  {
+    "name": "agents",
+    "path": "agents",
+    "sha": "90f85535a0ffbf8d14d238ad6a741fa2bcbd70f7",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/agents?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/agents",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/90f85535a0ffbf8d14d238ad6a741fa2bcbd70f7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/agents?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/90f85535a0ffbf8d14d238ad6a741fa2bcbd70f7",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/agents"
+    }
+  },
+  {
+    "name": "assets",
+    "path": "assets",
+    "sha": "51458347656bf7a00e9d5b1059b4513d6a5bfc49",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/assets?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/assets",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/51458347656bf7a00e9d5b1059b4513d6a5bfc49",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/assets?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/51458347656bf7a00e9d5b1059b4513d6a5bfc49",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/assets"
+    }
+  },
+  {
+    "name": "codex",
+    "path": "codex",
+    "sha": "38cde116a23af47d2fee049eb8860a2c679598e0",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/codex?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/codex",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/38cde116a23af47d2fee049eb8860a2c679598e0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/codex?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/38cde116a23af47d2fee049eb8860a2c679598e0",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/codex"
+    }
+  },
+  {
+    "name": "commands",
+    "path": "commands",
+    "sha": "08c9890f08285e36e313deaa93c644efb642d397",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/commands?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/commands",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/08c9890f08285e36e313deaa93c644efb642d397",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/commands?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/08c9890f08285e36e313deaa93c644efb642d397",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/commands"
+    }
+  },
+  {
+    "name": "gemini-extension.json",
+    "path": "gemini-extension.json",
+    "sha": "77fa947b3d4adc52f0e4677afc2e0ecd22aac0b2",
+    "size": 234,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/gemini-extension.json?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/gemini-extension.json",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/77fa947b3d4adc52f0e4677afc2e0ecd22aac0b2",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/gemini-extension.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/gemini-extension.json?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/77fa947b3d4adc52f0e4677afc2e0ecd22aac0b2",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/gemini-extension.json"
+    }
+  },
+  {
+    "name": "install.sh",
+    "path": "install.sh",
+    "sha": "522424d168c0408c81d2a5838550a43bbe170317",
+    "size": 4861,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/install.sh?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/install.sh",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/522424d168c0408c81d2a5838550a43bbe170317",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/install.sh",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/install.sh?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/522424d168c0408c81d2a5838550a43bbe170317",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/install.sh"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "382157cf8b1047b534b661691fe38c1c4e3151fd",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/scripts?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/382157cf8b1047b534b661691fe38c1c4e3151fd",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/382157cf8b1047b534b661691fe38c1c4e3151fd",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/scripts"
+    }
+  },
+  {
+    "name": "tests",
+    "path": "tests",
+    "sha": "8b4c88f543211a511cbb1b12746d24be4ad62c3c",
+    "size": 0,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/tests?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/tree/main/tests",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/8b4c88f543211a511cbb1b12746d24be4ad62c3c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/tests?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/trees/8b4c88f543211a511cbb1b12746d24be4ad62c3c",
+      "html": "https://github.com/epoko77-ai/im-not-ai/tree/main/tests"
+    }
+  },
+  {
+    "name": "uninstall.sh",
+    "path": "uninstall.sh",
+    "sha": "4a189145c0940ea8d6a4f871e2bacea2ae8335d8",
+    "size": 1665,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/uninstall.sh?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/uninstall.sh",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/4a189145c0940ea8d6a4f871e2bacea2ae8335d8",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/uninstall.sh",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/uninstall.sh?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/4a189145c0940ea8d6a4f871e2bacea2ae8335d8",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/uninstall.sh"
+    }
+  },
+  {
+    "name": "update.sh",
+    "path": "update.sh",
+    "sha": "339a9be1455709f6da65849c6af25426e6aa22f6",
+    "size": 2971,
+    "url": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/update.sh?ref=main",
+    "html_url": "https://github.com/epoko77-ai/im-not-ai/blob/main/update.sh",
+    "git_url": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/339a9be1455709f6da65849c6af25426e6aa22f6",
+    "download_url": "https://raw.githubusercontent.com/epoko77-ai/im-not-ai/main/update.sh",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/epoko77-ai/im-not-ai/contents/update.sh?ref=main",
+      "git": "https://api.github.com/repos/epoko77-ai/im-not-ai/git/blobs/339a9be1455709f6da65849c6af25426e6aa22f6",
+      "html": "https://github.com/epoko77-ai/im-not-ai/blob/main/update.sh"
+    }
+  }
+]

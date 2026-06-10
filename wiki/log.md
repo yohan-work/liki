@@ -15,6 +15,31 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-10] ingest | MEDDPICC와 TurboVec
+
+- kevin82의 MEDDPICC 글과 GitHub repository `RyanCodrai/turbovec`의 metadata, README, tree를 raw snapshot으로 보존하고 source summary 2개로 ingest했다.
+- [[MEDDPICC]] 개념 페이지를 추가해 pain, champion, metrics, economic buyer, decision criteria/process, paper process, competition을 B2B opportunity qualification 관점으로 정리했다.
+- [[TurboVec]] 도구 페이지를 추가해 TurboQuant 기반 vector quantization, online ingest, SIMD search, allowlist filtering, local hybrid retrieval과 benchmark 검증 경계를 정리했다.
+- [[RAG]]와 [[SQLite]]에 SQL/FTS candidate generation과 quantized dense reranking을 결합하는 구조를 연결했다.
+- 변경 영역: [[Kevin82 MEDDPICC Article]], [[MEDDPICC]], [[GitHub TurboVec Repository]], [[TurboVec]], [[RAG]], [[SQLite]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: TurboVec 원 논문과 benchmark를 독립 검증하고, MEDDPICC를 B2B PoC용 최소 qualification checklist로 줄일지 검토한다.
+
+## [2026-06-10] ingest | Humanize KR 한국어 AI 문체 윤문 skill
+
+- GitHub repository `epoko77-ai/im-not-ai`의 metadata, README, tree, Claude/Codex skill, taxonomy, installer, updater, metric test를 raw snapshot으로 보존하고 [[GitHub im-not-ai Repository]]로 ingest했다.
+- [[Humanize KR]] 도구 페이지를 추가해 한국어 AI 문체 taxonomy, Fast/Strict workflow, 의미 보존 감사, cross-agent skill packaging, 전역 설치와 자동 업데이트 경계를 정리했다.
+- [[Skills]], [[Claude Code]], [[Codex]], [[구조화된 답변 프레임워크]]에 instruction/reference/metric/test 분리와 runtime별 capability 차이를 연결했다.
+- 변경 영역: [[GitHub im-not-ai Repository]], [[Humanize KR]], [[Skills]], [[Claude Code]], [[Codex]], [[구조화된 답변 프레임워크]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 설치 없이 wiki 문서 5개를 대상으로 read-only 탐지 evaluation을 설계하고, false positive와 Obsidian link·수치·출처 보존 여부를 확인한다.
+
+## [2026-06-10] ingest | OREO, PREP, STAR 구조화 답변 프레임워크
+
+- 91MS의 "개발자 글쓰기 - 오레오(OREO) 공식"과 JobConsulting의 "STAR & PREP 기법 완벽 가이드"를 raw HTML snapshot으로 보존하고 source summary 2개로 ingest했다.
+- [[구조화된 답변 프레임워크]] 개념 페이지를 추가해 OREO와 PREP은 의견·설득 구조, STAR는 행동 증거 구조로 구분하고 공통 실패 패턴을 정리했다.
+- [[LLM Wiki]]와 [[AI 시대의 기술 면접]]에 두괄식 답변, 개인 행동과 결과, 형식적 명료함과 실제 evidence를 분리하는 관점을 연결했다.
+- 변경 영역: [[91MS Developer Writing OREO Article]], [[JobConsulting Interview STAR and PREP Article]], [[구조화된 답변 프레임워크]], [[LLM Wiki]], [[AI 시대의 기술 면접]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 구조화된 답변 프레임워크를 실제 wiki query answer 1건에 적용하고, OREO/PREP/STAR의 원 출처와 효과 근거를 별도 확인한다.
+
 ## [2026-06-10] ingest | Claude Fable 5와 Mythos 5 발표
 
 - GeekNews 글 "Claude Fable 5/Mythos 5 공개, Anthropic의 5세대 프런티어 모델"과 연결된 Anthropic 공식 발표를 raw snapshot으로 보존하고 [[GeekNews Claude Fable 5 and Mythos 5 Article]]로 ingest했다.

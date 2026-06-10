@@ -3,7 +3,7 @@ title: SQLite
 type: tool
 status: seed
 created: 2026-05-22
-updated: 2026-05-22
+updated: 2026-06-10
 tags:
   - sqlite
   - database
@@ -14,6 +14,8 @@ related:
   - "[[WikiDocs SQLite Evolution Article]]"
   - "[[LLM Wiki]]"
   - "[[Personal Operating System]]"
+  - "[[TurboVec]]"
+  - "[[GitHub TurboVec Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -54,15 +56,18 @@ SQLite는 서버 프로세스 없이 단일 파일로 동작하는 embedded rela
 - Personal Operating System의 local-first storage 후보 검토.
 - 작은 자동화 도구의 state store.
 - Source summary와 query answer를 구조화해 agent가 빠르게 검색하는 색인 생성.
+- Metadata, ACL, tag, date, BM25 조건으로 candidate id를 만든 뒤 [[TurboVec]] allowlist search로 dense rerank하는 hybrid retrieval.
 
 ## 관련 개념
 
 - [[LLM Wiki]]
 - [[Personal Operating System]]
+- [[TurboVec]]
 
 ## 관련 자료
 
 - [[WikiDocs SQLite Evolution Article]]
+- [[GitHub TurboVec Repository]]
 
 ## 메모
 

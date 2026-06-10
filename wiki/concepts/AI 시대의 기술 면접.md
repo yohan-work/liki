@@ -3,7 +3,7 @@ title: AI 시대의 기술 면접
 type: concept
 status: seed
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-10
 tags:
   - ai-interviewing
   - hiring
@@ -12,6 +12,8 @@ related:
   - "[[Dein Interviewing in the Age of AI Article]]"
   - "[[AI Literacy]]"
   - "[[Human-in-the-loop]]"
+  - "[[구조화된 답변 프레임워크]]"
+  - "[[JobConsulting Interview STAR and PREP Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -34,6 +36,7 @@ LLM과 coding agent가 보편화되면 take-home, live coding, system design, co
 - AI 사용을 허용하는 과제라도 제출물을 그대로 평가하기보다 live follow-up으로 tradeoff, 변경 요구사항, scale, review quality를 확인해야 한다.
 - 최소 하나의 면접은 AI plan, codebase, postmortem, product requirement, architecture tradeoff 같은 산출물을 검토하는 능력을 평가할 수 있다.
 - 후보자 준비 가이드를 명확히 제공하고, 질문이 leak될 것을 전제로 여러 질문을 운용하거나 오래된 질문을 archive해야 한다.
+- [[JobConsulting Interview STAR and PREP Article]]은 의견 질문에는 PREP, 행동 증거 질문에는 STAR를 사용하는 기본 답변 구조를 소개한다. 기술 면접에서는 답변의 형식적 명료함과 실제 문제 해결 능력을 분리해 평가하고, STAR의 Action과 Result에 대한 후속 질문으로 개인 기여와 evidence를 확인해야 한다.
 
 ## 이 위키에서의 사용
 
@@ -42,6 +45,7 @@ LLM과 coding agent가 보편화되면 take-home, live coding, system design, co
 ## 관련 자료
 
 - [[Dein Interviewing in the Age of AI Article]]
+- [[JobConsulting Interview STAR and PREP Article]]
 
 ## 열린 질문
 

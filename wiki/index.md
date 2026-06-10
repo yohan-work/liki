@@ -51,6 +51,8 @@ evidence_level: unsourced
 - [[HyDE]]
 - [[SpaceX IPO 논쟁]]
 - [[레버리지 ETF 변동성 끌림]]
+- [[구조화된 답변 프레임워크]]
+- [[MEDDPICC]]
 
 ## 프로젝트
 
@@ -115,6 +117,8 @@ evidence_level: unsourced
 - [[Codex Sites]]
 - [[토스증권 Open API]]
 - [[Claude Fable 5]]
+- [[Humanize KR]]
+- [[TurboVec]]
 
 ## 인물
 
@@ -192,6 +196,11 @@ evidence_level: unsourced
 - [[Tossinvest OpenAPI Docs]]
 - [[Muren Leveraged ETF Volatility Decay Article]]
 - [[GeekNews Claude Fable 5 and Mythos 5 Article]]
+- [[91MS Developer Writing OREO Article]]
+- [[JobConsulting Interview STAR and PREP Article]]
+- [[GitHub im-not-ai Repository]]
+- [[Kevin82 MEDDPICC Article]]
+- [[GitHub TurboVec Repository]]
 
 ## 리포트
 

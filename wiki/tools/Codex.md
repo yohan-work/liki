@@ -3,7 +3,7 @@ title: Codex
 type: tool
 status: active
 created: 2026-05-20
-updated: 2026-06-04
+updated: 2026-06-10
 tags:
   - codex
   - coding-agent
@@ -26,6 +26,8 @@ related:
   - "[[GitHub Clicky Repository]]"
   - "[[Codex Sites]]"
   - "[[OpenAI Codex Sites Documentation]]"
+  - "[[Humanize KR]]"
+  - "[[GitHub im-not-ai Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -49,6 +51,8 @@ evidence_level: source-backed
 [[GitHub Clicky Repository]]는 README와 AGENTS.md가 coding agent에게 local setup과 architecture context를 제공하는 사례다. Codex 관점에서는 agent-readable repository instruction이 onboarding, build guidance, 금지 명령, key file map을 담는 운영 artifact가 될 수 있음을 보여준다.
 
 [[OpenAI Codex Sites Documentation]]은 Codex가 Sites plugin을 통해 website, web app, game을 생성, 저장, 배포, 검사하는 hosted site workflow를 제공한다고 설명한다. 이 관점에서 Codex는 code edit뿐 아니라 saved version, production deployment, access control, runtime secret까지 다루는 delivery surface가 된다.
+
+[[GitHub im-not-ai Repository]]는 Claude Code용 한국어 윤문 workflow를 Codex Fast skill로 축소 이식한 사례다. Cross-agent skill은 같은 목적과 reference를 공유할 수 있지만, subagent orchestration과 검증 단계는 runtime capability에 맞춰 별도로 설계해야 한다.
 
 ## 사용 사례
 
@@ -87,6 +91,7 @@ evidence_level: source-backed
 - [[GitHub Matt Pocock Skills Repository]]
 - [[GitHub Clicky Repository]]
 - [[OpenAI Codex Sites Documentation]]
+- [[GitHub im-not-ai Repository]]
 
 ## 열린 질문
 
@@ -99,3 +104,4 @@ evidence_level: source-backed
 - Matt Pocock Skills의 small/composable skill 철학을 `#wiki` 명령에 어떻게 적용할 것인가?
 - AGENTS.md 같은 repository instruction을 setup assistant가 읽을 때 secret 설정과 local permission 요청을 어떤 approval boundary로 분리해야 하는가?
 - Codex Sites 같은 hosted deployment surface를 사용할 때 save/deploy/access 변경을 어떤 approval boundary로 나눠야 하는가?
+- 외부 skill installer가 `~/.codex/skills`를 변경하고 자동 업데이트를 제공할 때 어떤 review gate가 필요한가?

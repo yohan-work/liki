@@ -1,0 +1,1138 @@
+{
+  "sha": "fcc1eb8e06c52764907b677128845995309219e0",
+  "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/fcc1eb8e06c52764907b677128845995309219e0",
+  "tree": [
+    {
+      "path": ".cargo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c5edcb48bc9a8e824573ed133429e16ff60837da",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/c5edcb48bc9a8e824573ed133429e16ff60837da"
+    },
+    {
+      "path": ".cargo/config.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "530c5b457b211df82dcab3d6a8751c33b514f1ba",
+      "size": 980,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/530c5b457b211df82dcab3d6a8751c33b514f1ba"
+    },
+    {
+      "path": ".claude",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f235fa98ad977720423eeba602226a94e81ef4f",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/9f235fa98ad977720423eeba602226a94e81ef4f"
+    },
+    {
+      "path": ".claude/settings.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f73a2b0967a1d32b0957a57343dd10ac5e87bf7",
+      "size": 50,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/1f73a2b0967a1d32b0957a57343dd10ac5e87bf7"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "820864d22414abfa75361ddb7d9cccbbcfb63b67",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/820864d22414abfa75361ddb7d9cccbbcfb63b67"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13ab1ad0d04179479dd7801971ad4aa28b6731a6",
+      "size": 226,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/13ab1ad0d04179479dd7801971ad4aa28b6731a6"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27b6600d1c704d231484fd8cb22b1aefd1beee5d",
+      "size": 791,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/27b6600d1c704d231484fd8cb22b1aefd1beee5d"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a7f3458793629b8eda09e4b6c1e2d82b718a97d9",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/a7f3458793629b8eda09e4b6c1e2d82b718a97d9"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f6fd7495efe3a378ac08d64dfe51526726781ce",
+      "size": 2550,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/9f6fd7495efe3a378ac08d64dfe51526726781ce"
+    },
+    {
+      "path": ".github/workflows/release-crates.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b40e61aea1233e6765ca8a72a5f094684c5ee147",
+      "size": 810,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/b40e61aea1233e6765ca8a72a5f094684c5ee147"
+    },
+    {
+      "path": ".github/workflows/release-pypi.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef0a148a3eb8987206ed6b9e7e3e49dcce63a18e",
+      "size": 4634,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/ef0a148a3eb8987206ed6b9e7e3e49dcce63a18e"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52b6cd2b7a387540647e4d34b6b642582838a8da",
+      "size": 107,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/52b6cd2b7a387540647e4d34b6b642582838a8da"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7dfec324aaf41a69696db30034b84fae1c339b2",
+      "size": 38911,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/e7dfec324aaf41a69696db30034b84fae1c339b2"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "936b87cfe04aeb37dc33dc977d1976ba454b0f9d",
+      "size": 3484,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/936b87cfe04aeb37dc33dc977d1976ba454b0f9d"
+    },
+    {
+      "path": "Cargo.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ca39fe8ad1103e6f939ba4534f57d3cf605fcd1",
+      "size": 30570,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/1ca39fe8ad1103e6f939ba4534f57d3cf605fcd1"
+    },
+    {
+      "path": "Cargo.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9bf15f9f5eba2de42db231e9235c4181f620277f",
+      "size": 366,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/9bf15f9f5eba2de42db231e9235c4181f620277f"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e62ad7c6028ad9b2f9b4c1776dc7d4a9c942fced",
+      "size": 1068,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/e62ad7c6028ad9b2f9b4c1776dc7d4a9c942fced"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37e6542cf0ba1ccf6c4755e8dc364d25e60b3aa7",
+      "size": 13620,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/37e6542cf0ba1ccf6c4755e8dc364d25e60b3aa7"
+    },
+    {
+      "path": "benchmarks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0fa17fa14c5b89bb001fb2525770994866f3ba3",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/c0fa17fa14c5b89bb001fb2525770994866f3ba3"
+    },
+    {
+      "path": "benchmarks/create_diagrams.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e0d8745a9cae6ce601bab10b207024f4dbdf1a3",
+      "size": 16223,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/6e0d8745a9cae6ce601bab10b207024f4dbdf1a3"
+    },
+    {
+      "path": "benchmarks/download_data.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8918b229bf08781178e6ce40cefa70598d815136",
+      "size": 1864,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/8918b229bf08781178e6ce40cefa70598d815136"
+    },
+    {
+      "path": "benchmarks/results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aa8b26f788733cc9b3b5cbed3ab467f433bd76b0",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/aa8b26f788733cc9b3b5cbed3ab467f433bd76b0"
+    },
+    {
+      "path": "benchmarks/results/compression.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d8c8929503e6dee10d00f220ad17c6ab55d9c4f",
+      "size": 868,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/5d8c8929503e6dee10d00f220ad17c6ab55d9c4f"
+    },
+    {
+      "path": "benchmarks/results/recall_d1536_2bit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf885d4e5e3fd676222493af0bcdd6733fc3d3a9",
+      "size": 384,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/cf885d4e5e3fd676222493af0bcdd6733fc3d3a9"
+    },
+    {
+      "path": "benchmarks/results/recall_d1536_4bit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e62ff0126d1182a9a1d1f5c1c189be9cf28470bf",
+      "size": 380,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/e62ff0126d1182a9a1d1f5c1c189be9cf28470bf"
+    },
+    {
+      "path": "benchmarks/results/recall_d3072_2bit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45394169cb8e8fc4d28590d21a6c333cbed15153",
+      "size": 382,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/45394169cb8e8fc4d28590d21a6c333cbed15153"
+    },
+    {
+      "path": "benchmarks/results/recall_d3072_4bit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "859097511b6ba8798c27bdecbba731c0cabcb9d7",
+      "size": 381,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/859097511b6ba8798c27bdecbba731c0cabcb9d7"
+    },
+    {
+      "path": "benchmarks/results/recall_glove_2bit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8f861413611dcdd8a0a93fd3482d6813f7e802b",
+      "size": 404,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/a8f861413611dcdd8a0a93fd3482d6813f7e802b"
+    },
+    {
+      "path": "benchmarks/results/recall_glove_4bit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed9e7224fc5c26c6786193b49e5feec1330da9b0",
+      "size": 388,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/ed9e7224fc5c26c6786193b49e5feec1330da9b0"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_2bit_arm_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ee330818356f28788f5772ac49fd9b61078d5e1",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/4ee330818356f28788f5772ac49fd9b61078d5e1"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_2bit_arm_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89b10b4f13753d7241da306a869161d10bdc77ba",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/89b10b4f13753d7241da306a869161d10bdc77ba"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_2bit_x86_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c66c3a12e0dc3d0c3d39e9e7d63c22ab5643996f",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/c66c3a12e0dc3d0c3d39e9e7d63c22ab5643996f"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_2bit_x86_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08f93fda85cb4c0d0ef1eed594b5375b719936e0",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/08f93fda85cb4c0d0ef1eed594b5375b719936e0"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_4bit_arm_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c76d9a823a533be3d0ab2a970103b67f9c539635",
+      "size": 131,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/c76d9a823a533be3d0ab2a970103b67f9c539635"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_4bit_arm_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d76d1e51d82ee9cfb7d55f2d139638abcc323d9",
+      "size": 131,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/7d76d1e51d82ee9cfb7d55f2d139638abcc323d9"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_4bit_x86_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c3ef43ee21d74f0b29579bf401da6483675a51f",
+      "size": 131,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/7c3ef43ee21d74f0b29579bf401da6483675a51f"
+    },
+    {
+      "path": "benchmarks/results/speed_d1536_4bit_x86_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57adf48c462a606c5c30390f198d84b12aca5a4e",
+      "size": 131,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/57adf48c462a606c5c30390f198d84b12aca5a4e"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_2bit_arm_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03f18c4f3b3d8698e025189962d7ec96730779d6",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/03f18c4f3b3d8698e025189962d7ec96730779d6"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_2bit_arm_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c9c49d43136b7c8015ad9a57386d274427d9f77",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/5c9c49d43136b7c8015ad9a57386d274427d9f77"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_2bit_x86_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65fb096eeb45198952af40ff3a7f3a2c00ada8fb",
+      "size": 131,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/65fb096eeb45198952af40ff3a7f3a2c00ada8fb"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_2bit_x86_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "363aee7bb9b860a2e3f7c890e96e8b32ffd984de",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/363aee7bb9b860a2e3f7c890e96e8b32ffd984de"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_4bit_arm_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1add7cf351a250eb07e889703336fe150c7b8fe7",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/1add7cf351a250eb07e889703336fe150c7b8fe7"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_4bit_arm_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d0e4f9f7598c9ae8b6ad76aeba4ac4855cfb886",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/0d0e4f9f7598c9ae8b6ad76aeba4ac4855cfb886"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_4bit_x86_mt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d24905074787433c8c442ae732a1d2e5b741cace",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/d24905074787433c8c442ae732a1d2e5b741cace"
+    },
+    {
+      "path": "benchmarks/results/speed_d3072_4bit_x86_st.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d058a6d6eafd6edf89686aa2bb1568f243eef26a",
+      "size": 132,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/d058a6d6eafd6edf89686aa2bb1568f243eef26a"
+    },
+    {
+      "path": "benchmarks/suite",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "37581e534eb9d83ba44237ff92d3edda1da80965",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/37581e534eb9d83ba44237ff92d3edda1da80965"
+    },
+    {
+      "path": "benchmarks/suite/compression.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "689d00828dc614a640f6a1e926dff22ee65cdf66",
+      "size": 2951,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/689d00828dc614a640f6a1e926dff22ee65cdf66"
+    },
+    {
+      "path": "benchmarks/suite/recall_d1536_2bit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89ce92f0145ef0a9946f39089111e1c493cbbb4f",
+      "size": 2783,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/89ce92f0145ef0a9946f39089111e1c493cbbb4f"
+    },
+    {
+      "path": "benchmarks/suite/recall_d1536_4bit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d82cc28657b6348e7d60d19ddd9c889d7dec2d54",
+      "size": 2737,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/d82cc28657b6348e7d60d19ddd9c889d7dec2d54"
+    },
+    {
+      "path": "benchmarks/suite/recall_d3072_2bit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f492ffd778a8bc89c142ad7fbe4016a63a64a400",
+      "size": 2577,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/f492ffd778a8bc89c142ad7fbe4016a63a64a400"
+    },
+    {
+      "path": "benchmarks/suite/recall_d3072_4bit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02c8e9f28e39189bb4fb7b27185c37c451c9e15c",
+      "size": 2577,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/02c8e9f28e39189bb4fb7b27185c37c451c9e15c"
+    },
+    {
+      "path": "benchmarks/suite/recall_glove_2bit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b9b45ec09e6a4958bbef8b222fb2e09237538a",
+      "size": 2823,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/19b9b45ec09e6a4958bbef8b222fb2e09237538a"
+    },
+    {
+      "path": "benchmarks/suite/recall_glove_4bit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f06e970a44bb5479d3bfa931ee62d3d91f6dcce",
+      "size": 2824,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/6f06e970a44bb5479d3bfa931ee62d3d91f6dcce"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_2bit_arm_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb3b72499935bf7a06d75bca25af211f741258f2",
+      "size": 1667,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/cb3b72499935bf7a06d75bca25af211f741258f2"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_2bit_arm_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7fd690aa929b5ee4e5b7ca5f4f64dfa0846a748",
+      "size": 1740,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/c7fd690aa929b5ee4e5b7ca5f4f64dfa0846a748"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_2bit_x86_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97a30322a560d34b0bc9879210e125515bd5e9e2",
+      "size": 1667,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/97a30322a560d34b0bc9879210e125515bd5e9e2"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_2bit_x86_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ae9e34331f53b001c35024e9638ec1711ba0621",
+      "size": 1740,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/9ae9e34331f53b001c35024e9638ec1711ba0621"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_4bit_arm_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "357e10e413956b86edf7276cf6fdcdd65a519acd",
+      "size": 1662,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/357e10e413956b86edf7276cf6fdcdd65a519acd"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_4bit_arm_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d57924568cef9ea26709a563673af45168293270",
+      "size": 1735,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/d57924568cef9ea26709a563673af45168293270"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_4bit_x86_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3b54072962212d9a251af81fdec011bed47c5d8",
+      "size": 1662,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/f3b54072962212d9a251af81fdec011bed47c5d8"
+    },
+    {
+      "path": "benchmarks/suite/speed_d1536_4bit_x86_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ae13e1487a113a764c9b409aa2a64690d087a47",
+      "size": 1735,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/4ae13e1487a113a764c9b409aa2a64690d087a47"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_2bit_arm_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d62b9128192d9e37fd3f4ac514a943e4b77f8a5",
+      "size": 1667,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/6d62b9128192d9e37fd3f4ac514a943e4b77f8a5"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_2bit_arm_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "415ff8dc3d111b86c805f274f4e356a918b16d7f",
+      "size": 1740,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/415ff8dc3d111b86c805f274f4e356a918b16d7f"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_2bit_x86_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2149242837c7b76151d91c2b33cc4c9cc18b4b82",
+      "size": 1667,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/2149242837c7b76151d91c2b33cc4c9cc18b4b82"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_2bit_x86_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "660f3be5432047b9c518ebdf3b4b28e3a233fde9",
+      "size": 1740,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/660f3be5432047b9c518ebdf3b4b28e3a233fde9"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_4bit_arm_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59a26456f08cdf304a66276efed1b5b1f4a92837",
+      "size": 1662,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/59a26456f08cdf304a66276efed1b5b1f4a92837"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_4bit_arm_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "015092b6368118ff22e53fd98b4b5898953b64c1",
+      "size": 1735,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/015092b6368118ff22e53fd98b4b5898953b64c1"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_4bit_x86_mt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ace7cc8d5c81ede1553bf0ba0da51ecaa338780",
+      "size": 1662,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/2ace7cc8d5c81ede1553bf0ba0da51ecaa338780"
+    },
+    {
+      "path": "benchmarks/suite/speed_d3072_4bit_x86_st.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd430a428263414749dbf54f4edd70c2211a6c34",
+      "size": 1735,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/cd430a428263414749dbf54f4edd70c2211a6c34"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "07532ae819459614b0bc66614ad744e4d4e153a6",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/07532ae819459614b0bc66614ad744e4d4e153a6"
+    },
+    {
+      "path": "docs/api.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bac75060b6e85ad8f02b36a69a695e4b84676963",
+      "size": 9539,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/bac75060b6e85ad8f02b36a69a695e4b84676963"
+    },
+    {
+      "path": "docs/arm_speed_mt.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "def4a1b9c421f7f2d38c1920690ce7be8e8e3523",
+      "size": 4904,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/def4a1b9c421f7f2d38c1920690ce7be8e8e3523"
+    },
+    {
+      "path": "docs/arm_speed_st.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6a9bb99f61652a56796151901fba6ada3ed77d9",
+      "size": 4894,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/d6a9bb99f61652a56796151901fba6ada3ed77d9"
+    },
+    {
+      "path": "docs/compression.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13361f07430f2dc09bfdcebf1065bee34d7dbca0",
+      "size": 4842,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/13361f07430f2dc09bfdcebf1065bee34d7dbca0"
+    },
+    {
+      "path": "docs/header.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09006b4e9d493f64efff6fedfc1c18e4a1a7bf41",
+      "size": 320058,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/09006b4e9d493f64efff6fedfc1c18e4a1a7bf41"
+    },
+    {
+      "path": "docs/integrations",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "52d8d2b7256aa681c9fb04f88e40bc4fc1499f5d",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/52d8d2b7256aa681c9fb04f88e40bc4fc1499f5d"
+    },
+    {
+      "path": "docs/integrations/agno.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edbf0ae71e2c5783de3b5571329221052918e050",
+      "size": 6705,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/edbf0ae71e2c5783de3b5571329221052918e050"
+    },
+    {
+      "path": "docs/integrations/haystack.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d7bc88d3f2cfece0b88afe4614d75d2a8834c4a",
+      "size": 7366,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/6d7bc88d3f2cfece0b88afe4614d75d2a8834c4a"
+    },
+    {
+      "path": "docs/integrations/langchain.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5463a32aadc2da02062e276013f206daf0ec2cd0",
+      "size": 5737,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/5463a32aadc2da02062e276013f206daf0ec2cd0"
+    },
+    {
+      "path": "docs/integrations/llama_index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee98b1f34333d8af5690705757852cfbdb80dbe5",
+      "size": 9048,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/ee98b1f34333d8af5690705757852cfbdb80dbe5"
+    },
+    {
+      "path": "docs/recall_d1536.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "439992e75fe25b9ac0356c83627d571aee2dbb78",
+      "size": 6151,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/439992e75fe25b9ac0356c83627d571aee2dbb78"
+    },
+    {
+      "path": "docs/recall_d3072.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de86a210c44566529e3ca83b699bc8505d4737bd",
+      "size": 6151,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/de86a210c44566529e3ca83b699bc8505d4737bd"
+    },
+    {
+      "path": "docs/recall_glove.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82ea28da9caa94c782893a74eb0759ff983a9231",
+      "size": 6178,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/82ea28da9caa94c782893a74eb0759ff983a9231"
+    },
+    {
+      "path": "docs/x86_speed_mt.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1faace04d11869af064b55b53f508ee600ac5d1",
+      "size": 4944,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/e1faace04d11869af064b55b53f508ee600ac5d1"
+    },
+    {
+      "path": "docs/x86_speed_st.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fbe32b0c9d52239d970d05317e298e49903061e",
+      "size": 4930,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/5fbe32b0c9d52239d970d05317e298e49903061e"
+    },
+    {
+      "path": "examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0ec9760858036f694365715ad2beeee8688fb491",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/0ec9760858036f694365715ad2beeee8688fb491"
+    },
+    {
+      "path": "examples/downstream-smoke",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4171ef1537da227c3cd9a2bd07bf4e0bc4e07b8a",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/4171ef1537da227c3cd9a2bd07bf4e0bc4e07b8a"
+    },
+    {
+      "path": "examples/downstream-smoke/Cargo.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0947147f3167ff149c868ae794ea8527e56846cd",
+      "size": 27595,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/0947147f3167ff149c868ae794ea8527e56846cd"
+    },
+    {
+      "path": "examples/downstream-smoke/Cargo.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76ada77fc7c563a952d090e9e5d4302444eecb7a",
+      "size": 522,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/76ada77fc7c563a952d090e9e5d4302444eecb7a"
+    },
+    {
+      "path": "examples/downstream-smoke/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "38ce0690c2380719ec6138046a6181a405479eae",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/38ce0690c2380719ec6138046a6181a405479eae"
+    },
+    {
+      "path": "examples/downstream-smoke/src/main.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05df9df073efecdaba661f6925577371520b4695",
+      "size": 2045,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/05df9df073efecdaba661f6925577371520b4695"
+    },
+    {
+      "path": "turbovec-python",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e22f83940a2a398211621d669bf843d77da2ed54",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/e22f83940a2a398211621d669bf843d77da2ed54"
+    },
+    {
+      "path": "turbovec-python/Cargo.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "190092e8e25946d982ac4ee574e55751682dd6ae",
+      "size": 365,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/190092e8e25946d982ac4ee574e55751682dd6ae"
+    },
+    {
+      "path": "turbovec-python/README.md",
+      "mode": "120000",
+      "type": "blob",
+      "sha": "32d46ee883b58d6a383eed06eb98f33aa6530ded",
+      "size": 12,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/32d46ee883b58d6a383eed06eb98f33aa6530ded"
+    },
+    {
+      "path": "turbovec-python/build.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88c0fea060a911ff62310b886c55611b80c1608e",
+      "size": 557,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/88c0fea060a911ff62310b886c55611b80c1608e"
+    },
+    {
+      "path": "turbovec-python/pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09bfec1ea38be23c06c5e90261972f2b595d0112",
+      "size": 1684,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/09bfec1ea38be23c06c5e90261972f2b595d0112"
+    },
+    {
+      "path": "turbovec-python/python",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bc61f78dc0e94b07fb089ad3bac899b7ad359e3e",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/bc61f78dc0e94b07fb089ad3bac899b7ad359e3e"
+    },
+    {
+      "path": "turbovec-python/python/turbovec",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5f3fe90902d7a607d7bead7ba4b38d32ce628cad",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/5f3fe90902d7a607d7bead7ba4b38d32ce628cad"
+    },
+    {
+      "path": "turbovec-python/python/turbovec/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e2df5d0db6aa503b9b0a58731eb0fa46653123",
+      "size": 96,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/48e2df5d0db6aa503b9b0a58731eb0fa46653123"
+    },
+    {
+      "path": "turbovec-python/python/turbovec/agno.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bfb96868966d59c8fa3e434fcd99d93a574bbbf",
+      "size": 31173,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/1bfb96868966d59c8fa3e434fcd99d93a574bbbf"
+    },
+    {
+      "path": "turbovec-python/python/turbovec/haystack.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48eca94213317af4ffd4bf51fe4d354dcd23fa2c",
+      "size": 30868,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/48eca94213317af4ffd4bf51fe4d354dcd23fa2c"
+    },
+    {
+      "path": "turbovec-python/python/turbovec/langchain.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f44f27b769bc00d30d9d78842e270823a3308bc7",
+      "size": 21652,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/f44f27b769bc00d30d9d78842e270823a3308bc7"
+    },
+    {
+      "path": "turbovec-python/python/turbovec/llama_index.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aebd73c82ade01aba9d402a01c8c47db04ae410b",
+      "size": 28340,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/aebd73c82ade01aba9d402a01c8c47db04ae410b"
+    },
+    {
+      "path": "turbovec-python/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f8eab93d7409e3df32f022ce7355f5aafdad205",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/3f8eab93d7409e3df32f022ce7355f5aafdad205"
+    },
+    {
+      "path": "turbovec-python/src/lib.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f0b72a96b7e786a4a1fba728264eadcc4a99583",
+      "size": 13737,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/8f0b72a96b7e786a4a1fba728264eadcc4a99583"
+    },
+    {
+      "path": "turbovec-python/tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f2c3b02b65d1f21fd4da5f8b66edcee204d12aff",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/f2c3b02b65d1f21fd4da5f8b66edcee204d12aff"
+    },
+    {
+      "path": "turbovec-python/tests/test_agno.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb84defe04b039fcbfd1dc2eb269b55a15b8278b",
+      "size": 40416,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/cb84defe04b039fcbfd1dc2eb269b55a15b8278b"
+    },
+    {
+      "path": "turbovec-python/tests/test_filtering.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02d4549e3575f5f00da540bfe8cf2c82140cb0f8",
+      "size": 6680,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/02d4549e3575f5f00da540bfe8cf2c82140cb0f8"
+    },
+    {
+      "path": "turbovec-python/tests/test_haystack.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc57cca62eee3c12ac8778d4034b423f489c73f9",
+      "size": 46296,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/bc57cca62eee3c12ac8778d4034b423f489c73f9"
+    },
+    {
+      "path": "turbovec-python/tests/test_id_map.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "993e85764962f0032284aa233598e063ee9fc42d",
+      "size": 7498,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/993e85764962f0032284aa233598e063ee9fc42d"
+    },
+    {
+      "path": "turbovec-python/tests/test_index.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d2bdb756c9c6497302e3f03a59f7e56726764cb",
+      "size": 8966,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/7d2bdb756c9c6497302e3f03a59f7e56726764cb"
+    },
+    {
+      "path": "turbovec-python/tests/test_langchain.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac9a899451961246a9fc34ce1b22fa16e0b968ae",
+      "size": 27691,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/ac9a899451961246a9fc34ce1b22fa16e0b968ae"
+    },
+    {
+      "path": "turbovec-python/tests/test_llama_index.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff8742961d475da6fc9c2887fe2290854d28e106",
+      "size": 48566,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/ff8742961d475da6fc9c2887fe2290854d28e106"
+    },
+    {
+      "path": "turbovec",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5fc453a3fafe522b06b5fe8c6c33759547169f4e",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/5fc453a3fafe522b06b5fe8c6c33759547169f4e"
+    },
+    {
+      "path": "turbovec/Cargo.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df85f7b99198675e01f8f67b6d2dbbb0ffba7184",
+      "size": 1003,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/df85f7b99198675e01f8f67b6d2dbbb0ffba7184"
+    },
+    {
+      "path": "turbovec/build.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7695df94659cbdacbf2915956c18e29bea9a917d",
+      "size": 917,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/7695df94659cbdacbf2915956c18e29bea9a917d"
+    },
+    {
+      "path": "turbovec/examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1e6b4b8cda1dbc5c6504dd115544b09e6d60269",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/c1e6b4b8cda1dbc5c6504dd115544b09e6d60269"
+    },
+    {
+      "path": "turbovec/examples/dump_state.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d293c19f5c759cd1048d1cf237c1d16df560145e",
+      "size": 1970,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/d293c19f5c759cd1048d1cf237c1d16df560145e"
+    },
+    {
+      "path": "turbovec/examples/kernel_xtest.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "861521ec82a52e4e29a65e24125992b59a8c4914",
+      "size": 4619,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/861521ec82a52e4e29a65e24125992b59a8c4914"
+    },
+    {
+      "path": "turbovec/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "34ff33f6a797a07e26b64d2235da3b91b5b4e808",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/34ff33f6a797a07e26b64d2235da3b91b5b4e808"
+    },
+    {
+      "path": "turbovec/src/codebook.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2b0d0b6386454166c441deda6f72b2b800dd409",
+      "size": 4147,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/c2b0d0b6386454166c441deda6f72b2b800dd409"
+    },
+    {
+      "path": "turbovec/src/encode.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90ea44a14e800fd88b02def22ae9dbeb497a348b",
+      "size": 14713,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/90ea44a14e800fd88b02def22ae9dbeb497a348b"
+    },
+    {
+      "path": "turbovec/src/error.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2793d7d648d0e61ff4175165d22691795dd814c",
+      "size": 4336,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/a2793d7d648d0e61ff4175165d22691795dd814c"
+    },
+    {
+      "path": "turbovec/src/id_map.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96e2444718c2f4d1f588bc2cc2f6623efef91de2",
+      "size": 11984,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/96e2444718c2f4d1f588bc2cc2f6623efef91de2"
+    },
+    {
+      "path": "turbovec/src/io.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "452dcb433f6524ccb8837e6e7e1dc87fde4d3f06",
+      "size": 9855,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/452dcb433f6524ccb8837e6e7e1dc87fde4d3f06"
+    },
+    {
+      "path": "turbovec/src/lib.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46aa6d0e0ece49b37d9b3e2559f3657fe11dcbc0",
+      "size": 31155,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/46aa6d0e0ece49b37d9b3e2559f3657fe11dcbc0"
+    },
+    {
+      "path": "turbovec/src/pack.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7e1dc61243eaf1dc36414948d7e2d0e2fba3534",
+      "size": 6012,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/b7e1dc61243eaf1dc36414948d7e2d0e2fba3534"
+    },
+    {
+      "path": "turbovec/src/rotation.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d1f8af643ed9fcc1ce96435c90e206e39c7dd43",
+      "size": 1469,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/3d1f8af643ed9fcc1ce96435c90e206e39c7dd43"
+    },
+    {
+      "path": "turbovec/src/search.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2313bc8afc67aac268e90e2c9f4a6320df10e490",
+      "size": 76068,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/2313bc8afc67aac268e90e2c9f4a6320df10e490"
+    },
+    {
+      "path": "turbovec/tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "538cf66ea535a92120ea7a20343c993896792efa",
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/trees/538cf66ea535a92120ea7a20343c993896792efa"
+    },
+    {
+      "path": "turbovec/tests/codebook.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a8b4a7526e776145b6b0152f6413c9db1063f11",
+      "size": 3885,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/8a8b4a7526e776145b6b0152f6413c9db1063f11"
+    },
+    {
+      "path": "turbovec/tests/concurrent_search.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "963073c9c2cd10a7e004ccf593388fb45bd28ba0",
+      "size": 10682,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/963073c9c2cd10a7e004ccf593388fb45bd28ba0"
+    },
+    {
+      "path": "turbovec/tests/distortion.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7e8c08cce7b6b4b35537b75b426f8feda0a472d",
+      "size": 10562,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/a7e8c08cce7b6b4b35537b75b426f8feda0a472d"
+    },
+    {
+      "path": "turbovec/tests/encode.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8e68f2f3bbfecdc633d4903fa0399f6c01511bc",
+      "size": 5405,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/a8e68f2f3bbfecdc633d4903fa0399f6c01511bc"
+    },
+    {
+      "path": "turbovec/tests/filtering.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c923e7c0af84641d8acfdba1f1ad68ef5fb8c8d2",
+      "size": 16986,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/c923e7c0af84641d8acfdba1f1ad68ef5fb8c8d2"
+    },
+    {
+      "path": "turbovec/tests/id_map.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6830327a60f2e7e26f7f91fe16ac1caabb96cae0",
+      "size": 15195,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/6830327a60f2e7e26f7f91fe16ac1caabb96cae0"
+    },
+    {
+      "path": "turbovec/tests/input_validation.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "664b8749f8eaeba961850d33fae432facf0356e5",
+      "size": 7686,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/664b8749f8eaeba961850d33fae432facf0356e5"
+    },
+    {
+      "path": "turbovec/tests/io_versioning.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e8dcf3f562db709a21563ae52250fd5995ff566",
+      "size": 8891,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/6e8dcf3f562db709a21563ae52250fd5995ff566"
+    },
+    {
+      "path": "turbovec/tests/kernel_correctness.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "446a9238fdc40aea32b575376f7b16c36c06bb43",
+      "size": 8677,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/446a9238fdc40aea32b575376f7b16c36c06bb43"
+    },
+    {
+      "path": "turbovec/tests/lazy_init.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93bec518014efee9c23b9e7b9d3efa3e4a771da4",
+      "size": 10757,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/93bec518014efee9c23b9e7b9d3efa3e4a771da4"
+    },
+    {
+      "path": "turbovec/tests/rotation.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee4fd5c4c7a63e42ec1be15da1ff95524094de6a",
+      "size": 4377,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/ee4fd5c4c7a63e42ec1be15da1ff95524094de6a"
+    },
+    {
+      "path": "turbovec/tests/state_sequences.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a566d5a0ab06bc2c5bb13393f3cc33eabe7c244",
+      "size": 10150,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/8a566d5a0ab06bc2c5bb13393f3cc33eabe7c244"
+    },
+    {
+      "path": "turbovec/tests/swap_remove.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13bb2f210e15ea0af57f61debe16fdd29c858bd2",
+      "size": 5891,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/13bb2f210e15ea0af57f61debe16fdd29c858bd2"
+    },
+    {
+      "path": "turbovec/tests/tqplus_calibration.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21f57da1925375acfa4d071ea0e0350c023d9ae8",
+      "size": 6510,
+      "url": "https://api.github.com/repos/RyanCodrai/turbovec/git/blobs/21f57da1925375acfa4d071ea0e0350c023d9ae8"
+    }
+  ],
+  "truncated": false
+}
