@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-08
+updated: 2026-06-10
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-10] ingest | Claude Fable 5와 Mythos 5 발표
+
+- GeekNews 글 "Claude Fable 5/Mythos 5 공개, Anthropic의 5세대 프런티어 모델"과 연결된 Anthropic 공식 발표를 raw snapshot으로 보존하고 [[GeekNews Claude Fable 5 and Mythos 5 Article]]로 ingest했다.
+- [[Claude Fable 5]] 도구 페이지를 추가해 장기 자율 작업, 안전 분류기, Opus 4.8 폴백, 30일 데이터 보존, 출시 초기 가격과 availability를 정리했다.
+- [[Claude Code]], [[Agentic Workflow]], [[Human-in-the-loop]]에 실제 응답 모델, checkpoint, 비용, stop condition, 민감 데이터 보존 정책을 audit 대상으로 기록하는 관점을 연결했다.
+- 변경 영역: [[GeekNews Claude Fable 5 and Mythos 5 Article]], [[Claude Fable 5]], [[Claude Code]], [[Agentic Workflow]], [[Human-in-the-loop]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Fable 5 System Card, METR 보고서, 독립 장기 coding 평가, 30일 데이터 보존 예외와 계약 조건을 별도 source로 확인한다.
 
 ## [2026-06-08] ingest | Muren leveraged ETF volatility decay article
 

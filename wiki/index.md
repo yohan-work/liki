@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-08
+updated: 2026-06-10
 tags:
   - llm-wiki
   - index
@@ -114,6 +114,7 @@ evidence_level: unsourced
 - [[Figma Console MCP]]
 - [[Codex Sites]]
 - [[토스증권 Open API]]
+- [[Claude Fable 5]]
 
 ## 인물
 
@@ -190,6 +191,7 @@ evidence_level: unsourced
 - [[Montana Skeptic SpaceX IPO Article]]
 - [[Tossinvest OpenAPI Docs]]
 - [[Muren Leveraged ETF Volatility Decay Article]]
+- [[GeekNews Claude Fable 5 and Mythos 5 Article]]
 
 ## 리포트
 

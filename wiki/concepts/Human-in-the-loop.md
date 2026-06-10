@@ -3,7 +3,7 @@ title: Human-in-the-loop
 type: concept
 status: seed
 created: 2026-05-20
-updated: 2026-06-05
+updated: 2026-06-10
 tags:
   - human-review
   - workflow
@@ -24,6 +24,8 @@ related:
   - "[[Dein Interviewing in the Age of AI Article]]"
   - "[[PDCA 사이클]]"
   - "[[Asana PDCA Cycle Article]]"
+  - "[[Claude Fable 5]]"
+  - "[[GeekNews Claude Fable 5 and Mythos 5 Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -52,6 +54,7 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[Google I/O 2026 Keynote Moments Article]]은 Gemini Spark가 돈을 쓰거나 이메일을 보내는 고위험 action 전에는 사용자에게 먼저 묻도록 설계되었다고 설명한다.
 - [[Dein Interviewing in the Age of AI Article]]은 AI가 만든 산출물을 평가하는 상황에서 사람의 review skill 자체를 면접 대상으로 삼아야 한다고 주장한다.
 - [[PDCA 사이클]]에서 Check와 Act는 사람의 검토가 들어가기 좋은 지점이다. 특히 agent 실행 결과가 목표와 맞는지 판단하고 다음 반복을 승인하는 역할은 [[Human-in-the-loop]] boundary와 연결된다.
+- [[GeekNews Claude Fable 5 and Mythos 5 Article]]은 장기 자율 작업 모델이라도 안전 분류기 폴백, false positive, 30일 데이터 보존 같은 운영 조건이 남는다는 점을 보여준다. 사람의 검토는 결과 승인뿐 아니라 민감 데이터 투입 여부, checkpoint 지속 여부, 폴백 결과 수용 여부에도 필요하다.
 
 ## 관련 자료
 
@@ -64,6 +67,7 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[Google I/O 2026 Keynote Moments Article]]
 - [[Dein Interviewing in the Age of AI Article]]
 - [[Asana PDCA Cycle Article]]
+- [[GeekNews Claude Fable 5 and Mythos 5 Article]]
 
 ## 열린 질문
 
@@ -72,3 +76,4 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - screen capture, microphone, accessibility permission을 요구하는 local AI tool은 어떤 승인과 audit boundary가 필요한가?
 - agent가 hosted app을 production URL로 배포하거나 access를 넓히기 전 사람이 확인해야 할 최소 항목은 무엇인가?
 - PDCA의 Check/Act 단계 중 어떤 판단은 agent가 자동 처리하고 어떤 판단은 사람 승인 뒤에 둬야 하는가?
+- 30일 데이터 보존이 요구되는 모델에 private wiki나 고객 데이터를 보내기 전 어떤 승인과 분류 절차가 필요한가?
