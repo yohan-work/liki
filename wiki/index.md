@@ -55,6 +55,7 @@ evidence_level: unsourced
 - [[MEDDPICC]]
 - [[AI 실험 문화]]
 - [[Cross-functional 기술 문제 해결]]
+- [[하네스 엔지니어링]]
 
 ## 프로젝트
 
@@ -121,6 +122,7 @@ evidence_level: unsourced
 - [[Claude Fable 5]]
 - [[Humanize KR]]
 - [[TurboVec]]
+- [[Kiro]]
 
 ## 인물
 
@@ -205,6 +207,7 @@ evidence_level: unsourced
 - [[GitHub TurboVec Repository]]
 - [[Toss Tech AI Surf Day Article]]
 - [[Toss Tech Cross Functional TPM Tip Article]]
+- [[Yanlog Kiro User Interview 003]]
 
 ## 리포트
 

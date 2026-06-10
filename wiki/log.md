@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-10] ingest | Kiro 조직 도입과 하네스 엔지니어링
+
+- YAN SO의 "Kiro 사용자 인터뷰 #3 - 우아한형제들 신재현님"을 raw HTML snapshot으로 보존하고 [[Yanlog Kiro User Interview 003]]으로 ingest했다.
+- [[Kiro]] 도구 페이지와 [[하네스 엔지니어링]] 개념 페이지를 추가해 steering, skill, artifact, history, validation을 작업 환경에 내장하는 패턴을 정리했다.
+- [[Skills]], [[Agentic Workflow]], [[Personal Operating System]]에 숙련자의 업무 방식 이식, session 재개 구조, repository instruction과 script를 하나의 실행 환경으로 보는 관점을 연결했다.
+- 변경 영역: [[Yanlog Kiro User Interview 003]], [[Kiro]], [[하네스 엔지니어링]], [[Skills]], [[Agentic Workflow]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Kiro 공식 문서로 steering, Agent Skills 호환성, IDE·CLI 기능 차이, model 지원, enterprise data boundary를 검증한다.
+
 ## [2026-06-10] ingest | Cross-functional 기술 문제 해결과 TPM
 
 - 토스 기술 블로그의 "Cross Functional 기술 문제 풀기 위한 역량 성장 Tip"을 raw HTML snapshot으로 보존하고 [[Toss Tech Cross Functional TPM Tip Article]]로 ingest했다.

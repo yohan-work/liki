@@ -17,6 +17,7 @@ related:
   - "[[LLM Wiki 운영 흐름]]"
   - "[[AI 실험 문화]]"
   - "[[Cross-functional 기술 문제 해결]]"
+  - "[[하네스 엔지니어링]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -27,9 +28,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 68개
-- 개념 페이지: 38개
-- 도구 페이지: 29개
+- 자료 요약: 69개
+- 개념 페이지: 39개
+- 도구 페이지: 30개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
 - 기회 카드: 0개
@@ -79,6 +80,7 @@ evidence_level: unsourced
 - [[MEDDPICC]]를 B2B PoC 검토에 적용할 최소 qualification 항목으로 줄일 수 있는지 확인한다.
 - [[AI 실험 문화]]를 개인 운영체계에 적용할 월 1회 실험 시간과 artifact 기준을 정한다.
 - [[Cross-functional 기술 문제 해결]]의 문제·결정·owner·dependency·next action·done evidence 진단 형식을 정체된 작업 1개에 적용한다.
+- [[하네스 엔지니어링]] 관점에서 wiki ingest의 instruction, skill, script, artifact, lint 중 중복되거나 source of truth가 불명확한 규칙을 점검한다.
 
 ## MVP 승격 후보
 
@@ -130,6 +132,8 @@ evidence_level: unsourced
 - [[MEDDPICC]]
 - [[AI 실험 문화]]
 - [[Cross-functional 기술 문제 해결]]
+- [[하네스 엔지니어링]]
+- [[Kiro]]
 
 ## 다음 행동
 

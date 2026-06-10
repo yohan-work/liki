@@ -26,6 +26,8 @@ related:
   - "[[Toss Tech AI Surf Day Article]]"
   - "[[Cross-functional 기술 문제 해결]]"
   - "[[Toss Tech Cross Functional TPM Tip Article]]"
+  - "[[하네스 엔지니어링]]"
+  - "[[Yanlog Kiro User Interview 003]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -55,6 +57,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[PDCA 사이클]] 관점에서 개인 운영체계의 ingest, review, lint, MVP 검증은 계획, 실행, 점검, 조치가 남는 작은 반복 루프로 관리한다.
 - [[AI 실험 문화]] 관점에서 AI 학습과 탐색을 남는 시간에 맡기지 않고 정기적인 보호 시간에 실제 업무 문제 하나를 실험한다. 결과는 성공 데모보다 문제, 시도, 실패, 검증, 재사용 가능한 artifact로 남긴다.
 - [[Cross-functional 기술 문제 해결]] 관점에서 source, idea, MVP, decision, agent가 각각 관리되어도 실행이 이어지지 않으면 문제, 결정, owner, dependency, next action, done evidence를 다시 정의한다.
+- [[하네스 엔지니어링]] 관점에서 `AGENTS.md`, wiki skill, templates, scripts, index, log, lint를 분리된 문서가 아니라 작업 품질과 재개 가능성을 만드는 하나의 실행 환경으로 관리한다.
 
 ## 현재 운영 기준
 
@@ -89,6 +92,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[Asana PDCA Cycle Article]]
 - [[Toss Tech AI Surf Day Article]]
 - [[Toss Tech Cross Functional TPM Tip Article]]
+- [[Yanlog Kiro User Interview 003]]
 - [[llm-wiki-review-2026-05-29]]
 
 ## 열린 질문
