@@ -57,6 +57,7 @@ evidence_level: unsourced
 - [[Cross-functional 기술 문제 해결]]
 - [[하네스 엔지니어링]]
 - [[기업 AI 운영 레이어]]
+- [[LLM-as-a-Judge]]
 
 ## 프로젝트
 
@@ -210,6 +211,8 @@ evidence_level: unsourced
 - [[Toss Tech Cross Functional TPM Tip Article]]
 - [[Yanlog Kiro User Interview 003]]
 - [[OpenAI Next Phase of Enterprise AI Article]]
+- [[Anthropic Claude Fable 5 and Mythos 5 Announcement]]
+- [[Codingsmu LLM as a Judge Article]]
 
 ## 리포트
 

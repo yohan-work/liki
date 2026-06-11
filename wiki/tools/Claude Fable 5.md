@@ -3,7 +3,7 @@ title: Claude Fable 5
 type: tool
 status: active
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - claude
   - anthropic
@@ -16,6 +16,7 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Human-in-the-loop]]"
   - "[[GeekNews Claude Fable 5 and Mythos 5 Article]]"
+  - "[[Anthropic Claude Fable 5 and Mythos 5 Announcement]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -31,8 +32,9 @@ Claude Fable 5는 Anthropic이 2026년 6월 9일 발표한 일반 제공용 Myth
 - 긴 비동기 작업에서 계획, subagent 위임, 도구 실행, 실패 복구, 자체 검증을 수행하는 방향으로 설계되었다.
 - API 모델명은 `claude-fable-5`다.
 - 발표 시점 가격은 입력 100만 토큰당 10달러, 출력 50달러다.
-- 사이버보안, 생물학·화학, distillation 관련 분류기가 작동하면 Claude Opus 4.8로 폴백한다.
-- Mythos급 모델 트래픽은 안전 모니터링 목적으로 30일 보존이 요구된다.
+- 사이버보안, 생물학·화학, distillation 관련 분류기가 작동하면 Claude Opus 4.8로 폴백한다. Anthropic은 초기 데이터상 95%가 넘는 세션에서 폴백이 없다고 발표했다.
+- Mythos급 모델 트래픽은 first-party와 third-party surface 모두에서 안전 모니터링 목적으로 30일 보존이 요구된다.
+- Claude API와 consumption-based Enterprise plan에서는 발표 당일부터 제공된다. 구독 플랜의 출시 초기 포함 조건은 2026년 6월 22일까지이며, 6월 23일부터 usage credit이 필요하다고 발표됐다.
 
 ## 운영 관점
 
@@ -43,10 +45,11 @@ Claude Fable 5는 Anthropic이 2026년 6월 9일 발표한 일반 제공용 Myth
 
 ## Claude Code와의 관계
 
-[[GeekNews Claude Fable 5 and Mythos 5 Article]]은 Fable 5를 Claude Code 같은 agent environment에서 수일간 작동하는 모델로 소개한다. 중요한 변화는 단일 응답 품질보다 긴 작업에서 계획과 검증을 유지하는 능력이지만, 실제 운영에서는 harness가 checkpoint와 audit artifact를 강제해야 한다.
+[[Anthropic Claude Fable 5 and Mythos 5 Announcement]]은 Fable 5를 장기 software engineering, knowledge work, vision, file-based memory, science task에 적용하는 모델로 소개한다. 중요한 변화는 단일 응답 품질보다 긴 작업에서 계획과 검증을 유지하는 능력이지만, 실제 운영에서는 harness가 checkpoint와 audit artifact를 강제해야 한다.
 
 ## 관련 자료
 
+- [[Anthropic Claude Fable 5 and Mythos 5 Announcement]]
 - [[GeekNews Claude Fable 5 and Mythos 5 Article]]
 - [[Claude Code]]
 - [[Claude Opus 4.8]]
@@ -55,10 +58,11 @@ Claude Fable 5는 Anthropic이 2026년 6월 9일 발표한 일반 제공용 Myth
 
 ## 한계
 
-- Anthropic 발표와 초기 사용자 반응이 근거의 중심이라 독립 평가가 부족하다.
+- Anthropic 발표와 초기 파트너 반응이 근거의 중심이라 독립 평가가 부족하다.
 - 안전 분류기의 false positive로 일반 코딩 요청도 Opus 4.8에 폴백할 수 있다.
 - 30일 데이터 보존 요구는 zero data retention이 필요한 조직에 도입 장벽이 될 수 있다.
 - 가격과 구독 포함 조건은 출시 초기 정책이므로 변경 가능성이 높다.
+- 장기 작업 사례는 model capability와 tool, memory, harness의 기여를 분리하지 않는다.
 
 ## 열린 질문
 

@@ -3,7 +3,7 @@ title: LLM Hallucination
 type: concept
 status: seed
 created: 2026-05-21
-updated: 2026-06-05
+updated: 2026-06-11
 tags:
   - llm
   - hallucination
@@ -16,6 +16,8 @@ related:
   - "[[Hancom LLM Hallucination Reduction Research Article]]"
   - "[[HyDE]]"
   - "[[Open Network RAG HyDE Article]]"
+  - "[[LLM-as-a-Judge]]"
+  - "[[Codingsmu LLM as a Judge Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -56,11 +58,13 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - "모르겠다", "확인 필요", "사용자 승인 필요" 같은 응답 경로를 만들지 않는다.
 - 모델 성능 평가에서 정답률만 보고 거절 능력과 불확실성 calibration을 보지 않는다.
 - CoT나 자체 검증을 붙였다는 이유만으로 실제 외부 근거 검증을 생략한다.
+- [[LLM-as-a-Judge]]가 자연스러운 평가 설명을 만들었다는 이유로 judge의 오판이나 candidate와 공유하는 오류를 놓친다.
 
 ## 관련 자료
 
 - [[Hancom LLM Hallucination Reduction Research Article]]
 - [[Open Network RAG HyDE Article]]
+- [[Codingsmu LLM as a Judge Article]]
 
 ## 관련 개념과 차이
 
@@ -68,6 +72,7 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - [[HyDE]]: RAG 검색 품질을 높이기 위한 query transformation 기법이다. 검색 결과가 좋아지면 환각 완화에 도움을 줄 수 있지만, hypothetical document 자체는 근거가 아니다.
 - [[Human-in-the-loop]]: 고위험 판단에서 사람이 검토와 승인 역할을 맡는 운영 장치다.
 - [[Agentic Workflow]]: agent가 도구 사용, 검증, 중단, 사용자 확인을 반복하도록 설계하면 환각 완화에 도움을 줄 수 있다.
+- [[LLM-as-a-Judge]]: 생성물의 오류를 찾는 보조 evaluator가 될 수 있지만 judge 자체도 환각과 capability limitation을 가지므로 외부 근거 검증을 대체하지 못한다.
 
 ## 예시
 

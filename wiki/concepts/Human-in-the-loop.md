@@ -3,7 +3,7 @@ title: Human-in-the-loop
 type: concept
 status: seed
 created: 2026-05-20
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - human-review
   - workflow
@@ -26,6 +26,9 @@ related:
   - "[[Asana PDCA Cycle Article]]"
   - "[[Claude Fable 5]]"
   - "[[GeekNews Claude Fable 5 and Mythos 5 Article]]"
+  - "[[Anthropic Claude Fable 5 and Mythos 5 Announcement]]"
+  - "[[LLM-as-a-Judge]]"
+  - "[[Codingsmu LLM as a Judge Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -55,6 +58,8 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[Dein Interviewing in the Age of AI Article]]은 AI가 만든 산출물을 평가하는 상황에서 사람의 review skill 자체를 면접 대상으로 삼아야 한다고 주장한다.
 - [[PDCA 사이클]]에서 Check와 Act는 사람의 검토가 들어가기 좋은 지점이다. 특히 agent 실행 결과가 목표와 맞는지 판단하고 다음 반복을 승인하는 역할은 [[Human-in-the-loop]] boundary와 연결된다.
 - [[GeekNews Claude Fable 5 and Mythos 5 Article]]은 장기 자율 작업 모델이라도 안전 분류기 폴백, false positive, 30일 데이터 보존 같은 운영 조건이 남는다는 점을 보여준다. 사람의 검토는 결과 승인뿐 아니라 민감 데이터 투입 여부, checkpoint 지속 여부, 폴백 결과 수용 여부에도 필요하다.
+- [[Anthropic Claude Fable 5 and Mythos 5 Announcement]]은 Fable classifier가 특정 영역을 Opus 4.8로 폴백하고 Mythos급 traffic을 30일 보존한다고 명시한다. Human review는 위험한 action 승인뿐 아니라 sensitivity 분류, 모델 사용 가능 여부, 폴백 결과의 평가 cohort, trusted access 책임에도 필요하다.
+- [[Codingsmu LLM as a Judge Article]]은 LLM judge가 대규모 평가를 보조할 수 있지만 answer 위치, 길이, judge와 candidate의 model 관계에 따라 편향될 수 있다고 설명한다. Human-in-the-loop은 모든 output을 직접 채점하는 역할보다 calibration set 작성, judge 불일치 검토, 고위험 결과 escalation에 배치할 수 있다.
 
 ## 관련 자료
 
@@ -68,6 +73,8 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - [[Dein Interviewing in the Age of AI Article]]
 - [[Asana PDCA Cycle Article]]
 - [[GeekNews Claude Fable 5 and Mythos 5 Article]]
+- [[Anthropic Claude Fable 5 and Mythos 5 Announcement]]
+- [[Codingsmu LLM as a Judge Article]]
 
 ## 열린 질문
 
@@ -77,3 +84,4 @@ agentic system이 의도, 품질 기준, privacy boundary에 맞게 작동하도
 - agent가 hosted app을 production URL로 배포하거나 access를 넓히기 전 사람이 확인해야 할 최소 항목은 무엇인가?
 - PDCA의 Check/Act 단계 중 어떤 판단은 agent가 자동 처리하고 어떤 판단은 사람 승인 뒤에 둬야 하는가?
 - 30일 데이터 보존이 요구되는 모델에 private wiki나 고객 데이터를 보내기 전 어떤 승인과 분류 절차가 필요한가?
+- LLM judge와 사람 평가가 충돌할 때 rubric, reference, task 목표 중 무엇을 먼저 재검토해야 하는가?

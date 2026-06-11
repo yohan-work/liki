@@ -15,6 +15,24 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-11] ingest | LLM-as-a-Judge 평가 방식과 편향
+
+- 코딩스뮤의 "[주간 LLM] LLM Evaluation (2) LLM-as-a-Judge"를 raw HTML snapshot으로 보존하고 [[Codingsmu LLM as a Judge Article]]로 ingest했다.
+- [[LLM-as-a-Judge]] 개념 페이지를 추가해 pairwise, single-answer, reference-guided 평가와 position, verbosity, self-enhancement bias, judge capability ceiling을 정리했다.
+- [[Agentic Workflow]], [[Human-in-the-loop]], [[LLM Hallucination]]에 deterministic check, reference, LLM judge, human calibration을 결합하는 평가 원칙을 연결했다.
+- 원문의 80% 이상 인간 선호 일치 수치, bias 크기, 완화 효과, FastChat 실행 방식은 원 논문과 현재 구현으로 재검증해야 한다는 경계를 유지했다.
+- 변경 영역: [[Codingsmu LLM as a Judge Article]], [[LLM-as-a-Judge]], [[Agentic Workflow]], [[Human-in-the-loop]], [[LLM Hallucination]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 원 논문과 후속 평가 연구를 ingest하고 wiki ingest용 human-labeled calibration set과 최소 rubric을 설계한다.
+
+## [2026-06-11] ingest | Anthropic Claude Fable 5와 Mythos 5 공식 발표
+
+- 기존에 보존된 Anthropic 공식 HTML snapshot을 [[Anthropic Claude Fable 5 and Mythos 5 Announcement]]으로 독립 ingest했다.
+- [[Claude Fable 5]]에 Fable·Mythos의 safeguard 차이, 95% 이상 세션의 무폴백 주장, first-party·third-party 30일 보존, 2026년 6월 22일과 23일의 구독 전환 조건을 공식 근거로 보강했다.
+- [[Claude Code]], [[Agentic Workflow]], [[Human-in-the-loop]]에 요청 모델과 실제 응답 모델, persistent memory, classifier fallback, sensitivity, trusted access를 audit 대상으로 연결했다.
+- Benchmark, code migration, 과학 연구 성과는 Anthropic과 초기 파트너의 주장이고 독립 검증이 필요하다는 경계를 유지했다.
+- 변경 영역: [[Anthropic Claude Fable 5 and Mythos 5 Announcement]], [[Claude Fable 5]], [[Claude Code]], [[Agentic Workflow]], [[Human-in-the-loop]], [[GeekNews Claude Fable 5 and Mythos 5 Article]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Fable 5 System Card와 risk report를 별도 ingest해 classifier, alignment, misuse, data retention 근거를 상세 검증한다.
+
 ## [2026-06-11] ingest | OpenAI enterprise AI 운영 레이어 전략
 
 - OpenAI의 "The next phase of enterprise AI"를 web extraction snapshot으로 보존하고 [[OpenAI Next Phase of Enterprise AI Article]]로 ingest했다.

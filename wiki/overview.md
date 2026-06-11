@@ -19,6 +19,7 @@ related:
   - "[[Cross-functional 기술 문제 해결]]"
   - "[[하네스 엔지니어링]]"
   - "[[기업 AI 운영 레이어]]"
+  - "[[LLM-as-a-Judge]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -29,8 +30,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 70개
-- 개념 페이지: 40개
+- 자료 요약: 72개
+- 개념 페이지: 41개
 - 도구 페이지: 30개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -74,7 +75,7 @@ evidence_level: unsourced
 - [[SpaceX IPO 논쟁]]은 SEC S-1, Nasdaq/S&P/FTSE index rule, Starship/Starlink 기술 자료로 검증한다.
 - [[토스증권 Open API]]는 실제 사용 신청 조건, 약관, 주문 자동화 허용 범위, streaming/websocket 지원 시점을 별도 확인한다.
 - [[레버리지 ETF 변동성 끌림]]은 TQQQ/SOXL 등 레버리지 ETF의 공식 자료와 total return data로 검증한다.
-- [[Claude Fable 5]]는 System Card, 독립 장기 작업 평가, 30일 보존 세부 정책으로 보강한다.
+- [[Claude Fable 5]]는 System Card, risk report, 독립 장기 작업 평가, 30일 보존 세부 정책으로 보강한다.
 - [[구조화된 답변 프레임워크]]를 실제 query answer 또는 프로젝트 설명 1건에 적용해 형식이 내용보다 앞서는지 점검한다.
 - [[Humanize KR]]는 전역 설치 전에 read-only 탐지 evaluation과 installer dry-run으로 과잉 탐지, link 보존, 변경 범위를 확인한다.
 - [[TurboVec]]는 LLM Wiki 검색 실패 query set과 FTS5 baseline이 준비되기 전에는 설치하지 않고 hybrid retrieval 후보로만 유지한다.
@@ -83,6 +84,7 @@ evidence_level: unsourced
 - [[Cross-functional 기술 문제 해결]]의 문제·결정·owner·dependency·next action·done evidence 진단 형식을 정체된 작업 1개에 적용한다.
 - [[하네스 엔지니어링]] 관점에서 wiki ingest의 instruction, skill, script, artifact, lint 중 중복되거나 source of truth가 불명확한 규칙을 점검한다.
 - [[기업 AI 운영 레이어]] 관점에서 개인 workflow의 공통 context, permission, state, audit artifact를 최소 구성으로 정의한다.
+- [[LLM-as-a-Judge]] 원 논문과 후속 연구를 확인하고, wiki ingest용 최소 calibration set과 rubric을 설계한다.
 
 ## MVP 승격 후보
 
@@ -137,6 +139,7 @@ evidence_level: unsourced
 - [[하네스 엔지니어링]]
 - [[Kiro]]
 - [[기업 AI 운영 레이어]]
+- [[LLM-as-a-Judge]]
 
 ## 다음 행동
 
