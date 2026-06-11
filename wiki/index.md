@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - llm-wiki
   - index
@@ -56,6 +56,7 @@ evidence_level: unsourced
 - [[AI 실험 문화]]
 - [[Cross-functional 기술 문제 해결]]
 - [[하네스 엔지니어링]]
+- [[기업 AI 운영 레이어]]
 
 ## 프로젝트
 
@@ -208,6 +209,7 @@ evidence_level: unsourced
 - [[Toss Tech AI Surf Day Article]]
 - [[Toss Tech Cross Functional TPM Tip Article]]
 - [[Yanlog Kiro User Interview 003]]
+- [[OpenAI Next Phase of Enterprise AI Article]]
 
 ## 리포트
 

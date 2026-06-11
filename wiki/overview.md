@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - llm-wiki
   - overview
@@ -18,6 +18,7 @@ related:
   - "[[AI 실험 문화]]"
   - "[[Cross-functional 기술 문제 해결]]"
   - "[[하네스 엔지니어링]]"
+  - "[[기업 AI 운영 레이어]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -28,8 +29,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 69개
-- 개념 페이지: 39개
+- 자료 요약: 70개
+- 개념 페이지: 40개
 - 도구 페이지: 30개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -38,7 +39,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-10, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-11, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -81,6 +82,7 @@ evidence_level: unsourced
 - [[AI 실험 문화]]를 개인 운영체계에 적용할 월 1회 실험 시간과 artifact 기준을 정한다.
 - [[Cross-functional 기술 문제 해결]]의 문제·결정·owner·dependency·next action·done evidence 진단 형식을 정체된 작업 1개에 적용한다.
 - [[하네스 엔지니어링]] 관점에서 wiki ingest의 instruction, skill, script, artifact, lint 중 중복되거나 source of truth가 불명확한 규칙을 점검한다.
+- [[기업 AI 운영 레이어]] 관점에서 개인 workflow의 공통 context, permission, state, audit artifact를 최소 구성으로 정의한다.
 
 ## MVP 승격 후보
 
@@ -134,6 +136,7 @@ evidence_level: unsourced
 - [[Cross-functional 기술 문제 해결]]
 - [[하네스 엔지니어링]]
 - [[Kiro]]
+- [[기업 AI 운영 레이어]]
 
 ## 다음 행동
 

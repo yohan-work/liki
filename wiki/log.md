@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-11] ingest | OpenAI enterprise AI 운영 레이어 전략
+
+- OpenAI의 "The next phase of enterprise AI"를 web extraction snapshot으로 보존하고 [[OpenAI Next Phase of Enterprise AI Article]]로 ingest했다.
+- [[기업 AI 운영 레이어]] 개념 페이지를 추가해 company context, system integration, identity, permission, persistent state, governance, employee experience를 전사 agent 기반의 구성 요소로 정리했다.
+- [[Agentic Workflow]], [[Orchestration]], [[AI Literacy]], [[Frontier Systems]]에 개별 copilot에서 전사 agent deployment로 이동할 때 필요한 운영·역량·검증 관점을 연결했다.
+- OpenAI의 revenue, usage, growth, customer 사례는 자사 발표이며 독립 검증되지 않았다는 경계를 기록했다.
+- 변경 영역: [[OpenAI Next Phase of Enterprise AI Article]], [[기업 AI 운영 레이어]], [[Agentic Workflow]], [[Orchestration]], [[AI Literacy]], [[Frontier Systems]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: OpenAI Frontier와 Stateful Runtime Environment의 공식 제품 문서에서 architecture, availability, security, data governance, interoperability를 확인한다.
 
 ## [2026-06-10] ingest | Kiro 조직 도입과 하네스 엔지니어링
 
