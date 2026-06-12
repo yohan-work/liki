@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-11
+updated: 2026-06-12
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-12] ingest | FDE 도입 조건과 채용·스코프 관리
+
+- GeekNews의 "Forward Deployed Engineer(FDE) 채용을 위한 완벽 가이드"와 연결된 First Round 원문을 raw snapshot으로 보존하고 [[GeekNews First Round FDE Hiring Guide]]로 ingest했다.
+- [[Forward Deployed Engineer]]에 업마켓 전략, 비정형 ICP, 제품 방향의 유연성, unit economics를 중심으로 한 도입 판단과 고객 선택, 표준화, 스코프 중단 기준을 보강했다.
+- FDE를 implementation, CSM, sales를 합친 만능 직함으로 보지 않고, 프로덕션 코드와 현장 product discovery를 함께 책임지는 역할로 구분했다.
+- 800% 채용 증가, 기업별 성과, 초기 경력자 선호는 인터뷰와 2차 자료에 의존하므로 일반 규칙이나 확정 수치로 사용하지 않도록 검증 경계를 기록했다.
+- 변경 영역: [[GeekNews First Round FDE Hiring Guide]], [[Forward Deployed Engineer]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: FDE, product engineer, solutions engineer, implementation consultant의 책임과 경제성 차이를 비교 체크리스트로 정리한다.
 
 ## [2026-06-11] ingest | LLM-as-a-Judge 평가 방식과 편향
 

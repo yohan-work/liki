@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-11
+updated: 2026-06-12
 tags:
   - llm-wiki
   - overview
@@ -30,7 +30,7 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 72개
+- 자료 요약: 73개
 - 개념 페이지: 41개
 - 도구 페이지: 30개
 - 프로젝트 페이지: 2개
@@ -85,6 +85,7 @@ evidence_level: unsourced
 - [[하네스 엔지니어링]] 관점에서 wiki ingest의 instruction, skill, script, artifact, lint 중 중복되거나 source of truth가 불명확한 규칙을 점검한다.
 - [[기업 AI 운영 레이어]] 관점에서 개인 workflow의 공통 context, permission, state, audit artifact를 최소 구성으로 정의한다.
 - [[LLM-as-a-Judge]] 원 논문과 후속 연구를 확인하고, wiki ingest용 최소 calibration set과 rubric을 설계한다.
+- [[Forward Deployed Engineer]]를 product engineer, solutions engineer, implementation consultant와 구분하는 책임·경제성 체크리스트를 정리한다.
 
 ## MVP 승격 후보
 
@@ -140,6 +141,7 @@ evidence_level: unsourced
 - [[Kiro]]
 - [[기업 AI 운영 레이어]]
 - [[LLM-as-a-Judge]]
+- [[Forward Deployed Engineer]]
 
 ## 다음 행동
 

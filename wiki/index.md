@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-11
+updated: 2026-06-12
 tags:
   - llm-wiki
   - index
@@ -213,6 +213,7 @@ evidence_level: unsourced
 - [[OpenAI Next Phase of Enterprise AI Article]]
 - [[Anthropic Claude Fable 5 and Mythos 5 Announcement]]
 - [[Codingsmu LLM as a Judge Article]]
+- [[GeekNews First Round FDE Hiring Guide]]
 
 ## 리포트
 
