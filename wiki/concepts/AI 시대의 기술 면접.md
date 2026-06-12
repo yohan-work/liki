@@ -3,7 +3,7 @@ title: AI 시대의 기술 면접
 type: concept
 status: seed
 created: 2026-06-04
-updated: 2026-06-10
+updated: 2026-06-12
 tags:
   - ai-interviewing
   - hiring
@@ -14,6 +14,7 @@ related:
   - "[[Human-in-the-loop]]"
   - "[[구조화된 답변 프레임워크]]"
   - "[[JobConsulting Interview STAR and PREP Article]]"
+  - "[[JobKorea FDE Role and Interview Guide]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -37,6 +38,7 @@ LLM과 coding agent가 보편화되면 take-home, live coding, system design, co
 - 최소 하나의 면접은 AI plan, codebase, postmortem, product requirement, architecture tradeoff 같은 산출물을 검토하는 능력을 평가할 수 있다.
 - 후보자 준비 가이드를 명확히 제공하고, 질문이 leak될 것을 전제로 여러 질문을 운용하거나 오래된 질문을 archive해야 한다.
 - [[JobConsulting Interview STAR and PREP Article]]은 의견 질문에는 PREP, 행동 증거 질문에는 STAR를 사용하는 기본 답변 구조를 소개한다. 기술 면접에서는 답변의 형식적 명료함과 실제 문제 해결 능력을 분리해 평가하고, STAR의 Action과 Result에 대한 후속 질문으로 개인 기여와 evidence를 확인해야 한다.
+- [[JobKorea FDE Role and Interview Guide]]는 FDE 면접에서 기술 개념, 시스템 설계, 고객 시나리오, 라이브 코딩, 행동 경험을 함께 보고, 무엇을 만들었는지보다 문제 정의와 tradeoff의 근거를 확인한다고 설명한다. 고객 대면 AI 역할에서는 구현력과 비기술 이해관계자 설명 능력을 분리하지 않고 같은 사례에서 검증할 필요가 있다.
 
 ## 이 위키에서의 사용
 
@@ -46,6 +48,7 @@ LLM과 coding agent가 보편화되면 take-home, live coding, system design, co
 
 - [[Dein Interviewing in the Age of AI Article]]
 - [[JobConsulting Interview STAR and PREP Article]]
+- [[JobKorea FDE Role and Interview Guide]]
 
 ## 열린 질문
 

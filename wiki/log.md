@@ -15,6 +15,34 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-12] ingest | LLM 생성 파라미터와 검증 경계
+
+- pred0771의 Tistory 글 "LLM Parameters"를 raw HTML snapshot으로 보존하고 [[Pred0771 LLM Parameters Article]]로 ingest했다.
+- [[LLM 생성 파라미터]] 개념 페이지를 추가해 temperature, top-k, top-p, 반복 penalty, 출력 길이·종료, candidate와 logprobs를 기능별로 구분했다.
+- [[LLM Hallucination]]에 낮은 temperature가 사실성을 보장하거나 hallucination을 제거하지 않는다는 경계를 추가하고, [[LLM-as-a-Judge]]에는 sampling setting과 여러 run의 분산 기록 원칙을 보강했다.
+- 원문의 penalty 방향, max tokens와 context 관계, top-k 권장값, `Completion.create` 예시는 부정확하거나 오래됐으므로 현재 API 지침으로 재사용하지 않도록 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Pred0771 LLM Parameters Article]], [[LLM 생성 파라미터]], [[LLM Hallucination]], [[LLM-as-a-Judge]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 최신 OpenAI와 Hugging Face 공식 문서로 provider별 generation parameter 지원 범위와 수식을 확인한다.
+
+## [2026-06-12] ingest | AI 시대 B2B 제안과 과정 지식화
+
+- 클래미의 Brunch 글 "AI 시대 이기는 제안 - Claude Bloom"을 raw HTML snapshot으로 보존하고 [[Brunch AI Winning Proposal Claude Bloom Article]]로 ingest했다.
+- [[AI 시대의 제안]] 개념 페이지를 추가해 현장 발견, opportunity qualification, AI 지원 작성, human review, 발표, 과정 지식화를 하나의 workflow로 정리했다.
+- [[MEDDPICC]]에 경제적 가치, 숨은 니즈, 최종 의사결정자를 제안 작성 전에 확인하는 관점을 연결하고, [[AI 실험 문화]]에는 tool adoption이 사업 성장과 같지 않다는 반례를 보강했다.
+- [[LLM Wiki]]에 최종 결과물뿐 아니라 source, discovery, 판단, 수정, 실패를 process memory로 보존하는 목적을 추가했다.
+- 시장 규모, RFP 정보 비율, 입찰 성공 사례, 채용·발표 전망은 행사 발언을 재전달한 주장으로 독립 검증이 필요하다는 경계를 기록했다.
+- 변경 영역: [[Brunch AI Winning Proposal Claude Bloom Article]], [[AI 시대의 제안]], [[MEDDPICC]], [[AI 실험 문화]], [[LLM Wiki]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 개인 PoC 제안에 적용할 최소 discovery, qualification, human review checklist를 만든다.
+
+## [2026-06-12] ingest | 국내 FDE 공고와 면접 준비 가이드
+
+- 잡코리아의 "Forward Deployed Engineer (FDE)란? 역할부터 필요 역량, 면접 포인트까지 정리"를 raw HTML snapshot으로 보존하고 [[JobKorea FDE Role and Interview Guide]]로 ingest했다.
+- [[Forward Deployed Engineer]]에 구현 ownership, 제품팀 환류, 재사용 asset, presales·지원 role drift를 확인하는 채용공고 판별 기준을 추가했다.
+- [[AI 시대의 기술 면접]]과 [[구조화된 답변 프레임워크]]에 기술 개념, 고객 시나리오, 코딩, 행동 경험을 함께 평가하고 문제 정의·의사결정·결과·tradeoff로 경험을 설명하는 관점을 연결했다.
+- 95% AI pilot 실패, 공고 1,000건의 기술·경력 분포는 외부 분석 재인용이므로 원 자료 검증 전에는 확정 통계로 사용하지 않는다.
+- 변경 영역: [[JobKorea FDE Role and Interview Guide]], [[Forward Deployed Engineer]], [[AI 시대의 기술 면접]], [[구조화된 답변 프레임워크]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Bloomberry FDE 공고 분석 원문과 taxonomy를 확인하고 국내 공고 사례와 비교한다.
+
 ## [2026-06-12] ingest | FDE 도입 조건과 채용·스코프 관리
 
 - GeekNews의 "Forward Deployed Engineer(FDE) 채용을 위한 완벽 가이드"와 연결된 First Round 원문을 raw snapshot으로 보존하고 [[GeekNews First Round FDE Hiring Guide]]로 ingest했다.

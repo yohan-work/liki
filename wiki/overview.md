@@ -30,8 +30,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 73개
-- 개념 페이지: 41개
+- 자료 요약: 76개
+- 개념 페이지: 43개
 - 도구 페이지: 30개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -86,6 +86,9 @@ evidence_level: unsourced
 - [[기업 AI 운영 레이어]] 관점에서 개인 workflow의 공통 context, permission, state, audit artifact를 최소 구성으로 정의한다.
 - [[LLM-as-a-Judge]] 원 논문과 후속 연구를 확인하고, wiki ingest용 최소 calibration set과 rubric을 설계한다.
 - [[Forward Deployed Engineer]]를 product engineer, solutions engineer, implementation consultant와 구분하는 책임·경제성 체크리스트를 정리한다.
+- JobKorea가 재인용한 Bloomberry FDE 공고 1,000건 분석의 원문과 분류 기준을 확인한다.
+- [[AI 시대의 제안]]에서 개인 PoC용 최소 discovery·qualification·human review checklist를 만든다.
+- [[LLM 생성 파라미터]]를 최신 OpenAI·Hugging Face 공식 문서로 보강하고 task별 eval preset을 검토한다.
 
 ## MVP 승격 후보
 
@@ -142,6 +145,8 @@ evidence_level: unsourced
 - [[기업 AI 운영 레이어]]
 - [[LLM-as-a-Judge]]
 - [[Forward Deployed Engineer]]
+- [[AI 시대의 제안]]
+- [[LLM 생성 파라미터]]
 
 ## 다음 행동
 

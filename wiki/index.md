@@ -58,6 +58,8 @@ evidence_level: unsourced
 - [[하네스 엔지니어링]]
 - [[기업 AI 운영 레이어]]
 - [[LLM-as-a-Judge]]
+- [[AI 시대의 제안]]
+- [[LLM 생성 파라미터]]
 
 ## 프로젝트
 
@@ -214,6 +216,9 @@ evidence_level: unsourced
 - [[Anthropic Claude Fable 5 and Mythos 5 Announcement]]
 - [[Codingsmu LLM as a Judge Article]]
 - [[GeekNews First Round FDE Hiring Guide]]
+- [[JobKorea FDE Role and Interview Guide]]
+- [[Brunch AI Winning Proposal Claude Bloom Article]]
+- [[Pred0771 LLM Parameters Article]]
 
 ## 리포트
 

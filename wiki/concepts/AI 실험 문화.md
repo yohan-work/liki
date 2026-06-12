@@ -3,7 +3,7 @@ title: AI 실험 문화
 type: concept
 status: seed
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-12
 tags:
   - ai-culture
   - organizational-learning
@@ -15,6 +15,7 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Personal Operating System]]"
   - "[[Human-in-the-loop]]"
+  - "[[Brunch AI Winning Proposal Claude Bloom Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -40,6 +41,8 @@ AI 도구와 정보가 빠르게 늘어도 구성원에게 학습 시간, 질문
 7. 검증과 승인: 자동화 결과를 사람이 확인할 지점과 운영 workflow로 승격할 기준을 둔다.
 
 [[Toss Tech AI Surf Day Article]]은 이 요소를 매주 금요일의 보호된 실험 시간, 약 200개 자발적 클럽, 사례 공유 세션, 142명의 현업 에반젤리스트, 워크숍 지원으로 구현한 사례를 제시한다.
+
+[[Brunch AI Winning Proposal Claude Bloom Article]]은 전사 AI 도입과 보호된 실험 시간이 있어도 사업이 자동으로 성장하지는 않았다는 연사 경험을 전한다. 실험 문화의 성과는 AI skill과 tool adoption이 아니라 사업 workflow의 재설계, 고객 가치, 반복 사용, 실제 결과로 확인해야 한다.
 
 ## 기대 효과
 

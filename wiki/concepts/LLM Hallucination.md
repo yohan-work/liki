@@ -18,6 +18,8 @@ related:
   - "[[Open Network RAG HyDE Article]]"
   - "[[LLM-as-a-Judge]]"
   - "[[Codingsmu LLM as a Judge Article]]"
+  - "[[LLM 생성 파라미터]]"
+  - "[[Pred0771 LLM Parameters Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -58,6 +60,7 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - "모르겠다", "확인 필요", "사용자 승인 필요" 같은 응답 경로를 만들지 않는다.
 - 모델 성능 평가에서 정답률만 보고 거절 능력과 불확실성 calibration을 보지 않는다.
 - CoT나 자체 검증을 붙였다는 이유만으로 실제 외부 근거 검증을 생략한다.
+- Temperature를 낮추면 hallucination이 제거된다고 가정한다. 낮은 sampling 다양성은 잘못된 고확률 답변을 더 반복 가능하게 만들 수도 있다.
 - [[LLM-as-a-Judge]]가 자연스러운 평가 설명을 만들었다는 이유로 judge의 오판이나 candidate와 공유하는 오류를 놓친다.
 
 ## 관련 자료
@@ -73,6 +76,7 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - [[Human-in-the-loop]]: 고위험 판단에서 사람이 검토와 승인 역할을 맡는 운영 장치다.
 - [[Agentic Workflow]]: agent가 도구 사용, 검증, 중단, 사용자 확인을 반복하도록 설계하면 환각 완화에 도움을 줄 수 있다.
 - [[LLM-as-a-Judge]]: 생성물의 오류를 찾는 보조 evaluator가 될 수 있지만 judge 자체도 환각과 capability limitation을 가지므로 외부 근거 검증을 대체하지 못한다.
+- [[LLM 생성 파라미터]]: 출력 다양성, 반복, 길이를 조절하지만 모델의 지식과 사실성을 직접 교정하지 않는다.
 
 ## 예시
 

@@ -14,6 +14,7 @@ related:
   - "[[Human-in-the-loop]]"
   - "[[LLM Hallucination]]"
   - "[[Skills]]"
+  - "[[LLM 생성 파라미터]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -56,8 +57,9 @@ LLM-as-a-Judge는 LLM이 생성한 답변이나 작업 결과를 다른 LLM이 r
 3. pairwise 평가는 answer 순서를 바꿔 반복하고 순서에 따라 결과가 뒤집히는지 기록한다.
 4. 사실과 계산을 평가할 때는 가능한 한 trusted reference와 deterministic check를 함께 사용한다.
 5. judge model, prompt version, temperature, candidate 순서, reference version을 evaluation artifact에 남긴다.
-6. 작은 human-labeled set으로 judge의 일치도와 대표적인 불일치 유형을 먼저 확인한다.
-7. judge score는 자동 승인 근거가 아니라 test, lint, source check, human review와 결합하는 신호로 사용한다.
+6. 확률적 generation을 사용하는 경우 여러 run의 분산을 확인하고, candidate와 judge의 sampling setting을 구분해 기록한다.
+7. 작은 human-labeled set으로 judge의 일치도와 대표적인 불일치 유형을 먼저 확인한다.
+8. judge score는 자동 승인 근거가 아니라 test, lint, source check, human review와 결합하는 신호로 사용한다.
 
 ## Agent workflow 적용
 
