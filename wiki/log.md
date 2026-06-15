@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-13
+updated: 2026-06-15
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-15] ingest | Paul Graham의 스타트업 지수 성장과 사용자 욕구 발견
+
+- Paul Graham의 "How to Earn a Billion Dollars"를 raw HTML snapshot으로 보존하고 [[Paul Graham How to Earn a Billion Dollars]]로 ingest했다.
+- [[스타트업 지수 성장]] 개념 페이지를 추가해 성장률, 지속 기간, 시장 크기, 추천 행동의 관계와 단순 복리 모델의 한계를 정리했다.
+- [[아이디어 개선 루프]]에 직접 겪는 문제, 가까운 사용자, 흥미로운 프로젝트, 반복 사용과 추천을 아이디어 탐색·검증 신호로 보강했다.
+- YC 지원 회사와 억만장자 수, 익명 스타트업의 월 93% 성장, 월 15% 성장의 일반성, 매출 성장과 창업자 순자산의 동일시는 독립 검증이 필요하다는 경계를 기록했다.
+- 변경 영역: [[Paul Graham How to Earn a Billion Dollars]], [[스타트업 지수 성장]], [[아이디어 개선 루프]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 현재 아이디어 또는 MVP 1개에 성장률, retention, 추천, 절대 증가량을 함께 기록하는 최소 검증표를 적용한다.
 
 ## [2026-06-13] ingest | 미국 옥수수 수출 다변화와 글로벌 곡물 공급망
 

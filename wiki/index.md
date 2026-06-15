@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-13
+updated: 2026-06-15
 tags:
   - llm-wiki
   - index
@@ -61,6 +61,7 @@ evidence_level: unsourced
 - [[AI 시대의 제안]]
 - [[LLM 생성 파라미터]]
 - [[글로벌 곡물 공급망]]
+- [[스타트업 지수 성장]]
 
 ## 프로젝트
 
@@ -221,6 +222,7 @@ evidence_level: unsourced
 - [[Brunch AI Winning Proposal Claude Bloom Article]]
 - [[Pred0771 LLM Parameters Article]]
 - [[Brunch US Corn Export Diversification Article]]
+- [[Paul Graham How to Earn a Billion Dollars]]
 
 ## 리포트
 
