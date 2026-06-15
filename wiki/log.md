@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-12
+updated: 2026-06-13
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-13] ingest | 미국 옥수수 수출 다변화와 글로벌 곡물 공급망
+
+- Hoon의 Brunch 글 "중국이 멈췄을 때, 미국의 밭은 더 넓어졌다"를 raw HTML snapshot으로 보존하고 [[Brunch US Corn Export Diversification Article]]로 ingest했다.
+- [[글로벌 곡물 공급망]] 개념 페이지를 추가해 생산·재고·가격뿐 아니라 수요처 집중도, 경쟁 수출국, 계절성, 내륙 운송, 항만 처리 능력을 함께 보는 분석 기준을 정리했다.
+- 미국 옥수수 수출량과 목적지 비중, 중국의 대두 구매 중단, 경쟁국 공급 차질은 USDA와 원 보도로 재검증해야 하며, 미국의 소프트파워 복귀는 저자의 해석으로 분리했다.
+- 변경 영역: [[Brunch US Corn Export Diversification Article]], [[글로벌 곡물 공급망]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: USDA `Grain: World Markets and Trade` 2025년 11월판과 목적지별 수출 통계로 수치, marketing year, 전망치 여부를 확인한다.
 
 ## [2026-06-12] ingest | LLM 생성 파라미터와 검증 경계
 

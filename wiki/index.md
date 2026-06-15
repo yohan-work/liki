@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-12
+updated: 2026-06-13
 tags:
   - llm-wiki
   - index
@@ -60,6 +60,7 @@ evidence_level: unsourced
 - [[LLM-as-a-Judge]]
 - [[AI 시대의 제안]]
 - [[LLM 생성 파라미터]]
+- [[글로벌 곡물 공급망]]
 
 ## 프로젝트
 
@@ -219,6 +220,7 @@ evidence_level: unsourced
 - [[JobKorea FDE Role and Interview Guide]]
 - [[Brunch AI Winning Proposal Claude Bloom Article]]
 - [[Pred0771 LLM Parameters Article]]
+- [[Brunch US Corn Export Diversification Article]]
 
 ## 리포트
 
