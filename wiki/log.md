@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-15
+updated: 2026-06-16
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,25 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-16] ingest | SeedUp 창업지원사업 탐색 서비스와 MCP 배포 경로
+
+- GeekNews Show GN 글 "창업지원사업을 모두 찾을 수 있는 서비스를 만들어봤습니다."와 연결된 SeedUp 공고 목록 페이지를 raw snapshot으로 보존했다.
+- [[GeekNews SeedUp Show GN]]과 [[SeedUp Opportunities Page]] source summary를 추가하고, [[SeedUp]] 도구 페이지를 만들었다.
+- [[SeedUp]]을 창업지원사업 공고 탐색, AI 자격 분석, 앱인토스 PDF 보고서, PlayMCP 연결을 제공한다고 소개되는 vertical AI workflow 사례로 정리했다.
+- PlayMCP 550명 이상, 웹 가입자 250명 이상, 자격요건 분석 정확도는 작성자 주장 또는 미검증 기능으로 분리했다.
+- [[MCP Remote SSE]]에 MCP가 domain service 배포 채널로 쓰일 수 있다는 관점을 보강했다.
+- 변경 영역: [[GeekNews SeedUp Show GN]], [[SeedUp Opportunities Page]], [[SeedUp]], [[MCP Remote SSE]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: SeedUp의 PlayMCP tool schema, 인증 경계, 지원사업 원문 근거 표시, 데이터 갱신 주기를 확인한다.
+
+## [2026-06-16] ingest | PyTorchKR AI/ML 논문 레이더와 agent workflow 검증 경계
+
+- PyTorchKR Discuss의 "[2026/06/08 ~ 14] 이번 주에 살펴볼 만한 AI/ML 논문 모음"을 raw HTML snapshot으로 보존하고 [[PyTorchKR AI ML Papers 2026 06 08 14]]로 ingest했다.
+- Economy of Minds, Self-Harness, AutoForge, AutoScientists, LiveBrowseComp, AI reviewer 연구 등을 agent workflow, orchestration, 하네스 개선, LLM judge, 검색 agent 검증 관점의 원 논문 후보로 정리했다.
+- [[Agentic Workflow]], [[Orchestration]], [[하네스 엔지니어링]], [[LLM-as-a-Judge]], [[LLM Hallucination]]에 필요한 연결만 보강했다.
+- 이 자료는 2차 큐레이션이므로 개별 논문의 성능 수치와 benchmark 주장은 arXiv 원문과 공개 코드로 재검증해야 한다는 경계를 남겼다.
+- 변경 영역: [[PyTorchKR AI ML Papers 2026 06 08 14]], [[Agentic Workflow]], [[Orchestration]], [[하네스 엔지니어링]], [[LLM-as-a-Judge]], [[LLM Hallucination]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Economy of Minds, Self-Harness, LiveBrowseComp 원 논문을 우선 ingest해 agent 조율, 하네스 자가 개선, 검색 agent 평가 기준을 source-backed로 보강한다.
 
 ## [2026-06-15] ingest | Paul Graham의 스타트업 지수 성장과 사용자 욕구 발견
 

@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-15
+updated: 2026-06-16
 tags:
   - llm-wiki
   - overview
@@ -30,9 +30,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 78개
+- 자료 요약: 81개
 - 개념 페이지: 45개
-- 도구 페이지: 30개
+- 도구 페이지: 31개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
 - 기회 카드: 0개
@@ -40,7 +40,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-15, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-16, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -85,6 +85,8 @@ evidence_level: unsourced
 - [[하네스 엔지니어링]] 관점에서 wiki ingest의 instruction, skill, script, artifact, lint 중 중복되거나 source of truth가 불명확한 규칙을 점검한다.
 - [[기업 AI 운영 레이어]] 관점에서 개인 workflow의 공통 context, permission, state, audit artifact를 최소 구성으로 정의한다.
 - [[LLM-as-a-Judge]] 원 논문과 후속 연구를 확인하고, wiki ingest용 최소 calibration set과 rubric을 설계한다.
+- [[PyTorchKR AI ML Papers 2026 06 08 14]]에서 연결한 Economy of Minds, Self-Harness, LiveBrowseComp 원 논문을 우선 확인한다.
+- [[SeedUp]]의 PlayMCP tool schema와 자격요건 답변의 원문 근거 표시 방식을 확인한다.
 - [[Forward Deployed Engineer]]를 product engineer, solutions engineer, implementation consultant와 구분하는 책임·경제성 체크리스트를 정리한다.
 - JobKorea가 재인용한 Bloomberry FDE 공고 1,000건 분석의 원문과 분류 기준을 확인한다.
 - [[AI 시대의 제안]]에서 개인 PoC용 최소 discovery·qualification·human review checklist를 만든다.
@@ -150,6 +152,7 @@ evidence_level: unsourced
 - [[AI 시대의 제안]]
 - [[LLM 생성 파라미터]]
 - [[글로벌 곡물 공급망]]
+- [[SeedUp]]
 
 ## 다음 행동
 

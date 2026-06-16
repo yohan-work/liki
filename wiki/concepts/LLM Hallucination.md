@@ -20,6 +20,7 @@ related:
   - "[[Codingsmu LLM as a Judge Article]]"
   - "[[LLM 생성 파라미터]]"
   - "[[Pred0771 LLM Parameters Article]]"
+  - "[[PyTorchKR AI ML Papers 2026 06 08 14]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -62,12 +63,14 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - CoT나 자체 검증을 붙였다는 이유만으로 실제 외부 근거 검증을 생략한다.
 - Temperature를 낮추면 hallucination이 제거된다고 가정한다. 낮은 sampling 다양성은 잘못된 고확률 답변을 더 반복 가능하게 만들 수도 있다.
 - [[LLM-as-a-Judge]]가 자연스러운 평가 설명을 만들었다는 이유로 judge의 오판이나 candidate와 공유하는 오류를 놓친다.
+- 검색 agent가 웹 도구를 호출했다는 사실만 보고 최신 정보나 새로운 사실을 실제로 탐색했다고 가정한다. [[PyTorchKR AI ML Papers 2026 06 08 14]]가 소개한 `LiveBrowseComp`는 검색 agent가 모델 내부 사전 지식을 확인하는 방식으로도 겉보기 검색 성능을 낼 수 있다는 문제를 제기한다.
 
 ## 관련 자료
 
 - [[Hancom LLM Hallucination Reduction Research Article]]
 - [[Open Network RAG HyDE Article]]
 - [[Codingsmu LLM as a Judge Article]]
+- [[PyTorchKR AI ML Papers 2026 06 08 14]]
 
 ## 관련 개념과 차이
 
@@ -96,3 +99,4 @@ agent workflow에서는 환각을 단일 모델의 결함으로만 보지 않고
 - agent에게 "모르면 멈추기"를 어떤 prompt, test, harness rule로 강제할 수 있는가?
 - Hallucination Tax와 Knowledge Boundary를 별도 concept page로 분리할 만큼 반복 참조하게 될 것인가?
 - HyDE 같은 생성 기반 retrieval 보조 기법에서 중간 생성물의 오류를 어떻게 감지할 것인가?
+- 웹 검색 agent 평가에서 "source를 열었다"와 "모델이 모르던 사실을 찾아냈다"를 어떻게 구분할 것인가?

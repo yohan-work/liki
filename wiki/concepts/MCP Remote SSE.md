@@ -18,6 +18,8 @@ related:
   - "[[PyTorchKR E2E Test Agent Article]]"
   - "[[OSINT]]"
   - "[[OfficeKeeper OSINT Dictionary Article]]"
+  - "[[SeedUp]]"
+  - "[[GeekNews SeedUp Show GN]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -79,8 +81,11 @@ MCP Remote SSE는 개인 PoC보다 팀 단위 tool server, shared integration, r
 
 [[PyTorchKR E2E Test Agent Article]]은 MCP가 단순 정보 조회가 아니라 browser automation과 QA 실행 경계가 될 수 있음을 보여준다. 테스트 자동화에서는 read-only flow부터 시작하고 filesystem/API 확장은 별도 allowlist로 제한해야 한다.
 
+[[GeekNews SeedUp Show GN]]은 [[SeedUp]]이 PlayMCP를 통해 창업지원사업 탐색과 자격요건 질의 기능을 외부 client에 연결할 수 있다고 소개한다. 이 사례는 MCP가 개발 도구 연결뿐 아니라 vertical domain service의 배포 채널로도 쓰일 수 있음을 보여준다. 다만 글만으로는 transport, 인증, tool schema, rate limit이 확인되지 않는다.
+
 ## 열린 질문
 
 - Remote MCP server의 인증 방식은 어떤 패턴이 현재 가장 안정적인가?
 - 이 wiki의 agent/tool 실험에서 MCP server config template을 별도로 만들어야 하는가?
 - SSE 방식과 최신 MCP remote transport 권장 방식 사이에 차이가 생기면 contradiction note가 필요한가?
+- MCP marketplace나 directory를 통해 배포되는 domain tool은 어떤 인증, schema, 데이터 출처 표시를 최소 요구해야 하는가?

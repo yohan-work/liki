@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-15
+updated: 2026-06-16
 tags:
   - llm-wiki
   - index
@@ -129,6 +129,7 @@ evidence_level: unsourced
 - [[Humanize KR]]
 - [[TurboVec]]
 - [[Kiro]]
+- [[SeedUp]]
 
 ## 인물
 
@@ -223,6 +224,9 @@ evidence_level: unsourced
 - [[Pred0771 LLM Parameters Article]]
 - [[Brunch US Corn Export Diversification Article]]
 - [[Paul Graham How to Earn a Billion Dollars]]
+- [[PyTorchKR AI ML Papers 2026 06 08 14]]
+- [[GeekNews SeedUp Show GN]]
+- [[SeedUp Opportunities Page]]
 
 ## 리포트
 
