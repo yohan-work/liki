@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-16
+updated: 2026-06-17
 tags:
   - llm-wiki
   - index
@@ -62,6 +62,7 @@ evidence_level: unsourced
 - [[LLM 생성 파라미터]]
 - [[글로벌 곡물 공급망]]
 - [[스타트업 지수 성장]]
+- [[의도적 아웃리치]]
 
 ## 프로젝트
 
@@ -227,6 +228,7 @@ evidence_level: unsourced
 - [[PyTorchKR AI ML Papers 2026 06 08 14]]
 - [[GeekNews SeedUp Show GN]]
 - [[SeedUp Opportunities Page]]
+- [[Good Internet Why I Email Complete Strangers Article]]
 
 ## 리포트
 

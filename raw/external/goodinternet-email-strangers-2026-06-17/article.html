@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Why I email complete strangers</title>
+
+        
+    
+    <style>
+        :root {
+            --heading-family: 'Playfair Display', sans-serif;
+            --heading-weight-light: 300;
+            --heading-weight-normal: 400;
+            --heading-weight-medium: 500;
+            --heading-weight-bold: 700;
+            --heading-letter-spacing: -.02em;
+        }
+    </style>
+
+
+    
+    <style>
+    :root {
+        --body-family: 'DM Sans', sans-serif;
+            --body-weight-light: 300;
+            --body-weight-normal: 400;
+            --body-weight-medium: 500;
+            --body-weight-bold: 700;
+            --body-letter-spacing: -.02em;
+        }
+    </style>
+
+<link rel="preconnect" href="https://fonts.upset.dev">
+<link href="https://fonts.upset.dev/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <style>
+    :root {
+
+        /**
+         * Sizing.
+         */
+
+        --post-content-max-w: 760px;
+
+        --post-header-max-w: 1220px;
+        --post-header-title-max-w: 1100px;
+        --post-header-excerpt-max-w: 700px;
+        --post-header-image-max-w: 2400px;
+
+        /**
+         * Colors.
+         */
+
+        --theme-border-dark-color: rgb(0 0 0 / 100%);
+        --theme-border-dark-color-active: rgb(28 25 23 / 60%);
+        --accent-border-dark-color: rgb(28 25 23 / 100%);
+        --theme-cover-dark-color: rgb(28 25 23 / 3%);
+
+        --theme-border-light-color: rgb(248 250 252 / 60%);
+        --theme-border-light-color-active: rgb(250 250 249 / 100%);
+        --accent-border-light-color: rgb(250 250 249 / 100%);
+        --theme-cover-light-color: rgb(248 250 252 / 10%);
+
+            --heading-text-color: black;
+            --body-text-color: black;
+            --body-background-color: #eceadb;
+            --accent-color: #b17f2e;
+            --accent-text-color: #ffffff;
+
+            --theme-border-color: var(--theme-border-dark-color);
+            --theme-border-color-active: var(--theme-border-dark-color-active);
+            --accent-border-color: var(--accent-border-dark-color);
+            --theme-cover-color: var(--theme-cover-dark-color);
+        
+        /**
+         * Spacing
+         */
+
+        --spacing: 16px;
+        --spacing-1: calc( var(--spacing) * 0.24 );   /** 4px **/
+        --spacing-2: calc( var(--spacing) * 0.5 );   /** 8px **/
+        --spacing-3: calc( var(--spacing) * 0.75 );   /** 12px **/
+        --spacing-4: calc( var(--spacing) * 1 );   /** 16px **/
+        --spacing-5: calc( var(--spacing) * 1.5 );   /** 24px **/
+        --spacing-6: calc( var(--spacing) * 2 );   /** 32px **/
+        --spacing-7: calc( var(--spacing) * 3 );   /** 48px **/
+        --spacing-8: calc( var(--spacing) * 4 );   /** 64px **/
+        --spacing-9: calc( var(--spacing) * 6 );   /** 96px **/
+        --spacing-10: calc( var(--spacing) * 8 );   /** 128px **/
+        --spacing-11: calc( var(--spacing) * 12 );   /** 192px **/
+        --spacing-12: calc( var(--spacing) * 16 );   /** 256px **/
+        --spacing-13: calc( var(--spacing) * 24 );   /** 384px **/
+        --spacing-14: calc( var(--spacing) * 32 );   /** 512px **/
+        --spacing-15: calc( var(--spacing) * 40 );   /** 640px **/
+        --spacing-16: calc( var(--spacing) * 48 );   /** 768px **/
+
+        /**
+         * Border Radius
+         */
+
+        --border-radius: 3px;
+        --border-radius-1: calc( var(--border-radius) * 1 );   /** 3px **/
+        --border-radius-2: calc( var(--border-radius) * 2 );   /** 6px **/
+        --border-radius-3: calc( var(--border-radius) * 3 );   /** 9px **/
+
+        /**
+         * Global Font Size
+         */
+
+        --global-font-size-1: 12px;   /** Caption **/
+        --global-font-size-2: 14px;   /** Subtitle **/
+        --global-font-size-3: 16px;   /** Body Copy 1 **/
+        --global-font-size-4: 20px;   /** Body Copy 2 **/
+        --global-font-size-5: 22px;   /** Heading-6 **/
+        --global-font-size-6: 24px;   /** Heading-5 **/
+        --global-font-size-7: 32px;   /** Heading-4 **/
+        --global-font-size-8: 40px;   /** Heading-3 **/
+        --global-font-size-9: 48px;   /** Heading-2 **/
+        --global-font-size-10: 56px;   /** Heading-1 **/
+
+        /**
+         * Content Font Size
+         */
+
+        --content-font-size-1: 12px;   /** Caption **/
+        --content-font-size-2: 14px;   /** Subtitle **/
+        --content-font-size-3: 16px;   /** Body Copy 1 **/
+        --content-font-size-4: 18px;   /** Body Copy 2 **/
+        --content-font-size-5: 16px;   /** Heading-6 **/
+        --content-font-size-6: 18px;   /** Heading-5 **/
+        --content-font-size-7: 20px;   /** Heading-4 **/
+        --content-font-size-8: 24px;   /** Heading-3 **/
+        --content-font-size-9: 30px;   /** Heading-2 **/
+        --content-font-size-10: 38px;   /** Heading-1 **/
+    }
+
+    body.dark {
+
+        /**
+         * Colors.
+         */
+
+        --theme-border-color: var(--theme-border-light-color);
+        --theme-border-color-active: var(--theme-border-light-color-active);
+        --accent-border-color: var(--accent-border-light-color);
+        --theme-cover-color: var(--theme-cover-light-color);
+    }
+</style>
+<script type="text/javascript">
+    let themeSettings = {
+        "accentColor": "#b17f2e"
+    };
+</script>
+
+        <link rel="icon" href="https://www.goodinternetmagazine.com/content/images/size/w256h256/format/png/2026/06/favicon.svg" type="image/png">
+    <link rel="canonical" href="https://www.goodinternetmagazine.com/why-i-email-complete-strangers/">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <meta name="generator" content="Ghost 6.44">
+    <link rel="alternate" type="application/rss+xml" title="Good Internet" href="https://www.goodinternetmagazine.com/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.68/umd/portal.min.js" data-i18n="true" data-ghost="https://www.goodinternetmagazine.com/" data-key="5c109f2afca1e558ed1119734d" data-api="https://www.goodinternetmagazine.com/ghost/api/content/" data-locale="en" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style><script async src="https://js.stripe.com/v3/"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js" data-key="5c109f2afca1e558ed1119734d" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/main.css" data-sodo-search="https://www.goodinternetmagazine.com/" data-locale="en" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/announcement-bar@~1.1/umd/announcement-bar.min.js" data-announcement-bar="https://www.goodinternetmagazine.com/" data-api-url="https://www.goodinternetmagazine.com/members/api/announcement/" crossorigin="anonymous"></script>
+    <link href="https://www.goodinternetmagazine.com/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=ea03a27afc"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=ea03a27afc">
+    <script defer src="/public/comment-counts.min.js?v=ea03a27afc" data-ghost-comments-counts-api="https://www.goodinternetmagazine.com/members/api/comments/counts/"></script>
+    <script defer src="/public/member-attribution.min.js?v=ea03a27afc"></script>
+    <script defer src="/public/ghost-stats.min.js?v=ea03a27afc" data-stringify-payload="false" data-datasource="analytics_events" data-storage="localStorage" data-host="https://www.goodinternetmagazine.com/.ghost/analytics/api/v1/page_hit"  tb_site_uuid="a0f3339d-cf4d-4407-a8d8-929e62ab1959" tb_post_uuid="87b34186-6df9-4bc5-b296-c96dcc7ea039" tb_post_type="post" tb_member_uuid="undefined" tb_member_status="undefined"></script><style>:root {--ghost-accent-color: #b17f2e;}</style>
+    <script src="https://cdnapp.websitepolicies.net/widgets/cookies/63adlklq.js" defer></script>
+<style>
+  .ct-footer-socials { display: none !important; }
+</style>
+
+        <link rel="stylesheet" href="/assets/built/index.css?v=ea03a27afc" />
+        <script src="/assets/built/index.js?v=ea03a27afc" defer></script>
+    </head>
+    <body class="post-template tag-theory ">
+        
+<div id="ct-header">
+    <div class="ct-header-container">
+        <div class="ct-header-inner-left">
+            <span id="ct-mobile-nav-trigger" class="ct-nav-button">
+                <svg width="100%" height="100%" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H15M3 6H21M3 18H21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>            </span>
+        </div>
+
+        <div class="ct-header-logo-container">
+                <a href="https://www.goodinternetmagazine.com" class="ct-header-logo">
+        <img src="https://www.goodinternetmagazine.com/content/images/2026/06/logo.png" alt="Good Internet">
+    </a>
+        </div>
+
+        <div class="ct-header-inner-right">
+            <span data-ghost-search class="ct-search-button">
+                    <svg width="100%" height="100%" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.822 18.813 4.798 4.799c.262.248.61.388.972.388.772-.001 1.407-.637 1.407-1.409 0-.361-.139-.709-.387-.971l-4.799-4.797c3.132-4.108 2.822-10.005-.928-13.756l-.007-.007-.278-.278a.6985.6985 0 0 0-.13-.107C13.36-1.017 7.021-.888 3.066 3.067c-4.088 4.089-4.088 10.729 0 14.816 3.752 3.752 9.65 4.063 13.756.93Zm-.965-13.719c2.95 2.953 2.95 7.81 0 10.763-2.953 2.949-7.809 2.949-10.762 0-2.951-2.953-2.951-7.81 0-10.763 2.953-2.95 7.809-2.95 10.762 0Z"/></svg>
+            </span>
+
+                        <a href="/signin/" class="ct-btn-link">Sign In</a>
+                        <a href="/membership/" class="ct-btn" data-portal="subscribe">Subscribe</a>
+                        </div>
+    </div>
+    <div class="ct-nav-container">
+        <div class="ct-nav-inner">
+            
+    <nav id="ct-header-nav">
+        <ul class="ct-nav">
+                <li
+                    class="ct-nav-item nav-home "
+                    data-label="Home"
+                    data-length="4"
+                >
+                    <a href="https://www.goodinternetmagazine.com/">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li
+                    class="ct-nav-item nav-about-the-magazine "
+                    data-label="About the Magazine"
+                    data-length="18"
+                >
+                    <a href="https://www.goodinternetmagazine.com/about/">
+                        <span>About the Magazine</span>
+                    </a>
+                </li>
+                <li
+                    class="ct-nav-item nav-current-past-issues "
+                    data-label="Current &amp; Past Issues"
+                    data-length="21"
+                >
+                    <a href="https://www.goodinternetmagazine.com/issues/">
+                        <span>Current &amp; Past Issues</span>
+                    </a>
+                </li>
+                <li
+                    class="ct-nav-item nav-become-a-member "
+                    data-label="Become a Member"
+                    data-length="15"
+                >
+                    <a href="https://www.goodinternetmagazine.com/mem/">
+                        <span>Become a Member</span>
+                    </a>
+                </li>
+                <li
+                    class="ct-nav-item nav-contact "
+                    data-label="Contact"
+                    data-length="7"
+                >
+                    <a href="https://www.goodinternetmagazine.com/contact/">
+                        <span>Contact</span>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+
+    <nav id="ct-mobile-nav">
+        <div class="ct-mobile-nav-background-cover"></div>
+        <div class="ct-mobile-nav-main">
+            <div class="ct-close-btn">
+                <div class="ct-close-btn-inner"><svg width="100%" height="100%" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.997 10.846L1.369.219 1.363.214A.814.814 0 00.818.005.821.821 0 000 .822c0 .201.074.395.208.545l.006.006L10.842 12 .214 22.626l-.006.006a.822.822 0 00-.208.546c0 .447.37.817.818.817a.814.814 0 00.551-.215l10.628-10.627 10.628 10.628.005.005a.816.816 0 001.368-.603.816.816 0 00-.213-.552l-.006-.005L13.151 12l10.63-10.627c.003 0 .004-.003.006-.005A.82.82 0 0024 .817a.817.817 0 00-1.37-.602l-.004.004-10.63 10.627z"/></svg></div>
+            </div>
+            <ul class="ct-nav">
+                    <li class="ct-nav-item nav-home ">
+                        <a href="https://www.goodinternetmagazine.com/">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="ct-nav-item nav-about-the-magazine ">
+                        <a href="https://www.goodinternetmagazine.com/about/">
+                            <span>About the Magazine</span>
+                        </a>
+                    </li>
+                    <li class="ct-nav-item nav-current-past-issues ">
+                        <a href="https://www.goodinternetmagazine.com/issues/">
+                            <span>Current &amp; Past Issues</span>
+                        </a>
+                    </li>
+                    <li class="ct-nav-item nav-become-a-member ">
+                        <a href="https://www.goodinternetmagazine.com/mem/">
+                            <span>Become a Member</span>
+                        </a>
+                    </li>
+                    <li class="ct-nav-item nav-contact ">
+                        <a href="https://www.goodinternetmagazine.com/contact/">
+                            <span>Contact</span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+        </div>
+    </div>
+</div>
+
+    <div class="ct-post-main">
+
+            <div class="ct-sub-header ct-post-header-partial">
+        <div class="ct-sub-header-content ct-container">
+
+                    <div class="ct-post-tags">
+                            <a
+                                href="/tag/theory/"
+                                title="Theory"
+                                class="ct-tag-pill tag-6a2525cc47128b00019810c8 theory"
+                            >
+                                Theory
+                            </a>
+                    </div>
+
+            <h1 class="ct-post-title">
+                Why I email complete strangers
+            </h1>
+
+        </div>
+
+
+        <div class="ct-container-post-meta ct-border-top post-meta-no-image">
+                <div class="ct-global-meta ct-border-bottom">
+        <div class="ct-meta-item ct-datetime-meta-wrapper">
+            <time class="ct-datetime-meta" datetime="2026-02-06">
+                <span>February 6, 2026</span>
+            </time>
+        </div>
+        <div class="ct-meta-item ct-authors-meta-wrapper ct-border-left">
+                <div class="ct-authors-meta">
+                    <div class="ct-authors-meta-container">
+                    </div>
+                    <div class="author-names">
+                            <a href="/author/zachary-kai/">Zachary Kai</a>
+                    </div>
+                </div>
+        </div>
+        <div class="ct-meta-item ct-article-length ct-border-left">
+            <span class="body-medium">6 minutes read</span>
+        </div>
+    </div>
+        </div>
+    </div>
+
+            <div class="ct-post-container ct-container ct-centered">
+                <article class="ct-post-content">
+                    <p>The first time I emailed a stranger, I swear my cursor hovered over&nbsp;Send&nbsp;for a full five minutes.</p><p>I had plenty of justifiable reasons to remain hesitant. Not wanting to take up their time, feeling bothersome, worried my question was a silly one... A hundred disparate excuses leading back to the same core:&nbsp;"I’m not enough." That’s the forever curse of low self-esteem. The best and worst-case scenario can never occur, because you’ve rejected yourself first. Who knows how the other is going to respond?</p><p>That’s where the rub is, isn’t it? The terrifying unknown.</p><p>Yet, despite all the odds, I’ve moved through that suffocating fear. And you can do the same too. Allow me to explain.</p><p>Email is old. More established than the smartphone, the hyperlink, and even the beloved internet.</p><p>While Tim Berners-Lee was still only theorizing on what would later become the World Wide Web, programmers were already sending each other emails. Ray Tomlinson sent the first email from one computer to another in 1971, choosing the @ symbol to separate the sender from the host machine.</p><p>That was 54 years ago. And a few hours previous, as I write this in 2025? I continued what he started.</p><p>Email is an oft-cited example for demonstrating Lindy’s law:&nbsp;a theory positing that something’s future life expectancy is in proportion to its current age. The longer something lasts, the longer it’ll continue.</p><p>Social media platforms rise and fall like ancient empires sped up a thousand times. Yet email endures. Like the postal service or the printed book. Is it any coincidence these technologies remain my great loves? They share a quality I struggle to name. Perhaps it’s permanence in an ephemeral world. You can tuck a letter in a drawer, discovering it decades later. A book can outlive its author by centuries. One can archive, search, and treasure an email. They’re all vessels that honor my beloved words.</p><p>And in their longevity is their flexibility. You can read a book anywhere, anytime. You can send a letter to the farthest-flung corners of the earth imaginable. And you can email anyone.</p><p>Whoever you are, wherever you are, however you send and receive your emails, it’s there for you. And if you ever leave, you can take it all with you. Or change it over. Can the same be said for anything on a social media platform? Perhaps not. An email can be spam, sure, just as a letter can be junk, or a book unenjoyable.</p><p>The other thing I love about this communication method is it can be intentional, meaningful, hope-filled, and considerate. Or just kind. You can make a small difference with each one you send. Just like a smile.</p><p>I’ve been thinking about why it continues to feel special. Even though it’s an integral part of our age of instant everything, the way we treat it doesn’t have to operate on perpetual now’s terms.</p><p>You can choose to engage with it in human time, and so can the recipient: compose when you have something to say, respond when you have space to think.</p><p>This breathing room creates something rare: conversations that deepen rather than scatter. Unlike the terror-inducing typing indicators and read receipts of instant messaging, email lets thoughts linger. You can draft, reconsider, refine. It’s communication that honors people’s rhythms.</p><p>Over the past year, I’ve sent countless emails to writers, developers, bloggers, artists, thinkers, and poetic web folks. Not all replied — and why should I expect them to? — but so many did.</p><p>I’ve never experienced the slow death that is the commercial or corporate inbox, but for the first time in my life, I don’t dread my inbox. I look forward to opening it.</p><p>Each connection, no matter how fleeting, started with a simple email.</p><p>So, why do we hesitate?</p><p>There’s something vulnerable about sending missives out into the void, not knowing if you’ll be welcomed or ignored. We’ve been conditioned to think of unsolicited contact as unwelcome.</p><p>While much of it is…there’s a difference between spam and genuine effort.</p><p>There’s something to be said for respecting the other person’s time and attention.</p><p>Approaching someone when you’ve engaged with their work, when you have something specific and meaningful to share or ask…you’re not being intrusive. You’re being human.</p><p>The worst thing that can happen? They don’t reply. And it’s not that bad.</p><p>Their silence says nothing about your worth. They might be busy, taking a break from email, or not in a place where they can engage with new folk…who knows? And what does it matter?</p><p>Wait. Is that you asking for guidelines on navigating this hobby? (Even if you weren’t, I’m going to continue, because I still think you’ll find at least one thing useful!)</p><p>Here’s a list. Not rules, per se, but principles. Or mistakes I’ve made you’ll never have to.</p><ul><li>Don’t contact someone unless you’d want to consider them a friend.</li><li>If they have a place on the web, wander through it. See who they are, what makes them tick, any interests you have in common. Be specific. This shows you paid attention and you care.</li><li>Make it about them as much as it is about you. When interacting with folks in-person, being considered a&nbsp;"wonderful conversationalist" and a&nbsp;"fascinating person to talk to"&nbsp;often means you ask the most thoughtful questions, listen well, and latch onto the small details. Do so online, too.</li><li>Be brief, but don’t let brevity become bluntness. It’s a difficult balance to strike (if you’ve read my emails, you’ll know what I mean) but worth it. Don’t be like Blaise Pascal, who upon signing off a letter in the late 1600s, wrote:&nbsp;"I have made this longer than usual because I have not had time to make it shorter."</li><li>Don’t ask for anything (with caveats). Answers to relevant questions? Sure! An RSS feed link if they don’t have one? Great idea! An 88x31 button? Even better. Trading things? Why not? Still, I’d err on the side of avoiding anything professional or commercial, unless they welcome it. Do it for the love of it and expect nothing. You never know what might happen.</li><li>Patience and grace have always been underdeveloped yet needed attributes in any person. If you can embody those values, folks may say nothing, but they’ll appreciate it.</li><li>Subject lines matter more than you think. Skip the generic. Give them a reason to open it.</li></ul><p>And while that’s all fine, how do you go about finding folks to email? Let me offer several suggestions, current at the time of writing:</p><ul><li>My inbox, hi@zacharykai.net, is always open if you’d like an easy first attempt! (Upon writing this, I realize this entire article might come across as a complex way to source more interesting folks to converse with… but oh well! So be it.)</li><li><a href="https://sive.rs/?ref=goodinternetmagazine.com">Derek Sivers</a>, a fascinating person (and the main reason I have a website, go read Issue 1 if you’d like that story) has an open inbox if you’d like to introduce yourself.</li><li>The <a href="https://indieweb.org/?ref=goodinternetmagazine.com">Indieweb</a> and <a href="https://32bit.cafe/?ref=goodinternetmagazine.com">32-Bit Café</a> have links abundant to countless folks who enjoy making things online (and enjoy being contacted).</li><li>Manu Moreale runs an interview series called&nbsp;<a href="https://peopleandblogs.com/?ref=goodinternetmagazine.com">People &amp; Blogs</a>&nbsp;where he interviews folks who write on their site. Many have a public email for a reason!</li><li>Be deliberate on your internet wanderings and see who you stumble across.</li></ul><p>If you’re coming at this from the whirlwind that’s social media, don’t fret. Things are different, and it’ll take some getting used to, but that isn’t a bad thing.</p><p>What I didn’t expect when I started this practice: email feels different. Richer. Perhaps because they begin with intention rather than an algorithm. You chose each other, not because a platform suggested it, but because something resonated. These connections exist in a space we control.</p><p>Ava of&nbsp;<a href="https://blog.avas.space/?ref=goodinternetmagazine.com" rel="noreferrer">Ava’s Blog</a>&nbsp;published a post called&nbsp;"<a href="https://blog.avas.space/some-things-to-unlearn/?ref=goodinternetmagazine.com">some things to (un)learn</a>," where she discusses the norms social media places on us and how engaging with the poetic web has different expectations.</p><p>To my surprise and delight (part of which prompted this article), she addressed email: "Email is not old, outdated and too formal here, and you can write like you’d write a message. While people on social media felt overwhelmed and annoyed by DMs, people love receiving email here. You’re not annoying them."</p><p>I still get nervous before emailing new folks! Even after 168 (as of the time of writing) tries. Forever hesitating, that voice asking, "who are you to bother this person with your thoughts?"</p><p>And yet. The largest joys often start with the smallest gestures. In a networked but still disconnected world, being deliberate in your search for friends is ever more necessary.</p><p>We need more human connection, thoughtful conversation, and genuine curiosity.</p><p>Will email save us? No, and neither will it solve all our problems. But it’s there. Why not use it?</p><p>Find someone whose work moves you. Ask a question you want answered. Press send.</p><p>The worst that can happen? Silence.</p><p>The best that can happen? Everything.</p><hr><p><em>Zachary Kai is a queer writer and generalist who crafts science fiction about resilient souls among stars in between making zines and collecting skills. Australian-born, he writes with American spelling and British punctuation: a linguistic wanderer. The internet is his livelihood and lifeline, and he documents his existence at </em><a href="https://zacharykai.net/?ref=goodinternetmagazine.com" rel="noreferrer"><em>zacharykai.net</em></a><em>.</em></p>
+                </article>
+            </div>
+            <div class="ct-global-meta ct-border-top ct-border-bottom">
+    <div class="ct-meta-item ct-share-title">
+        Share this article
+    </div>
+    <div class="ct-meta-item ct-share-container ct-border-left">
+        <a href="https://twitter.com/intent/tweet?text=Why%20I%20email%20complete%20strangers&url=https://www.goodinternetmagazine.com/why-i-email-complete-strangers/" target="_blank" rel="noopener" aria-label="Share on Twitter">
+            <span><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" d="M-52.3,25.8l9.3,12.4l-9.3,10.1h2.1l8.2-8.8l6.6,8.8h7.1l-9.8-13.1l8.7-9.4h-2.1l-7.5,8.1l-6.1-8.1H-52.3z M-49.2,27.4h3.3l14.5,19.4h-3.3L-49.2,27.4z"/></g></svg>
+</span>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.goodinternetmagazine.com/why-i-email-complete-strangers/" target="_blank" rel="noopener" aria-label="Share on Facebook">
+            <span><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"/></svg></span>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&title=Why%20I%20email%20complete%20strangers&url=https://www.goodinternetmagazine.com/why-i-email-complete-strangers/" target="_blank" rel="noopener" aria-label="Share on Linkedin">
+            <span><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+        </a>
+    </div>
+    <div class="ct-meta-item ct-post-share-links ct-border-left">
+        <input type="text" title="https://www.goodinternetmagazine.com/why-i-email-complete-strangers/" value="https://www.goodinternetmagazine.com/why-i-email-complete-strangers/" id="copy-link" aria-label="Copy link input">
+        <a href="javascript:" class="ct-post-share-link" id="copy" data-clipboard-target="#copy-link" aria-label="Copy link">
+            <span><svg width="100%" height="100%" role="img" viewBox="0 0 33 24" xmlns="http://www.w3.org/2000/svg"><path d="M27.3999996,13.4004128 L21.7999996,13.4004128 L21.7999996,19 L18.9999996,19 L18.9999996,13.4004128 L13.3999996,13.4004128 L13.3999996,10.6006192 L18.9999996,10.6006192 L18.9999996,5 L21.7999996,5 L21.7999996,10.6006192 L27.3999996,10.6006192 L27.3999996,13.4004128 Z M12,20.87 C7.101,20.87 3.13,16.898 3.13,12 C3.13,7.102 7.101,3.13 12,3.13 C12.091,3.13 12.181,3.139 12.272,3.142 C9.866,5.336 8.347,8.487 8.347,12 C8.347,15.512 9.866,18.662 12.271,20.857 C12.18,20.859 12.091,20.87 12,20.87 Z M20.347,0 C18.882,0 17.484,0.276 16.186,0.756 C14.882,0.271 13.473,0 12,0 C5.372,0 0,5.373 0,12 C0,18.628 5.372,24 12,24 C13.471,24 14.878,23.726 16.181,23.242 C17.481,23.724 18.88,24 20.347,24 C26.975,24 32.347,18.628 32.347,12 C32.347,5.373 26.975,0 20.347,0 Z"/></svg></span>
+        </a>
+        <small class="ct-share-link-info ct-form-message">The link has been copied!</small>
+    </div>
+</div>
+
+
+        <div class="ct-comments-container ct-container ct-centered">
+                <div class="ct-comments-section">
+        <div class="comments-header">
+            <h3>Member comments</h3>
+            <div class="comments-container">
+                <script
+    data-ghost-comment-count="6a2525cd47128b0001981104"
+    data-ghost-comment-count-empty="0 comments"
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name=""
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </div>
+        </div>
+        
+        <script defer src="https://cdn.jsdelivr.net/ghost/comments-ui@~1.5/umd/comments-ui.min.js" data-locale="en" data-ghost-comments="https://www.goodinternetmagazine.com/" data-api="https://www.goodinternetmagazine.com/ghost/api/content/" data-admin="https://www.goodinternetmagazine.com/ghost/" data-key="5c109f2afca1e558ed1119734d" data-title="" data-count="false" data-post-id="6a2525cd47128b0001981104" data-color-scheme="auto" data-avatar-saturation="60" data-accent-color="#b17f2e" data-comments-enabled="paid" data-publication="Good Internet" crossorigin="anonymous"></script>
+    
+    </div>
+        </div>
+
+
+    </div>
+
+    <div
+        class="ct-footer-cta ct-border-top ct-border-bottom  ct-has-background ct-has-cover "
+        style="background-image: url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDd8fHdvcmxkJTIwd2lkZSUyMHdlYnxlbnwwfHx8fDE3NDI0OTEyNTF8MA&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000'); background-size: cover; background-position: center; background-repeat: no-repeat"
+    >
+        <div class="ct-footer-cta-inner">
+            <h4>Subscribe</h4>
+            <p>Sign up to our newsletter for the latest content</p>
+            <form data-members-form="subscribe" class="subscribe-form ct-compact-form ct-compact-form-lg">
+                <input data-members-email type="email" required="required" placeholder="Your email address" aria-label="Your email address">
+                <button type="submit" class="ct-btn">Sign Up</button>
+
+                <div class="ct-loading-message ct-form-message">Processing your application</div>
+                <div class="ct-success-message ct-form-message">Please check your inbox and click the link to confirm your subscription.</div>
+                <div data-members-error class="ct-error-message ct-form-message">There was an error sending the email</div>
+            </form>
+        </div>
+    </div>
+
+<footer id="ct-footer">
+    <div class="ct-footer-inner ct-container">
+        <div class="ct-footer-inner-two">
+            <div class="ct-footer-row-one">
+                <div class="ct-footer-about">
+                        <h4>Browse the good internet.</h4>
+                    <div class="ct-footer-socials">
+                            <a href="https://twitter.com/"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" d="M-52.3,25.8l9.3,12.4l-9.3,10.1h2.1l8.2-8.8l6.6,8.8h7.1l-9.8-13.1l8.7-9.4h-2.1l-7.5,8.1l-6.1-8.1H-52.3z M-49.2,27.4h3.3l14.5,19.4h-3.3L-49.2,27.4z"/></g></svg>
+</a>
+                            <a href="https://facebook.com/"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"/></svg></a>
+                    </div>
+                </div>
+                
+    <div id="ct-footer-nav">
+                    <ul class="ct-nav secondary-nav-column">
+                        <li class="ct-nav-item ">
+                            <a href="#/portal/" class="">
+                                Become a member
+                            </a>
+                        </li>
+                        <li class="ct-nav-item ">
+                            <a href="https://www.goodinternetmagazine.com/rss/" class="">
+                                RSS
+                            </a>
+                        </li>
+                        <li class="ct-nav-item ">
+                            <a href="https://app.websitepolicies.com/policies/view/5zi9q84l" class="">
+                                Terms and Conditions
+                            </a>
+                        </li>
+                        <li class="ct-nav-item ">
+                            <a href="https://app.websitepolicies.com/policies/view/4mms0xd0" class="">
+                                Cookie Policy
+                            </a>
+                        </li>
+                        <li class="ct-nav-item ">
+                            <a href="https://app.websitepolicies.com/policies/view/toautvb5" class="">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="ct-nav-item ">
+                            <a href="https://app.websitepolicies.com/policies/view/g291heku" class="">
+                                Disclaimer
+                            </a>
+                        </li>
+                        <li class="ct-nav-item ">
+                            <a href="https://www.goodinternetmagazine.com/writing-submission-agreement/" class="">
+                                Writing Submission Agreement
+                            </a>
+                        </li>
+                        <li class="ct-nav-item ">
+                            <a href="https://app.websitepolicies.com/dsar/view/63adlklq" class="">
+                                Data Subject Access Request Form
+                            </a>
+                        </li>
+                    </ul>
+    </div>
+
+
+
+            </div>
+            <div class="ct-footer-row-two">
+                <div class="ct-footer-copyright">
+                        &copy; 2025-2026 Good Internet.
+                </div>
+                <div class="ct-footer-back-to-top">
+                    <a href="#">
+                        Back to Top <span><svg width="100%" height="100%" role="img" viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+                <script>
+            /**
+             * Mobile Menu.
+             */
+            document.querySelectorAll('#ct-mobile-nav').forEach(element => document.body.appendChild( element ) );
+
+            document.querySelectorAll('#ct-mobile-nav-trigger').forEach(element => {
+                element.addEventListener("click", event => {
+                    document.body.classList.toggle('ct-mobile-nav-active');
+                    event.preventDefault();
+                });
+            });
+
+            document.querySelectorAll('#ct-mobile-nav .ct-close-btn, #ct-mobile-nav .ct-mobile-nav-background-cover').forEach(element => {
+                element.addEventListener("click", event => {
+                    document.body.classList.toggle('ct-mobile-nav-active');
+                    event.preventDefault();
+                });
+            });
+
+            /**
+             * Init Primary Navigation sub nav items
+             */
+            const navMenus = document.querySelectorAll('#ct-header-nav .ct-nav, #ct-mobile-nav .ct-nav');
+            navMenus.forEach((item, index) => {
+                const navItems = item.querySelectorAll('li');
+                const allNavItems = item.querySelectorAll('.ct-nav-subitem');
+
+                // Remove '-' signs
+                allNavItems.forEach(item => {
+                    const itemName = item.querySelector('a span')
+                    itemName.innerText = itemName.innerText.slice(1)
+                });
+
+                // Add subitems in place
+                let subMenu, hasItems
+                navItems.forEach((item, index) => {
+                    if (item.classList.contains('ct-nav-subitem') && !navItems[index - 1].classList.contains('ct-nav-subitem')) navItems[index - 1].classList.add('ct-nav-mainitem');
+                    subMenu = item.classList.contains('ct-nav-subitem') ? subMenu : document.createElement('ul');
+                    if (item.classList.contains('ct-nav-subitem')) {
+                        subMenu.appendChild(item)
+                        subMenu.classList.add('ct-nav','ct-submenu')
+                    } else {
+                        item.appendChild(subMenu)
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            /**
+             * Remove the # from footer nav headings
+             */
+
+            // Select all elements with the class .ct-secondary-nav-heading
+            const elements = document.querySelectorAll('.ct-secondary-nav-heading a');
+
+            // Loop through each element
+            elements.forEach(function(element) {
+                // Get the text content of the element
+                let text = element.textContent.trim();
+
+                // Check if the text starts with a '#'
+                if (text.startsWith('#')) {
+                    // Remove the first character '#' from the text
+                    text = text.substring(1);
+
+                    // Update the text content of the element
+                    element.textContent = text;
+                }
+            });
+        </script>
+
+        
+    </body>
+</html>

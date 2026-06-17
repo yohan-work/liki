@@ -3,7 +3,7 @@ title: Personal Operating System
 type: project
 status: active
 created: 2026-05-20
-updated: 2026-06-10
+updated: 2026-06-17
 tags:
   - personal-operating-system
   - project
@@ -28,6 +28,8 @@ related:
   - "[[Toss Tech Cross Functional TPM Tip Article]]"
   - "[[하네스 엔지니어링]]"
   - "[[Yanlog Kiro User Interview 003]]"
+  - "[[의도적 아웃리치]]"
+  - "[[Good Internet Why I Email Complete Strangers Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -58,6 +60,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[AI 실험 문화]] 관점에서 AI 학습과 탐색을 남는 시간에 맡기지 않고 정기적인 보호 시간에 실제 업무 문제 하나를 실험한다. 결과는 성공 데모보다 문제, 시도, 실패, 검증, 재사용 가능한 artifact로 남긴다.
 - [[Cross-functional 기술 문제 해결]] 관점에서 source, idea, MVP, decision, agent가 각각 관리되어도 실행이 이어지지 않으면 문제, 결정, owner, dependency, next action, done evidence를 다시 정의한다.
 - [[하네스 엔지니어링]] 관점에서 `AGENTS.md`, wiki skill, templates, scripts, index, log, lint를 분리된 문서가 아니라 작업 품질과 재개 가능성을 만드는 하나의 실행 환경으로 관리한다.
+- [[의도적 아웃리치]] 관점에서 좋은 source, 블로그, 도구, 프로젝트를 발견했을 때 지식 수집에서 멈추지 않고 작성자에게 구체적인 감사나 질문을 보낼지 검토한다. 이 루틴은 자동 발송이나 대량 네트워킹이 아니라 소수의 진짜 관심에 대한 human-in-the-loop follow-up으로 제한한다.
 
 ## 현재 운영 기준
 
@@ -93,6 +96,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[Toss Tech AI Surf Day Article]]
 - [[Toss Tech Cross Functional TPM Tip Article]]
 - [[Yanlog Kiro User Interview 003]]
+- [[Good Internet Why I Email Complete Strangers Article]]
 - [[llm-wiki-review-2026-05-29]]
 
 ## 열린 질문
@@ -107,3 +111,4 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - One-person frontier lab으로 볼 때 이 프로젝트가 매주 만들어야 하는 산출물은 무엇인가?
 - 보호된 AI 실험 시간을 어느 주기로 운영해야 탐색이 실행 queue를 잠식하지 않는가?
 - 정체된 실행 후보에서 owner 공백과 decision 공백을 구분하는 최소 진단 형식은 무엇인가?
+- source ingest 후 작성자에게 짧은 follow-up을 보낼 가치가 있는지 판단하는 최소 기준은 무엇인가?

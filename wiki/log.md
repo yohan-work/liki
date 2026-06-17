@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-16
+updated: 2026-06-17
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-17] ingest | 이메일 기반 의도적 아웃리치
+
+- Good Internet의 "Why I email complete strangers"를 raw HTML snapshot으로 보존하고 [[Good Internet Why I Email Complete Strangers Article]]로 ingest했다.
+- [[의도적 아웃리치]] 개념 페이지를 추가해 source ingest 이후 작성자에게 구체적인 감사나 질문을 보내는 느린 관계 형성 루틴으로 정리했다.
+- [[Personal Operating System]]에 지식 수집이 archive 안에서 끝나지 않도록 human-in-the-loop follow-up을 검토하는 관점을 연결했다.
+- 이메일의 역사, Lindy law 적용, 인디웹 커뮤니티의 이메일 수용성은 이 자료만으로 일반화하지 않고 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Good Internet Why I Email Complete Strangers Article]], [[의도적 아웃리치]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: LLM Wiki source summary에서 작성자에게 보낼 3문장 follow-up draft를 만들 조건과 금지할 ask를 정리한다.
 
 ## [2026-06-16] ingest | SeedUp 창업지원사업 탐색 서비스와 MCP 배포 경로
 
