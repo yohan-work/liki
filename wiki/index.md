@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-17
+updated: 2026-06-18
 tags:
   - llm-wiki
   - index
@@ -63,6 +63,7 @@ evidence_level: unsourced
 - [[글로벌 곡물 공급망]]
 - [[스타트업 지수 성장]]
 - [[의도적 아웃리치]]
+- [[AI-native Startup]]
 
 ## 프로젝트
 
@@ -229,6 +230,8 @@ evidence_level: unsourced
 - [[GeekNews SeedUp Show GN]]
 - [[SeedUp Opportunities Page]]
 - [[Good Internet Why I Email Complete Strangers Article]]
+- [[Claude Founders Playbook Blog]]
+- [[Claude Founders Playbook PDF]]
 
 ## 리포트
 

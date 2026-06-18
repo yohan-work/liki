@@ -3,7 +3,7 @@ title: Personal Operating System
 type: project
 status: active
 created: 2026-05-20
-updated: 2026-06-17
+updated: 2026-06-18
 tags:
   - personal-operating-system
   - project
@@ -30,6 +30,8 @@ related:
   - "[[Yanlog Kiro User Interview 003]]"
   - "[[의도적 아웃리치]]"
   - "[[Good Internet Why I Email Complete Strangers Article]]"
+  - "[[AI-native Startup]]"
+  - "[[Claude Founders Playbook PDF]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -61,6 +63,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[Cross-functional 기술 문제 해결]] 관점에서 source, idea, MVP, decision, agent가 각각 관리되어도 실행이 이어지지 않으면 문제, 결정, owner, dependency, next action, done evidence를 다시 정의한다.
 - [[하네스 엔지니어링]] 관점에서 `AGENTS.md`, wiki skill, templates, scripts, index, log, lint를 분리된 문서가 아니라 작업 품질과 재개 가능성을 만드는 하나의 실행 환경으로 관리한다.
 - [[의도적 아웃리치]] 관점에서 좋은 source, 블로그, 도구, 프로젝트를 발견했을 때 지식 수집에서 멈추지 않고 작성자에게 구체적인 감사나 질문을 보낼지 검토한다. 이 루틴은 자동 발송이나 대량 네트워킹이 아니라 소수의 진짜 관심에 대한 human-in-the-loop follow-up으로 제한한다.
+- [[AI-native Startup]] 관점에서 개인 PoC도 Idea, MVP, Launch, Scale을 그대로 복제하기보다 build 전 검증, MVP measurement, operational bottleneck, scope guardrail을 축소 적용한다. AI가 빠르게 만들어줄수록 "지금 만들 수 있음"과 "다음 stage로 넘어갈 근거가 있음"을 분리해야 한다.
 
 ## 현재 운영 기준
 
@@ -97,6 +100,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[Toss Tech Cross Functional TPM Tip Article]]
 - [[Yanlog Kiro User Interview 003]]
 - [[Good Internet Why I Email Complete Strangers Article]]
+- [[Claude Founders Playbook PDF]]
 - [[llm-wiki-review-2026-05-29]]
 
 ## 열린 질문

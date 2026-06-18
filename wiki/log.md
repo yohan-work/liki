@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-17
+updated: 2026-06-18
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-18] ingest | Claude founder playbook과 AI-native startup stage gate
+
+- Claude 공식 블로그 "The founder's playbook: Building an AI-native startup"과 연결 PDF eBook을 raw snapshot으로 보존하고 [[Claude Founders Playbook Blog]], [[Claude Founders Playbook PDF]]로 ingest했다.
+- [[AI-native Startup]] 개념 페이지를 추가해 Idea, MVP, Launch, Scale 단계별 exit criteria와 AI-era failure mode를 정리했다.
+- [[아이디어 개선 루프]], [[Agentic Workflow]], [[Claude Code]], [[Personal Operating System]]에 build friction이 낮아질수록 검증, scope, architecture context, security review, measurement framework를 먼저 둬야 한다는 관점을 연결했다.
+- 42% startup failure, Sean Ellis 40% PMF threshold, Claude Cowork와 Claude Code Security availability, 고객 사례 수치는 독립 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Claude Founders Playbook Blog]], [[Claude Founders Playbook PDF]], [[AI-native Startup]], [[아이디어 개선 루프]], [[Agentic Workflow]], [[Claude Code]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: [[AI 트렌드 레이더 7일 PoC]]에 Idea/MVP stage gate와 retention, referral, manual effort 감소 같은 PMF proxy를 적용한다.
 
 ## [2026-06-17] ingest | 이메일 기반 의도적 아웃리치
 

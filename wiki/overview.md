@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-17
+updated: 2026-06-18
 tags:
   - llm-wiki
   - overview
@@ -20,6 +20,7 @@ related:
   - "[[하네스 엔지니어링]]"
   - "[[기업 AI 운영 레이어]]"
   - "[[LLM-as-a-Judge]]"
+  - "[[AI-native Startup]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -30,8 +31,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 82개
-- 개념 페이지: 46개
+- 자료 요약: 84개
+- 개념 페이지: 47개
 - 도구 페이지: 31개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -40,7 +41,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-17, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-18, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -94,6 +95,7 @@ evidence_level: unsourced
 - [[LLM 생성 파라미터]]를 최신 OpenAI·Hugging Face 공식 문서로 보강하고 task별 eval preset을 검토한다.
 - [[글로벌 곡물 공급망]]은 USDA 2025년 11월판 원문과 목적지별 수출 통계로 수치, marketing year, 전망치 여부를 검증한다.
 - [[스타트업 지수 성장]]을 현재 아이디어 또는 MVP 1개에 적용해 성장률, retention, 추천, 절대 증가량을 함께 기록한다.
+- [[AI-native Startup]]의 Idea/MVP stage gate를 기존 아이디어 또는 MVP 1개에 적용해 build 전 검증 기준과 PMF proxy를 명시한다.
 
 ## MVP 승격 후보
 
@@ -155,6 +157,7 @@ evidence_level: unsourced
 - [[글로벌 곡물 공급망]]
 - [[SeedUp]]
 - [[의도적 아웃리치]]
+- [[AI-native Startup]]
 
 ## 다음 행동
 
