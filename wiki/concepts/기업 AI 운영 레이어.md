@@ -3,7 +3,7 @@ title: 기업 AI 운영 레이어
 type: concept
 status: active
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-06-19
 tags:
   - enterprise-ai
   - ai-operating-layer
@@ -17,6 +17,8 @@ related:
   - "[[Frontier Systems]]"
   - "[[Human-in-the-loop]]"
   - "[[하네스 엔지니어링]]"
+  - "[[Open Knowledge Format]]"
+  - "[[Google Cloud Open Knowledge Format Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -39,6 +41,7 @@ evidence_level: source-backed
 - 장기 작업을 위한 state, memory, prior work를 유지한다.
 - 실행, 변경, 오류, 비용, human approval을 관찰하고 audit한다.
 - 직원이 agent에 일을 위임하고 결과를 검토하는 공통 작업 화면을 제공한다.
+- 조직 지식을 특정 catalog나 vendor surface에만 두지 않고, agent와 사람이 함께 읽을 수 있는 portable knowledge artifact로 교환한다.
 
 ## 좋은 사용 사례
 
@@ -59,6 +62,7 @@ evidence_level: source-backed
 ## 관련 자료
 
 - [[OpenAI Next Phase of Enterprise AI Article]]
+- [[Google Cloud Open Knowledge Format Article]]
 
 ## 관련 개념과 차이
 
@@ -66,6 +70,7 @@ evidence_level: source-backed
 - [[Orchestration]]은 agent와 tool과 state를 조율하는 기능이다. 운영 레이어는 orchestration 외에도 employee experience, security, integration, ownership, adoption을 포함한다.
 - [[하네스 엔지니어링]]은 agent 성능과 재현성을 높이는 실행 환경 설계다. 기업 AI 운영 레이어는 이를 조직 전체의 system과 governance로 확장한 형태에 가깝다.
 - [[Human-in-the-loop]]은 운영 레이어 안에서 고위험 action과 예외를 통제하는 핵심 장치다.
+- [[Open Knowledge Format]]은 운영 레이어가 공유할 context를 Markdown/YAML bundle로 교환하는 knowledge artifact layer에 가깝다. Identity, permission, action approval, runtime state를 대체하지는 않는다.
 
 ## 예시
 
@@ -77,10 +82,12 @@ OpenAI는 `OpenAI Frontier`를 전사 agent의 intelligence layer로, ChatGPT와
 
 개인 AI workflow에도 축소 적용할 수 있다. LLM Wiki의 Markdown source of truth, repository instruction, skill, script, lint, log, approval boundary는 개인용 AI 운영 레이어의 구성 요소로 볼 수 있다.
 
+[[Google Cloud Open Knowledge Format Article]] 관점에서는 개인 LLM Wiki도 OKF-compatible export를 만들 수 있는 source of truth 후보가 된다. 다만 private page와 raw source provenance를 그대로 외부 bundle로 내보내면 민감 정보가 섞일 수 있으므로 export policy가 먼저 필요하다.
+
 ## 열린 질문
 
 - 기업 agent platform의 최소 공통 요소는 context, identity, permission, state, audit 중 어디까지인가?
 - Model provider, orchestration runtime, data layer, employee interface를 어떤 경계로 분리해야 교체 가능성을 유지할 수 있는가?
 - Agent 생산성을 측정할 때 처리량 외에 오류, 재작업, human review, exception cost를 어떻게 포함할 것인가?
 - 개인용 AI 운영 레이어에서 가장 먼저 통합할 진입점과 audit artifact는 무엇인가?
-
+- 조직 knowledge artifact를 교환할 때 OKF 같은 file format과 access control layer를 어디에서 분리할 것인가?

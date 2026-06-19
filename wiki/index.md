@@ -64,6 +64,7 @@ evidence_level: unsourced
 - [[스타트업 지수 성장]]
 - [[의도적 아웃리치]]
 - [[AI-native Startup]]
+- [[Open Knowledge Format]]
 
 ## 프로젝트
 
@@ -236,6 +237,7 @@ evidence_level: unsourced
 - [[Claude Founders Playbook PDF]]
 - [[Prefect Official Site]]
 - [[Tavily Official Site]]
+- [[Google Cloud Open Knowledge Format Article]]
 
 ## 리포트
 

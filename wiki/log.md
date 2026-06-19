@@ -15,6 +15,16 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-19] ingest | Open Knowledge Format과 LLM-wiki pattern의 표준화
+
+- Google Cloud 블로그 "Introducing the Open Knowledge Format"를 raw HTML snapshot으로 보존하고 [[Google Cloud Open Knowledge Format Article]]로 ingest했다.
+- [[Open Knowledge Format]] 개념 페이지를 추가해 Markdown file directory, YAML frontmatter, link graph, optional `index.md`와 `log.md`를 agent/human-readable knowledge exchange format으로 정리했다.
+- [[LLM Wiki]]에 현재 위키가 OKF와 유사한 file-first 구조를 쓰지만 private sensitivity와 source provenance field가 더 강하므로 내부 schema와 export schema를 분리해야 한다는 관점을 연결했다.
+- [[Agentic Workflow]], [[RAG]], [[기업 AI 운영 레이어]]에 OKF bundle을 agent context, RAG corpus, enterprise knowledge artifact layer로 보는 관점을 보강했다.
+- OKF v0.1 conformance criteria, reference implementation, sample bundle, Google Cloud Knowledge Catalog ingest 기능은 GitHub spec과 제품 문서로 검증해야 하는 주장으로 분리했다.
+- 변경 영역: [[Google Cloud Open Knowledge Format Article]], [[Open Knowledge Format]], [[LLM Wiki]], [[Agentic Workflow]], [[RAG]], [[기업 AI 운영 레이어]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: OKF GitHub spec과 sample bundle을 ingest해 현재 LLM Wiki frontmatter를 OKF v0.1로 export할 최소 mapping을 검토한다.
+
 ## [2026-06-19] ingest | Prefect와 Tavily의 agent infrastructure 포지션
 
 - Prefect 공식 홈페이지와 Tavily 공식 홈페이지를 raw HTML snapshot으로 보존하고 [[Prefect Official Site]], [[Tavily Official Site]]로 ingest했다.

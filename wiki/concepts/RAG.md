@@ -18,6 +18,8 @@ related:
   - "[[GitHub TurboVec Repository]]"
   - "[[Tavily]]"
   - "[[Tavily Official Site]]"
+  - "[[Open Knowledge Format]]"
+  - "[[Google Cloud Open Knowledge Format Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -41,6 +43,7 @@ RAG(retrieval-augmented generation)는 모델이 검색된 context를 사용해 
 - [[Open Network RAG HyDE Article]]은 사용자의 일상어 질문과 지식 베이스의 전문 용어 사이에 간극이 있을 때 일반 RAG 검색이 실패할 수 있다고 설명한다. [[HyDE]]는 질문을 바로 검색하지 않고 LLM이 만든 가상 답변을 임베딩해 검색하는 방식으로 이 간극을 줄이려는 query transformation 기법이다.
 - [[GitHub TurboVec Repository]]는 quantized local vector index, online ingest, allowlist 기반 filtered search를 제공한다고 설명한다. Metadata와 ACL은 SQL/FTS에서 좁히고 vector index는 candidate reranking을 맡는 hybrid retrieval 구조로 연결할 수 있다.
 - [[Tavily Official Site]]는 agent용 web retrieval에서 search, extraction, chunking, freshness, caching, indexing, validation을 하나의 API layer로 묶는 제품 사례다. Web RAG는 source URL뿐 아니라 추출 시점, content chunk, validation 결과를 함께 보존해야 신뢰할 수 있다.
+- [[Google Cloud Open Knowledge Format Article]]은 OKF bundle을 Markdown/YAML 기반의 portable knowledge corpus로 제시한다. 이는 RAG에서 chunking 전에 source identity, type, resource, timestamp, link graph를 보존하는 corpus design 문제와 연결된다.
 
 ## 관련 자료
 
@@ -48,6 +51,7 @@ RAG(retrieval-augmented generation)는 모델이 검색된 context를 사용해 
 - [[Open Network RAG HyDE Article]]
 - [[GitHub TurboVec Repository]]
 - [[Tavily Official Site]]
+- [[Google Cloud Open Knowledge Format Article]]
 
 ## 열린 질문
 
@@ -57,3 +61,4 @@ RAG(retrieval-augmented generation)는 모델이 검색된 context를 사용해 
 - HyDE, query rewriting, multi-query retrieval 중 LLM Wiki 검색에는 어떤 방식이 가장 비용 대비 효과가 좋은가?
 - LLM Wiki가 어떤 규모와 query failure에 도달해야 local vector index가 SQLite FTS5보다 가치가 커지는가?
 - 실시간 웹 검색 API를 wiki ingest에 붙일 때 raw snapshot과 source summary를 어떤 순서로 보존해야 하는가?
+- OKF bundle을 RAG corpus로 색인할 때 frontmatter, body, link graph, log를 각각 어떻게 ranking feature로 쓸 것인가?
