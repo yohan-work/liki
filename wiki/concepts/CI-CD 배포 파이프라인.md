@@ -3,7 +3,7 @@ title: CI/CD 배포 파이프라인
 type: concept
 status: seed
 created: 2026-06-02
-updated: 2026-06-04
+updated: 2026-06-19
 tags:
   - cicd
   - deployment
@@ -18,6 +18,8 @@ related:
   - "[[Agentic Workflow]]"
   - "[[Codex Sites]]"
   - "[[OpenAI Codex Sites Documentation]]"
+  - "[[Caddy]]"
+  - "[[Cowboysj Caddy Domainless HTTPS Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -57,11 +59,13 @@ CI/CD 배포 파이프라인은 code change를 trigger로 받아 build, test, ar
 - SSH key와 Personal Access Token 권한을 과하게 부여한다.
 - "배포 성공"을 파일 전송 성공으로만 보고 application health를 확인하지 않는다.
 - saved version review 없이 agent에게 production URL 배포와 access 확대를 한 번에 맡긴다.
+- Backend HTTPS, reverse proxy, CORS, Swagger/OpenAPI server URL을 배포 검증에서 제외하고 frontend/backend 통합 흐름을 놓친다.
 
 ## 관련 자료
 
 - [[Velog Jenkins GitHub NCP Deployment Article]]
 - [[OpenAI Codex Sites Documentation]]
+- [[Cowboysj Caddy Domainless HTTPS Article]]
 
 ## 관련 개념과 차이
 
@@ -71,10 +75,13 @@ CI/CD 배포 파이프라인은 code change를 trigger로 받아 build, test, ar
 - [[ML Model Serving Pipeline]]: model serving도 CI/CD와 마찬가지로 artifact version, deployment, monitoring, rollback boundary가 필요하다.
 - [[Agentic Workflow]]: agent가 build/deploy action을 수행할 때도 CI/CD처럼 trigger, approval, log, verification, rollback이 있어야 한다.
 - [[Codex Sites]]: Codex app 안에서 save version과 deploy version을 나누고, access mode와 runtime secret을 관리하는 hosted deployment workflow다.
+- [[Caddy]]: Backend server 앞에서 HTTPS termination과 reverse proxy를 담당할 수 있는 web server다.
 
 ## 내 관점 / 임시 결론
 
 개인 PoC에서는 CI/CD를 크게 시작할 필요가 없다. 하지만 최소한 trigger, build command, artifact path, deploy target, secret storage, verification command, rollback path는 문서화해야 한다. agent에게 배포를 맡길 경우 이 경계가 없으면 "작업 완료" 판단이 파일 수정이나 빌드 성공에 머물고 실제 운영 상태를 놓칠 수 있다.
+
+[[Cowboysj Caddy Domainless HTTPS Article]]은 작은 배포에서도 frontend hosting의 HTTPS requirement, backend reverse proxy, TLS certificate, public endpoint, CORS, Swagger URL이 함께 맞아야 실제 서비스 흐름이 열린다는 사례다.
 
 ## 열린 질문
 
@@ -82,3 +89,4 @@ CI/CD 배포 파이프라인은 code change를 trigger로 받아 build, test, ar
 - 배포 pipeline에 agent approval gate를 둔다면 어떤 command와 artifact를 확인해야 하는가?
 - NCP 기반 PoC에서 Docker image 배포와 jar SSH 배포 중 어느 쪽이 더 단순한가?
 - Sites 같은 agent-hosted deployment에서 saved version을 artifact candidate로 볼 수 있는가?
+- 개인 PoC 배포 완료 조건에 TLS certificate trust, reverse proxy route, CORS, API docs URL을 어떤 smoke test로 넣을 것인가?

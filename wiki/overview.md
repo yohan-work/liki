@@ -32,9 +32,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 87개
+- 자료 요약: 88개
 - 개념 페이지: 48개
-- 도구 페이지: 33개
+- 도구 페이지: 34개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
 - 기회 카드: 0개
@@ -100,6 +100,7 @@ evidence_level: unsourced
 - [[Prefect]]는 Horizon의 MCP gateway, registry, governance 기능을 공식 docs로 확인한다.
 - [[Tavily]]는 search/extract/crawl/research endpoint, pricing, prompt injection 방어, benchmark methodology를 공식 docs로 확인한다.
 - [[Open Knowledge Format]]은 GitHub spec, reference implementation, sample bundle을 별도 source로 확인하고 현재 LLM Wiki schema와 export mapping을 검토한다.
+- [[Caddy]]는 공식 문서로 `tls internal`, admin endpoint, 자동 HTTPS, systemd service, reverse proxy 보안 설정을 확인한다.
 
 ## MVP 승격 후보
 
@@ -165,6 +166,7 @@ evidence_level: unsourced
 - [[Prefect]]
 - [[Tavily]]
 - [[Open Knowledge Format]]
+- [[Caddy]]
 
 ## 다음 행동
 

@@ -135,6 +135,7 @@ evidence_level: unsourced
 - [[SeedUp]]
 - [[Prefect]]
 - [[Tavily]]
+- [[Caddy]]
 
 ## 인물
 
@@ -238,6 +239,7 @@ evidence_level: unsourced
 - [[Prefect Official Site]]
 - [[Tavily Official Site]]
 - [[Google Cloud Open Knowledge Format Article]]
+- [[Cowboysj Caddy Domainless HTTPS Article]]
 
 ## 리포트
 

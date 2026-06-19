@@ -3,7 +3,7 @@ title: Naver Cloud Platform
 type: tool
 status: seed
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-19
 tags:
   - cloud
   - ncp
@@ -14,6 +14,7 @@ related:
   - "[[Jenkins]]"
   - "[[Velog Jenkins GitHub NCP Deployment Article]]"
   - "[[ML Model Serving Pipeline]]"
+  - "[[Caddy]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -32,6 +33,7 @@ Naver Cloud Platform(NCP)은 서버, network, storage, managed service를 제공
 
 - VM 기반 server를 만들고 public IP, SSH 접근, security group/firewall을 설정할 수 있다.
 - Jenkins server와 app server를 분리하면 CI/CD runner와 application runtime의 역할을 나눌 수 있다.
+- App server 앞에 [[Caddy]] 같은 reverse proxy를 두면 HTTPS termination과 backend port forwarding을 분리할 수 있다.
 - 작은 PoC에서는 compact server 같은 낮은 spec으로 시작할 수 있지만, Jenkins는 build workload 때문에 최소 spec 검토가 필요하다.
 - cloud 비용, network exposure, OS image 지원 상태, backup, monitoring을 함께 고려해야 한다.
 
@@ -57,6 +59,7 @@ Naver Cloud Platform(NCP)은 서버, network, storage, managed service를 제공
 - [[CI/CD 배포 파이프라인]]: NCP는 pipeline artifact가 배포되는 runtime infrastructure가 될 수 있다.
 - [[Jenkins]]: NCP 위에 Jenkins server를 직접 띄워 self-hosted CI/CD를 구성할 수 있다.
 - [[ML Model Serving Pipeline]]: model serving PoC를 NCP VM에 올리는 경우에도 deploy, monitoring, rollback 경계가 필요하다.
+- [[Caddy]]: NCP VM에서도 EC2와 마찬가지로 HTTPS/reverse proxy layer 후보가 될 수 있다.
 
 ## 내 관점 / 임시 결론
 

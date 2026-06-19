@@ -15,6 +15,16 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-19] ingest | Caddy로 도메인 없이 HTTPS 설정하기
+
+- cowboysj의 Tistory 글 "Caddy로 도메인 없이 https 설정하기"를 raw HTML snapshot으로 보존하고 [[Cowboysj Caddy Domainless HTTPS Article]]로 ingest했다.
+- [[Caddy]] 도구 페이지를 추가해 HTTPS termination, reverse proxy, Caddyfile, systemd service, frontend/backend 통합 배포에서의 역할을 정리했다.
+- [[CI/CD 배포 파이프라인]]에 build/deploy뿐 아니라 TLS certificate, reverse proxy route, CORS, Swagger/OpenAPI server URL을 smoke test에 포함해야 한다는 관점을 보강했다.
+- [[OSINT]]와 [[Naver Cloud Platform]]에 public IP, 임시 hostname, open port, Caddy admin endpoint, TLS certificate 같은 PoC 외부 노출면 점검 관점을 연결했다.
+- 원문의 `tls internal`, `admin 0.0.0.0:2020`, `nip.io` 기반 hostname 구성은 공식 문서와 보안 경계 확인 전까지 일반 권장안으로 쓰지 않도록 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Cowboysj Caddy Domainless HTTPS Article]], [[Caddy]], [[CI/CD 배포 파이프라인]], [[OSINT]], [[Naver Cloud Platform]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Caddy 공식 문서로 automatic HTTPS, internal CA, admin API, reverse proxy, systemd unit, firewall best practice를 확인한다.
+
 ## [2026-06-19] ingest | Open Knowledge Format과 LLM-wiki pattern의 표준화
 
 - Google Cloud 블로그 "Introducing the Open Knowledge Format"를 raw HTML snapshot으로 보존하고 [[Google Cloud Open Knowledge Format Article]]로 ingest했다.
