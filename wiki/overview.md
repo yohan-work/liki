@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-18
+updated: 2026-06-19
 tags:
   - llm-wiki
   - overview
@@ -31,9 +31,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 84개
+- 자료 요약: 86개
 - 개념 페이지: 47개
-- 도구 페이지: 31개
+- 도구 페이지: 33개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
 - 기회 카드: 0개
@@ -41,7 +41,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-18, lint errors 0 / warnings 0
+- 최근 구조 점검: 2026-06-19, lint errors 0 / warnings 0
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -96,6 +96,8 @@ evidence_level: unsourced
 - [[글로벌 곡물 공급망]]은 USDA 2025년 11월판 원문과 목적지별 수출 통계로 수치, marketing year, 전망치 여부를 검증한다.
 - [[스타트업 지수 성장]]을 현재 아이디어 또는 MVP 1개에 적용해 성장률, retention, 추천, 절대 증가량을 함께 기록한다.
 - [[AI-native Startup]]의 Idea/MVP stage gate를 기존 아이디어 또는 MVP 1개에 적용해 build 전 검증 기준과 PMF proxy를 명시한다.
+- [[Prefect]]는 Horizon의 MCP gateway, registry, governance 기능을 공식 docs로 확인한다.
+- [[Tavily]]는 search/extract/crawl/research endpoint, pricing, prompt injection 방어, benchmark methodology를 공식 docs로 확인한다.
 
 ## MVP 승격 후보
 
@@ -158,6 +160,8 @@ evidence_level: unsourced
 - [[SeedUp]]
 - [[의도적 아웃리치]]
 - [[AI-native Startup]]
+- [[Prefect]]
+- [[Tavily]]
 
 ## 다음 행동
 

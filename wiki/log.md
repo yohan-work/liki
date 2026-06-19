@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-18
+updated: 2026-06-19
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,16 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-19] ingest | Prefect와 Tavily의 agent infrastructure 포지션
+
+- Prefect 공식 홈페이지와 Tavily 공식 홈페이지를 raw HTML snapshot으로 보존하고 [[Prefect Official Site]], [[Tavily Official Site]]로 ingest했다.
+- [[Prefect]] 도구 페이지를 추가해 Python workflow orchestration, Cloud, Horizon, MCP gateway/registry/governance를 agent workflow 운영 인프라 관점으로 정리했다.
+- [[Tavily]] 도구 페이지를 추가해 실시간 web search, extraction, crawl, research API를 agent용 web access layer와 RAG 구성 요소 후보로 정리했다.
+- [[Orchestration]], [[Agentic Workflow]], [[RAG]], [[LLM Hallucination]]에 production workflow, web retrieval evidence, source validation, prompt injection 방어 검증 관점을 연결했다.
+- Prefect의 stars/downloads/FastMCP adoption, Tavily의 developer 수/request 수/uptime/latency/benchmark claim은 provider self-report로 분리했다.
+- 변경 영역: [[Prefect Official Site]], [[Tavily Official Site]], [[Prefect]], [[Tavily]], [[Orchestration]], [[Agentic Workflow]], [[RAG]], [[LLM Hallucination]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Prefect Horizon docs와 Tavily API docs를 별도 source로 ingest해 실제 endpoint, auth, governance, pricing, eval methodology를 확인한다.
 
 ## [2026-06-18] ingest | Claude founder playbook과 AI-native startup stage gate
 

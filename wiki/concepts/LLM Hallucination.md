@@ -3,7 +3,7 @@ title: LLM Hallucination
 type: concept
 status: seed
 created: 2026-05-21
-updated: 2026-06-11
+updated: 2026-06-19
 tags:
   - llm
   - hallucination
@@ -21,6 +21,8 @@ related:
   - "[[LLM 생성 파라미터]]"
   - "[[Pred0771 LLM Parameters Article]]"
   - "[[PyTorchKR AI ML Papers 2026 06 08 14]]"
+  - "[[Tavily]]"
+  - "[[Tavily Official Site]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -64,6 +66,7 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - Temperature를 낮추면 hallucination이 제거된다고 가정한다. 낮은 sampling 다양성은 잘못된 고확률 답변을 더 반복 가능하게 만들 수도 있다.
 - [[LLM-as-a-Judge]]가 자연스러운 평가 설명을 만들었다는 이유로 judge의 오판이나 candidate와 공유하는 오류를 놓친다.
 - 검색 agent가 웹 도구를 호출했다는 사실만 보고 최신 정보나 새로운 사실을 실제로 탐색했다고 가정한다. [[PyTorchKR AI ML Papers 2026 06 08 14]]가 소개한 `LiveBrowseComp`는 검색 agent가 모델 내부 사전 지식을 확인하는 방식으로도 겉보기 검색 성능을 낼 수 있다는 문제를 제기한다.
+- Web access API가 safety validation을 제공한다는 이유만으로 source 품질, prompt injection, PII leakage, stale page 문제를 별도 검증하지 않는다.
 
 ## 관련 자료
 
@@ -71,6 +74,7 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - [[Open Network RAG HyDE Article]]
 - [[Codingsmu LLM as a Judge Article]]
 - [[PyTorchKR AI ML Papers 2026 06 08 14]]
+- [[Tavily Official Site]]
 
 ## 관련 개념과 차이
 
@@ -80,6 +84,7 @@ LLM Hallucination은 모델이 사실과 맞지 않지만 그럴듯하고 확신
 - [[Agentic Workflow]]: agent가 도구 사용, 검증, 중단, 사용자 확인을 반복하도록 설계하면 환각 완화에 도움을 줄 수 있다.
 - [[LLM-as-a-Judge]]: 생성물의 오류를 찾는 보조 evaluator가 될 수 있지만 judge 자체도 환각과 capability limitation을 가지므로 외부 근거 검증을 대체하지 못한다.
 - [[LLM 생성 파라미터]]: 출력 다양성, 반복, 길이를 조절하지만 모델의 지식과 사실성을 직접 교정하지 않는다.
+- [[Tavily]]: fresh web context를 제공할 수 있는 retrieval 도구지만, 검색 결과와 추출 content 자체도 오류나 공격 payload를 포함할 수 있으므로 검증을 대체하지 못한다.
 
 ## 예시
 
@@ -100,3 +105,4 @@ agent workflow에서는 환각을 단일 모델의 결함으로만 보지 않고
 - Hallucination Tax와 Knowledge Boundary를 별도 concept page로 분리할 만큼 반복 참조하게 될 것인가?
 - HyDE 같은 생성 기반 retrieval 보조 기법에서 중간 생성물의 오류를 어떻게 감지할 것인가?
 - 웹 검색 agent 평가에서 "source를 열었다"와 "모델이 모르던 사실을 찾아냈다"를 어떻게 구분할 것인가?
+- Web access API의 prompt injection 방어를 내 harness에서 어떤 adversarial source로 재검증할 것인가?

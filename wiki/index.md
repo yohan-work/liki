@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-18
+updated: 2026-06-19
 tags:
   - llm-wiki
   - index
@@ -132,6 +132,8 @@ evidence_level: unsourced
 - [[TurboVec]]
 - [[Kiro]]
 - [[SeedUp]]
+- [[Prefect]]
+- [[Tavily]]
 
 ## 인물
 
@@ -232,6 +234,8 @@ evidence_level: unsourced
 - [[Good Internet Why I Email Complete Strangers Article]]
 - [[Claude Founders Playbook Blog]]
 - [[Claude Founders Playbook PDF]]
+- [[Prefect Official Site]]
+- [[Tavily Official Site]]
 
 ## 리포트
 
