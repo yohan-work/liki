@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-19
+updated: 2026-06-20
 tags:
   - llm-wiki
   - index
@@ -65,6 +65,7 @@ evidence_level: unsourced
 - [[의도적 아웃리치]]
 - [[AI-native Startup]]
 - [[Open Knowledge Format]]
+- [[공익적 상호운용성]]
 
 ## 프로젝트
 
@@ -240,6 +241,7 @@ evidence_level: unsourced
 - [[Tavily Official Site]]
 - [[Google Cloud Open Knowledge Format Article]]
 - [[Cowboysj Caddy Domainless HTTPS Article]]
+- [[KrIGF 공익적 상호운용성 세션 제안]]
 
 ## 리포트
 

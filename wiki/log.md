@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-19
+updated: 2026-06-20
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-20] ingest | 공익적 상호운용성과 사전 법적 확신 메커니즘
+
+- 2026 KrIGF 세션 제안서 "공익적 상호운영성을 위한 사전 법적 확신 메커니즘"을 raw HTML snapshot으로 보존하고 [[KrIGF 공익적 상호운용성 세션 제안]]으로 ingest했다.
+- [[공익적 상호운용성]] 개념 페이지를 추가해 공공 문서 포맷, 메트릭 호환 폰트, AI 생성 공문서에서 공익·호환성·권리·책임이 만나는 경계를 정리했다.
+- 미국 SEC No-Action Letter 유사 제도는 세션의 토론 제안이지 확정된 국내 제도나 KrIGF 공식 입장이 아님을 명시했다.
+- rHWP 기능 중단, Polaris MCFG의 EULA·저작권 쟁점, AI 생성 문서 책임은 프로젝트 원자료와 국내 법제로 재검증할 주장으로 분리했다.
+- 변경 영역: [[KrIGF 공익적 상호운용성 세션 제안]], [[공익적 상호운용성]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: rHWP·Polaris MCFG 원자료와 KrIGF 세션 결과 보고서를 확인해 제안 단계 주장과 실제 합의·법적 근거를 분리한다.
 
 ## [2026-06-19] ingest | Caddy로 도메인 없이 HTTPS 설정하기
 
