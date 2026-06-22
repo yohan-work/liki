@@ -3,7 +3,7 @@ title: Ponytail
 type: tool
 status: seed
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-06-23
 tags:
   - ponytail
   - coding-agent
@@ -12,6 +12,7 @@ tags:
   - code-review
 related:
   - "[[GitHub Ponytail Repository]]"
+  - "[[GeekNews Ponytail Article]]"
   - "[[Skills]]"
   - "[[Codex]]"
   - "[[Claude Code]]"
@@ -66,9 +67,12 @@ Ponytail은 coding agent가 과잉 구현을 피하고 요구사항을 만족하
 
 Ponytail의 가치 있는 부분은 "짧게 작성하라"가 아니라 구현 선택 순서를 명시하고 안전 경계를 최소화 대상에서 제외한 점이다. 현재는 `status: seed`로 유지한다. 전역 plugin 설치보다 repository-local instruction 또는 read-only diff review로 시작하고, 동일한 작은 task set에서 기본 agent와 요구사항 충족률·test·dependency 변화·LOC·rework를 함께 비교하는 것이 적절하다.
 
+[[GeekNews Ponytail Article]]의 댓글에는 짧은 YAGNI 지시만으로도 유사한 결과가 나왔다는 출처 불명의 실험 언급이 있다. 이를 사실로 채택하지는 않지만, Ponytail의 추가 효과를 측정할 때 `기본 agent`, `YAGNI-only instruction`, `review-only`, `full plugin`을 분리해야 한다는 실험 설계 신호로 사용한다.
+
 ## 관련 자료
 
 - [[GitHub Ponytail Repository]]
+- [[GeekNews Ponytail Article]]
 
 ## 열린 질문
 

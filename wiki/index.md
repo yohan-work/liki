@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-22
+updated: 2026-06-23
 tags:
   - llm-wiki
   - index
@@ -159,6 +159,7 @@ evidence_level: unsourced
 
 ## 자료
 
+- [[GeekNews Ponytail Article]]
 - [[Velog 자바스크립트의 진짜 새로운 변화 번역글]]
 - [[TC39 Finished Proposals]]
 - [[GitHub Ponytail Repository]]

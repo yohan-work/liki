@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-22
+updated: 2026-06-23
 tags:
   - llm-wiki
   - overview
@@ -33,7 +33,7 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 100개
+- 자료 요약: 101개
 - 개념 페이지: 51개
 - 도구 페이지: 38개
 - 프로젝트 페이지: 2개
@@ -43,7 +43,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-22, lint errors 0 / warnings 3
+- 최근 구조 점검: 2026-06-23, lint errors 0 / warnings 3
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 

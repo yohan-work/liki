@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-22
+updated: 2026-06-23
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-23] ingest | GeekNews Ponytail 소개 글
+
+- GeekNews의 Ponytail 소개 글을 raw Markdown snapshot으로 보존하고 [[GeekNews Ponytail Article]]로 ingest했다.
+- 공식 repository와 [[Ponytail]] 도구 페이지가 이미 있어 새 개념을 만들지 않고, GeekNews 요약과 댓글의 community signal만 기존 페이지에 연결했다.
+- 댓글의 "YAGNI 지시만으로 유사한 결과" 언급은 원 영상과 실험 조건이 없는 검증 필요 주장으로 분리하고, 기본 agent·YAGNI-only·review-only·full plugin 비교 실험 가설로만 사용했다.
+- 변경 영역: [[GeekNews Ponytail Article]], [[Ponytail]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 작은 coding task 3개에서 기본 agent, YAGNI-only instruction, Ponytail review-only, full plugin을 correctness·test·dependency·LOC·rework 기준으로 비교한다.
 
 ## [2026-06-22] ingest | ECMAScript 2025·2026 변화와 coding agent 지식 갱신
 
