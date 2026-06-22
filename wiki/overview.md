@@ -33,8 +33,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 98개
-- 개념 페이지: 50개
+- 자료 요약: 100개
+- 개념 페이지: 51개
 - 도구 페이지: 38개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -107,6 +107,7 @@ evidence_level: unsourced
 - [[TimesFM]]은 주문 signal과 분리된 read-only benchmark에서 seasonal naive·statistical baseline, walk-forward error, quantile calibration을 먼저 검증한다.
 - [[DESIGN.md]]를 기존 PoC 하나에 적용해 visual consistency, 수정 횟수, responsive·accessibility 검증 기준이 실제로 개선되는지 확인한다.
 - [[Ponytail]]은 전역 plugin 설치 전에 repository-local instruction 또는 read-only diff review로 기본 agent와 correctness·test·dependency·LOC·rework를 비교한다.
+- [[ECMAScript 표준화와 연간 업데이트]]는 target browser·Node version을 정한 뒤 ES2025·ES2026 API adoption 표를 만든다.
 
 ## MVP 승격 후보
 
@@ -179,6 +180,7 @@ evidence_level: unsourced
 - [[DESIGN.md]]
 - [[getdesign.md]]
 - [[Ponytail]]
+- [[ECMAScript 표준화와 연간 업데이트]]
 
 ## 다음 행동
 

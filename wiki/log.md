@@ -15,6 +15,15 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-22] ingest | ECMAScript 2025·2026 변화와 coding agent 지식 갱신
+
+- Velog 번역글, Neciu Dan 영어 원문, TC39 공식 finished proposals를 raw snapshot으로 보존하고 [[Velog 자바스크립트의 진짜 새로운 변화 번역글]], [[TC39 Finished Proposals]]로 ingest했다.
+- proposal stage, finished proposal, expected publication year, ECMA 비준, engine 구현, project adoption을 구분하는 [[ECMAScript 표준화와 연간 업데이트]] 개념 페이지를 추가했다.
+- [[Skills]]에 빠르게 변하는 언어 지식을 넣을 때 source, 확인일, target runtime, compatibility fallback을 함께 관리해야 한다는 기준을 연결했다.
+- "지금 바로 사용 가능"과 AI 모델의 오래된 코드 생성 원인 주장은 runtime·모델별 검증이 필요한 practitioner claim으로 분리했다.
+- 변경 영역: [[Velog 자바스크립트의 진짜 새로운 변화 번역글]], [[TC39 Finished Proposals]], [[ECMAScript 표준화와 연간 업데이트]], [[Skills]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 개인 프로젝트의 target browser와 Node version을 정하고 ES2025·ES2026 기능 adoption 표를 작성한다.
+
 ## [2026-06-22] ingest | GitHub Ponytail 저장소
 
 - `DietrichGebert/ponytail`의 README, repository metadata, license, agentic benchmark를 raw snapshot으로 보존하고 [[GitHub Ponytail Repository]]로 ingest했다.
