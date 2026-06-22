@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-20
+updated: 2026-06-22
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-22] ingest | Mailpit 이메일 통합 테스트 도구
+
+- GeekNews의 "Mailpit - 개발자를 위한 이메일 테스팅 도구"와 연결된 공식 GitHub README를 raw snapshot으로 보존하고 [[GeekNews Mailpit Article]], [[GitHub Mailpit Repository]]로 ingest했다.
+- [[Mailpit]] 도구 페이지를 추가해 SMTP capture, web UI, REST API, HTML·link·spam 검사, Chaos 기반 SMTP 오류 simulation을 개발·CI 이메일 테스트 관점에서 정리했다.
+- [[CI/CD 배포 파이프라인]]에 recipient, subject, body link, token expiry, one-time use를 검사하는 이메일 end-to-end test와 test SMTP 격리 경계를 보강했다.
+- GeekNews의 2023년 처리량 수치와 2026년 공식 README 수치가 달라 고정 성능 주장으로 재사용하지 않도록 분리했다.
+- 변경 영역: [[GeekNews Mailpit Article]], [[GitHub Mailpit Repository]], [[Mailpit]], [[CI/CD 배포 파이프라인]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 실제 PoC 이메일 flow 하나에 Mailpit API assertion과 외부 발송 방지 구성을 적용한다.
 
 ## [2026-06-20] ingest | 공익적 상호운용성과 사전 법적 확신 메커니즘
 

@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-20
+updated: 2026-06-22
 tags:
   - llm-wiki
   - overview
@@ -33,9 +33,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 89개
+- 자료 요약: 91개
 - 개념 페이지: 49개
-- 도구 페이지: 34개
+- 도구 페이지: 35개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
 - 기회 카드: 0개
@@ -43,7 +43,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-20, lint errors 0 / warnings 3
+- 최근 구조 점검: 2026-06-22, lint errors 0 / warnings 3
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -103,6 +103,7 @@ evidence_level: unsourced
 - [[Open Knowledge Format]]은 GitHub spec, reference implementation, sample bundle을 별도 source로 확인하고 현재 LLM Wiki schema와 export mapping을 검토한다.
 - [[Caddy]]는 공식 문서로 `tls internal`, admin endpoint, 자동 HTTPS, systemd service, reverse proxy 보안 설정을 확인한다.
 - [[공익적 상호운용성]]은 rHWP·Polaris MCFG 원자료와 국내 저작권·계약 법제를 확인하고, KrIGF 세션 결과 보고서가 공개되면 제안과 실제 합의를 구분해 갱신한다.
+- [[Mailpit]]은 실제 PoC의 이메일 flow에 적용할 recipient, subject, body link, token expiry, one-time use assertion과 CI 격리 구성을 정한다.
 
 ## MVP 승격 후보
 
@@ -170,6 +171,7 @@ evidence_level: unsourced
 - [[Open Knowledge Format]]
 - [[Caddy]]
 - [[공익적 상호운용성]]
+- [[Mailpit]]
 
 ## 다음 행동
 

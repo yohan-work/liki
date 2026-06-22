@@ -3,7 +3,7 @@ title: CI/CD 배포 파이프라인
 type: concept
 status: seed
 created: 2026-06-02
-updated: 2026-06-19
+updated: 2026-06-22
 tags:
   - cicd
   - deployment
@@ -20,6 +20,8 @@ related:
   - "[[OpenAI Codex Sites Documentation]]"
   - "[[Caddy]]"
   - "[[Cowboysj Caddy Domainless HTTPS Article]]"
+  - "[[Mailpit]]"
+  - "[[GitHub Mailpit Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -50,6 +52,7 @@ CI/CD 배포 파이프라인은 code change를 trigger로 받아 build, test, ar
 - 수동 SSH 배포가 반복되고, 변경 이력과 log를 남기고 싶다.
 - agent가 코드 변경 후 배포까지 수행하기 전에 human approval gate와 검증 artifact를 설계하고 싶다.
 - agent가 hosted site를 만들 때 deployable saved version과 production deployment를 분리하고 싶다.
+- 회원가입, 비밀번호 재설정, 알림 메일을 실제 수신자에게 보내지 않고 CI에서 end-to-end로 검증하고 싶다.
 
 ## 실패 패턴
 
@@ -60,12 +63,15 @@ CI/CD 배포 파이프라인은 code change를 trigger로 받아 build, test, ar
 - "배포 성공"을 파일 전송 성공으로만 보고 application health를 확인하지 않는다.
 - saved version review 없이 agent에게 production URL 배포와 access 확대를 한 번에 맡긴다.
 - Backend HTTPS, reverse proxy, CORS, Swagger/OpenAPI server URL을 배포 검증에서 제외하고 frontend/backend 통합 흐름을 놓친다.
+- 이메일 발송 job 성공만 확인하고 recipient, subject, body link, token expiry와 one-time use를 검증하지 않는다.
+- test SMTP relay 설정이 production 또는 외부 수신자로 이어져 테스트 메일을 실제 발송한다.
 
 ## 관련 자료
 
 - [[Velog Jenkins GitHub NCP Deployment Article]]
 - [[OpenAI Codex Sites Documentation]]
 - [[Cowboysj Caddy Domainless HTTPS Article]]
+- [[GitHub Mailpit Repository]]
 
 ## 관련 개념과 차이
 
@@ -76,12 +82,15 @@ CI/CD 배포 파이프라인은 code change를 trigger로 받아 build, test, ar
 - [[Agentic Workflow]]: agent가 build/deploy action을 수행할 때도 CI/CD처럼 trigger, approval, log, verification, rollback이 있어야 한다.
 - [[Codex Sites]]: Codex app 안에서 save version과 deploy version을 나누고, access mode와 runtime secret을 관리하는 hosted deployment workflow다.
 - [[Caddy]]: Backend server 앞에서 HTTPS termination과 reverse proxy를 담당할 수 있는 web server다.
+- [[Mailpit]]: 애플리케이션이 보낸 이메일을 격리해 캡처하고 REST API로 integration test assertion을 수행하는 test dependency다.
 
 ## 내 관점 / 임시 결론
 
 개인 PoC에서는 CI/CD를 크게 시작할 필요가 없다. 하지만 최소한 trigger, build command, artifact path, deploy target, secret storage, verification command, rollback path는 문서화해야 한다. agent에게 배포를 맡길 경우 이 경계가 없으면 "작업 완료" 판단이 파일 수정이나 빌드 성공에 머물고 실제 운영 상태를 놓칠 수 있다.
 
 [[Cowboysj Caddy Domainless HTTPS Article]]은 작은 배포에서도 frontend hosting의 HTTPS requirement, backend reverse proxy, TLS certificate, public endpoint, CORS, Swagger URL이 함께 맞아야 실제 서비스 흐름이 열린다는 사례다.
+
+[[GitHub Mailpit Repository]]는 배포 전 integration test가 HTTP response에만 머물지 않고 SMTP 전달 결과까지 확인할 수 있음을 보여준다. CI에서는 Mailpit 같은 격리된 SMTP server에 test mail을 보내고 REST API로 recipient, subject, body와 link를 검증한 뒤, production runtime에는 test SMTP 주소가 남지 않았는지 확인하는 경계가 필요하다.
 
 ## 열린 질문
 
@@ -90,3 +99,4 @@ CI/CD 배포 파이프라인은 code change를 trigger로 받아 build, test, ar
 - NCP 기반 PoC에서 Docker image 배포와 jar SSH 배포 중 어느 쪽이 더 단순한가?
 - Sites 같은 agent-hosted deployment에서 saved version을 artifact candidate로 볼 수 있는가?
 - 개인 PoC 배포 완료 조건에 TLS certificate trust, reverse proxy route, CORS, API docs URL을 어떤 smoke test로 넣을 것인가?
+- 이메일 flow가 있는 PoC에서 Mailpit API assertion과 실제 provider sandbox test를 어디까지 나눌 것인가?

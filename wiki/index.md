@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-20
+updated: 2026-06-22
 tags:
   - llm-wiki
   - index
@@ -137,6 +137,7 @@ evidence_level: unsourced
 - [[Prefect]]
 - [[Tavily]]
 - [[Caddy]]
+- [[Mailpit]]
 
 ## 인물
 
@@ -238,6 +239,8 @@ evidence_level: unsourced
 - [[Claude Founders Playbook Blog]]
 - [[Claude Founders Playbook PDF]]
 - [[Prefect Official Site]]
+- [[GeekNews Mailpit Article]]
+- [[GitHub Mailpit Repository]]
 - [[Tavily Official Site]]
 - [[Google Cloud Open Knowledge Format Article]]
 - [[Cowboysj Caddy Domainless HTTPS Article]]
