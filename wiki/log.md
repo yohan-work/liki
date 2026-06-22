@@ -15,6 +15,25 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-22] ingest | getdesign.md와 file-first 디자인 계약
+
+- getdesign.md 홈페이지, 연결된 VoltAgent `awesome-design-md` repository, Google Stitch DESIGN.md overview를 raw snapshot으로 보존하고 [[GetDesign MD Website]], [[GitHub Awesome DESIGN MD Repository]], [[Google Stitch DESIGN MD Overview]]로 ingest했다.
+- [[DESIGN.md]] 개념 페이지를 추가해 coding agent용 visual contract, AGENTS.md와의 역할 분리, Figma와의 source-of-truth 관계를 정리했다.
+- [[getdesign.md]] 도구 페이지를 추가하고 공개 브랜드 분석을 복제 template이 아니라 vocabulary·inspiration catalog로 사용하는 경계를 명시했다.
+- [[디자인 스펙 자동화]]에 Figma가 없는 작은 PoC의 Markdown 경량 경로와 code·visual·accessibility 검증 필요성을 보강했다.
+- repository의 MIT license가 제3자 trademark, proprietary font, image, visual identity 사용 권한을 부여하지 않으며 공개 분석은 공식 design system이 아니라는 점을 분리했다.
+- 변경 영역: [[GetDesign MD Website]], [[GitHub Awesome DESIGN MD Repository]], [[Google Stitch DESIGN MD Overview]], [[DESIGN.md]], [[getdesign.md]], [[디자인 스펙 자동화]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 기존 PoC 하나에 자체 token과 accessibility rule을 담은 최소 DESIGN.md를 작성하고 화면 1개로 agent 준수 여부를 검증한다.
+
+## [2026-06-22] ingest | TimesFM 시계열 예측과 투자 적용 경계
+
+- Vibe Investing의 TimesFM 분석 가이드와 검증용 공식 repository README·ICML 2024 논문 metadata/abstract를 raw snapshot으로 보존하고 [[Vibe Investing TimesFM Analysis Guide]], [[Google Research TimesFM Repository]], [[TimesFM ICML 2024 Paper]]로 ingest했다.
+- [[TimesFM]] 도구 페이지를 추가해 zero-shot forecasting, TimesFM 2.5 사양, quantile forecast, XReg, LoRA fine-tuning과 지원 경계를 정리했다.
+- [[Quant Trading]]과 [[토스증권 API 투자 운영 시스템]]에 TimesFM을 주문 signal이 아닌 read-only research candidate로 두고 baseline, walk-forward validation, calibration, transaction cost를 먼저 검증하는 원칙을 보강했다.
+- 원문의 구 API·checkpoint 예시, 근거 없는 competitor 순위와 투자 적합성 별점, Polymarket 법적 단정은 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Vibe Investing TimesFM Analysis Guide]], [[Google Research TimesFM Repository]], [[TimesFM ICML 2024 Paper]], [[TimesFM]], [[Quant Trading]], [[토스증권 API 투자 운영 시스템]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 거시경제 시계열 하나를 골라 TimesFM zero-shot과 seasonal naive baseline의 walk-forward error·quantile calibration을 비교한다.
+
 ## [2026-06-22] ingest | Mailpit 이메일 통합 테스트 도구
 
 - GeekNews의 "Mailpit - 개발자를 위한 이메일 테스팅 도구"와 연결된 공식 GitHub README를 raw snapshot으로 보존하고 [[GeekNews Mailpit Article]], [[GitHub Mailpit Repository]]로 ingest했다.

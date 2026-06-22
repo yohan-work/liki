@@ -66,6 +66,7 @@ evidence_level: unsourced
 - [[AI-native Startup]]
 - [[Open Knowledge Format]]
 - [[공익적 상호운용성]]
+- [[DESIGN.md]]
 
 ## 프로젝트
 
@@ -138,6 +139,8 @@ evidence_level: unsourced
 - [[Tavily]]
 - [[Caddy]]
 - [[Mailpit]]
+- [[TimesFM]]
+- [[getdesign.md]]
 
 ## 인물
 
@@ -245,6 +248,12 @@ evidence_level: unsourced
 - [[Google Cloud Open Knowledge Format Article]]
 - [[Cowboysj Caddy Domainless HTTPS Article]]
 - [[KrIGF 공익적 상호운용성 세션 제안]]
+- [[Vibe Investing TimesFM Analysis Guide]]
+- [[Google Research TimesFM Repository]]
+- [[TimesFM ICML 2024 Paper]]
+- [[GetDesign MD Website]]
+- [[GitHub Awesome DESIGN MD Repository]]
+- [[Google Stitch DESIGN MD Overview]]
 
 ## 리포트
 

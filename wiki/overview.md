@@ -33,9 +33,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 91개
-- 개념 페이지: 49개
-- 도구 페이지: 35개
+- 자료 요약: 97개
+- 개념 페이지: 50개
+- 도구 페이지: 37개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
 - 기회 카드: 0개
@@ -104,6 +104,8 @@ evidence_level: unsourced
 - [[Caddy]]는 공식 문서로 `tls internal`, admin endpoint, 자동 HTTPS, systemd service, reverse proxy 보안 설정을 확인한다.
 - [[공익적 상호운용성]]은 rHWP·Polaris MCFG 원자료와 국내 저작권·계약 법제를 확인하고, KrIGF 세션 결과 보고서가 공개되면 제안과 실제 합의를 구분해 갱신한다.
 - [[Mailpit]]은 실제 PoC의 이메일 flow에 적용할 recipient, subject, body link, token expiry, one-time use assertion과 CI 격리 구성을 정한다.
+- [[TimesFM]]은 주문 signal과 분리된 read-only benchmark에서 seasonal naive·statistical baseline, walk-forward error, quantile calibration을 먼저 검증한다.
+- [[DESIGN.md]]를 기존 PoC 하나에 적용해 visual consistency, 수정 횟수, responsive·accessibility 검증 기준이 실제로 개선되는지 확인한다.
 
 ## MVP 승격 후보
 
@@ -172,6 +174,9 @@ evidence_level: unsourced
 - [[Caddy]]
 - [[공익적 상호운용성]]
 - [[Mailpit]]
+- [[TimesFM]]
+- [[DESIGN.md]]
+- [[getdesign.md]]
 
 ## 다음 행동
 

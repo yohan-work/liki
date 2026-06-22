@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/CJS8h7KFCqXNaA1vwP/U/+JRpzY</id>
+  <title>arXiv Query: search_query=&amp;id_list=2310.10688&amp;start=0&amp;max_results=10</title>
+  <updated>2026-06-22T01:59:36Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2310.10688" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2310.10688v4</id>
+    <title>A decoder-only foundation model for time-series forecasting</title>
+    <updated>2024-04-17T18:24:45Z</updated>
+    <link href="https://arxiv.org/abs/2310.10688v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.10688v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Motivated by recent advances in large language models for Natural Language Processing (NLP), we design a time-series foundation model for forecasting whose out-of-the-box zero-shot performance on a variety of public datasets comes close to the accuracy of state-of-the-art supervised forecasting models for each individual dataset. Our model is based on pretraining a patched-decoder style attention model on a large time-series corpus, and can work well across different forecasting history lengths, prediction lengths and temporal granularities.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-14T17:01:37Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Abhimanyu Das</name>
+    </author>
+    <author>
+      <name>Weihao Kong</name>
+    </author>
+    <author>
+      <name>Rajat Sen</name>
+    </author>
+    <author>
+      <name>Yichen Zhou</name>
+    </author>
+  </entry>
+</feed>
