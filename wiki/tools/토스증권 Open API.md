@@ -3,7 +3,7 @@ title: 토스증권 Open API
 type: tool
 status: active
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-06-23
 tags:
   - brokerage-api
   - finance-api
@@ -14,6 +14,8 @@ related:
   - "[[Quant Trading]]"
   - "[[Public APIs 4Kr]]"
   - "[[Tossinvest OpenAPI Docs]]"
+  - "[[tossinvest-cli]]"
+  - "[[GitHub Tossinvest CLI Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -61,6 +63,11 @@ evidence_level: source-backed
 ## 관련 소스
 
 - [[Tossinvest OpenAPI Docs]]
+- [[GitHub Tossinvest CLI Repository]]
+
+## 비공식 대안과 경계
+
+[[tossinvest-cli]]는 토스증권 웹 session과 내부 API를 재사용해 공식 API보다 넓은 조회·거래 범위를 제공한다고 주장한다. 이는 공식 API의 확장이 아니라 별도 위험 모델을 가진 비공식 대안이다. 공개 spec과 OAuth credential을 사용하는 공식 경로를 기본으로 유지하고, 내부 API 자동화의 약관·session security·변경 위험이 확인되지 않은 상태에서는 대체재로 채택하지 않는다.
 
 ## 메모
 

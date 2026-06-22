@@ -15,6 +15,15 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-23] ingest | tossinvest-cli 비공식 토스증권 CLI
+
+- `JungHoonGhae/tossinvest-cli`의 README, repository metadata, license, security policy, version을 raw snapshot으로 보존하고 [[GitHub Tossinvest CLI Repository]]로 ingest했다.
+- 웹 내부 API와 browser session을 사용하는 비공식 CLI를 [[tossinvest-cli]] 도구 페이지로 분리하고, 공식 [[토스증권 Open API]]와 다른 약관·credential·변경 위험을 명시했다.
+- JSON/CSV/SSE 출력과 read/write command 분리, config·preview·confirm token 기반 주문 gate를 정리했지만 설치, 로그인, 계좌 조회, 주문 실행은 수행하지 않았다.
+- [[토스증권 API 투자 운영 시스템]]에는 공식 API를 기본 선택으로 유지하고 비공식 CLI는 고위험 대안으로만 검토하도록 연결했다.
+- 변경 영역: [[GitHub Tossinvest CLI Repository]], [[tossinvest-cli]], [[토스증권 Open API]], [[토스증권 API 투자 운영 시스템]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 토스증권 최신 약관과 공식 안내에서 개인 read-only 자동화 허용 범위를 확인한 뒤 설치 없는 source review 여부를 결정한다.
+
 ## [2026-06-23] ingest | GeekNews Ponytail 소개 글
 
 - GeekNews의 Ponytail 소개 글을 raw Markdown snapshot으로 보존하고 [[GeekNews Ponytail Article]]로 ingest했다.

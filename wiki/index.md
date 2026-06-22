@@ -143,6 +143,7 @@ evidence_level: unsourced
 - [[TimesFM]]
 - [[getdesign.md]]
 - [[Ponytail]]
+- [[tossinvest-cli]]
 
 ## 인물
 
@@ -159,6 +160,7 @@ evidence_level: unsourced
 
 ## 자료
 
+- [[GitHub Tossinvest CLI Repository]]
 - [[GeekNews Ponytail Article]]
 - [[Velog 자바스크립트의 진짜 새로운 변화 번역글]]
 - [[TC39 Finished Proposals]]
