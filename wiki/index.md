@@ -141,6 +141,7 @@ evidence_level: unsourced
 - [[Mailpit]]
 - [[TimesFM]]
 - [[getdesign.md]]
+- [[Ponytail]]
 
 ## 인물
 
@@ -157,6 +158,7 @@ evidence_level: unsourced
 
 ## 자료
 
+- [[GitHub Ponytail Repository]]
 - [[SNU Newsroom Quant Trading Article]]
 - [[Brunch Claude Blue Article]]
 - [[GitHub Public APIs 4Kr Repository]]

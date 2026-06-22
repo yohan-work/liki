@@ -3,7 +3,7 @@ title: Codex
 type: tool
 status: active
 created: 2026-05-20
-updated: 2026-06-10
+updated: 2026-06-22
 tags:
   - codex
   - coding-agent
@@ -28,6 +28,8 @@ related:
   - "[[OpenAI Codex Sites Documentation]]"
   - "[[Humanize KR]]"
   - "[[GitHub im-not-ai Repository]]"
+  - "[[Ponytail]]"
+  - "[[GitHub Ponytail Repository]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -53,6 +55,8 @@ evidence_level: source-backed
 [[OpenAI Codex Sites Documentation]]은 Codex가 Sites plugin을 통해 website, web app, game을 생성, 저장, 배포, 검사하는 hosted site workflow를 제공한다고 설명한다. 이 관점에서 Codex는 code edit뿐 아니라 saved version, production deployment, access control, runtime secret까지 다루는 delivery surface가 된다.
 
 [[GitHub im-not-ai Repository]]는 Claude Code용 한국어 윤문 workflow를 Codex Fast skill로 축소 이식한 사례다. Cross-agent skill은 같은 목적과 reference를 공유할 수 있지만, subagent orchestration과 검증 단계는 runtime capability에 맞춰 별도로 설계해야 한다.
+
+[[GitHub Ponytail Repository]]는 Codex plugin, skill, lifecycle hook으로 과잉 구현을 억제하는 사례다. 외부 plugin은 편의 기능과 함께 실행되는 hook도 포함하므로 설치 전 source와 permission을 검토하고, 최소화 효과는 LOC가 아니라 correctness·test·rework와 함께 평가해야 한다.
 
 ## 사용 사례
 
@@ -92,6 +96,7 @@ evidence_level: source-backed
 - [[GitHub Clicky Repository]]
 - [[OpenAI Codex Sites Documentation]]
 - [[GitHub im-not-ai Repository]]
+- [[GitHub Ponytail Repository]]
 
 ## 열린 질문
 

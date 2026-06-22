@@ -15,6 +15,14 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-22] ingest | GitHub Ponytail 저장소
+
+- `DietrichGebert/ponytail`의 README, repository metadata, license, agentic benchmark를 raw snapshot으로 보존하고 [[GitHub Ponytail Repository]]로 ingest했다.
+- 과잉 구현을 줄이는 cross-agent instruction·skill·plugin을 [[Ponytail]] 도구 페이지로 정리하고 [[Skills]], [[하네스 엔지니어링]], [[Codex]]에 연결했다.
+- 저자 자체 benchmark 수치는 Haiku 4.5 단일 모델과 작은 task set에 제한된 practitioner evidence로 분리했으며, 전역 설치 전 hook 검토와 repository-local 비교 실험이 필요함을 기록했다.
+- 변경 영역: [[GitHub Ponytail Repository]], [[Ponytail]], [[Skills]], [[하네스 엔지니어링]], [[Codex]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Ponytail을 설치하지 않고 작은 coding task 3개에서 기본 agent 대비 correctness, test, dependency 변화, LOC, rework를 비교한다.
+
 ## [2026-06-22] ingest | getdesign.md와 file-first 디자인 계약
 
 - getdesign.md 홈페이지, 연결된 VoltAgent `awesome-design-md` repository, Google Stitch DESIGN.md overview를 raw snapshot으로 보존하고 [[GetDesign MD Website]], [[GitHub Awesome DESIGN MD Repository]], [[Google Stitch DESIGN MD Overview]]로 ingest했다.
