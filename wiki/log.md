@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-23
+updated: 2026-06-24
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-24] ingest | LLM Wiki와 본유적 부하
+
+- 시안의 생각 글 "LLM Wiki와 본유적 부하"를 raw Markdown snapshot으로 보존하고 [[Thinkingsian LLM Wiki와 본유적 부하 Article]]로 ingest했다.
+- 글이 다루는 LLM Wiki는 agent 장기 기억보다 Obsidian 기반 PKM 사용에 가깝다는 경계를 source summary에 분리했다.
+- [[LLM Wiki]]와 [[Personal Operating System]]에 AI가 raw 보존, provenance, frontmatter, lint 같은 외재적 부하는 줄이되 링크 선택, 핵심 개념 추출, paraphrasing 같은 본유적 부하를 완전히 대체하지 않도록 하는 운영 기준을 연결했다.
+- 본유적 부하, 확장된 마음 가설, 반복 읽기와 이해의 관계는 이 글만으로 확정하지 않고 검증 필요 주장으로 남겼다.
+- 변경 영역: [[Thinkingsian LLM Wiki와 본유적 부하 Article]], [[LLM Wiki]], [[Personal Operating System]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: `#wiki ingest` 후 사용자가 직접 3문장으로 paraphrase하는 review 루틴을 만들지 검토한다.
 
 ## [2026-06-23] ingest | tossinvest-cli 비공식 토스증권 CLI
 

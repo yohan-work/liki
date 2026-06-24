@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-23
+updated: 2026-06-24
 tags:
   - llm-wiki
   - index
@@ -161,6 +161,7 @@ evidence_level: unsourced
 ## 자료
 
 - [[GitHub Tossinvest CLI Repository]]
+- [[Thinkingsian LLM Wiki와 본유적 부하 Article]]
 - [[GeekNews Ponytail Article]]
 - [[Velog 자바스크립트의 진짜 새로운 변화 번역글]]
 - [[TC39 Finished Proposals]]

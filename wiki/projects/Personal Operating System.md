@@ -3,7 +3,7 @@ title: Personal Operating System
 type: project
 status: active
 created: 2026-05-20
-updated: 2026-06-18
+updated: 2026-06-24
 tags:
   - personal-operating-system
   - project
@@ -32,6 +32,7 @@ related:
   - "[[Good Internet Why I Email Complete Strangers Article]]"
   - "[[AI-native Startup]]"
   - "[[Claude Founders Playbook PDF]]"
+  - "[[Thinkingsian LLM Wiki와 본유적 부하 Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -64,6 +65,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[하네스 엔지니어링]] 관점에서 `AGENTS.md`, wiki skill, templates, scripts, index, log, lint를 분리된 문서가 아니라 작업 품질과 재개 가능성을 만드는 하나의 실행 환경으로 관리한다.
 - [[의도적 아웃리치]] 관점에서 좋은 source, 블로그, 도구, 프로젝트를 발견했을 때 지식 수집에서 멈추지 않고 작성자에게 구체적인 감사나 질문을 보낼지 검토한다. 이 루틴은 자동 발송이나 대량 네트워킹이 아니라 소수의 진짜 관심에 대한 human-in-the-loop follow-up으로 제한한다.
 - [[AI-native Startup]] 관점에서 개인 PoC도 Idea, MVP, Launch, Scale을 그대로 복제하기보다 build 전 검증, MVP measurement, operational bottleneck, scope guardrail을 축소 적용한다. AI가 빠르게 만들어줄수록 "지금 만들 수 있음"과 "다음 stage로 넘어갈 근거가 있음"을 분리해야 한다.
+- [[Thinkingsian LLM Wiki와 본유적 부하 Article]] 관점에서 개인 운영체계는 모든 인지적 마찰을 제거하는 자동화가 아니라, 외재적 부하는 줄이고 이해에 필요한 본유적 부하는 남기는 시스템이어야 한다. Codex가 source summary와 link 후보를 만들 수는 있지만, 사용자가 직접 다시 읽고 자기 언어로 압축하는 review 루틴이 없으면 PKM은 빠르게 커져도 실제 사고 도구가 되기 어렵다.
 
 ## 현재 운영 기준
 
@@ -101,6 +103,7 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - [[Yanlog Kiro User Interview 003]]
 - [[Good Internet Why I Email Complete Strangers Article]]
 - [[Claude Founders Playbook PDF]]
+- [[Thinkingsian LLM Wiki와 본유적 부하 Article]]
 - [[llm-wiki-review-2026-05-29]]
 
 ## 열린 질문
@@ -116,3 +119,4 @@ Personal Operating System은 개인 workflow, knowledge capture, project plannin
 - 보호된 AI 실험 시간을 어느 주기로 운영해야 탐색이 실행 queue를 잠식하지 않는가?
 - 정체된 실행 후보에서 owner 공백과 decision 공백을 구분하는 최소 진단 형식은 무엇인가?
 - source ingest 후 작성자에게 짧은 follow-up을 보낼 가치가 있는지 판단하는 최소 기준은 무엇인가?
+- 자동 ingest 후 사용자가 직접 paraphrase해야 할 최소 단위는 무엇인가?
