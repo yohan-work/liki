@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-25
+updated: 2026-06-26
 tags:
   - llm-wiki
   - overview
@@ -25,6 +25,8 @@ related:
   - "[[공익적 상호운용성]]"
   - "[[Thinkingsian LLM Wiki와 본유적 부하 Article]]"
   - "[[X JPoehnelt Google Workspace CLI Post]]"
+  - "[[Claude Tag]]"
+  - "[[Anthropic Claude Tag Announcement]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -35,9 +37,9 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 105개
+- 자료 요약: 106개
 - 개념 페이지: 52개
-- 도구 페이지: 39개
+- 도구 페이지: 40개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
 - 기회 카드: 0개
@@ -45,7 +47,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-25, lint errors 0 / warnings 3
+- 최근 구조 점검: 2026-06-26, lint errors 0 / warnings 3
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -65,6 +67,7 @@ evidence_level: unsourced
 - [[MiniMax M3]] 공식 페이지, technical report, Hugging Face/GitHub weights 공개 여부를 별도 source로 확인한다.
 - [[Clicky]]의 `clicky agent` action surface, provider별 retention/training opt-out, backend proxy retention을 추가 확인한다.
 - [[Claude Opus 4.8]] System Card와 Claude Code Dynamic Workflows의 실제 CLI availability, workflow permission boundary, token budget 동작을 별도 확인한다.
+- [[Claude Tag]]의 관리자 provisioning, channel memory retention, ambient behavior opt-in, Slack app migration 조건을 제품 문서로 확인한다.
 - Google I/O 2026 발표 중 Gemini Spark, Google Antigravity, SynthID는 product-specific source를 별도 확인한다.
 - [[Figma Console MCP]]와 `uSpec.design` GitHub repository를 별도 source로 확인한다.
 - [[Codex Sites]]는 실제 workspace availability, RBAC, D1/R2 storage, access control 조건을 별도 확인한다.
@@ -113,6 +116,7 @@ evidence_level: unsourced
 - [[LLM Wiki]] ingest 후 사용자가 직접 paraphrase하는 3문장 review 루틴을 만들지 검토한다.
 - [[X JPoehnelt Google Workspace CLI Post]]는 Google Workspace CLI 관련 thread 전체, repository, HN archive, Google 또는 독립 보도로 해고 사유와 확산 수치를 별도 확인한다.
 - [[AI 시대의 개발자 역량]]은 개인 포트폴리오나 면접 답변 1건에 문제, 선택, tradeoff, 결과, 반복 개선 evidence 형식으로 적용해 본다.
+- [[Claude Tag]]는 Slack 기반 team agent의 permission, memory, audit, cost boundary를 확인하기 전까지 공식 발표 기반 도구 후보로만 유지한다.
 
 ## MVP 승격 후보
 
@@ -188,6 +192,7 @@ evidence_level: unsourced
 - [[Ponytail]]
 - [[ECMAScript 표준화와 연간 업데이트]]
 - [[AI 시대의 개발자 역량]]
+- [[Claude Tag]]
 
 ## 다음 행동
 

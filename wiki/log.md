@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-25
+updated: 2026-06-26
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-26] ingest | Anthropic Claude Tag 발표
+
+- Anthropic 공식 글 "Introducing Claude Tag"를 raw HTML snapshot으로 보존하고 [[Anthropic Claude Tag Announcement]]로 ingest했다.
+- [[Claude Tag]] 도구 페이지를 추가해 Slack channel 기반 team agent, channel-scoped memory, delegated tool access, ambient behavior, spend limit, audit log를 정리했다.
+- [[Claude Code]], [[Agentic Workflow]], [[기업 AI 운영 레이어]], [[Claude Opus 4.8]]에는 개인 coding agent에서 팀 채널 기반 비동기 agent로 확장되는 흐름을 좁게 연결했다.
+- Anthropic 내부 버전의 제품팀 코드 생성 비중, channel memory retention, ambient behavior, Opus 4.8 routing 조건은 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Anthropic Claude Tag Announcement]], [[Claude Tag]], [[Claude Code]], [[Agentic Workflow]], [[기업 AI 운영 레이어]], [[Claude Opus 4.8]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Claude Tag 제품 문서와 관리자 설정 자료로 channel memory retention, access provisioning, audit log, spend limit, Slack app migration 조건을 확인한다.
 
 ## [2026-06-25] ingest | 개발자에서 세일즈로 이동한 시니어 인터뷰
 

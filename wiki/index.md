@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-25
+updated: 2026-06-26
 tags:
   - llm-wiki
   - index
@@ -108,6 +108,7 @@ evidence_level: unsourced
 
 - [[Codex]]
 - [[Claude Code]]
+- [[Claude Tag]]
 - [[Obsidian]]
 - [[Public APIs 4Kr]]
 - [[OpenAI Developer Community]]
@@ -258,6 +259,7 @@ evidence_level: unsourced
 - [[GitHub Mailpit Repository]]
 - [[Tavily Official Site]]
 - [[Google Cloud Open Knowledge Format Article]]
+- [[Anthropic Claude Tag Announcement]]
 - [[Cowboysj Caddy Domainless HTTPS Article]]
 - [[KrIGF 공익적 상호운용성 세션 제안]]
 - [[Vibe Investing TimesFM Analysis Guide]]

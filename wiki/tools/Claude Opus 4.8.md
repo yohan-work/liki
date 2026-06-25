@@ -3,7 +3,7 @@ title: Claude Opus 4.8
 type: tool
 status: active
 created: 2026-05-29
-updated: 2026-06-01
+updated: 2026-06-26
 tags:
   - claude
   - llm
@@ -15,6 +15,8 @@ related:
   - "[[Orchestration]]"
   - "[[Anthropic Claude Opus 4.8 Announcement]]"
   - "[[Velog Claude Opus 4.8 Reaction Article]]"
+  - "[[Claude Tag]]"
+  - "[[Anthropic Claude Tag Announcement]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -27,12 +29,15 @@ Claude Opus 4.8은 Anthropic이 2026-05-28 발표한 Opus 계열 모델이다. [
 
 [[Velog Claude Opus 4.8 Reaction Article]]은 이 발표를 benchmark 점수 경쟁보다 "덜 우기고, 애매하면 애매하다고 말하며, 계획이 이상하면 이의를 제기하는 모델"이라는 사용 가치로 해석한다. 이 해석은 anecdotal source이므로 공식 성능 주장과 분리해 보조 맥락으로만 사용한다.
 
+[[Anthropic Claude Tag Announcement]]은 Claude Tag가 Opus 4.8과 함께 동작한다고 설명한다. 이는 2026-06-23 출시 글 기준의 제품 조건이므로, 이후 실제 model routing과 plan availability는 별도 문서로 확인해야 한다.
+
 ## 사용 사례
 
 - 장시간 코드 탐색과 변경 계획이 필요한 coding agent 작업.
 - 불확실성, 입력 결함, 출력 결함을 더 명확히 드러내야 하는 분석 작업.
 - Claude Code의 dynamic workflows처럼 여러 subagent와 검증 단계를 포함하는 대규모 작업.
 - claude.ai 또는 Cowork에서 effort control을 통해 품질과 속도, rate limit 사용량을 조절하는 작업.
+- Claude Tag의 Slack 기반 team agent workflow.
 
 ## 강점
 
@@ -64,6 +69,7 @@ Claude Opus 4.8은 Anthropic이 2026-05-28 발표한 Opus 계열 모델이다. [
 
 - [[Anthropic Claude Opus 4.8 Announcement]]
 - [[Velog Claude Opus 4.8 Reaction Article]]
+- [[Anthropic Claude Tag Announcement]]
 
 ## 열린 질문
 
@@ -71,3 +77,4 @@ Claude Opus 4.8은 Anthropic이 2026-05-28 발표한 Opus 계열 모델이다. [
 - dynamic workflows를 실제로 쓰기 전, 어떤 작업 크기와 검증 기준이 있어야 병렬 subagent 실행이 정당화되는가?
 - Codex 기반 workflow와 Claude Code dynamic workflows를 비교할 때 공통 평가 기준은 무엇인가?
 - agent가 "완료"라고 보고하기 전에 어떤 evidence를 함께 제시해야 신뢰할 수 있는가?
+- Claude Tag가 Opus 4.8을 사용할 때 channel memory, tool access, long-running task가 모델 비용과 품질에 어떤 영향을 주는가?
