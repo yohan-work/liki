@@ -15,6 +15,15 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-25] ingest | 개발자에서 세일즈로 이동한 시니어 인터뷰
+
+- 클래미의 Brunch 글 "개발자 동료가 세일즈로 이직했다. 왜?"를 raw HTML snapshot으로 보존하고 [[Brunch Developer to Sales Career Article]]로 ingest했다.
+- 글의 핵심을 바탕으로 [[AI 시대의 개발자 역량]] 개념 페이지를 추가하고, AI 시대 개발 역량을 코딩 속도보다 문제 이해, 제품 완성도, 검증, 커뮤니케이션, 학습, 공유 태도로 정리했다.
+- [[Forward Deployed Engineer]]에는 FDE와 solutions engineer의 책임 경계를 보강했고, [[AI Literacy]]와 [[AI 시대의 기술 면접]]에는 AI tool proficiency와 foundational skill을 분리하는 관점을 연결했다.
+- 해외 거장 복귀, 한국 개발자 시장 분위기, 커뮤니케이션 50% 같은 수치는 개인 관찰 또는 개인 모델로 분리했다.
+- 변경 영역: [[Brunch Developer to Sales Career Article]], [[AI 시대의 개발자 역량]], [[Forward Deployed Engineer]], [[AI Literacy]], [[AI 시대의 기술 면접]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: solutions engineer, FDE, product engineer, technical consultant의 책임 경계를 비교 체크리스트로 정리한다.
+
 ## [2026-06-25] ingest | Google Workspace CLI X 게시글
 
 - Justin Poehnelt의 X 게시글을 oEmbed 기반 raw snapshot으로 보존하고 [[X JPoehnelt Google Workspace CLI Post]]로 ingest했다.

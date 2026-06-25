@@ -68,6 +68,7 @@ evidence_level: unsourced
 - [[공익적 상호운용성]]
 - [[DESIGN.md]]
 - [[ECMAScript 표준화와 연간 업데이트]]
+- [[AI 시대의 개발자 역량]]
 
 ## 프로젝트
 
@@ -166,6 +167,7 @@ evidence_level: unsourced
 - [[Velog 자바스크립트의 진짜 새로운 변화 번역글]]
 - [[TC39 Finished Proposals]]
 - [[X JPoehnelt Google Workspace CLI Post]]
+- [[Brunch Developer to Sales Career Article]]
 - [[GitHub Ponytail Repository]]
 - [[SNU Newsroom Quant Trading Article]]
 - [[Brunch Claude Blue Article]]

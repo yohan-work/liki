@@ -3,7 +3,7 @@ title: AI 시대의 기술 면접
 type: concept
 status: seed
 created: 2026-06-04
-updated: 2026-06-12
+updated: 2026-06-25
 tags:
   - ai-interviewing
   - hiring
@@ -15,6 +15,8 @@ related:
   - "[[구조화된 답변 프레임워크]]"
   - "[[JobConsulting Interview STAR and PREP Article]]"
   - "[[JobKorea FDE Role and Interview Guide]]"
+  - "[[Brunch Developer to Sales Career Article]]"
+  - "[[AI 시대의 개발자 역량]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -39,6 +41,7 @@ LLM과 coding agent가 보편화되면 take-home, live coding, system design, co
 - 후보자 준비 가이드를 명확히 제공하고, 질문이 leak될 것을 전제로 여러 질문을 운용하거나 오래된 질문을 archive해야 한다.
 - [[JobConsulting Interview STAR and PREP Article]]은 의견 질문에는 PREP, 행동 증거 질문에는 STAR를 사용하는 기본 답변 구조를 소개한다. 기술 면접에서는 답변의 형식적 명료함과 실제 문제 해결 능력을 분리해 평가하고, STAR의 Action과 Result에 대한 후속 질문으로 개인 기여와 evidence를 확인해야 한다.
 - [[JobKorea FDE Role and Interview Guide]]는 FDE 면접에서 기술 개념, 시스템 설계, 고객 시나리오, 라이브 코딩, 행동 경험을 함께 보고, 무엇을 만들었는지보다 문제 정의와 tradeoff의 근거를 확인한다고 설명한다. 고객 대면 AI 역할에서는 구현력과 비기술 이해관계자 설명 능력을 분리하지 않고 같은 사례에서 검증할 필요가 있다.
+- [[Brunch Developer to Sales Career Article]]은 AI 시대 개발자의 핵심을 코딩 속도보다 요구자 이해, 커뮤니케이션, 학습 곡선, 호기심, 공유 태도로 본다. 면접에서는 AI 사용 경험을 묻더라도 같은 문제가 반복되지 않게 개선했는지, 산출물을 믿고 쓸 수 있게 검증했는지, 비기술 요구를 기술 선택으로 번역했는지를 확인해야 한다.
 
 ## 이 위키에서의 사용
 
@@ -49,6 +52,7 @@ LLM과 coding agent가 보편화되면 take-home, live coding, system design, co
 - [[Dein Interviewing in the Age of AI Article]]
 - [[JobConsulting Interview STAR and PREP Article]]
 - [[JobKorea FDE Role and Interview Guide]]
+- [[Brunch Developer to Sales Career Article]]
 
 ## 열린 질문
 
@@ -56,3 +60,4 @@ LLM과 coding agent가 보편화되면 take-home, live coding, system design, co
 - AI 사용 금지, AI 사용 허용, AI 사용 필수 면접을 어떤 role 기준으로 나눌 수 있는가?
 - AI가 만든 산출물을 검토하는 능력을 낮은 비용으로 평가하려면 어떤 exercise가 가장 적합한가?
 - remote interview에서 AI 사용 boundary를 어떻게 명시하고 검증할 것인가?
+- 커뮤니케이션, 공유 태도, 호기심을 평가하면서 인상 평가로 흐르지 않게 할 evidence 질문은 무엇인가?
