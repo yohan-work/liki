@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-24
+updated: 2026-06-25
 tags:
   - llm-wiki
   - overview
@@ -24,6 +24,7 @@ related:
   - "[[Open Knowledge Format]]"
   - "[[공익적 상호운용성]]"
   - "[[Thinkingsian LLM Wiki와 본유적 부하 Article]]"
+  - "[[X JPoehnelt Google Workspace CLI Post]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -34,7 +35,7 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 103개
+- 자료 요약: 104개
 - 개념 페이지: 51개
 - 도구 페이지: 39개
 - 프로젝트 페이지: 2개
@@ -44,7 +45,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-24, lint errors 0 / warnings 3
+- 최근 구조 점검: 2026-06-25, lint errors 0 / warnings 3
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -110,6 +111,7 @@ evidence_level: unsourced
 - [[Ponytail]]은 전역 plugin 설치 전에 repository-local instruction 또는 read-only diff review로 기본 agent와 correctness·test·dependency·LOC·rework를 비교한다.
 - [[ECMAScript 표준화와 연간 업데이트]]는 target browser·Node version을 정한 뒤 ES2025·ES2026 API adoption 표를 만든다.
 - [[LLM Wiki]] ingest 후 사용자가 직접 paraphrase하는 3문장 review 루틴을 만들지 검토한다.
+- [[X JPoehnelt Google Workspace CLI Post]]는 Google Workspace CLI 관련 thread 전체, repository, HN archive, Google 또는 독립 보도로 해고 사유와 확산 수치를 별도 확인한다.
 
 ## MVP 승격 후보
 

@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-24
+updated: 2026-06-25
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,14 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-25] ingest | Google Workspace CLI X 게시글
+
+- Justin Poehnelt의 X 게시글을 oEmbed 기반 raw snapshot으로 보존하고 [[X JPoehnelt Google Workspace CLI Post]]로 ingest했다.
+- 게시글이 잘린 단일 social source라서 해고 사유, Hacker News 1위, GitHub stars, 사용자 수는 모두 작성자 자기보고와 검증 필요 주장으로 분리했다.
+- [[AI 실험 문화]]와 [[하네스 엔지니어링]]에는 개인 prototype이 공개 CLI나 조직 도구로 확산될 때 owner, approval, data boundary, brand/IP, support, release channel이 필요하다는 경고 신호만 좁게 연결했다.
+- 변경 영역: [[X JPoehnelt Google Workspace CLI Post]], [[AI 실험 문화]], [[하네스 엔지니어링]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Google Workspace CLI thread 전체, repository, HN archive, Google 또는 독립 보도로 해고 사유와 확산 수치를 별도 확인한다.
 
 ## [2026-06-24] ingest | LLM Wiki와 본유적 부하
 

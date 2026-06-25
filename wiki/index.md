@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-24
+updated: 2026-06-25
 tags:
   - llm-wiki
   - index
@@ -165,6 +165,7 @@ evidence_level: unsourced
 - [[GeekNews Ponytail Article]]
 - [[Velog 자바스크립트의 진짜 새로운 변화 번역글]]
 - [[TC39 Finished Proposals]]
+- [[X JPoehnelt Google Workspace CLI Post]]
 - [[GitHub Ponytail Repository]]
 - [[SNU Newsroom Quant Trading Article]]
 - [[Brunch Claude Blue Article]]

@@ -3,7 +3,7 @@ title: AI 실험 문화
 type: concept
 status: seed
 created: 2026-06-10
-updated: 2026-06-12
+updated: 2026-06-25
 tags:
   - ai-culture
   - organizational-learning
@@ -16,6 +16,7 @@ related:
   - "[[Personal Operating System]]"
   - "[[Human-in-the-loop]]"
   - "[[Brunch AI Winning Proposal Claude Bloom Article]]"
+  - "[[X JPoehnelt Google Workspace CLI Post]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -44,6 +45,8 @@ AI 도구와 정보가 빠르게 늘어도 구성원에게 학습 시간, 질문
 
 [[Brunch AI Winning Proposal Claude Bloom Article]]은 전사 AI 도입과 보호된 실험 시간이 있어도 사업이 자동으로 성장하지는 않았다는 연사 경험을 전한다. 실험 문화의 성과는 AI skill과 tool adoption이 아니라 사업 workflow의 재설계, 고객 가치, 반복 사용, 실제 결과로 확인해야 한다.
 
+[[X JPoehnelt Google Workspace CLI Post]]는 개인이 만든 Google Workspace CLI가 빠르게 확산되었지만 작성자가 Google에서 해고되었다고 주장하는 anecdotal source다. 이 자료만으로 사건의 원인을 단정할 수는 없지만, prototype이 내부 실험에서 공개 도구로 넘어갈 때 IP, 고용계약, 브랜드, 사용자 데이터, 공식 제품 경계 같은 승인 문제가 기술적 유용성과 별개로 발생할 수 있음을 보여주는 경고 신호로 쓴다.
+
 ## 기대 효과
 
 - 비개발 직군과 입문자가 질문하고 시작할 수 있는 진입점을 만든다.
@@ -59,6 +62,7 @@ AI 도구와 정보가 빠르게 늘어도 구성원에게 학습 시간, 질문
 - 에반젤리스트에게 교육, 지원, 전파 업무를 추가로 떠넘기고 운영 지원을 제공하지 않는 경우.
 - 클럽 수나 참석자 수를 성과로 보고 실제 workflow 변화와 반복 사용을 측정하지 않는 경우.
 - 빠르게 만든 prototype을 보안, 품질, 책임 boundary 없이 production workflow로 채택하는 경우.
+- 내부 또는 개인 prototype을 owner, approval, data boundary, release channel 없이 공개 배포하는 경우.
 - 조직 문화와 업무 자율성이 다른 환경에 특정 회사의 프로그램 형식을 그대로 복제하는 경우.
 
 ## 적용 원칙
@@ -78,6 +82,7 @@ AI 도구와 정보가 빠르게 늘어도 구성원에게 학습 시간, 질문
 ## 관련 자료
 
 - [[Toss Tech AI Surf Day Article]]
+- [[X JPoehnelt Google Workspace CLI Post]]
 
 ## 내 관점 / 임시 결론
 
