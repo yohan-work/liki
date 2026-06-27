@@ -3,7 +3,7 @@ title: AI 실험 문화
 type: concept
 status: seed
 created: 2026-06-10
-updated: 2026-06-25
+updated: 2026-06-27
 tags:
   - ai-culture
   - organizational-learning
@@ -17,6 +17,7 @@ related:
   - "[[Human-in-the-loop]]"
   - "[[Brunch AI Winning Proposal Claude Bloom Article]]"
   - "[[X JPoehnelt Google Workspace CLI Post]]"
+  - "[[Ben Mini Stealing is a Skill Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -64,11 +65,13 @@ AI 도구와 정보가 빠르게 늘어도 구성원에게 학습 시간, 질문
 - 빠르게 만든 prototype을 보안, 품질, 책임 boundary 없이 production workflow로 채택하는 경우.
 - 내부 또는 개인 prototype을 owner, approval, data boundary, release channel 없이 공개 배포하는 경우.
 - 조직 문화와 업무 자율성이 다른 환경에 특정 회사의 프로그램 형식을 그대로 복제하는 경우.
+- AI 검색과 vibecoding으로 외부 레퍼런스를 빠르게 재현한 뒤, 출처·권리·차별화 지점·human review를 기록하지 않고 공개 산출물로 전환하는 경우.
 
 ## 적용 원칙
 
 - 시작 전 실제 업무 문제와 실험 종료 시 남길 artifact를 한 문장으로 정한다.
 - 실험 후 문제, 시도, 결과, 실패, 재사용 조건을 짧게 기록한다.
+- 레퍼런스를 사용했다면 무엇을 참고했고 왜 벗어났는지, 공개 산출물에서 어떤 고유 맥락을 추가했는지 함께 기록한다.
 - 산출물이 반복 사용되면 owner, 검증 기준, 데이터 경계, human approval 지점을 추가한다.
 - 참여량과 함께 재사용률, 실제 업무 적용률, 유지 기간, 품질 개선을 본다.
 - 행사의 이름이나 주기보다 질문과 결과를 공개할 수 있는 분위기가 유지되는지 점검한다.
@@ -83,6 +86,7 @@ AI 도구와 정보가 빠르게 늘어도 구성원에게 학습 시간, 질문
 
 - [[Toss Tech AI Surf Day Article]]
 - [[X JPoehnelt Google Workspace CLI Post]]
+- [[Ben Mini Stealing is a Skill Article]]
 
 ## 내 관점 / 임시 결론
 

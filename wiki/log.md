@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-26
+updated: 2026-06-27
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-27] ingest | Stealing is a Skill과 레퍼런스 기반 창작 훈련
+
+- Ben Wallace의 글 "Stealing is a Skill"을 raw HTML snapshot으로 보존하고 [[Ben Mini Stealing is a Skill Article]]로 ingest했다.
+- 글의 "3% approach"와 Mintlify/Kibu 사례는 고정 규칙이 아니라 레퍼런스를 100% 해부한 뒤 자기 맥락의 drift를 찾는 practitioner 사례로 정리했다.
+- [[디자인 스펙 자동화]], [[아이디어 개선 루프]], [[AI 실험 문화]]에 외부 레퍼런스를 복제 지시가 아니라 학습 artifact, 선행 사례 탐색, 출처·권리·차별화 기록의 대상으로 연결했다.
+- Virgil Abloh의 원 맥락, Kibu/Mintlify 사례의 외부 검증, 공개 산출물에서의 법적·브랜드 리스크는 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Ben Mini Stealing is a Skill Article]], [[디자인 스펙 자동화]], [[아이디어 개선 루프]], [[AI 실험 문화]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 작은 frontend PoC 1개에서 reference 100% 해부, 가져올 부분, 달라져야 하는 3%, 공개 산출물 금지 범위를 기록하는 템플릿을 만든다.
 
 ## [2026-06-26] ingest | Anthropic Claude Tag 발표
 

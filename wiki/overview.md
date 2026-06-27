@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-26
+updated: 2026-06-27
 tags:
   - llm-wiki
   - overview
@@ -27,6 +27,7 @@ related:
   - "[[X JPoehnelt Google Workspace CLI Post]]"
   - "[[Claude Tag]]"
   - "[[Anthropic Claude Tag Announcement]]"
+  - "[[Ben Mini Stealing is a Skill Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -37,7 +38,7 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 106개
+- 자료 요약: 107개
 - 개념 페이지: 52개
 - 도구 페이지: 40개
 - 프로젝트 페이지: 2개
@@ -47,7 +48,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-26, lint errors 0 / warnings 3
+- 최근 구조 점검: 2026-06-27, lint errors 0 / warnings 3
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -117,6 +118,7 @@ evidence_level: unsourced
 - [[X JPoehnelt Google Workspace CLI Post]]는 Google Workspace CLI 관련 thread 전체, repository, HN archive, Google 또는 독립 보도로 해고 사유와 확산 수치를 별도 확인한다.
 - [[AI 시대의 개발자 역량]]은 개인 포트폴리오나 면접 답변 1건에 문제, 선택, tradeoff, 결과, 반복 개선 evidence 형식으로 적용해 본다.
 - [[Claude Tag]]는 Slack 기반 team agent의 permission, memory, audit, cost boundary를 확인하기 전까지 공식 발표 기반 도구 후보로만 유지한다.
+- 레퍼런스 기반 frontend 실험은 [[Ben Mini Stealing is a Skill Article]]의 3% approach를 그대로 규칙화하지 말고, 참고한 source와 자기 맥락 때문에 달라진 지점을 기록하는 작은 템플릿으로 검토한다.
 
 ## MVP 승격 후보
 
@@ -193,6 +195,7 @@ evidence_level: unsourced
 - [[ECMAScript 표준화와 연간 업데이트]]
 - [[AI 시대의 개발자 역량]]
 - [[Claude Tag]]
+- [[Ben Mini Stealing is a Skill Article]]
 
 ## 다음 행동
 

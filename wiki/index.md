@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-26
+updated: 2026-06-27
 tags:
   - llm-wiki
   - index
@@ -268,6 +268,7 @@ evidence_level: unsourced
 - [[GetDesign MD Website]]
 - [[GitHub Awesome DESIGN MD Repository]]
 - [[Google Stitch DESIGN MD Overview]]
+- [[Ben Mini Stealing is a Skill Article]]
 
 ## 리포트
 
