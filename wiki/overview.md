@@ -3,7 +3,7 @@ title: LLM Wiki Overview
 type: overview
 status: active
 created: 2026-05-20
-updated: 2026-06-27
+updated: 2026-06-29
 tags:
   - llm-wiki
   - overview
@@ -28,6 +28,7 @@ related:
   - "[[Claude Tag]]"
   - "[[Anthropic Claude Tag Announcement]]"
   - "[[Ben Mini Stealing is a Skill Article]]"
+  - "[[GeekNews Humanizer AI Writing Detection Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -38,7 +39,7 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 107개
+- 자료 요약: 108개
 - 개념 페이지: 52개
 - 도구 페이지: 40개
 - 프로젝트 페이지: 2개
@@ -48,7 +49,7 @@ evidence_level: unsourced
 - 결정 기록: 1개
 - 회의록 요약: 0개
 - 재사용 질문 답변: 2개
-- 최근 구조 점검: 2026-06-27, lint errors 0 / warnings 3
+- 최근 구조 점검: 2026-06-29, lint errors 0 / warnings 3
 
 최근 비판적 리뷰: [[llm-wiki-review-2026-05-29]]
 
@@ -87,6 +88,7 @@ evidence_level: unsourced
 - [[Claude Fable 5]]는 System Card, risk report, 독립 장기 작업 평가, 30일 보존 세부 정책으로 보강한다.
 - [[구조화된 답변 프레임워크]]를 실제 query answer 또는 프로젝트 설명 1건에 적용해 형식이 내용보다 앞서는지 점검한다.
 - [[Humanize KR]]는 전역 설치 전에 read-only 탐지 evaluation과 installer dry-run으로 과잉 탐지, link 보존, 변경 범위를 확인한다.
+- [[GeekNews Humanizer AI Writing Detection Article]]을 바탕으로 Humanize KR 평가는 detector 우회가 아니라 의미 보존, 출처 보존, 문장 명료성, 과윤문 방지 기준으로 제한한다.
 - [[TurboVec]]는 LLM Wiki 검색 실패 query set과 FTS5 baseline이 준비되기 전에는 설치하지 않고 hybrid retrieval 후보로만 유지한다.
 - [[MEDDPICC]]를 B2B PoC 검토에 적용할 최소 qualification 항목으로 줄일 수 있는지 확인한다.
 - [[AI 실험 문화]]를 개인 운영체계에 적용할 월 1회 실험 시간과 artifact 기준을 정한다.

@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-27
+updated: 2026-06-29
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-29] ingest | Humanizer와 AI 글쓰기 탐지 회피 경계
+
+- GeekNews 글 "AI 글쓰기 탐지 가이드를 역이용한 Humanizer 도구 등장"을 raw Markdown/HTML snapshot으로 보존하고 [[GeekNews Humanizer AI Writing Detection Article]]로 ingest했다.
+- 이 자료는 AI writing tell 목록이 탐지 회피용 rewriting rule로도 쓰일 수 있음을 보여주는 2차 요약으로 정리했다.
+- [[Humanize KR]]에는 detector 우회가 아니라 의미 보존, 출처 보존, 문장 명료성, 과윤문 방지를 기준으로 평가해야 한다는 경계를 보강했다.
+- `blader/humanizer` GitHub repository, Wikipedia 가이드, Ars Technica 원보도, detector 회피 성능 수치는 별도 확인 전 검증 필요 주장으로 남겼다.
+- 변경 영역: [[GeekNews Humanizer AI Writing Detection Article]], [[Humanize KR]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: `blader/humanizer` repository와 Wikipedia "Signs of AI writing", Ars Technica 원보도를 별도 source로 확인해 detector 회피 주장과 글쓰기 품질 개선 경계를 분리한다.
 
 ## [2026-06-27] ingest | Stealing is a Skill과 레퍼런스 기반 창작 훈련
 

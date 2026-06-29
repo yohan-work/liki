@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-27
+updated: 2026-06-29
 tags:
   - llm-wiki
   - index
@@ -234,6 +234,7 @@ evidence_level: unsourced
 - [[91MS Developer Writing OREO Article]]
 - [[JobConsulting Interview STAR and PREP Article]]
 - [[GitHub im-not-ai Repository]]
+- [[GeekNews Humanizer AI Writing Detection Article]]
 - [[Kevin82 MEDDPICC Article]]
 - [[GitHub TurboVec Repository]]
 - [[Toss Tech AI Surf Day Article]]
