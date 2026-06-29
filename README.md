@@ -1,11 +1,13 @@
 # LLM Wiki
 
-## Data(26.05.21 ~ )
-<img width="1834" height="1037" alt="image" src="https://github.com/user-attachments/assets/73f542eb-041b-4e09-8901-acf8e2ad6a51" />
+## 26.06.29
+<img width="2004" height="1080" alt="image" src="https://github.com/user-attachments/assets/a30aa3b2-e9d3-4deb-bfcd-34c65d4c1598" />
 
 ## 26.06.04
 <img width="1657" height="1051" alt="image" src="https://github.com/user-attachments/assets/9d5c53d2-1343-4e06-a0e9-b7d5824823d2" />
 
+## Data(26.05.21 ~ )
+<img width="1834" height="1037" alt="image" src="https://github.com/user-attachments/assets/73f542eb-041b-4e09-8901-acf8e2ad6a51" />
 
 
 LLM Wiki는 다양한 주제의 자료를 장기적으로 축적하고 연결하기 위한 개인 Markdown 지식 베이스입니다. AI, 금융, 소프트웨어, 연구, 글쓰기, 컨퍼런스, 개인 프로젝트 등 서로 다른 domain의 자료를 같은 운영 원칙으로 ingest하고 관리합니다.
