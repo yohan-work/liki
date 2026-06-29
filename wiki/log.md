@@ -15,6 +15,15 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-29] ingest | Bell inequality와 양자컴퓨팅 입문
+
+- Velog 글 "첫 시작은 벨 부등식과 양자역학!"을 raw HTML snapshot으로 보존하고 [[Velog Hyunide Bell Inequality Quantum Article]]로 ingest했다.
+- Bell inequality, Tsirelson's bound, Qiskit 1.x 실습 예고를 양자컴퓨팅 입문 자료로 정리했다.
+- 새 seed concept [[양자컴퓨팅]]을 추가하되, Qiskit tool page와 Bell inequality 독립 concept page는 후속 공식 자료나 실습 글이 쌓일 때로 보류했다.
+- Bell test의 물리학적 의미, 2022년 노벨 물리학상, IBM Starling 2029년 주장, Qiskit 구현 방식은 검증 필요 주장으로 분리했다.
+- 변경 영역: [[Velog Hyunide Bell Inequality Quantum Article]], [[양자컴퓨팅]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Qiskit 공식 문서와 다음 글 `day1.2`를 별도 source로 확인해 Bell inequality 회로, simulator/backend 차이, 측정 기준을 재현 가능한 notebook 관점으로 정리한다.
+
 ## [2026-06-29] ingest | Humanizer와 AI 글쓰기 탐지 회피 경계
 
 - GeekNews 글 "AI 글쓰기 탐지 가이드를 역이용한 Humanizer 도구 등장"을 raw Markdown/HTML snapshot으로 보존하고 [[GeekNews Humanizer AI Writing Detection Article]]로 ingest했다.

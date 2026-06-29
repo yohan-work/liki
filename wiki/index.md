@@ -69,6 +69,7 @@ evidence_level: unsourced
 - [[DESIGN.md]]
 - [[ECMAScript 표준화와 연간 업데이트]]
 - [[AI 시대의 개발자 역량]]
+- [[양자컴퓨팅]]
 
 ## 프로젝트
 
@@ -235,6 +236,7 @@ evidence_level: unsourced
 - [[JobConsulting Interview STAR and PREP Article]]
 - [[GitHub im-not-ai Repository]]
 - [[GeekNews Humanizer AI Writing Detection Article]]
+- [[Velog Hyunide Bell Inequality Quantum Article]]
 - [[Kevin82 MEDDPICC Article]]
 - [[GitHub TurboVec Repository]]
 - [[Toss Tech AI Surf Day Article]]

@@ -29,6 +29,8 @@ related:
   - "[[Anthropic Claude Tag Announcement]]"
   - "[[Ben Mini Stealing is a Skill Article]]"
   - "[[GeekNews Humanizer AI Writing Detection Article]]"
+  - "[[양자컴퓨팅]]"
+  - "[[Velog Hyunide Bell Inequality Quantum Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -39,8 +41,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 108개
-- 개념 페이지: 52개
+- 자료 요약: 109개
+- 개념 페이지: 53개
 - 도구 페이지: 40개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -119,6 +121,7 @@ evidence_level: unsourced
 - [[LLM Wiki]] ingest 후 사용자가 직접 paraphrase하는 3문장 review 루틴을 만들지 검토한다.
 - [[X JPoehnelt Google Workspace CLI Post]]는 Google Workspace CLI 관련 thread 전체, repository, HN archive, Google 또는 독립 보도로 해고 사유와 확산 수치를 별도 확인한다.
 - [[AI 시대의 개발자 역량]]은 개인 포트폴리오나 면접 답변 1건에 문제, 선택, tradeoff, 결과, 반복 개선 evidence 형식으로 적용해 본다.
+- [[양자컴퓨팅]]은 Qiskit 공식 문서와 Bell inequality 실습 source가 추가로 쌓이면 Qiskit tool page와 실행 가능한 notebook 기준으로 보강한다.
 - [[Claude Tag]]는 Slack 기반 team agent의 permission, memory, audit, cost boundary를 확인하기 전까지 공식 발표 기반 도구 후보로만 유지한다.
 - 레퍼런스 기반 frontend 실험은 [[Ben Mini Stealing is a Skill Article]]의 3% approach를 그대로 규칙화하지 말고, 참고한 source와 자기 맥락 때문에 달라진 지점을 기록하는 작은 템플릿으로 검토한다.
 
@@ -196,6 +199,7 @@ evidence_level: unsourced
 - [[Ponytail]]
 - [[ECMAScript 표준화와 연간 업데이트]]
 - [[AI 시대의 개발자 역량]]
+- [[양자컴퓨팅]]
 - [[Claude Tag]]
 - [[Ben Mini Stealing is a Skill Article]]
 
