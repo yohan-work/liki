@@ -3,7 +3,7 @@ title: LLM Wiki Log
 type: log
 status: active
 created: 2026-05-20
-updated: 2026-06-29
+updated: 2026-06-30
 tags:
   - llm-wiki
   - log
@@ -14,6 +14,15 @@ evidence_level: unsourced
 ---
 
 # LLM Wiki Log
+
+## [2026-06-30] ingest | Framein과 coding agent 작업 상태 레이어
+
+- GeekNews Show GN 글 "Framein - 콕핏도 프록시도 하네스도 아닌, AI 코딩 에이전트 아래의 작업 상태 레이어"를 raw Markdown/HTML snapshot으로 보존하고 [[GeekNews Framein Show GN]]으로 ingest했다.
+- [[Framein]] 도구 페이지를 추가해 여러 terminal coding agent 사이에서 작업 계약, ADR, 검증 결과, risk/ship gate를 repository-local work-state artifact로 공유하는 접근을 정리했다.
+- [[Agentic Workflow]], [[Orchestration]], [[하네스 엔지니어링]], [[Codex]], [[Claude Code]]에는 handoff summary보다 repo artifact를 정본으로 두는 관점을 좁게 연결했다.
+- Framein v0.0.6 구현 범위, 테스트 249개, Node 22.5+ 요구사항, credential 미수집, runtime dependency 0, MCP 서버와 wrapper surface는 GitHub repository와 package metadata 확인 전까지 검증 필요 주장으로 남겼다.
+- 변경 영역: [[GeekNews Framein Show GN]], [[Framein]], [[Agentic Workflow]], [[Orchestration]], [[하네스 엔지니어링]], [[Codex]], [[Claude Code]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: Framein 공식 웹사이트, GitHub repository, 개발자 노트를 별도 source로 확인해 artifact schema, credential boundary, install/rollback, multi-developer workflow를 검토한다.
 
 ## [2026-06-29] ingest | Bell inequality와 양자컴퓨팅 입문
 

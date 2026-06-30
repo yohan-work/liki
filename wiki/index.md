@@ -3,7 +3,7 @@ title: LLM Wiki Index
 type: index
 status: seed
 created: 2026-05-20
-updated: 2026-06-29
+updated: 2026-06-30
 tags:
   - llm-wiki
   - index
@@ -147,6 +147,7 @@ evidence_level: unsourced
 - [[getdesign.md]]
 - [[Ponytail]]
 - [[tossinvest-cli]]
+- [[Framein]]
 
 ## 인물
 
@@ -261,6 +262,7 @@ evidence_level: unsourced
 - [[GeekNews Mailpit Article]]
 - [[GitHub Mailpit Repository]]
 - [[Tavily Official Site]]
+- [[GeekNews Framein Show GN]]
 - [[Google Cloud Open Knowledge Format Article]]
 - [[Anthropic Claude Tag Announcement]]
 - [[Cowboysj Caddy Domainless HTTPS Article]]

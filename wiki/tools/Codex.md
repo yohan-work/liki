@@ -3,7 +3,7 @@ title: Codex
 type: tool
 status: active
 created: 2026-05-20
-updated: 2026-06-22
+updated: 2026-06-30
 tags:
   - codex
   - coding-agent
@@ -30,6 +30,8 @@ related:
   - "[[GitHub im-not-ai Repository]]"
   - "[[Ponytail]]"
   - "[[GitHub Ponytail Repository]]"
+  - "[[Framein]]"
+  - "[[GeekNews Framein Show GN]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -57,6 +59,8 @@ evidence_level: source-backed
 [[GitHub im-not-ai Repository]]는 Claude Code용 한국어 윤문 workflow를 Codex Fast skill로 축소 이식한 사례다. Cross-agent skill은 같은 목적과 reference를 공유할 수 있지만, subagent orchestration과 검증 단계는 runtime capability에 맞춰 별도로 설계해야 한다.
 
 [[GitHub Ponytail Repository]]는 Codex plugin, skill, lifecycle hook으로 과잉 구현을 억제하는 사례다. 외부 plugin은 편의 기능과 함께 실행되는 hook도 포함하므로 설치 전 source와 permission을 검토하고, 최소화 효과는 LOC가 아니라 correctness·test·rework와 함께 평가해야 한다.
+
+[[GeekNews Framein Show GN]]은 [[Framein]]이 Codex용 `$fr-*` skill surface를 제공하면서도 같은 로컬 엔진과 repository-local 작업 상태를 읽고 쓴다고 소개한다. Codex를 다른 coding agent와 병행할 때는 session memory보다 작업 계약, 결정 기록, 검증 결과 같은 repo artifact를 정본으로 둘 수 있는지 검토해야 한다.
 
 ## 사용 사례
 
@@ -97,6 +101,7 @@ evidence_level: source-backed
 - [[OpenAI Codex Sites Documentation]]
 - [[GitHub im-not-ai Repository]]
 - [[GitHub Ponytail Repository]]
+- [[GeekNews Framein Show GN]]
 
 ## 열린 질문
 
@@ -110,3 +115,4 @@ evidence_level: source-backed
 - AGENTS.md 같은 repository instruction을 setup assistant가 읽을 때 secret 설정과 local permission 요청을 어떤 approval boundary로 분리해야 하는가?
 - Codex Sites 같은 hosted deployment surface를 사용할 때 save/deploy/access 변경을 어떤 approval boundary로 나눠야 하는가?
 - 외부 skill installer가 `~/.codex/skills`를 변경하고 자동 업데이트를 제공할 때 어떤 review gate가 필요한가?
+- Codex가 다른 coding agent와 같은 작업 상태를 공유할 때 AGENTS.md, skill state, external tool artifact 사이의 precedence를 어떻게 정할 것인가?
