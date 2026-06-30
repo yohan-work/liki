@@ -3,7 +3,7 @@ title: MiniMax M3
 type: tool
 status: active
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-06-30
 tags:
   - minimax
   - llm
@@ -16,6 +16,8 @@ related:
   - "[[Hugging Face]]"
   - "[[BYOK]]"
   - "[[Claude Opus 4.8]]"
+  - "[[로컬 LLM]]"
+  - "[[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -50,6 +52,7 @@ MiniMax M3는 MiniMax가 2026-06-01 출시했다고 소개된 대형언어모델
 - [[Claude Opus 4.8]] 같은 최신 폐쇄형 모델과 비교하면 일부 고난도 tool-intensive 평가에서는 성능 격차가 있을 수 있다.
 - 중국 provider API 사용은 데이터 처리, 보안, 규제, 내부 compliance 조건을 따로 검토해야 한다.
 - 로컬 실행 가능성은 실제 model size, quantization, runtime, GPU memory 조건이 공개되어야 판단할 수 있다.
+- [[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]은 작은 로컬 모델이 설치 가능하더라도 ClaudeCode 기반 coding task에서 안정적인 결과를 내지 못할 수 있음을 보여주는 개인 실험이다. M3 같은 open-weight 후보도 headline benchmark보다 실제 task success, runtime, hardware requirement로 평가해야 한다.
 
 ## 관련 워크플로
 
@@ -65,13 +68,16 @@ MiniMax M3는 MiniMax가 2026-06-01 출시했다고 소개된 대형언어모델
 - [[BYOK]]
 - [[Hugging Face]]
 - [[Hybrid LLM Query Routing]]
+- [[로컬 LLM]]
 
 ## 관련 자료
 
 - [[GeekNews MiniMax M3 Article]]
+- [[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]
 
 ## 열린 질문
 
 - M3 open weights가 실제 공개되면 어느 runtime에서 가장 현실적으로 실행할 수 있는가?
 - 100만 토큰 context가 coding agent와 LLM Wiki ingest에서 실제 품질 개선으로 이어지는가?
 - API-only frontier model, BYOK model routing, open-weight local model을 어떤 기준으로 나눠 쓸 것인가?
+- open-weight 모델을 개인 장비에서 실행할 때 설치 가능성과 coding agent 성공률 사이의 간극을 어떻게 측정할 것인가?

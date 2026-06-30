@@ -70,6 +70,7 @@ evidence_level: unsourced
 - [[ECMAScript 표준화와 연간 업데이트]]
 - [[AI 시대의 개발자 역량]]
 - [[양자컴퓨팅]]
+- [[로컬 LLM]]
 
 ## 프로젝트
 
@@ -263,6 +264,7 @@ evidence_level: unsourced
 - [[GitHub Mailpit Repository]]
 - [[Tavily Official Site]]
 - [[GeekNews Framein Show GN]]
+- [[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]
 - [[Google Cloud Open Knowledge Format Article]]
 - [[Anthropic Claude Tag Announcement]]
 - [[Cowboysj Caddy Domainless HTTPS Article]]

@@ -33,6 +33,8 @@ related:
   - "[[Velog Hyunide Bell Inequality Quantum Article]]"
   - "[[Framein]]"
   - "[[GeekNews Framein Show GN]]"
+  - "[[로컬 LLM]]"
+  - "[[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]"
 sensitivity: private
 evidence_level: unsourced
 ---
@@ -43,8 +45,8 @@ evidence_level: unsourced
 
 ## 현재 상태
 
-- 자료 요약: 110개
-- 개념 페이지: 53개
+- 자료 요약: 111개
+- 개념 페이지: 54개
 - 도구 페이지: 41개
 - 프로젝트 페이지: 2개
 - 아이디어 페이지: 2개
@@ -120,6 +122,7 @@ evidence_level: unsourced
 - [[DESIGN.md]]를 기존 PoC 하나에 적용해 visual consistency, 수정 횟수, responsive·accessibility 검증 기준이 실제로 개선되는지 확인한다.
 - [[Ponytail]]은 전역 plugin 설치 전에 repository-local instruction 또는 read-only diff review로 기본 agent와 correctness·test·dependency·LOC·rework를 비교한다.
 - [[Framein]]은 설치 전 GitHub repository, package metadata, artifact schema, credential boundary, clean-machine install을 확인하고, 여러 coding agent 사이에서 작업 계약·ADR·검증 결과를 repo artifact로 공유하는 실험 후보로 둔다.
+- [[로컬 LLM]]은 무료 frontier model 대체재로 가정하지 말고, LLM Wiki triage처럼 실패 비용이 낮은 작업부터 task success, timeout, 전력·발열, human review 비용을 함께 측정한다.
 - [[ECMAScript 표준화와 연간 업데이트]]는 target browser·Node version을 정한 뒤 ES2025·ES2026 API adoption 표를 만든다.
 - [[LLM Wiki]] ingest 후 사용자가 직접 paraphrase하는 3문장 review 루틴을 만들지 검토한다.
 - [[X JPoehnelt Google Workspace CLI Post]]는 Google Workspace CLI 관련 thread 전체, repository, HN archive, Google 또는 독립 보도로 해고 사유와 확산 수치를 별도 확인한다.
@@ -201,12 +204,14 @@ evidence_level: unsourced
 - [[getdesign.md]]
 - [[Ponytail]]
 - [[Framein]]
+- [[로컬 LLM]]
 - [[ECMAScript 표준화와 연간 업데이트]]
 - [[AI 시대의 개발자 역량]]
 - [[양자컴퓨팅]]
 - [[Claude Tag]]
 - [[Ben Mini Stealing is a Skill Article]]
 - [[GeekNews Framein Show GN]]
+- [[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]
 
 ## 다음 행동
 

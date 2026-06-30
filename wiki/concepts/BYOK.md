@@ -3,7 +3,7 @@ title: BYOK
 type: concept
 status: active
 created: 2026-05-26
-updated: 2026-06-03
+updated: 2026-06-30
 tags:
   - byok
   - ai-tools
@@ -16,6 +16,8 @@ related:
   - "[[Personal Operating System]]"
   - "[[Hybrid LLM Query Routing]]"
   - "[[MiniMax M3]]"
+  - "[[로컬 LLM]]"
+  - "[[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]"
 sensitivity: private
 evidence_level: source-backed
 ---
@@ -38,6 +40,7 @@ AI 도구는 사용자 요청마다 모델 추론 비용이 발생한다. 구독
 - BYOK는 비용 투명성과 provider portability를 높일 수 있지만, 사용량 관리와 key 보안 책임도 사용자에게 더 많이 옮긴다.
 - Provider마다 rate limit, context window, tool support, multimodal capability, safety policy가 다르므로 "키만 바꾸면 동일한 경험"이 되지는 않는다.
 - [[MiniMax M3]] 같은 open-weight model은 BYOK와 다른 선택지다. BYOK는 provider key custody를 가져오는 방식이고, open weights는 model custody와 deployment 위치까지 사용자가 가져올 수 있는 방식이다.
+- [[로컬 LLM]]은 BYOK보다 더 많은 운영 책임을 사용자에게 가져온다. API key만 가져오는 것이 아니라 model weights, serving runtime, hardware, power/thermal behavior, update, eval까지 관리해야 한다.
 
 ## 좋은 사용 사례
 
@@ -57,6 +60,7 @@ AI 도구는 사용자 요청마다 모델 추론 비용이 발생한다. 구독
 
 - [[WikiDocs Jaehong BYOK AI Tools Article]]
 - [[GeekNews MiniMax M3 Article]]
+- [[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]
 
 ## 관련 개념
 
@@ -64,9 +68,11 @@ AI 도구는 사용자 요청마다 모델 추론 비용이 발생한다. 구독
 - [[Personal Operating System]]
 - [[Hybrid LLM Query Routing]]
 - [[MiniMax M3]]
+- [[로컬 LLM]]
 
 ## 열린 질문
 
 - 개인 AI workflow에서 BYOK를 쓸 때 key custody와 budget limit을 어디서 관리할 것인가?
 - Codex/Claude Code/Cursor 같은 도구 비교에서 모델 비용과 workflow 가치를 어떤 표로 분리할 것인가?
 - BYOK 환경에서 task별 model routing과 failover를 자동화하려면 어떤 telemetry가 필요한가?
+- 로컬 LLM을 BYOK API 대안으로 볼 때 실패율, 재시도, 전력·발열, setup 유지보수 비용을 어떻게 함께 계산할 것인가?

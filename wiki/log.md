@@ -15,6 +15,15 @@ evidence_level: unsourced
 
 # LLM Wiki Log
 
+## [2026-06-30] ingest | 로컬 LLM과 ClaudeCode 개인 장비 실험
+
+- 김성수의 LinkedIn Pulse 글 "내 맥북에 로컬 LLM 설치해서 ClaudeCode 돌리면 쓸만할까?"를 raw HTML snapshot으로 보존하고 [[LinkedIn Kim Local LLM ClaudeCode MacBook Article]]로 ingest했다.
+- [[로컬 LLM]] 개념 페이지를 추가해 BYOK와 구분되는 model/runtime/hardware custody, coding agent backend로 쓸 때의 task success 기준, 실패 비용을 정리했다.
+- [[Claude Code]], [[BYOK]], [[Hybrid LLM Query Routing]], [[MiniMax M3]]에는 로컬 모델을 설치 가능성보다 task success, timeout, tool calling, 전력·발열, human review 비용으로 평가해야 한다는 관점을 연결했다.
+- 이미지 표의 세부 점수, 각 모델 checkpoint/quantization/runtime, vLLM 설정, 댓글의 playable artifact는 이번 snapshot만으로 확정하지 않고 검증 필요 주장으로 남겼다.
+- 변경 영역: [[LinkedIn Kim Local LLM ClaudeCode MacBook Article]], [[로컬 LLM]], [[Claude Code]], [[BYOK]], [[Hybrid LLM Query Routing]], [[MiniMax M3]], [[LLM Wiki Index]], [[LLM Wiki Overview]].
+- 후속 작업: 로컬 LLM으로 LLM Wiki triage task 10개를 돌리는 작은 eval을 설계하고 frontier model 대비 성공률, 재시도, 검토 시간을 비교한다.
+
 ## [2026-06-30] ingest | Framein과 coding agent 작업 상태 레이어
 
 - GeekNews Show GN 글 "Framein - 콕핏도 프록시도 하네스도 아닌, AI 코딩 에이전트 아래의 작업 상태 레이어"를 raw Markdown/HTML snapshot으로 보존하고 [[GeekNews Framein Show GN]]으로 ingest했다.
